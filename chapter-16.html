@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>17&nbsp; Spec Agent – AI Programming: From Intent to Execution</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chapter-17.html" rel="next">
+<link href="./chapter-15.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-16.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AI Programming: From Intent to Execution</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The New Bottleneck</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-16.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-31.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#from-manual-definition-to-assisted-definition" id="toc-from-manual-definition-to-assisted-definition" class="nav-link active" data-scroll-target="#from-manual-definition-to-assisted-definition"><span class="header-section-number">17.1</span> From Manual Definition to Assisted Definition</a></li>
+  <li><a href="#what-is-a-spec-agent" id="toc-what-is-a-spec-agent" class="nav-link" data-scroll-target="#what-is-a-spec-agent"><span class="header-section-number">17.2</span> What is a Spec Agent?</a>
+  <ul class="collapse">
+  <li><a href="#core-function" id="toc-core-function" class="nav-link" data-scroll-target="#core-function"><span class="header-section-number">17.2.1</span> Core Function</a></li>
+  </ul></li>
+  <li><a href="#why-spec-agents-are-needed" id="toc-why-spec-agents-are-needed" class="nav-link" data-scroll-target="#why-spec-agents-are-needed"><span class="header-section-number">17.3</span> Why Spec Agents Are Needed</a></li>
+  <li><a href="#the-shift-ai-writes-the-spec" id="toc-the-shift-ai-writes-the-spec" class="nav-link" data-scroll-target="#the-shift-ai-writes-the-spec"><span class="header-section-number">17.4</span> The Shift: AI Writes the Spec</a>
+  <ul class="collapse">
+  <li><a href="#this-is-a-critical-shift" id="toc-this-is-a-critical-shift" class="nav-link" data-scroll-target="#this-is-a-critical-shift"><span class="header-section-number">17.4.1</span> This is a critical shift</a></li>
+  </ul></li>
+  <li><a href="#the-spec-generation-process" id="toc-the-spec-generation-process" class="nav-link" data-scroll-target="#the-spec-generation-process"><span class="header-section-number">17.5</span> The Spec Generation Process</a>
+  <ul class="collapse">
+  <li><a href="#step-1-input-intent" id="toc-step-1-input-intent" class="nav-link" data-scroll-target="#step-1-input-intent"><span class="header-section-number">17.5.1</span> Step 1: Input Intent</a></li>
+  <li><a href="#step-2-spec-generation" id="toc-step-2-spec-generation" class="nav-link" data-scroll-target="#step-2-spec-generation"><span class="header-section-number">17.5.2</span> Step 2: Spec Generation</a></li>
+  <li><a href="#step-3-human-review" id="toc-step-3-human-review" class="nav-link" data-scroll-target="#step-3-human-review"><span class="header-section-number">17.5.3</span> Step 3: Human Review</a></li>
+  <li><a href="#step-4-final-spec" id="toc-step-4-final-spec" class="nav-link" data-scroll-target="#step-4-final-spec"><span class="header-section-number">17.5.4</span> Step 4: Final Spec</a></li>
+  </ul></li>
+  <li><a href="#humanai-collaboration-model" id="toc-humanai-collaboration-model" class="nav-link" data-scroll-target="#humanai-collaboration-model"><span class="header-section-number">17.6</span> Human–AI Collaboration Model</a>
+  <ul class="collapse">
+  <li><a href="#roles" id="toc-roles" class="nav-link" data-scroll-target="#roles"><span class="header-section-number">17.6.1</span> Roles</a></li>
+  </ul></li>
+  <li><a href="#benefits-of-spec-agents" id="toc-benefits-of-spec-agents" class="nav-link" data-scroll-target="#benefits-of-spec-agents"><span class="header-section-number">17.7</span> Benefits of Spec Agents</a>
+  <ul class="collapse">
+  <li><a href="#speed" id="toc-speed" class="nav-link" data-scroll-target="#speed"><span class="header-section-number">17.7.1</span> 1. Speed</a></li>
+  <li><a href="#coverage" id="toc-coverage" class="nav-link" data-scroll-target="#coverage"><span class="header-section-number">17.7.2</span> 2. Coverage</a></li>
+  <li><a href="#consistency" id="toc-consistency" class="nav-link" data-scroll-target="#consistency"><span class="header-section-number">17.7.3</span> 3. Consistency</a></li>
+  <li><a href="#accessibility" id="toc-accessibility" class="nav-link" data-scroll-target="#accessibility"><span class="header-section-number">17.7.4</span> 4. Accessibility</a></li>
+  </ul></li>
+  <li><a href="#limitations-of-spec-agents" id="toc-limitations-of-spec-agents" class="nav-link" data-scroll-target="#limitations-of-spec-agents"><span class="header-section-number">17.8</span> Limitations of Spec Agents</a>
+  <ul class="collapse">
+  <li><a href="#dependence-on-input-quality" id="toc-dependence-on-input-quality" class="nav-link" data-scroll-target="#dependence-on-input-quality"><span class="header-section-number">17.8.1</span> 1. Dependence on Input Quality</a></li>
+  <li><a href="#over-trust" id="toc-over-trust" class="nav-link" data-scroll-target="#over-trust"><span class="header-section-number">17.8.2</span> 2. Over-Trust</a></li>
+  <li><a href="#lack-of-context" id="toc-lack-of-context" class="nav-link" data-scroll-target="#lack-of-context"><span class="header-section-number">17.8.3</span> 3. Lack of Context</a></li>
+  <li><a href="#generic-outputs" id="toc-generic-outputs" class="nav-link" data-scroll-target="#generic-outputs"><span class="header-section-number">17.8.4</span> 4. Generic Outputs</a></li>
+  </ul></li>
+  <li><a href="#when-to-use-spec-agents" id="toc-when-to-use-spec-agents" class="nav-link" data-scroll-target="#when-to-use-spec-agents"><span class="header-section-number">17.9</span> When to Use Spec Agents</a>
+  <ul class="collapse">
+  <li><a href="#intent-is-vague" id="toc-intent-is-vague" class="nav-link" data-scroll-target="#intent-is-vague"><span class="header-section-number">17.9.1</span> 1. Intent is Vague</a></li>
+  <li><a href="#users-lack-experience" id="toc-users-lack-experience" class="nav-link" data-scroll-target="#users-lack-experience"><span class="header-section-number">17.9.2</span> 2. Users Lack Experience</a></li>
+  <li><a href="#speed-is-important" id="toc-speed-is-important" class="nav-link" data-scroll-target="#speed-is-important"><span class="header-section-number">17.9.3</span> 3. Speed is Important</a></li>
+  <li><a href="#complexity-is-moderate" id="toc-complexity-is-moderate" class="nav-link" data-scroll-target="#complexity-is-moderate"><span class="header-section-number">17.9.4</span> 4. Complexity is Moderate</a></li>
+  </ul></li>
+  <li><a href="#when-not-to-rely-on-them-fully" id="toc-when-not-to-rely-on-them-fully" class="nav-link" data-scroll-target="#when-not-to-rely-on-them-fully"><span class="header-section-number">17.10</span> When Not to Rely on Them Fully</a>
+  <ul class="collapse">
+  <li><a href="#requirements-are-highly-specific" id="toc-requirements-are-highly-specific" class="nav-link" data-scroll-target="#requirements-are-highly-specific"><span class="header-section-number">17.10.1</span> 1. Requirements Are Highly Specific</a></li>
+  <li><a href="#systems-are-critical" id="toc-systems-are-critical" class="nav-link" data-scroll-target="#systems-are-critical"><span class="header-section-number">17.10.2</span> 2. Systems Are Critical</a></li>
+  <li><a href="#deep-understanding-is-needed" id="toc-deep-understanding-is-needed" class="nav-link" data-scroll-target="#deep-understanding-is-needed"><span class="header-section-number">17.10.3</span> 3. Deep Understanding is Needed</a></li>
+  </ul></li>
+  <li><a href="#spec-agents-as-a-layer-in-the-system" id="toc-spec-agents-as-a-layer-in-the-system" class="nav-link" data-scroll-target="#spec-agents-as-a-layer-in-the-system"><span class="header-section-number">17.11</span> Spec Agents as a Layer in the System</a></li>
+  <li><a href="#evolution-of-spec-agents" id="toc-evolution-of-spec-agents" class="nav-link" data-scroll-target="#evolution-of-spec-agents"><span class="header-section-number">17.12</span> Evolution of Spec Agents</a></li>
+  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">17.13</span> Final Insight</a></li>
+  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">17.14</span> Closing Statement</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="from-manual-definition-to-assisted-definition" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="from-manual-definition-to-assisted-definition"><span class="header-section-number">17.1</span> From Manual Definition to Assisted Definition</h2>
+<p>In Template-based Spec, humans define specifications directly.</p>
+<p>This works well when:</p>
+<ul>
+<li><p>The problem is familiar</p></li>
+<li><p>The structure is clear</p></li>
+<li><p>The user understands the system</p></li>
+</ul>
+<p>However, in many real scenarios:</p>
+<ul>
+<li><p>The intent is vague</p></li>
+<li><p>The structure is unclear</p></li>
+<li><p>The user cannot easily translate ideas into specs</p></li>
+</ul>
+<p>This leads to a new approach:</p>
+<blockquote class="blockquote">
+<p><strong>Using agents to generate specifications</strong></p>
+</blockquote>
+<hr>
+</section>
+<section id="what-is-a-spec-agent" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="what-is-a-spec-agent"><span class="header-section-number">17.2</span> What is a Spec Agent?</h2>
+<p>A Spec Agent is a system that:</p>
+<blockquote class="blockquote">
+<p><strong>Transforms human intent into a structured specification</strong></p>
+</blockquote>
+<p>It takes as input:</p>
+<ul>
+<li><p>Natural language descriptions</p></li>
+<li><p>Partial ideas</p></li>
+<li><p>Incomplete goals</p></li>
+</ul>
+<p>And produces:</p>
+<ul>
+<li><p>A structured spec</p></li>
+<li><p>With defined inputs, outputs, constraints, and success criteria</p></li>
+</ul>
+<hr>
+<section id="core-function" class="level3" data-number="17.2.1">
+<h3 data-number="17.2.1" class="anchored" data-anchor-id="core-function"><span class="header-section-number">17.2.1</span> Core Function</h3>
+<pre><code>Intent (informal) → Spec Agent → Spec (structured)</code></pre>
+<hr>
+<blockquote class="blockquote">
+<p>The agent does not execute the system.<br>
+It defines it.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="why-spec-agents-are-needed" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="why-spec-agents-are-needed"><span class="header-section-number">17.3</span> Why Spec Agents Are Needed</h2>
+<p>Spec Engineering is cognitively demanding.</p>
+<p>It requires:</p>
+<ul>
+<li><p>Precision</p></li>
+<li><p>Structure</p></li>
+<li><p>Awareness of system behavior</p></li>
+</ul>
+<p>Many users struggle with:</p>
+<ul>
+<li><p>Missing constraints</p></li>
+<li><p>Unclear outputs</p></li>
+<li><p>Weak evaluation criteria</p></li>
+</ul>
+<p>Spec Agents help by:</p>
+<ul>
+<li><p>Filling gaps</p></li>
+<li><p>Suggesting structure</p></li>
+<li><p>Making implicit assumptions explicit</p></li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>They reduce the cognitive load of definition.</p>
+</blockquote>
+<hr>
+</section>
+<section id="the-shift-ai-writes-the-spec" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="the-shift-ai-writes-the-spec"><span class="header-section-number">17.4</span> The Shift: AI Writes the Spec</h2>
+<p>Traditionally:</p>
+<ul>
+<li>Humans write code</li>
+</ul>
+<p>Then:</p>
+<ul>
+<li>Humans write prompts</li>
+</ul>
+<p>Now:</p>
+<ul>
+<li>AI can write specifications</li>
+</ul>
+<hr>
+<section id="this-is-a-critical-shift" class="level3" data-number="17.4.1">
+<h3 data-number="17.4.1" class="anchored" data-anchor-id="this-is-a-critical-shift"><span class="header-section-number">17.4.1</span> This is a critical shift</h3>
+<p>Instead of:</p>
+<ul>
+<li>Using AI to generate output</li>
+</ul>
+<p>We use AI to:</p>
+<blockquote class="blockquote">
+<p><strong>Define the system that generates output</strong></p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="the-spec-generation-process" class="level2" data-number="17.5">
+<h2 data-number="17.5" class="anchored" data-anchor-id="the-spec-generation-process"><span class="header-section-number">17.5</span> The Spec Generation Process</h2>
+<p>A typical Spec Agent workflow:</p>
+<hr>
+<section id="step-1-input-intent" class="level3" data-number="17.5.1">
+<h3 data-number="17.5.1" class="anchored" data-anchor-id="step-1-input-intent"><span class="header-section-number">17.5.1</span> Step 1: Input Intent</h3>
+<p>User provides:</p>
+<ul>
+<li><p>A description of what they want</p></li>
+<li><p>Often vague or incomplete</p></li>
+</ul>
+<p>Example:</p>
+<p>“Build a system that summarizes articles.”</p>
+<hr>
+</section>
+<section id="step-2-spec-generation" class="level3" data-number="17.5.2">
+<h3 data-number="17.5.2" class="anchored" data-anchor-id="step-2-spec-generation"><span class="header-section-number">17.5.2</span> Step 2: Spec Generation</h3>
+<p>The agent produces:</p>
+<ul>
+<li><p>Structured fields</p></li>
+<li><p>Suggested constraints</p></li>
+<li><p>Possible success criteria</p></li>
+</ul>
+<hr>
+</section>
+<section id="step-3-human-review" class="level3" data-number="17.5.3">
+<h3 data-number="17.5.3" class="anchored" data-anchor-id="step-3-human-review"><span class="header-section-number">17.5.3</span> Step 3: Human Review</h3>
+<p>The user:</p>
+<ul>
+<li><p>Edits the spec</p></li>
+<li><p>Adds missing details</p></li>
+<li><p>Refines constraints</p></li>
+</ul>
+<hr>
+</section>
+<section id="step-4-final-spec" class="level3" data-number="17.5.4">
+<h3 data-number="17.5.4" class="anchored" data-anchor-id="step-4-final-spec"><span class="header-section-number">17.5.4</span> Step 4: Final Spec</h3>
+<p>The refined spec is used for:</p>
+<ul>
+<li><p>Instruction generation</p></li>
+<li><p>System execution</p></li>
+</ul>
+<hr>
+<pre><code>Human Intent → Agent → Draft Spec → Human Refinement → Final Spec</code></pre>
+<hr>
+</section>
+</section>
+<section id="humanai-collaboration-model" class="level2" data-number="17.6">
+<h2 data-number="17.6" class="anchored" data-anchor-id="humanai-collaboration-model"><span class="header-section-number">17.6</span> Human–AI Collaboration Model</h2>
+<p>Spec Agents introduce a new interaction pattern:</p>
+<blockquote class="blockquote">
+<p><strong>Human + AI co-create the definition</strong></p>
+</blockquote>
+<hr>
+<section id="roles" class="level3" data-number="17.6.1">
+<h3 data-number="17.6.1" class="anchored" data-anchor-id="roles"><span class="header-section-number">17.6.1</span> Roles</h3>
+<hr>
+<section id="human" class="level4" data-number="17.6.1.1">
+<h4 data-number="17.6.1.1" class="anchored" data-anchor-id="human"><span class="header-section-number">17.6.1.1</span> Human</h4>
+<ul>
+<li><p>Defines high-level intent</p></li>
+<li><p>Provides context</p></li>
+<li><p>Makes final decisions</p></li>
+</ul>
+<hr>
+</section>
+<section id="agent" class="level4" data-number="17.6.1.2">
+<h4 data-number="17.6.1.2" class="anchored" data-anchor-id="agent"><span class="header-section-number">17.6.1.2</span> Agent</h4>
+<ul>
+<li><p>Structures information</p></li>
+<li><p>Suggests constraints</p></li>
+<li><p>Identifies missing elements</p></li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>The human defines meaning.<br>
+The agent defines structure.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+</section>
+<section id="benefits-of-spec-agents" class="level2" data-number="17.7">
+<h2 data-number="17.7" class="anchored" data-anchor-id="benefits-of-spec-agents"><span class="header-section-number">17.7</span> Benefits of Spec Agents</h2>
+<hr>
+<section id="speed" class="level3" data-number="17.7.1">
+<h3 data-number="17.7.1" class="anchored" data-anchor-id="speed"><span class="header-section-number">17.7.1</span> 1. Speed</h3>
+<ul>
+<li><p>Faster spec creation</p></li>
+<li><p>Reduced manual effort</p></li>
+</ul>
+<hr>
+</section>
+<section id="coverage" class="level3" data-number="17.7.2">
+<h3 data-number="17.7.2" class="anchored" data-anchor-id="coverage"><span class="header-section-number">17.7.2</span> 2. Coverage</h3>
+<ul>
+<li><p>Fewer missing components</p></li>
+<li><p>More complete definitions</p></li>
+</ul>
+<hr>
+</section>
+<section id="consistency" class="level3" data-number="17.7.3">
+<h3 data-number="17.7.3" class="anchored" data-anchor-id="consistency"><span class="header-section-number">17.7.3</span> 3. Consistency</h3>
+<ul>
+<li><p>Standardized structure</p></li>
+<li><p>Reduced variability</p></li>
+</ul>
+<hr>
+</section>
+<section id="accessibility" class="level3" data-number="17.7.4">
+<h3 data-number="17.7.4" class="anchored" data-anchor-id="accessibility"><span class="header-section-number">17.7.4</span> 4. Accessibility</h3>
+<ul>
+<li><p>Lower barrier for beginners</p></li>
+<li><p>Enables non-experts to define systems</p></li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>Spec Agents democratize specification.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="limitations-of-spec-agents" class="level2" data-number="17.8">
+<h2 data-number="17.8" class="anchored" data-anchor-id="limitations-of-spec-agents"><span class="header-section-number">17.8</span> Limitations of Spec Agents</h2>
+<hr>
+<section id="dependence-on-input-quality" class="level3" data-number="17.8.1">
+<h3 data-number="17.8.1" class="anchored" data-anchor-id="dependence-on-input-quality"><span class="header-section-number">17.8.1</span> 1. Dependence on Input Quality</h3>
+<ul>
+<li><p>Poor intent leads to poor spec</p></li>
+<li><p>Garbage in, garbage out</p></li>
+</ul>
+<hr>
+</section>
+<section id="over-trust" class="level3" data-number="17.8.2">
+<h3 data-number="17.8.2" class="anchored" data-anchor-id="over-trust"><span class="header-section-number">17.8.2</span> 2. Over-Trust</h3>
+<ul>
+<li><p>Users may accept generated specs without review</p></li>
+<li><p>Hidden errors remain</p></li>
+</ul>
+<hr>
+</section>
+<section id="lack-of-context" class="level3" data-number="17.8.3">
+<h3 data-number="17.8.3" class="anchored" data-anchor-id="lack-of-context"><span class="header-section-number">17.8.3</span> 3. Lack of Context</h3>
+<ul>
+<li><p>Agents may miss domain-specific constraints</p></li>
+<li><p>Cannot fully replace human judgment</p></li>
+</ul>
+<hr>
+</section>
+<section id="generic-outputs" class="level3" data-number="17.8.4">
+<h3 data-number="17.8.4" class="anchored" data-anchor-id="generic-outputs"><span class="header-section-number">17.8.4</span> 4. Generic Outputs</h3>
+<ul>
+<li><p>Specs may be too general</p></li>
+<li><p>Lack specificity</p></li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>Spec Agents assist, but do not replace thinking.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="when-to-use-spec-agents" class="level2" data-number="17.9">
+<h2 data-number="17.9" class="anchored" data-anchor-id="when-to-use-spec-agents"><span class="header-section-number">17.9</span> When to Use Spec Agents</h2>
+<p>Spec Agents are most useful when:</p>
+<hr>
+<section id="intent-is-vague" class="level3" data-number="17.9.1">
+<h3 data-number="17.9.1" class="anchored" data-anchor-id="intent-is-vague"><span class="header-section-number">17.9.1</span> 1. Intent is Vague</h3>
+<ul>
+<li><p>Early-stage ideas</p></li>
+<li><p>Unstructured problems</p></li>
+</ul>
+<hr>
+</section>
+<section id="users-lack-experience" class="level3" data-number="17.9.2">
+<h3 data-number="17.9.2" class="anchored" data-anchor-id="users-lack-experience"><span class="header-section-number">17.9.2</span> 2. Users Lack Experience</h3>
+<ul>
+<li><p>Beginners</p></li>
+<li><p>Non-technical users</p></li>
+</ul>
+<hr>
+</section>
+<section id="speed-is-important" class="level3" data-number="17.9.3">
+<h3 data-number="17.9.3" class="anchored" data-anchor-id="speed-is-important"><span class="header-section-number">17.9.3</span> 3. Speed is Important</h3>
+<ul>
+<li><p>Rapid prototyping</p></li>
+<li><p>Iterative development</p></li>
+</ul>
+<hr>
+</section>
+<section id="complexity-is-moderate" class="level3" data-number="17.9.4">
+<h3 data-number="17.9.4" class="anchored" data-anchor-id="complexity-is-moderate"><span class="header-section-number">17.9.4</span> 4. Complexity is Moderate</h3>
+<ul>
+<li><p>Enough structure to guide</p></li>
+<li><p>Not too domain-specific</p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="when-not-to-rely-on-them-fully" class="level2" data-number="17.10">
+<h2 data-number="17.10" class="anchored" data-anchor-id="when-not-to-rely-on-them-fully"><span class="header-section-number">17.10</span> When Not to Rely on Them Fully</h2>
+<p>Spec Agents are less effective when:</p>
+<hr>
+<section id="requirements-are-highly-specific" class="level3" data-number="17.10.1">
+<h3 data-number="17.10.1" class="anchored" data-anchor-id="requirements-are-highly-specific"><span class="header-section-number">17.10.1</span> 1. Requirements Are Highly Specific</h3>
+<ul>
+<li><p>Domain expertise required</p></li>
+<li><p>Precise constraints needed</p></li>
+</ul>
+<hr>
+</section>
+<section id="systems-are-critical" class="level3" data-number="17.10.2">
+<h3 data-number="17.10.2" class="anchored" data-anchor-id="systems-are-critical"><span class="header-section-number">17.10.2</span> 2. Systems Are Critical</h3>
+<ul>
+<li><p>High reliability required</p></li>
+<li><p>Strict validation needed</p></li>
+</ul>
+<hr>
+</section>
+<section id="deep-understanding-is-needed" class="level3" data-number="17.10.3">
+<h3 data-number="17.10.3" class="anchored" data-anchor-id="deep-understanding-is-needed"><span class="header-section-number">17.10.3</span> 3. Deep Understanding is Needed</h3>
+<ul>
+<li><p>Complex interactions</p></li>
+<li><p>Subtle edge cases</p></li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>In these cases, human refinement becomes essential.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="spec-agents-as-a-layer-in-the-system" class="level2" data-number="17.11">
+<h2 data-number="17.11" class="anchored" data-anchor-id="spec-agents-as-a-layer-in-the-system"><span class="header-section-number">17.11</span> Spec Agents as a Layer in the System</h2>
+<p>Spec Agents are not standalone tools.</p>
+<p>They are part of a larger pipeline:</p>
+<pre><code>Intent → Spec Agent → Spec → Instruction → Execution</code></pre>
+<hr>
+<p>They occupy the transition between:</p>
+<ul>
+<li><p>Human thinking</p></li>
+<li><p>System definition</p></li>
+</ul>
+<hr>
+</section>
+<section id="evolution-of-spec-agents" class="level2" data-number="17.12">
+<h2 data-number="17.12" class="anchored" data-anchor-id="evolution-of-spec-agents"><span class="header-section-number">17.12</span> Evolution of Spec Agents</h2>
+<p>As systems improve, Spec Agents may:</p>
+<ul>
+<li><p>Learn from past specs</p></li>
+<li><p>Adapt to user preferences</p></li>
+<li><p>Incorporate domain knowledge</p></li>
+</ul>
+<p>This leads to:</p>
+<ul>
+<li><p>Personalized specification systems</p></li>
+<li><p>Adaptive definition workflows</p></li>
+</ul>
+<hr>
+</section>
+<section id="final-insight" class="level2" data-number="17.13">
+<h2 data-number="17.13" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">17.13</span> Final Insight</h2>
+<p>Spec Agents represent a shift in how we use AI.</p>
+<p>They are not just tools for execution.</p>
+<p>They are tools for <strong>definition</strong>.</p>
+<hr>
+<blockquote class="blockquote">
+<p>The most powerful use of AI is not to do the work,<br>
+but to help define the work.</p>
+</blockquote>
+<hr>
+</section>
+<section id="closing-statement" class="level2" data-number="17.14">
+<h2 data-number="17.14" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">17.14</span> Closing Statement</h2>
+<p>In the LLM era, the boundary between human thinking and system definition becomes collaborative.</p>
+<p>Spec Agents sit at that boundary.</p>
+<blockquote class="blockquote">
+<p>They turn vague intent into structured possibility,<br>
+but only humans can decide what truly matters.</p>
+</blockquote>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chapter-15.html" class="pagination-link" aria-label="Template-based Spec">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./chapter-17.html" class="pagination-link" aria-label="Iterative Spec Refinement">
+        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

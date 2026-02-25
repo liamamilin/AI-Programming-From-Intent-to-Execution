@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>34&nbsp; Human + AI Cognition – AI Programming: From Intent to Execution</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chapter-34.html" rel="next">
+<link href="./chapter-32.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-33.html"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AI Programming: From Intent to Execution</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The New Bottleneck</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-31.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-33.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#beyond-systems-cognition-as-a-joint-process" id="toc-beyond-systems-cognition-as-a-joint-process" class="nav-link active" data-scroll-target="#beyond-systems-cognition-as-a-joint-process"><span class="header-section-number">34.1</span> Beyond Systems: Cognition as a Joint Process</a></li>
+  <li><a href="#what-is-cognition" id="toc-what-is-cognition" class="nav-link" data-scroll-target="#what-is-cognition"><span class="header-section-number">34.2</span> What is Cognition?</a>
+  <ul class="collapse">
+  <li><a href="#traditionally" id="toc-traditionally" class="nav-link" data-scroll-target="#traditionally"><span class="header-section-number">34.2.1</span> Traditionally</a></li>
+  <li><a href="#now" id="toc-now" class="nav-link" data-scroll-target="#now"><span class="header-section-number">34.2.2</span> Now</a></li>
+  </ul></li>
+  <li><a href="#the-division-of-cognitive-labor" id="toc-the-division-of-cognitive-labor" class="nav-link" data-scroll-target="#the-division-of-cognitive-labor"><span class="header-section-number">34.3</span> The Division of Cognitive Labor</a>
+  <ul class="collapse">
+  <li><a href="#human-strengths" id="toc-human-strengths" class="nav-link" data-scroll-target="#human-strengths"><span class="header-section-number">34.3.1</span> Human Strengths</a></li>
+  <li><a href="#ai-strengths" id="toc-ai-strengths" class="nav-link" data-scroll-target="#ai-strengths"><span class="header-section-number">34.3.2</span> AI Strengths</a></li>
+  </ul></li>
+  <li><a href="#human-ai-as-a-system" id="toc-human-ai-as-a-system" class="nav-link" data-scroll-target="#human-ai-as-a-system"><span class="header-section-number">34.4</span> Human + AI as a System</a>
+  <ul class="collapse">
+  <li><a href="#roles" id="toc-roles" class="nav-link" data-scroll-target="#roles"><span class="header-section-number">34.4.1</span> Roles</a></li>
+  </ul></li>
+  <li><a href="#interaction-loop" id="toc-interaction-loop" class="nav-link" data-scroll-target="#interaction-loop"><span class="header-section-number">34.5</span> Interaction Loop</a>
+  <ul class="collapse">
+  <li><a href="#steps" id="toc-steps" class="nav-link" data-scroll-target="#steps"><span class="header-section-number">34.5.1</span> Steps</a></li>
+  </ul></li>
+  <li><a href="#augmented-thinking" id="toc-augmented-thinking" class="nav-link" data-scroll-target="#augmented-thinking"><span class="header-section-number">34.6</span> Augmented Thinking</a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">34.6.1</span> Example</a></li>
+  </ul></li>
+  <li><a href="#risks-of-misalignment" id="toc-risks-of-misalignment" class="nav-link" data-scroll-target="#risks-of-misalignment"><span class="header-section-number">34.7</span> Risks of Misalignment</a>
+  <ul class="collapse">
+  <li><a href="#weak-intent" id="toc-weak-intent" class="nav-link" data-scroll-target="#weak-intent"><span class="header-section-number">34.7.1</span> 1. Weak Intent</a></li>
+  <li><a href="#over-reliance" id="toc-over-reliance" class="nav-link" data-scroll-target="#over-reliance"><span class="header-section-number">34.7.2</span> 2. Over-Reliance</a></li>
+  <li><a href="#poor-evaluation" id="toc-poor-evaluation" class="nav-link" data-scroll-target="#poor-evaluation"><span class="header-section-number">34.7.3</span> 3. Poor Evaluation</a></li>
+  <li><a href="#misunderstanding-roles" id="toc-misunderstanding-roles" class="nav-link" data-scroll-target="#misunderstanding-roles"><span class="header-section-number">34.7.4</span> 4. Misunderstanding Roles</a></li>
+  </ul></li>
+  <li><a href="#maintaining-control" id="toc-maintaining-control" class="nav-link" data-scroll-target="#maintaining-control"><span class="header-section-number">34.8</span> Maintaining Control</a>
+  <ul class="collapse">
+  <li><a href="#keep-intent-human-owned" id="toc-keep-intent-human-owned" class="nav-link" data-scroll-target="#keep-intent-human-owned"><span class="header-section-number">34.8.1</span> 1. Keep Intent Human-Owned</a></li>
+  <li><a href="#use-ai-for-execution-and-expansion" id="toc-use-ai-for-execution-and-expansion" class="nav-link" data-scroll-target="#use-ai-for-execution-and-expansion"><span class="header-section-number">34.8.2</span> 2. Use AI for Execution and Expansion</a></li>
+  <li><a href="#enforce-evaluation" id="toc-enforce-evaluation" class="nav-link" data-scroll-target="#enforce-evaluation"><span class="header-section-number">34.8.3</span> 3. Enforce Evaluation</a></li>
+  <li><a href="#iterate" id="toc-iterate" class="nav-link" data-scroll-target="#iterate"><span class="header-section-number">34.8.4</span> 4. Iterate</a></li>
+  </ul></li>
+  <li><a href="#cognitive-scaling" id="toc-cognitive-scaling" class="nav-link" data-scroll-target="#cognitive-scaling"><span class="header-section-number">34.9</span> Cognitive Scaling</a>
+  <ul class="collapse">
+  <li><a href="#before" id="toc-before" class="nav-link" data-scroll-target="#before"><span class="header-section-number">34.9.1</span> Before</a></li>
+  <li><a href="#now-1" id="toc-now-1" class="nav-link" data-scroll-target="#now-1"><span class="header-section-number">34.9.2</span> Now</a></li>
+  <li><a href="#result" id="toc-result" class="nav-link" data-scroll-target="#result"><span class="header-section-number">34.9.3</span> Result</a></li>
+  </ul></li>
+  <li><a href="#from-tool-use-to-cognitive-partnership" id="toc-from-tool-use-to-cognitive-partnership" class="nav-link" data-scroll-target="#from-tool-use-to-cognitive-partnership"><span class="header-section-number">34.10</span> From Tool Use to Cognitive Partnership</a>
+  <ul class="collapse">
+  <li><a href="#tool-model" id="toc-tool-model" class="nav-link" data-scroll-target="#tool-model"><span class="header-section-number">34.10.1</span> Tool Model</a></li>
+  <li><a href="#system-model" id="toc-system-model" class="nav-link" data-scroll-target="#system-model"><span class="header-section-number">34.10.2</span> System Model</a></li>
+  <li><a href="#cognitive-model" id="toc-cognitive-model" class="nav-link" data-scroll-target="#cognitive-model"><span class="header-section-number">34.10.3</span> Cognitive Model</a></li>
+  </ul></li>
+  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">34.11</span> Common Mistakes</a>
+  <ul class="collapse">
+  <li><a href="#treating-ai-as-oracle" id="toc-treating-ai-as-oracle" class="nav-link" data-scroll-target="#treating-ai-as-oracle"><span class="header-section-number">34.11.1</span> 1. Treating AI as Oracle</a></li>
+  <li><a href="#treating-ai-as-simple-tool" id="toc-treating-ai-as-simple-tool" class="nav-link" data-scroll-target="#treating-ai-as-simple-tool"><span class="header-section-number">34.11.2</span> 2. Treating AI as Simple Tool</a></li>
+  <li><a href="#ignoring-structure" id="toc-ignoring-structure" class="nav-link" data-scroll-target="#ignoring-structure"><span class="header-section-number">34.11.3</span> 3. Ignoring Structure</a></li>
+  <li><a href="#lack-of-iteration" id="toc-lack-of-iteration" class="nav-link" data-scroll-target="#lack-of-iteration"><span class="header-section-number">34.11.4</span> 4. Lack of Iteration</a></li>
+  </ul></li>
+  <li><a href="#designing-human-ai-systems" id="toc-designing-human-ai-systems" class="nav-link" data-scroll-target="#designing-human-ai-systems"><span class="header-section-number">34.12</span> Designing Human-AI Systems</a>
+  <ul class="collapse">
+  <li><a href="#clear-roles" id="toc-clear-roles" class="nav-link" data-scroll-target="#clear-roles"><span class="header-section-number">34.12.1</span> Clear Roles</a></li>
+  <li><a href="#structured-interaction" id="toc-structured-interaction" class="nav-link" data-scroll-target="#structured-interaction"><span class="header-section-number">34.12.2</span> Structured Interaction</a></li>
+  <li><a href="#feedback-loops" id="toc-feedback-loops" class="nav-link" data-scroll-target="#feedback-loops"><span class="header-section-number">34.12.3</span> Feedback Loops</a></li>
+  <li><a href="#shared-context" id="toc-shared-context" class="nav-link" data-scroll-target="#shared-context"><span class="header-section-number">34.12.4</span> Shared Context</a></li>
+  </ul></li>
+  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">34.13</span> Final Insight</a></li>
+  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">34.14</span> Closing Statement</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="beyond-systems-cognition-as-a-joint-process" class="level2" data-number="34.1">
+<h2 data-number="34.1" class="anchored" data-anchor-id="beyond-systems-cognition-as-a-joint-process"><span class="header-section-number">34.1</span> Beyond Systems: Cognition as a Joint Process</h2>
+<p>We have built:</p>
+<ul>
+<li><p>Specs</p></li>
+<li><p>Systems</p></li>
+<li><p>Agents</p></li>
+<li><p>Tools</p></li>
+</ul>
+<p>Now we move to the deepest layer:</p>
+<blockquote class="blockquote">
+<p><strong>Cognition itself becomes a collaborative process between human and AI</strong></p>
+</blockquote>
+<hr>
+<p>This is not about tools assisting humans.</p>
+<p>It is about:</p>
+<blockquote class="blockquote">
+<p><strong>A combined cognitive system</strong></p>
+</blockquote>
+<hr>
+</section>
+<section id="what-is-cognition" class="level2" data-number="34.2">
+<h2 data-number="34.2" class="anchored" data-anchor-id="what-is-cognition"><span class="header-section-number">34.2</span> What is Cognition?</h2>
+<p>Cognition is the process of:</p>
+<ul>
+<li><p>Perceiving</p></li>
+<li><p>Understanding</p></li>
+<li><p>Reasoning</p></li>
+<li><p>Deciding</p></li>
+</ul>
+<hr>
+<section id="traditionally" class="level3" data-number="34.2.1">
+<h3 data-number="34.2.1" class="anchored" data-anchor-id="traditionally"><span class="header-section-number">34.2.1</span> Traditionally</h3>
+<ul>
+<li>All cognition happens in the human mind</li>
+</ul>
+<hr>
+</section>
+<section id="now" class="level3" data-number="34.2.2">
+<h3 data-number="34.2.2" class="anchored" data-anchor-id="now"><span class="header-section-number">34.2.2</span> Now</h3>
+<ul>
+<li><p>Cognition is distributed across:</p>
+<ul>
+<li><p>Human</p></li>
+<li><p>AI systems</p></li>
+</ul></li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>Thinking is no longer a single-agent process.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="the-division-of-cognitive-labor" class="level2" data-number="34.3">
+<h2 data-number="34.3" class="anchored" data-anchor-id="the-division-of-cognitive-labor"><span class="header-section-number">34.3</span> The Division of Cognitive Labor</h2>
+<p>Human and AI have different strengths.</p>
+<hr>
+<section id="human-strengths" class="level3" data-number="34.3.1">
+<h3 data-number="34.3.1" class="anchored" data-anchor-id="human-strengths"><span class="header-section-number">34.3.1</span> Human Strengths</h3>
+<ul>
+<li><p>Defining goals</p></li>
+<li><p>Understanding context</p></li>
+<li><p>Making judgments</p></li>
+<li><p>Setting priorities</p></li>
+</ul>
+<hr>
+</section>
+<section id="ai-strengths" class="level3" data-number="34.3.2">
+<h3 data-number="34.3.2" class="anchored" data-anchor-id="ai-strengths"><span class="header-section-number">34.3.2</span> AI Strengths</h3>
+<ul>
+<li><p>Processing large information</p></li>
+<li><p>Generating variations</p></li>
+<li><p>Following structured instructions</p></li>
+<li><p>Executing repetitive tasks</p></li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>Effective systems divide cognition, not duplicate it.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="human-ai-as-a-system" class="level2" data-number="34.4">
+<h2 data-number="34.4" class="anchored" data-anchor-id="human-ai-as-a-system"><span class="header-section-number">34.4</span> Human + AI as a System</h2>
+<p>We can model cognition as a system:</p>
+<pre><code>Human Intent → AI Processing → Human Evaluation → System Refinement</code></pre>
+<hr>
+<section id="roles" class="level3" data-number="34.4.1">
+<h3 data-number="34.4.1" class="anchored" data-anchor-id="roles"><span class="header-section-number">34.4.1</span> Roles</h3>
+<hr>
+<section id="human" class="level4" data-number="34.4.1.1">
+<h4 data-number="34.4.1.1" class="anchored" data-anchor-id="human"><span class="header-section-number">34.4.1.1</span> Human</h4>
+<ul>
+<li><p>Defines intent</p></li>
+<li><p>Evaluates results</p></li>
+<li><p>Adjusts direction</p></li>
+</ul>
+<hr>
+</section>
+<section id="ai" class="level4" data-number="34.4.1.2">
+<h4 data-number="34.4.1.2" class="anchored" data-anchor-id="ai"><span class="header-section-number">34.4.1.2</span> AI</h4>
+<ul>
+<li><p>Expands possibilities</p></li>
+<li><p>Structures outputs</p></li>
+<li><p>Executes tasks</p></li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>The system is cyclical, not linear.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+</section>
+<section id="interaction-loop" class="level2" data-number="34.5">
+<h2 data-number="34.5" class="anchored" data-anchor-id="interaction-loop"><span class="header-section-number">34.5</span> Interaction Loop</h2>
+<p>The core loop of human-AI cognition:</p>
+<pre><code>Define → Generate → Evaluate → Refine</code></pre>
+<hr>
+<section id="steps" class="level3" data-number="34.5.1">
+<h3 data-number="34.5.1" class="anchored" data-anchor-id="steps"><span class="header-section-number">34.5.1</span> Steps</h3>
+<hr>
+<section id="define" class="level4" data-number="34.5.1.1">
+<h4 data-number="34.5.1.1" class="anchored" data-anchor-id="define"><span class="header-section-number">34.5.1.1</span> 1. Define</h4>
+<ul>
+<li>Human sets goal</li>
+</ul>
+<hr>
+</section>
+<section id="generate" class="level4" data-number="34.5.1.2">
+<h4 data-number="34.5.1.2" class="anchored" data-anchor-id="generate"><span class="header-section-number">34.5.1.2</span> 2. Generate</h4>
+<ul>
+<li>AI produces outputs</li>
+</ul>
+<hr>
+</section>
+<section id="evaluate" class="level4" data-number="34.5.1.3">
+<h4 data-number="34.5.1.3" class="anchored" data-anchor-id="evaluate"><span class="header-section-number">34.5.1.3</span> 3. Evaluate</h4>
+<ul>
+<li>Human assesses quality</li>
+</ul>
+<hr>
+</section>
+<section id="refine" class="level4" data-number="34.5.1.4">
+<h4 data-number="34.5.1.4" class="anchored" data-anchor-id="refine"><span class="header-section-number">34.5.1.4</span> 4. Refine</h4>
+<ul>
+<li>Adjust spec or instruction</li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>This loop drives progress.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+</section>
+<section id="augmented-thinking" class="level2" data-number="34.6">
+<h2 data-number="34.6" class="anchored" data-anchor-id="augmented-thinking"><span class="header-section-number">34.6</span> Augmented Thinking</h2>
+<p>AI augments human cognition by:</p>
+<ul>
+<li><p>Expanding idea space</p></li>
+<li><p>Reducing execution cost</p></li>
+<li><p>Providing structured outputs</p></li>
+</ul>
+<hr>
+<section id="example" class="level3" data-number="34.6.1">
+<h3 data-number="34.6.1" class="anchored" data-anchor-id="example"><span class="header-section-number">34.6.1</span> Example</h3>
+<p>Instead of:</p>
+<ul>
+<li>Thinking through every detail</li>
+</ul>
+<p>You:</p>
+<ul>
+<li><p>Define structure</p></li>
+<li><p>Let AI fill in details</p></li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>AI extends thinking capacity.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="risks-of-misalignment" class="level2" data-number="34.7">
+<h2 data-number="34.7" class="anchored" data-anchor-id="risks-of-misalignment"><span class="header-section-number">34.7</span> Risks of Misalignment</h2>
+<p>Human-AI systems can fail when:</p>
+<hr>
+<section id="weak-intent" class="level3" data-number="34.7.1">
+<h3 data-number="34.7.1" class="anchored" data-anchor-id="weak-intent"><span class="header-section-number">34.7.1</span> 1. Weak Intent</h3>
+<ul>
+<li>Human does not define clearly</li>
+</ul>
+<hr>
+</section>
+<section id="over-reliance" class="level3" data-number="34.7.2">
+<h3 data-number="34.7.2" class="anchored" data-anchor-id="over-reliance"><span class="header-section-number">34.7.2</span> 2. Over-Reliance</h3>
+<ul>
+<li>Blind trust in AI outputs</li>
+</ul>
+<hr>
+</section>
+<section id="poor-evaluation" class="level3" data-number="34.7.3">
+<h3 data-number="34.7.3" class="anchored" data-anchor-id="poor-evaluation"><span class="header-section-number">34.7.3</span> 3. Poor Evaluation</h3>
+<ul>
+<li>No feedback loop</li>
+</ul>
+<hr>
+</section>
+<section id="misunderstanding-roles" class="level3" data-number="34.7.4">
+<h3 data-number="34.7.4" class="anchored" data-anchor-id="misunderstanding-roles"><span class="header-section-number">34.7.4</span> 4. Misunderstanding Roles</h3>
+<ul>
+<li>Expecting AI to define meaning</li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>Misalignment leads to poor outcomes.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="maintaining-control" class="level2" data-number="34.8">
+<h2 data-number="34.8" class="anchored" data-anchor-id="maintaining-control"><span class="header-section-number">34.8</span> Maintaining Control</h2>
+<p>To maintain control:</p>
+<hr>
+<section id="keep-intent-human-owned" class="level3" data-number="34.8.1">
+<h3 data-number="34.8.1" class="anchored" data-anchor-id="keep-intent-human-owned"><span class="header-section-number">34.8.1</span> 1. Keep Intent Human-Owned</h3>
+<ul>
+<li>Humans define goals</li>
+</ul>
+<hr>
+</section>
+<section id="use-ai-for-execution-and-expansion" class="level3" data-number="34.8.2">
+<h3 data-number="34.8.2" class="anchored" data-anchor-id="use-ai-for-execution-and-expansion"><span class="header-section-number">34.8.2</span> 2. Use AI for Execution and Expansion</h3>
+<ul>
+<li>Not for final judgment</li>
+</ul>
+<hr>
+</section>
+<section id="enforce-evaluation" class="level3" data-number="34.8.3">
+<h3 data-number="34.8.3" class="anchored" data-anchor-id="enforce-evaluation"><span class="header-section-number">34.8.3</span> 3. Enforce Evaluation</h3>
+<ul>
+<li>Continuous checking</li>
+</ul>
+<hr>
+</section>
+<section id="iterate" class="level3" data-number="34.8.4">
+<h3 data-number="34.8.4" class="anchored" data-anchor-id="iterate"><span class="header-section-number">34.8.4</span> 4. Iterate</h3>
+<ul>
+<li>Refine system</li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>Control comes from clarity and feedback.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="cognitive-scaling" class="level2" data-number="34.9">
+<h2 data-number="34.9" class="anchored" data-anchor-id="cognitive-scaling"><span class="header-section-number">34.9</span> Cognitive Scaling</h2>
+<p>Human cognition is limited.</p>
+<p>AI enables scaling:</p>
+<hr>
+<section id="before" class="level3" data-number="34.9.1">
+<h3 data-number="34.9.1" class="anchored" data-anchor-id="before"><span class="header-section-number">34.9.1</span> Before</h3>
+<ul>
+<li>One person → limited output</li>
+</ul>
+<hr>
+</section>
+<section id="now-1" class="level3" data-number="34.9.2">
+<h3 data-number="34.9.2" class="anchored" data-anchor-id="now-1"><span class="header-section-number">34.9.2</span> Now</h3>
+<ul>
+<li>One person + AI → amplified output</li>
+</ul>
+<hr>
+</section>
+<section id="result" class="level3" data-number="34.9.3">
+<h3 data-number="34.9.3" class="anchored" data-anchor-id="result"><span class="header-section-number">34.9.3</span> Result</h3>
+<ul>
+<li><p>More ideas</p></li>
+<li><p>Faster iteration</p></li>
+<li><p>Greater complexity</p></li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>AI increases cognitive throughput.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="from-tool-use-to-cognitive-partnership" class="level2" data-number="34.10">
+<h2 data-number="34.10" class="anchored" data-anchor-id="from-tool-use-to-cognitive-partnership"><span class="header-section-number">34.10</span> From Tool Use to Cognitive Partnership</h2>
+<hr>
+<section id="tool-model" class="level3" data-number="34.10.1">
+<h3 data-number="34.10.1" class="anchored" data-anchor-id="tool-model"><span class="header-section-number">34.10.1</span> Tool Model</h3>
+<ul>
+<li>AI is a tool</li>
+</ul>
+<hr>
+</section>
+<section id="system-model" class="level3" data-number="34.10.2">
+<h3 data-number="34.10.2" class="anchored" data-anchor-id="system-model"><span class="header-section-number">34.10.2</span> System Model</h3>
+<ul>
+<li>AI is part of a system</li>
+</ul>
+<hr>
+</section>
+<section id="cognitive-model" class="level3" data-number="34.10.3">
+<h3 data-number="34.10.3" class="anchored" data-anchor-id="cognitive-model"><span class="header-section-number">34.10.3</span> Cognitive Model</h3>
+<ul>
+<li>AI is part of thinking</li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>The relationship evolves.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="common-mistakes" class="level2" data-number="34.11">
+<h2 data-number="34.11" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">34.11</span> Common Mistakes</h2>
+<hr>
+<section id="treating-ai-as-oracle" class="level3" data-number="34.11.1">
+<h3 data-number="34.11.1" class="anchored" data-anchor-id="treating-ai-as-oracle"><span class="header-section-number">34.11.1</span> 1. Treating AI as Oracle</h3>
+<ul>
+<li>Accepting outputs without evaluation</li>
+</ul>
+<hr>
+</section>
+<section id="treating-ai-as-simple-tool" class="level3" data-number="34.11.2">
+<h3 data-number="34.11.2" class="anchored" data-anchor-id="treating-ai-as-simple-tool"><span class="header-section-number">34.11.2</span> 2. Treating AI as Simple Tool</h3>
+<ul>
+<li>Underutilizing capabilities</li>
+</ul>
+<hr>
+</section>
+<section id="ignoring-structure" class="level3" data-number="34.11.3">
+<h3 data-number="34.11.3" class="anchored" data-anchor-id="ignoring-structure"><span class="header-section-number">34.11.3</span> 3. Ignoring Structure</h3>
+<ul>
+<li>No spec or system</li>
+</ul>
+<hr>
+</section>
+<section id="lack-of-iteration" class="level3" data-number="34.11.4">
+<h3 data-number="34.11.4" class="anchored" data-anchor-id="lack-of-iteration"><span class="header-section-number">34.11.4</span> 4. Lack of Iteration</h3>
+<ul>
+<li>No refinement loop</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="designing-human-ai-systems" class="level2" data-number="34.12">
+<h2 data-number="34.12" class="anchored" data-anchor-id="designing-human-ai-systems"><span class="header-section-number">34.12</span> Designing Human-AI Systems</h2>
+<p>Effective systems require:</p>
+<hr>
+<section id="clear-roles" class="level3" data-number="34.12.1">
+<h3 data-number="34.12.1" class="anchored" data-anchor-id="clear-roles"><span class="header-section-number">34.12.1</span> Clear Roles</h3>
+<ul>
+<li>Human vs AI responsibilities</li>
+</ul>
+<hr>
+</section>
+<section id="structured-interaction" class="level3" data-number="34.12.2">
+<h3 data-number="34.12.2" class="anchored" data-anchor-id="structured-interaction"><span class="header-section-number">34.12.2</span> Structured Interaction</h3>
+<ul>
+<li>Defined workflows</li>
+</ul>
+<hr>
+</section>
+<section id="feedback-loops" class="level3" data-number="34.12.3">
+<h3 data-number="34.12.3" class="anchored" data-anchor-id="feedback-loops"><span class="header-section-number">34.12.3</span> Feedback Loops</h3>
+<ul>
+<li>Continuous improvement</li>
+</ul>
+<hr>
+</section>
+<section id="shared-context" class="level3" data-number="34.12.4">
+<h3 data-number="34.12.4" class="anchored" data-anchor-id="shared-context"><span class="header-section-number">34.12.4</span> Shared Context</h3>
+<ul>
+<li>Both operate on same information</li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>Design the interaction, not just the system.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="final-insight" class="level2" data-number="34.13">
+<h2 data-number="34.13" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">34.13</span> Final Insight</h2>
+<p>The most powerful systems are not AI alone.</p>
+<p>They are:</p>
+<blockquote class="blockquote">
+<p><strong>Human + AI systems with well-defined roles and feedback loops</strong></p>
+</blockquote>
+<hr>
+<blockquote class="blockquote">
+<p>Intelligence emerges from interaction.</p>
+</blockquote>
+<hr>
+</section>
+<section id="closing-statement" class="level2" data-number="34.14">
+<h2 data-number="34.14" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">34.14</span> Closing Statement</h2>
+<p>In the LLM era, thinking itself becomes a system.</p>
+<blockquote class="blockquote">
+<p>You are no longer thinking alone.<br>
+You are thinking with systems.</p>
+</blockquote>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chapter-32.html" class="pagination-link" aria-label="Language as an Operating System">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./chapter-34.html" class="pagination-link" aria-label="The Future of Builders">
+        <span class="nav-page-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

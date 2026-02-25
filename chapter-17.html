@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>18&nbsp; Iterative Spec Refinement – AI Programming: From Intent to Execution</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chapter-18.html" rel="next">
+<link href="./chapter-16.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-17.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AI Programming: From Intent to Execution</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The New Bottleneck</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-17.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-31.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#specification-is-not-static" id="toc-specification-is-not-static" class="nav-link active" data-scroll-target="#specification-is-not-static"><span class="header-section-number">18.1</span> Specification Is Not Static</a></li>
+  <li><a href="#the-reality-of-imperfect-definitions" id="toc-the-reality-of-imperfect-definitions" class="nav-link" data-scroll-target="#the-reality-of-imperfect-definitions"><span class="header-section-number">18.2</span> The Reality of Imperfect Definitions</a></li>
+  <li><a href="#the-refinement-loop" id="toc-the-refinement-loop" class="nav-link" data-scroll-target="#the-refinement-loop"><span class="header-section-number">18.3</span> The Refinement Loop</a>
+  <ul class="collapse">
+  <li><a href="#step-1-spec" id="toc-step-1-spec" class="nav-link" data-scroll-target="#step-1-spec"><span class="header-section-number">18.3.1</span> Step 1: Spec</a></li>
+  <li><a href="#step-2-execution" id="toc-step-2-execution" class="nav-link" data-scroll-target="#step-2-execution"><span class="header-section-number">18.3.2</span> Step 2: Execution</a></li>
+  <li><a href="#step-3-deviation" id="toc-step-3-deviation" class="nav-link" data-scroll-target="#step-3-deviation"><span class="header-section-number">18.3.3</span> Step 3: Deviation</a></li>
+  <li><a href="#step-4-refinement" id="toc-step-4-refinement" class="nav-link" data-scroll-target="#step-4-refinement"><span class="header-section-number">18.3.4</span> Step 4: Refinement</a></li>
+  </ul></li>
+  <li><a href="#what-is-deviation" id="toc-what-is-deviation" class="nav-link" data-scroll-target="#what-is-deviation"><span class="header-section-number">18.4</span> What is Deviation?</a>
+  <ul class="collapse">
+  <li><a href="#types-of-deviation" id="toc-types-of-deviation" class="nav-link" data-scroll-target="#types-of-deviation"><span class="header-section-number">18.4.1</span> Types of Deviation</a></li>
+  </ul></li>
+  <li><a href="#where-to-apply-fixes" id="toc-where-to-apply-fixes" class="nav-link" data-scroll-target="#where-to-apply-fixes"><span class="header-section-number">18.5</span> Where to Apply Fixes</a>
+  <ul class="collapse">
+  <li><a href="#incorrect-approach" id="toc-incorrect-approach" class="nav-link" data-scroll-target="#incorrect-approach"><span class="header-section-number">18.5.1</span> Incorrect Approach</a></li>
+  <li><a href="#correct-approach" id="toc-correct-approach" class="nav-link" data-scroll-target="#correct-approach"><span class="header-section-number">18.5.2</span> Correct Approach</a></li>
+  </ul></li>
+  <li><a href="#refinement-strategies" id="toc-refinement-strategies" class="nav-link" data-scroll-target="#refinement-strategies"><span class="header-section-number">18.6</span> Refinement Strategies</a>
+  <ul class="collapse">
+  <li><a href="#add-constraints" id="toc-add-constraints" class="nav-link" data-scroll-target="#add-constraints"><span class="header-section-number">18.6.1</span> 1. Add Constraints</a></li>
+  <li><a href="#clarify-output-structure" id="toc-clarify-output-structure" class="nav-link" data-scroll-target="#clarify-output-structure"><span class="header-section-number">18.6.2</span> 2. Clarify Output Structure</a></li>
+  <li><a href="#define-edge-cases" id="toc-define-edge-cases" class="nav-link" data-scroll-target="#define-edge-cases"><span class="header-section-number">18.6.3</span> 3. Define Edge Cases</a></li>
+  <li><a href="#strengthen-success-criteria" id="toc-strengthen-success-criteria" class="nav-link" data-scroll-target="#strengthen-success-criteria"><span class="header-section-number">18.6.4</span> 4. Strengthen Success Criteria</a></li>
+  </ul></li>
+  <li><a href="#convergence-of-the-system" id="toc-convergence-of-the-system" class="nav-link" data-scroll-target="#convergence-of-the-system"><span class="header-section-number">18.7</span> Convergence of the System</a>
+  <ul class="collapse">
+  <li><a href="#convergence-condition" id="toc-convergence-condition" class="nav-link" data-scroll-target="#convergence-condition"><span class="header-section-number">18.7.1</span> Convergence Condition</a></li>
+  </ul></li>
+  <li><a href="#from-debugging-code-to-debugging-spec" id="toc-from-debugging-code-to-debugging-spec" class="nav-link" data-scroll-target="#from-debugging-code-to-debugging-spec"><span class="header-section-number">18.8</span> From Debugging Code to Debugging Spec</a>
+  <ul class="collapse">
+  <li><a href="#old-model" id="toc-old-model" class="nav-link" data-scroll-target="#old-model"><span class="header-section-number">18.8.1</span> Old Model</a></li>
+  <li><a href="#new-model" id="toc-new-model" class="nav-link" data-scroll-target="#new-model"><span class="header-section-number">18.8.2</span> New Model</a></li>
+  </ul></li>
+  <li><a href="#iteration-as-learning" id="toc-iteration-as-learning" class="nav-link" data-scroll-target="#iteration-as-learning"><span class="header-section-number">18.9</span> Iteration as Learning</a></li>
+  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">18.10</span> Common Mistakes</a>
+  <ul class="collapse">
+  <li><a href="#treating-first-output-as-final" id="toc-treating-first-output-as-final" class="nav-link" data-scroll-target="#treating-first-output-as-final"><span class="header-section-number">18.10.1</span> 1. Treating First Output as Final</a></li>
+  <li><a href="#fixing-symptoms-instead-of-causes" id="toc-fixing-symptoms-instead-of-causes" class="nav-link" data-scroll-target="#fixing-symptoms-instead-of-causes"><span class="header-section-number">18.10.2</span> 2. Fixing Symptoms Instead of Causes</a></li>
+  <li><a href="#lack-of-evaluation" id="toc-lack-of-evaluation" class="nav-link" data-scroll-target="#lack-of-evaluation"><span class="header-section-number">18.10.3</span> 3. Lack of Evaluation</a></li>
+  <li><a href="#overreacting-to-noise" id="toc-overreacting-to-noise" class="nav-link" data-scroll-target="#overreacting-to-noise"><span class="header-section-number">18.10.4</span> 4. Overreacting to Noise</a></li>
+  </ul></li>
+  <li><a href="#refinement-as-a-core-skill" id="toc-refinement-as-a-core-skill" class="nav-link" data-scroll-target="#refinement-as-a-core-skill"><span class="header-section-number">18.11</span> Refinement as a Core Skill</a></li>
+  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">18.12</span> Final Insight</a></li>
+  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">18.13</span> Closing Statement</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="specification-is-not-static" class="level2" data-number="18.1">
+<h2 data-number="18.1" class="anchored" data-anchor-id="specification-is-not-static"><span class="header-section-number">18.1</span> Specification Is Not Static</h2>
+<p>A common misconception is that a specification can be written once and remain correct.</p>
+<p>In reality:</p>
+<ul>
+<li><p>Initial specs are incomplete</p></li>
+<li><p>Assumptions are often hidden</p></li>
+<li><p>Edge cases are not fully known</p></li>
+</ul>
+<p>Therefore:</p>
+<blockquote class="blockquote">
+<p><strong>A spec is not a final artifact. It is a starting point.</strong></p>
+</blockquote>
+<hr>
+</section>
+<section id="the-reality-of-imperfect-definitions" class="level2" data-number="18.2">
+<h2 data-number="18.2" class="anchored" data-anchor-id="the-reality-of-imperfect-definitions"><span class="header-section-number">18.2</span> The Reality of Imperfect Definitions</h2>
+<p>Even with careful design, the first version of a spec will likely:</p>
+<ul>
+<li><p>Miss constraints</p></li>
+<li><p>Leave ambiguity</p></li>
+<li><p>Fail under certain inputs</p></li>
+</ul>
+<p>This is not a failure of the system.</p>
+<p>It is a natural consequence of:</p>
+<ul>
+<li><p>Complex problems</p></li>
+<li><p>Limited initial understanding</p></li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>You do not discover the correct spec before execution.<br>
+You discover it through execution.</p>
+</blockquote>
+<hr>
+</section>
+<section id="the-refinement-loop" class="level2" data-number="18.3">
+<h2 data-number="18.3" class="anchored" data-anchor-id="the-refinement-loop"><span class="header-section-number">18.3</span> The Refinement Loop</h2>
+<p>Spec Engineering is inherently iterative.</p>
+<p>The core loop is:</p>
+<pre><code>Spec → Execution → Deviation → Refinement → Spec</code></pre>
+<hr>
+<section id="step-1-spec" class="level3" data-number="18.3.1">
+<h3 data-number="18.3.1" class="anchored" data-anchor-id="step-1-spec"><span class="header-section-number">18.3.1</span> Step 1: Spec</h3>
+<ul>
+<li><p>Define initial structure</p></li>
+<li><p>Set inputs, outputs, constraints</p></li>
+</ul>
+<hr>
+</section>
+<section id="step-2-execution" class="level3" data-number="18.3.2">
+<h3 data-number="18.3.2" class="anchored" data-anchor-id="step-2-execution"><span class="header-section-number">18.3.2</span> Step 2: Execution</h3>
+<ul>
+<li><p>Run the system</p></li>
+<li><p>Produce outputs</p></li>
+</ul>
+<hr>
+</section>
+<section id="step-3-deviation" class="level3" data-number="18.3.3">
+<h3 data-number="18.3.3" class="anchored" data-anchor-id="step-3-deviation"><span class="header-section-number">18.3.3</span> Step 3: Deviation</h3>
+<ul>
+<li><p>Compare output with expectations</p></li>
+<li><p>Identify mismatches</p></li>
+</ul>
+<hr>
+</section>
+<section id="step-4-refinement" class="level3" data-number="18.3.4">
+<h3 data-number="18.3.4" class="anchored" data-anchor-id="step-4-refinement"><span class="header-section-number">18.3.4</span> Step 4: Refinement</h3>
+<ul>
+<li><p>Adjust spec</p></li>
+<li><p>Add constraints</p></li>
+<li><p>Clarify definitions</p></li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>Each iteration reduces ambiguity.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="what-is-deviation" class="level2" data-number="18.4">
+<h2 data-number="18.4" class="anchored" data-anchor-id="what-is-deviation"><span class="header-section-number">18.4</span> What is Deviation?</h2>
+<p>Deviation is the gap between:</p>
+<pre><code>Expected Behavior ≠ Actual Output</code></pre>
+<hr>
+<section id="types-of-deviation" class="level3" data-number="18.4.1">
+<h3 data-number="18.4.1" class="anchored" data-anchor-id="types-of-deviation"><span class="header-section-number">18.4.1</span> Types of Deviation</h3>
+<hr>
+<section id="missing-information" class="level4" data-number="18.4.1.1">
+<h4 data-number="18.4.1.1" class="anchored" data-anchor-id="missing-information"><span class="header-section-number">18.4.1.1</span> 1. Missing Information</h4>
+<ul>
+<li>Output lacks required content</li>
+</ul>
+<hr>
+</section>
+<section id="incorrect-interpretation" class="level4" data-number="18.4.1.2">
+<h4 data-number="18.4.1.2" class="anchored" data-anchor-id="incorrect-interpretation"><span class="header-section-number">18.4.1.2</span> 2. Incorrect Interpretation</h4>
+<ul>
+<li>System misunderstands intent</li>
+</ul>
+<hr>
+</section>
+<section id="overgeneralization" class="level4" data-number="18.4.1.3">
+<h4 data-number="18.4.1.3" class="anchored" data-anchor-id="overgeneralization"><span class="header-section-number">18.4.1.3</span> 3. Overgeneralization</h4>
+<ul>
+<li>Output is too broad</li>
+</ul>
+<hr>
+</section>
+<section id="inconsistency" class="level4" data-number="18.4.1.4">
+<h4 data-number="18.4.1.4" class="anchored" data-anchor-id="inconsistency"><span class="header-section-number">18.4.1.4</span> 4. Inconsistency</h4>
+<ul>
+<li>Different outputs for similar inputs</li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>Deviation is not noise.<br>
+It is a signal.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+</section>
+<section id="where-to-apply-fixes" class="level2" data-number="18.5">
+<h2 data-number="18.5" class="anchored" data-anchor-id="where-to-apply-fixes"><span class="header-section-number">18.5</span> Where to Apply Fixes</h2>
+<p>A critical principle:</p>
+<blockquote class="blockquote">
+<p><strong>Fix problems at the highest possible level</strong></p>
+</blockquote>
+<hr>
+<section id="incorrect-approach" class="level3" data-number="18.5.1">
+<h3 data-number="18.5.1" class="anchored" data-anchor-id="incorrect-approach"><span class="header-section-number">18.5.1</span> Incorrect Approach</h3>
+<ul>
+<li><p>Adjust model parameters</p></li>
+<li><p>Add more prompts</p></li>
+<li><p>Patch outputs</p></li>
+</ul>
+<hr>
+</section>
+<section id="correct-approach" class="level3" data-number="18.5.2">
+<h3 data-number="18.5.2" class="anchored" data-anchor-id="correct-approach"><span class="header-section-number">18.5.2</span> Correct Approach</h3>
+<ul>
+<li><p>Improve spec</p></li>
+<li><p>Clarify constraints</p></li>
+<li><p>Define success criteria</p></li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>Most issues originate in definition, not execution.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="refinement-strategies" class="level2" data-number="18.6">
+<h2 data-number="18.6" class="anchored" data-anchor-id="refinement-strategies"><span class="header-section-number">18.6</span> Refinement Strategies</h2>
+<hr>
+<section id="add-constraints" class="level3" data-number="18.6.1">
+<h3 data-number="18.6.1" class="anchored" data-anchor-id="add-constraints"><span class="header-section-number">18.6.1</span> 1. Add Constraints</h3>
+<p>If outputs are too broad:</p>
+<ul>
+<li><p>Introduce limits</p></li>
+<li><p>Define boundaries</p></li>
+</ul>
+<hr>
+</section>
+<section id="clarify-output-structure" class="level3" data-number="18.6.2">
+<h3 data-number="18.6.2" class="anchored" data-anchor-id="clarify-output-structure"><span class="header-section-number">18.6.2</span> 2. Clarify Output Structure</h3>
+<p>If outputs are inconsistent:</p>
+<ul>
+<li><p>Define format</p></li>
+<li><p>Specify required elements</p></li>
+</ul>
+<hr>
+</section>
+<section id="define-edge-cases" class="level3" data-number="18.6.3">
+<h3 data-number="18.6.3" class="anchored" data-anchor-id="define-edge-cases"><span class="header-section-number">18.6.3</span> 3. Define Edge Cases</h3>
+<p>If system fails under certain inputs:</p>
+<ul>
+<li><p>Add explicit rules</p></li>
+<li><p>Extend spec</p></li>
+</ul>
+<hr>
+</section>
+<section id="strengthen-success-criteria" class="level3" data-number="18.6.4">
+<h3 data-number="18.6.4" class="anchored" data-anchor-id="strengthen-success-criteria"><span class="header-section-number">18.6.4</span> 4. Strengthen Success Criteria</h3>
+<p>If evaluation is unclear:</p>
+<ul>
+<li><p>Make criteria measurable</p></li>
+<li><p>Reduce subjectivity</p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="convergence-of-the-system" class="level2" data-number="18.7">
+<h2 data-number="18.7" class="anchored" data-anchor-id="convergence-of-the-system"><span class="header-section-number">18.7</span> Convergence of the System</h2>
+<p>With each iteration:</p>
+<ul>
+<li><p>Ambiguity decreases</p></li>
+<li><p>Behavior stabilizes</p></li>
+<li><p>Outputs become predictable</p></li>
+</ul>
+<hr>
+<section id="convergence-condition" class="level3" data-number="18.7.1">
+<h3 data-number="18.7.1" class="anchored" data-anchor-id="convergence-condition"><span class="header-section-number">18.7.1</span> Convergence Condition</h3>
+<p>A system is considered stable when:</p>
+<ul>
+<li><p>Outputs consistently meet success criteria</p></li>
+<li><p>Variations are within acceptable bounds</p></li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>Stability emerges through iteration.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="from-debugging-code-to-debugging-spec" class="level2" data-number="18.8">
+<h2 data-number="18.8" class="anchored" data-anchor-id="from-debugging-code-to-debugging-spec"><span class="header-section-number">18.8</span> From Debugging Code to Debugging Spec</h2>
+<p>In traditional programming:</p>
+<ul>
+<li>You debug code</li>
+</ul>
+<p>In this paradigm:</p>
+<ul>
+<li>You debug definitions</li>
+</ul>
+<hr>
+<section id="old-model" class="level3" data-number="18.8.1">
+<h3 data-number="18.8.1" class="anchored" data-anchor-id="old-model"><span class="header-section-number">18.8.1</span> Old Model</h3>
+<ul>
+<li><p>Fix logic errors</p></li>
+<li><p>Trace execution paths</p></li>
+</ul>
+<hr>
+</section>
+<section id="new-model" class="level3" data-number="18.8.2">
+<h3 data-number="18.8.2" class="anchored" data-anchor-id="new-model"><span class="header-section-number">18.8.2</span> New Model</h3>
+<ul>
+<li><p>Fix ambiguity</p></li>
+<li><p>Clarify intent</p></li>
+<li><p>Adjust constraints</p></li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>The object of debugging has changed.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="iteration-as-learning" class="level2" data-number="18.9">
+<h2 data-number="18.9" class="anchored" data-anchor-id="iteration-as-learning"><span class="header-section-number">18.9</span> Iteration as Learning</h2>
+<p>Each refinement cycle improves:</p>
+<ul>
+<li><p>The spec</p></li>
+<li><p>Your understanding of the problem</p></li>
+<li><p>The system’s behavior</p></li>
+</ul>
+<hr>
+<p>This creates a feedback loop:</p>
+<ul>
+<li>Better understanding → better spec → better output</li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>Iteration is not repetition.<br>
+It is progressive clarification.</p>
+</blockquote>
+<hr>
+</section>
+<section id="common-mistakes" class="level2" data-number="18.10">
+<h2 data-number="18.10" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">18.10</span> Common Mistakes</h2>
+<hr>
+<section id="treating-first-output-as-final" class="level3" data-number="18.10.1">
+<h3 data-number="18.10.1" class="anchored" data-anchor-id="treating-first-output-as-final"><span class="header-section-number">18.10.1</span> 1. Treating First Output as Final</h3>
+<ul>
+<li><p>Accepting early results</p></li>
+<li><p>Skipping refinement</p></li>
+</ul>
+<hr>
+</section>
+<section id="fixing-symptoms-instead-of-causes" class="level3" data-number="18.10.2">
+<h3 data-number="18.10.2" class="anchored" data-anchor-id="fixing-symptoms-instead-of-causes"><span class="header-section-number">18.10.2</span> 2. Fixing Symptoms Instead of Causes</h3>
+<ul>
+<li>Adjusting outputs instead of spec</li>
+</ul>
+<hr>
+</section>
+<section id="lack-of-evaluation" class="level3" data-number="18.10.3">
+<h3 data-number="18.10.3" class="anchored" data-anchor-id="lack-of-evaluation"><span class="header-section-number">18.10.3</span> 3. Lack of Evaluation</h3>
+<ul>
+<li>No clear signal for improvement</li>
+</ul>
+<hr>
+</section>
+<section id="overreacting-to-noise" class="level3" data-number="18.10.4">
+<h3 data-number="18.10.4" class="anchored" data-anchor-id="overreacting-to-noise"><span class="header-section-number">18.10.4</span> 4. Overreacting to Noise</h3>
+<ul>
+<li>Changing spec based on single outputs</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="refinement-as-a-core-skill" class="level2" data-number="18.11">
+<h2 data-number="18.11" class="anchored" data-anchor-id="refinement-as-a-core-skill"><span class="header-section-number">18.11</span> Refinement as a Core Skill</h2>
+<p>Iterative refinement is not optional.</p>
+<p>It is central to Spec Engineering.</p>
+<p>It requires:</p>
+<ul>
+<li><p>Observation</p></li>
+<li><p>Diagnosis</p></li>
+<li><p>Controlled adjustment</p></li>
+</ul>
+<hr>
+</section>
+<section id="final-insight" class="level2" data-number="18.12">
+<h2 data-number="18.12" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">18.12</span> Final Insight</h2>
+<p>A good spec is not written once.</p>
+<p>It is discovered through iteration.</p>
+<hr>
+<blockquote class="blockquote">
+<p>The path to correctness is not direct.<br>
+It is iterative.</p>
+</blockquote>
+<hr>
+</section>
+<section id="closing-statement" class="level2" data-number="18.13">
+<h2 data-number="18.13" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">18.13</span> Closing Statement</h2>
+<p>In the LLM era, programming is no longer about writing perfect code.</p>
+<p>It is about refining imperfect definitions until they become reliable.</p>
+<blockquote class="blockquote">
+<p>You do not get the spec right the first time.<br>
+You make it right over time.</p>
+</blockquote>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chapter-16.html" class="pagination-link" aria-label="Spec Agent">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./chapter-18.html" class="pagination-link" aria-label="From Spec to Instruction">
+        <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

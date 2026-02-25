@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>32&nbsp; Programming as System Design – AI Programming: From Intent to Execution</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chapter-32.html" rel="next">
+<link href="./chapter-30.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-31.html"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AI Programming: From Intent to Execution</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The New Bottleneck</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-31.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-final-reframe" id="toc-the-final-reframe" class="nav-link active" data-scroll-target="#the-final-reframe"><span class="header-section-number">32.1</span> The Final Reframe</a></li>
+  <li><a href="#what-is-system-design" id="toc-what-is-system-design" class="nav-link" data-scroll-target="#what-is-system-design"><span class="header-section-number">32.2</span> What is System Design?</a></li>
+  <li><a href="#programming-before-vs-now" id="toc-programming-before-vs-now" class="nav-link" data-scroll-target="#programming-before-vs-now"><span class="header-section-number">32.3</span> Programming Before vs Now</a>
+  <ul class="collapse">
+  <li><a href="#traditional-programming" id="toc-traditional-programming" class="nav-link" data-scroll-target="#traditional-programming"><span class="header-section-number">32.3.1</span> Traditional Programming</a></li>
+  <li><a href="#llm-era-programming" id="toc-llm-era-programming" class="nav-link" data-scroll-target="#llm-era-programming"><span class="header-section-number">32.3.2</span> LLM-Era Programming</a></li>
+  <li><a href="#shift" id="toc-shift" class="nav-link" data-scroll-target="#shift"><span class="header-section-number">32.3.3</span> Shift</a></li>
+  </ul></li>
+  <li><a href="#the-new-role-of-the-programmer" id="toc-the-new-role-of-the-programmer" class="nav-link" data-scroll-target="#the-new-role-of-the-programmer"><span class="header-section-number">32.4</span> The New Role of the Programmer</a>
+  <ul class="collapse">
+  <li><a href="#responsibilities" id="toc-responsibilities" class="nav-link" data-scroll-target="#responsibilities"><span class="header-section-number">32.4.1</span> Responsibilities</a></li>
+  </ul></li>
+  <li><a href="#system-as-the-unit-of-work" id="toc-system-as-the-unit-of-work" class="nav-link" data-scroll-target="#system-as-the-unit-of-work"><span class="header-section-number">32.5</span> System as the Unit of Work</a>
+  <ul class="collapse">
+  <li><a href="#before" id="toc-before" class="nav-link" data-scroll-target="#before"><span class="header-section-number">32.5.1</span> Before</a></li>
+  <li><a href="#now" id="toc-now" class="nav-link" data-scroll-target="#now"><span class="header-section-number">32.5.2</span> Now</a></li>
+  </ul></li>
+  <li><a href="#core-elements-of-system-design" id="toc-core-elements-of-system-design" class="nav-link" data-scroll-target="#core-elements-of-system-design"><span class="header-section-number">32.6</span> Core Elements of System Design</a>
+  <ul class="collapse">
+  <li><a href="#intent" id="toc-intent" class="nav-link" data-scroll-target="#intent"><span class="header-section-number">32.6.1</span> 1. Intent</a></li>
+  <li><a href="#spec" id="toc-spec" class="nav-link" data-scroll-target="#spec"><span class="header-section-number">32.6.2</span> 2. Spec</a></li>
+  <li><a href="#structure" id="toc-structure" class="nav-link" data-scroll-target="#structure"><span class="header-section-number">32.6.3</span> 3. Structure</a></li>
+  <li><a href="#instruction" id="toc-instruction" class="nav-link" data-scroll-target="#instruction"><span class="header-section-number">32.6.4</span> 4. Instruction</a></li>
+  <li><a href="#evaluation" id="toc-evaluation" class="nav-link" data-scroll-target="#evaluation"><span class="header-section-number">32.6.5</span> 5. Evaluation</a></li>
+  <li><a href="#iteration" id="toc-iteration" class="nav-link" data-scroll-target="#iteration"><span class="header-section-number">32.6.6</span> 6. Iteration</a></li>
+  </ul></li>
+  <li><a href="#composition-as-design" id="toc-composition-as-design" class="nav-link" data-scroll-target="#composition-as-design"><span class="header-section-number">32.7</span> Composition as Design</a>
+  <ul class="collapse">
+  <li><a href="#you-combine" id="toc-you-combine" class="nav-link" data-scroll-target="#you-combine"><span class="header-section-number">32.7.1</span> You combine:</a></li>
+  <li><a href="#to-produce" id="toc-to-produce" class="nav-link" data-scroll-target="#to-produce"><span class="header-section-number">32.7.2</span> To produce:</a></li>
+  </ul></li>
+  <li><a href="#control-through-constraints" id="toc-control-through-constraints" class="nav-link" data-scroll-target="#control-through-constraints"><span class="header-section-number">32.8</span> Control Through Constraints</a>
+  <ul class="collapse">
+  <li><a href="#through" id="toc-through" class="nav-link" data-scroll-target="#through"><span class="header-section-number">32.8.1</span> Through:</a></li>
+  </ul></li>
+  <li><a href="#debugging-and-iteration-in-system-design" id="toc-debugging-and-iteration-in-system-design" class="nav-link" data-scroll-target="#debugging-and-iteration-in-system-design"><span class="header-section-number">32.9</span> Debugging and Iteration in System Design</a>
+  <ul class="collapse">
+  <li><a href="#loop" id="toc-loop" class="nav-link" data-scroll-target="#loop"><span class="header-section-number">32.9.1</span> Loop</a></li>
+  <li><a href="#focus" id="toc-focus" class="nav-link" data-scroll-target="#focus"><span class="header-section-number">32.9.2</span> Focus</a></li>
+  </ul></li>
+  <li><a href="#abstraction-levels" id="toc-abstraction-levels" class="nav-link" data-scroll-target="#abstraction-levels"><span class="header-section-number">32.10</span> Abstraction Levels</a>
+  <ul class="collapse">
+  <li><a href="#high-level" id="toc-high-level" class="nav-link" data-scroll-target="#high-level"><span class="header-section-number">32.10.1</span> High-Level</a></li>
+  <li><a href="#mid-level" id="toc-mid-level" class="nav-link" data-scroll-target="#mid-level"><span class="header-section-number">32.10.2</span> Mid-Level</a></li>
+  <li><a href="#low-level" id="toc-low-level" class="nav-link" data-scroll-target="#low-level"><span class="header-section-number">32.10.3</span> Low-Level</a></li>
+  </ul></li>
+  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">32.11</span> Common Mistakes</a>
+  <ul class="collapse">
+  <li><a href="#staying-at-code-level" id="toc-staying-at-code-level" class="nav-link" data-scroll-target="#staying-at-code-level"><span class="header-section-number">32.11.1</span> 1. Staying at Code Level</a></li>
+  <li><a href="#skipping-spec" id="toc-skipping-spec" class="nav-link" data-scroll-target="#skipping-spec"><span class="header-section-number">32.11.2</span> 2. Skipping Spec</a></li>
+  <li><a href="#overcomplicating-systems" id="toc-overcomplicating-systems" class="nav-link" data-scroll-target="#overcomplicating-systems"><span class="header-section-number">32.11.3</span> 3. Overcomplicating Systems</a></li>
+  <li><a href="#ignoring-evaluation" id="toc-ignoring-evaluation" class="nav-link" data-scroll-target="#ignoring-evaluation"><span class="header-section-number">32.11.4</span> 4. Ignoring Evaluation</a></li>
+  </ul></li>
+  <li><a href="#system-design-as-leverage" id="toc-system-design-as-leverage" class="nav-link" data-scroll-target="#system-design-as-leverage"><span class="header-section-number">32.12</span> System Design as Leverage</a>
+  <ul class="collapse">
+  <li><a href="#why" id="toc-why" class="nav-link" data-scroll-target="#why"><span class="header-section-number">32.12.1</span> Why?</a></li>
+  <li><a href="#result" id="toc-result" class="nav-link" data-scroll-target="#result"><span class="header-section-number">32.12.2</span> Result</a></li>
+  </ul></li>
+  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">32.13</span> Final Insight</a></li>
+  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">32.14</span> Closing Statement</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="the-final-reframe" class="level2" data-number="32.1">
+<h2 data-number="32.1" class="anchored" data-anchor-id="the-final-reframe"><span class="header-section-number">32.1</span> The Final Reframe</h2>
+<p>We began with a simple shift:</p>
+<ul>
+<li>From <strong>How to do</strong> → to <strong>What to do</strong></li>
+</ul>
+<p>Now we arrive at the deeper conclusion:</p>
+<blockquote class="blockquote">
+<p><strong>Programming is no longer primarily about writing code.<br>
+It is about designing systems.</strong></p>
+</blockquote>
+<hr>
+</section>
+<section id="what-is-system-design" class="level2" data-number="32.2">
+<h2 data-number="32.2" class="anchored" data-anchor-id="what-is-system-design"><span class="header-section-number">32.2</span> What is System Design?</h2>
+<p>System design is the process of:</p>
+<blockquote class="blockquote">
+<p><strong>Defining components, flows, constraints, and interactions that produce a desired outcome</strong></p>
+</blockquote>
+<hr>
+<p>It answers:</p>
+<ul>
+<li><p>What are the parts?</p></li>
+<li><p>How do they connect?</p></li>
+<li><p>How does data flow?</p></li>
+<li><p>How is correctness ensured?</p></li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>A system is not a collection of code.<br>
+It is a structure that produces behavior.</p>
+</blockquote>
+<hr>
+</section>
+<section id="programming-before-vs-now" class="level2" data-number="32.3">
+<h2 data-number="32.3" class="anchored" data-anchor-id="programming-before-vs-now"><span class="header-section-number">32.3</span> Programming Before vs Now</h2>
+<hr>
+<section id="traditional-programming" class="level3" data-number="32.3.1">
+<h3 data-number="32.3.1" class="anchored" data-anchor-id="traditional-programming"><span class="header-section-number">32.3.1</span> Traditional Programming</h3>
+<ul>
+<li><p>Focus on implementation</p></li>
+<li><p>Code is the core artifact</p></li>
+<li><p>Logic is explicit</p></li>
+</ul>
+<hr>
+</section>
+<section id="llm-era-programming" class="level3" data-number="32.3.2">
+<h3 data-number="32.3.2" class="anchored" data-anchor-id="llm-era-programming"><span class="header-section-number">32.3.2</span> LLM-Era Programming</h3>
+<ul>
+<li><p>Focus on definition</p></li>
+<li><p>Spec is the core artifact</p></li>
+<li><p>Behavior emerges from constraints</p></li>
+</ul>
+<hr>
+</section>
+<section id="shift" class="level3" data-number="32.3.3">
+<h3 data-number="32.3.3" class="anchored" data-anchor-id="shift"><span class="header-section-number">32.3.3</span> Shift</h3>
+<pre><code>Code-centric → Spec-centric → System-centric</code></pre>
+<hr>
+<blockquote class="blockquote">
+<p>Code becomes one component of a larger system.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="the-new-role-of-the-programmer" class="level2" data-number="32.4">
+<h2 data-number="32.4" class="anchored" data-anchor-id="the-new-role-of-the-programmer"><span class="header-section-number">32.4</span> The New Role of the Programmer</h2>
+<p>The programmer is no longer:</p>
+<ul>
+<li>Just an implementer</li>
+</ul>
+<p>The programmer becomes:</p>
+<ul>
+<li><p>A system designer</p></li>
+<li><p>A spec engineer</p></li>
+<li><p>An orchestrator of capabilities</p></li>
+</ul>
+<hr>
+<section id="responsibilities" class="level3" data-number="32.4.1">
+<h3 data-number="32.4.1" class="anchored" data-anchor-id="responsibilities"><span class="header-section-number">32.4.1</span> Responsibilities</h3>
+<ul>
+<li><p>Define intent clearly</p></li>
+<li><p>Design spec and structure</p></li>
+<li><p>Compose systems</p></li>
+<li><p>Ensure reliability</p></li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>The role shifts from writing to designing.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="system-as-the-unit-of-work" class="level2" data-number="32.5">
+<h2 data-number="32.5" class="anchored" data-anchor-id="system-as-the-unit-of-work"><span class="header-section-number">32.5</span> System as the Unit of Work</h2>
+<p>In this paradigm, the unit of work changes.</p>
+<hr>
+<section id="before" class="level3" data-number="32.5.1">
+<h3 data-number="32.5.1" class="anchored" data-anchor-id="before"><span class="header-section-number">32.5.1</span> Before</h3>
+<ul>
+<li><p>Functions</p></li>
+<li><p>Classes</p></li>
+<li><p>Files</p></li>
+</ul>
+<hr>
+</section>
+<section id="now" class="level3" data-number="32.5.2">
+<h3 data-number="32.5.2" class="anchored" data-anchor-id="now"><span class="header-section-number">32.5.2</span> Now</h3>
+<ul>
+<li><p>Systems</p></li>
+<li><p>Pipelines</p></li>
+<li><p>Agent networks</p></li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>You are no longer building functions.<br>
+You are building systems.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="core-elements-of-system-design" class="level2" data-number="32.6">
+<h2 data-number="32.6" class="anchored" data-anchor-id="core-elements-of-system-design"><span class="header-section-number">32.6</span> Core Elements of System Design</h2>
+<p>A well-designed system includes:</p>
+<hr>
+<section id="intent" class="level3" data-number="32.6.1">
+<h3 data-number="32.6.1" class="anchored" data-anchor-id="intent"><span class="header-section-number">32.6.1</span> 1. Intent</h3>
+<ul>
+<li>What problem is solved</li>
+</ul>
+<hr>
+</section>
+<section id="spec" class="level3" data-number="32.6.2">
+<h3 data-number="32.6.2" class="anchored" data-anchor-id="spec"><span class="header-section-number">32.6.2</span> 2. Spec</h3>
+<ul>
+<li>What the system should do</li>
+</ul>
+<hr>
+</section>
+<section id="structure" class="level3" data-number="32.6.3">
+<h3 data-number="32.6.3" class="anchored" data-anchor-id="structure"><span class="header-section-number">32.6.3</span> 3. Structure</h3>
+<ul>
+<li>Components and flow</li>
+</ul>
+<hr>
+</section>
+<section id="instruction" class="level3" data-number="32.6.4">
+<h3 data-number="32.6.4" class="anchored" data-anchor-id="instruction"><span class="header-section-number">32.6.4</span> 4. Instruction</h3>
+<ul>
+<li>How it executes</li>
+</ul>
+<hr>
+</section>
+<section id="evaluation" class="level3" data-number="32.6.5">
+<h3 data-number="32.6.5" class="anchored" data-anchor-id="evaluation"><span class="header-section-number">32.6.5</span> 5. Evaluation</h3>
+<ul>
+<li>How correctness is measured</li>
+</ul>
+<hr>
+</section>
+<section id="iteration" class="level3" data-number="32.6.6">
+<h3 data-number="32.6.6" class="anchored" data-anchor-id="iteration"><span class="header-section-number">32.6.6</span> 6. Iteration</h3>
+<ul>
+<li>How it improves</li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>These elements define the system lifecycle.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="composition-as-design" class="level2" data-number="32.7">
+<h2 data-number="32.7" class="anchored" data-anchor-id="composition-as-design"><span class="header-section-number">32.7</span> Composition as Design</h2>
+<p>System design is fundamentally about composition.</p>
+<hr>
+<section id="you-combine" class="level3" data-number="32.7.1">
+<h3 data-number="32.7.1" class="anchored" data-anchor-id="you-combine"><span class="header-section-number">32.7.1</span> You combine:</h3>
+<ul>
+<li><p>Capabilities</p></li>
+<li><p>Modules</p></li>
+<li><p>Agents</p></li>
+<li><p>Tools</p></li>
+</ul>
+<hr>
+</section>
+<section id="to-produce" class="level3" data-number="32.7.2">
+<h3 data-number="32.7.2" class="anchored" data-anchor-id="to-produce"><span class="header-section-number">32.7.2</span> To produce:</h3>
+<ul>
+<li><p>Emergent behavior</p></li>
+<li><p>Complex functionality</p></li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>Design is the art of combining parts into a whole.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="control-through-constraints" class="level2" data-number="32.8">
+<h2 data-number="32.8" class="anchored" data-anchor-id="control-through-constraints"><span class="header-section-number">32.8</span> Control Through Constraints</h2>
+<p>In traditional systems:</p>
+<ul>
+<li>Control is explicit</li>
+</ul>
+<p>In LLM systems:</p>
+<ul>
+<li>Control is indirect</li>
+</ul>
+<hr>
+<section id="through" class="level3" data-number="32.8.1">
+<h3 data-number="32.8.1" class="anchored" data-anchor-id="through"><span class="header-section-number">32.8.1</span> Through:</h3>
+<ul>
+<li><p>Spec</p></li>
+<li><p>Instruction</p></li>
+<li><p>Evaluation</p></li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>You do not control every step.<br>
+You control the space of possible outcomes.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="debugging-and-iteration-in-system-design" class="level2" data-number="32.9">
+<h2 data-number="32.9" class="anchored" data-anchor-id="debugging-and-iteration-in-system-design"><span class="header-section-number">32.9</span> Debugging and Iteration in System Design</h2>
+<p>System design is iterative.</p>
+<hr>
+<section id="loop" class="level3" data-number="32.9.1">
+<h3 data-number="32.9.1" class="anchored" data-anchor-id="loop"><span class="header-section-number">32.9.1</span> Loop</h3>
+<pre><code>Define → Execute → Evaluate → Refine</code></pre>
+<hr>
+</section>
+<section id="focus" class="level3" data-number="32.9.2">
+<h3 data-number="32.9.2" class="anchored" data-anchor-id="focus"><span class="header-section-number">32.9.2</span> Focus</h3>
+<ul>
+<li><p>Improve spec</p></li>
+<li><p>Adjust structure</p></li>
+<li><p>Optimize flow</p></li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>Systems evolve through refinement.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="abstraction-levels" class="level2" data-number="32.10">
+<h2 data-number="32.10" class="anchored" data-anchor-id="abstraction-levels"><span class="header-section-number">32.10</span> Abstraction Levels</h2>
+<p>System design operates across levels:</p>
+<hr>
+<section id="high-level" class="level3" data-number="32.10.1">
+<h3 data-number="32.10.1" class="anchored" data-anchor-id="high-level"><span class="header-section-number">32.10.1</span> High-Level</h3>
+<ul>
+<li><p>Intent</p></li>
+<li><p>Product definition</p></li>
+</ul>
+<hr>
+</section>
+<section id="mid-level" class="level3" data-number="32.10.2">
+<h3 data-number="32.10.2" class="anchored" data-anchor-id="mid-level"><span class="header-section-number">32.10.2</span> Mid-Level</h3>
+<ul>
+<li><p>Spec</p></li>
+<li><p>Structure</p></li>
+<li><p>Flow</p></li>
+</ul>
+<hr>
+</section>
+<section id="low-level" class="level3" data-number="32.10.3">
+<h3 data-number="32.10.3" class="anchored" data-anchor-id="low-level"><span class="header-section-number">32.10.3</span> Low-Level</h3>
+<ul>
+<li><p>Instructions</p></li>
+<li><p>Tool calls</p></li>
+<li><p>Code</p></li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>Effective designers move across levels seamlessly.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="common-mistakes" class="level2" data-number="32.11">
+<h2 data-number="32.11" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">32.11</span> Common Mistakes</h2>
+<hr>
+<section id="staying-at-code-level" class="level3" data-number="32.11.1">
+<h3 data-number="32.11.1" class="anchored" data-anchor-id="staying-at-code-level"><span class="header-section-number">32.11.1</span> 1. Staying at Code Level</h3>
+<ul>
+<li>Ignoring system structure</li>
+</ul>
+<hr>
+</section>
+<section id="skipping-spec" class="level3" data-number="32.11.2">
+<h3 data-number="32.11.2" class="anchored" data-anchor-id="skipping-spec"><span class="header-section-number">32.11.2</span> 2. Skipping Spec</h3>
+<ul>
+<li>Leads to unstable systems</li>
+</ul>
+<hr>
+</section>
+<section id="overcomplicating-systems" class="level3" data-number="32.11.3">
+<h3 data-number="32.11.3" class="anchored" data-anchor-id="overcomplicating-systems"><span class="header-section-number">32.11.3</span> 3. Overcomplicating Systems</h3>
+<ul>
+<li><p>Too many components</p></li>
+<li><p>Unnecessary complexity</p></li>
+</ul>
+<hr>
+</section>
+<section id="ignoring-evaluation" class="level3" data-number="32.11.4">
+<h3 data-number="32.11.4" class="anchored" data-anchor-id="ignoring-evaluation"><span class="header-section-number">32.11.4</span> 4. Ignoring Evaluation</h3>
+<ul>
+<li>No feedback loop</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="system-design-as-leverage" class="level2" data-number="32.12">
+<h2 data-number="32.12" class="anchored" data-anchor-id="system-design-as-leverage"><span class="header-section-number">32.12</span> System Design as Leverage</h2>
+<p>System design provides leverage:</p>
+<hr>
+<section id="why" class="level3" data-number="32.12.1">
+<h3 data-number="32.12.1" class="anchored" data-anchor-id="why"><span class="header-section-number">32.12.1</span> Why?</h3>
+<ul>
+<li><p>Reusable structures</p></li>
+<li><p>Scalable systems</p></li>
+<li><p>Reduced manual work</p></li>
+</ul>
+<hr>
+</section>
+<section id="result" class="level3" data-number="32.12.2">
+<h3 data-number="32.12.2" class="anchored" data-anchor-id="result"><span class="header-section-number">32.12.2</span> Result</h3>
+<ul>
+<li>More output with less effort</li>
+</ul>
+<hr>
+<blockquote class="blockquote">
+<p>Leverage comes from structure, not effort.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="final-insight" class="level2" data-number="32.13">
+<h2 data-number="32.13" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">32.13</span> Final Insight</h2>
+<p>Programming has not disappeared.</p>
+<p>It has evolved.</p>
+<hr>
+<blockquote class="blockquote">
+<p>Programming is now the act of designing systems<br>
+that define, execute, and refine behavior.</p>
+</blockquote>
+<hr>
+</section>
+<section id="closing-statement" class="level2" data-number="32.14">
+<h2 data-number="32.14" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">32.14</span> Closing Statement</h2>
+<p>In the LLM era, the most powerful skill is not writing code.</p>
+<p>It is designing systems that produce results reliably.</p>
+<blockquote class="blockquote">
+<p>From code to systems,<br>
+programming becomes design.</p>
+</blockquote>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chapter-30.html" class="pagination-link" aria-label="From Idea to Product">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./chapter-32.html" class="pagination-link" aria-label="Language as an Operating System">
+        <span class="nav-page-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
