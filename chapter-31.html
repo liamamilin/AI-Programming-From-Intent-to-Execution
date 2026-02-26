@@ -295,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The New Bottleneck</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -530,15 +530,18 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#you-combine" id="toc-you-combine" class="nav-link" data-scroll-target="#you-combine"><span class="header-section-number">32.7.1</span> You combine:</a></li>
   <li><a href="#to-produce" id="toc-to-produce" class="nav-link" data-scroll-target="#to-produce"><span class="header-section-number">32.7.2</span> To produce:</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">32.7.3</span> Example</a></li>
   </ul></li>
   <li><a href="#control-through-constraints" id="toc-control-through-constraints" class="nav-link" data-scroll-target="#control-through-constraints"><span class="header-section-number">32.8</span> Control Through Constraints</a>
   <ul class="collapse">
   <li><a href="#through" id="toc-through" class="nav-link" data-scroll-target="#through"><span class="header-section-number">32.8.1</span> Through:</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">32.8.2</span> Example</a></li>
   </ul></li>
   <li><a href="#debugging-and-iteration-in-system-design" id="toc-debugging-and-iteration-in-system-design" class="nav-link" data-scroll-target="#debugging-and-iteration-in-system-design"><span class="header-section-number">32.9</span> Debugging and Iteration in System Design</a>
   <ul class="collapse">
   <li><a href="#loop" id="toc-loop" class="nav-link" data-scroll-target="#loop"><span class="header-section-number">32.9.1</span> Loop</a></li>
   <li><a href="#focus" id="toc-focus" class="nav-link" data-scroll-target="#focus"><span class="header-section-number">32.9.2</span> Focus</a></li>
+  <li><a href="#debugging" id="toc-debugging" class="nav-link" data-scroll-target="#debugging"><span class="header-section-number">32.9.3</span> Debugging</a></li>
   </ul></li>
   <li><a href="#abstraction-levels" id="toc-abstraction-levels" class="nav-link" data-scroll-target="#abstraction-levels"><span class="header-section-number">32.10</span> Abstraction Levels</a>
   <ul class="collapse">
@@ -560,6 +563,8 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">32.13</span> Final Insight</a></li>
   <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">32.14</span> Closing Statement</a></li>
+  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">32.15</span> Key Insight</a></li>
+  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">32.16</span> Action Hint</a></li>
   </ul>
 </nav>
     </div>
@@ -588,7 +593,7 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="the-final-reframe" class="level2" data-number="32.1">
 <h2 data-number="32.1" class="anchored" data-anchor-id="the-final-reframe"><span class="header-section-number">32.1</span> The Final Reframe</h2>
-<p>We began with a simple shift:</p>
+<p>We began this book with a simple but profound shift:</p>
 <ul>
 <li>From <strong>How to do</strong> → to <strong>What to do</strong></li>
 </ul>
@@ -597,6 +602,8 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Programming is no longer primarily about writing code.<br>
 It is about designing systems.</strong></p>
 </blockquote>
+<hr>
+<p>This is not just a change in technique. It’s a fundamental redefinition of what programming means.</p>
 <hr>
 </section>
 <section id="what-is-system-design" class="level2" data-number="32.2">
@@ -608,37 +615,39 @@ It is about designing systems.</strong></p>
 <hr>
 <p>It answers:</p>
 <ul>
-<li><p>What are the parts?</p></li>
-<li><p>How do they connect?</p></li>
-<li><p>How does data flow?</p></li>
-<li><p>How is correctness ensured?</p></li>
+<li><strong>What are the parts?</strong>—what components are needed?</li>
+<li><strong>How do they connect?</strong>—how do parts interact?</li>
+<li><strong>How does data flow?</strong>—what information moves where?</li>
+<li><strong>How is correctness ensured?</strong>—how do we know it works?</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>A system is not a collection of code.<br>
-It is a structure that produces behavior.</p>
+<p>A system is not a collection of code. It is a structure that produces behavior.</p>
 </blockquote>
 <hr>
 </section>
 <section id="programming-before-vs-now" class="level2" data-number="32.3">
 <h2 data-number="32.3" class="anchored" data-anchor-id="programming-before-vs-now"><span class="header-section-number">32.3</span> Programming Before vs Now</h2>
+<p>The transformation in programming is dramatic:</p>
 <hr>
 <section id="traditional-programming" class="level3" data-number="32.3.1">
 <h3 data-number="32.3.1" class="anchored" data-anchor-id="traditional-programming"><span class="header-section-number">32.3.1</span> Traditional Programming</h3>
 <ul>
-<li><p>Focus on implementation</p></li>
-<li><p>Code is the core artifact</p></li>
-<li><p>Logic is explicit</p></li>
+<li><strong>Focus on implementation</strong>—how to write the code</li>
+<li><strong>Code is the core artifact</strong>—the primary output</li>
+<li><strong>Logic is explicit</strong>—every step is coded manually</li>
 </ul>
+<p><strong>Skills:</strong> - Writing efficient code - Understanding algorithms - Managing complexity in code</p>
 <hr>
 </section>
 <section id="llm-era-programming" class="level3" data-number="32.3.2">
 <h3 data-number="32.3.2" class="anchored" data-anchor-id="llm-era-programming"><span class="header-section-number">32.3.2</span> LLM-Era Programming</h3>
 <ul>
-<li><p>Focus on definition</p></li>
-<li><p>Spec is the core artifact</p></li>
-<li><p>Behavior emerges from constraints</p></li>
+<li><strong>Focus on definition</strong>—what should the system do?</li>
+<li><strong>Spec is the core artifact</strong>—the primary output</li>
+<li><strong>Behavior emerges from constraints</strong>—define boundaries, not steps</li>
 </ul>
+<p><strong>Skills:</strong> - Defining problems clearly - Designing specifications - Structuring systems</p>
 <hr>
 </section>
 <section id="shift" class="level3" data-number="32.3.3">
@@ -646,7 +655,7 @@ It is a structure that produces behavior.</p>
 <pre><code>Code-centric → Spec-centric → System-centric</code></pre>
 <hr>
 <blockquote class="blockquote">
-<p>Code becomes one component of a larger system.</p>
+<p>Code becomes one component of a larger system. The programmer’s role elevates.</p>
 </blockquote>
 <hr>
 </section>
@@ -655,165 +664,198 @@ It is a structure that produces behavior.</p>
 <h2 data-number="32.4" class="anchored" data-anchor-id="the-new-role-of-the-programmer"><span class="header-section-number">32.4</span> The New Role of the Programmer</h2>
 <p>The programmer is no longer:</p>
 <ul>
-<li>Just an implementer</li>
+<li>Just an implementer—writing code step by step</li>
+<li>Just a debugger—fixing syntax and logic errors</li>
+<li>Just an optimizer—making code run faster</li>
 </ul>
 <p>The programmer becomes:</p>
 <ul>
-<li><p>A system designer</p></li>
-<li><p>A spec engineer</p></li>
-<li><p>An orchestrator of capabilities</p></li>
+<li><strong>A system designer</strong>—architecting solutions</li>
+<li><strong>A spec engineer</strong>—defining requirements precisely</li>
+<li><strong>An orchestrator of capabilities</strong>—combining tools and systems</li>
 </ul>
 <hr>
 <section id="responsibilities" class="level3" data-number="32.4.1">
 <h3 data-number="32.4.1" class="anchored" data-anchor-id="responsibilities"><span class="header-section-number">32.4.1</span> Responsibilities</h3>
 <ul>
-<li><p>Define intent clearly</p></li>
-<li><p>Design spec and structure</p></li>
-<li><p>Compose systems</p></li>
-<li><p>Ensure reliability</p></li>
+<li><strong>Define intent clearly</strong>—what problem are we solving?</li>
+<li><strong>Design spec and structure</strong>—how should the system work?</li>
+<li><strong>Compose systems</strong>—what components do we need?</li>
+<li><strong>Ensure reliability</strong>—how do we know it works?</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>The role shifts from writing to designing.</p>
+<p>The role shifts from writing to designing. From doing to defining.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="system-as-the-unit-of-work" class="level2" data-number="32.5">
 <h2 data-number="32.5" class="anchored" data-anchor-id="system-as-the-unit-of-work"><span class="header-section-number">32.5</span> System as the Unit of Work</h2>
-<p>In this paradigm, the unit of work changes.</p>
+<p>In this new paradigm, the unit of work changes dramatically:</p>
 <hr>
 <section id="before" class="level3" data-number="32.5.1">
 <h3 data-number="32.5.1" class="anchored" data-anchor-id="before"><span class="header-section-number">32.5.1</span> Before</h3>
 <ul>
-<li><p>Functions</p></li>
-<li><p>Classes</p></li>
-<li><p>Files</p></li>
+<li><strong>Functions</strong>—small units of functionality</li>
+<li><strong>Classes</strong>—organized collections of functions</li>
+<li><strong>Files</strong>—groupings of related code</li>
+<li><strong>Modules</strong>—collections of related functionality</li>
 </ul>
+<p><strong>Unit:</strong> Code constructs</p>
 <hr>
 </section>
 <section id="now" class="level3" data-number="32.5.2">
 <h3 data-number="32.5.2" class="anchored" data-anchor-id="now"><span class="header-section-number">32.5.2</span> Now</h3>
 <ul>
-<li><p>Systems</p></li>
-<li><p>Pipelines</p></li>
-<li><p>Agent networks</p></li>
+<li><strong>Systems</strong>—complete, functional solutions</li>
+<li><strong>Pipelines</strong>—flows of data and operations</li>
+<li><strong>Agent networks</strong>—coordinated intelligent components</li>
+<li><strong>Tool suites</strong>—collections of related capabilities</li>
 </ul>
+<p><strong>Unit:</strong> Complete solutions</p>
 <hr>
 <blockquote class="blockquote">
-<p>You are no longer building functions.<br>
-You are building systems.</p>
+<p>You are no longer building functions. You are building systems.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="core-elements-of-system-design" class="level2" data-number="32.6">
 <h2 data-number="32.6" class="anchored" data-anchor-id="core-elements-of-system-design"><span class="header-section-number">32.6</span> Core Elements of System Design</h2>
-<p>A well-designed system includes:</p>
+<p>A well-designed system includes several fundamental elements:</p>
 <hr>
 <section id="intent" class="level3" data-number="32.6.1">
 <h3 data-number="32.6.1" class="anchored" data-anchor-id="intent"><span class="header-section-number">32.6.1</span> 1. Intent</h3>
 <ul>
-<li>What problem is solved</li>
+<li><strong>What problem is solved</strong>—the user need or business requirement</li>
+<li><strong>Why it matters</strong>—the value and importance</li>
+<li><strong>Success criteria</strong>—how we know it works</li>
 </ul>
 <hr>
 </section>
 <section id="spec" class="level3" data-number="32.6.2">
 <h3 data-number="32.6.2" class="anchored" data-anchor-id="spec"><span class="header-section-number">32.6.2</span> 2. Spec</h3>
 <ul>
-<li>What the system should do</li>
+<li><strong>What the system should do</strong>—detailed requirements</li>
+<li><strong>Inputs and outputs</strong>—data structures and formats</li>
+<li><strong>Constraints</strong>—boundaries and limitations</li>
 </ul>
 <hr>
 </section>
 <section id="structure" class="level3" data-number="32.6.3">
 <h3 data-number="32.6.3" class="anchored" data-anchor-id="structure"><span class="header-section-number">32.6.3</span> 3. Structure</h3>
 <ul>
-<li>Components and flow</li>
+<li><strong>Components</strong>—what parts are needed</li>
+<li><strong>Flow</strong>—how data moves through the system</li>
+<li><strong>Architecture</strong>—how parts connect</li>
 </ul>
 <hr>
 </section>
 <section id="instruction" class="level3" data-number="32.6.4">
 <h3 data-number="32.6.4" class="anchored" data-anchor-id="instruction"><span class="header-section-number">32.6.4</span> 4. Instruction</h3>
 <ul>
-<li>How it executes</li>
+<li><strong>How it executes</strong>—protocols for operation</li>
+<li><strong>Task definitions</strong>—specific operations</li>
+<li><strong>Execution order</strong>—sequence of steps</li>
 </ul>
 <hr>
 </section>
 <section id="evaluation" class="level3" data-number="32.6.5">
 <h3 data-number="32.6.5" class="anchored" data-anchor-id="evaluation"><span class="header-section-number">32.6.5</span> 5. Evaluation</h3>
 <ul>
-<li>How correctness is measured</li>
+<li><strong>How correctness is measured</strong>—quality metrics</li>
+<li><strong>Validation mechanisms</strong>—how we check results</li>
+<li><strong>Feedback loops</strong>—how we improve</li>
 </ul>
 <hr>
 </section>
 <section id="iteration" class="level3" data-number="32.6.6">
 <h3 data-number="32.6.6" class="anchored" data-anchor-id="iteration"><span class="header-section-number">32.6.6</span> 6. Iteration</h3>
 <ul>
-<li>How it improves</li>
+<li><strong>How it improves</strong>—learning and adaptation</li>
+<li><strong>Refinement process</strong>—how we make it better</li>
+<li><strong>Evolution path</strong>—how it grows over time</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>These elements define the system lifecycle.</p>
+<p>These elements define the system lifecycle—from definition to evolution.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="composition-as-design" class="level2" data-number="32.7">
 <h2 data-number="32.7" class="anchored" data-anchor-id="composition-as-design"><span class="header-section-number">32.7</span> Composition as Design</h2>
-<p>System design is fundamentally about composition.</p>
+<p>System design is fundamentally about composition—combining parts to create wholes:</p>
 <hr>
 <section id="you-combine" class="level3" data-number="32.7.1">
 <h3 data-number="32.7.1" class="anchored" data-anchor-id="you-combine"><span class="header-section-number">32.7.1</span> You combine:</h3>
 <ul>
-<li><p>Capabilities</p></li>
-<li><p>Modules</p></li>
-<li><p>Agents</p></li>
-<li><p>Tools</p></li>
+<li><strong>Capabilities</strong>—what the system can do</li>
+<li><strong>Modules</strong>—functional components</li>
+<li><strong>Agents</strong>—intelligent processors</li>
+<li><strong>Tools</strong>—external services and APIs</li>
 </ul>
 <hr>
 </section>
 <section id="to-produce" class="level3" data-number="32.7.2">
 <h3 data-number="32.7.2" class="anchored" data-anchor-id="to-produce"><span class="header-section-number">32.7.2</span> To produce:</h3>
 <ul>
-<li><p>Emergent behavior</p></li>
-<li><p>Complex functionality</p></li>
+<li><strong>Emergent behavior</strong>—capabilities that no single component has</li>
+<li><strong>Complex functionality</strong>—solving sophisticated problems</li>
+<li><strong>Integrated solutions</strong>—coherent, unified systems</li>
 </ul>
 <hr>
+</section>
+<section id="example" class="level3" data-number="32.7.3">
+<h3 data-number="32.7.3" class="anchored" data-anchor-id="example"><span class="header-section-number">32.7.3</span> Example</h3>
+<p>Combining: - <strong>Retrieval</strong>—finding information - <strong>Generation</strong>—creating text - <strong>Memory</strong>—maintaining context</p>
+<p>Creates: - <strong>A knowledge assistant</strong>—system that can answer questions using retrieved information</p>
+<hr>
 <blockquote class="blockquote">
-<p>Design is the art of combining parts into a whole.</p>
+<p>Design is the art of combining parts into a whole that is greater than the sum of its parts.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="control-through-constraints" class="level2" data-number="32.8">
 <h2 data-number="32.8" class="anchored" data-anchor-id="control-through-constraints"><span class="header-section-number">32.8</span> Control Through Constraints</h2>
-<p>In traditional systems:</p>
+<p>In traditional systems, control is explicit:</p>
 <ul>
-<li>Control is explicit</li>
+<li><strong>Control is explicit</strong>—every step is coded</li>
+<li><strong>Deterministic</strong>—same input always produces same output</li>
+<li><strong>Precise</strong>—exact behavior is defined</li>
 </ul>
-<p>In LLM systems:</p>
-<ul>
-<li>Control is indirect</li>
-</ul>
+<p>In LLM systems, control is indirect:</p>
 <hr>
 <section id="through" class="level3" data-number="32.8.1">
 <h3 data-number="32.8.1" class="anchored" data-anchor-id="through"><span class="header-section-number">32.8.1</span> Through:</h3>
 <ul>
-<li><p>Spec</p></li>
-<li><p>Instruction</p></li>
-<li><p>Evaluation</p></li>
+<li><strong>Spec</strong>—defining what the system should do</li>
+<li><strong>Instruction</strong>—specifying how it should execute</li>
+<li><strong>Evaluation</strong>—ensuring results meet requirements</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>You do not control every step.<br>
-You control the space of possible outcomes.</p>
+<p>You do not control every step. You control the space of possible outcomes.</p>
 </blockquote>
+<hr>
+</section>
+<section id="example-1" class="level3" data-number="32.8.2">
+<h3 data-number="32.8.2" class="anchored" data-anchor-id="example-1"><span class="header-section-number">32.8.2</span> Example</h3>
+<p>Instead of coding every step of text summarization:</p>
+<ul>
+<li><strong>Define spec</strong>—what should a summary include?</li>
+<li><strong>Create instruction</strong>—how should the system produce it?</li>
+<li><strong>Evaluate output</strong>—does it meet requirements?</li>
+</ul>
+<p>The system figures out the steps to produce the summary.</p>
 <hr>
 </section>
 </section>
 <section id="debugging-and-iteration-in-system-design" class="level2" data-number="32.9">
 <h2 data-number="32.9" class="anchored" data-anchor-id="debugging-and-iteration-in-system-design"><span class="header-section-number">32.9</span> Debugging and Iteration in System Design</h2>
-<p>System design is iterative.</p>
+<p>System design is inherently iterative:</p>
 <hr>
 <section id="loop" class="level3" data-number="32.9.1">
 <h3 data-number="32.9.1" class="anchored" data-anchor-id="loop"><span class="header-section-number">32.9.1</span> Loop</h3>
@@ -823,119 +865,146 @@ You control the space of possible outcomes.</p>
 <section id="focus" class="level3" data-number="32.9.2">
 <h3 data-number="32.9.2" class="anchored" data-anchor-id="focus"><span class="header-section-number">32.9.2</span> Focus</h3>
 <ul>
-<li><p>Improve spec</p></li>
-<li><p>Adjust structure</p></li>
-<li><p>Optimize flow</p></li>
+<li><strong>Improve spec</strong>—clarify requirements and constraints</li>
+<li><strong>Adjust structure</strong>—optimize component organization</li>
+<li><strong>Optimize flow</strong>—improve data movement and processing</li>
+</ul>
+<hr>
+</section>
+<section id="debugging" class="level3" data-number="32.9.3">
+<h3 data-number="32.9.3" class="anchored" data-anchor-id="debugging"><span class="header-section-number">32.9.3</span> Debugging</h3>
+<ul>
+<li><strong>Debug definitions</strong>—clarify ambiguous specs</li>
+<li><strong>Debug instructions</strong>—improve execution protocols</li>
+<li><strong>Debug evaluation</strong>—enhance quality checks</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Systems evolve through refinement.</p>
+<p>Systems evolve through refinement. The goal is not to get it right the first time, but to improve it systematically.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="abstraction-levels" class="level2" data-number="32.10">
 <h2 data-number="32.10" class="anchored" data-anchor-id="abstraction-levels"><span class="header-section-number">32.10</span> Abstraction Levels</h2>
-<p>System design operates across levels:</p>
+<p>System design operates across multiple levels of abstraction:</p>
 <hr>
 <section id="high-level" class="level3" data-number="32.10.1">
 <h3 data-number="32.10.1" class="anchored" data-anchor-id="high-level"><span class="header-section-number">32.10.1</span> High-Level</h3>
 <ul>
-<li><p>Intent</p></li>
-<li><p>Product definition</p></li>
+<li><strong>Intent</strong>—goals and objectives</li>
+<li><strong>Product definition</strong>—what value is delivered</li>
+<li><strong>User experience</strong>—how people interact</li>
 </ul>
+<p><strong>Focus:</strong> What and why</p>
 <hr>
 </section>
 <section id="mid-level" class="level3" data-number="32.10.2">
 <h3 data-number="32.10.2" class="anchored" data-anchor-id="mid-level"><span class="header-section-number">32.10.2</span> Mid-Level</h3>
 <ul>
-<li><p>Spec</p></li>
-<li><p>Structure</p></li>
-<li><p>Flow</p></li>
+<li><strong>Spec</strong>—detailed requirements</li>
+<li><strong>Structure</strong>—component organization</li>
+<li><strong>Flow</strong>—data movement</li>
 </ul>
+<p><strong>Focus:</strong> How</p>
 <hr>
 </section>
 <section id="low-level" class="level3" data-number="32.10.3">
 <h3 data-number="32.10.3" class="anchored" data-anchor-id="low-level"><span class="header-section-number">32.10.3</span> Low-Level</h3>
 <ul>
-<li><p>Instructions</p></li>
-<li><p>Tool calls</p></li>
-<li><p>Code</p></li>
+<li><strong>Instructions</strong>—execution protocols</li>
+<li><strong>Tool calls</strong>—specific operations</li>
+<li><strong>Code</strong>—implementation details</li>
 </ul>
+<p><strong>Focus:</strong> Implementation</p>
 <hr>
 <blockquote class="blockquote">
-<p>Effective designers move across levels seamlessly.</p>
+<p>Effective designers move across levels seamlessly. They can see the big picture and the details.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="common-mistakes" class="level2" data-number="32.11">
 <h2 data-number="32.11" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">32.11</span> Common Mistakes</h2>
+<p>Several common mistakes undermine effective system design:</p>
 <hr>
 <section id="staying-at-code-level" class="level3" data-number="32.11.1">
 <h3 data-number="32.11.1" class="anchored" data-anchor-id="staying-at-code-level"><span class="header-section-number">32.11.1</span> 1. Staying at Code Level</h3>
 <ul>
-<li>Ignoring system structure</li>
+<li><strong>Ignoring system structure</strong>—focusing only on implementation</li>
+<li><strong>Missing the big picture</strong>—not seeing how parts connect</li>
+<li><strong>Limited scope</strong>—can’t see beyond immediate code</li>
 </ul>
+<p><strong>Solution:</strong> Think at the system level. Focus on structure and composition.</p>
 <hr>
 </section>
 <section id="skipping-spec" class="level3" data-number="32.11.2">
 <h3 data-number="32.11.2" class="anchored" data-anchor-id="skipping-spec"><span class="header-section-number">32.11.2</span> 2. Skipping Spec</h3>
 <ul>
-<li>Leads to unstable systems</li>
+<li><strong>Leads to unstable systems</strong>—unclear requirements</li>
+<li><strong>Difficult to maintain</strong>—no clear documentation</li>
+<li><strong>Hard to debug</strong>—don’t know what’s expected</li>
 </ul>
+<p><strong>Solution:</strong> Always define spec first. Make requirements explicit.</p>
 <hr>
 </section>
 <section id="overcomplicating-systems" class="level3" data-number="32.11.3">
 <h3 data-number="32.11.3" class="anchored" data-anchor-id="overcomplicating-systems"><span class="header-section-number">32.11.3</span> 3. Overcomplicating Systems</h3>
 <ul>
-<li><p>Too many components</p></li>
-<li><p>Unnecessary complexity</p></li>
+<li><strong>Too many components</strong>—unnecessary complexity</li>
+<li><strong>Tight coupling</strong>—parts depend too much on each other</li>
+<li><strong>Brittle design</strong>—breaks easily</li>
 </ul>
+<p><strong>Solution:</strong> Keep it simple. Use minimal components. Ensure loose coupling.</p>
 <hr>
 </section>
 <section id="ignoring-evaluation" class="level3" data-number="32.11.4">
 <h3 data-number="32.11.4" class="anchored" data-anchor-id="ignoring-evaluation"><span class="header-section-number">32.11.4</span> 4. Ignoring Evaluation</h3>
 <ul>
-<li>No feedback loop</li>
+<li><strong>No feedback loop</strong>—can’t improve system</li>
+<li><strong>Unknown quality</strong>—don’t know if it works</li>
+<li><strong>Stagnation</strong>—system doesn’t evolve</li>
 </ul>
+<p><strong>Solution:</strong> Implement evaluation at every stage. Use feedback to improve.</p>
 <hr>
 </section>
 </section>
 <section id="system-design-as-leverage" class="level2" data-number="32.12">
 <h2 data-number="32.12" class="anchored" data-anchor-id="system-design-as-leverage"><span class="header-section-number">32.12</span> System Design as Leverage</h2>
-<p>System design provides leverage:</p>
+<p>System design provides powerful leverage:</p>
 <hr>
 <section id="why" class="level3" data-number="32.12.1">
 <h3 data-number="32.12.1" class="anchored" data-anchor-id="why"><span class="header-section-number">32.12.1</span> Why?</h3>
 <ul>
-<li><p>Reusable structures</p></li>
-<li><p>Scalable systems</p></li>
-<li><p>Reduced manual work</p></li>
+<li><strong>Reusable structures</strong>—design patterns that apply across problems</li>
+<li><strong>Scalable systems</strong>—architectures that grow without breaking</li>
+<li><strong>Reduced manual work</strong>—systems that automate and optimize</li>
 </ul>
 <hr>
 </section>
 <section id="result" class="level3" data-number="32.12.2">
 <h3 data-number="32.12.2" class="anchored" data-anchor-id="result"><span class="header-section-number">32.12.2</span> Result</h3>
 <ul>
-<li>More output with less effort</li>
+<li><strong>More output with less effort</strong>—amplification of capability</li>
+<li><strong>Faster iteration</strong>—systems can evolve quickly</li>
+<li><strong>Greater impact</strong>—solutions that scale</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Leverage comes from structure, not effort.</p>
+<p>Leverage comes from structure, not effort. Good design multiplies capability.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="final-insight" class="level2" data-number="32.13">
 <h2 data-number="32.13" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">32.13</span> Final Insight</h2>
-<p>Programming has not disappeared.</p>
-<p>It has evolved.</p>
+<p>Programming has not disappeared. It has evolved.</p>
 <hr>
 <blockquote class="blockquote">
-<p>Programming is now the act of designing systems<br>
-that define, execute, and refine behavior.</p>
+<p>Programming is now the act of designing systems that define, execute, and refine behavior.</p>
 </blockquote>
+<hr>
+<p>The programmer’s role has elevated from writing code to architecting solutions. The focus has shifted from implementation to definition. The unit of work has changed from functions to systems.</p>
 <hr>
 </section>
 <section id="closing-statement" class="level2" data-number="32.14">
@@ -943,8 +1012,20 @@ that define, execute, and refine behavior.</p>
 <p>In the LLM era, the most powerful skill is not writing code.</p>
 <p>It is designing systems that produce results reliably.</p>
 <blockquote class="blockquote">
-<p>From code to systems,<br>
-programming becomes design.</p>
+<p>From code to systems, programming becomes design.</p>
+</blockquote>
+<hr>
+</section>
+<section id="key-insight" class="level2" data-number="32.15">
+<h2 data-number="32.15" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">32.15</span> Key Insight</h2>
+<blockquote class="blockquote">
+<p>Programming in the LLM era is about designing systems, not writing code. The programmer’s role shifts from implementer to system designer, spec engineer, and orchestrator of capabilities. The unit of work changes from functions to complete systems.</p>
+</blockquote>
+</section>
+<section id="action-hint" class="level2" data-number="32.16">
+<h2 data-number="32.16" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">32.16</span> Action Hint</h2>
+<blockquote class="blockquote">
+<p>Think at the system level, not the code level. Focus on structure and composition. Define spec before implementation. Design for iteration and improvement. Control through constraints, not explicit steps. Move across abstraction levels—see both big picture and details. Build reusable structures that provide leverage. Keep systems simple and modular.</p>
 </blockquote>
 
 

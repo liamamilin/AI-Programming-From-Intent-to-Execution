@@ -295,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The New Bottleneck</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -504,10 +504,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#what-makes-a-good-instruction" id="toc-what-makes-a-good-instruction" class="nav-link" data-scroll-target="#what-makes-a-good-instruction"><span class="header-section-number">20.2</span> What Makes a Good Instruction?</a>
   <ul class="collapse">
   <li><a href="#core-properties" id="toc-core-properties" class="nav-link" data-scroll-target="#core-properties"><span class="header-section-number">20.2.1</span> Core Properties</a></li>
-  <li><a href="#clarity" id="toc-clarity" class="nav-link" data-scroll-target="#clarity"><span class="header-section-number">20.2.2</span> 1. Clarity</a></li>
-  <li><a href="#structure" id="toc-structure" class="nav-link" data-scroll-target="#structure"><span class="header-section-number">20.2.3</span> 2. Structure</a></li>
-  <li><a href="#constraint" id="toc-constraint" class="nav-link" data-scroll-target="#constraint"><span class="header-section-number">20.2.4</span> 3. Constraint</a></li>
-  <li><a href="#executability" id="toc-executability" class="nav-link" data-scroll-target="#executability"><span class="header-section-number">20.2.5</span> 4. Executability</a></li>
   </ul></li>
   <li><a href="#instruction-as-a-design-artifact" id="toc-instruction-as-a-design-artifact" class="nav-link" data-scroll-target="#instruction-as-a-design-artifact"><span class="header-section-number">20.3</span> Instruction as a Design Artifact</a>
   <ul class="collapse">
@@ -543,6 +539,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#reusability-of-instructions" id="toc-reusability-of-instructions" class="nav-link" data-scroll-target="#reusability-of-instructions"><span class="header-section-number">20.9</span> Reusability of Instructions</a>
   <ul class="collapse">
   <li><a href="#characteristics-of-reusable-instructions" id="toc-characteristics-of-reusable-instructions" class="nav-link" data-scroll-target="#characteristics-of-reusable-instructions"><span class="header-section-number">20.9.1</span> Characteristics of Reusable Instructions</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">20.9.2</span> Example</a></li>
   </ul></li>
   <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">20.10</span> Common Mistakes</a>
   <ul class="collapse">
@@ -554,6 +551,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#instruction-and-system-stability" id="toc-instruction-and-system-stability" class="nav-link" data-scroll-target="#instruction-and-system-stability"><span class="header-section-number">20.11</span> Instruction and System Stability</a></li>
   <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">20.12</span> Final Insight</a></li>
   <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">20.13</span> Closing Statement</a></li>
+  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">20.14</span> Key Insight</a></li>
+  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">20.15</span> Action Hint</a></li>
   </ul>
 </nav>
     </div>
@@ -582,167 +581,180 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="from-execution-to-design" class="level2" data-number="20.1">
 <h2 data-number="20.1" class="anchored" data-anchor-id="from-execution-to-design"><span class="header-section-number">20.1</span> From Execution to Design</h2>
-<p>Instruction is not just a translation from spec.</p>
-<p>It is a <strong>design problem</strong>.</p>
+<p>Instruction is not just a simple translation from spec to execution. It is not merely a mechanical process of converting requirements into prompts.</p>
+<p>Instruction is a <strong>design problem</strong>—a creative and analytical challenge that determines how well a system will perform.</p>
 <p>A poorly designed instruction leads to:</p>
 <ul>
-<li><p>Inconsistent outputs</p></li>
-<li><p>Unstable behavior</p></li>
-<li><p>Difficult debugging</p></li>
+<li>Inconsistent outputs—results vary unpredictably</li>
+<li>Unstable behavior—different runs produce different outcomes</li>
+<li>Difficult debugging—problems are hard to diagnose and fix</li>
 </ul>
 <p>A well-designed instruction leads to:</p>
 <ul>
-<li><p>Predictable results</p></li>
-<li><p>Reusable components</p></li>
-<li><p>Scalable systems</p></li>
+<li>Predictable results—consistent, reliable outputs</li>
+<li>Reusable components—can be applied across different contexts</li>
+<li>Scalable systems—can grow and evolve without breaking</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Instruction is not something you write once.<br>
-It is something you design carefully.</p>
+<p>Instruction is not something you write once and forget. It is something you design carefully, test systematically, and refine continuously.</p>
 </blockquote>
 <hr>
 </section>
 <section id="what-makes-a-good-instruction" class="level2" data-number="20.2">
 <h2 data-number="20.2" class="anchored" data-anchor-id="what-makes-a-good-instruction"><span class="header-section-number">20.2</span> What Makes a Good Instruction?</h2>
-<p>A good instruction is one that enables a system to:</p>
+<p>A good instruction is one that enables a system to operate effectively and reliably. It should empower the system to:</p>
 <ul>
-<li><p>Produce correct outputs</p></li>
-<li><p>Maintain consistency</p></li>
-<li><p>Be reusable across contexts</p></li>
+<li><strong>Produce correct outputs</strong>—results that meet requirements and expectations</li>
+<li><strong>Maintain consistency</strong>—similar inputs produce similar outputs</li>
+<li><strong>Be reusable across contexts</strong>—can be applied to different problems or domains</li>
 </ul>
 <hr>
 <section id="core-properties" class="level3" data-number="20.2.1">
 <h3 data-number="20.2.1" class="anchored" data-anchor-id="core-properties"><span class="header-section-number">20.2.1</span> Core Properties</h3>
+<p>Effective instructions share several fundamental properties:</p>
 <hr>
-</section>
-<section id="clarity" class="level3" data-number="20.2.2">
-<h3 data-number="20.2.2" class="anchored" data-anchor-id="clarity"><span class="header-section-number">20.2.2</span> 1. Clarity</h3>
+<section id="clarity" class="level4" data-number="20.2.1.1">
+<h4 data-number="20.2.1.1" class="anchored" data-anchor-id="clarity"><span class="header-section-number">20.2.1.1</span> 1. Clarity</h4>
 <ul>
-<li><p>No ambiguity in task</p></li>
-<li><p>Clear expectations</p></li>
+<li>No ambiguity in task—the purpose is crystal clear</li>
+<li>Clear expectations—what should happen is obvious</li>
+<li>No room for interpretation—multiple meanings are eliminated</li>
 </ul>
 <hr>
 </section>
-<section id="structure" class="level3" data-number="20.2.3">
-<h3 data-number="20.2.3" class="anchored" data-anchor-id="structure"><span class="header-section-number">20.2.3</span> 2. Structure</h3>
+<section id="structure" class="level4" data-number="20.2.1.2">
+<h4 data-number="20.2.1.2" class="anchored" data-anchor-id="structure"><span class="header-section-number">20.2.1.2</span> 2. Structure</h4>
 <ul>
-<li><p>Defined input and output</p></li>
-<li><p>Explicit format</p></li>
+<li>Defined input and output—exact formats are specified</li>
+<li>Explicit format—structure is predictable and consistent</li>
+<li>Organized logically—information flows naturally</li>
 </ul>
 <hr>
 </section>
-<section id="constraint" class="level3" data-number="20.2.4">
-<h3 data-number="20.2.4" class="anchored" data-anchor-id="constraint"><span class="header-section-number">20.2.4</span> 3. Constraint</h3>
+<section id="constraint" class="level4" data-number="20.2.1.3">
+<h4 data-number="20.2.1.3" class="anchored" data-anchor-id="constraint"><span class="header-section-number">20.2.1.3</span> 3. Constraint</h4>
 <ul>
-<li><p>Boundaries are enforced</p></li>
-<li><p>Degrees of freedom are controlled</p></li>
+<li>Boundaries are enforced—what can and cannot happen is clear</li>
+<li>Degrees of freedom are controlled—system operates within defined limits</li>
+<li>Rules are explicit—constraints are stated unambiguously</li>
 </ul>
 <hr>
 </section>
-<section id="executability" class="level3" data-number="20.2.5">
-<h3 data-number="20.2.5" class="anchored" data-anchor-id="executability"><span class="header-section-number">20.2.5</span> 4. Executability</h3>
+<section id="executability" class="level4" data-number="20.2.1.4">
+<h4 data-number="20.2.1.4" class="anchored" data-anchor-id="executability"><span class="header-section-number">20.2.1.4</span> 4. Executability</h4>
 <ul>
-<li><p>The system can act without guessing</p></li>
-<li><p>No missing information</p></li>
+<li>The system can act without guessing—no implicit assumptions required</li>
+<li>No missing information—everything needed is provided</li>
+<li>Ready for automation—can be executed without human intervention</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>A good instruction removes the need for interpretation.</p>
+<p>A good instruction removes the need for interpretation. The system knows exactly what to do.</p>
 </blockquote>
 <hr>
 </section>
 </section>
+</section>
 <section id="instruction-as-a-design-artifact" class="level2" data-number="20.3">
 <h2 data-number="20.3" class="anchored" data-anchor-id="instruction-as-a-design-artifact"><span class="header-section-number">20.3</span> Instruction as a Design Artifact</h2>
-<p>Instruction should be treated like:</p>
+<p>Instruction should be treated with the same care and attention as other design artifacts in software development:</p>
 <ul>
-<li><p>An API</p></li>
-<li><p>A function interface</p></li>
+<li><strong>An API</strong>—defining how components interact</li>
+<li><strong>A function interface</strong>—specifying inputs, outputs, and behavior</li>
+<li><strong>A contract</strong>—establishing clear expectations and obligations</li>
 </ul>
+<hr>
 <p>It defines:</p>
 <ul>
-<li><p>What goes in</p></li>
-<li><p>What comes out</p></li>
-<li><p>How the system behaves</p></li>
+<li><strong>What goes in</strong>—the input the system receives</li>
+<li><strong>What comes out</strong>—the output the system produces</li>
+<li><strong>How the system behaves</strong>—the transformation it performs</li>
 </ul>
 <hr>
 <section id="example-analogy" class="level3" data-number="20.3.1">
 <h3 data-number="20.3.1" class="anchored" data-anchor-id="example-analogy"><span class="header-section-number">20.3.1</span> Example Analogy</h3>
-<p>Function:</p>
+<p>Think of instruction like a function signature in programming:</p>
 <pre><code>f(input) → output</code></pre>
-<p>Instruction:</p>
+<p>The instruction specifies:</p>
 <ul>
-<li><p>Input schema</p></li>
-<li><p>Output schema</p></li>
-<li><p>Constraints</p></li>
+<li><strong>Input schema</strong>—what data the function accepts</li>
+<li><strong>Output schema</strong>—what data the function returns</li>
+<li><strong>Constraints</strong>—rules the function must follow</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Good instructions are predictable like functions.</p>
+<p>Good instructions are predictable like functions. Given the same input, they always produce the same output.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="the-importance-of-structured-output" class="level2" data-number="20.4">
 <h2 data-number="20.4" class="anchored" data-anchor-id="the-importance-of-structured-output"><span class="header-section-number">20.4</span> The Importance of Structured Output</h2>
-<p>One of the most critical aspects of instruction design is:</p>
-<blockquote class="blockquote">
-<p><strong>Output structure</strong></p>
-</blockquote>
+<p>One of the most critical aspects of instruction design is <strong>output structure</strong>. This is often overlooked but has profound implications for system reliability and usability.</p>
 <hr>
 <section id="why-structure-matters" class="level3" data-number="20.4.1">
 <h3 data-number="20.4.1" class="anchored" data-anchor-id="why-structure-matters"><span class="header-section-number">20.4.1</span> Why Structure Matters</h3>
-<p>Without structure:</p>
+<p>Without structured output:</p>
 <ul>
-<li><p>Outputs are inconsistent</p></li>
-<li><p>Hard to parse</p></li>
-<li><p>Difficult to reuse</p></li>
+<li><strong>Outputs are inconsistent</strong>—different runs produce different formats</li>
+<li><strong>Hard to parse</strong>—downstream systems cannot reliably process results</li>
+<li><strong>Difficult to reuse</strong>—results cannot be easily integrated into other systems</li>
 </ul>
-<p>With structure:</p>
+<p>With structured output:</p>
 <ul>
-<li><p>Outputs are predictable</p></li>
-<li><p>Easy to process</p></li>
-<li><p>Compatible with systems</p></li>
+<li><strong>Outputs are predictable</strong>—format is consistent and reliable</li>
+<li><strong>Easy to process</strong>—downstream systems can parse results automatically</li>
+<li><strong>Compatible with systems</strong>—results can be integrated seamlessly</li>
 </ul>
 <hr>
 </section>
 </section>
 <section id="types-of-output-structure" class="level2" data-number="20.5">
 <h2 data-number="20.5" class="anchored" data-anchor-id="types-of-output-structure"><span class="header-section-number">20.5</span> Types of Output Structure</h2>
+<p>Output structure exists on a spectrum from completely free-form to highly structured:</p>
 <hr>
 <section id="free-text-least-structured" class="level3" data-number="20.5.1">
 <h3 data-number="20.5.1" class="anchored" data-anchor-id="free-text-least-structured"><span class="header-section-number">20.5.1</span> 1. Free Text (Least Structured)</h3>
 <ul>
-<li><p>Flexible</p></li>
-<li><p>Hard to control</p></li>
+<li>Flexible—system has maximum freedom</li>
+<li>Hard to control—results vary widely</li>
+<li>Difficult to parse—format is unpredictable</li>
 </ul>
+<p><strong>Example:</strong> &gt; “Write a summary of this text.”</p>
+<p>The summary could be any length, format, or style.</p>
 <hr>
 </section>
 <section id="semi-structured" class="level3" data-number="20.5.2">
 <h3 data-number="20.5.2" class="anchored" data-anchor-id="semi-structured"><span class="header-section-number">20.5.2</span> 2. Semi-Structured</h3>
 <ul>
-<li><p>Bullet points</p></li>
-<li><p>Sections</p></li>
+<li>Some constraints apply—guidelines exist but not strict rules</li>
+<li>More predictable than free text—format is somewhat consistent</li>
+<li>Easier to parse—structure is recognizable</li>
 </ul>
+<p><strong>Example:</strong> &gt; “Write a summary as 3-5 bullet points.”</p>
+<p>The format is constrained but bullet points can vary in length and content.</p>
 <hr>
 </section>
 <section id="fully-structured" class="level3" data-number="20.5.3">
 <h3 data-number="20.5.3" class="anchored" data-anchor-id="fully-structured"><span class="header-section-number">20.5.3</span> 3. Fully Structured</h3>
 <ul>
-<li><p>JSON</p></li>
-<li><p>Key-value pairs</p></li>
+<li>Strict format rules—exact structure is specified</li>
+<li>Highly predictable—format is consistent</li>
+<li>Easy to parse—structure is machine-readable</li>
 </ul>
+<p><strong>Example:</strong> &gt; “Output JSON: {summary: string, key_points: Array<string>, word_count: number}”</string></p>
+<p>The format is completely specified and machine-readable.</p>
 <hr>
 <blockquote class="blockquote">
-<p>The more structured the output, the more controllable the system.</p>
+<p>The more structured the output, the more controllable the system. Structure enables reliability.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="designing-output-first" class="level2" data-number="20.6">
 <h2 data-number="20.6" class="anchored" data-anchor-id="designing-output-first"><span class="header-section-number">20.6</span> Designing Output First</h2>
-<p>A useful principle:</p>
+<p>A useful principle for effective instruction design:</p>
 <blockquote class="blockquote">
 <p><strong>Design the output before designing the instruction</strong></p>
 </blockquote>
@@ -750,173 +762,189 @@ It is something you design carefully.</p>
 <section id="why" class="level3" data-number="20.6.1">
 <h3 data-number="20.6.1" class="anchored" data-anchor-id="why"><span class="header-section-number">20.6.1</span> Why?</h3>
 <ul>
-<li><p>Output defines what success looks like</p></li>
-<li><p>Output determines system usability</p></li>
+<li><strong>Output defines what success looks like</strong>—knowing the end state guides the process</li>
+<li><strong>Output determines system usability</strong>—downstream systems depend on output format</li>
+<li><strong>Output simplifies instruction</strong>—knowing the target makes the path clearer</li>
 </ul>
 <hr>
 </section>
 <section id="example" class="level3" data-number="20.6.2">
 <h3 data-number="20.6.2" class="anchored" data-anchor-id="example"><span class="header-section-number">20.6.2</span> Example</h3>
-<p>Instead of starting with:</p>
-<p>“Summarize this text”</p>
-<p>Start with:</p>
-<ul>
-<li><p>Output:</p>
-<ul>
-<li><p>bullet points</p></li>
-<li><p>max 5 items</p></li>
-<li><p>each under 20 words</p></li>
-</ul></li>
-</ul>
+<p><strong>Instead of starting with:</strong> &gt; “Summarize this text”</p>
+<p><strong>Start with:</strong> - <strong>Output format:</strong> - Summary: 50-100 words - Key points: 3-5 bullet points - Each bullet: under 20 words</p>
+<p>Then design the instruction to achieve this output.</p>
 <hr>
 <blockquote class="blockquote">
-<p>Output design drives instruction clarity.</p>
+<p>Output design drives instruction clarity. Know where you’re going before you start.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="balancing-structure-and-flexibility" class="level2" data-number="20.7">
 <h2 data-number="20.7" class="anchored" data-anchor-id="balancing-structure-and-flexibility"><span class="header-section-number">20.7</span> Balancing Structure and Flexibility</h2>
+<p>Effective instruction design requires finding the right balance between structure and flexibility.</p>
 <hr>
 <section id="too-little-structure" class="level3" data-number="20.7.1">
 <h3 data-number="20.7.1" class="anchored" data-anchor-id="too-little-structure"><span class="header-section-number">20.7.1</span> Too Little Structure</h3>
 <ul>
-<li><p>Outputs vary widely</p></li>
-<li><p>Hard to control</p></li>
+<li><strong>Outputs vary widely</strong>—results are unpredictable</li>
+<li><strong>Hard to control</strong>—system may produce unexpected results</li>
+<li><strong>Difficult to integrate</strong>—downstream systems cannot use results</li>
 </ul>
 <hr>
 </section>
 <section id="too-much-structure" class="level3" data-number="20.7.2">
 <h3 data-number="20.7.2" class="anchored" data-anchor-id="too-much-structure"><span class="header-section-number">20.7.2</span> Too Much Structure</h3>
 <ul>
-<li><p>Restricts model capabilities</p></li>
-<li><p>Reduces natural generation</p></li>
+<li><strong>Restricts model capabilities</strong>—limits what the system can do</li>
+<li><strong>Reduces natural generation</strong>—results feel artificial or constrained</li>
+<li><strong>Creates brittleness</strong>—small changes break the system</li>
 </ul>
 <hr>
 </section>
 <section id="good-balance" class="level3" data-number="20.7.3">
 <h3 data-number="20.7.3" class="anchored" data-anchor-id="good-balance"><span class="header-section-number">20.7.3</span> Good Balance</h3>
 <ul>
-<li><p>Structure where necessary</p></li>
-<li><p>Flexibility where beneficial</p></li>
+<li><strong>Structure where necessary</strong>—constrain format and key requirements</li>
+<li><strong>Flexibility where beneficial</strong>—allow freedom in content and style</li>
+<li><strong>Focus on what matters</strong>—constrain critical aspects, allow freedom elsewhere</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Constrain format, not creativity.</p>
+<p>Constrain format, not creativity. Structure the container, not the content.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="instruction-granularity" class="level2" data-number="20.8">
 <h2 data-number="20.8" class="anchored" data-anchor-id="instruction-granularity"><span class="header-section-number">20.8</span> Instruction Granularity</h2>
-<p>Instructions can operate at different levels:</p>
+<p>Instructions can operate at different levels of detail and specificity. Choosing the right granularity is a key design decision.</p>
 <hr>
 <section id="high-level-instruction" class="level3" data-number="20.8.1">
 <h3 data-number="20.8.1" class="anchored" data-anchor-id="high-level-instruction"><span class="header-section-number">20.8.1</span> High-Level Instruction</h3>
 <ul>
-<li><p>Broad tasks</p></li>
-<li><p>More flexibility</p></li>
+<li><strong>Broad tasks</strong>—large, complex objectives</li>
+<li><strong>More flexibility</strong>—system has freedom in approach</li>
+<li><strong>Less control</strong>—results may vary</li>
 </ul>
+<p><strong>Example:</strong> &gt; “Analyze this document and provide insights.”</p>
 <hr>
 </section>
 <section id="low-level-instruction" class="level3" data-number="20.8.2">
 <h3 data-number="20.8.2" class="anchored" data-anchor-id="low-level-instruction"><span class="header-section-number">20.8.2</span> Low-Level Instruction</h3>
 <ul>
-<li><p>Specific tasks</p></li>
-<li><p>More control</p></li>
+<li><strong>Specific tasks</strong>—narrow, well-defined objectives</li>
+<li><strong>More control</strong>—results are predictable</li>
+<li><strong>Less adaptable</strong>—may not handle variations well</li>
 </ul>
+<p><strong>Example:</strong> &gt; “Extract all dates from the document and format them as YYYY-MM-DD.”</p>
 <hr>
 </section>
 <section id="trade-off" class="level3" data-number="20.8.3">
 <h3 data-number="20.8.3" class="anchored" data-anchor-id="trade-off"><span class="header-section-number">20.8.3</span> Trade-off</h3>
 <ul>
-<li><p>High-level → flexible but less predictable</p></li>
-<li><p>Low-level → predictable but less adaptable</p></li>
+<li><strong>High-level</strong> → flexible but less predictable</li>
+<li><strong>Low-level</strong> → predictable but less adaptable</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Choose granularity based on system needs.</p>
+<p>Choose granularity based on system needs. Consider how much control you need versus how much flexibility you want.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="reusability-of-instructions" class="level2" data-number="20.9">
 <h2 data-number="20.9" class="anchored" data-anchor-id="reusability-of-instructions"><span class="header-section-number">20.9</span> Reusability of Instructions</h2>
-<p>Well-designed instructions can be reused:</p>
-<ul>
-<li><p>Across tasks</p></li>
-<li><p>Across systems</p></li>
-<li><p>Across contexts</p></li>
-</ul>
+<p>Well-designed instructions can be reused across different contexts, amplifying their value and reducing development effort.</p>
 <hr>
 <section id="characteristics-of-reusable-instructions" class="level3" data-number="20.9.1">
 <h3 data-number="20.9.1" class="anchored" data-anchor-id="characteristics-of-reusable-instructions"><span class="header-section-number">20.9.1</span> Characteristics of Reusable Instructions</h3>
+<p>Reusable instructions are:</p>
 <ul>
-<li><p>Clear input/output</p></li>
-<li><p>Minimal assumptions</p></li>
-<li><p>Modular design</p></li>
+<li><strong>Clear input/output</strong>—interfaces are well-defined</li>
+<li><strong>Minimal assumptions</strong>—don’t depend on specific contexts</li>
+<li><strong>Modular design</strong>—can be combined with other instructions</li>
 </ul>
 <hr>
+</section>
+<section id="example-1" class="level3" data-number="20.9.2">
+<h3 data-number="20.9.2" class="anchored" data-anchor-id="example-1"><span class="header-section-number">20.9.2</span> Example</h3>
+<p>A reusable instruction for text classification:</p>
+<ul>
+<li><strong>Input</strong>: <code>{text: string, categories: Array&lt;string&gt;}</code></li>
+<li><strong>Output</strong>: <code>{classification: string, confidence: number}</code></li>
+<li><strong>Task</strong>: Classify text into one of the provided categories</li>
+</ul>
+<p>This can be reused for any classification task by changing the categories.</p>
+<hr>
 <blockquote class="blockquote">
-<p>Reusability increases leverage.</p>
+<p>Reusability increases leverage. Design instructions that can be applied across multiple problems.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="common-mistakes" class="level2" data-number="20.10">
 <h2 data-number="20.10" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">20.10</span> Common Mistakes</h2>
+<p>Several common mistakes can undermine instruction effectiveness:</p>
 <hr>
 <section id="treating-instructions-as-prompts" class="level3" data-number="20.10.1">
 <h3 data-number="20.10.1" class="anchored" data-anchor-id="treating-instructions-as-prompts"><span class="header-section-number">20.10.1</span> 1. Treating Instructions as Prompts</h3>
 <ul>
-<li><p>Informal</p></li>
-<li><p>Inconsistent</p></li>
+<li><strong>Informal</strong>—lacking structure and precision</li>
+<li><strong>Inconsistent</strong>—varying between executions</li>
+<li><strong>Unreliable</strong>—producing unpredictable results</li>
 </ul>
+<p><strong>Solution:</strong> Design instructions as structured protocols, not conversational prompts.</p>
 <hr>
 </section>
 <section id="ignoring-output-design" class="level3" data-number="20.10.2">
 <h3 data-number="20.10.2" class="anchored" data-anchor-id="ignoring-output-design"><span class="header-section-number">20.10.2</span> 2. Ignoring Output Design</h3>
 <ul>
-<li>Leads to unusable results</li>
+<li><strong>Leads to unusable results</strong>—downstream systems cannot process output</li>
+<li><strong>Makes integration difficult</strong>—results cannot be reliably used</li>
+<li><strong>Reduces system value</strong>—good execution produces bad output</li>
 </ul>
+<p><strong>Solution:</strong> Always design output first. Know exactly what format you need.</p>
 <hr>
 </section>
 <section id="missing-constraints" class="level3" data-number="20.10.3">
 <h3 data-number="20.10.3" class="anchored" data-anchor-id="missing-constraints"><span class="header-section-number">20.10.3</span> 3. Missing Constraints</h3>
 <ul>
-<li><p>Outputs drift</p></li>
-<li><p>Quality degrades</p></li>
+<li><strong>Outputs drift</strong>—behavior deviates from requirements over time</li>
+<li><strong>Quality degrades</strong>—results become less accurate or relevant</li>
+<li><strong>System becomes unreliable</strong>—predictability decreases</li>
 </ul>
+<p><strong>Solution:</strong> Explicitly define all constraints. What must the system do? What must it not do?</p>
 <hr>
 </section>
 <section id="overloading-instructions" class="level3" data-number="20.10.4">
 <h3 data-number="20.10.4" class="anchored" data-anchor-id="overloading-instructions"><span class="header-section-number">20.10.4</span> 4. Overloading Instructions</h3>
 <ul>
-<li><p>Too many tasks in one instruction</p></li>
-<li><p>Reduces clarity</p></li>
+<li><strong>Too many tasks in one step</strong>—instruction tries to do too much</li>
+<li><strong>Reduces clarity</strong>—main purpose becomes obscured</li>
+<li><strong>Makes maintenance difficult</strong>—hard to understand and modify</li>
 </ul>
+<p><strong>Solution:</strong> Keep instructions focused. One clear task per instruction. Use composition for complex workflows.</p>
 <hr>
 </section>
 </section>
 <section id="instruction-and-system-stability" class="level2" data-number="20.11">
 <h2 data-number="20.11" class="anchored" data-anchor-id="instruction-and-system-stability"><span class="header-section-number">20.11</span> Instruction and System Stability</h2>
-<p>Stable systems depend on:</p>
+<p>Stable systems depend on stable instructions. If instructions are:</p>
 <ul>
-<li>Stable instructions</li>
-</ul>
-<p>If instructions are:</p>
-<ul>
-<li><p>Clear</p></li>
-<li><p>Structured</p></li>
-<li><p>Consistent</p></li>
+<li><strong>Clear</strong>—unambiguous and precise</li>
+<li><strong>Structured</strong>—organized and predictable</li>
+<li><strong>Consistent</strong>—same format every time</li>
 </ul>
 <p>Then:</p>
 <ul>
-<li>Outputs become predictable</li>
+<li><strong>Outputs become predictable</strong>—results meet expectations</li>
+<li><strong>Behavior stabilizes</strong>—system performs reliably</li>
+<li><strong>Quality improves</strong>—consistency enables optimization</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Stability is a property of design, not execution.</p>
+<p>Stability is a property of design, not execution. Good instructions produce stable systems.</p>
 </blockquote>
 <hr>
 </section>
@@ -924,9 +952,10 @@ It is something you design carefully.</p>
 <h2 data-number="20.12" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">20.12</span> Final Insight</h2>
 <p>Instruction design is the point where:</p>
 <ul>
-<li><p>Specification becomes executable</p></li>
-<li><p>Systems become controllable</p></li>
+<li><strong>Specification becomes executable</strong>—abstract definitions become concrete operations</li>
+<li><strong>Systems become controllable</strong>—behavior becomes predictable and reliable</li>
 </ul>
+<p>It is a critical design discipline that determines system effectiveness.</p>
 <hr>
 <blockquote class="blockquote">
 <p>The quality of execution depends on the quality of instruction design.</p>
@@ -935,11 +964,22 @@ It is something you design carefully.</p>
 </section>
 <section id="closing-statement" class="level2" data-number="20.13">
 <h2 data-number="20.13" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">20.13</span> Closing Statement</h2>
-<p>In the LLM era, writing instructions is not about phrasing.</p>
-<p>It is about structure.</p>
+<p>In the LLM era, writing instructions is not about phrasing or crafting clever prompts. It is about structure.</p>
 <blockquote class="blockquote">
-<p>A well-designed instruction does not guide the system.<br>
-It defines how the system behaves.</p>
+<p>A well-designed instruction does not guide the system. It defines how the system behaves.</p>
+</blockquote>
+<hr>
+</section>
+<section id="key-insight" class="level2" data-number="20.14">
+<h2 data-number="20.14" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">20.14</span> Key Insight</h2>
+<blockquote class="blockquote">
+<p>Instruction design is a design problem, not a translation task. Key principles include clarity, structure, constraint, and executability. Design output first, balance structure with flexibility, and focus on reusability.</p>
+</blockquote>
+</section>
+<section id="action-hint" class="level2" data-number="20.15">
+<h2 data-number="20.15" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">20.15</span> Action Hint</h2>
+<blockquote class="blockquote">
+<p>Always design your output format before writing instructions. Ask: “What exactly do I want the output to look like?” Define the structure precisely. Then design the instruction to achieve that output. Test with multiple inputs to ensure consistency.</p>
 </blockquote>
 
 

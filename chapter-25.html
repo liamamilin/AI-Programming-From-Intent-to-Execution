@@ -295,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The New Bottleneck</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -534,7 +534,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#symptoms-2" id="toc-symptoms-2" class="nav-link" data-scroll-target="#symptoms-2"><span class="header-section-number">26.7.1</span> Symptoms</a></li>
   <li><a href="#fixes-2" id="toc-fixes-2" class="nav-link" data-scroll-target="#fixes-2"><span class="header-section-number">26.7.2</span> Fixes</a></li>
   </ul></li>
-  <li><a href="#debugging-as-iteration" id="toc-debugging-as-iteration" class="nav-link" data-scroll-target="#debugging-as-iteration"><span class="header-section-number">26.8</span> Debugging as Iteration</a></li>
+  <li><a href="#debugging-as-iteration" id="toc-debugging-as-iteration" class="nav-link" data-scroll-target="#debugging-as-iteration"><span class="header-section-number">26.8</span> Debugging as Iteration</a>
+  <ul class="collapse">
+  <li><a href="#iterative-process" id="toc-iterative-process" class="nav-link" data-scroll-target="#iterative-process"><span class="header-section-number">26.8.1</span> Iterative Process</a></li>
+  </ul></li>
   <li><a href="#avoiding-common-pitfalls" id="toc-avoiding-common-pitfalls" class="nav-link" data-scroll-target="#avoiding-common-pitfalls"><span class="header-section-number">26.9</span> Avoiding Common Pitfalls</a>
   <ul class="collapse">
   <li><a href="#blaming-the-model" id="toc-blaming-the-model" class="nav-link" data-scroll-target="#blaming-the-model"><span class="header-section-number">26.9.1</span> 1. Blaming the Model</a></li>
@@ -557,6 +560,8 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">26.13</span> Final Insight</a></li>
   <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">26.14</span> Closing Statement</a></li>
+  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">26.15</span> Key Insight</a></li>
+  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">26.16</span> Action Hint</a></li>
   </ul>
 </nav>
     </div>
@@ -585,29 +590,26 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="the-shift-in-debugging" class="level2" data-number="26.1">
 <h2 data-number="26.1" class="anchored" data-anchor-id="the-shift-in-debugging"><span class="header-section-number">26.1</span> The Shift in Debugging</h2>
-<p>In traditional programming, debugging means:</p>
+<p>In traditional programming, debugging has a clear, well-defined meaning:</p>
 <ul>
-<li><p>Finding bugs in code</p></li>
-<li><p>Fixing logic errors</p></li>
-<li><p>Tracing execution paths</p></li>
+<li><strong>Finding bugs in code</strong>—locating errors in implementation</li>
+<li><strong>Fixing logic errors</strong>—correcting flawed reasoning or algorithms</li>
+<li><strong>Tracing execution paths</strong>—following program flow to identify issues</li>
 </ul>
-<p>The object of debugging is clear:</p>
+<p>The object of debugging is clear and specific:</p>
 <blockquote class="blockquote">
 <p><strong>Code</strong></p>
 </blockquote>
 <hr>
-<p>In the LLM era, this changes.</p>
-<p>Systems are no longer defined primarily by code.</p>
-<p>They are defined by:</p>
+<p>In the LLM era, this changes fundamentally. Systems are no longer defined primarily by code. They are defined by:</p>
 <ul>
-<li><p>Spec</p></li>
-<li><p>Instruction</p></li>
-<li><p>Context</p></li>
+<li><strong>Spec</strong>—the specification of what the system should do</li>
+<li><strong>Instruction</strong>—the protocol for how the system should execute</li>
+<li><strong>Context</strong>—the information available to the system at execution time</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Debugging is no longer about fixing code.<br>
-It is about fixing definitions.</p>
+<p>Debugging is no longer about fixing code. It is about fixing definitions.</p>
 </blockquote>
 <hr>
 </section>
@@ -615,68 +617,82 @@ It is about fixing definitions.</p>
 <h2 data-number="26.2" class="anchored" data-anchor-id="what-are-we-debugging-now"><span class="header-section-number">26.2</span> What Are We Debugging Now?</h2>
 <p>When an LLM system produces incorrect output, the problem is rarely:</p>
 <ul>
-<li><p>A syntax error</p></li>
-<li><p>A runtime exception</p></li>
+<li>A syntax error—grammatical or structural mistake in code</li>
+<li>A runtime exception—program crashes or errors during execution</li>
+<li>A logical bug—error in algorithmic reasoning</li>
 </ul>
 <p>Instead, the problem is usually:</p>
 <ul>
-<li><p>Ambiguity</p></li>
-<li><p>Missing constraints</p></li>
-<li><p>Poor structure</p></li>
+<li><strong>Ambiguity</strong>—unclear or multiple interpretations of requirements</li>
+<li><strong>Missing constraints</strong>—insufficient boundaries on acceptable behavior</li>
+<li><strong>Poor structure</strong>—lack of clear organization or framework</li>
 </ul>
 <hr>
 <section id="new-debug-targets" class="level3" data-number="26.2.1">
 <h3 data-number="26.2.1" class="anchored" data-anchor-id="new-debug-targets"><span class="header-section-number">26.2.1</span> New Debug Targets</h3>
+<p>In the LLM era, debugging focuses on:</p>
 <ul>
-<li><p><strong>Spec</strong> — unclear or incomplete definition</p></li>
-<li><p><strong>Instruction</strong> — poorly designed execution protocol</p></li>
-<li><p><strong>Context</strong> — irrelevant or missing information</p></li>
+<li><strong>Spec</strong>—unclear or incomplete definition of requirements</li>
+<li><strong>Instruction</strong>—poorly designed execution protocol</li>
+<li><strong>Context</strong>—irrelevant or missing information</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>The bug is often in what we said, not how it was executed.</p>
+<p>The bug is often in what we said, not how it was executed. The system follows our definition—when the definition is flawed, the result is flawed.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="types-of-failures" class="level2" data-number="26.3">
 <h2 data-number="26.3" class="anchored" data-anchor-id="types-of-failures"><span class="header-section-number">26.3</span> Types of Failures</h2>
+<p>LLM systems can fail in different ways, each pointing to different underlying issues:</p>
 <hr>
 <section id="incorrect-output" class="level3" data-number="26.3.1">
 <h3 data-number="26.3.1" class="anchored" data-anchor-id="incorrect-output"><span class="header-section-number">26.3.1</span> 1. Incorrect Output</h3>
 <ul>
-<li><p>Wrong answer</p></li>
-<li><p>Irrelevant content</p></li>
+<li><strong>Wrong answer</strong>—response doesn’t match expected result</li>
+<li><strong>Irrelevant content</strong>—output addresses different question</li>
+<li><strong>Hallucination</strong>—system invents information</li>
 </ul>
+<p><strong>Likely causes:</strong> - Unclear spec—requirements not well-defined - Weak instruction—execution protocol insufficient - Poor context—missing or irrelevant information</p>
 <hr>
 </section>
 <section id="inconsistent-behavior" class="level3" data-number="26.3.2">
 <h3 data-number="26.3.2" class="anchored" data-anchor-id="inconsistent-behavior"><span class="header-section-number">26.3.2</span> 2. Inconsistent Behavior</h3>
 <ul>
-<li>Same input → different outputs</li>
+<li><strong>Same input → different outputs</strong>—results vary unpredictably</li>
+<li><strong>Random variation</strong>—no clear pattern in differences</li>
+<li><strong>Context-dependent inconsistency</strong>—behavior changes with session</li>
 </ul>
+<p><strong>Likely causes:</strong> - Weak constraints—insufficient boundaries - Poor instruction design—lack of structure - Context variability—different context construction</p>
 <hr>
 </section>
 <section id="format-violations" class="level3" data-number="26.3.3">
 <h3 data-number="26.3.3" class="anchored" data-anchor-id="format-violations"><span class="header-section-number">26.3.3</span> 3. Format Violations</h3>
 <ul>
-<li>Output does not match expected structure</li>
+<li><strong>Output does not match expected structure</strong>—wrong JSON, missing fields</li>
+<li><strong>Incorrect format</strong>—wrong data types, organization</li>
+<li><strong>Parsing errors</strong>—output can’t be processed downstream</li>
 </ul>
+<p><strong>Likely causes:</strong> - Poor output design—unclear format requirements - Weak instruction—inadequate format specification - Missing validation—no format checking</p>
 <hr>
 </section>
 <section id="missing-information" class="level3" data-number="26.3.4">
 <h3 data-number="26.3.4" class="anchored" data-anchor-id="missing-information"><span class="header-section-number">26.3.4</span> 4. Missing Information</h3>
 <ul>
-<li>Incomplete responses</li>
+<li><strong>Incomplete responses</strong>—output lacks required elements</li>
+<li><strong>Partial answers</strong>—only addresses part of query</li>
+<li><strong>Omitted details</strong>—important information missing</li>
 </ul>
+<p><strong>Likely causes:</strong> - Incomplete spec—requirements not fully specified - Weak constraints—no requirement for completeness - Poor context—missing source information</p>
 <hr>
-<p>Each type of failure points to a different layer.</p>
+<p>Each type of failure points to a different layer—spec, instruction, or context—where the fix should be applied.</p>
 <hr>
 </section>
 </section>
 <section id="debugging-as-diagnosis" class="level2" data-number="26.4">
 <h2 data-number="26.4" class="anchored" data-anchor-id="debugging-as-diagnosis"><span class="header-section-number">26.4</span> Debugging as Diagnosis</h2>
-<p>Debugging begins with diagnosis.</p>
+<p>Debugging begins with diagnosis—identifying where the problem originates.</p>
 <hr>
 <section id="key-question" class="level3" data-number="26.4.1">
 <h3 data-number="26.4.1" class="anchored" data-anchor-id="key-question"><span class="header-section-number">26.4.1</span> Key Question</h3>
@@ -687,32 +703,42 @@ It is about fixing definitions.</p>
 </section>
 <section id="layered-diagnosis" class="level3" data-number="26.4.2">
 <h3 data-number="26.4.2" class="anchored" data-anchor-id="layered-diagnosis"><span class="header-section-number">26.4.2</span> Layered Diagnosis</h3>
+<p>Diagnosing LLM systems requires examining each layer:</p>
 <hr>
 <section id="spec-layer" class="level4" data-number="26.4.2.1">
 <h4 data-number="26.4.2.1" class="anchored" data-anchor-id="spec-layer"><span class="header-section-number">26.4.2.1</span> Spec Layer</h4>
 <ul>
-<li><p>Is the goal clearly defined?</p></li>
-<li><p>Are constraints complete?</p></li>
+<li>Is the goal clearly defined?</li>
+<li>Are constraints complete?</li>
+<li>Are success criteria explicit?</li>
+<li>Is there ambiguity in requirements?</li>
 </ul>
+<p><strong>Questions to ask:</strong> - What exactly should the system do? - What are the boundaries of acceptable behavior? - How do we know when the system is correct?</p>
 <hr>
 </section>
 <section id="instruction-layer" class="level4" data-number="26.4.2.2">
 <h4 data-number="26.4.2.2" class="anchored" data-anchor-id="instruction-layer"><span class="header-section-number">26.4.2.2</span> Instruction Layer</h4>
 <ul>
-<li><p>Is the task explicit?</p></li>
-<li><p>Is the output structured?</p></li>
+<li>Is the task explicit?</li>
+<li>Is the output structured?</li>
+<li>Are constraints enforced?</li>
+<li>Is the protocol clear?</li>
 </ul>
+<p><strong>Questions to ask:</strong> - How does the instruction define the task? - What format is expected for output? - What rules constrain behavior?</p>
 <hr>
 </section>
 <section id="context-layer" class="level4" data-number="26.4.2.3">
 <h4 data-number="26.4.2.3" class="anchored" data-anchor-id="context-layer"><span class="header-section-number">26.4.2.3</span> Context Layer</h4>
 <ul>
-<li><p>Is relevant information included?</p></li>
-<li><p>Is noise removed?</p></li>
+<li>Is relevant information included?</li>
+<li>Is noise removed?</li>
+<li>Is context consistent?</li>
+<li>Is retrieval effective?</li>
 </ul>
+<p><strong>Questions to ask:</strong> - What information is available to the system? - Is the right information being retrieved? - Is context constructed consistently?</p>
 <hr>
 <blockquote class="blockquote">
-<p>Correct diagnosis determines correct fixes.</p>
+<p>Correct diagnosis determines correct fixes. Debugging is systematic, not random.</p>
 </blockquote>
 <hr>
 </section>
@@ -720,227 +746,277 @@ It is about fixing definitions.</p>
 </section>
 <section id="debugging-spec" class="level2" data-number="26.5">
 <h2 data-number="26.5" class="anchored" data-anchor-id="debugging-spec"><span class="header-section-number">26.5</span> Debugging Spec</h2>
-<p>When the issue is in the spec:</p>
+<p>When the issue is in the spec, the problem is at the definition level—the system is trying to do the wrong thing.</p>
 <hr>
 <section id="symptoms" class="level3" data-number="26.5.1">
 <h3 data-number="26.5.1" class="anchored" data-anchor-id="symptoms"><span class="header-section-number">26.5.1</span> Symptoms</h3>
 <ul>
-<li><p>Outputs are generally off-target</p></li>
-<li><p>System misunderstands intent</p></li>
+<li><strong>Outputs are generally off-target</strong>—system consistently misunderstands requirements</li>
+<li><strong>System misunderstands intent</strong>—results don’t match original goals</li>
+<li><strong>Behavior is systematically wrong</strong>—same error pattern across multiple runs</li>
 </ul>
 <hr>
 </section>
 <section id="fixes" class="level3" data-number="26.5.2">
 <h3 data-number="26.5.2" class="anchored" data-anchor-id="fixes"><span class="header-section-number">26.5.2</span> Fixes</h3>
 <ul>
-<li><p>Clarify objective</p></li>
-<li><p>Add constraints</p></li>
-<li><p>Define success criteria</p></li>
+<li><strong>Clarify objective</strong>—make goals more explicit and precise</li>
+<li><strong>Add constraints</strong>—define boundaries and limitations</li>
+<li><strong>Define success criteria</strong>—specify how to evaluate correctness</li>
+<li><strong>Remove ambiguity</strong>—eliminate multiple interpretations</li>
 </ul>
 <hr>
 </section>
 <section id="example" class="level3" data-number="26.5.3">
 <h3 data-number="26.5.3" class="anchored" data-anchor-id="example"><span class="header-section-number">26.5.3</span> Example</h3>
-<p>Spec:</p>
-<p>“Summarize the document”</p>
-<hr>
-<p>Improved Spec:</p>
-<p>“Summarize the document into 5 key points, each under 20 words, focusing on main arguments”</p>
+<p><strong>Spec:</strong></p>
+<pre><code>Summarize the document</code></pre>
+<p><strong>Problem:</strong> Too vague—what kind of summary? How long? What to include?</p>
+<p><strong>Improved Spec:</strong></p>
+<pre><code>Summarize the document into 5 key points, each under 20 words, focusing on main arguments and excluding minor details</code></pre>
+<p><strong>Result:</strong> System produces summaries that match requirements more precisely.</p>
 <hr>
 <blockquote class="blockquote">
-<p>Improve definition, not execution.</p>
+<p>Improve definition, not execution. When the spec is wrong, fixing execution won’t help.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="debugging-instruction" class="level2" data-number="26.6">
 <h2 data-number="26.6" class="anchored" data-anchor-id="debugging-instruction"><span class="header-section-number">26.6</span> Debugging Instruction</h2>
-<p>When the issue is in the instruction:</p>
+<p>When the issue is in the instruction, the problem is at the protocol level—the system doesn’t know how to do what’s asked.</p>
 <hr>
 <section id="symptoms-1" class="level3" data-number="26.6.1">
 <h3 data-number="26.6.1" class="anchored" data-anchor-id="symptoms-1"><span class="header-section-number">26.6.1</span> Symptoms</h3>
 <ul>
-<li><p>Output format is inconsistent</p></li>
-<li><p>Behavior varies widely</p></li>
+<li><strong>Output format is inconsistent</strong>—results vary in structure</li>
+<li><strong>Behavior varies widely</strong>—same instruction produces different results</li>
+<li><strong>Format violations</strong>—output doesn’t match expected structure</li>
 </ul>
 <hr>
 </section>
 <section id="fixes-1" class="level3" data-number="26.6.2">
 <h3 data-number="26.6.2" class="anchored" data-anchor-id="fixes-1"><span class="header-section-number">26.6.2</span> Fixes</h3>
 <ul>
-<li><p>Define output structure</p></li>
-<li><p>Add explicit rules</p></li>
-<li><p>Simplify task</p></li>
+<li><strong>Define output structure</strong>—specify exact format requirements</li>
+<li><strong>Add explicit rules</strong>—create clear constraints on behavior</li>
+<li><strong>Simplify task</strong>—break complex instructions into simpler steps</li>
+<li><strong>Standardize format</strong>—use consistent data structures</li>
 </ul>
 <hr>
 </section>
 <section id="example-1" class="level3" data-number="26.6.3">
 <h3 data-number="26.6.3" class="anchored" data-anchor-id="example-1"><span class="header-section-number">26.6.3</span> Example</h3>
-<p>Instruction:</p>
-<p>“Explain the result”</p>
-<hr>
-<p>Improved Instruction:</p>
-<p>“Provide a 3-step explanation in bullet points, each under 15 words”</p>
-<hr>
+<p><strong>Instruction:</strong></p>
+<pre><code>Explain the result</code></pre>
+<p><strong>Problem:</strong> Too vague—what kind of explanation? How long? What format?</p>
+<p><strong>Improved Instruction:</strong></p>
+<pre><code>Provide a 3-step explanation in bullet points, each under 15 words, covering: (1) what was found, (2) why it matters, (3) what to do next</code></pre>
+<p><strong>Result:</strong> System produces consistent, structured explanations.</p>
 <hr>
 </section>
 </section>
 <section id="debugging-context" class="level2" data-number="26.7">
 <h2 data-number="26.7" class="anchored" data-anchor-id="debugging-context"><span class="header-section-number">26.7</span> Debugging Context</h2>
-<p>When the issue is in context:</p>
+<p>When the issue is in context, the problem is at the information level—the system doesn’t have the right information.</p>
 <hr>
 <section id="symptoms-2" class="level3" data-number="26.7.1">
 <h3 data-number="26.7.1" class="anchored" data-anchor-id="symptoms-2"><span class="header-section-number">26.7.1</span> Symptoms</h3>
 <ul>
-<li><p>Irrelevant answers</p></li>
-<li><p>Missing key information</p></li>
+<li><strong>Irrelevant answers</strong>—response doesn’t address question</li>
+<li><strong>Missing key information</strong>—important facts omitted</li>
+<li><strong>Context-dependent failures</strong>—works sometimes, fails others</li>
 </ul>
 <hr>
 </section>
 <section id="fixes-2" class="level3" data-number="26.7.2">
 <h3 data-number="26.7.2" class="anchored" data-anchor-id="fixes-2"><span class="header-section-number">26.7.2</span> Fixes</h3>
 <ul>
-<li><p>Add relevant context</p></li>
-<li><p>Remove noise</p></li>
-<li><p>Improve retrieval</p></li>
+<li><strong>Add relevant context</strong>—include information system needs</li>
+<li><strong>Remove noise</strong>—eliminate irrelevant information</li>
+<li><strong>Improve retrieval</strong>—enhance search and selection</li>
+<li><strong>Standardize context</strong>—consistent context construction</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Context determines what the system sees.</p>
+<p>Context determines what the system sees. Better context leads to better results.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="debugging-as-iteration" class="level2" data-number="26.8">
 <h2 data-number="26.8" class="anchored" data-anchor-id="debugging-as-iteration"><span class="header-section-number">26.8</span> Debugging as Iteration</h2>
-<p>Debugging is not a one-time fix.</p>
-<p>It follows a loop:</p>
+<p>Debugging is not a one-time fix. It follows a loop of continuous improvement:</p>
 <pre><code>Observe → Diagnose → Modify → Test → Repeat</code></pre>
 <hr>
 <p>Each iteration:</p>
 <ul>
-<li><p>Reduces ambiguity</p></li>
-<li><p>Improves stability</p></li>
-<li><p>Moves toward correctness</p></li>
+<li><strong>Reduces ambiguity</strong>—definition becomes clearer</li>
+<li><strong>Improves stability</strong>—behavior becomes more consistent</li>
+<li><strong>Moves toward correctness</strong>—results better meet requirements</li>
 </ul>
 <hr>
+<section id="iterative-process" class="level3" data-number="26.8.1">
+<h3 data-number="26.8.1" class="anchored" data-anchor-id="iterative-process"><span class="header-section-number">26.8.1</span> Iterative Process</h3>
+<ol type="1">
+<li><strong>Observe</strong>—identify the failure or issue</li>
+<li><strong>Diagnose</strong>—determine which layer has the problem</li>
+<li><strong>Modify</strong>—adjust spec, instruction, or context</li>
+<li><strong>Test</strong>—run system to verify fix</li>
+<li><strong>Repeat</strong>—continue until issue resolved</li>
+</ol>
+<hr>
+</section>
 </section>
 <section id="avoiding-common-pitfalls" class="level2" data-number="26.9">
 <h2 data-number="26.9" class="anchored" data-anchor-id="avoiding-common-pitfalls"><span class="header-section-number">26.9</span> Avoiding Common Pitfalls</h2>
+<p>Several common mistakes undermine effective debugging:</p>
 <hr>
 <section id="blaming-the-model" class="level3" data-number="26.9.1">
 <h3 data-number="26.9.1" class="anchored" data-anchor-id="blaming-the-model"><span class="header-section-number">26.9.1</span> 1. Blaming the Model</h3>
 <ul>
-<li><p>Assuming the system is flawed</p></li>
-<li><p>Ignoring definition issues</p></li>
+<li><strong>Assuming the system is flawed</strong>—blaming the LLM for poor results</li>
+<li><strong>Ignoring definition issues</strong>—overlooking problems in spec or instruction</li>
+<li><strong>Changing parameters without diagnosis</strong>—tuning settings without understanding cause</li>
 </ul>
+<p><strong>Solution:</strong> Focus on definition first. The model follows your definition—if definition is wrong, output will be wrong.</p>
 <hr>
 </section>
 <section id="random-adjustments" class="level3" data-number="26.9.2">
 <h3 data-number="26.9.2" class="anchored" data-anchor-id="random-adjustments"><span class="header-section-number">26.9.2</span> 2. Random Adjustments</h3>
 <ul>
-<li>Changing parameters without diagnosis</li>
+<li><strong>Changing parameters without diagnosis</strong>—tweaking settings randomly</li>
+<li><strong>Trial and error</strong>—making changes without understanding impact</li>
+<li><strong>No systematic approach</strong>—jumping between different fixes</li>
 </ul>
+<p><strong>Solution:</strong> Diagnose first, then fix. Identify the root cause before making changes.</p>
 <hr>
 </section>
 <section id="overfitting-fixes" class="level3" data-number="26.9.3">
 <h3 data-number="26.9.3" class="anchored" data-anchor-id="overfitting-fixes"><span class="header-section-number">26.9.3</span> 3. Overfitting Fixes</h3>
 <ul>
-<li>Fixing one case but breaking others</li>
+<li><strong>Fixing one case but breaking others</strong>—optimizing for specific inputs</li>
+<li><strong>Narrow focus</strong>—addressing symptoms not causes</li>
+<li><strong>Fragile solutions</strong>—fixes that break easily</li>
 </ul>
+<p><strong>Solution:</strong> Understand the underlying problem. Fix at the appropriate layer.</p>
 <hr>
 </section>
 <section id="mixing-layers" class="level3" data-number="26.9.4">
 <h3 data-number="26.9.4" class="anchored" data-anchor-id="mixing-layers"><span class="header-section-number">26.9.4</span> 4. Mixing Layers</h3>
 <ul>
-<li>Changing instruction when spec is the problem</li>
+<li><strong>Changing instruction when spec is the problem</strong>—treating symptoms not causes</li>
+<li><strong>Adjusting context when instruction is wrong</strong>—wrong layer for fix</li>
+<li><strong>Modifying everything at once</strong>—no way to isolate what works</li>
 </ul>
+<p><strong>Solution:</strong> Identify which layer has the problem. Fix at that layer only.</p>
 <hr>
 <blockquote class="blockquote">
-<p>Debugging requires discipline, not guesswork.</p>
+<p>Debugging requires discipline, not guesswork. Systematic diagnosis leads to effective fixes.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="debugging-tools-and-techniques" class="level2" data-number="26.10">
 <h2 data-number="26.10" class="anchored" data-anchor-id="debugging-tools-and-techniques"><span class="header-section-number">26.10</span> Debugging Tools and Techniques</h2>
+<p>Effective debugging requires appropriate tools and methods:</p>
 <hr>
 <section id="test-cases" class="level3" data-number="26.10.1">
 <h3 data-number="26.10.1" class="anchored" data-anchor-id="test-cases"><span class="header-section-number">26.10.1</span> 1. Test Cases</h3>
 <ul>
-<li>Define inputs and expected outputs</li>
+<li><strong>Define inputs and expected outputs</strong>—create test scenarios</li>
+<li><strong>Cover edge cases</strong>—test unusual or boundary conditions</li>
+<li><strong>Document behavior</strong>—track what works and what doesn’t</li>
 </ul>
+<p><strong>Purpose:</strong> Understand system behavior systematically</p>
 <hr>
 </section>
 <section id="controlled-inputs" class="level3" data-number="26.10.2">
 <h3 data-number="26.10.2" class="anchored" data-anchor-id="controlled-inputs"><span class="header-section-number">26.10.2</span> 2. Controlled Inputs</h3>
 <ul>
-<li><p>Reduce variability</p></li>
-<li><p>Isolate issues</p></li>
+<li><strong>Reduce variability</strong>—use consistent, controlled inputs</li>
+<li><strong>Isolate issues</strong>—test one variable at a time</li>
+<li><strong>Reproduce failures</strong>—create reliable test cases</li>
 </ul>
+<p><strong>Purpose:</strong> Make debugging predictable and repeatable</p>
 <hr>
 </section>
 <section id="logging" class="level3" data-number="26.10.3">
 <h3 data-number="26.10.3" class="anchored" data-anchor-id="logging"><span class="header-section-number">26.10.3</span> 3. Logging</h3>
 <ul>
-<li>Track inputs, outputs, context</li>
+<li><strong>Track inputs, outputs, context</strong>—record what happens at each stage</li>
+<li><strong>Monitor performance</strong>—track latency, cost, success rates</li>
+<li><strong>Identify patterns</strong>—find recurring issues</li>
 </ul>
+<p><strong>Purpose:</strong> Understand system behavior and identify problems</p>
 <hr>
 </section>
 <section id="evaluation-metrics" class="level3" data-number="26.10.4">
 <h3 data-number="26.10.4" class="anchored" data-anchor-id="evaluation-metrics"><span class="header-section-number">26.10.4</span> 4. Evaluation Metrics</h3>
 <ul>
-<li>Measure performance</li>
+<li><strong>Measure performance</strong>—quantify system behavior</li>
+<li><strong>Track improvement</strong>—monitor progress over time</li>
+<li><strong>Set benchmarks</strong>—establish standards for success</li>
 </ul>
+<p><strong>Purpose:</strong> Make debugging objective and measurable</p>
 <hr>
 <blockquote class="blockquote">
-<p>Measurement enables debugging.</p>
+<p>Measurement enables debugging. Without metrics, debugging is guesswork.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="debugging-as-understanding" class="level2" data-number="26.11">
 <h2 data-number="26.11" class="anchored" data-anchor-id="debugging-as-understanding"><span class="header-section-number">26.11</span> Debugging as Understanding</h2>
-<p>Debugging improves:</p>
-<ul>
-<li><p>The system</p></li>
-<li><p>Your understanding of the problem</p></li>
-</ul>
+<p>Debugging improves more than just the system—it improves understanding:</p>
 <hr>
 <p>Each failure reveals:</p>
 <ul>
-<li><p>Missing constraints</p></li>
-<li><p>Hidden assumptions</p></li>
-<li><p>Weak definitions</p></li>
+<li><strong>Missing constraints</strong>—boundaries that weren’t specified</li>
+<li><strong>Hidden assumptions</strong>—implicit requirements that weren’t stated</li>
+<li><strong>Weak definitions</strong>—specifications that needed clarification</li>
+</ul>
+<hr>
+<p>Debugging is learning:</p>
+<ul>
+<li><strong>The system</strong>—how it behaves and what it needs</li>
+<li><strong>The problem</strong>—what the real requirements are</li>
+<li><strong>Your understanding</strong>—how to define problems more clearly</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Every bug is a signal.</p>
+<p>Every bug is a signal. It tells you something about the definition that needs to be clarified.</p>
 </blockquote>
 <hr>
 </section>
 <section id="from-debugging-code-to-debugging-meaning" class="level2" data-number="26.12">
 <h2 data-number="26.12" class="anchored" data-anchor-id="from-debugging-code-to-debugging-meaning"><span class="header-section-number">26.12</span> From Debugging Code to Debugging Meaning</h2>
-<p>The fundamental shift:</p>
+<p>The fundamental shift in debugging:</p>
 <hr>
 <section id="before" class="level3" data-number="26.12.1">
 <h3 data-number="26.12.1" class="anchored" data-anchor-id="before"><span class="header-section-number">26.12.1</span> Before</h3>
 <ul>
-<li>Debug logic</li>
+<li><strong>Debug logic</strong>—find errors in reasoning or implementation</li>
+<li><strong>Trace execution</strong>—follow program flow to identify issues</li>
+<li><strong>Fix code</strong>—correct syntax or logic errors</li>
 </ul>
+<p><strong>Focus:</strong> How the system is implemented</p>
 <hr>
 </section>
 <section id="now" class="level3" data-number="26.12.2">
 <h3 data-number="26.12.2" class="anchored" data-anchor-id="now"><span class="header-section-number">26.12.2</span> Now</h3>
 <ul>
-<li>Debug meaning</li>
+<li><strong>Debug meaning</strong>—clarify what the system should do</li>
+<li><strong>Refine definition</strong>—improve spec and instruction</li>
+<li><strong>Adjust context</strong>—optimize information available to system</li>
 </ul>
+<p><strong>Focus:</strong> What the system should do</p>
 <hr>
 <p>This requires:</p>
 <ul>
-<li><p>Precision in language</p></li>
-<li><p>Clarity in definition</p></li>
-<li><p>Awareness of system behavior</p></li>
+<li><strong>Precision in language</strong>—clear, unambiguous definitions</li>
+<li><strong>Clarity in definition</strong>—explicit requirements and constraints</li>
+<li><strong>Awareness of system behavior</strong>—understanding how systems interpret definitions</li>
 </ul>
 <hr>
 </section>
@@ -951,8 +1027,7 @@ It is about fixing definitions.</p>
 <p>It is about clarifying what the system should have done.</p>
 <hr>
 <blockquote class="blockquote">
-<p>The system reflects your definition.<br>
-If the output is wrong, the definition is incomplete.</p>
+<p>The system reflects your definition. If the output is wrong, the definition is incomplete. Debugging is the process of completing and refining that definition.</p>
 </blockquote>
 <hr>
 </section>
@@ -960,8 +1035,20 @@ If the output is wrong, the definition is incomplete.</p>
 <h2 data-number="26.14" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">26.14</span> Closing Statement</h2>
 <p>As programming shifts from implementation to definition, debugging shifts with it.</p>
 <blockquote class="blockquote">
-<p>You are no longer debugging code.<br>
-You are debugging your understanding.</p>
+<p>You are no longer debugging code. You are debugging your understanding.</p>
+</blockquote>
+<hr>
+</section>
+<section id="key-insight" class="level2" data-number="26.15">
+<h2 data-number="26.15" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">26.15</span> Key Insight</h2>
+<blockquote class="blockquote">
+<p>Debugging in the LLM era focuses on fixing definitions—spec, instruction, and context—rather than code. The process involves systematic diagnosis to identify which layer has the problem, then applying targeted fixes at that layer.</p>
+</blockquote>
+</section>
+<section id="action-hint" class="level2" data-number="26.16">
+<h2 data-number="26.16" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">26.16</span> Action Hint</h2>
+<blockquote class="blockquote">
+<p>Diagnose first, then fix. Identify whether the problem is in spec, instruction, or context. Use test cases, controlled inputs, logging, and evaluation metrics to understand system behavior. Avoid blaming the model—focus on definition. Debug iteratively: observe, diagnose, modify, test, repeat.</p>
 </blockquote>
 
 

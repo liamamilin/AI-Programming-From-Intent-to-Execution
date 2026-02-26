@@ -295,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The New Bottleneck</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -563,6 +563,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#multi-agent-systems-in-the-minimal-loop" id="toc-multi-agent-systems-in-the-minimal-loop" class="nav-link" data-scroll-target="#multi-agent-systems-in-the-minimal-loop"><span class="header-section-number">22.12</span> Multi-Agent Systems in the Minimal Loop</a></li>
   <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">22.13</span> Final Insight</a></li>
   <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">22.14</span> Closing Statement</a></li>
+  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">22.15</span> Key Insight</a></li>
+  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">22.16</span> Action Hint</a></li>
   </ul>
 </nav>
     </div>
@@ -593,19 +595,29 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="22.1" class="anchored" data-anchor-id="from-single-agent-to-systems-of-agents"><span class="header-section-number">22.1</span> From Single Agent to Systems of Agents</h2>
 <p>So far, we have considered systems where:</p>
 <ul>
-<li><p>A single agent receives input</p></li>
-<li><p>Processes it</p></li>
-<li><p>Produces output</p></li>
+<li>A single agent receives input—accepts user queries or tasks</li>
+<li>Processes it—applies reasoning and knowledge</li>
+<li>Produces output—generates a response or result</li>
 </ul>
-<p>This works for simple or moderately complex tasks.</p>
-<p>However, as systems grow:</p>
+<p>This architecture works well for:</p>
 <ul>
-<li><p>Tasks become multi-step</p></li>
-<li><p>Knowledge becomes specialized</p></li>
-<li><p>Decisions become more complex</p></li>
+<li><strong>Simple tasks</strong>—straightforward questions or operations</li>
+<li><strong>Moderately complex problems</strong>—multi-step reasoning within one agent’s capabilities</li>
+<li><strong>Isolated systems</strong>—independent tasks that don’t require coordination</li>
 </ul>
-<p>A single agent becomes insufficient.</p>
-<p>This leads to:</p>
+<p>However, as systems grow in complexity and scope, a single agent becomes insufficient. Tasks become:</p>
+<ul>
+<li><strong>Multi-step</strong>—requiring many sequential or parallel operations</li>
+<li><strong>Knowledge-intensive</strong>—requiring expertise across different domains</li>
+<li><strong>Decision-heavy</strong>—involving complex trade-offs and choices</li>
+</ul>
+<p>A single agent lacks the:</p>
+<ul>
+<li><strong>Specialization</strong>—deep expertise in specific areas</li>
+<li><strong>Scalability</strong>—ability to handle increasing complexity</li>
+<li><strong>Coordination</strong>—mechanisms for managing multiple tasks simultaneously</li>
+</ul>
+<p>This leads to a new paradigm:</p>
 <blockquote class="blockquote">
 <p><strong>Multi-Agent Systems</strong></p>
 </blockquote>
@@ -617,67 +629,71 @@ ul.task-list li input[type="checkbox"] {
 <blockquote class="blockquote">
 <p><strong>Multiple agents collaborate to achieve a shared goal</strong></p>
 </blockquote>
-<p>Each agent:</p>
+<p>Each agent in the system:</p>
 <ul>
-<li><p>Has a defined role</p></li>
-<li><p>Performs specific tasks</p></li>
-<li><p>Interacts with other agents</p></li>
+<li><strong>Has a defined role</strong>—a specific responsibility or function</li>
+<li><strong>Performs specific tasks</strong>—operates within its domain of expertise</li>
+<li><strong>Interacts with other agents</strong>—coordinates and communicates to achieve shared objectives</li>
 </ul>
 <hr>
 <section id="key-idea" class="level3" data-number="22.2.1">
 <h3 data-number="22.2.1" class="anchored" data-anchor-id="key-idea"><span class="header-section-number">22.2.1</span> Key Idea</h3>
 <p>Instead of one agent doing everything:</p>
 <ul>
-<li><p>Work is <strong>distributed</strong></p></li>
-<li><p>Responsibilities are <strong>separated</strong></p></li>
+<li>Work is <strong>distributed</strong> across multiple specialized components</li>
+<li>Responsibilities are <strong>separated</strong> according to expertise and function</li>
+<li>Collaboration enables <strong>emergence</strong>—the whole is greater than the sum of parts</li>
 </ul>
 <hr>
 </section>
 </section>
 <section id="why-multiple-agents" class="level2" data-number="22.3">
 <h2 data-number="22.3" class="anchored" data-anchor-id="why-multiple-agents"><span class="header-section-number">22.3</span> Why Multiple Agents?</h2>
-<p>There are several reasons to move beyond a single agent.</p>
+<p>There are several compelling reasons to move beyond a single agent architecture:</p>
 <hr>
 <section id="specialization" class="level3" data-number="22.3.1">
 <h3 data-number="22.3.1" class="anchored" data-anchor-id="specialization"><span class="header-section-number">22.3.1</span> 1. Specialization</h3>
-<p>Different tasks require different capabilities.</p>
+<p>Different tasks require different capabilities and expertise:</p>
 <ul>
-<li><p>Retrieval</p></li>
-<li><p>Reasoning</p></li>
-<li><p>Planning</p></li>
-<li><p>Execution</p></li>
+<li><strong>Retrieval</strong>—searching and accessing information</li>
+<li><strong>Reasoning</strong>—logical inference and analysis</li>
+<li><strong>Planning</strong>—creating strategies and sequences</li>
+<li><strong>Execution</strong>—carrying out actions and operations</li>
 </ul>
+<p>A single agent cannot be expert in all areas simultaneously.</p>
 <hr>
 </section>
 <section id="complexity-management" class="level3" data-number="22.3.2">
 <h3 data-number="22.3.2" class="anchored" data-anchor-id="complexity-management"><span class="header-section-number">22.3.2</span> 2. Complexity Management</h3>
-<p>Breaking a problem into parts:</p>
+<p>Breaking a problem into parts reduces cognitive and computational load:</p>
 <ul>
-<li><p>Reduces cognitive load</p></li>
-<li><p>Improves clarity</p></li>
+<li><strong>Reduces complexity</strong>—each agent handles a smaller, focused problem</li>
+<li><strong>Improves clarity</strong>—boundaries and responsibilities are clear</li>
+<li><strong>Enables focus</strong>—each agent specializes in its domain</li>
 </ul>
 <hr>
 </section>
 <section id="modularity" class="level3" data-number="22.3.3">
 <h3 data-number="22.3.3" class="anchored" data-anchor-id="modularity"><span class="header-section-number">22.3.3</span> 3. Modularity</h3>
-<p>Agents can be:</p>
+<p>Agents can be reused and recombined:</p>
 <ul>
-<li><p>Reused</p></li>
-<li><p>Replaced</p></li>
-<li><p>Extended</p></li>
+<li><strong>Reused</strong>—same agent can serve different systems</li>
+<li><strong>Replaced</strong>—agents can be upgraded or changed independently</li>
+<li><strong>Extended</strong>—new capabilities can be added without disrupting existing agents</li>
 </ul>
 <hr>
 </section>
 <section id="scalability" class="level3" data-number="22.3.4">
 <h3 data-number="22.3.4" class="anchored" data-anchor-id="scalability"><span class="header-section-number">22.3.4</span> 4. Scalability</h3>
-<p>Systems can grow by:</p>
+<p>Systems can grow by adding more agents:</p>
 <ul>
-<li><p>Adding more agents</p></li>
-<li><p>Expanding capabilities</p></li>
+<li><strong>Adding capabilities</strong>—new agents provide new functions</li>
+<li><strong>Increasing capacity</strong>—multiple agents can work in parallel</li>
+<li><strong>Expanding scope</strong>—systems can handle more complex problems</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Multi-agent systems scale by composition.</p>
+<p>Multi-agent systems scale by composition, not by making individual agents more complex.</p>
 </blockquote>
 <hr>
 </section>
@@ -686,8 +702,8 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="22.4" class="anchored" data-anchor-id="roles-and-responsibilities"><span class="header-section-number">22.4</span> Roles and Responsibilities</h2>
 <p>In a multi-agent system, each agent must have:</p>
 <ul>
-<li><p>A clear role</p></li>
-<li><p>Defined responsibilities</p></li>
+<li>A clear role—a well-defined function and responsibility</li>
+<li>Defined responsibilities—what the agent is accountable for</li>
 </ul>
 <hr>
 <section id="example-roles" class="level3" data-number="22.4.1">
@@ -696,24 +712,27 @@ ul.task-list li input[type="checkbox"] {
 <section id="planner" class="level4" data-number="22.4.1.1">
 <h4 data-number="22.4.1.1" class="anchored" data-anchor-id="planner"><span class="header-section-number">22.4.1.1</span> Planner</h4>
 <ul>
-<li><p>Breaks down tasks</p></li>
-<li><p>Defines steps</p></li>
+<li>Breaks down complex tasks into smaller, manageable steps</li>
+<li>Creates execution strategies and sequences</li>
+<li>Anticipates dependencies and ordering requirements</li>
 </ul>
 <hr>
 </section>
 <section id="executor" class="level4" data-number="22.4.1.2">
 <h4 data-number="22.4.1.2" class="anchored" data-anchor-id="executor"><span class="header-section-number">22.4.1.2</span> Executor</h4>
 <ul>
-<li><p>Performs actions</p></li>
-<li><p>Calls tools</p></li>
+<li>Performs actions and operations</li>
+<li>Executes tasks according to plans</li>
+<li>Handles implementation details</li>
 </ul>
 <hr>
 </section>
 <section id="evaluator" class="level4" data-number="22.4.1.3">
 <h4 data-number="22.4.1.3" class="anchored" data-anchor-id="evaluator"><span class="header-section-number">22.4.1.3</span> Evaluator</h4>
 <ul>
-<li><p>Checks results</p></li>
-<li><p>Provides feedback</p></li>
+<li>Checks results and outcomes</li>
+<li>Provides feedback on quality</li>
+<li>Identifies errors or issues</li>
 </ul>
 <hr>
 </section>
@@ -721,10 +740,12 @@ ul.task-list li input[type="checkbox"] {
 <h4 data-number="22.4.1.4" class="anchored" data-anchor-id="retriever"><span class="header-section-number">22.4.1.4</span> Retriever</h4>
 <ul>
 <li>Fetches external information</li>
+<li>Searches databases and knowledge bases</li>
+<li>Accesses real-time data</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Each agent should do one thing well.</p>
+<p>Each agent should do one thing well. Specialization enables excellence.</p>
 </blockquote>
 <hr>
 </section>
@@ -732,7 +753,12 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="division-of-labor" class="level2" data-number="22.5">
 <h2 data-number="22.5" class="anchored" data-anchor-id="division-of-labor"><span class="header-section-number">22.5</span> Division of Labor</h2>
-<p>Division of labor is central to multi-agent systems.</p>
+<p>Division of labor is central to effective multi-agent systems. It ensures that:</p>
+<ul>
+<li>Work is distributed efficiently</li>
+<li>Responsibilities are clear</li>
+<li>Collaboration is coordinated</li>
+</ul>
 <hr>
 <section id="principles" class="level3" data-number="22.5.1">
 <h3 data-number="22.5.1" class="anchored" data-anchor-id="principles"><span class="header-section-number">22.5.1</span> Principles</h3>
@@ -742,6 +768,8 @@ ul.task-list li input[type="checkbox"] {
 <h3 data-number="22.5.2" class="anchored" data-anchor-id="separation-of-concerns"><span class="header-section-number">22.5.2</span> 1. Separation of Concerns</h3>
 <ul>
 <li>Each agent handles a distinct function</li>
+<li>No overlap in responsibilities</li>
+<li>Clear boundaries between agents</li>
 </ul>
 <hr>
 </section>
@@ -749,6 +777,8 @@ ul.task-list li input[type="checkbox"] {
 <h3 data-number="22.5.3" class="anchored" data-anchor-id="clear-boundaries"><span class="header-section-number">22.5.3</span> 2. Clear Boundaries</h3>
 <ul>
 <li>Inputs and outputs are well-defined</li>
+<li>Interfaces are explicit and structured</li>
+<li>Communication protocols are established</li>
 </ul>
 <hr>
 </section>
@@ -756,28 +786,29 @@ ul.task-list li input[type="checkbox"] {
 <h3 data-number="22.5.4" class="anchored" data-anchor-id="minimal-overlap"><span class="header-section-number">22.5.4</span> 3. Minimal Overlap</h3>
 <ul>
 <li>Avoid duplication of responsibilities</li>
+<li>Each agent has unique capabilities</li>
+<li>No redundancy in function</li>
 </ul>
-<hr>
 <hr>
 </section>
 <section id="example-flow" class="level3" data-number="22.5.5">
 <h3 data-number="22.5.5" class="anchored" data-anchor-id="example-flow"><span class="header-section-number">22.5.5</span> Example Flow</h3>
 <pre><code>User Query
-→ Planner Agent
-→ Executor Agent
-→ Evaluator Agent
+→ Planner Agent (breaks down task)
+→ Executor Agents (perform steps)
+→ Evaluator Agent (checks results)
 → Final Output</code></pre>
+<p>Each agent contributes its specialized capability to achieve the shared goal.</p>
 <hr>
 <blockquote class="blockquote">
-<p>Clear division improves reliability.</p>
+<p>Clear division improves reliability. When responsibilities are separated, errors are easier to identify and fix.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="communication-between-agents" class="level2" data-number="22.6">
 <h2 data-number="22.6" class="anchored" data-anchor-id="communication-between-agents"><span class="header-section-number">22.6</span> Communication Between Agents</h2>
-<p>Agents must communicate to coordinate actions.</p>
-<p>This requires:</p>
+<p>Agents must communicate to coordinate actions and share information. This requires:</p>
 <blockquote class="blockquote">
 <p><strong>Defined communication protocols</strong></p>
 </blockquote>
@@ -785,9 +816,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="what-is-communicated" class="level3" data-number="22.6.1">
 <h3 data-number="22.6.1" class="anchored" data-anchor-id="what-is-communicated"><span class="header-section-number">22.6.1</span> What is Communicated?</h3>
 <ul>
-<li><p>Tasks</p></li>
-<li><p>Intermediate results</p></li>
-<li><p>Feedback</p></li>
+<li><strong>Tasks</strong>—what needs to be done</li>
+<li><strong>Intermediate results</strong>—outputs from one agent to another</li>
+<li><strong>Feedback</strong>—evaluations and corrections</li>
 </ul>
 <hr>
 </section>
@@ -797,27 +828,33 @@ ul.task-list li input[type="checkbox"] {
 <section id="structured-messages" class="level4" data-number="22.6.2.1">
 <h4 data-number="22.6.2.1" class="anchored" data-anchor-id="structured-messages"><span class="header-section-number">22.6.2.1</span> Structured Messages</h4>
 <ul>
-<li><p>JSON</p></li>
-<li><p>Key-value pairs</p></li>
+<li><strong>JSON</strong>—standardized format for data exchange</li>
+<li><strong>Key-value pairs</strong>—clear mapping of information</li>
+<li><strong>Type safety</strong>—defined data structures</li>
 </ul>
+<p><strong>Advantages:</strong> - Clear and explicit - Machine-readable - Easy to validate</p>
 <hr>
 </section>
 <section id="natural-language" class="level4" data-number="22.6.2.2">
 <h4 data-number="22.6.2.2" class="anchored" data-anchor-id="natural-language"><span class="header-section-number">22.6.2.2</span> Natural Language</h4>
 <ul>
-<li><p>Flexible</p></li>
-<li><p>Less reliable</p></li>
+<li><strong>Flexible</strong>—can express complex ideas</li>
+<li><strong>Natural</strong>—easier for humans to understand</li>
+<li><strong>Context-rich</strong>—can convey nuance</li>
 </ul>
+<p><strong>Disadvantages:</strong> - Ambiguous—multiple interpretations possible - Less reliable—parsing is difficult - Verbose—can be inefficient</p>
 <hr>
 </section>
 <section id="hybrid" class="level4" data-number="22.6.2.3">
 <h4 data-number="22.6.2.3" class="anchored" data-anchor-id="hybrid"><span class="header-section-number">22.6.2.3</span> Hybrid</h4>
 <ul>
-<li>Structured + descriptive</li>
+<li><strong>Structured + descriptive</strong>—combines structure with flexibility</li>
+<li><strong>Type-safe with context</strong>—data format plus explanatory text</li>
+<li><strong>Best of both worlds</strong>—clarity and expressiveness</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Structured communication improves consistency.</p>
+<p>Structured communication improves consistency and reliability. It reduces ambiguity and makes integration easier.</p>
 </blockquote>
 <hr>
 </section>
@@ -825,168 +862,198 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="communication-patterns" class="level2" data-number="22.7">
 <h2 data-number="22.7" class="anchored" data-anchor-id="communication-patterns"><span class="header-section-number">22.7</span> Communication Patterns</h2>
+<p>Different patterns of communication suit different system architectures and requirements:</p>
 <hr>
 <section id="sequential-communication" class="level3" data-number="22.7.1">
 <h3 data-number="22.7.1" class="anchored" data-anchor-id="sequential-communication"><span class="header-section-number">22.7.1</span> 1. Sequential Communication</h3>
-<p>Agents pass results in order.</p>
+<p>Agents pass results in order, one after another.</p>
 <pre><code>Agent A → Agent B → Agent C</code></pre>
+<p><strong>When to use:</strong> - Tasks have clear dependencies - Each step depends on previous output - Sequential processing is natural</p>
 <hr>
 </section>
 <section id="central-coordinator" class="level3" data-number="22.7.2">
 <h3 data-number="22.7.2" class="anchored" data-anchor-id="central-coordinator"><span class="header-section-number">22.7.2</span> 2. Central Coordinator</h3>
-<p>One agent manages others.</p>
+<p>One agent manages and coordinates all others.</p>
 <pre><code>Coordinator → Agents → Coordinator</code></pre>
+<p><strong>When to use:</strong> - Centralized control is preferred - Coordination logic is complex - Single point of direction is beneficial</p>
 <hr>
 </section>
 <section id="peer-to-peer" class="level3" data-number="22.7.3">
 <h3 data-number="22.7.3" class="anchored" data-anchor-id="peer-to-peer"><span class="header-section-number">22.7.3</span> 3. Peer-to-Peer</h3>
-<p>Agents interact directly.</p>
+<p>Agents interact directly with each other.</p>
 <pre><code>Agent A ↔ Agent B ↔ Agent C</code></pre>
+<p><strong>When to use:</strong> - Distributed decision-making is needed - Agents have equal status - - Local interactions are sufficient</p>
 <hr>
 <blockquote class="blockquote">
-<p>The pattern depends on system complexity.</p>
+<p>The pattern depends on system complexity and requirements. Choose based on coordination needs and task structure.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="coordination-strategies" class="level2" data-number="22.8">
 <h2 data-number="22.8" class="anchored" data-anchor-id="coordination-strategies"><span class="header-section-number">22.8</span> Coordination Strategies</h2>
+<p>How agents are coordinated affects system behavior, reliability, and efficiency:</p>
 <hr>
 <section id="centralized-control" class="level3" data-number="22.8.1">
 <h3 data-number="22.8.1" class="anchored" data-anchor-id="centralized-control"><span class="header-section-number">22.8.1</span> 1. Centralized Control</h3>
 <ul>
-<li><p>One agent orchestrates</p></li>
-<li><p>Easier to manage</p></li>
+<li>One agent orchestrates all activities</li>
+<li>Clear hierarchy and authority</li>
+<li>Easier to manage and debug</li>
 </ul>
+<p><strong>Advantages:</strong> - Simpler coordination logic - Clear responsibility - Easier to understand</p>
+<p><strong>Disadvantages:</strong> - Single point of failure - - Bottleneck in decision-making - Less flexible</p>
 <hr>
 </section>
 <section id="decentralized-control" class="level3" data-number="22.8.2">
 <h3 data-number="22.8.2" class="anchored" data-anchor-id="decentralized-control"><span class="header-section-number">22.8.2</span> 2. Decentralized Control</h3>
 <ul>
-<li><p>Agents decide independently</p></li>
-<li><p>More flexible</p></li>
+<li>Agents decide independently</li>
+<li>No central authority</li>
+<li>Distributed decision-making</li>
 </ul>
+<p><strong>Advantages:</strong> - More flexible and adaptable - - No single point of failure - - Scalable to many agents</p>
+<p><strong>Disadvantages:</strong> - Harder to coordinate - - More complex to debug - - Potential for conflicts</p>
 <hr>
 </section>
 <section id="trade-off" class="level3" data-number="22.8.3">
 <h3 data-number="22.8.3" class="anchored" data-anchor-id="trade-off"><span class="header-section-number">22.8.3</span> Trade-off</h3>
 <ul>
-<li><p>Centralized → control</p></li>
-<li><p>Decentralized → adaptability</p></li>
+<li><strong>Centralized</strong> → control, simplicity, but less flexibility</li>
+<li><strong>Decentralized</strong> → adaptability, resilience, but more complexity</li>
 </ul>
 <hr>
 </section>
 </section>
 <section id="challenges-in-multi-agent-systems" class="level2" data-number="22.9">
 <h2 data-number="22.9" class="anchored" data-anchor-id="challenges-in-multi-agent-systems"><span class="header-section-number">22.9</span> Challenges in Multi-Agent Systems</h2>
+<p>Multi-agent systems introduce new challenges that must be addressed:</p>
 <hr>
 <section id="coordination-complexity" class="level3" data-number="22.9.1">
 <h3 data-number="22.9.1" class="anchored" data-anchor-id="coordination-complexity"><span class="header-section-number">22.9.1</span> 1. Coordination Complexity</h3>
 <ul>
-<li><p>Managing interactions</p></li>
-<li><p>Avoiding conflicts</p></li>
+<li><strong>Managing interactions</strong>—ensuring agents work together effectively</li>
+<li><strong>Avoiding conflicts</strong>—preventing agents from working at cross-purposes</li>
+<li><strong>Synchronization</strong>—timing and sequencing of agent activities</li>
 </ul>
 <hr>
 </section>
 <section id="communication-overhead" class="level3" data-number="22.9.2">
 <h3 data-number="22.9.2" class="anchored" data-anchor-id="communication-overhead"><span class="header-section-number">22.9.2</span> 2. Communication Overhead</h3>
 <ul>
-<li><p>More messages</p></li>
-<li><p>Increased latency</p></li>
+<li><strong>More messages</strong>—inter-agent communication increases</li>
+<li><strong>Increased latency</strong>—time spent coordinating</li>
+<li><strong>Bandwidth usage</strong>—more data transferred between agents</li>
 </ul>
 <hr>
 </section>
 <section id="error-propagation" class="level3" data-number="22.9.3">
 <h3 data-number="22.9.3" class="anchored" data-anchor-id="error-propagation"><span class="header-section-number">22.9.3</span> 3. Error Propagation</h3>
 <ul>
-<li>One agent’s mistake affects others</li>
+<li><strong>One agent’s mistake affects others</strong>—errors cascade through the system</li>
+<li><strong>Harder to isolate problems</strong>—difficult to identify which agent failed</li>
+<li><strong>System-wide impact</strong>—local failures can have global consequences</li>
 </ul>
 <hr>
 </section>
 <section id="debugging-difficulty" class="level3" data-number="22.9.4">
 <h3 data-number="22.9.4" class="anchored" data-anchor-id="debugging-difficulty"><span class="header-section-number">22.9.4</span> 4. Debugging Difficulty</h3>
 <ul>
-<li>Harder to trace issues</li>
+<li><strong>Harder to trace issues</strong>—multiple agents, multiple paths</li>
+<li><strong>Complex interactions</strong>—non-linear dependencies</li>
+<li><strong>Emergent behavior</strong>—system behavior arises from agent interactions</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>More agents increase power, but also complexity.</p>
+<p>More agents increase power, but also complexity. The benefits must outweigh the costs.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="designing-multi-agent-systems" class="level2" data-number="22.10">
 <h2 data-number="22.10" class="anchored" data-anchor-id="designing-multi-agent-systems"><span class="header-section-number">22.10</span> Designing Multi-Agent Systems</h2>
-<p>To design effective systems:</p>
+<p>To design effective multi-agent systems:</p>
 <hr>
 <section id="define-roles-clearly" class="level3" data-number="22.10.1">
 <h3 data-number="22.10.1" class="anchored" data-anchor-id="define-roles-clearly"><span class="header-section-number">22.10.1</span> 1. Define Roles Clearly</h3>
 <ul>
-<li>Avoid ambiguity</li>
+<li><strong>Avoid ambiguity</strong>—each agent’s purpose should be crystal clear</li>
+<li><strong>Specify responsibilities</strong>—what each agent does and doesn’t do</li>
+<li><strong>Establish boundaries</strong>—clear limits on agent scope</li>
 </ul>
 <hr>
 </section>
 <section id="design-interfaces" class="level3" data-number="22.10.2">
 <h3 data-number="22.10.2" class="anchored" data-anchor-id="design-interfaces"><span class="header-section-number">22.10.2</span> 2. Design Interfaces</h3>
 <ul>
-<li>Standardize communication</li>
+<li><strong>Standardize communication</strong>—define protocols for agent interaction</li>
+<li><strong>Specify input/output formats</strong>—clear contracts between agents</li>
+<li><strong>Document behavior</strong>—comprehensive descriptions of agent capabilities</li>
 </ul>
 <hr>
 </section>
 <section id="control-interaction" class="level3" data-number="22.10.3">
 <h3 data-number="22.10.3" class="anchored" data-anchor-id="control-interaction"><span class="header-section-number">22.10.3</span> 3. Control Interaction</h3>
 <ul>
-<li>Limit unnecessary communication</li>
+<li><strong>Limit unnecessary communication</strong>—only share what’s needed</li>
+<li><strong>Manage message flow</strong>—avoid information overload</li>
+<li><strong>Optimize coordination</strong>—minimize overhead while ensuring effectiveness</li>
 </ul>
 <hr>
 </section>
 <section id="add-evaluation-layers" class="level3" data-number="22.10.4">
 <h3 data-number="22.10.4" class="anchored" data-anchor-id="add-evaluation-layers"><span class="header-section-number">22.10.4</span> 4. Add Evaluation Layers</h3>
 <ul>
-<li>Validate intermediate results</li>
+<li><strong>Validate intermediate results</strong>—check agent outputs at each step</li>
+<li><strong>Provide feedback</strong>—enable agents to improve based on results</li>
+<li><strong>Ensure quality</strong>—maintain standards throughout the system</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Structure is critical for coordination.</p>
+<p>Structure is critical for coordination. Well-designed systems have clear roles, defined interfaces, and controlled interactions.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="when-to-use-multi-agent-systems" class="level2" data-number="22.11">
 <h2 data-number="22.11" class="anchored" data-anchor-id="when-to-use-multi-agent-systems"><span class="header-section-number">22.11</span> When to Use Multi-Agent Systems</h2>
+<p>Multi-agent systems are not always the right solution. Use them when:</p>
 <hr>
 <section id="suitable-cases" class="level3" data-number="22.11.1">
 <h3 data-number="22.11.1" class="anchored" data-anchor-id="suitable-cases"><span class="header-section-number">22.11.1</span> Suitable Cases</h3>
 <ul>
-<li><p>Complex workflows</p></li>
-<li><p>Multi-step reasoning</p></li>
-<li><p>Systems requiring specialization</p></li>
+<li><strong>Complex workflows</strong>—tasks with many interdependent steps</li>
+<li><strong>Multi-step reasoning</strong>—problems requiring sequential or parallel processing</li>
+<li><strong>Systems requiring specialization</strong>—tasks needing expertise in multiple domains</li>
+<li><strong>Scalable solutions</strong>—systems that need to grow in capability</li>
 </ul>
 <hr>
 </section>
 <section id="not-suitable" class="level3" data-number="22.11.2">
 <h3 data-number="22.11.2" class="anchored" data-anchor-id="not-suitable"><span class="header-section-number">22.11.2</span> Not Suitable</h3>
 <ul>
-<li><p>Simple tasks</p></li>
-<li><p>Low complexity</p></li>
-<li><p>Single-step problems</p></li>
+<li><strong>Simple tasks</strong>—straightforward problems that one agent can handle</li>
+<li><strong>Low complexity</strong>—tasks with few steps and minimal dependencies</li>
+<li><strong>Single-step problems</strong>—direct input-output transformations</li>
+<li><strong>Tight latency requirements</strong>—when coordination overhead is unacceptable</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Do not use multiple agents unless needed.</p>
+<p>Do not use multiple agents unless the complexity and specialization requirements justify the overhead.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="multi-agent-systems-in-the-minimal-loop" class="level2" data-number="22.12">
 <h2 data-number="22.12" class="anchored" data-anchor-id="multi-agent-systems-in-the-minimal-loop"><span class="header-section-number">22.12</span> Multi-Agent Systems in the Minimal Loop</h2>
-<p>Multi-agent systems extend the execution phase:</p>
+<p>Multi-agent systems extend the execution phase of the Minimal Loop:</p>
 <pre><code>Intent → Spec → Instruction → Execution (Multi-Agent) → Evaluation</code></pre>
 <hr>
 <p>Execution becomes:</p>
 <ul>
-<li><p>A coordinated process</p></li>
-<li><p>A network of interactions</p></li>
+<li>A <strong>coordinated process</strong>—multiple agents working together</li>
+<li>A <strong>network of interactions</strong>—communication and collaboration between agents</li>
+<li>An <strong>emergent behavior</strong>—system-level properties arising from agent interactions</li>
 </ul>
 <hr>
 </section>
@@ -994,16 +1061,12 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="22.13" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">22.13</span> Final Insight</h2>
 <p>Multi-agent systems represent a shift from:</p>
 <ul>
-<li>Single-process execution</li>
-</ul>
-<p>To:</p>
-<ul>
-<li>Distributed intelligence</li>
+<li><strong>Single-process execution</strong>—one agent doing everything To:</li>
+<li><strong>Distributed intelligence</strong>—multiple agents collaborating</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Systems are no longer single actors.<br>
-They are coordinated collectives.</p>
+<p>Systems are no longer single actors. They are coordinated collectives, working together to achieve shared goals.</p>
 </blockquote>
 <hr>
 </section>
@@ -1012,6 +1075,19 @@ They are coordinated collectives.</p>
 <p>In the LLM era, complex systems are built not by increasing the power of one agent, but by organizing many.</p>
 <blockquote class="blockquote">
 <p>The strength of a system lies in how well its agents collaborate.</p>
+</blockquote>
+<hr>
+</section>
+<section id="key-insight" class="level2" data-number="22.15">
+<h2 data-number="22.15" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">22.15</span> Key Insight</h2>
+<blockquote class="blockquote">
+<p>Multi-agent systems distribute work across specialized agents with defined roles. Key components include role definition, division of labor, communication protocols, and coordination strategies. Challenges include coordination complexity, communication overhead, error propagation, and debugging difficulty.</p>
+</blockquote>
+</section>
+<section id="action-hint" class="level2" data-number="22.16">
+<h2 data-number="22.16" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">22.16</span> Action Hint</h2>
+<blockquote class="blockquote">
+<p>When designing multi-agent systems, start by defining clear roles and responsibilities. Design interfaces for agent communication. Choose appropriate communication patterns (sequential, centralized, or peer-to-peer). Add evaluation layers to validate intermediate results. Use multi-agent systems only when complexity and specialization justify the overhead.</p>
 </blockquote>
 
 

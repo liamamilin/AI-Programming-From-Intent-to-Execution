@@ -295,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The New Bottleneck</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -551,10 +551,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#designing-memory-systems" id="toc-designing-memory-systems" class="nav-link" data-scroll-target="#designing-memory-systems"><span class="header-section-number">23.11</span> Designing Memory Systems</a>
   <ul class="collapse">
   <li><a href="#key-questions" id="toc-key-questions" class="nav-link" data-scroll-target="#key-questions"><span class="header-section-number">23.11.1</span> Key Questions</a></li>
+  <li><a href="#design-principles" id="toc-design-principles" class="nav-link" data-scroll-target="#design-principles"><span class="header-section-number">23.11.2</span> Design Principles</a></li>
   </ul></li>
   <li><a href="#memory-in-the-minimal-loop" id="toc-memory-in-the-minimal-loop" class="nav-link" data-scroll-target="#memory-in-the-minimal-loop"><span class="header-section-number">23.12</span> Memory in the Minimal Loop</a></li>
   <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">23.13</span> Final Insight</a></li>
   <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">23.14</span> Closing Statement</a></li>
+  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">23.15</span> Key Insight</a></li>
+  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">23.16</span> Action Hint</a></li>
   </ul>
 </nav>
     </div>
@@ -585,85 +588,87 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="23.1" class="anchored" data-anchor-id="why-memory-matters"><span class="header-section-number">23.1</span> Why Memory Matters</h2>
 <p>So far, we have described systems that:</p>
 <ul>
-<li><p>Receive input</p></li>
-<li><p>Produce output</p></li>
+<li>Receive input—accept user queries or data</li>
+<li>Produce output—generate responses or results</li>
 </ul>
+<p>These systems operate as if each interaction is isolated—each input is processed independently, with no memory of previous interactions.</p>
 <p>However, many real-world systems require continuity:</p>
 <ul>
-<li><p>Conversations span multiple turns</p></li>
-<li><p>Decisions depend on past interactions</p></li>
-<li><p>Systems must adapt over time</p></li>
+<li><strong>Conversations span multiple turns</strong>—users expect the system to remember what was said</li>
+<li><strong>Decisions depend on past interactions</strong>—context from previous turns informs current decisions</li>
+<li><strong>Systems must adapt over time</strong>—learning from experience and evolving behavior</li>
 </ul>
 <p>Without memory:</p>
 <ul>
-<li><p>Each interaction is isolated</p></li>
-<li><p>Context is lost</p></li>
-<li><p>Behavior becomes shallow</p></li>
+<li>Each interaction is isolated—no connection between turns</li>
+<li>Context is lost—previous information is unavailable</li>
+<li>Behavior becomes shallow—system cannot maintain coherent conversation</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Memory is what allows systems to persist beyond a single interaction.</p>
+<p>Memory is what allows systems to persist beyond a single interaction, enabling continuity and depth.</p>
 </blockquote>
 <hr>
 </section>
 <section id="what-is-context" class="level2" data-number="23.2">
 <h2 data-number="23.2" class="anchored" data-anchor-id="what-is-context"><span class="header-section-number">23.2</span> What is Context?</h2>
-<p>Context is the information available to the system at the moment of execution.</p>
+<p>Context is the information available to the system at the moment of execution. It represents what the system “knows” right now.</p>
 <p>It includes:</p>
 <ul>
-<li><p>Current input</p></li>
-<li><p>Relevant past interactions</p></li>
-<li><p>External knowledge</p></li>
-<li><p>System state</p></li>
+<li><strong>Current input</strong>—the immediate query or task</li>
+<li><strong>Relevant past interactions</strong>—history that informs current processing</li>
+<li><strong>External knowledge</strong>—information retrieved from databases or other sources</li>
+<li><strong>System state</strong>—current status, configuration, or mode</li>
 </ul>
 <hr>
 <section id="example" class="level3" data-number="23.2.1">
 <h3 data-number="23.2.1" class="anchored" data-anchor-id="example"><span class="header-section-number">23.2.1</span> Example</h3>
 <p>In a conversation:</p>
 <ul>
-<li><p>Current message</p></li>
-<li><p>Previous messages</p></li>
-<li><p>User preferences</p></li>
+<li><strong>Current message</strong>: “What was that about again?”</li>
+<li><strong>Previous messages</strong>: “I’m discussing AI memory systems.”</li>
+<li><strong>User preferences</strong>: “Prefers concise explanations”</li>
+<li><strong>Session data</strong>: “5 messages exchanged in this session”</li>
 </ul>
+<p>All of these form the context for understanding and responding to the current message.</p>
 <hr>
 <blockquote class="blockquote">
-<p>Context defines what the system “knows right now.”</p>
+<p>Context defines what the system “knows right now.” It determines how the system interprets and responds to input.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="context-as-a-working-set" class="level2" data-number="23.3">
 <h2 data-number="23.3" class="anchored" data-anchor-id="context-as-a-working-set"><span class="header-section-number">23.3</span> Context as a Working Set</h2>
-<p>Context can be understood as a <strong>working set of information</strong>.</p>
+<p>Context can be understood as a <strong>working set of information</strong>—the subset of all available information that is active and relevant to the current task.</p>
 <p>It is:</p>
 <ul>
-<li><p>Limited in size</p></li>
-<li><p>Relevant to the current task</p></li>
-<li><p>Dynamically constructed</p></li>
+<li><strong>Limited in size</strong>—only so much information can be considered at once</li>
+<li><strong>Relevant to the current task</strong>—focuses on what’s needed right now</li>
+<li><strong>Dynamically constructed</strong>—changes based on task requirements</li>
 </ul>
 <hr>
 <section id="characteristics" class="level3" data-number="23.3.1">
 <h3 data-number="23.3.1" class="anchored" data-anchor-id="characteristics"><span class="header-section-number">23.3.1</span> Characteristics</h3>
 <ul>
-<li><p>Temporary</p></li>
-<li><p>Task-specific</p></li>
-<li><p>Continuously updated</p></li>
+<li><strong>Temporary</strong>—exists only during execution</li>
+<li><strong>Task-specific</strong>—tailored to current needs</li>
+<li><strong>Continuously updated</strong>—changes as processing progresses</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Context is not everything the system knows.<br>
-It is what the system is using.</p>
+<p>Context is not everything the system knows. It is what the system is using right now to perform the current task.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="what-is-memory" class="level2" data-number="23.4">
 <h2 data-number="23.4" class="anchored" data-anchor-id="what-is-memory"><span class="header-section-number">23.4</span> What is Memory?</h2>
-<p>Memory is the information stored beyond the current interaction.</p>
-<p>It represents:</p>
+<p>Memory is the information stored beyond the current interaction. It represents:</p>
 <blockquote class="blockquote">
 <p><strong>What the system retains over time</strong></p>
 </blockquote>
+<p>Memory enables continuity—allowing the system to remember past interactions, learn from experience, and maintain coherence across sessions.</p>
 <hr>
 <section id="types-of-memory" class="level3" data-number="23.4.1">
 <h3 data-number="23.4.1" class="anchored" data-anchor-id="types-of-memory"><span class="header-section-number">23.4.1</span> Types of Memory</h3>
@@ -671,22 +676,24 @@ It is what the system is using.</p>
 <section id="short-term-memory" class="level4" data-number="23.4.1.1">
 <h4 data-number="23.4.1.1" class="anchored" data-anchor-id="short-term-memory"><span class="header-section-number">23.4.1.1</span> 1. Short-Term Memory</h4>
 <ul>
-<li><p>Recent interactions</p></li>
-<li><p>Session-based</p></li>
-<li><p>Often part of context</p></li>
+<li><strong>Recent interactions</strong>—last few turns of conversation</li>
+<li><strong>Session-based</strong>—persists only during current session</li>
+<li><strong>Volatile</strong>—lost when session ends</li>
 </ul>
+<p><strong>Uses:</strong> - Maintaining conversation flow - Tracking immediate context - Handling multi-turn dialogues</p>
 <hr>
 </section>
 <section id="long-term-memory" class="level4" data-number="23.4.1.2">
 <h4 data-number="23.4.1.2" class="anchored" data-anchor-id="long-term-memory"><span class="header-section-number">23.4.1.2</span> 2. Long-Term Memory</h4>
 <ul>
-<li><p>Persistent storage</p></li>
-<li><p>User data</p></li>
-<li><p>Knowledge base</p></li>
+<li><strong>Persistent storage</strong>—information kept across sessions</li>
+<li><strong>User data</strong>—preferences, history, patterns</li>
+<li><strong>Knowledge base</strong>—facts, relationships, and information</li>
 </ul>
+<p><strong>Uses:</strong> - Personalization—remembering user preferences - Learning—improving over time - Context retention—carrying information across sessions</p>
 <hr>
 <blockquote class="blockquote">
-<p>Memory extends the system across time.</p>
+<p>Memory extends the system across time. Without memory, each interaction starts fresh, with no connection to the past.</p>
 </blockquote>
 <hr>
 </section>
@@ -694,48 +701,49 @@ It is what the system is using.</p>
 </section>
 <section id="context-vs-memory" class="level2" data-number="23.5">
 <h2 data-number="23.5" class="anchored" data-anchor-id="context-vs-memory"><span class="header-section-number">23.5</span> Context vs Memory</h2>
-<p>It is important to distinguish between the two.</p>
+<p>It is important to distinguish between these two concepts, as they play different roles in system behavior:</p>
 <hr>
 <section id="context" class="level3" data-number="23.5.1">
 <h3 data-number="23.5.1" class="anchored" data-anchor-id="context"><span class="header-section-number">23.5.1</span> Context</h3>
 <ul>
-<li><p>Active</p></li>
-<li><p>Limited</p></li>
-<li><p>Immediate</p></li>
+<li><strong>Active</strong>—currently being used for processing</li>
+<li><strong>Limited</strong>—bounded by capacity constraints</li>
+<li><strong>Immediate</strong>—directly available for execution</li>
 </ul>
+<p><strong>Purpose:</strong> Drive current decision-making and response generation</p>
 <hr>
 </section>
 <section id="memory" class="level3" data-number="23.5.2">
 <h3 data-number="23.5.2" class="anchored" data-anchor-id="memory"><span class="header-section-number">23.5.2</span> Memory</h3>
 <ul>
-<li><p>Stored</p></li>
-<li><p>Potentially large</p></li>
-<li><p>Persistent</p></li>
+<li><strong>Stored</strong>—persisted for future use</li>
+<li><strong>Potentially large</strong>—can contain vast amounts of information</li>
+<li><strong>Persistent</strong>—survives across sessions and time</li>
 </ul>
+<p><strong>Purpose:</strong> Provide history, enable learning, support continuity</p>
 <hr>
 </section>
 <section id="relationship" class="level3" data-number="23.5.3">
 <h3 data-number="23.5.3" class="anchored" data-anchor-id="relationship"><span class="header-section-number">23.5.3</span> Relationship</h3>
 <pre><code>Memory → Retrieval → Context → Execution</code></pre>
+<p>Memory feeds context through retrieval. Context drives execution. Together, they enable systems to operate with awareness of both the immediate situation and accumulated history.</p>
 <hr>
 <blockquote class="blockquote">
-<p>Memory feeds context.<br>
-Context drives execution.</p>
+<p>Memory feeds context. Context drives execution. The relationship connects the past to the present.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="context-management" class="level2" data-number="23.6">
 <h2 data-number="23.6" class="anchored" data-anchor-id="context-management"><span class="header-section-number">23.6</span> Context Management</h2>
-<p>Context is limited.</p>
-<p>Therefore, it must be managed carefully.</p>
+<p>Context is limited by computational constraints—there’s only so much information that can be processed at once. Therefore, context must be managed carefully.</p>
 <hr>
 <section id="challenges" class="level3" data-number="23.6.1">
 <h3 data-number="23.6.1" class="anchored" data-anchor-id="challenges"><span class="header-section-number">23.6.1</span> Challenges</h3>
 <ul>
-<li><p>Context window limits</p></li>
-<li><p>Irrelevant information</p></li>
-<li><p>Noise accumulation</p></li>
+<li><strong>Context window limits</strong>—models can only process a fixed amount of information</li>
+<li><strong>Irrelevant information</strong>—not all past interactions are useful now</li>
+<li><strong>Noise accumulation</strong>—too much information degrades performance</li>
 </ul>
 <hr>
 </section>
@@ -745,27 +753,31 @@ Context drives execution.</p>
 <section id="selection" class="level4" data-number="23.6.2.1">
 <h4 data-number="23.6.2.1" class="anchored" data-anchor-id="selection"><span class="header-section-number">23.6.2.1</span> 1. Selection</h4>
 <ul>
-<li>Include only relevant information</li>
+<li>Include only relevant information—filter what’s important</li>
+<li>Prioritize recent interactions—newer information is often more relevant</li>
+<li>Focus on task needs—select information that supports current objectives</li>
 </ul>
 <hr>
 </section>
 <section id="compression" class="level4" data-number="23.6.2.2">
 <h4 data-number="23.6.2.2" class="anchored" data-anchor-id="compression"><span class="header-section-number">23.6.2.2</span> 2. Compression</h4>
 <ul>
-<li>Summarize past interactions</li>
+<li>Summarize past interactions—reduce long conversations to key points</li>
+<li>Extract essential information—preserve meaning while reducing size</li>
+<li>Create summaries—compress multiple turns into condensed representations</li>
 </ul>
 <hr>
 </section>
 <section id="prioritization" class="level4" data-number="23.6.2.3">
 <h4 data-number="23.6.2.3" class="anchored" data-anchor-id="prioritization"><span class="header-section-number">23.6.2.3</span> 3. Prioritization</h4>
 <ul>
-<li><p>Keep important data</p></li>
-<li><p>Remove low-value data</p></li>
+<li>Keep important data—prioritize information that’s critical</li>
+<li>Remove low-value data—discard information that’s not useful</li>
+<li>Maintain balance—mix of recent and historically important information</li>
 </ul>
 <hr>
-<hr>
 <blockquote class="blockquote">
-<p>Good context management improves system performance.</p>
+<p>Good context management improves system performance. It ensures the system focuses on what matters.</p>
 </blockquote>
 <hr>
 </section>
@@ -773,157 +785,194 @@ Context drives execution.</p>
 </section>
 <section id="long-term-memory-systems" class="level2" data-number="23.7">
 <h2 data-number="23.7" class="anchored" data-anchor-id="long-term-memory-systems"><span class="header-section-number">23.7</span> Long-Term Memory Systems</h2>
-<p>Long-term memory requires:</p>
+<p>Long-term memory requires infrastructure and mechanisms to:</p>
 <ul>
-<li><p>Storage</p></li>
-<li><p>Retrieval</p></li>
-<li><p>Update mechanisms</p></li>
+<li><strong>Store</strong>—persist information for future use</li>
+<li><strong>Retrieve</strong>—access stored information when needed</li>
+<li><strong>Update</strong>—modify existing information as needed</li>
 </ul>
 <hr>
 <section id="storage" class="level3" data-number="23.7.1">
 <h3 data-number="23.7.1" class="anchored" data-anchor-id="storage"><span class="header-section-number">23.7.1</span> Storage</h3>
+<p>Long-term memory can be stored in various forms:</p>
 <ul>
-<li><p>Databases</p></li>
-<li><p>Vector stores</p></li>
-<li><p>Files</p></li>
+<li><strong>Databases</strong>—structured storage for organized data</li>
+<li><strong>Vector stores</strong>—semantic storage for similarity-based retrieval</li>
+<li><strong>Files</strong>—unstructured storage for documents and media</li>
+<li><strong>Graph databases</strong>—relationship-focused storage for connected information</li>
 </ul>
+<p><strong>Choice depends on:</strong> - Type of information - Access patterns - Query requirements</p>
 <hr>
 </section>
 <section id="retrieval" class="level3" data-number="23.7.2">
 <h3 data-number="23.7.2" class="anchored" data-anchor-id="retrieval"><span class="header-section-number">23.7.2</span> Retrieval</h3>
+<p>Retrieving information from long-term memory requires mechanisms to:</p>
 <ul>
-<li><p>Search</p></li>
-<li><p>Similarity matching</p></li>
-<li><p>Query-based access</p></li>
+<li><strong>Search</strong>—find relevant information based on queries</li>
+<li><strong>Match</strong>—identify information that satisfies requirements</li>
+<li><strong>Rank</strong>—order results by relevance</li>
 </ul>
+<p><strong>Approaches:</strong> - <strong>Keyword search</strong>—match exact terms - <strong>Semantic search</strong>—match meaning and concepts - <strong>Hybrid</strong>—combine keyword and semantic approaches</p>
 <hr>
 </section>
 <section id="update" class="level3" data-number="23.7.3">
 <h3 data-number="23.7.3" class="anchored" data-anchor-id="update"><span class="header-section-number">23.7.3</span> Update</h3>
+<p>Memory systems must support:</p>
 <ul>
-<li><p>Add new information</p></li>
-<li><p>Modify existing data</p></li>
+<li><strong>Add new information</strong>—incorporate new data</li>
+<li><strong>Modify existing data</strong>—update or correct information</li>
+<li><strong>Remove outdated data</strong>—delete information that’s no longer relevant</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Memory is only useful if it can be retrieved effectively.</p>
+<p>Memory is only useful if it can be retrieved effectively. Storage without retrieval is useless.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="retrieval-as-a-core-mechanism" class="level2" data-number="23.8">
 <h2 data-number="23.8" class="anchored" data-anchor-id="retrieval-as-a-core-mechanism"><span class="header-section-number">23.8</span> Retrieval as a Core Mechanism</h2>
-<p>To use memory, systems must retrieve relevant information.</p>
+<p>To use memory effectively, systems must retrieve relevant information at the right time. Retrieval is the bridge between memory and context.</p>
 <hr>
 <section id="retrieval-flow" class="level3" data-number="23.8.1">
 <h3 data-number="23.8.1" class="anchored" data-anchor-id="retrieval-flow"><span class="header-section-number">23.8.1</span> Retrieval Flow</h3>
 <pre><code>Query → Retrieve → Context → Generate</code></pre>
+<ol type="1">
+<li><strong>Query</strong>—identify what information is needed</li>
+<li><strong>Retrieve</strong>—search memory and fetch relevant information</li>
+<li><strong>Context</strong>—incorporate retrieved information into current context</li>
+<li><strong>Generate</strong>—use enriched context to produce response</li>
+</ol>
 <hr>
 </section>
 <section id="key-properties" class="level3" data-number="23.8.2">
 <h3 data-number="23.8.2" class="anchored" data-anchor-id="key-properties"><span class="header-section-number">23.8.2</span> Key Properties</h3>
 <ul>
-<li><p>Relevance</p></li>
-<li><p>Efficiency</p></li>
-<li><p>Accuracy</p></li>
+<li><strong>Relevance</strong>—retrieved information must be related to current task</li>
+<li><strong>Efficiency</strong>—retrieval must be fast enough for real-time use</li>
+<li><strong>Accuracy</strong>—retrieved information must be correct and reliable</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Retrieval connects memory to execution.</p>
+<p>Retrieval connects memory to execution. It’s the mechanism that brings the past into the present.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="memory-in-multi-agent-systems" class="level2" data-number="23.9">
 <h2 data-number="23.9" class="anchored" data-anchor-id="memory-in-multi-agent-systems"><span class="header-section-number">23.9</span> Memory in Multi-Agent Systems</h2>
-<p>In multi-agent systems:</p>
-<ul>
-<li>Memory can be shared or distributed</li>
-</ul>
+<p>In multi-agent systems, memory can be organized in different ways:</p>
 <hr>
 <section id="shared-memory" class="level3" data-number="23.9.1">
 <h3 data-number="23.9.1" class="anchored" data-anchor-id="shared-memory"><span class="header-section-number">23.9.1</span> Shared Memory</h3>
 <ul>
 <li>All agents access the same data</li>
+<li>Centralized storage</li>
+<li>Consistent across agents</li>
 </ul>
+<p><strong>Advantages:</strong> - Consistency—all agents have same information - Simplicity—single source of truth - - Coordination—easier to synchronize</p>
+<p><strong>Disadvantages:</strong> - Bottleneck—single point of access - - Scalability—may limit performance - - Complexity—harder to manage concurrent access</p>
 <hr>
 </section>
 <section id="distributed-memory" class="level3" data-number="23.9.2">
 <h3 data-number="23.9.2" class="anchored" data-anchor-id="distributed-memory"><span class="header-section-number">23.9.2</span> Distributed Memory</h3>
 <ul>
 <li>Each agent maintains its own memory</li>
+<li>Decentralized storage</li>
+<li>Independent management</li>
 </ul>
+<p><strong>Advantages:</strong> - Flexibility—agents can specialize - Scalability—no single bottleneck - - Performance—parallel access</p>
+<p><strong>Disadvantages:</strong> - Inconsistency—agents may have different information - - Complexity—harder to coordinate - - Redundancy—potential for duplication</p>
 <hr>
 </section>
 <section id="trade-offs" class="level3" data-number="23.9.3">
 <h3 data-number="23.9.3" class="anchored" data-anchor-id="trade-offs"><span class="header-section-number">23.9.3</span> Trade-offs</h3>
 <ul>
-<li><p>Shared → consistency</p></li>
-<li><p>Distributed → flexibility</p></li>
+<li><strong>Shared</strong> → consistency, but limits flexibility</li>
+<li><strong>Distributed</strong> → flexibility, but harder to coordinate</li>
 </ul>
 <hr>
 </section>
 </section>
 <section id="common-mistakes" class="level2" data-number="23.10">
 <h2 data-number="23.10" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">23.10</span> Common Mistakes</h2>
+<p>Several common mistakes undermine effective memory systems:</p>
 <hr>
 <section id="overloading-context" class="level3" data-number="23.10.1">
 <h3 data-number="23.10.1" class="anchored" data-anchor-id="overloading-context"><span class="header-section-number">23.10.1</span> 1. Overloading Context</h3>
 <ul>
-<li><p>Too much information</p></li>
-<li><p>Reduced performance</p></li>
+<li><strong>Too much information</strong>—exceeding capacity limits</li>
+<li><strong>Reduced performance</strong>—slower processing and degraded quality</li>
+<li><strong>Increased cost</strong>—more computation required</li>
 </ul>
+<p><strong>Solution:</strong> Select and compress. Include only what’s relevant.</p>
 <hr>
 </section>
 <section id="ignoring-memory" class="level3" data-number="23.10.2">
 <h3 data-number="23.10.2" class="anchored" data-anchor-id="ignoring-memory"><span class="header-section-number">23.10.2</span> 2. Ignoring Memory</h3>
 <ul>
-<li>Systems forget important data</li>
+<li><strong>Systems forget important data</strong>—lose valuable information</li>
+<li><strong>No continuity</strong>—cannot maintain conversation</li>
+<li><strong>No learning</strong>—cannot improve over time</li>
 </ul>
+<p><strong>Solution:</strong> Design memory systems from the start. Make memory a first-class component.</p>
 <hr>
 </section>
 <section id="poor-retrieval" class="level3" data-number="23.10.3">
 <h3 data-number="23.10.3" class="anchored" data-anchor-id="poor-retrieval"><span class="header-section-number">23.10.3</span> 3. Poor Retrieval</h3>
 <ul>
-<li><p>Irrelevant information</p></li>
-<li><p>Missed context</p></li>
+<li><strong>Irrelevant information</strong>—fetching data that’s not useful</li>
+<li><strong>Missed context</strong>—failing to retrieve important information</li>
+<li><strong>Slow performance</strong>—retrieval takes too long</li>
 </ul>
+<p><strong>Solution:</strong> Invest in retrieval mechanisms. Use semantic search, ranking, and relevance scoring.</p>
 <hr>
 </section>
 <section id="mixing-context-and-memory" class="level3" data-number="23.10.4">
 <h3 data-number="23.10.4" class="anchored" data-anchor-id="mixing-context-and-memory"><span class="header-section-number">23.10.4</span> 4. Mixing Context and Memory</h3>
 <ul>
-<li><p>No clear separation</p></li>
-<li><p>Hard to manage</p></li>
+<li><strong>No clear separation</strong>—blurring the distinction</li>
+<li><strong>Hard to manage</strong>—difficult to optimize each component</li>
+<li><strong>Poor performance</strong>—both suffer from lack of focus</li>
 </ul>
+<p><strong>Solution:</strong> Maintain clear separation. Context is immediate working memory. Memory is persistent storage.</p>
 <hr>
 </section>
 </section>
 <section id="designing-memory-systems" class="level2" data-number="23.11">
 <h2 data-number="23.11" class="anchored" data-anchor-id="designing-memory-systems"><span class="header-section-number">23.11</span> Designing Memory Systems</h2>
-<p>Effective memory systems require:</p>
-<ul>
-<li><p>Clear separation of context and storage</p></li>
-<li><p>Efficient retrieval mechanisms</p></li>
-<li><p>Controlled updates</p></li>
-</ul>
+<p>Effective memory systems require careful design:</p>
 <hr>
 <section id="key-questions" class="level3" data-number="23.11.1">
 <h3 data-number="23.11.1" class="anchored" data-anchor-id="key-questions"><span class="header-section-number">23.11.1</span> Key Questions</h3>
 <ul>
-<li><p>What should be stored?</p></li>
-<li><p>When should it be retrieved?</p></li>
-<li><p>How should it be updated?</p></li>
+<li><strong>What should be stored?</strong>—identify valuable information</li>
+<li><strong>When should it be retrieved?</strong>—determine retrieval triggers</li>
+<li><strong>How should it be updated?</strong>—define update mechanisms</li>
+</ul>
+<hr>
+</section>
+<section id="design-principles" class="level3" data-number="23.11.2">
+<h3 data-number="23.11.2" class="anchored" data-anchor-id="design-principles"><span class="header-section-number">23.11.2</span> Design Principles</h3>
+<ul>
+<li><strong>Clear separation</strong>—distinguish context from memory</li>
+<li><strong>Efficient retrieval</strong>—optimize for speed and relevance</li>
+<li><strong>Controlled updates</strong>—manage how information changes over time</li>
 </ul>
 <hr>
 </section>
 </section>
 <section id="memory-in-the-minimal-loop" class="level2" data-number="23.12">
 <h2 data-number="23.12" class="anchored" data-anchor-id="memory-in-the-minimal-loop"><span class="header-section-number">23.12</span> Memory in the Minimal Loop</h2>
-<p>Memory influences the execution phase:</p>
+<p>Memory influences the execution phase of the Minimal Loop:</p>
 <pre><code>Intent → Spec → Instruction → Execution (with Context) → Evaluation</code></pre>
 <hr>
-<p>Context is constructed using memory before execution.</p>
+<p>Context is constructed using memory before execution:</p>
+<ol type="1">
+<li><strong>Retrieve</strong>—fetch relevant information from memory</li>
+<li><strong>Construct</strong>—build context from retrieved information and current input</li>
+<li><strong>Execute</strong>—use enriched context to generate response</li>
+</ol>
 <hr>
 </section>
 <section id="final-insight" class="level2" data-number="23.13">
@@ -931,32 +980,49 @@ Context drives execution.</p>
 <p>Memory and context determine how much of the past influences the present.</p>
 <p>Without them:</p>
 <ul>
-<li><p>Systems are reactive</p></li>
-<li><p>Behavior is shallow</p></li>
+<li>Systems are reactive—responding only to immediate input</li>
+<li>Behavior is shallow—no depth or continuity</li>
+<li><ul>
+<li>Intelligence is limited—cannot build on experience</li>
+</ul></li>
 </ul>
 <p>With them:</p>
 <ul>
-<li><p>Systems become adaptive</p></li>
-<li><p>Behavior becomes coherent</p></li>
+<li>Systems become adaptive—learning and evolving</li>
+<li>Behavior becomes coherent—maintaining consistency over time</li>
+<li><ul>
+<li>Intelligence emerges—accumulating knowledge and wisdom</li>
+</ul></li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Intelligence emerges from the ability to use the past in the present.</p>
+<p>Intelligence emerges from the ability to use the past in the present. Memory and context enable this capability.</p>
 </blockquote>
 <hr>
 </section>
 <section id="closing-statement" class="level2" data-number="23.14">
 <h2 data-number="23.14" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">23.14</span> Closing Statement</h2>
-<p>In the LLM era, systems are no longer stateless processors.</p>
-<p>They are evolving entities that:</p>
+<p>In the LLM era, systems are no longer stateless processors. They are evolving entities that:</p>
 <ul>
-<li><p>Remember</p></li>
-<li><p>Retrieve</p></li>
-<li><p>Adapt</p></li>
+<li><strong>Remember</strong>—preserving information over time</li>
+<li><strong>Retrieve</strong>—accessing relevant information when needed</li>
+<li><strong>Adapt</strong>—learning and improving based on experience</li>
 </ul>
 <blockquote class="blockquote">
-<p>Memory gives systems continuity.<br>
-Context gives them focus.</p>
+<p>Memory gives systems continuity. Context gives them focus.</p>
+</blockquote>
+<hr>
+</section>
+<section id="key-insight" class="level2" data-number="23.15">
+<h2 data-number="23.15" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">23.15</span> Key Insight</h2>
+<blockquote class="blockquote">
+<p>Memory and context enable systems to maintain continuity across interactions. Key components include context as working set, short-term vs long-term memory, retrieval mechanisms, and memory in multi-agent systems (shared vs distributed).</p>
+</blockquote>
+</section>
+<section id="action-hint" class="level2" data-number="23.16">
+<h2 data-number="23.16" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">23.16</span> Action Hint</h2>
+<blockquote class="blockquote">
+<p>Design memory systems from the start. Define what to store, when to retrieve, and how to update. Implement efficient retrieval with relevance scoring. Manage context carefully—select, compress, and prioritize. Distinguish clearly between context (immediate) and memory (persistent).</p>
 </blockquote>
 
 

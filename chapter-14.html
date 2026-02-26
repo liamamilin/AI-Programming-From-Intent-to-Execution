@@ -295,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The New Bottleneck</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -550,6 +550,8 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">15.13</span> Final Insight</a></li>
   <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">15.14</span> Closing Statement</a></li>
+  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">15.15</span> Key Insight</a></li>
+  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">15.16</span> Action Hint</a></li>
   </ul>
 </nav>
     </div>
@@ -578,17 +580,18 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="why-structure-matters" class="level2" data-number="15.1">
 <h2 data-number="15.1" class="anchored" data-anchor-id="why-structure-matters"><span class="header-section-number">15.1</span> Why Structure Matters</h2>
-<p>A spec without structure is just text.</p>
+<p>A spec without structure is just text—a collection of words and ideas that may contain useful information but cannot reliably guide system execution.</p>
+<p>A spec without structure:</p>
 <ul>
-<li><p>It may contain useful ideas</p></li>
-<li><p>It may describe a system</p></li>
+<li>May contain useful ideas—the concepts might be sound</li>
+<li>May describe a system accurately—the understanding might be correct</li>
+<li>But cannot reliably guide execution—the system cannot interpret it consistently</li>
 </ul>
-<p>But it cannot reliably guide execution.</p>
 <p>To be effective, a spec must be:</p>
 <ul>
-<li><p>Interpretable</p></li>
-<li><p>Consistent</p></li>
-<li><p>Reusable</p></li>
+<li><strong>Interpretable</strong>—the system can understand it unambiguously</li>
+<li><strong>Consistent</strong>—different parts of the spec don’t conflict</li>
+<li><strong>Reusable</strong>—the spec can be applied across different contexts</li>
 </ul>
 <p>This requires structure.</p>
 <blockquote class="blockquote">
@@ -598,15 +601,14 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="structure-without-rigidity" class="level2" data-number="15.2">
 <h2 data-number="15.2" class="anchored" data-anchor-id="structure-without-rigidity"><span class="header-section-number">15.2</span> Structure Without Rigidity</h2>
-<p>A common mistake is to assume that a spec must follow a fixed format.</p>
-<p>This is not necessary.</p>
+<p>A common mistake is to assume that a spec must follow a fixed, rigid format. This is not necessary—and can even be counterproductive.</p>
 <p>Different systems may require:</p>
 <ul>
-<li><p>Different levels of detail</p></li>
-<li><p>Different representations</p></li>
-<li><p>Different formats</p></li>
+<li><strong>Different levels of detail</strong>—some specs need more granularity than others</li>
+<li><strong>Different representations</strong>—some systems benefit from visual formats, others from text</li>
+<li><strong>Different formats</strong>—JSON, YAML, natural language, or hybrid approaches</li>
 </ul>
-<p>However, all effective specs share a <strong>common underlying structure</strong>.</p>
+<p>However, all effective specs share a <strong>common underlying structure</strong>. The format may vary, but the essential elements are the same.</p>
 <blockquote class="blockquote">
 <p>The goal is not a fixed template, but a consistent set of elements.</p>
 </blockquote>
@@ -614,14 +616,14 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="the-core-components-of-a-spec" class="level2" data-number="15.3">
 <h2 data-number="15.3" class="anchored" data-anchor-id="the-core-components-of-a-spec"><span class="header-section-number">15.3</span> The Core Components of a Spec</h2>
-<p>At a minimum, a spec must define four essential components:</p>
+<p>At a minimum, any effective spec must define four essential components. These components form the foundation of any executable definition.</p>
 <ul>
-<li><p>Input</p></li>
-<li><p>Output</p></li>
-<li><p>Constraints</p></li>
-<li><p>Success Criteria</p></li>
+<li><strong>Input</strong>—what the system receives</li>
+<li><strong>Output</strong>—what the system produces</li>
+<li><strong>Constraints</strong>—what the system must respect</li>
+<li><strong>Success Criteria</strong>—what counts as correct</li>
 </ul>
-<p>These elements form the foundation of any executable definition.</p>
+<p>These elements are not optional. Without all four, the spec is incomplete and cannot reliably guide execution.</p>
 <hr>
 </section>
 <section id="input-what-goes-in" class="level2" data-number="15.4">
@@ -634,31 +636,34 @@ ul.task-list li input[type="checkbox"] {
 <section id="examples" class="level3" data-number="15.4.1">
 <h3 data-number="15.4.1" class="anchored" data-anchor-id="examples"><span class="header-section-number">15.4.1</span> Examples</h3>
 <ul>
-<li><p>User query</p></li>
-<li><p>Text document</p></li>
-<li><p>Structured data</p></li>
+<li>User query—a natural language question</li>
+<li>Text document—the content to be processed</li>
+<li>Structured data—JSON objects, arrays, or other formatted data</li>
+<li>Configuration settings—parameters that control behavior</li>
 </ul>
 <hr>
 </section>
 <section id="why-input-matters" class="level3" data-number="15.4.2">
 <h3 data-number="15.4.2" class="anchored" data-anchor-id="why-input-matters"><span class="header-section-number">15.4.2</span> Why Input Matters</h3>
-<p>If input is unclear:</p>
+<p>If input is unclear or undefined:</p>
 <ul>
-<li><p>The system does not know what to operate on</p></li>
-<li><p>Behavior becomes inconsistent</p></li>
+<li>The system does not know what to operate on—leading to errors or unexpected behavior</li>
+<li>Behavior becomes inconsistent—different interpretations lead to different results</li>
+<li>Integration becomes difficult—other systems don’t know how to provide input</li>
 </ul>
 <hr>
 </section>
 <section id="good-input-definition" class="level3" data-number="15.4.3">
 <h3 data-number="15.4.3" class="anchored" data-anchor-id="good-input-definition"><span class="header-section-number">15.4.3</span> Good Input Definition</h3>
+<p>A well-defined input specification is:</p>
 <ul>
-<li><p>Explicit</p></li>
-<li><p>Typed or structured when possible</p></li>
-<li><p>Clearly scoped</p></li>
+<li><strong>Explicit</strong>—clearly states what data is required</li>
+<li><strong>Typed or structured when possible</strong>—specifies data types and formats</li>
+<li><strong>Clearly scoped</strong>—defines what is included and what is excluded</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Clear input reduces ambiguity at the source.</p>
+<p>Clear input reduces ambiguity at the source—the system knows exactly what to work with.</p>
 </blockquote>
 <hr>
 </section>
@@ -673,31 +678,34 @@ ul.task-list li input[type="checkbox"] {
 <section id="examples-1" class="level3" data-number="15.5.1">
 <h3 data-number="15.5.1" class="anchored" data-anchor-id="examples-1"><span class="header-section-number">15.5.1</span> Examples</h3>
 <ul>
-<li><p>Generated text</p></li>
-<li><p>Classification label</p></li>
-<li><p>Structured JSON</p></li>
+<li>Generated text—the system’s written response</li>
+<li>Classification label—a category or decision</li>
+<li>Structured JSON—formatted data with specific fields</li>
+<li>File output—a document or other file</li>
 </ul>
 <hr>
 </section>
 <section id="why-output-matters" class="level3" data-number="15.5.2">
 <h3 data-number="15.5.2" class="anchored" data-anchor-id="why-output-matters"><span class="header-section-number">15.5.2</span> Why Output Matters</h3>
-<p>If output is undefined:</p>
+<p>If output is undefined or vague:</p>
 <ul>
-<li><p>Results become unpredictable</p></li>
-<li><p>Downstream systems break</p></li>
+<li>Results become unpredictable—the system may produce anything</li>
+<li>Downstream systems break—other components can’t process the output</li>
+<li>Evaluation becomes impossible—there’s no way to assess quality</li>
 </ul>
 <hr>
 </section>
 <section id="good-output-definition" class="level3" data-number="15.5.3">
 <h3 data-number="15.5.3" class="anchored" data-anchor-id="good-output-definition"><span class="header-section-number">15.5.3</span> Good Output Definition</h3>
+<p>A well-defined output specification is:</p>
 <ul>
-<li><p>Structured</p></li>
-<li><p>Consistent</p></li>
-<li><p>Aligned with use case</p></li>
+<li><strong>Structured</strong>—specifies the format and organization</li>
+<li><strong>Consistent</strong>—the same type of output every time</li>
+<li><strong>Aligned with use case</strong>—matches the needs of downstream systems</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Output is the interface to the rest of the system.</p>
+<p>Output is the interface to the rest of the system—downstream components depend on it.</p>
 </blockquote>
 <hr>
 </section>
@@ -712,10 +720,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="examples-2" class="level3" data-number="15.6.1">
 <h3 data-number="15.6.1" class="anchored" data-anchor-id="examples-2"><span class="header-section-number">15.6.1</span> Examples</h3>
 <ul>
-<li><p>Response time &lt; 2 seconds</p></li>
-<li><p>Maximum length of output</p></li>
-<li><p>Must use retrieved context</p></li>
-<li><p>No external knowledge</p></li>
+<li><strong>Performance constraints</strong>—“Response time &lt; 2 seconds”</li>
+<li><strong>Length constraints</strong>—“Maximum output of 100 words”</li>
+<li><strong>Content constraints</strong>—“Must use retrieved documents when available”</li>
+<li><strong>Behavioral constraints</strong>—“No external knowledge beyond provided context”</li>
 </ul>
 <hr>
 </section>
@@ -723,21 +731,22 @@ ul.task-list li input[type="checkbox"] {
 <h3 data-number="15.6.2" class="anchored" data-anchor-id="why-constraints-matter"><span class="header-section-number">15.6.2</span> Why Constraints Matter</h3>
 <p>Without constraints:</p>
 <ul>
-<li><p>The system has too many degrees of freedom</p></li>
-<li><p>Outputs vary widely</p></li>
+<li>The system has too many degrees of freedom—outputs vary widely</li>
+<li>Outputs drift away from intended behavior—quality degrades over time</li>
+<li>The system may violate requirements—producing unacceptable results</li>
 </ul>
 <hr>
 </section>
 <section id="types-of-constraints" class="level3" data-number="15.6.3">
 <h3 data-number="15.6.3" class="anchored" data-anchor-id="types-of-constraints"><span class="header-section-number">15.6.3</span> Types of Constraints</h3>
 <ul>
-<li><p>Functional (what must be included)</p></li>
-<li><p>Non-functional (performance, format)</p></li>
-<li><p>Behavioral (tone, style, limits)</p></li>
+<li><strong>Functional constraints</strong>—what must be included or achieved</li>
+<li><strong>Non-functional constraints</strong>—performance, format, resource limits</li>
+<li><strong>Behavioral constraints</strong>—tone, style, limits on behavior</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Constraints shape behavior.</p>
+<p>Constraints shape behavior—they define the space within which the system must operate.</p>
 </blockquote>
 <hr>
 </section>
@@ -752,77 +761,67 @@ ul.task-list li input[type="checkbox"] {
 <section id="examples-3" class="level3" data-number="15.7.1">
 <h3 data-number="15.7.1" class="anchored" data-anchor-id="examples-3"><span class="header-section-number">15.7.1</span> Examples</h3>
 <ul>
-<li><p>Output contains key points</p></li>
-<li><p>Classification is accurate</p></li>
-<li><p>Response is relevant and grounded</p></li>
+<li><strong>Content criteria</strong>—“Output must contain key points from the input”</li>
+<li><strong>Accuracy criteria</strong>—“Classification must be at least 90% accurate”</li>
+<li><strong>Relevance criteria</strong>—“Answer must be relevant to the user’s question”</li>
+<li><strong>Grounding criteria</strong>—“Claims must be supported by provided sources”</li>
 </ul>
 <hr>
 </section>
 <section id="why-success-criteria-matter" class="level3" data-number="15.7.2">
 <h3 data-number="15.7.2" class="anchored" data-anchor-id="why-success-criteria-matter"><span class="header-section-number">15.7.2</span> Why Success Criteria Matter</h3>
-<p>Without them:</p>
+<p>Without success criteria:</p>
 <ul>
-<li><p>There is no definition of correctness</p></li>
-<li><p>Evaluation becomes subjective</p></li>
+<li>There is no definition of correctness—any output could be considered acceptable</li>
+<li>Evaluation becomes subjective—different people have different opinions</li>
+<li>Improvement is impossible—there’s no way to measure progress</li>
 </ul>
 <hr>
 </section>
 <section id="good-success-criteria" class="level3" data-number="15.7.3">
 <h3 data-number="15.7.3" class="anchored" data-anchor-id="good-success-criteria"><span class="header-section-number">15.7.3</span> Good Success Criteria</h3>
+<p>Effective success criteria are:</p>
 <ul>
-<li><p>Observable</p></li>
-<li><p>Measurable when possible</p></li>
-<li><p>Aligned with intent</p></li>
+<li><strong>Observable</strong>—can be seen or measured</li>
+<li><strong>Measurable when possible</strong>—quantifiable and objective</li>
+<li><strong>Aligned with intent</strong>—directly connected to the original goal</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Success criteria make quality testable.</p>
+<p>Success criteria make quality testable—they provide the basis for evaluation and improvement.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="putting-it-together" class="level2" data-number="15.8">
 <h2 data-number="15.8" class="anchored" data-anchor-id="putting-it-together"><span class="header-section-number">15.8</span> Putting It Together</h2>
-<p>A minimal spec can be expressed as:</p>
+<p>A minimal spec can be expressed simply as:</p>
 <pre><code>Input → Output
 + Constraints
 + Success Criteria</code></pre>
 <hr>
 <section id="example" class="level3" data-number="15.8.1">
 <h3 data-number="15.8.1" class="anchored" data-anchor-id="example"><span class="header-section-number">15.8.1</span> Example</h3>
-<p>Input:</p>
-<ul>
-<li>User question</li>
-</ul>
-<p>Output:</p>
-<ul>
-<li>Answer text</li>
-</ul>
-<p>Constraints:</p>
-<ul>
-<li><p>Must use retrieved documents</p></li>
-<li><p>Response under 150 words</p></li>
-</ul>
-<p>Success Criteria:</p>
-<ul>
-<li><p>Answer is relevant</p></li>
-<li><p>Answer references source content</p></li>
-</ul>
+<p>Consider a document summarization system:</p>
+<p><strong>Input:</strong> - Text document (string, max 10,000 words)</p>
+<p><strong>Output:</strong> - Summary (string) - Key points (array of strings, 3-5 items)</p>
+<p><strong>Constraints:</strong> - Summary must be under 150 words - Key points must be under 20 words each - Must preserve original meaning and tone - Must not introduce new information</p>
+<p><strong>Success Criteria:</strong> - Summary captures main ideas - Key points are accurate and relevant - Human evaluators rate quality &gt;= 4/5</p>
 <hr>
-<p>This structure is simple but sufficient for many systems.</p>
+<p>This structure is simple but sufficient for many systems. It provides everything needed for reliable execution and evaluation.</p>
 <hr>
 </section>
 </section>
 <section id="optional-extensions" class="level2" data-number="15.9">
 <h2 data-number="15.9" class="anchored" data-anchor-id="optional-extensions"><span class="header-section-number">15.9</span> Optional Extensions</h2>
-<p>Depending on complexity, a spec may include additional elements:</p>
+<p>Depending on complexity, a spec may include additional elements beyond the core four:</p>
 <ul>
-<li><p>Context (environment or scenario)</p></li>
-<li><p>Assumptions</p></li>
-<li><p>Edge cases</p></li>
-<li><p>Error handling</p></li>
+<li><strong>Context</strong>—the environment or scenario in which the system operates</li>
+<li><strong>Assumptions</strong>—what is being taken for granted</li>
+<li><strong>Edge cases</strong>—how the system should handle unusual inputs</li>
+<li><strong>Error handling</strong>—what happens when things go wrong</li>
 </ul>
-<p>These extend the core structure but do not replace it.</p>
+<p>These extend the core structure but do not replace it. The core four components are always necessary.</p>
 <hr>
 </section>
 <section id="spec-as-a-contract" class="level2" data-number="15.10">
@@ -831,44 +830,47 @@ ul.task-list li input[type="checkbox"] {
 <blockquote class="blockquote">
 <p>It is a contract between definition and execution.</p>
 </blockquote>
-<p>It defines:</p>
+<p>The spec defines:</p>
 <ul>
-<li><p>What is expected</p></li>
-<li><p>What is allowed</p></li>
-<li><p>What is considered correct</p></li>
+<li><strong>What is expected</strong>—the requirements and goals</li>
+<li><strong>What is allowed</strong>—the boundaries and constraints</li>
+<li><strong>What is considered correct</strong>—the success criteria</li>
 </ul>
 <hr>
 <section id="implication" class="level3" data-number="15.10.1">
 <h3 data-number="15.10.1" class="anchored" data-anchor-id="implication"><span class="header-section-number">15.10.1</span> Implication</h3>
 <p>If execution fails:</p>
 <ul>
-<li><p>Either the system is wrong</p></li>
-<li><p>Or the spec is incomplete</p></li>
+<li>Either the system is wrong—the implementation doesn’t meet the spec</li>
+<li>Or the spec is incomplete—the spec doesn’t capture all requirements</li>
 </ul>
+<p>Either way, the spec provides the basis for diagnosis and improvement.</p>
 <hr>
 </section>
 </section>
 <section id="balancing-completeness-and-simplicity" class="level2" data-number="15.11">
 <h2 data-number="15.11" class="anchored" data-anchor-id="balancing-completeness-and-simplicity"><span class="header-section-number">15.11</span> Balancing Completeness and Simplicity</h2>
-<p>A good spec balances:</p>
+<p>A good spec balances two competing objectives:</p>
 <ul>
-<li><p>Completeness — enough detail to guide execution</p></li>
-<li><p>Simplicity — not overloaded with unnecessary constraints</p></li>
+<li><strong>Completeness</strong>—enough detail to guide execution effectively</li>
+<li><strong>Simplicity</strong>—not overloaded with unnecessary constraints</li>
 </ul>
 <hr>
 <section id="too-simple" class="level3" data-number="15.11.1">
 <h3 data-number="15.11.1" class="anchored" data-anchor-id="too-simple"><span class="header-section-number">15.11.1</span> Too Simple</h3>
 <ul>
-<li><p>Leaves ambiguity</p></li>
-<li><p>Leads to inconsistent results</p></li>
+<li>Leaves ambiguity—the system must guess at missing details</li>
+<li>Leads to inconsistent results—different interpretations produce different outputs</li>
+<li>Makes evaluation difficult—no clear basis for assessment</li>
 </ul>
 <hr>
 </section>
 <section id="too-complex" class="level3" data-number="15.11.2">
 <h3 data-number="15.11.2" class="anchored" data-anchor-id="too-complex"><span class="header-section-number">15.11.2</span> Too Complex</h3>
 <ul>
-<li><p>Hard to maintain</p></li>
-<li><p>Limits flexibility</p></li>
+<li>Hard to maintain—difficult to understand and update</li>
+<li>Limits flexibility—unnecessarily constrains the system</li>
+<li>Creates overhead—more information than needed for effective execution</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
@@ -883,46 +885,55 @@ ul.task-list li input[type="checkbox"] {
 <section id="missing-components" class="level3" data-number="15.12.1">
 <h3 data-number="15.12.1" class="anchored" data-anchor-id="missing-components"><span class="header-section-number">15.12.1</span> 1. Missing Components</h3>
 <ul>
-<li><p>No clear output</p></li>
-<li><p>No defined constraints</p></li>
-<li><p>No success criteria</p></li>
+<li>No clear output specification—results are unpredictable</li>
+<li>No defined constraints—behavior drifts over time</li>
+<li>No success criteria—evaluation is subjective or impossible</li>
 </ul>
+<p><strong>Solution:</strong> Ensure all four core components are present and well-defined.</p>
 <hr>
 </section>
 <section id="implicit-assumptions" class="level3" data-number="15.12.2">
 <h3 data-number="15.12.2" class="anchored" data-anchor-id="implicit-assumptions"><span class="header-section-number">15.12.2</span> 2. Implicit Assumptions</h3>
 <ul>
-<li>Relying on unstated expectations</li>
+<li>Relying on unstated expectations—the system makes wrong assumptions</li>
+<li>Hidden requirements—critical aspects are not documented</li>
+<li>Unclear context—the system doesn’t understand the environment</li>
 </ul>
+<p><strong>Solution:</strong> Make all assumptions explicit and visible.</p>
 <hr>
 </section>
 <section id="mixing-levels" class="level3" data-number="15.12.3">
 <h3 data-number="15.12.3" class="anchored" data-anchor-id="mixing-levels"><span class="header-section-number">15.12.3</span> 3. Mixing Levels</h3>
 <ul>
-<li>Combining intent, spec, and instruction in one layer</li>
+<li>Combining intent, spec, and instruction in one layer—creating confusion</li>
+<li>Mixing high-level goals with low-level details—losing clarity</li>
+<li>Failing to separate concerns—making the spec hard to use</li>
 </ul>
+<p><strong>Solution:</strong> Maintain clear separation between intent, spec, and instruction.</p>
 <hr>
 </section>
 <section id="over-specification" class="level3" data-number="15.12.4">
 <h3 data-number="15.12.4" class="anchored" data-anchor-id="over-specification"><span class="header-section-number">15.12.4</span> 4. Over-Specification</h3>
 <ul>
-<li>Defining unnecessary details</li>
+<li>Defining unnecessary details—cluttering the spec with irrelevant information</li>
+<li>Fixing implementation choices—constraining the system unnecessarily</li>
+<li>Reducing flexibility—making the spec brittle and hard to adapt</li>
 </ul>
+<p><strong>Solution:</strong> Include only what is necessary for reliable execution.</p>
 <hr>
 </section>
 </section>
 <section id="final-insight" class="level2" data-number="15.13">
 <h2 data-number="15.13" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">15.13</span> Final Insight</h2>
-<p>Spec structure is not about format.</p>
-<p>It is about completeness and clarity.</p>
+<p>Spec structure is not about format—whether you use JSON, YAML, or natural language. It is about completeness and clarity.</p>
 <p>If a spec clearly defines:</p>
 <ul>
-<li><p>Input</p></li>
-<li><p>Output</p></li>
-<li><p>Constraints</p></li>
-<li><p>Success</p></li>
+<li>Input—what the system receives</li>
+<li>Output—what the system produces</li>
+<li>Constraints—what the system must respect</li>
+<li>Success—how we know it works</li>
 </ul>
-<p>Then it is usable.</p>
+<p>Then it is usable, regardless of the specific format.</p>
 <hr>
 </section>
 <section id="closing-statement" class="level2" data-number="15.14">
@@ -930,6 +941,19 @@ ul.task-list li input[type="checkbox"] {
 <p>A well-structured spec turns ideas into executable definitions.</p>
 <blockquote class="blockquote">
 <p>Structure is what makes specification reliable.</p>
+</blockquote>
+<hr>
+</section>
+<section id="key-insight" class="level2" data-number="15.15">
+<h2 data-number="15.15" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">15.15</span> Key Insight</h2>
+<blockquote class="blockquote">
+<p>A spec must include four core components: Input, Output, Constraints, and Success Criteria. Good specs balance completeness with simplicity—enough detail for execution, not so much that they become unwieldy.</p>
+</blockquote>
+</section>
+<section id="action-hint" class="level2" data-number="15.16">
+<h2 data-number="15.16" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">15.16</span> Action Hint</h2>
+<blockquote class="blockquote">
+<p>Use a standard spec template for all your projects. Before writing code, fill out: Input, Output, Constraints, Success Criteria. Review each section for completeness and clarity. If any section is vague, refine it until it’s precise.</p>
 </blockquote>
 
 

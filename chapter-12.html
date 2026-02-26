@@ -295,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The New Bottleneck</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -508,7 +508,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#why-compression-is-necessary" id="toc-why-compression-is-necessary" class="nav-link" data-scroll-target="#why-compression-is-necessary"><span class="header-section-number">13.3</span> Why Compression is Necessary</a></li>
   <li><a href="#from-vague-to-verifiable" id="toc-from-vague-to-verifiable" class="nav-link" data-scroll-target="#from-vague-to-verifiable"><span class="header-section-number">13.4</span> From Vague to Verifiable</a>
   <ul class="collapse">
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">13.4.1</span> Example</a></li>
+  <li><a href="#example-transformation" id="toc-example-transformation" class="nav-link" data-scroll-target="#example-transformation"><span class="header-section-number">13.4.1</span> Example Transformation</a></li>
   </ul></li>
   <li><a href="#the-core-dimensions-of-a-clear-goal" id="toc-the-core-dimensions-of-a-clear-goal" class="nav-link" data-scroll-target="#the-core-dimensions-of-a-clear-goal"><span class="header-section-number">13.5</span> The Core Dimensions of a Clear Goal</a>
   <ul class="collapse">
@@ -527,7 +527,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#compression" id="toc-compression" class="nav-link" data-scroll-target="#compression"><span class="header-section-number">13.7.1</span> Compression</a></li>
   <li><a href="#over-specification" id="toc-over-specification" class="nav-link" data-scroll-target="#over-specification"><span class="header-section-number">13.7.2</span> Over-Specification</a></li>
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">13.7.3</span> Example</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">13.7.3</span> Example</a></li>
   </ul></li>
   <li><a href="#techniques-for-goal-compression" id="toc-techniques-for-goal-compression" class="nav-link" data-scroll-target="#techniques-for-goal-compression"><span class="header-section-number">13.8</span> Techniques for Goal Compression</a>
   <ul class="collapse">
@@ -547,6 +547,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#goal-compression-as-a-skill" id="toc-goal-compression-as-a-skill" class="nav-link" data-scroll-target="#goal-compression-as-a-skill"><span class="header-section-number">13.10</span> Goal Compression as a Skill</a></li>
   <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">13.11</span> Final Insight</a></li>
   <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">13.12</span> Closing Statement</a></li>
+  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">13.13</span> Key Insight</a></li>
+  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">13.14</span> Action Hint</a></li>
   </ul>
 </nav>
     </div>
@@ -575,14 +577,17 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="from-complexity-to-clarity" class="level2" data-number="13.1">
 <h2 data-number="13.1" class="anchored" data-anchor-id="from-complexity-to-clarity"><span class="header-section-number">13.1</span> From Complexity to Clarity</h2>
-<p>Most goals begin as vague, complex, and unstructured.</p>
+<p>In our exploration of Possibility Space, we identified Goal Space as the first layer—the set of all possible outcomes (Z) we might aim for. We discovered that many people struggle with “I don’t know what to build” precisely because they cannot see the Goal Space clearly.</p>
+<p>But even when we can see the Goal Space, we face another challenge: the goals we discover are often vague, complex, and unstructured. They capture an intuition or aspiration but lack the precision necessary for system development.</p>
+<p>Consider these common initial goals:</p>
 <ul>
-<li><p>“Build something useful”</p></li>
-<li><p>“Improve user experience”</p></li>
-<li><p>“Make it smarter”</p></li>
+<li>“Build something useful”</li>
+<li>“Improve user experience”</li>
+<li>“Make it smarter”</li>
+<li>“Enhance productivity”</li>
 </ul>
-<p>These statements feel meaningful, but they are not actionable.</p>
-<p>To build systems, goals must be transformed.</p>
+<p>These statements feel meaningful and inspiring. They communicate a general direction and aspiration. But they are not actionable. They cannot guide system development effectively.</p>
+<p>To build systems, we must do more than identify possible goals from the Goal Space. We must transform them. They must move from vague aspirations to precise, testable definitions.</p>
 <blockquote class="blockquote">
 <p><strong>Goal Compression is the process of turning vague intentions into precise, testable definitions.</strong></p>
 </blockquote>
@@ -590,237 +595,228 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="what-is-goal-compression" class="level2" data-number="13.2">
 <h2 data-number="13.2" class="anchored" data-anchor-id="what-is-goal-compression"><span class="header-section-number">13.2</span> What is Goal Compression?</h2>
-<p>Goal Compression is the act of:</p>
+<p>Goal compression is the act of:</p>
 <blockquote class="blockquote">
 <p><strong>Reducing ambiguity while preserving intent</strong></p>
 </blockquote>
-<p>It does not simplify the goal by removing meaning.</p>
-<p>It simplifies by:</p>
+<p>It does not simplify the goal by removing meaning or value. Instead, it simplifies by:</p>
 <ul>
-<li><p>Eliminating vagueness</p></li>
-<li><p>Defining boundaries</p></li>
-<li><p>Making outcomes observable</p></li>
+<li><strong>Eliminating vagueness</strong>—making implicit assumptions explicit</li>
+<li><strong>Defining boundaries</strong>—specifying what is included and excluded</li>
+<li><strong>Making outcomes observable</strong>—defining how success can be measured</li>
 </ul>
 <hr>
 <section id="key-idea" class="level3" data-number="13.2.1">
 <h3 data-number="13.2.1" class="anchored" data-anchor-id="key-idea"><span class="header-section-number">13.2.1</span> Key Idea</h3>
 <p>A compressed goal is:</p>
 <ul>
-<li><p>Clear</p></li>
-<li><p>Bounded</p></li>
-<li><p>Verifiable</p></li>
+<li><strong>Clear</strong>—unambiguous and specific</li>
+<li><strong>Bounded</strong>—has defined scope and limits</li>
+<li><strong>Verifiable</strong>—can be tested against objective criteria</li>
 </ul>
 <hr>
 </section>
 </section>
 <section id="why-compression-is-necessary" class="level2" data-number="13.3">
 <h2 data-number="13.3" class="anchored" data-anchor-id="why-compression-is-necessary"><span class="header-section-number">13.3</span> Why Compression is Necessary</h2>
-<p>Without compression:</p>
+<p>Without goal compression, the entire system development process is compromised:</p>
 <ul>
-<li><p>Intent remains unclear</p></li>
-<li><p>Spec becomes inconsistent</p></li>
-<li><p>Instruction becomes unstable</p></li>
-<li><p>Evaluation becomes subjective</p></li>
+<li><strong>Intent remains unclear</strong>—the team doesn’t agree on what they’re building</li>
+<li><strong>Spec becomes inconsistent</strong>—requirements conflict or contradict each other</li>
+<li><strong>Instruction becomes unstable</strong>—execution produces unreliable results</li>
+<li><strong>Evaluation becomes subjective</strong>—there’s no way to measure success</li>
 </ul>
 <p>In other words:</p>
 <blockquote class="blockquote">
-<p>The entire system becomes unreliable.</p>
+<p>The entire system becomes unreliable and difficult to manage.</p>
 </blockquote>
 <hr>
 </section>
 <section id="from-vague-to-verifiable" class="level2" data-number="13.4">
 <h2 data-number="13.4" class="anchored" data-anchor-id="from-vague-to-verifiable"><span class="header-section-number">13.4</span> From Vague to Verifiable</h2>
-<p>Goal Compression transforms goals along a spectrum:</p>
+<p>Goal compression transforms goals along a spectrum, moving them from vague inspiration to precise, testable specification:</p>
 <pre><code>Vague → Clear → Structured → Verifiable</code></pre>
 <hr>
-<section id="example" class="level3" data-number="13.4.1">
-<h3 data-number="13.4.1" class="anchored" data-anchor-id="example"><span class="header-section-number">13.4.1</span> Example</h3>
-<p>Vague:</p>
-<p>“Build a smart assistant”</p>
-<hr>
-<p>Clear:</p>
-<p>“Build an assistant that answers user questions”</p>
-<hr>
-<p>Structured:</p>
-<p>“Build a system that answers user questions using retrieved knowledge”</p>
-<hr>
-<p>Verifiable:</p>
-<p>“Given a user query, the system retrieves relevant documents and generates an answer grounded in them, with response time under 2 seconds.”</p>
+<section id="example-transformation" class="level3" data-number="13.4.1">
+<h3 data-number="13.4.1" class="anchored" data-anchor-id="example-transformation"><span class="header-section-number">13.4.1</span> Example Transformation</h3>
+<p>Consider the goal: “Build a smart assistant”</p>
+<p><strong>Vague:</strong> &gt; “Build a smart assistant.”</p>
+<p>This captures the aspiration but provides no guidance for implementation.</p>
+<p><strong>Clear:</strong> &gt; “Build an assistant that answers user questions.”</p>
+<p>Better—we now know what the system should do. But still not specific enough.</p>
+<p><strong>Structured:</strong> &gt; “Build a system that answers user questions using retrieved knowledge.”</p>
+<p>Good—we now understand the mechanism. But still missing important details.</p>
+<p><strong>Verifiable:</strong> &gt; “Given a user query, the system retrieves relevant documents from a knowledge base and generates an answer grounded in those documents, with a response time under 2 seconds and an accuracy of at least 80% as measured by human evaluators.”</p>
+<p>Now we have a goal that can guide implementation and be tested for success.</p>
 <hr>
 <blockquote class="blockquote">
-<p>The final stage allows evaluation.</p>
+<p>The final stage allows evaluation and systematic improvement.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="the-core-dimensions-of-a-clear-goal" class="level2" data-number="13.5">
 <h2 data-number="13.5" class="anchored" data-anchor-id="the-core-dimensions-of-a-clear-goal"><span class="header-section-number">13.5</span> The Core Dimensions of a Clear Goal</h2>
-<p>A well-compressed goal typically defines:</p>
+<p>A well-compressed goal typically defines five essential dimensions. These dimensions provide a complete picture of what the goal entails.</p>
 <hr>
 <section id="objective" class="level3" data-number="13.5.1">
 <h3 data-number="13.5.1" class="anchored" data-anchor-id="objective"><span class="header-section-number">13.5.1</span> 1. Objective</h3>
-<p>What outcome is expected?</p>
-<ul>
-<li>“Answer user questions”</li>
-</ul>
+<p>What outcome is expected? What is the primary purpose?</p>
+<p>This defines the “what” of the goal—the core result that should be achieved.</p>
+<p><strong>Example:</strong> &gt; “Answer user questions”</p>
 <hr>
 </section>
 <section id="object" class="level3" data-number="13.5.2">
 <h3 data-number="13.5.2" class="anchored" data-anchor-id="object"><span class="header-section-number">13.5.2</span> 2. Object</h3>
-<p>What is being acted upon?</p>
-<ul>
-<li>“User queries”</li>
-</ul>
+<p>What is being acted upon? What entity or domain is the target?</p>
+<p>This defines the scope and focus of the effort.</p>
+<p><strong>Example:</strong> &gt; “User queries”</p>
 <hr>
 </section>
 <section id="context" class="level3" data-number="13.5.3">
 <h3 data-number="13.5.3" class="anchored" data-anchor-id="context"><span class="header-section-number">13.5.3</span> 3. Context</h3>
-<p>Under what conditions?</p>
-<ul>
-<li>“Within a web application”</li>
-</ul>
+<p>Under what conditions does the goal apply? What is the environment or situation?</p>
+<p>This provides the boundaries within which the system must operate.</p>
+<p><strong>Example:</strong> &gt; “Within a web application with 1000+ concurrent users”</p>
 <hr>
 </section>
 <section id="constraints" class="level3" data-number="13.5.4">
 <h3 data-number="13.5.4" class="anchored" data-anchor-id="constraints"><span class="header-section-number">13.5.4</span> 4. Constraints</h3>
-<p>What limits exist?</p>
-<ul>
-<li>“Response time &lt; 2 seconds”</li>
-</ul>
+<p>What limits exist? What boundaries must be respected?</p>
+<p>Constraints define both what must be done and what must not be done.</p>
+<p><strong>Example:</strong> &gt; “Response time &lt; 2 seconds, 95% accuracy”</p>
 <hr>
 </section>
 <section id="success-criteria" class="level3" data-number="13.5.5">
 <h3 data-number="13.5.5" class="anchored" data-anchor-id="success-criteria"><span class="header-section-number">13.5.5</span> 5. Success Criteria</h3>
-<p>How do we measure success?</p>
-<ul>
-<li>“Answers are relevant and grounded in retrieved documents”</li>
-</ul>
+<p>How do we measure success? What indicates that the goal has been achieved?</p>
+<p>Success criteria provide the basis for evaluation and improvement.</p>
+<p><strong>Example:</strong> &gt; “Answers are relevant and grounded in retrieved documents, as measured by human evaluation”</p>
 <hr>
 <blockquote class="blockquote">
-<p>Without these dimensions, a goal is incomplete.</p>
+<p>Without these dimensions, a goal is incomplete and cannot effectively guide system development.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="compression-as-reduction-of-degrees-of-freedom" class="level2" data-number="13.6">
 <h2 data-number="13.6" class="anchored" data-anchor-id="compression-as-reduction-of-degrees-of-freedom"><span class="header-section-number">13.6</span> Compression as Reduction of Degrees of Freedom</h2>
-<p>Another way to understand goal compression:</p>
-<blockquote class="blockquote">
-<p>It reduces the number of possible interpretations.</p>
-</blockquote>
+<p>Another way to understand goal compression is in terms of reducing the number of possible interpretations.</p>
 <hr>
 <section id="before-compression" class="level3" data-number="13.6.1">
 <h3 data-number="13.6.1" class="anchored" data-anchor-id="before-compression"><span class="header-section-number">13.6.1</span> Before Compression</h3>
 <ul>
-<li><p>Many possible meanings</p></li>
-<li><p>Many possible outputs</p></li>
-<li><p>High uncertainty</p></li>
+<li>Many possible meanings—the goal can be interpreted in multiple ways</li>
+<li>Many possible outputs—the system could produce many different results</li>
+<li>High uncertainty—it’s unclear what the right approach is</li>
 </ul>
 <hr>
 </section>
 <section id="after-compression" class="level3" data-number="13.6.2">
 <h3 data-number="13.6.2" class="anchored" data-anchor-id="after-compression"><span class="header-section-number">13.6.2</span> After Compression</h3>
 <ul>
-<li><p>Narrowed interpretation</p></li>
-<li><p>Constrained outputs</p></li>
-<li><p>Reduced uncertainty</p></li>
+<li>Narrowed interpretation—the goal has a single, clear meaning</li>
+<li>Constrained outputs—the system has limited freedom in what it produces</li>
+<li>Reduced uncertainty—the path forward is clear</li>
 </ul>
 <hr>
 <p>This is critical for systems:</p>
 <ul>
-<li><p>Systems cannot choose among infinite interpretations</p></li>
-<li><p>They require bounded spaces</p></li>
+<li>Systems cannot choose among infinite interpretations—they need explicit guidance</li>
+<li>They require bounded spaces to operate effectively</li>
+<li>Ambiguity leads to unpredictable and unreliable behavior</li>
 </ul>
 <hr>
 </section>
 </section>
 <section id="compression-vs-over-specification" class="level2" data-number="13.7">
 <h2 data-number="13.7" class="anchored" data-anchor-id="compression-vs-over-specification"><span class="header-section-number">13.7</span> Compression vs Over-Specification</h2>
-<p>There is a difference between:</p>
+<p>There is an important distinction between:</p>
 <ul>
-<li><p>Compressing a goal</p></li>
-<li><p>Over-constraining a goal</p></li>
+<li><strong>Compressing a goal</strong>—removing ambiguity while preserving intent</li>
+<li><strong>Over-constraining a goal</strong>—adding unnecessary restrictions that limit flexibility</li>
 </ul>
 <hr>
 <section id="compression" class="level3" data-number="13.7.1">
 <h3 data-number="13.7.1" class="anchored" data-anchor-id="compression"><span class="header-section-number">13.7.1</span> Compression</h3>
 <ul>
-<li><p>Removes ambiguity</p></li>
-<li><p>Defines boundaries</p></li>
+<li>Removes ambiguity—makes the goal clear and specific</li>
+<li>Defines boundaries—specifies what is included and excluded</li>
+<li>Preserves intent—maintains the original purpose and value</li>
 </ul>
 <hr>
 </section>
 <section id="over-specification" class="level3" data-number="13.7.2">
 <h3 data-number="13.7.2" class="anchored" data-anchor-id="over-specification"><span class="header-section-number">13.7.2</span> Over-Specification</h3>
 <ul>
-<li><p>Fixes too many details</p></li>
-<li><p>Limits flexibility</p></li>
+<li>Fixes too many details—specifies implementation choices unnecessarily</li>
+<li>Limits flexibility—reduces the system’s ability to adapt</li>
+<li>Adds constraints without purpose—creates unnecessary complexity</li>
 </ul>
 <hr>
 </section>
-<section id="example-1" class="level3" data-number="13.7.3">
-<h3 data-number="13.7.3" class="anchored" data-anchor-id="example-1"><span class="header-section-number">13.7.3</span> Example</h3>
-<p>Compressed:</p>
-<p>“Generate a summary under 100 words.”</p>
-<hr>
-<p>Over-specified:</p>
-<p>“Use exactly 3 sentences, each with 12–15 words, using formal tone.”</p>
+<section id="example" class="level3" data-number="13.7.3">
+<h3 data-number="13.7.3" class="anchored" data-anchor-id="example"><span class="header-section-number">13.7.3</span> Example</h3>
+<p><strong>Compressed:</strong> &gt; “Generate a summary under 100 words.”</p>
+<p>This specifies a clear constraint without dictating the content or style.</p>
+<p><strong>Over-specified:</strong> &gt; “Use exactly 3 sentences, each with 12–15 words, using formal academic tone, beginning with a clear topic sentence.”</p>
+<p>This specifies too many details and unnecessarily limits the system’s flexibility.</p>
 <hr>
 <blockquote class="blockquote">
-<p>Good compression clarifies.<br>
-Over-specification restricts unnecessarily.</p>
+<p>Good compression clarifies. Over-specification restricts unnecessarily.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="techniques-for-goal-compression" class="level2" data-number="13.8">
 <h2 data-number="13.8" class="anchored" data-anchor-id="techniques-for-goal-compression"><span class="header-section-number">13.8</span> Techniques for Goal Compression</h2>
+<p>Several practical techniques can help compress goals effectively:</p>
 <hr>
 <section id="ask-what-does-success-look-like" class="level3" data-number="13.8.1">
 <h3 data-number="13.8.1" class="anchored" data-anchor-id="ask-what-does-success-look-like"><span class="header-section-number">13.8.1</span> 1. Ask “What Does Success Look Like?”</h3>
-<p>Force definition of:</p>
+<p>Force yourself to define observable, measurable outcomes:</p>
 <ul>
-<li><p>Observable outcomes</p></li>
-<li><p>Measurable criteria</p></li>
+<li>What will we see when the goal is achieved?</li>
+<li>What will be different?</li>
+<li>How will we know it works?</li>
 </ul>
+<p>This forces specificity and creates evaluation criteria.</p>
 <hr>
 </section>
 <section id="identify-the-transformation" class="level3" data-number="13.8.2">
 <h3 data-number="13.8.2" class="anchored" data-anchor-id="identify-the-transformation"><span class="header-section-number">13.8.2</span> 2. Identify the Transformation</h3>
-<p>Define:</p>
+<p>Define the change the system should create:</p>
 <pre><code>Current State → Desired State</code></pre>
+<p>What is the situation now? What should it be after the system is deployed?</p>
 <hr>
 </section>
 <section id="remove-ambiguous-terms" class="level3" data-number="13.8.3">
 <h3 data-number="13.8.3" class="anchored" data-anchor-id="remove-ambiguous-terms"><span class="header-section-number">13.8.3</span> 3. Remove Ambiguous Terms</h3>
-<p>Replace:</p>
+<p>Replace subjective or vague terms with specific, measurable ones:</p>
 <ul>
-<li><p>“better”</p></li>
-<li><p>“fast”</p></li>
-<li><p>“smart”</p></li>
-</ul>
-<p>With:</p>
-<ul>
-<li>measurable definitions</li>
+<li>“better” → “20% faster”</li>
+<li>“fast” → “under 2 seconds”</li>
+<li>“smart” → “accurate on 95% of test cases”</li>
 </ul>
 <hr>
 </section>
 <section id="add-constraints" class="level3" data-number="13.8.4">
 <h3 data-number="13.8.4" class="anchored" data-anchor-id="add-constraints"><span class="header-section-number">13.8.4</span> 4. Add Constraints</h3>
-<p>Define limits:</p>
+<p>Define limits explicitly:</p>
 <ul>
-<li><p>Time</p></li>
-<li><p>Format</p></li>
-<li><p>Scope</p></li>
+<li>Time constraints—“must complete within X seconds”</li>
+<li>Format constraints—“must output JSON”</li>
+<li>Scope constraints—“only process documents under 10MB”</li>
 </ul>
 <hr>
 </section>
 <section id="test-for-interpretability" class="level3" data-number="13.8.5">
 <h3 data-number="13.8.5" class="anchored" data-anchor-id="test-for-interpretability"><span class="header-section-number">13.8.5</span> 5. Test for Interpretability</h3>
-<p>Ask:</p>
+<p>Ask yourself:</p>
 <blockquote class="blockquote">
-<p>Can another system execute this without guessing?</p>
+<p>Can another person (or system) execute this without guessing?</p>
 </blockquote>
+<p>If the answer is no, the goal needs more compression.</p>
 <hr>
 </section>
 </section>
@@ -830,58 +826,70 @@ Over-specification restricts unnecessarily.</p>
 <section id="staying-at-the-idea-level" class="level3" data-number="13.9.1">
 <h3 data-number="13.9.1" class="anchored" data-anchor-id="staying-at-the-idea-level"><span class="header-section-number">13.9.1</span> 1. Staying at the Idea Level</h3>
 <ul>
-<li><p>Never defining details</p></li>
-<li><p>Remaining abstract</p></li>
+<li>Never defining details—remaining abstract and vague</li>
+<li>Remaining inspirational—failing to become actionable</li>
+<li>Moving to implementation prematurely—without clarifying the goal</li>
 </ul>
 <hr>
 </section>
 <section id="mixing-goals-with-implementation" class="level3" data-number="13.9.2">
 <h3 data-number="13.9.2" class="anchored" data-anchor-id="mixing-goals-with-implementation"><span class="header-section-number">13.9.2</span> 2. Mixing Goals with Implementation</h3>
 <ul>
-<li><p>Jumping to tools or frameworks</p></li>
-<li><p>Losing focus on outcome</p></li>
+<li>Jumping to tools or frameworks—before clarifying what’s needed</li>
+<li>Focusing on how to build—before understanding what to build</li>
+<li>Losing focus on outcome—getting distracted by implementation details</li>
 </ul>
 <hr>
 </section>
 <section id="ignoring-evaluation" class="level3" data-number="13.9.3">
 <h3 data-number="13.9.3" class="anchored" data-anchor-id="ignoring-evaluation"><span class="header-section-number">13.9.3</span> 3. Ignoring Evaluation</h3>
 <ul>
-<li>No way to verify success</li>
+<li>No way to verify success—no criteria for measurement</li>
+<li>Can’t assess improvement—no baseline for comparison</li>
+<li>Subjective assessment—relying on gut feel rather than data</li>
 </ul>
 <hr>
 </section>
 <section id="overcomplicating-the-goal" class="level3" data-number="13.9.4">
 <h3 data-number="13.9.4" class="anchored" data-anchor-id="overcomplicating-the-goal"><span class="header-section-number">13.9.4</span> 4. Overcomplicating the Goal</h3>
 <ul>
-<li><p>Adding unnecessary details</p></li>
-<li><p>Reducing clarity</p></li>
+<li>Adding unnecessary details—cluttering the goal with irrelevant information</li>
+<li>Reducing clarity—too much information obscures the core objective</li>
+<li>Making it hard to remember—complex goals are difficult to communicate</li>
 </ul>
 <hr>
 </section>
 </section>
 <section id="goal-compression-as-a-skill" class="level2" data-number="13.10">
 <h2 data-number="13.10" class="anchored" data-anchor-id="goal-compression-as-a-skill"><span class="header-section-number">13.10</span> Goal Compression as a Skill</h2>
-<p>Goal compression improves with practice.</p>
+<p>Goal compression improves with practice. It is not a natural talent but a learnable skill.</p>
 <p>It requires:</p>
 <ul>
-<li><p>Clear thinking</p></li>
-<li><p>Precision in language</p></li>
-<li><p>Awareness of system behavior</p></li>
+<li><strong>Clear thinking</strong>—the ability to distill complex ideas to their essence</li>
+<li><strong>Precision in language</strong>—choosing words carefully and specifically</li>
+<li><strong>Awareness of system behavior</strong>—understanding what systems need to execute effectively</li>
 </ul>
 <p>The more you practice, the faster you can:</p>
 <ul>
-<li><p>Move from vague to precise</p></li>
-<li><p>Define systems effectively</p></li>
+<li>Move from vague to precise—compressing goals rapidly</li>
+<li>Define systems effectively—creating actionable specifications</li>
+<li>Communicate clearly—ensuring everyone understands the goal</li>
 </ul>
 <hr>
 </section>
 <section id="final-insight" class="level2" data-number="13.11">
 <h2 data-number="13.11" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">13.11</span> Final Insight</h2>
-<p>Goal compression is the bridge between intention and specification.</p>
-<p>Without it:</p>
+<p>Goal compression is the bridge between intention and specification. Without it:</p>
 <ul>
-<li><p>Intent remains unusable</p></li>
-<li><p>Spec cannot be formed</p></li>
+<li>Intent remains unusable—ideas cannot be realized</li>
+<li>Spec cannot be formed—requirements cannot be specified</li>
+<li>Systems cannot be built—there’s no clear direction</li>
+</ul>
+<p>With it:</p>
+<ul>
+<li>Intent becomes actionable—ideas can guide development</li>
+<li>Spec becomes possible—requirements can be specified</li>
+<li>Systems become buildable—there’s a clear path forward</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
@@ -891,9 +899,22 @@ Over-specification restricts unnecessarily.</p>
 </section>
 <section id="closing-statement" class="level2" data-number="13.12">
 <h2 data-number="13.12" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">13.12</span> Closing Statement</h2>
-<p>In the LLM era, the ability to compress goals is a core capability.</p>
+<p>In the LLM era, the ability to compress goals is a core capability. It is the foundation of effective system development.</p>
 <blockquote class="blockquote">
 <p>The clearer the goal, the more reliable the system.</p>
+</blockquote>
+<hr>
+</section>
+<section id="key-insight" class="level2" data-number="13.13">
+<h2 data-number="13.13" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">13.13</span> Key Insight</h2>
+<blockquote class="blockquote">
+<p>Goal compression transforms vague intentions into precise, testable definitions. A well-compressed goal specifies objective, object, context, constraints, and success criteria.</p>
+</blockquote>
+</section>
+<section id="action-hint" class="level2" data-number="13.14">
+<h2 data-number="13.14" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">13.14</span> Action Hint</h2>
+<blockquote class="blockquote">
+<p>Practice goal compression on your current projects. Take your existing goals and run them through the compression process: Vague → Clear → Structured → Verifiable. Ask yourself: “Is this specific enough that someone else could execute it without guessing?”</p>
 </blockquote>
 
 

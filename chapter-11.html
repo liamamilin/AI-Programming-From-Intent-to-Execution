@@ -295,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The New Bottleneck</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -504,7 +504,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#what-is-composition" id="toc-what-is-composition" class="nav-link" data-scroll-target="#what-is-composition"><span class="header-section-number">12.2</span> What is Composition?</a></li>
   <li><a href="#capability-as-a-unit" id="toc-capability-as-a-unit" class="nav-link" data-scroll-target="#capability-as-a-unit"><span class="header-section-number">12.3</span> Capability as a Unit</a>
   <ul class="collapse">
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">12.3.1</span> Example</a></li>
+  <li><a href="#what-is-a-capability" id="toc-what-is-a-capability" class="nav-link" data-scroll-target="#what-is-a-capability"><span class="header-section-number">12.3.1</span> What is a Capability?</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">12.3.2</span> Example</a></li>
   </ul></li>
   <li><a href="#from-components-to-systems" id="toc-from-components-to-systems" class="nav-link" data-scroll-target="#from-components-to-systems"><span class="header-section-number">12.4</span> From Components to Systems</a>
   <ul class="collapse">
@@ -526,7 +527,8 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#interfaces-between-components" id="toc-interfaces-between-components" class="nav-link" data-scroll-target="#interfaces-between-components"><span class="header-section-number">12.7</span> Interfaces Between Components</a>
   <ul class="collapse">
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">12.7.1</span> Example</a></li>
+  <li><a href="#what-is-an-interface" id="toc-what-is-an-interface" class="nav-link" data-scroll-target="#what-is-an-interface"><span class="header-section-number">12.7.1</span> What is an Interface?</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">12.7.2</span> Example</a></li>
   </ul></li>
   <li><a href="#loose-vs-tight-coupling" id="toc-loose-vs-tight-coupling" class="nav-link" data-scroll-target="#loose-vs-tight-coupling"><span class="header-section-number">12.8</span> Loose vs Tight Coupling</a>
   <ul class="collapse">
@@ -547,6 +549,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#composition-as-a-skill" id="toc-composition-as-a-skill" class="nav-link" data-scroll-target="#composition-as-a-skill"><span class="header-section-number">12.11</span> Composition as a Skill</a></li>
   <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">12.12</span> Final Insight</a></li>
   <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">12.13</span> Closing Statement</a></li>
+  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">12.14</span> Key Insight</a></li>
+  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">12.15</span> Action Hint</a></li>
   </ul>
 </nav>
     </div>
@@ -575,17 +579,19 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="from-structure-to-system" class="level2" data-number="12.1">
 <h2 data-number="12.1" class="anchored" data-anchor-id="from-structure-to-system"><span class="header-section-number">12.1</span> From Structure to System</h2>
-<p>After defining structure—main flow, modules, and data flow—the next step is:</p>
+<p>After defining structure—main flow, modules, and data flow—we have a blueprint for how a system should be organized. But a blueprint is not a building. A specification is not a system.</p>
+<p>Recall from our exploration of Possibility Space that the Option Space represents “what choices exist at each step.” When we navigate the possibility graph, we face countless decision points. Composition is the art of making those choices effectively.</p>
+<p>The next step is:</p>
 <blockquote class="blockquote">
 <p><strong>Composition — combining components into a working system</strong></p>
 </blockquote>
-<p>Structure tells us what exists.<br>
-Composition determines how those parts work together.</p>
+<p>Structure tells us what exists and how parts relate. Composition determines how those parts actually work together to produce behavior. It is how we navigate the Option Space and make the right choices at each intersection.</p>
 <p>Without composition:</p>
 <ul>
-<li><p>Modules remain isolated</p></li>
-<li><p>Capabilities remain unused</p></li>
-<li><p>Systems never emerge</p></li>
+<li>Modules remain isolated—they exist but don’t interact</li>
+<li>Capabilities remain unused—potential is unrealized</li>
+<li>Systems never emerge—we have parts but no whole</li>
+<li>Possibilities remain unrealized—the Option Space is explored but not actualized</li>
 </ul>
 <hr>
 </section>
@@ -595,50 +601,46 @@ Composition determines how those parts work together.</p>
 <blockquote class="blockquote">
 <p><strong>Combining smaller units of capability into a larger, functional system</strong></p>
 </blockquote>
-<p>These units can be:</p>
+<p>These units can take many forms:</p>
 <ul>
-<li><p>Modules</p></li>
-<li><p>Functions</p></li>
-<li><p>Agents</p></li>
-<li><p>Services</p></li>
-<li><p>Patterns</p></li>
+<li><strong>Modules</strong>—independent components with defined interfaces</li>
+<li><strong>Functions</strong>—reusable pieces of logic</li>
+<li><strong>Agents</strong>—autonomous systems that can reason and act</li>
+<li><strong>Services</strong>—external capabilities accessed through APIs</li>
+<li><strong>Patterns</strong>—repeated structures and approaches</li>
 </ul>
-<p>Composition answers:</p>
+<p>Composition answers fundamental questions:</p>
 <ul>
-<li><p>Which components are needed?</p></li>
-<li><p>How do they connect?</p></li>
-<li><p>In what order do they operate?</p></li>
+<li>Which components are needed to achieve the goal?</li>
+<li>How do they connect and communicate?</li>
+<li>In what order do they operate?</li>
 </ul>
 <hr>
 </section>
 <section id="capability-as-a-unit" class="level2" data-number="12.3">
 <h2 data-number="12.3" class="anchored" data-anchor-id="capability-as-a-unit"><span class="header-section-number">12.3</span> Capability as a Unit</h2>
-<p>To understand composition, we must define a key concept:</p>
-<blockquote class="blockquote">
-<p><strong>Capability</strong></p>
-</blockquote>
-<p>A capability is something a system can do.</p>
-<p>Examples:</p>
-<ul>
-<li><p>Generate text</p></li>
-<li><p>Retrieve information</p></li>
-<li><p>Store data</p></li>
-<li><p>Classify input</p></li>
-</ul>
-<p>Each module provides one or more capabilities.</p>
+<p>To understand composition, we must first define a key concept: <strong>capability</strong>.</p>
 <hr>
-<section id="example" class="level3" data-number="12.3.1">
-<h3 data-number="12.3.1" class="anchored" data-anchor-id="example"><span class="header-section-number">12.3.1</span> Example</h3>
-<p>A language model provides:</p>
+<section id="what-is-a-capability" class="level3" data-number="12.3.1">
+<h3 data-number="12.3.1" class="anchored" data-anchor-id="what-is-a-capability"><span class="header-section-number">12.3.1</span> What is a Capability?</h3>
+<p>A capability is something a system can do—a unit of functionality that produces a specific result.</p>
+<p><strong>Examples:</strong> - Generate text—create written content - Retrieve information—find and fetch data - Store data—save information for later use - Classify input—categorize or label data</p>
+<p>Each module, agent, or service provides one or more capabilities.</p>
+<hr>
+</section>
+<section id="example" class="level3" data-number="12.3.2">
+<h3 data-number="12.3.2" class="anchored" data-anchor-id="example"><span class="header-section-number">12.3.2</span> Example</h3>
+<p>A language model provides several capabilities:</p>
 <ul>
-<li><p>Text generation</p></li>
-<li><p>Summarization</p></li>
-<li><p>Reasoning</p></li>
+<li><strong>Text generation</strong>—create written content</li>
+<li><strong>Summarization</strong>—condense longer texts</li>
+<li><strong>Reasoning</strong>—draw inferences and conclusions</li>
 </ul>
-<p>A database provides:</p>
+<p>A database provides different capabilities:</p>
 <ul>
-<li><p>Storage</p></li>
-<li><p>Retrieval</p></li>
+<li><strong>Storage</strong>—save and persist data</li>
+<li><strong>Retrieval</strong>—find and fetch stored data</li>
+<li><strong>Querying</strong>—search and filter data</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
@@ -649,200 +651,209 @@ Composition determines how those parts work together.</p>
 </section>
 <section id="from-components-to-systems" class="level2" data-number="12.4">
 <h2 data-number="12.4" class="anchored" data-anchor-id="from-components-to-systems"><span class="header-section-number">12.4</span> From Components to Systems</h2>
-<p>A system is not a single capability.</p>
-<p>It is a <strong>composition of capabilities</strong>.</p>
+<p>A system is not a single capability. It is a <strong>composition of capabilities</strong>—multiple units working together to achieve a goal that no single capability could accomplish alone.</p>
 <hr>
 <section id="example-chat-system" class="level3" data-number="12.4.1">
 <h3 data-number="12.4.1" class="anchored" data-anchor-id="example-chat-system"><span class="header-section-number">12.4.1</span> Example: Chat System</h3>
-<p>Capabilities involved:</p>
-<ul>
-<li><p>Input handling</p></li>
-<li><p>Context storage</p></li>
-<li><p>Response generation</p></li>
-<li><p>Output rendering</p></li>
-</ul>
+<p>Consider building a chat system. No single capability can provide all the required functionality. We need to combine multiple capabilities:</p>
+<p><strong>Capabilities involved:</strong> - Input handling—receive and validate user messages - Context storage—maintain conversation history - Response generation—create relevant replies - Output rendering—format and display responses</p>
 <hr>
 </section>
 <section id="composition" class="level3" data-number="12.4.2">
 <h3 data-number="12.4.2" class="anchored" data-anchor-id="composition"><span class="header-section-number">12.4.2</span> Composition</h3>
 <pre><code>User Input
-→ Input Handler
-→ Context Manager
-→ Response Generator
-→ Output Renderer</code></pre>
+→ Input Handler (capability: input handling)
+→ Context Manager (capability: context storage)
+→ Response Generator (capability: response generation)
+→ Output Renderer (capability: output rendering)</code></pre>
 <hr>
-<p>Each component contributes a capability.</p>
-<p>Together, they form a system.</p>
+<p>Each component contributes a capability. Together, they form a complete system. None of the components alone could provide the full functionality—the system emerges from their composition.</p>
 <hr>
 </section>
 </section>
 <section id="types-of-composition" class="level2" data-number="12.5">
 <h2 data-number="12.5" class="anchored" data-anchor-id="types-of-composition"><span class="header-section-number">12.5</span> Types of Composition</h2>
-<p>There are several common ways to compose components.</p>
+<p>There are several common patterns for combining components into systems. Different patterns create different system behaviors.</p>
+<p>Remember that in the Possibility Space, we navigate a graph where each node represents a decision point. These composition patterns represent the different ways we can traverse that graph—the different paths we can choose from the Option Space.</p>
 <hr>
 <section id="sequential-composition" class="level3" data-number="12.5.1">
 <h3 data-number="12.5.1" class="anchored" data-anchor-id="sequential-composition"><span class="header-section-number">12.5.1</span> 1. Sequential Composition</h3>
-<p>Components operate in sequence.</p>
+<p>Components operate in sequence, with each component’s output feeding into the next.</p>
+<p><strong>Structure:</strong></p>
 <pre><code>A → B → C</code></pre>
-<p>Used for:</p>
-<ul>
-<li><p>Pipelines</p></li>
-<li><p>Data processing</p></li>
-</ul>
+<p><strong>Used for:</strong> - Pipelines—data processing workflows - ETL—extract, transform, load operations - Step-by-step processing</p>
+<p><strong>Example:</strong></p>
+<pre><code>Raw Text → Cleaner → Processor → Analyzer → Results</code></pre>
 <hr>
 </section>
 <section id="parallel-composition" class="level3" data-number="12.5.2">
 <h3 data-number="12.5.2" class="anchored" data-anchor-id="parallel-composition"><span class="header-section-number">12.5.2</span> 2. Parallel Composition</h3>
-<p>Components operate simultaneously.</p>
+<p>Components operate simultaneously on different aspects of the problem.</p>
+<p><strong>Structure:</strong></p>
 <pre><code>A
 ↘
   → Merge → Output
 ↗
 B</code></pre>
-<p>Used for:</p>
-<ul>
-<li><p>Multi-source processing</p></li>
-<li><p>Aggregation</p></li>
-</ul>
+<p><strong>Used for:</strong> - Multi-source processing—handling multiple inputs - Aggregation—combining results from different sources - Distributed computing—parallel execution</p>
+<p><strong>Example:</strong></p>
+<pre><code>Input → [Analyzer A, Analyzer B, Analyzer C] → Aggregate → Result</code></pre>
 <hr>
 </section>
 <section id="conditional-composition" class="level3" data-number="12.5.3">
 <h3 data-number="12.5.3" class="anchored" data-anchor-id="conditional-composition"><span class="header-section-number">12.5.3</span> 3. Conditional Composition</h3>
-<p>Different paths based on conditions.</p>
+<p>Different paths are taken based on conditions or decisions.</p>
+<p><strong>Structure:</strong></p>
 <pre><code>Input → Decision → A or B</code></pre>
-<p>Used for:</p>
-<ul>
-<li><p>Routing</p></li>
-<li><p>Decision systems</p></li>
-</ul>
+<p><strong>Used for:</strong> - Routing—directing inputs to appropriate handlers - Decision systems—choosing between alternatives - Branching logic—if-then-else flows</p>
+<p><strong>Example:</strong></p>
+<pre><code>Input → Classify → [Text Handler OR Image Handler] → Output</code></pre>
 <hr>
 </section>
 <section id="iterative-composition" class="level3" data-number="12.5.4">
 <h3 data-number="12.5.4" class="anchored" data-anchor-id="iterative-composition"><span class="header-section-number">12.5.4</span> 4. Iterative Composition</h3>
-<p>Components repeat until a condition is met.</p>
-<pre><code>Process → Evaluate → Repeat</code></pre>
-<p>Used for:</p>
-<ul>
-<li><p>Optimization</p></li>
-<li><p>Refinement loops</p></li>
-</ul>
+<p>Components repeat until a condition is met or convergence is achieved.</p>
+<p><strong>Structure:</strong></p>
+<pre><code>Process → Evaluate → [Repeat if needed]</code></pre>
+<p><strong>Used for:</strong> - Optimization—iteratively improving results - Refinement loops—progressively clarifying outputs - Convergence algorithms—repeating until stable</p>
+<p><strong>Example:</strong></p>
+<pre><code>Draft → Evaluate → Refine → [Repeat until quality threshold met]</code></pre>
 <hr>
 <blockquote class="blockquote">
-<p>Different compositions create different system behaviors.</p>
+<p>Different compositions create different system behaviors. The choice of composition pattern is a key design decision.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="composition-in-the-llm-era" class="level2" data-number="12.6">
 <h2 data-number="12.6" class="anchored" data-anchor-id="composition-in-the-llm-era"><span class="header-section-number">12.6</span> Composition in the LLM Era</h2>
-<p>LLMs introduce new forms of composition.</p>
+<p>LLMs introduce new forms of composition that go beyond traditional code-based approaches.</p>
 <hr>
 <section id="agent-based-composition" class="level3" data-number="12.6.1">
 <h3 data-number="12.6.1" class="anchored" data-anchor-id="agent-based-composition"><span class="header-section-number">12.6.1</span> Agent-Based Composition</h3>
+<p>Multiple agents work together, each with a specialized role and responsibility.</p>
 <ul>
-<li><p>Multiple agents</p></li>
-<li><p>Each with a role</p></li>
-<li><p>Coordinated interaction</p></li>
+<li>Multiple agents with different capabilities</li>
+<li>Each agent has a defined role</li>
+<li>Coordinated interaction toward a shared goal</li>
 </ul>
+<p><strong>Example:</strong></p>
+<pre><code>User Query → Planner Agent → Researcher Agent → Writer Agent → Synthesizer Agent → Output</code></pre>
 <hr>
 </section>
 <section id="tool-augmented-composition" class="level3" data-number="12.6.2">
 <h3 data-number="12.6.2" class="anchored" data-anchor-id="tool-augmented-composition"><span class="header-section-number">12.6.2</span> Tool-Augmented Composition</h3>
+<p>LLMs are combined with external tools and services to extend their capabilities.</p>
 <ul>
-<li><p>LLM + external tools</p></li>
-<li><p>Retrieval, APIs, databases</p></li>
+<li>LLM + external tools</li>
+<li>Retrieval systems, APIs, databases</li>
+<li>Enhanced capabilities through integration</li>
 </ul>
+<p><strong>Example:</strong></p>
+<pre><code>Query → LLM → [Search Tool, Database API, Calculator] → LLM → Output</code></pre>
 <hr>
 </section>
 <section id="human-in-the-loop-composition" class="level3" data-number="12.6.3">
 <h3 data-number="12.6.3" class="anchored" data-anchor-id="human-in-the-loop-composition"><span class="header-section-number">12.6.3</span> Human-in-the-Loop Composition</h3>
+<p>AI and humans work together in an iterative workflow.</p>
 <ul>
-<li><p>AI generates</p></li>
-<li><p>Human evaluates or corrects</p></li>
-<li><p>System refines</p></li>
+<li>AI generates initial output</li>
+<li>Human evaluates or corrects</li>
+<li>System refines based on feedback</li>
 </ul>
+<p><strong>Example:</strong></p>
+<pre><code>AI → Human Review → Corrections → AI Refinement → Final Output</code></pre>
 <hr>
 <blockquote class="blockquote">
-<p>Composition is no longer limited to code.<br>
-It includes models, tools, and humans.</p>
+<p>Composition is no longer limited to code. It includes models, tools, and humans working together.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="interfaces-between-components" class="level2" data-number="12.7">
 <h2 data-number="12.7" class="anchored" data-anchor-id="interfaces-between-components"><span class="header-section-number">12.7</span> Interfaces Between Components</h2>
-<p>For composition to work, components must connect properly.</p>
-<p>This requires <strong>interfaces</strong>.</p>
+<p>For composition to work effectively, components must connect properly. This requires <strong>interfaces</strong>—well-defined contracts that specify how components interact.</p>
+<hr>
+<section id="what-is-an-interface" class="level3" data-number="12.7.1">
+<h3 data-number="12.7.1" class="anchored" data-anchor-id="what-is-an-interface"><span class="header-section-number">12.7.1</span> What is an Interface?</h3>
 <p>An interface defines:</p>
 <ul>
-<li><p>Input format</p></li>
-<li><p>Output format</p></li>
-<li><p>Expected behavior</p></li>
+<li><strong>Input format</strong>—what data a component accepts</li>
+<li><strong>Output format</strong>—what data a component produces</li>
+<li><strong>Expected behavior</strong>—how the component should respond</li>
 </ul>
 <hr>
-<section id="example-1" class="level3" data-number="12.7.1">
-<h3 data-number="12.7.1" class="anchored" data-anchor-id="example-1"><span class="header-section-number">12.7.1</span> Example</h3>
+</section>
+<section id="example-1" class="level3" data-number="12.7.2">
+<h3 data-number="12.7.2" class="anchored" data-anchor-id="example-1"><span class="header-section-number">12.7.2</span> Example</h3>
 <p>If one module outputs:</p>
-<pre><code>{summary: "..."}</code></pre>
-<p>The next module must accept:</p>
-<pre><code>summary as input</code></pre>
+<pre><code>{summary: "Text summary...", key_points: ["Point 1", "Point 2"]}</code></pre>
+<p>The next module must accept that exact format as input:</p>
+<pre><code>input: {summary: string, key_points: Array&lt;string&gt;}</code></pre>
 <hr>
 <blockquote class="blockquote">
-<p>Composition fails when interfaces are unclear.</p>
+<p>Composition fails when interfaces are unclear or mismatched.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="loose-vs-tight-coupling" class="level2" data-number="12.8">
 <h2 data-number="12.8" class="anchored" data-anchor-id="loose-vs-tight-coupling"><span class="header-section-number">12.8</span> Loose vs Tight Coupling</h2>
+<p>A critical design decision in composition is how tightly components are coupled to each other.</p>
 <hr>
 <section id="tight-coupling" class="level3" data-number="12.8.1">
 <h3 data-number="12.8.1" class="anchored" data-anchor-id="tight-coupling"><span class="header-section-number">12.8.1</span> Tight Coupling</h3>
+<p>Components depend heavily on each other’s internal details.</p>
 <ul>
-<li><p>Components depend heavily on each other</p></li>
-<li><p>Hard to modify</p></li>
+<li>Components are interdependent</li>
+<li>Hard to modify or replace</li>
+<li>Changes ripple through the system</li>
+<li>Difficult to test independently</li>
 </ul>
 <hr>
 </section>
 <section id="loose-coupling" class="level3" data-number="12.8.2">
 <h3 data-number="12.8.2" class="anchored" data-anchor-id="loose-coupling"><span class="header-section-number">12.8.2</span> Loose Coupling</h3>
+<p>Components interact through well-defined interfaces but remain independent.</p>
 <ul>
-<li><p>Clear interfaces</p></li>
-<li><p>Independent components</p></li>
-<li><p>Easy to replace or extend</p></li>
+<li>Clear interfaces define interactions</li>
+<li>Components are independent</li>
+<li>Easy to replace or extend</li>
+<li>Can be tested independently</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Good composition favors loose coupling.</p>
+<p>Good composition favors loose coupling. It makes systems more flexible and maintainable.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="emergence-of-systems" class="level2" data-number="12.9">
 <h2 data-number="12.9" class="anchored" data-anchor-id="emergence-of-systems"><span class="header-section-number">12.9</span> Emergence of Systems</h2>
-<p>A key insight:</p>
+<p>A key insight about composition:</p>
 <blockquote class="blockquote">
 <p>Systems are not explicitly written—they emerge from composition.</p>
 </blockquote>
 <p>When components are properly combined:</p>
 <ul>
-<li><p>New behavior appears</p></li>
-<li><p>Capabilities amplify each other</p></li>
-<li><p>Complexity becomes manageable</p></li>
+<li>New behavior appears that no single component possesses</li>
+<li>Capabilities amplify each other</li>
+<li>Complexity becomes manageable through structure</li>
 </ul>
 <hr>
 <section id="example-2" class="level3" data-number="12.9.1">
 <h3 data-number="12.9.1" class="anchored" data-anchor-id="example-2"><span class="header-section-number">12.9.1</span> Example</h3>
-<p>Combining:</p>
+<p>Combining three simple capabilities:</p>
 <ul>
-<li><p>Retrieval</p></li>
-<li><p>Generation</p></li>
-<li><p>Memory</p></li>
+<li><strong>Retrieval</strong>—find relevant information</li>
+<li><strong>Generation</strong>—create written content</li>
+<li><strong>Memory</strong>—store and retrieve past interactions</li>
 </ul>
 <p>Creates:</p>
 <ul>
-<li>A knowledge assistant</li>
+<li>A <strong>knowledge assistant</strong>—can answer questions using retrieved knowledge, remember previous conversations, and generate coherent responses</li>
 </ul>
+<p>None of the individual capabilities could do this alone. The knowledge assistant emerges from their composition.</p>
 <hr>
 </section>
 </section>
@@ -852,60 +863,67 @@ It includes models, tools, and humans.</p>
 <section id="overloading-components" class="level3" data-number="12.10.1">
 <h3 data-number="12.10.1" class="anchored" data-anchor-id="overloading-components"><span class="header-section-number">12.10.1</span> 1. Overloading Components</h3>
 <ul>
-<li><p>One module does too much</p></li>
-<li><p>Hard to reuse</p></li>
+<li>One module does too much—violates single responsibility</li>
+<li>Hard to reuse—tangled capabilities are difficult to extract</li>
+<li>Hard to maintain—changes affect multiple concerns</li>
 </ul>
+<p><strong>Solution:</strong> Break large components into smaller, focused ones.</p>
 <hr>
 </section>
 <section id="ignoring-interfaces" class="level3" data-number="12.10.2">
 <h3 data-number="12.10.2" class="anchored" data-anchor-id="ignoring-interfaces"><span class="header-section-number">12.10.2</span> 2. Ignoring Interfaces</h3>
 <ul>
-<li><p>Data mismatch</p></li>
-<li><p>Integration failures</p></li>
+<li>Data mismatch between components</li>
+<li>Integration failures and errors</li>
+<li>Systems that don’t work together</li>
 </ul>
+<p><strong>Solution:</strong> Explicitly define and document all interfaces.</p>
 <hr>
 </section>
 <section id="overcomplicating-composition" class="level3" data-number="12.10.3">
 <h3 data-number="12.10.3" class="anchored" data-anchor-id="overcomplicating-composition"><span class="header-section-number">12.10.3</span> 3. Overcomplicating Composition</h3>
 <ul>
-<li><p>Too many components</p></li>
-<li><p>Unnecessary complexity</p></li>
+<li>Too many components—unnecessary complexity</li>
+<li>Unnecessary indirection—components that don’t add value</li>
+<li>Hard to understand and debug</li>
 </ul>
+<p><strong>Solution:</strong> Use the simplest composition that achieves the goal.</p>
 <hr>
 </section>
 <section id="lack-of-clear-flow" class="level3" data-number="12.10.4">
 <h3 data-number="12.10.4" class="anchored" data-anchor-id="lack-of-clear-flow"><span class="header-section-number">12.10.4</span> 4. Lack of Clear Flow</h3>
 <ul>
-<li><p>No defined order</p></li>
-<li><p>Unpredictable behavior</p></li>
+<li>No defined order of operations</li>
+<li>Unpredictable behavior</li>
+<li>Components don’t coordinate properly</li>
 </ul>
+<p><strong>Solution:</strong> Explicitly define the flow and ensure components follow it.</p>
 <hr>
 </section>
 </section>
 <section id="composition-as-a-skill" class="level2" data-number="12.11">
 <h2 data-number="12.11" class="anchored" data-anchor-id="composition-as-a-skill"><span class="header-section-number">12.11</span> Composition as a Skill</h2>
-<p>Composition is a higher-level skill than implementation.</p>
-<p>It requires:</p>
+<p>Composition is a higher-level skill than implementation. It requires:</p>
 <ul>
-<li><p>Understanding capabilities</p></li>
-<li><p>Designing connections</p></li>
-<li><p>Managing interactions</p></li>
+<li><strong>Understanding capabilities</strong>—knowing what each component can do</li>
+<li><strong>Designing connections</strong>—creating effective interfaces</li>
+<li><strong>Managing interactions</strong>—ensuring components work together properly</li>
 </ul>
-<p>The better your composition:</p>
+<p>The better your composition skills:</p>
 <ul>
-<li><p>The more powerful your systems</p></li>
-<li><p>The less code you need to write</p></li>
+<li>The more powerful your systems—complex behaviors emerge from simple parts</li>
+<li>The less code you need to write—you reuse and compose existing capabilities</li>
+<li>The faster you can build—you assemble systems rather than building from scratch</li>
 </ul>
 <hr>
 </section>
 <section id="final-insight" class="level2" data-number="12.12">
 <h2 data-number="12.12" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">12.12</span> Final Insight</h2>
-<p>You do not build systems by writing everything.</p>
-<p>You build systems by combining the right parts in the right way.</p>
+<p>You do not build systems by writing everything from scratch. You build systems by combining the right parts in the right way.</p>
 <blockquote class="blockquote">
-<p>The power of a system lies not in its components,<br>
-but in how they are composed.</p>
+<p>The power of a system lies not in its components, but in how they are composed.</p>
 </blockquote>
+<p>A master composer can create remarkable systems from simple parts, while a novice might struggle even with sophisticated components. The difference is composition.</p>
 <hr>
 </section>
 <section id="closing-statement" class="level2" data-number="12.13">
@@ -913,6 +931,19 @@ but in how they are composed.</p>
 <p>In the LLM era, programming is increasingly about assembling capabilities into coherent systems.</p>
 <blockquote class="blockquote">
 <p>From components to systems, composition is the bridge.</p>
+</blockquote>
+<hr>
+</section>
+<section id="key-insight" class="level2" data-number="12.14">
+<h2 data-number="12.14" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">12.14</span> Key Insight</h2>
+<blockquote class="blockquote">
+<p>Composition combines smaller units of capability into larger systems. Key patterns include sequential, parallel, conditional, and iterative composition. Good composition requires clear interfaces and loose coupling.</p>
+</blockquote>
+</section>
+<section id="action-hint" class="level2" data-number="12.15">
+<h2 data-number="12.15" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">12.15</span> Action Hint</h2>
+<blockquote class="blockquote">
+<p>Practice composition by building systems from existing capabilities. Before writing new code, ask: “What capabilities do I already have that I can combine?” Map out the composition pattern and define interfaces clearly.</p>
 </blockquote>
 
 

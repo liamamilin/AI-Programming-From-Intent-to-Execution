@@ -295,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The New Bottleneck</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -520,6 +520,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#the-role-of-iteration" id="toc-the-role-of-iteration" class="nav-link" data-scroll-target="#the-role-of-iteration"><span class="header-section-number">9.6</span> The Role of Iteration</a>
   <ul class="collapse">
   <li><a href="#iteration-loop" id="toc-iteration-loop" class="nav-link" data-scroll-target="#iteration-loop"><span class="header-section-number">9.6.1</span> Iteration Loop</a></li>
+  <li><a href="#refinement-typically-occurs-in" id="toc-refinement-typically-occurs-in" class="nav-link" data-scroll-target="#refinement-typically-occurs-in"><span class="header-section-number">9.6.2</span> Refinement typically occurs in:</a></li>
   </ul></li>
   <li><a href="#where-to-fix-problems" id="toc-where-to-fix-problems" class="nav-link" data-scroll-target="#where-to-fix-problems"><span class="header-section-number">9.7</span> Where to Fix Problems</a>
   <ul class="collapse">
@@ -529,7 +530,10 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#new-definition" id="toc-new-definition" class="nav-link" data-scroll-target="#new-definition"><span class="header-section-number">9.8.1</span> New Definition</a></li>
   </ul></li>
-  <li><a href="#stability-through-iteration" id="toc-stability-through-iteration" class="nav-link" data-scroll-target="#stability-through-iteration"><span class="header-section-number">9.9</span> Stability Through Iteration</a></li>
+  <li><a href="#stability-through-iteration" id="toc-stability-through-iteration" class="nav-link" data-scroll-target="#stability-through-iteration"><span class="header-section-number">9.9</span> Stability Through Iteration</a>
+  <ul class="collapse">
+  <li><a href="#convergence-condition" id="toc-convergence-condition" class="nav-link" data-scroll-target="#convergence-condition"><span class="header-section-number">9.9.1</span> Convergence Condition</a></li>
+  </ul></li>
   <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">9.10</span> Common Mistakes</a>
   <ul class="collapse">
   <li><a href="#skipping-evaluation" id="toc-skipping-evaluation" class="nav-link" data-scroll-target="#skipping-evaluation"><span class="header-section-number">9.10.1</span> 1. Skipping Evaluation</a></li>
@@ -540,6 +544,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#evaluation-as-feedback-signal" id="toc-evaluation-as-feedback-signal" class="nav-link" data-scroll-target="#evaluation-as-feedback-signal"><span class="header-section-number">9.11</span> Evaluation as Feedback Signal</a></li>
   <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">9.12</span> Final Insight</a></li>
   <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">9.13</span> Closing Statement</a></li>
+  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">9.14</span> Key Insight</a></li>
+  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">9.15</span> Action Hint</a></li>
   </ul>
 </nav>
     </div>
@@ -568,197 +574,163 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="why-execution-is-not-the-end" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="why-execution-is-not-the-end"><span class="header-section-number">9.1</span> Why Execution Is Not the End</h2>
-<p>In traditional programming, execution often marks completion:</p>
+<p>In traditional software development, execution often marks completion. When code runs successfully and produces output, the task is often considered done:</p>
 <ul>
-<li><p>The code runs</p></li>
-<li><p>The system produces output</p></li>
-<li><p>The task is considered done</p></li>
+<li>The code compiles without errors</li>
+<li>The system produces output</li>
+<li>The task is considered complete</li>
 </ul>
-<p>In the LLM paradigm, this assumption no longer holds.</p>
-<p>Execution produces <strong>a result</strong>, not <strong>a guarantee</strong>.</p>
+<p>This mental model made sense when implementation was the primary challenge. Getting code to run correctly was difficult enough that once it worked, we tended to move on.</p>
+<p>In the LLM paradigm, this assumption no longer holds. Execution produces <strong>a result</strong>, not <strong>a guarantee</strong> of correctness or quality.</p>
 <p>Because:</p>
 <ul>
-<li><p>Outputs are probabilistic</p></li>
-<li><p>Behavior depends on input variation</p></li>
-<li><p>Systems interpret, rather than strictly follow instructions</p></li>
+<li><strong>Outputs are probabilistic</strong>—the same input can produce different outputs</li>
+<li><strong>Behavior depends on input variation</strong>—slightly different inputs can lead to very different results</li>
+<li><strong>Systems interpret rather than strictly follow instructions</strong>—LLMs use semantic understanding, not literal rule-following</li>
 </ul>
 <p>Therefore:</p>
 <blockquote class="blockquote">
-<p>Execution is not the end of the process.<br>
-It is the beginning of validation.</p>
+<p>Execution is not the end of the process. It is the beginning of validation.</p>
 </blockquote>
 <hr>
 </section>
 <section id="what-is-evaluation" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="what-is-evaluation"><span class="header-section-number">9.2</span> What is Evaluation?</h2>
-<p>Evaluation is the process of determining whether the system’s output satisfies the original intent and specification.</p>
-<p>It answers:</p>
+<p>Evaluation is the process of determining whether the system’s output satisfies the original intent and specification. It is the mechanism that closes the loop and enables systematic improvement.</p>
+<p>Evaluation answers critical questions:</p>
 <ul>
-<li><p>Is the result correct?</p></li>
-<li><p>Does it meet the constraints?</p></li>
-<li><p>Does it achieve the intended outcome?</p></li>
+<li><strong>Is the result correct?</strong>—does it achieve the intended goal?</li>
+<li><strong>Does it meet the constraints?</strong>—does it respect all specified boundaries?</li>
+<li><strong>Does it achieve the intended outcome?</strong>—does it solve the problem we set out to solve?</li>
 </ul>
-<p>Evaluation connects output back to definition.</p>
+<p>Evaluation connects output back to definition, creating the feedback loop necessary for systematic improvement.</p>
 <hr>
 </section>
 <section id="why-evaluation-is-necessary" class="level2" data-number="9.3">
 <h2 data-number="9.3" class="anchored" data-anchor-id="why-evaluation-is-necessary"><span class="header-section-number">9.3</span> Why Evaluation Is Necessary</h2>
-<p>Without evaluation:</p>
+<p>Without evaluation, system development is fundamentally flawed:</p>
 <ul>
-<li><p>There is no notion of correctness</p></li>
-<li><p>There is no direction for improvement</p></li>
-<li><p>There is no system stability</p></li>
+<li>There is no notion of correctness—any output is acceptable</li>
+<li>There is no direction for improvement—changes are random rather than purposeful</li>
+<li>There is no system stability—behavior drifts without correction</li>
 </ul>
 <hr>
 <section id="in-the-llm-era" class="level3" data-number="9.3.1">
 <h3 data-number="9.3.1" class="anchored" data-anchor-id="in-the-llm-era"><span class="header-section-number">9.3.1</span> In the LLM Era</h3>
-<p>Because execution is easy:</p>
+<p>The need for evaluation is even greater because execution is so easy:</p>
 <ul>
-<li><p>Systems produce outputs quickly</p></li>
-<li><p>Iterations happen frequently</p></li>
+<li>Systems produce outputs quickly and cheaply</li>
+<li>Iterations happen rapidly and frequently</li>
+<li>It’s tempting to move quickly without measuring results</li>
 </ul>
 <p>But without evaluation:</p>
 <ul>
-<li><p>Iteration becomes random</p></li>
-<li><p>Improvements are accidental</p></li>
-<li><p>Quality cannot be controlled</p></li>
+<li>Iteration becomes random—you change things without knowing whether they help</li>
+<li>Improvements are accidental—you might get better results, but you don’t know why</li>
+<li>Quality cannot be controlled—you have no way to ensure consistency or reliability</li>
 </ul>
 <blockquote class="blockquote">
-<p>Speed without evaluation leads to chaos.</p>
+<p>Speed without evaluation leads to chaos, not progress.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="types-of-evaluation" class="level2" data-number="9.4">
 <h2 data-number="9.4" class="anchored" data-anchor-id="types-of-evaluation"><span class="header-section-number">9.4</span> Types of Evaluation</h2>
-<p>Evaluation can take multiple forms depending on the system.</p>
+<p>Evaluation can take multiple forms depending on the system, the context, and the requirements. Different types of evaluation serve different purposes.</p>
 <hr>
 <section id="rule-based-evaluation" class="level3" data-number="9.4.1">
 <h3 data-number="9.4.1" class="anchored" data-anchor-id="rule-based-evaluation"><span class="header-section-number">9.4.1</span> 1. Rule-Based Evaluation</h3>
-<ul>
-<li><p>Check against explicit constraints</p></li>
-<li><p>Deterministic</p></li>
-</ul>
-<p>Example:</p>
-<ul>
-<li><p>Output must be JSON</p></li>
-<li><p>Response time &lt; 2 seconds</p></li>
-</ul>
+<p>Rule-based evaluation uses explicit, deterministic rules to assess outputs. It is simple, fast, and unambiguous.</p>
+<p><strong>Examples:</strong> - Output must be valid JSON - Response time must be under 2 seconds - Output must contain all required fields</p>
+<p><strong>Characteristics:</strong> - Deterministic—the same evaluation always produces the same result - Fast—can be executed automatically at scale - Limited—cannot assess qualitative aspects like relevance or quality</p>
 <hr>
 </section>
 <section id="human-evaluation" class="level3" data-number="9.4.2">
 <h3 data-number="9.4.2" class="anchored" data-anchor-id="human-evaluation"><span class="header-section-number">9.4.2</span> 2. Human Evaluation</h3>
-<ul>
-<li><p>Subjective judgment</p></li>
-<li><p>Context-aware</p></li>
-</ul>
-<p>Example:</p>
-<ul>
-<li><p>Is the answer helpful?</p></li>
-<li><p>Does it align with user expectations?</p></li>
-</ul>
+<p>Human evaluation relies on subjective judgment to assess outputs. It can capture nuanced aspects that automated methods cannot.</p>
+<p><strong>Examples:</strong> - Is the answer helpful? - Does it align with user expectations? - Is the tone appropriate?</p>
+<p><strong>Characteristics:</strong> - Subjective—different humans may evaluate differently - Context-aware—can understand subtle aspects of meaning and appropriateness - Expensive—requires human time and attention - Non-scalable—difficult to apply to large volumes of data</p>
 <hr>
 </section>
 <section id="model-based-evaluation" class="level3" data-number="9.4.3">
 <h3 data-number="9.4.3" class="anchored" data-anchor-id="model-based-evaluation"><span class="header-section-number">9.4.3</span> 3. Model-Based Evaluation</h3>
-<ul>
-<li>Use another model to assess output</li>
-</ul>
-<p>Example:</p>
-<ul>
-<li><p>Score relevance</p></li>
-<li><p>Detect hallucinations</p></li>
-</ul>
+<p>Model-based evaluation uses another AI model to assess the output. This can provide automated evaluation of qualitative aspects.</p>
+<p><strong>Examples:</strong> - Score relevance on a scale of 1-10 - Detect hallucinations or factual errors - Assess writing quality or clarity</p>
+<p><strong>Characteristics:</strong> - Automated—can be applied at scale - Nuanced—can assess qualitative aspects - Imperfect—the evaluating model may have its own biases and limitations - Requires validation—the evaluating model itself must be validated</p>
 <hr>
 </section>
 <section id="hybrid-evaluation" class="level3" data-number="9.4.4">
 <h3 data-number="9.4.4" class="anchored" data-anchor-id="hybrid-evaluation"><span class="header-section-number">9.4.4</span> 4. Hybrid Evaluation</h3>
-<ul>
-<li>Combine rules, humans, and models</li>
-</ul>
+<p>Hybrid evaluation combines multiple evaluation methods to get a more complete picture of output quality.</p>
+<p><strong>Examples:</strong> - Rule-based checks for structure + human review for quality - Model-based scoring for relevance + rule-based checks for format - Multiple evaluators (human and automated) with disagreement resolution</p>
+<p><strong>Characteristics:</strong> - Comprehensive—captures multiple dimensions of quality - Complex—requires integrating different types of feedback - More reliable—less likely to miss important issues</p>
 <hr>
 <blockquote class="blockquote">
-<p>Strong systems rely on layered evaluation.</p>
+<p>Strong systems rely on layered evaluation—combining multiple approaches to ensure comprehensive assessment.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="evaluation-defines-quality" class="level2" data-number="9.5">
 <h2 data-number="9.5" class="anchored" data-anchor-id="evaluation-defines-quality"><span class="header-section-number">9.5</span> Evaluation Defines Quality</h2>
-<p>Quality is not inherent in the output.</p>
-<p>It is defined by evaluation.</p>
-<p>Without evaluation criteria:</p>
+<p>Quality is not an inherent property of output. It is defined by evaluation. Without evaluation criteria:</p>
 <ul>
-<li><p>“Good” becomes subjective</p></li>
-<li><p>Systems drift over time</p></li>
-<li><p>Results cannot be compared</p></li>
+<li>“Good” becomes subjective and variable</li>
+<li>Systems drift over time without correction</li>
+<li>Results cannot be compared or measured</li>
 </ul>
 <hr>
 <section id="example" class="level3" data-number="9.5.1">
 <h3 data-number="9.5.1" class="anchored" data-anchor-id="example"><span class="header-section-number">9.5.1</span> Example</h3>
-<p>Intent:</p>
-<p>“Summarize a document”</p>
-<p>Without evaluation:</p>
-<ul>
-<li>Any summary is acceptable</li>
-</ul>
-<p>With evaluation:</p>
-<ul>
-<li><p>Must include key points</p></li>
-<li><p>Must be concise</p></li>
-<li><p>Must avoid redundancy</p></li>
-</ul>
+<p>Consider an intent to “summarize a document.”</p>
+<p><strong>Without evaluation:</strong> - Any summary is acceptable - No way to determine if one summary is better than another - System may produce summaries that miss important information</p>
+<p><strong>With evaluation:</strong> - Must include key points from the original document - Must be concise (under 100 words) - Must avoid redundancy - Must preserve the original meaning</p>
+<p>Now quality is defined and measurable. The system can be improved systematically by refining its performance against these criteria.</p>
 <hr>
 <blockquote class="blockquote">
-<p>Evaluation makes quality measurable.</p>
+<p>Evaluation makes quality measurable and therefore improvable.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="the-role-of-iteration" class="level2" data-number="9.6">
 <h2 data-number="9.6" class="anchored" data-anchor-id="the-role-of-iteration"><span class="header-section-number">9.6</span> The Role of Iteration</h2>
-<p>Evaluation alone is not enough.</p>
-<p>It must lead to iteration.</p>
+<p>Evaluation alone is not enough. It must lead to iteration—systematic improvement based on evaluation feedback.</p>
 <hr>
 <section id="iteration-loop" class="level3" data-number="9.6.1">
 <h3 data-number="9.6.1" class="anchored" data-anchor-id="iteration-loop"><span class="header-section-number">9.6.1</span> Iteration Loop</h3>
 <pre><code>Define → Execute → Evaluate → Refine</code></pre>
+<p>This loop is the engine of progress. Each cycle should move the system closer to the desired behavior.</p>
 <hr>
-<p>Refinement typically occurs in:</p>
+</section>
+<section id="refinement-typically-occurs-in" class="level3" data-number="9.6.2">
+<h3 data-number="9.6.2" class="anchored" data-anchor-id="refinement-typically-occurs-in"><span class="header-section-number">9.6.2</span> Refinement typically occurs in:</h3>
 <ul>
-<li><p>Intent (unclear goal)</p></li>
-<li><p>Spec (missing constraints)</p></li>
-<li><p>Instruction (weak structure)</p></li>
+<li><strong>Intent</strong>—clarifying or adjusting the goal if the original intent was wrong</li>
+<li><strong>Spec</strong>—adding missing constraints, clarifying ambiguous definitions</li>
+<li><strong>Instruction</strong>—improving the execution protocol for better results</li>
 </ul>
+<p>The key insight is that most improvements happen upstream—by improving definitions, not by tweaking execution parameters.</p>
 <hr>
 </section>
 </section>
 <section id="where-to-fix-problems" class="level2" data-number="9.7">
 <h2 data-number="9.7" class="anchored" data-anchor-id="where-to-fix-problems"><span class="header-section-number">9.7</span> Where to Fix Problems</h2>
-<p>A critical insight:</p>
+<p>A critical principle for effective iteration:</p>
 <blockquote class="blockquote">
-<p>Most problems should not be fixed in execution.</p>
+<p><strong>Most problems should not be fixed in execution. They should be fixed upstream.</strong></p>
 </blockquote>
-<p>Instead, they should be fixed upstream.</p>
 <hr>
 <section id="if-output-is-wrong" class="level3" data-number="9.7.1">
 <h3 data-number="9.7.1" class="anchored" data-anchor-id="if-output-is-wrong"><span class="header-section-number">9.7.1</span> If output is wrong:</h3>
-<p>Do not immediately:</p>
-<ul>
-<li><p>Change the model</p></li>
-<li><p>Add more prompts</p></li>
-<li><p>Adjust temperature</p></li>
-</ul>
-<p>Instead, ask:</p>
-<ul>
-<li><p>Is the intent clear?</p></li>
-<li><p>Is the spec complete?</p></li>
-<li><p>Is the instruction precise?</p></li>
-</ul>
-<hr>
+<p><strong>Do not immediately:</strong> - Change the model or model parameters - Add more prompts or instructions - Adjust temperature or other generation parameters</p>
+<p><strong>Instead, ask:</strong> - Is the intent clear? Are we solving the right problem? - Is the spec complete? Are we missing important constraints? - Is the instruction precise? Is the execution protocol clear?</p>
 <blockquote class="blockquote">
 <p>Better definition produces better results.</p>
 </blockquote>
+<hr>
+<p>This is a counterintuitive principle. When we see problems, our instinct is often to tweak the execution parameters. But most problems originate in definition, not execution.</p>
 <hr>
 </section>
 </section>
@@ -766,14 +738,18 @@ It is the beginning of validation.</p>
 <h2 data-number="9.8" class="anchored" data-anchor-id="programming-as-spec-iteration"><span class="header-section-number">9.8</span> Programming as Spec Iteration</h2>
 <p>In traditional programming:</p>
 <ul>
-<li><p>You write code</p></li>
-<li><p>You debug code</p></li>
+<li>You write code</li>
+<li>You debug code—find and fix errors</li>
+<li>You optimize code—improve performance</li>
 </ul>
+<p>The focus is on improving the implementation.</p>
 <p>In the LLM paradigm:</p>
 <ul>
-<li><p>You define spec</p></li>
-<li><p>You refine spec</p></li>
+<li>You define spec</li>
+<li>You refine spec—improve the definition based on evaluation</li>
+<li>You iterate spec—systematically improve through evaluation</li>
 </ul>
+<p>The focus is on improving the definition.</p>
 <hr>
 <section id="new-definition" class="level3" data-number="9.8.1">
 <h3 data-number="9.8.1" class="anchored" data-anchor-id="new-definition"><span class="header-section-number">9.8.1</span> New Definition</h3>
@@ -783,11 +759,11 @@ It is the beginning of validation.</p>
 <hr>
 <p>This shifts the developer’s activity from:</p>
 <ul>
-<li>Debugging implementation</li>
+<li><strong>Debugging implementation</strong>—finding and fixing code errors</li>
 </ul>
 <p>To:</p>
 <ul>
-<li>Debugging definition</li>
+<li><strong>Debugging definition</strong>—finding and fixing specification gaps</li>
 </ul>
 <hr>
 </section>
@@ -796,19 +772,30 @@ It is the beginning of validation.</p>
 <h2 data-number="9.9" class="anchored" data-anchor-id="stability-through-iteration"><span class="header-section-number">9.9</span> Stability Through Iteration</h2>
 <p>A system becomes stable when:</p>
 <ul>
-<li><p>Outputs are consistent</p></li>
-<li><p>Behavior matches expectations</p></li>
-<li><p>Evaluation passes reliably</p></li>
+<li>Outputs are consistent across multiple runs</li>
+<li>Behavior matches expectations reliably</li>
+<li>Evaluation passes consistently</li>
 </ul>
 <p>This stability is not achieved through:</p>
 <ul>
-<li>One-time design</li>
+<li>One-time design—getting it right the first time</li>
 </ul>
 <p>But through:</p>
 <ul>
-<li>Repeated refinement</li>
+<li>Repeated refinement—systematic improvement through iteration</li>
 </ul>
 <hr>
+<section id="convergence-condition" class="level3" data-number="9.9.1">
+<h3 data-number="9.9.1" class="anchored" data-anchor-id="convergence-condition"><span class="header-section-number">9.9.1</span> Convergence Condition</h3>
+<p>A system is considered stable when:</p>
+<ul>
+<li>Outputs consistently meet success criteria</li>
+<li>Variations are within acceptable bounds</li>
+<li>Further iterations produce diminishing returns</li>
+</ul>
+<p>Stability is an emergent property that comes from good iteration practices.</p>
+<hr>
+</section>
 </section>
 <section id="common-mistakes" class="level2" data-number="9.10">
 <h2 data-number="9.10" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">9.10</span> Common Mistakes</h2>
@@ -816,70 +803,84 @@ It is the beginning of validation.</p>
 <section id="skipping-evaluation" class="level3" data-number="9.10.1">
 <h3 data-number="9.10.1" class="anchored" data-anchor-id="skipping-evaluation"><span class="header-section-number">9.10.1</span> 1. Skipping Evaluation</h3>
 <ul>
-<li><p>Leads to false confidence</p></li>
-<li><p>Systems appear to work but fail in edge cases</p></li>
+<li>Leads to false confidence—you think the system works but it doesn’t</li>
+<li>Systems appear to work but fail in edge cases</li>
+<li>No basis for improvement</li>
 </ul>
+<p>Evaluation is not optional. It is essential.</p>
 <hr>
 </section>
 <section id="evaluating-informally" class="level3" data-number="9.10.2">
 <h3 data-number="9.10.2" class="anchored" data-anchor-id="evaluating-informally"><span class="header-section-number">9.10.2</span> 2. Evaluating Informally</h3>
 <ul>
-<li><p>No clear criteria</p></li>
-<li><p>Results cannot be compared</p></li>
+<li>No clear criteria—evaluation is subjective and variable</li>
+<li>Results cannot be compared—no baseline for improvement</li>
+<li>Feedback is vague—“it doesn’t feel right”</li>
 </ul>
+<p>Evaluation must be systematic and explicit.</p>
 <hr>
 </section>
 <section id="fixing-the-wrong-layer" class="level3" data-number="9.10.3">
 <h3 data-number="9.10.3" class="anchored" data-anchor-id="fixing-the-wrong-layer"><span class="header-section-number">9.10.3</span> 3. Fixing the Wrong Layer</h3>
 <ul>
 <li>Adjusting execution instead of improving spec</li>
+<li>Tweaking parameters instead of clarifying definitions</li>
+<li>Wasting effort on the wrong problems</li>
 </ul>
+<p>Most problems originate in definition, not execution.</p>
 <hr>
 </section>
 <section id="over-iterating-without-direction" class="level3" data-number="9.10.4">
 <h3 data-number="9.10.4" class="anchored" data-anchor-id="over-iterating-without-direction"><span class="header-section-number">9.10.4</span> 4. Over-Iterating Without Direction</h3>
 <ul>
-<li><p>Changing things randomly</p></li>
-<li><p>No clear evaluation signal</p></li>
+<li>Changing things randomly without evaluation</li>
+<li>No clear evaluation signal to guide improvements</li>
+<li>Iteration becomes noise rather than progress</li>
 </ul>
+<p>Iteration must be guided by evaluation.</p>
 <hr>
 </section>
 </section>
 <section id="evaluation-as-feedback-signal" class="level2" data-number="9.11">
 <h2 data-number="9.11" class="anchored" data-anchor-id="evaluation-as-feedback-signal"><span class="header-section-number">9.11</span> Evaluation as Feedback Signal</h2>
-<p>Evaluation provides the signal that drives improvement.</p>
-<p>Without it:</p>
-<ul>
-<li><p>There is no learning</p></li>
-<li><p>There is no convergence</p></li>
-</ul>
-<p>With it:</p>
-<ul>
-<li><p>Systems can evolve</p></li>
-<li><p>Definitions become sharper</p></li>
-<li><p>Outputs improve over time</p></li>
-</ul>
+<p>Evaluation provides the signal that drives improvement. Without evaluation, there is no learning, no convergence, no systematic progress.</p>
+<p><strong>Without evaluation:</strong> - There is no learning—system doesn’t know what’s working - There is no convergence—no way to approach optimal behavior - There is no improvement—changes are random rather than purposeful</p>
+<p><strong>With evaluation:</strong> - Systems can evolve—learning from feedback - Definitions become sharper—clarifying through iteration - Outputs improve over time—systematic progress toward goals</p>
 <hr>
 <blockquote class="blockquote">
 <p>Evaluation turns iteration into progress.</p>
 </blockquote>
+<p>Without evaluation, iteration is just change. With evaluation, iteration becomes improvement.</p>
 <hr>
 </section>
 <section id="final-insight" class="level2" data-number="9.12">
 <h2 data-number="9.12" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">9.12</span> Final Insight</h2>
-<p>Execution produces outputs.<br>
-Evaluation determines value.<br>
-Iteration produces improvement.</p>
-<p>Together, they form the dynamic part of the system.</p>
+<p>Execution produces outputs. Evaluation determines value. Iteration produces improvement.</p>
+<p>Together, they form the dynamic part of the system—the mechanism that enables systems to get better over time.</p>
+<blockquote class="blockquote">
+<p>The quality of a system is not determined by how well it executes, but by how well it evaluates and iterates.</p>
+</blockquote>
 <hr>
 </section>
 <section id="closing-statement" class="level2" data-number="9.13">
 <h2 data-number="9.13" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">9.13</span> Closing Statement</h2>
-<p>In the LLM era, programming is no longer about writing correct code once.</p>
-<p>It is about refining definitions until correctness emerges.</p>
+<p>In the LLM era, programming is no longer about writing correct code once. It is about refining imperfect definitions until they become reliable.</p>
 <blockquote class="blockquote">
-<p>You do not debug the system by changing what it does.<br>
-You debug it by clarifying what it should do.</p>
+<p>You do not debug the system by changing what it does. You debug it by clarifying what it should do.</p>
+</blockquote>
+<p>The ability to design effective evaluation and iteration processes is now a core programming skill.</p>
+<hr>
+</section>
+<section id="key-insight" class="level2" data-number="9.14">
+<h2 data-number="9.14" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">9.14</span> Key Insight</h2>
+<blockquote class="blockquote">
+<p>Evaluation is the process of determining whether output meets intent and spec. It can be rule-based, human, model-based, or hybrid. Iteration guided by evaluation is essential for systematic improvement.</p>
+</blockquote>
+</section>
+<section id="action-hint" class="level2" data-number="9.15">
+<h2 data-number="9.15" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">9.15</span> Action Hint</h2>
+<blockquote class="blockquote">
+<p>For every system you build, define explicit evaluation criteria before execution. Ask: “How will I know if this works?” Make evaluation criteria measurable and testable. Don’t skip evaluation—it’s what separates systems that work from systems that appear to work.</p>
 </blockquote>
 
 

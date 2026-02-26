@@ -295,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The New Bottleneck</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -529,14 +529,17 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#why" id="toc-why" class="nav-link" data-scroll-target="#why"><span class="header-section-number">30.7.1</span> Why?</a></li>
   <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"><span class="header-section-number">30.7.2</span> Methods</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">30.7.3</span> Example</a></li>
   </ul></li>
   <li><a href="#reusability-and-modularity" id="toc-reusability-and-modularity" class="nav-link" data-scroll-target="#reusability-and-modularity"><span class="header-section-number">30.8</span> Reusability and Modularity</a>
   <ul class="collapse">
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">30.8.1</span> Example</a></li>
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2"><span class="header-section-number">30.8.1</span> Example</a></li>
+  <li><a href="#benefits" id="toc-benefits" class="nav-link" data-scroll-target="#benefits"><span class="header-section-number">30.8.2</span> Benefits</a></li>
   </ul></li>
   <li><a href="#evaluation-in-tools" id="toc-evaluation-in-tools" class="nav-link" data-scroll-target="#evaluation-in-tools"><span class="header-section-number">30.9</span> Evaluation in Tools</a>
   <ul class="collapse">
   <li><a href="#methods-1" id="toc-methods-1" class="nav-link" data-scroll-target="#methods-1"><span class="header-section-number">30.9.1</span> Methods</a></li>
+  <li><a href="#goals" id="toc-goals" class="nav-link" data-scroll-target="#goals"><span class="header-section-number">30.9.2</span> Goals</a></li>
   </ul></li>
   <li><a href="#iteration-and-improvement" id="toc-iteration-and-improvement" class="nav-link" data-scroll-target="#iteration-and-improvement"><span class="header-section-number">30.10</span> Iteration and Improvement</a>
   <ul class="collapse">
@@ -552,10 +555,13 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#from-tool-to-platform" id="toc-from-tool-to-platform" class="nav-link" data-scroll-target="#from-tool-to-platform"><span class="header-section-number">30.12</span> From Tool to Platform</a>
   <ul class="collapse">
-  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2"><span class="header-section-number">30.12.1</span> Example</a></li>
+  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3"><span class="header-section-number">30.12.1</span> Example</a></li>
+  <li><a href="#platform-characteristics" id="toc-platform-characteristics" class="nav-link" data-scroll-target="#platform-characteristics"><span class="header-section-number">30.12.2</span> Platform Characteristics</a></li>
   </ul></li>
   <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">30.13</span> Final Insight</a></li>
   <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">30.14</span> Closing Statement</a></li>
+  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">30.15</span> Key Insight</a></li>
+  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">30.16</span> Action Hint</a></li>
   </ul>
 </nav>
     </div>
@@ -586,12 +592,12 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="30.1" class="anchored" data-anchor-id="from-system-to-product"><span class="header-section-number">30.1</span> From System to Product</h2>
 <p>So far, we have built:</p>
 <ul>
-<li><p>Chat systems</p></li>
-<li><p>Data pipelines</p></li>
-<li><p>Agent systems</p></li>
+<li><strong>Chat systems</strong>—conversational interfaces for interaction</li>
+<li><strong>Data pipelines</strong>—automated processing of information flows</li>
+<li><strong>Agent systems</strong>—intelligent entities that reason and act</li>
 </ul>
-<p>These are <strong>systems</strong>.</p>
-<p>But users do not interact with systems directly.</p>
+<p>These are all <strong>systems</strong>—functional collections of components that perform tasks.</p>
+<p>But users do not interact with systems directly. They don’t see the spec, instruction, or execution layers.</p>
 <p>They interact with:</p>
 <blockquote class="blockquote">
 <p><strong>Tools</strong></p>
@@ -608,35 +614,35 @@ ul.task-list li input[type="checkbox"] {
 <section id="key-elements" class="level3" data-number="30.2.1">
 <h3 data-number="30.2.1" class="anchored" data-anchor-id="key-elements"><span class="header-section-number">30.2.1</span> Key Elements</h3>
 <ul>
-<li><p>A clear purpose</p></li>
-<li><p>A defined interface</p></li>
-<li><p>A reliable system behind it</p></li>
+<li><strong>A clear purpose</strong>—solves a specific, well-defined problem</li>
+<li><strong>A defined interface</strong>—predictable way for users to interact</li>
+<li><strong>A reliable system behind it</strong>—robust machinery that produces results</li>
 </ul>
 <hr>
 </section>
 <section id="examples" class="level3" data-number="30.2.2">
 <h3 data-number="30.2.2" class="anchored" data-anchor-id="examples"><span class="header-section-number">30.2.2</span> Examples</h3>
 <ul>
-<li><p>Chat assistant</p></li>
-<li><p>Document summarizer</p></li>
-<li><p>Code generator</p></li>
-<li><p>Data analysis tool</p></li>
+<li><strong>Chat assistant</strong>—conversational interface for information and help</li>
+<li><strong>Document summarizer</strong>—tool that condenses long documents</li>
+<li><strong>Code generator</strong>—tool that produces code from descriptions</li>
+<li><strong>Data analysis tool</strong>—tool that extracts insights from data</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>A tool is where system meets user.</p>
+<p>A tool is where system meets user. It’s the visible, usable face of the underlying system.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="the-shift-from-capability-to-usability" class="level2" data-number="30.3">
 <h2 data-number="30.3" class="anchored" data-anchor-id="the-shift-from-capability-to-usability"><span class="header-section-number">30.3</span> The Shift: From Capability to Usability</h2>
-<p>Having a powerful system is not enough.</p>
+<p>Having a powerful system is not enough. A system that works perfectly but is difficult to use is not a successful tool.</p>
 <p>A tool must be:</p>
 <ul>
-<li><p>Usable</p></li>
-<li><p>Predictable</p></li>
-<li><p>Focused</p></li>
+<li><strong>Usable</strong>—easy to understand and operate</li>
+<li><strong>Predictable</strong>—behaves consistently and reliably</li>
+<li><strong>Focused</strong>—solves a specific problem well</li>
 </ul>
 <hr>
 <section id="difference" class="level3" data-number="30.3.1">
@@ -645,20 +651,24 @@ ul.task-list li input[type="checkbox"] {
 <section id="system" class="level4" data-number="30.3.1.1">
 <h4 data-number="30.3.1.1" class="anchored" data-anchor-id="system"><span class="header-section-number">30.3.1.1</span> System</h4>
 <ul>
-<li><p>General</p></li>
-<li><p>Flexible</p></li>
+<li><strong>General</strong>—can handle many types of tasks</li>
+<li><strong>Flexible</strong>—adaptable to various situations</li>
+<li><strong>Complex</strong>—many components and capabilities</li>
 </ul>
+<p><strong>Focus:</strong> Functionality and capability</p>
 <hr>
 </section>
 <section id="tool" class="level4" data-number="30.3.1.2">
 <h4 data-number="30.3.1.2" class="anchored" data-anchor-id="tool"><span class="header-section-number">30.3.1.2</span> Tool</h4>
 <ul>
-<li><p>Specific</p></li>
-<li><p>Constrained</p></li>
+<li><strong>Specific</strong>—designed for one primary purpose</li>
+<li><strong>Constrained</strong>—limited to defined scope</li>
+<li><strong>Simple</strong>—easy to use for intended purpose</li>
 </ul>
+<p><strong>Focus:</strong> Usability and user experience</p>
 <hr>
 <blockquote class="blockquote">
-<p>Tools are designed for use, not exploration.</p>
+<p>Tools are designed for use, not exploration. Systems enable capability; tools deliver value.</p>
 </blockquote>
 <hr>
 </section>
@@ -666,47 +676,104 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="defining-the-tool" class="level2" data-number="30.4">
 <h2 data-number="30.4" class="anchored" data-anchor-id="defining-the-tool"><span class="header-section-number">30.4</span> Defining the Tool</h2>
-<p>Every AI tool begins with a clear definition.</p>
+<p>Every AI tool begins with a clear definition of its purpose and scope:</p>
 <hr>
 <section id="core-questions" class="level3" data-number="30.4.1">
 <h3 data-number="30.4.1" class="anchored" data-anchor-id="core-questions"><span class="header-section-number">30.4.1</span> Core Questions</h3>
 <ul>
-<li><p>What problem does it solve?</p></li>
-<li><p>Who is it for?</p></li>
-<li><p>What input does it accept?</p></li>
-<li><p>What output does it produce?</p></li>
+<li><strong>What problem does it solve?</strong>—the user need it addresses</li>
+<li><strong>Who is it for?</strong>—the target user or audience</li>
+<li><strong>What input does it accept?</strong>—what users provide</li>
+<li><strong>What output does it produce?</strong>—what users get back</li>
 </ul>
 <hr>
 </section>
 <section id="example" class="level3" data-number="30.4.2">
 <h3 data-number="30.4.2" class="anchored" data-anchor-id="example"><span class="header-section-number">30.4.2</span> Example</h3>
-<p>Tool: Document Summarizer</p>
+<p><strong>Tool: Document Summarizer</strong></p>
 <ul>
-<li><p>Input: document</p></li>
-<li><p>Output: summary</p></li>
-<li><p>Constraint: under 100 words</p></li>
+<li><strong>Input</strong>: document (text file or URL)</li>
+<li><strong>Output</strong>: summary (concise text with key points)</li>
+<li><strong>Constraint</strong>: under 100 words, captures main ideas</li>
+<li><strong>User</strong>: anyone needing quick understanding of long documents</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>A tool is a compressed system.</p>
+<p>A tool is a compressed system—focused, constrained, and optimized for a specific use case.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="internal-structure-of-an-ai-tool" class="level2" data-number="30.5">
 <h2 data-number="30.5" class="anchored" data-anchor-id="internal-structure-of-an-ai-tool"><span class="header-section-number">30.5</span> Internal Structure of an AI Tool</h2>
-<p>Even simple tools have layered systems inside.</p>
+<p>Even simple tools have layered systems inside. The interface hides complexity:</p>
 <hr>
 <section id="layers" class="level3" data-number="30.5.1">
 <h3 data-number="30.5.1" class="anchored" data-anchor-id="layers"><span class="header-section-number">30.5.1</span> Layers</h3>
+<hr>
+<section id="input-interface" class="level4" data-number="30.5.1.1">
+<h4 data-number="30.5.1.1" class="anchored" data-anchor-id="input-interface"><span class="header-section-number">30.5.1.1</span> Input Interface</h4>
 <ul>
-<li><p>Input Interface</p></li>
-<li><p>Spec Layer</p></li>
-<li><p>Instruction Layer</p></li>
-<li><p>Execution Engine</p></li>
-<li><p>Evaluation Layer</p></li>
+<li>Accepts user input</li>
+<li>Validates format and content</li>
+<li><ul>
+<li>Routes to processing layer</li>
+</ul></li>
 </ul>
 <hr>
+</section>
+<section id="spec-layer" class="level4" data-number="30.5.1.2">
+<h4 data-number="30.5.1.2" class="anchored" data-anchor-id="spec-layer"><span class="header-section-number">30.5.1.2</span> Spec Layer</h4>
+<ul>
+<li>Defines tool behavior</li>
+<li><ul>
+<li>Specifies constraints</li>
+</ul></li>
+<li><ul>
+<li>Sets success criteria</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="instruction-layer" class="level4" data-number="30.5.1.3">
+<h4 data-number="30.5.1.3" class="anchored" data-anchor-id="instruction-layer"><span class="header-section-number">30.5.1.3</span> Instruction Layer</h4>
+<ul>
+<li>Converts spec into executable form</li>
+<li><ul>
+<li>Manages instruction templates</li>
+</ul></li>
+<li><ul>
+<li>Handles parameter substitution</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="execution-engine" class="level4" data-number="30.5.1.4">
+<h4 data-number="30.5.1.4" class="anchored" data-anchor-id="execution-engine"><span class="header-section-number">30.5.1.4</span> Execution Engine</h4>
+<ul>
+<li>Runs instructions</li>
+<li><ul>
+<li>Uses tools and APIs</li>
+</ul></li>
+<li><ul>
+<li>Generates results</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="evaluation-layer" class="level4" data-number="30.5.1.5">
+<h4 data-number="30.5.1.5" class="anchored" data-anchor-id="evaluation-layer"><span class="header-section-number">30.5.1.5</span> Evaluation Layer</h4>
+<ul>
+<li>Validates output quality</li>
+<li><ul>
+<li>Checks constraints</li>
+</ul></li>
+<li><ul>
+<li>Ensures reliability</li>
+</ul></li>
+</ul>
+<hr>
+</section>
 </section>
 <section id="flow" class="level3" data-number="30.5.2">
 <h3 data-number="30.5.2" class="anchored" data-anchor-id="flow"><span class="header-section-number">30.5.2</span> Flow</h3>
@@ -718,14 +785,14 @@ ul.task-list li input[type="checkbox"] {
 → Output</code></pre>
 <hr>
 <blockquote class="blockquote">
-<p>Tools hide complexity behind simple interfaces.</p>
+<p>Tools hide complexity behind simple interfaces. Users see only input and output.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="interface-design" class="level2" data-number="30.6">
 <h2 data-number="30.6" class="anchored" data-anchor-id="interface-design"><span class="header-section-number">30.6</span> Interface Design</h2>
-<p>The interface defines how users interact with the tool.</p>
+<p>The interface defines how users interact with the tool. It’s the critical bridge between system and user:</p>
 <hr>
 <section id="types-of-interfaces" class="level3" data-number="30.6.1">
 <h3 data-number="30.6.1" class="anchored" data-anchor-id="types-of-interfaces"><span class="header-section-number">30.6.1</span> Types of Interfaces</h3>
@@ -733,204 +800,252 @@ ul.task-list li input[type="checkbox"] {
 <section id="text-interface" class="level4" data-number="30.6.1.1">
 <h4 data-number="30.6.1.1" class="anchored" data-anchor-id="text-interface"><span class="header-section-number">30.6.1.1</span> 1. Text Interface</h4>
 <ul>
-<li><p>Chat-based</p></li>
-<li><p>Flexible</p></li>
+<li><strong>Chat-based</strong>—conversational interaction</li>
+<li><strong>Flexible</strong>—can handle variety of inputs</li>
+<li><strong>Natural</strong>—feels like human conversation</li>
 </ul>
+<p><strong>Use for:</strong> Complex queries, exploration, assistance</p>
 <hr>
 </section>
 <section id="form-interface" class="level4" data-number="30.6.1.2">
 <h4 data-number="30.6.1.2" class="anchored" data-anchor-id="form-interface"><span class="header-section-number">30.6.1.2</span> 2. Form Interface</h4>
 <ul>
-<li>Structured input fields</li>
+<li><strong>Structured input fields</strong>—defined inputs with validation</li>
+<li><strong>Predictable</strong>—clear what information is needed</li>
+<li><strong>Efficient</strong>—quick for repeated use</li>
 </ul>
+<p><strong>Use for:</strong> Routine tasks, standardized operations</p>
 <hr>
 </section>
 <section id="api-interface" class="level4" data-number="30.6.1.3">
 <h4 data-number="30.6.1.3" class="anchored" data-anchor-id="api-interface"><span class="header-section-number">30.6.1.3</span> 3. API Interface</h4>
 <ul>
-<li>Programmatic access</li>
+<li><strong>Programmatic access</strong>—for integration with other systems</li>
+<li><strong>Automated</strong>—no human interaction needed</li>
+<li><strong>Scalable</strong>—can be called frequently</li>
 </ul>
-<hr>
+<p><strong>Use for:</strong> System integration, automation, batch processing</p>
 <hr>
 </section>
 </section>
 <section id="principles" class="level3" data-number="30.6.2">
 <h3 data-number="30.6.2" class="anchored" data-anchor-id="principles"><span class="header-section-number">30.6.2</span> Principles</h3>
 <ul>
-<li><p>Simplicity</p></li>
-<li><p>Clarity</p></li>
-<li><p>Minimal friction</p></li>
+<li><strong>Simplicity</strong>—easy to understand and use</li>
+<li><strong>Clarity</strong>—obvious how to interact</li>
+<li><strong>Minimal friction</strong>—fast and efficient</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Good interfaces reduce cognitive load.</p>
+<p>Good interfaces reduce cognitive load. They make the tool’s power accessible without complexity.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="constraining-the-system" class="level2" data-number="30.7">
 <h2 data-number="30.7" class="anchored" data-anchor-id="constraining-the-system"><span class="header-section-number">30.7</span> Constraining the System</h2>
-<p>Tools must constrain underlying systems.</p>
+<p>Tools must constrain underlying systems to ensure usability and reliability:</p>
 <hr>
 <section id="why" class="level3" data-number="30.7.1">
 <h3 data-number="30.7.1" class="anchored" data-anchor-id="why"><span class="header-section-number">30.7.1</span> Why?</h3>
 <ul>
-<li><p>Reduce unpredictability</p></li>
-<li><p>Improve reliability</p></li>
-<li><p>Simplify usage</p></li>
+<li><strong>Reduce unpredictability</strong>—limit variations in output</li>
+<li><strong>Improve reliability</strong>—ensure consistent behavior</li>
+<li><strong>Simplify usage</strong>—make the tool easy to understand</li>
 </ul>
 <hr>
 </section>
 <section id="methods" class="level3" data-number="30.7.2">
 <h3 data-number="30.7.2" class="anchored" data-anchor-id="methods"><span class="header-section-number">30.7.2</span> Methods</h3>
 <ul>
-<li><p>Fixed output formats</p></li>
-<li><p>Limited input types</p></li>
-<li><p>Clear constraints</p></li>
+<li><strong>Fixed output formats</strong>—enforce specific structure</li>
+<li><strong>Limited input types</strong>—accept only defined inputs</li>
+<li><strong>Clear constraints</strong>—explicit boundaries on behavior</li>
+</ul>
+<hr>
+</section>
+<section id="example-1" class="level3" data-number="30.7.3">
+<h3 data-number="30.7.3" class="anchored" data-anchor-id="example-1"><span class="header-section-number">30.7.3</span> Example</h3>
+<p>Instead of a general-purpose chat system that can answer any question:</p>
+<ul>
+<li><strong>Constrained tool</strong>: Document summarizer</li>
+<li><strong>Input</strong>: document only</li>
+<li><strong>Output</strong>: summary only</li>
+<li><strong>Constraints</strong>: length, format, content requirements</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Constraints make tools usable.</p>
+<p>Constraints make tools usable. They focus the system’s power on a specific task.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="reusability-and-modularity" class="level2" data-number="30.8">
 <h2 data-number="30.8" class="anchored" data-anchor-id="reusability-and-modularity"><span class="header-section-number">30.8</span> Reusability and Modularity</h2>
-<p>A well-built tool:</p>
+<p>A well-built tool reuses components and composes existing systems:</p>
+<hr>
+<section id="example-2" class="level3" data-number="30.8.1">
+<h3 data-number="30.8.1" class="anchored" data-anchor-id="example-2"><span class="header-section-number">30.8.1</span> Example</h3>
+<p>A document summarizer tool may use:</p>
 <ul>
-<li><p>Reuses components</p></li>
-<li><p>Composes existing systems</p></li>
+<li><strong>A chat system</strong>—for generating natural language</li>
+<li><strong>A retrieval pipeline</strong>—for finding relevant information</li>
+<li><strong>An evaluation module</strong>—for checking summary quality</li>
 </ul>
 <hr>
-<section id="example-1" class="level3" data-number="30.8.1">
-<h3 data-number="30.8.1" class="anchored" data-anchor-id="example-1"><span class="header-section-number">30.8.1</span> Example</h3>
-<p>A tool may use:</p>
+</section>
+<section id="benefits" class="level3" data-number="30.8.2">
+<h3 data-number="30.8.2" class="anchored" data-anchor-id="benefits"><span class="header-section-number">30.8.2</span> Benefits</h3>
 <ul>
-<li><p>A chat system</p></li>
-<li><p>A retrieval pipeline</p></li>
-<li><p>An evaluation module</p></li>
+<li><strong>Faster development</strong>—reuse existing components</li>
+<li><strong>Better quality</strong>—use proven, tested systems</li>
+<li><strong>Easier maintenance</strong>—fixes improve multiple tools</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Tools are compositions of systems.</p>
+<p>Tools are compositions of systems. They don’t reinvent capabilities—they orchestrate them.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="evaluation-in-tools" class="level2" data-number="30.9">
 <h2 data-number="30.9" class="anchored" data-anchor-id="evaluation-in-tools"><span class="header-section-number">30.9</span> Evaluation in Tools</h2>
-<p>Tools must ensure output quality.</p>
+<p>Tools must ensure output quality to maintain user trust and satisfaction:</p>
 <hr>
 <section id="methods-1" class="level3" data-number="30.9.1">
 <h3 data-number="30.9.1" class="anchored" data-anchor-id="methods-1"><span class="header-section-number">30.9.1</span> Methods</h3>
 <ul>
-<li><p>Validation checks</p></li>
-<li><p>Automatic evaluation</p></li>
-<li><p>Retry mechanisms</p></li>
+<li><strong>Validation checks</strong>—verify format and constraints</li>
+<li><strong>Automatic evaluation</strong>—assess quality without human intervention</li>
+<li><strong>Retry mechanisms</strong>—regenerate if output fails checks</li>
+</ul>
+<hr>
+</section>
+<section id="goals" class="level3" data-number="30.9.2">
+<h3 data-number="30.9.2" class="anchored" data-anchor-id="goals"><span class="header-section-number">30.9.2</span> Goals</h3>
+<ul>
+<li><strong>Ensure reliability</strong>—consistent, correct outputs</li>
+<li><strong>Maintain trust</strong>—users can depend on the tool</li>
+<li><strong>Enable improvement</strong>—feedback drives refinement</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Users expect reliability without seeing the system.</p>
+<p>Users expect reliability without seeing the system. The tool must guarantee quality.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="iteration-and-improvement" class="level2" data-number="30.10">
 <h2 data-number="30.10" class="anchored" data-anchor-id="iteration-and-improvement"><span class="header-section-number">30.10</span> Iteration and Improvement</h2>
-<p>Tools evolve over time.</p>
+<p>Tools evolve over time based on usage and feedback:</p>
 <hr>
 <section id="feedback-sources" class="level3" data-number="30.10.1">
 <h3 data-number="30.10.1" class="anchored" data-anchor-id="feedback-sources"><span class="header-section-number">30.10.1</span> Feedback Sources</h3>
 <ul>
-<li><p>User behavior</p></li>
-<li><p>Evaluation metrics</p></li>
-<li><p>Error logs</p></li>
+<li><strong>User behavior</strong>—how users interact with the tool</li>
+<li><strong>Evaluation metrics</strong>—automated quality measurements</li>
+<li><strong>Error logs</strong>—failures and exceptions</li>
 </ul>
 <hr>
 </section>
 <section id="improvements" class="level3" data-number="30.10.2">
 <h3 data-number="30.10.2" class="anchored" data-anchor-id="improvements"><span class="header-section-number">30.10.2</span> Improvements</h3>
 <ul>
-<li><p>Refine spec</p></li>
-<li><p>Improve instructions</p></li>
-<li><p>Optimize performance</p></li>
+<li><strong>Refine spec</strong>—clarify requirements and constraints</li>
+<li><strong>Improve instructions</strong>—enhance execution protocols</li>
+<li><strong>Optimize performance</strong>—reduce latency and cost</li>
+<li><strong>Enhance interface</strong>—improve user experience</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Tools improve through usage.</p>
+<p>Tools improve through usage. Real-world feedback drives continuous refinement.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="common-mistakes" class="level2" data-number="30.11">
 <h2 data-number="30.11" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">30.11</span> Common Mistakes</h2>
+<p>Several common mistakes undermine tool effectiveness:</p>
 <hr>
 <section id="overgeneralization" class="level3" data-number="30.11.1">
 <h3 data-number="30.11.1" class="anchored" data-anchor-id="overgeneralization"><span class="header-section-number">30.11.1</span> 1. Overgeneralization</h3>
 <ul>
-<li><p>Trying to do too much</p></li>
-<li><p>Lack of focus</p></li>
+<li><strong>Trying to do too much</strong>—one tool for many purposes</li>
+<li><strong>Lack of focus</strong>—unclear what the tool does</li>
+<li><strong>User confusion</strong>—users don’t know how to use it</li>
 </ul>
+<p><strong>Solution:</strong> Focus on one clear problem. Solve it well.</p>
 <hr>
 </section>
 <section id="weak-constraints" class="level3" data-number="30.11.2">
 <h3 data-number="30.11.2" class="anchored" data-anchor-id="weak-constraints"><span class="header-section-number">30.11.2</span> 2. Weak Constraints</h3>
 <ul>
-<li>Unpredictable outputs</li>
+<li><strong>Unpredictable outputs</strong>—results vary widely</li>
+<li><strong>Poor reliability</strong>—users can’t depend on the tool</li>
+<li><strong>User frustration</strong>—inconsistent behavior</li>
 </ul>
+<p><strong>Solution:</strong> Enforce clear constraints on inputs and outputs.</p>
 <hr>
 </section>
 <section id="poor-interface" class="level3" data-number="30.11.3">
 <h3 data-number="30.11.3" class="anchored" data-anchor-id="poor-interface"><span class="header-section-number">30.11.3</span> 3. Poor Interface</h3>
 <ul>
-<li><p>Hard to use</p></li>
-<li><p>Confusing</p></li>
+<li><strong>Hard to use</strong>—users struggle to interact</li>
+<li><strong>Confusing</strong>—unclear how to provide input</li>
+<li><strong>Inefficient</strong>—too many steps or clicks</li>
 </ul>
+<p><strong>Solution:</strong> Design simple, clear interfaces. Test with real users.</p>
 <hr>
 </section>
 <section id="ignoring-evaluation" class="level3" data-number="30.11.4">
 <h3 data-number="30.11.4" class="anchored" data-anchor-id="ignoring-evaluation"><span class="header-section-number">30.11.4</span> 4. Ignoring Evaluation</h3>
 <ul>
-<li>Quality degradation</li>
+<li><strong>Quality degradation</strong>—output gets worse over time</li>
+<li><strong>Silent failures</strong>—errors go undetected</li>
+<li><strong>No improvement</strong>—system doesn’t learn from mistakes</li>
 </ul>
+<p><strong>Solution:</strong> Implement evaluation at every stage. Use feedback to improve.</p>
 <hr>
 </section>
 </section>
 <section id="from-tool-to-platform" class="level2" data-number="30.12">
 <h2 data-number="30.12" class="anchored" data-anchor-id="from-tool-to-platform"><span class="header-section-number">30.12</span> From Tool to Platform</h2>
-<p>As tools grow, they can become:</p>
+<p>As tools grow and succeed, they can evolve into platforms:</p>
+<hr>
+<section id="example-3" class="level3" data-number="30.12.1">
+<h3 data-number="30.12.1" class="anchored" data-anchor-id="example-3"><span class="header-section-number">30.12.1</span> Example</h3>
 <ul>
-<li><p>Platforms</p></li>
-<li><p>Ecosystems</p></li>
+<li><strong>Single tool</strong> → multiple related tools</li>
+<li><strong>Shared components</strong> → common infrastructure</li>
+<li><strong>Integrated workflows</strong> → connected tool ecosystems</li>
 </ul>
 <hr>
-<section id="example-2" class="level3" data-number="30.12.1">
-<h3 data-number="30.12.1" class="anchored" data-anchor-id="example-2"><span class="header-section-number">30.12.1</span> Example</h3>
+</section>
+<section id="platform-characteristics" class="level3" data-number="30.12.2">
+<h3 data-number="30.12.2" class="anchored" data-anchor-id="platform-characteristics"><span class="header-section-number">30.12.2</span> Platform Characteristics</h3>
 <ul>
-<li><p>Single tool → multiple tools</p></li>
-<li><p>Shared components</p></li>
-<li><p>Integrated workflows</p></li>
+<li><strong>Multiple tools</strong>—collection of specialized capabilities</li>
+<li><strong>Shared infrastructure</strong>—common systems and data</li>
+<li><strong>Integration</strong>—tools work together seamlessly</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Platforms emerge from well-designed tools.</p>
+<p>Platforms emerge from well-designed tools. Success leads to expansion.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="final-insight" class="level2" data-number="30.13">
 <h2 data-number="30.13" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">30.13</span> Final Insight</h2>
-<p>An AI tool is not just a system.</p>
-<p>It is:</p>
+<p>An AI tool is not just a system. It is:</p>
 <ul>
-<li><p>A system shaped for use</p></li>
-<li><p>A system made reliable</p></li>
-<li><p>A system made accessible</p></li>
+<li><strong>A system shaped for use</strong>—optimized for a specific purpose</li>
+<li><strong>A system made reliable</strong>—guaranteeing quality and consistency</li>
+<li><strong>A system made accessible</strong>—presented through simple interfaces</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>The value of AI is realized through tools.</p>
+<p>The value of AI is realized through tools. Systems provide capability; tools deliver value.</p>
 </blockquote>
 <hr>
 </section>
@@ -938,8 +1053,20 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="30.14" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">30.14</span> Closing Statement</h2>
 <p>Building an AI tool is the final step in turning capability into value.</p>
 <blockquote class="blockquote">
-<p>From system to tool,<br>
-definition becomes experience.</p>
+<p>From system to tool, definition becomes experience.</p>
+</blockquote>
+<hr>
+</section>
+<section id="key-insight" class="level2" data-number="30.15">
+<h2 data-number="30.15" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">30.15</span> Key Insight</h2>
+<blockquote class="blockquote">
+<p>AI tools are systems packaged into usable interfaces that solve specific problems. Key elements include clear purpose, defined interface, and reliable system. Tools constrain underlying systems to ensure usability and reliability.</p>
+</blockquote>
+</section>
+<section id="action-hint" class="level2" data-number="30.16">
+<h2 data-number="30.16" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">30.16</span> Action Hint</h2>
+<blockquote class="blockquote">
+<p>Define the tool’s purpose clearly. Focus on one specific problem. Design simple, intuitive interfaces. Constrain the system to ensure predictable behavior. Implement evaluation to guarantee quality. Build from reusable components. Iterate based on user feedback. Start with a focused tool, expand to platform as needed.</p>
 </blockquote>
 
 

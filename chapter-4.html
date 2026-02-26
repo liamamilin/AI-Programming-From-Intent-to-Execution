@@ -295,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The New Bottleneck</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -526,6 +526,8 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#mental-model-upgrade" id="toc-mental-model-upgrade" class="nav-link" data-scroll-target="#mental-model-upgrade"><span class="header-section-number">5.8</span> Mental Model Upgrade</a></li>
   <li><a href="#final-summary" id="toc-final-summary" class="nav-link" data-scroll-target="#final-summary"><span class="header-section-number">5.9</span> Final Summary</a></li>
+  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">5.10</span> Key Insight</a></li>
+  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">5.11</span> Action Hint</a></li>
   </ul>
 </nav>
     </div>
@@ -554,184 +556,167 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="why-a-new-loop" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="why-a-new-loop"><span class="header-section-number">5.1</span> Why a New Loop?</h2>
-<p>In traditional programming, the development process is often described as:</p>
-<p>Design → Implement → Debug → Deploy</p>
-<p>The core difficulty lies in <strong>implementation</strong>—translating ideas into working code.</p>
-<p>In the LLM era, this assumption no longer holds.</p>
+<p>In traditional software development, the development process is often described through a familiar sequence:</p>
+<pre><code>Design → Implement → Debug → Deploy</code></pre>
+<p>This model served developers well for decades. The core difficulty in this model was <strong>implementation</strong>—the challenge of translating ideas and designs into working code that executed correctly. Most tools, methodologies, and best practices focused on alleviating this implementation burden.</p>
+<p>However, in the LLM era, this assumption no longer holds. Several fundamental changes have occurred:</p>
 <ul>
-<li><p>Code can be generated.</p></li>
-<li><p>Patterns can be reused automatically.</p></li>
-<li><p>Execution can be delegated to AI systems.</p></li>
+<li><strong>Code can be generated</strong>—AI systems can write code from natural language descriptions</li>
+<li><strong>Patterns can be reused automatically</strong>—systems can identify and apply established patterns</li>
+<li><strong>Execution can be delegated to AI</strong>—agents can handle multi-step workflows autonomously</li>
 </ul>
-<p>As a result, the bottleneck shifts.</p>
+<p>As a result, the bottleneck has shifted. The challenge is no longer <em>how to implement</em>, but <em>how to define clearly what should be implemented</em>. The implementation layer has been abstracted away, revealing a new layer of difficulty that was previously hidden.</p>
 <blockquote class="blockquote">
-<p>The challenge is no longer <em>how to implement</em>, but <em>how to define clearly what should be implemented</em>.</p>
-</blockquote>
 <p>This shift requires a new fundamental loop—a new mental model for programming.</p>
+</blockquote>
 <hr>
 </section>
 <section id="the-minimal-loop" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="the-minimal-loop"><span class="header-section-number">5.2</span> The Minimal Loop</h2>
-<p>At its core, programming in the LLM era can be reduced to the following loop:</p>
-<p>Intent → Spec → Instruction → Execution → Evaluation</p>
-<p>This loop is minimal in the sense that:</p>
+<p>At its core, programming in the LLM era can be reduced to a simple, elegant loop:</p>
+<pre><code>Intent → Spec → Instruction → Execution → Evaluation</code></pre>
+<p>This loop is called “minimal” because:</p>
 <ul>
-<li><p>Each component is necessary</p></li>
-<li><p>No component can be removed</p></li>
-<li><p>Together, they form a complete system</p></li>
+<li><strong>Each component is necessary</strong>—you cannot remove any component without breaking the loop</li>
+<li><strong>No component can be reduced</strong>—each component plays an essential role</li>
+<li><strong>Together, they form a complete system</strong>—the loop is self-contained and sufficient</li>
 </ul>
+<p>Despite its simplicity, this loop captures the essence of programming in the new paradigm. Let’s examine each component in detail.</p>
 <hr>
 </section>
 <section id="overview-of-the-components" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="overview-of-the-components"><span class="header-section-number">5.3</span> Overview of the Components</h2>
 <section id="intent-what-do-you-want" class="level3" data-number="5.3.1">
 <h3 data-number="5.3.1" class="anchored" data-anchor-id="intent-what-do-you-want"><span class="header-section-number">5.3.1</span> Intent — What do you want?</h3>
-<p>Intent is the <strong>human-level definition of a goal</strong>.</p>
-<p>It answers:</p>
+<p>Intent is the <strong>human-level definition of a goal</strong>. It represents the starting point of any programming effort—the desire to create something or solve a problem.</p>
+<p>Intent answers fundamental questions:</p>
 <ul>
-<li><p>What are we trying to achieve?</p></li>
-<li><p>What change do we want in the world?</p></li>
-<li><p>What does success look like?</p></li>
+<li>What are we trying to achieve?</li>
+<li>What change do we want to create in the world?</li>
+<li>What does success look like from a human perspective?</li>
 </ul>
 <p>Intent is inherently:</p>
 <ul>
-<li><p>Semantic</p></li>
-<li><p>Contextual</p></li>
-<li><p>Often ambiguous at first</p></li>
+<li><strong>Semantic</strong>—it carries meaning and intention, not just structure</li>
+<li><strong>Contextual</strong>—it depends on the situation, environment, and stakeholders</li>
+<li><strong>Often ambiguous at first</strong>—it starts as a vague idea that needs clarification</li>
 </ul>
-<p>Example (raw intent):</p>
-<p>“Build a system that allows users to chat with an AI assistant.”</p>
+<p><strong>Example (raw intent):</strong> “Build a system that allows users to chat with an AI assistant.”</p>
+<p>This intent captures the general idea but lacks specificity. It needs to be transformed into something more precise before it can guide execution.</p>
 <hr>
 </section>
 <section id="spec-what-exactly-does-that-mean" class="level3" data-number="5.3.2">
 <h3 data-number="5.3.2" class="anchored" data-anchor-id="spec-what-exactly-does-that-mean"><span class="header-section-number">5.3.2</span> Spec — What exactly does that mean?</h3>
-<p>Spec (Specification) transforms intent into a <strong>structured, unambiguous definition</strong>.</p>
-<p>It defines:</p>
+<p>Spec (Specification) transforms intent into a <strong>structured, unambiguous definition</strong>. It is the bridge between human thinking and machine execution.</p>
+<p>A spec defines:</p>
 <ul>
-<li><p>Inputs</p></li>
-<li><p>Outputs</p></li>
-<li><p>Constraints</p></li>
-<li><p>Success criteria</p></li>
+<li><strong>Inputs</strong>—what information the system receives</li>
+<li><strong>Outputs</strong>—what the system produces</li>
+<li><strong>Constraints</strong>—what boundaries and limitations the system must respect</li>
+<li><strong>Success criteria</strong>—how we determine whether the system works correctly</li>
 </ul>
-<p>Spec removes ambiguity.</p>
-<p>Example (partial spec):</p>
-<ul>
-<li><p>Users can send messages through a web interface</p></li>
-<li><p>The system returns responses within 2 seconds</p></li>
-<li><p>Conversation history is preserved</p></li>
-</ul>
+<p>The spec removes ambiguity by making implicit assumptions explicit and vague concepts precise.</p>
+<p><strong>Example (partial spec):</strong> - Users can send messages through a web interface - The system returns responses within 2 seconds - Conversation history is preserved across sessions - Responses should be relevant to the conversation context - The system should handle at least 100 concurrent users</p>
 <blockquote class="blockquote">
-<p>Spec is where thinking becomes precise.</p>
+<p>Spec is where thinking becomes precise. It is the translation layer between human intent and machine understanding.</p>
 </blockquote>
 <hr>
 </section>
 <section id="instruction-how-should-the-system-execute" class="level3" data-number="5.3.3">
 <h3 data-number="5.3.3" class="anchored" data-anchor-id="instruction-how-should-the-system-execute"><span class="header-section-number">5.3.3</span> Instruction — How should the system execute?</h3>
-<p>Instruction converts the specification into a <strong>machine-executable form</strong>.</p>
-<p>It includes:</p>
+<p>Instruction converts the specification into a <strong>machine-executable form</strong>. It is the protocol that tells the system how to act.</p>
+<p>Instruction includes:</p>
 <ul>
-<li><p>Task definition</p></li>
-<li><p>Input format</p></li>
-<li><p>Output structure</p></li>
-<li><p>Constraints for execution</p></li>
+<li><strong>Task definition</strong>—what specific operation should be performed</li>
+<li><strong>Input format</strong>—how inputs should be structured and provided</li>
+<li><strong>Output structure</strong>—what format outputs should take</li>
+<li><strong>Constraints for execution</strong>—what rules must be followed during execution</li>
 </ul>
-<p>This is not merely a prompt.</p>
-<p>It is an <strong>execution protocol</strong>.</p>
-<p>Example:</p>
-<ul>
-<li><p>Task: Generate a response based on user input and conversation history</p></li>
-<li><p>Input: {message, history}</p></li>
-<li><p>Output: structured text response</p></li>
-<li><p>Constraints: concise, relevant, context-aware</p></li>
-</ul>
+<p>This is not merely a prompt or a natural language description. It is an <strong>execution protocol</strong>—a precise set of instructions that a system can follow deterministically.</p>
+<p><strong>Example:</strong> - Task: Generate a response based on user input and conversation history - Input: <code>{message: string, history: Array&lt;{role, content}&gt;}</code> - Output: <code>{response: string, confidence: number}</code> - Constraints: - Response length: 50-200 words - Response must reference relevant context from history - Confidence score must be between 0 and 1 - Response should be polite and helpful</p>
 <hr>
 </section>
 <section id="execution-let-the-system-run" class="level3" data-number="5.3.4">
 <h3 data-number="5.3.4" class="anchored" data-anchor-id="execution-let-the-system-run"><span class="header-section-number">5.3.4</span> Execution — Let the system run</h3>
-<p>Execution is performed by:</p>
+<p>Execution is where the system actually does work. It is performed by:</p>
 <ul>
-<li><p>LLMs</p></li>
-<li><p>Agents</p></li>
-<li><p>Toolchains</p></li>
+<li><strong>LLMs</strong>—language models that generate text based on instructions</li>
+<li><strong>Agents</strong>—autonomous systems that can reason and act</li>
+<li><strong>Toolchains</strong>—orchestrated systems that combine multiple capabilities</li>
 </ul>
-<p>At this stage:</p>
-<ul>
-<li><p>The human is no longer implementing</p></li>
-<li><p>The system is producing results</p></li>
-</ul>
+<p>At this stage, the human is no longer implementing. The system is producing results based on the definitions provided.</p>
+<p>The key insight is that execution is now a <strong>derived activity</strong>—it follows from the definitions provided in the earlier stages. The better those definitions, the better the execution.</p>
 <hr>
 </section>
 <section id="evaluation-is-the-result-correct" class="level3" data-number="5.3.5">
 <h3 data-number="5.3.5" class="anchored" data-anchor-id="evaluation-is-the-result-correct"><span class="header-section-number">5.3.5</span> Evaluation — Is the result correct?</h3>
-<p>Evaluation determines whether the output satisfies the original intent.</p>
-<p>It answers:</p>
+<p>Evaluation determines whether the output satisfies the original intent and specification. It is the mechanism that closes the loop.</p>
+<p>Evaluation answers critical questions:</p>
 <ul>
-<li><p>Did we achieve the goal?</p></li>
-<li><p>Does the result meet the constraints?</p></li>
-<li><p>Is the output acceptable?</p></li>
+<li>Did we achieve the goal we set out to achieve?</li>
+<li>Does the result meet all the constraints we specified?</li>
+<li>Is the output acceptable for the intended use case?</li>
 </ul>
-<p>Evaluation can be:</p>
+<p>Evaluation can take multiple forms:</p>
 <ul>
-<li><p>Human judgment</p></li>
-<li><p>Rule-based checks</p></li>
-<li><p>Automated metrics</p></li>
+<li><strong>Human judgment</strong>—manual review by a person</li>
+<li><strong>Rule-based checks</strong>—automated validation against explicit criteria</li>
+<li><strong>Automated metrics</strong>—quantitative measures of quality</li>
+<li><strong>Model-based evaluation</strong>—using another AI to assess the output</li>
 </ul>
+<p>Without evaluation, there is no way to know whether the system is working correctly, and no basis for improvement.</p>
 <hr>
 </section>
 </section>
 <section id="the-loop-is-iterative" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="the-loop-is-iterative"><span class="header-section-number">5.4</span> The Loop is Iterative</h2>
-<p>This process is not linear. It is a loop.</p>
-<p>If the result is not satisfactory:</p>
+<p>This process is not linear. It is a loop—a cycle that repeats until the system produces satisfactory results.</p>
+<p>If the result is not satisfactory, the issue is rarely in execution. AI systems are generally good at following instructions. The issue is usually in:</p>
 <ul>
-<li><p>The issue is rarely in execution</p></li>
-<li><p>The issue is usually in:</p>
-<ul>
-<li><p>unclear intent</p></li>
-<li><p>incomplete spec</p></li>
-<li><p>weak instruction</p></li>
-</ul></li>
+<li><strong>Unclear intent</strong>—the goal was not properly defined</li>
+<li><strong>Incomplete spec</strong>—important constraints or requirements were missing</li>
+<li><strong>Weak instruction</strong>—the execution protocol was not precise enough</li>
 </ul>
 <p>Therefore:</p>
 <blockquote class="blockquote">
 <p>Programming becomes the process of refining definitions.</p>
 </blockquote>
-<p>The loop evolves:</p>
-<p>Intent → Spec → Instruction → Execution → Evaluation<br>
-↓<br>
-Refinement</p>
+<p>The loop evolves as follows:</p>
+<pre><code>Intent → Spec → Instruction → Execution → Evaluation
+                      ↓
+                  Refinement</code></pre>
+<p>Each iteration sharpens the definitions, moving the system closer to producing the desired outcome.</p>
 <hr>
 </section>
 <section id="where-errors-actually-come-from" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="where-errors-actually-come-from"><span class="header-section-number">5.5</span> Where Errors Actually Come From</h2>
-<p>In traditional programming, errors are often:</p>
-<ul>
-<li><p>Syntax errors</p></li>
-<li><p>Logical bugs</p></li>
-<li><p>Runtime failures</p></li>
-</ul>
-<p>In the LLM era, errors shift to earlier stages:</p>
+<p>In traditional programming, errors were primarily in the code—in the implementation. In the LLM era, errors shift to earlier stages:</p>
 <section id="intent-errors" class="level3" data-number="5.5.1">
 <h3 data-number="5.5.1" class="anchored" data-anchor-id="intent-errors"><span class="header-section-number">5.5.1</span> 1. Intent Errors</h3>
 <ul>
-<li><p>The goal is unclear</p></li>
-<li><p>The problem is misunderstood</p></li>
+<li><strong>The goal is unclear</strong>—the problem is not well understood</li>
+<li><strong>The problem is misunderstood</strong>—the intent doesn’t match the real need</li>
+<li><strong>Stakeholder needs are misaligned</strong>—different people want different things</li>
 </ul>
+<p>Intent errors are the most fundamental and hardest to detect. If you’re solving the wrong problem, even perfect execution won’t help.</p>
 </section>
 <section id="spec-errors" class="level3" data-number="5.5.2">
 <h3 data-number="5.5.2" class="anchored" data-anchor-id="spec-errors"><span class="header-section-number">5.5.2</span> 2. Spec Errors</h3>
 <ul>
-<li><p>Missing constraints</p></li>
-<li><p>Ambiguous definitions</p></li>
-<li><p>Incomplete structure</p></li>
+<li><strong>Missing constraints</strong>—important boundaries were not specified</li>
+<li><strong>Ambiguous definitions</strong>—terms were used without clear meaning</li>
+<li><strong>Incomplete structure</strong>—required components were left out</li>
 </ul>
+<p>Spec errors are common because it’s hard to anticipate every requirement and constraint.</p>
 </section>
 <section id="instruction-errors" class="level3" data-number="5.5.3">
 <h3 data-number="5.5.3" class="anchored" data-anchor-id="instruction-errors"><span class="header-section-number">5.5.3</span> 3. Instruction Errors</h3>
 <ul>
-<li><p>Poorly defined inputs/outputs</p></li>
-<li><p>Weak constraints</p></li>
+<li><strong>Poorly defined inputs/outputs</strong>—the data structures are not clear</li>
+<li><strong>Weak constraints</strong>—the boundaries are too loose or too tight</li>
+<li><strong>Inconsistent formatting</strong>—the instruction is not structured properly</li>
 </ul>
+<p>Instruction errors are often easier to fix than spec or intent errors, but they can still cause significant problems.</p>
 <blockquote class="blockquote">
 <p>Most failures are not execution failures.<br>
 They are definition failures.</p>
@@ -741,7 +726,7 @@ They are definition failures.</p>
 </section>
 <section id="a-new-definition-of-programming" class="level2" data-number="5.6">
 <h2 data-number="5.6" class="anchored" data-anchor-id="a-new-definition-of-programming"><span class="header-section-number">5.6</span> A New Definition of Programming</h2>
-<p>From this perspective, programming can be redefined as:</p>
+<p>From this perspective, we can redefine programming:</p>
 <blockquote class="blockquote">
 <p>The process of transforming an intent into a structured specification, and then into executable instructions that produce verifiable results.</p>
 </blockquote>
@@ -749,44 +734,41 @@ They are definition failures.</p>
 <blockquote class="blockquote">
 <p>Programming is the act of defining systems.</p>
 </blockquote>
+<p>This definition emphasizes:</p>
+<ul>
+<li><strong>Definition</strong> as the primary activity</li>
+<li><strong>Transformation</strong> as the core process</li>
+<li><strong>Verification</strong> as the essential outcome</li>
+</ul>
+<p>It moves away from code as the central artifact and toward specification as the central artifact.</p>
 <hr>
 </section>
 <section id="implications" class="level2" data-number="5.7">
 <h2 data-number="5.7" class="anchored" data-anchor-id="implications"><span class="header-section-number">5.7</span> Implications</h2>
-<p>This shift has several important implications:</p>
+<p>This shift has several important implications for how we approach programming:</p>
 <section id="the-core-skill-changes" class="level3" data-number="5.7.1">
 <h3 data-number="5.7.1" class="anchored" data-anchor-id="the-core-skill-changes"><span class="header-section-number">5.7.1</span> 1. The Core Skill Changes</h3>
-<p>From:</p>
-<ul>
-<li>Writing code</li>
-</ul>
-<p>To:</p>
-<ul>
-<li><p>Defining problems</p></li>
-<li><p>Structuring specifications</p></li>
-<li><p>Designing evaluation criteria</p></li>
-</ul>
+<p><strong>From:</strong> - Writing code efficiently - Debugging implementation errors - Optimizing performance</p>
+<p><strong>To:</strong> - Defining problems clearly - Structuring specifications precisely - Designing evaluation criteria thoughtfully</p>
+<p>The skills that differentiate programmers are no longer primarily technical implementation skills. They are conceptual and analytical skills related to definition and design.</p>
 <hr>
 </section>
 <section id="the-role-of-code-changes" class="level3" data-number="5.7.2">
 <h3 data-number="5.7.2" class="anchored" data-anchor-id="the-role-of-code-changes"><span class="header-section-number">5.7.2</span> 2. The Role of Code Changes</h3>
 <p>Code becomes:</p>
 <ul>
-<li><p>An implementation detail</p></li>
-<li><p>A byproduct of specification</p></li>
+<li>An implementation detail—a concern that can often be automated</li>
+<li>A byproduct of specification—something that emerges from good definition</li>
+<li>Less visible and less important in the daily work of programmers</li>
 </ul>
+<p>Programmers spend less time writing code and more time writing specifications.</p>
 <hr>
 </section>
 <section id="iteration-becomes-central" class="level3" data-number="5.7.3">
 <h3 data-number="5.7.3" class="anchored" data-anchor-id="iteration-becomes-central"><span class="header-section-number">5.7.3</span> 3. Iteration Becomes Central</h3>
-<p>Instead of:</p>
-<ul>
-<li>Writing once, debugging later</li>
-</ul>
-<p>We now have:</p>
-<ul>
-<li>Define → Execute → Evaluate → Refine</li>
-</ul>
+<p><strong>Instead of:</strong> - Writing once, debugging later—a linear process</p>
+<p><strong>We now have:</strong> - Define → Execute → Evaluate → Refine—a cyclical process</p>
+<p>The focus shifts from getting it right the first time to converging on the right definition through iteration.</p>
 <hr>
 </section>
 </section>
@@ -794,23 +776,43 @@ They are definition failures.</p>
 <h2 data-number="5.8" class="anchored" data-anchor-id="mental-model-upgrade"><span class="header-section-number">5.8</span> Mental Model Upgrade</h2>
 <p>To work effectively in this paradigm, you must adopt a new mental model:</p>
 <ul>
-<li><p>Think in terms of <strong>systems</strong>, not scripts</p></li>
-<li><p>Think in terms of <strong>definitions</strong>, not implementations</p></li>
-<li><p>Think in terms of <strong>loops</strong>, not linear pipelines</p></li>
+<li><strong>Think in terms of systems</strong>, not scripts</li>
+<li><strong>Think in terms of definitions</strong>, not implementations</li>
+<li><strong>Think in terms of loops</strong>, not linear pipelines</li>
 </ul>
+<p>This mental model shift is not optional—it is necessary for effective work in the LLM era. Programmers who cling to the old model will find themselves increasingly ineffective.</p>
 <hr>
 </section>
 <section id="final-summary" class="level2" data-number="5.9">
 <h2 data-number="5.9" class="anchored" data-anchor-id="final-summary"><span class="header-section-number">5.9</span> Final Summary</h2>
 <p>The Minimal Loop is the foundation of programming in the LLM era:</p>
-<p>Intent → Spec → Instruction → Execution → Evaluation</p>
-<p>Each stage transforms the problem into a more structured and executable form.</p>
+<pre><code>Intent → Spec → Instruction → Execution → Evaluation</code></pre>
+<p>Each stage transforms the problem into a more structured and executable form:</p>
+<ul>
+<li><strong>Intent</strong> captures the human goal</li>
+<li><strong>Spec</strong> makes it precise and structured</li>
+<li><strong>Instruction</strong> makes it executable</li>
+<li><strong>Execution</strong> produces the result</li>
+<li><strong>Evaluation</strong> verifies correctness and drives improvement</li>
+</ul>
 <p>The key insight is simple but profound:</p>
 <blockquote class="blockquote">
 <p>The quality of the output is determined by the clarity of the definition.</p>
 </blockquote>
-<p>Once this is understood, programming is no longer about controlling machines.</p>
-<p>It becomes about <strong>precisely defining reality so that machines can act on it</strong>.</p>
+<p>Once this is understood, programming is no longer about controlling machines through precise instructions. It becomes about <strong>precisely defining reality so that machines can act on it</strong>.</p>
+<hr>
+</section>
+<section id="key-insight" class="level2" data-number="5.10">
+<h2 data-number="5.10" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">5.10</span> Key Insight</h2>
+<blockquote class="blockquote">
+<p>Programming in the LLM era follows a minimal loop: Intent → Spec → Instruction → Execution → Evaluation. Each stage transforms the problem into a more executable form, with quality determined by definition clarity.</p>
+</blockquote>
+</section>
+<section id="action-hint" class="level2" data-number="5.11">
+<h2 data-number="5.11" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">5.11</span> Action Hint</h2>
+<blockquote class="blockquote">
+<p>For your next project, explicitly work through each stage of the loop. Write down your intent, create a detailed spec, design the instruction, execute it, and evaluate the results. Don’t skip stages—each is essential for quality.</p>
+</blockquote>
 
 
 </section>

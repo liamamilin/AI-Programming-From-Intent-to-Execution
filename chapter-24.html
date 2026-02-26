@@ -295,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The New Bottleneck</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -522,7 +522,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#add-redundancy" id="toc-add-redundancy" class="nav-link" data-scroll-target="#add-redundancy"><span class="header-section-number">25.5.4</span> 4. Add Redundancy</a></li>
   <li><a href="#introduce-evaluation" id="toc-introduce-evaluation" class="nav-link" data-scroll-target="#introduce-evaluation"><span class="header-section-number">25.5.5</span> 5. Introduce Evaluation</a></li>
   </ul></li>
-  <li><a href="#what-is-evaluation-in-this-context" id="toc-what-is-evaluation-in-this-context" class="nav-link" data-scroll-target="#what-is-evaluation-in-this-context"><span class="header-section-number">25.6</span> What is Evaluation in This Context?</a></li>
+  <li><a href="#what-is-evaluation-in-this-context" id="toc-what-is-evaluation-in-this-context" class="nav-link" data-scroll-target="#what-is-evaluation-in-this-context"><span class="header-section-number">25.6</span> What is Evaluation in This Context?</a>
+  <ul class="collapse">
+  <li><a href="#why-evaluation-matters" id="toc-why-evaluation-matters" class="nav-link" data-scroll-target="#why-evaluation-matters"><span class="header-section-number">25.6.1</span> Why Evaluation Matters</a></li>
+  </ul></li>
   <li><a href="#automatic-evaluation" id="toc-automatic-evaluation" class="nav-link" data-scroll-target="#automatic-evaluation"><span class="header-section-number">25.7</span> Automatic Evaluation</a>
   <ul class="collapse">
   <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition"><span class="header-section-number">25.7.1</span> Definition</a></li>
@@ -566,6 +569,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#reliability-in-the-full-system" id="toc-reliability-in-the-full-system" class="nav-link" data-scroll-target="#reliability-in-the-full-system"><span class="header-section-number">25.14</span> Reliability in the Full System</a></li>
   <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">25.15</span> Final Insight</a></li>
   <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">25.16</span> Closing Statement</a></li>
+  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">25.17</span> Key Insight</a></li>
+  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">25.18</span> Action Hint</a></li>
   </ul>
 </nav>
     </div>
@@ -594,12 +599,12 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="from-capability-to-reliability" class="level2" data-number="25.1">
 <h2 data-number="25.1" class="anchored" data-anchor-id="from-capability-to-reliability"><span class="header-section-number">25.1</span> From Capability to Reliability</h2>
-<p>A system that <em>works once</em> is not enough.</p>
+<p>A system that <em>works once</em> is not enough. A prototype that produces a correct output in controlled conditions is not a production system.</p>
 <p>Real systems must be:</p>
 <ul>
-<li><p>Consistent</p></li>
-<li><p>Predictable</p></li>
-<li><p>Measurable</p></li>
+<li><strong>Consistent</strong>—producing similar results for similar inputs</li>
+<li><strong>Predictable</strong>—behaving as expected across many executions</li>
+<li><strong>Measurable</strong>—performance can be quantified and tracked</li>
 </ul>
 <p>This introduces a new requirement:</p>
 <blockquote class="blockquote">
@@ -613,133 +618,162 @@ ul.task-list li input[type="checkbox"] {
 <blockquote class="blockquote">
 <p><strong>Given similar inputs, the system produces outputs that consistently meet defined success criteria</strong></p>
 </blockquote>
+<p>Reliability is not about being perfect or never making mistakes. It is about:</p>
+<ul>
+<li><strong>Consistency</strong>—similar inputs produce similar outputs</li>
+<li><strong>Correctness</strong>—outputs meet requirements and expectations</li>
+<li><strong>Stability</strong>—behavior does not degrade over time</li>
+</ul>
 <hr>
 <section id="key-dimensions" class="level3" data-number="25.2.1">
 <h3 data-number="25.2.1" class="anchored" data-anchor-id="key-dimensions"><span class="header-section-number">25.2.1</span> Key Dimensions</h3>
 <ul>
-<li><p><strong>Consistency</strong> — similar inputs → similar outputs</p></li>
-<li><p><strong>Correctness</strong> — outputs meet requirements</p></li>
-<li><p><strong>Stability</strong> — behavior does not degrade over time</p></li>
+<li><strong>Consistency</strong>—similar inputs → similar outputs</li>
+<li><strong>Correctness</strong>—outputs meet requirements</li>
+<li><strong>Stability</strong>—behavior does not degrade over time</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Reliability is not about perfection.<br>
-It is about consistency within defined bounds.</p>
+<p>Reliability is not about perfection. It is about consistency within defined bounds.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="why-reliability-is-hard-in-llm-systems" class="level2" data-number="25.3">
 <h2 data-number="25.3" class="anchored" data-anchor-id="why-reliability-is-hard-in-llm-systems"><span class="header-section-number">25.3</span> Why Reliability is Hard in LLM Systems</h2>
-<p>LLM-based systems are inherently:</p>
+<p>LLM-based systems face unique reliability challenges that make achieving consistency difficult:</p>
+<p>LLMs are inherently:</p>
 <ul>
-<li><p>Probabilistic</p></li>
-<li><p>Context-dependent</p></li>
-<li><p>Sensitive to input variation</p></li>
+<li><strong>Probabilistic</strong>—outputs are sampled from a distribution, not deterministic</li>
+<li><strong>Context-dependent</strong>—results vary based on input context and history</li>
+<li><strong>Sensitive to input variation</strong>—small changes can produce large differences</li>
 </ul>
 <p>This leads to:</p>
 <ul>
-<li><p>Output variability</p></li>
-<li><p>Edge case failures</p></li>
-<li><p>Hidden instability</p></li>
+<li><strong>Output variability</strong>—same prompt can produce different answers</li>
+<li><strong>Edge case failures</strong>—unusual inputs break the system</li>
+<li><strong>Hidden instability</strong>—problems appear only under specific conditions</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Reliability must be engineered.<br>
-It does not emerge automatically.</p>
+<p>Reliability must be engineered. It does not emerge automatically in probabilistic systems.</p>
 </blockquote>
 <hr>
 </section>
 <section id="sources-of-instability" class="level2" data-number="25.4">
 <h2 data-number="25.4" class="anchored" data-anchor-id="sources-of-instability"><span class="header-section-number">25.4</span> Sources of Instability</h2>
+<p>Understanding why systems become unreliable helps design better solutions:</p>
 <hr>
 <section id="weak-spec" class="level3" data-number="25.4.1">
 <h3 data-number="25.4.1" class="anchored" data-anchor-id="weak-spec"><span class="header-section-number">25.4.1</span> 1. Weak Spec</h3>
 <ul>
-<li><p>Ambiguous definitions</p></li>
-<li><p>Missing constraints</p></li>
+<li><strong>Ambiguous definitions</strong>—requirements are unclear or incomplete</li>
+<li><strong>Missing constraints</strong>—no boundaries on acceptable behavior</li>
+<li><strong>Weak success criteria</strong>—no clear measure of correctness</li>
 </ul>
+<p><strong>Result:</strong> System interprets requirements inconsistently</p>
 <hr>
 </section>
 <section id="poor-instruction-design" class="level3" data-number="25.4.2">
 <h3 data-number="25.4.2" class="anchored" data-anchor-id="poor-instruction-design"><span class="header-section-number">25.4.2</span> 2. Poor Instruction Design</h3>
 <ul>
-<li><p>Inconsistent formats</p></li>
-<li><p>Unclear outputs</p></li>
+<li><strong>Inconsistent formats</strong>—output structure varies</li>
+<li><strong>Unclear task definition</strong>—system doesn’t understand what to do</li>
+<li><strong>Missing structure</strong>—no framework for execution</li>
 </ul>
+<p><strong>Result:</strong> Behavior varies between executions</p>
 <hr>
 </section>
 <section id="context-variability" class="level3" data-number="25.4.3">
 <h3 data-number="25.4.3" class="anchored" data-anchor-id="context-variability"><span class="header-section-number">25.4.3</span> 3. Context Variability</h3>
 <ul>
-<li>Different context → different results</li>
+<li><strong>Different context → different results</strong>—context affects interpretation</li>
+<li><strong>Context window limits</strong>—can’t include all relevant information</li>
+<li><strong>Context contamination</strong>—irrelevant information included</li>
 </ul>
+<p><strong>Result:</strong> Inconsistent behavior across sessions</p>
 <hr>
 </section>
 <section id="tool-errors" class="level3" data-number="25.4.4">
 <h3 data-number="25.4.4" class="anchored" data-anchor-id="tool-errors"><span class="header-section-number">25.4.4</span> 4. Tool Errors</h3>
 <ul>
-<li><p>External API failures</p></li>
-<li><p>Incorrect data</p></li>
+<li><strong>External API failures</strong>—services unavailable or malfunctioning</li>
+<li><strong>Incorrect data</strong>—tools return wrong information</li>
+<li><strong>Tool misuse</strong>—wrong tool used or used incorrectly</li>
 </ul>
+<p><strong>Result:</strong> Unreliable external operations</p>
 <hr>
 </section>
 <section id="lack-of-evaluation" class="level3" data-number="25.4.5">
 <h3 data-number="25.4.5" class="anchored" data-anchor-id="lack-of-evaluation"><span class="header-section-number">25.4.5</span> 5. Lack of Evaluation</h3>
 <ul>
-<li>No feedback loop</li>
+<li><strong>No feedback loop</strong>—can’t detect or correct errors</li>
+<li><strong>Unknown quality</strong>—don’t know if results are correct</li>
+<li><strong>Uncaught failures</strong>—errors propagate silently</li>
 </ul>
+<p><strong>Result:</strong> Problems accumulate and compound</p>
 <hr>
 <blockquote class="blockquote">
-<p>Most instability originates upstream.</p>
+<p>Most instability originates upstream—in definition and design, not execution.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="principles-for-stability" class="level2" data-number="25.5">
 <h2 data-number="25.5" class="anchored" data-anchor-id="principles-for-stability"><span class="header-section-number">25.5</span> Principles for Stability</h2>
+<p>Achieving reliability requires applying specific principles throughout system design:</p>
 <hr>
 <section id="strengthen-spec" class="level3" data-number="25.5.1">
 <h3 data-number="25.5.1" class="anchored" data-anchor-id="strengthen-spec"><span class="header-section-number">25.5.1</span> 1. Strengthen Spec</h3>
 <ul>
-<li><p>Define clear constraints</p></li>
-<li><p>Reduce ambiguity</p></li>
+<li><strong>Define clear constraints</strong>—explicit boundaries on behavior</li>
+<li><strong>Reduce ambiguity</strong>—eliminate multiple interpretations</li>
+<li><strong>Specify edge cases</strong>—handle unusual inputs explicitly</li>
 </ul>
+<p><strong>Result:</strong> System has clear, unambiguous requirements</p>
 <hr>
 </section>
 <section id="enforce-structure" class="level3" data-number="25.5.2">
 <h3 data-number="25.5.2" class="anchored" data-anchor-id="enforce-structure"><span class="header-section-number">25.5.2</span> 2. Enforce Structure</h3>
 <ul>
-<li><p>Use structured outputs</p></li>
-<li><p>Standardize formats</p></li>
+<li><strong>Use structured outputs</strong>—exact format requirements</li>
+<li><strong>Standardize formats</strong>—consistent data structures</li>
+<li><strong>Validate structure</strong>—check format at every stage</li>
 </ul>
+<p><strong>Result:</strong> Predictable, parseable outputs</p>
 <hr>
 </section>
 <section id="control-context" class="level3" data-number="25.5.3">
 <h3 data-number="25.5.3" class="anchored" data-anchor-id="control-context"><span class="header-section-number">25.5.3</span> 3. Control Context</h3>
 <ul>
-<li><p>Manage inputs carefully</p></li>
-<li><p>Reduce noise</p></li>
+<li><strong>Manage inputs carefully</strong>—validate and clean input data</li>
+<li><strong>Reduce noise</strong>—remove irrelevant information</li>
+<li><strong>Standardize context</strong>—consistent context construction</li>
 </ul>
+<p><strong>Result:</strong> Consistent processing environment</p>
 <hr>
 </section>
 <section id="add-redundancy" class="level3" data-number="25.5.4">
 <h3 data-number="25.5.4" class="anchored" data-anchor-id="add-redundancy"><span class="header-section-number">25.5.4</span> 4. Add Redundancy</h3>
 <ul>
-<li><p>Multiple checks</p></li>
-<li><p>Fallback mechanisms</p></li>
+<li><strong>Multiple checks</strong>—verify results at multiple stages</li>
+<li><strong>Fallback mechanisms</strong>—alternative approaches when primary fails</li>
+<li><strong>Redundant processing</strong>—compare multiple outputs</li>
 </ul>
+<p><strong>Result:</strong> Errors caught before they affect users</p>
 <hr>
 </section>
 <section id="introduce-evaluation" class="level3" data-number="25.5.5">
 <h3 data-number="25.5.5" class="anchored" data-anchor-id="introduce-evaluation"><span class="header-section-number">25.5.5</span> 5. Introduce Evaluation</h3>
 <ul>
-<li><p>Continuous validation</p></li>
-<li><p>Feedback loops</p></li>
+<li><strong>Continuous validation</strong>—check every output</li>
+<li><strong>Feedback loops</strong>—use results to improve system</li>
+<li><strong>Quality metrics</strong>—track performance over time</li>
 </ul>
+<p><strong>Result:</strong> System learns and improves</p>
 <hr>
 <blockquote class="blockquote">
-<p>Stability is achieved through layered control.</p>
+<p>Stability is achieved through layered control. Multiple mechanisms work together to ensure reliability.</p>
 </blockquote>
 <hr>
 </section>
@@ -753,16 +787,25 @@ It does not emerge automatically.</p>
 <hr>
 <p>It provides:</p>
 <ul>
-<li><p>A signal of correctness</p></li>
-<li><p>A basis for iteration</p></li>
-<li><p>A mechanism for control</p></li>
+<li><strong>A signal of correctness</strong>—knowing whether results are acceptable</li>
+<li><strong>A basis for iteration</strong>—information for improving the system</li>
+<li><strong>A mechanism for control</strong>—triggering corrections or retries</li>
+</ul>
+<hr>
+<section id="why-evaluation-matters" class="level3" data-number="25.6.1">
+<h3 data-number="25.6.1" class="anchored" data-anchor-id="why-evaluation-matters"><span class="header-section-number">25.6.1</span> Why Evaluation Matters</h3>
+<p>Without evaluation:</p>
+<ul>
+<li><strong>No notion of correctness</strong>—can’t distinguish good from bad results</li>
+<li><strong>No direction for improvement</strong>—don’t know what to fix</li>
+<li><strong>No system stability</strong>—behavior can drift without detection</li>
 </ul>
 <hr>
 </section>
+</section>
 <section id="automatic-evaluation" class="level2" data-number="25.7">
 <h2 data-number="25.7" class="anchored" data-anchor-id="automatic-evaluation"><span class="header-section-number">25.7</span> Automatic Evaluation</h2>
-<p>Manual evaluation does not scale.</p>
-<p>Therefore, we introduce:</p>
+<p>Manual evaluation does not scale for production systems. Therefore, we introduce:</p>
 <blockquote class="blockquote">
 <p><strong>Automatic Evaluation</strong></p>
 </blockquote>
@@ -778,60 +821,116 @@ It does not emerge automatically.</p>
 </section>
 <section id="types-of-automatic-evaluation" class="level2" data-number="25.8">
 <h2 data-number="25.8" class="anchored" data-anchor-id="types-of-automatic-evaluation"><span class="header-section-number">25.8</span> Types of Automatic Evaluation</h2>
+<p>Different approaches suit different evaluation needs:</p>
 <hr>
 <section id="rule-based-evaluation" class="level3" data-number="25.8.1">
 <h3 data-number="25.8.1" class="anchored" data-anchor-id="rule-based-evaluation"><span class="header-section-number">25.8.1</span> 1. Rule-Based Evaluation</h3>
 <ul>
-<li>Deterministic checks</li>
-</ul>
-<p>Examples:</p>
+<li><strong>Deterministic checks</strong>—yes/no questions about output</li>
+<li><strong>Examples:</strong>
 <ul>
-<li><p>JSON validity</p></li>
-<li><p>Length constraints</p></li>
-<li><p>Required fields present</p></li>
+<li>JSON validity—output is valid JSON</li>
+<li>Length constraints—output under specified length</li>
+<li>Required fields—all mandatory fields present</li>
+</ul></li>
+<li><strong>Advantages:</strong>
+<ul>
+<li>Fast and precise</li>
+<li>No false positives</li>
+<li>Easy to implement</li>
+</ul></li>
+<li><strong>Disadvantages:</strong>
+<ul>
+<li>Limited scope</li>
+<li>Can’t assess quality</li>
+<li>Rigid</li>
+</ul></li>
 </ul>
 <hr>
 </section>
 <section id="model-based-evaluation" class="level3" data-number="25.8.2">
 <h3 data-number="25.8.2" class="anchored" data-anchor-id="model-based-evaluation"><span class="header-section-number">25.8.2</span> 2. Model-Based Evaluation</h3>
 <ul>
-<li>Use another model to evaluate</li>
-</ul>
-<p>Examples:</p>
+<li><strong>Use another model to evaluate</strong>—judge output quality</li>
+<li><strong>Examples:</strong>
 <ul>
-<li><p>Relevance scoring</p></li>
-<li><p>Hallucination detection</p></li>
+<li>Relevance scoring—how relevant is output to input?</li>
+<li>Hallucination detection—is output grounded in facts?</li>
+<li>Sentiment analysis—is tone appropriate?</li>
+</ul></li>
+<li><strong>Advantages:</strong>
+<ul>
+<li>Can assess complex criteria</li>
+<li>Flexible and adaptable</li>
+<li>Can evaluate nuance</li>
+</ul></li>
+<li><strong>Disadvantages:</strong>
+<ul>
+<li>Can be expensive</li>
+<li>May have biases</li>
+<li>Slower than rules</li>
+</ul></li>
 </ul>
 <hr>
 </section>
 <section id="metric-based-evaluation" class="level3" data-number="25.8.3">
 <h3 data-number="25.8.3" class="anchored" data-anchor-id="metric-based-evaluation"><span class="header-section-number">25.8.3</span> 3. Metric-Based Evaluation</h3>
 <ul>
-<li>Quantitative measures</li>
-</ul>
-<p>Examples:</p>
+<li><strong>Quantitative measures</strong>—numerical scores for quality</li>
+<li><strong>Examples:</strong>
 <ul>
-<li><p>Accuracy</p></li>
-<li><p>Precision / recall</p></li>
-<li><p>Latency</p></li>
+<li>Accuracy—percentage of correct outputs</li>
+<li>Precision/recall—performance on classification tasks</li>
+<li>Latency—response time</li>
+</ul></li>
+<li><strong>Advantages:</strong>
+<ul>
+<li>Objective and comparable</li>
+<li>Trackable over time</li>
+<li>Industry standards exist</li>
+</ul></li>
+<li><strong>Disadvantages:</strong>
+<ul>
+<li>May not capture all aspects of quality</li>
+<li>Can be gamed</li>
+<li>Need ground truth</li>
+</ul></li>
 </ul>
 <hr>
 </section>
 <section id="hybrid-evaluation" class="level3" data-number="25.8.4">
 <h3 data-number="25.8.4" class="anchored" data-anchor-id="hybrid-evaluation"><span class="header-section-number">25.8.4</span> 4. Hybrid Evaluation</h3>
 <ul>
-<li>Combine multiple methods</li>
+<li><strong>Combine multiple methods</strong>—use rules, models, and metrics together</li>
+<li><strong>Example:</strong>
+<ul>
+<li>Rule: Output must be JSON</li>
+<li>Model: JSON must contain relevant information</li>
+<li>Metric: Response time under 2 seconds</li>
+</ul></li>
+<li><strong>Advantages:</strong>
+<ul>
+<li>Comprehensive</li>
+<li>Leverages strengths of each approach</li>
+<li>More robust</li>
+</ul></li>
+<li><strong>Disadvantages:</strong>
+<ul>
+<li>More complex to implement</li>
+<li>Higher cost</li>
+<li>Requires coordination</li>
+</ul></li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Strong systems use layered evaluation.</p>
+<p>Strong systems use layered evaluation—multiple methods working together to ensure quality.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="evaluation-pipeline" class="level2" data-number="25.9">
 <h2 data-number="25.9" class="anchored" data-anchor-id="evaluation-pipeline"><span class="header-section-number">25.9</span> Evaluation Pipeline</h2>
-<p>A robust system includes an evaluation pipeline:</p>
+<p>A robust system includes an evaluation pipeline that checks quality at every stage:</p>
 <pre><code>Output → Validation → Scoring → Decision</code></pre>
 <hr>
 <section id="steps" class="level3" data-number="25.9.1">
@@ -840,30 +939,33 @@ It does not emerge automatically.</p>
 <section id="validation" class="level4" data-number="25.9.1.1">
 <h4 data-number="25.9.1.1" class="anchored" data-anchor-id="validation"><span class="header-section-number">25.9.1.1</span> 1. Validation</h4>
 <ul>
-<li><p>Check format</p></li>
-<li><p>Ensure constraints</p></li>
+<li>Check format—ensure output meets structural requirements</li>
+<li>Ensure constraints—verify output respects defined boundaries</li>
+<li>Validate completeness—check that all required elements are present</li>
 </ul>
 <hr>
 </section>
 <section id="scoring" class="level4" data-number="25.9.1.2">
 <h4 data-number="25.9.1.2" class="anchored" data-anchor-id="scoring"><span class="header-section-number">25.9.1.2</span> 2. Scoring</h4>
 <ul>
-<li><p>Assess quality</p></li>
-<li><p>Assign score</p></li>
+<li>Assess quality—assign score based on evaluation criteria</li>
+<li>Measure performance—calculate metrics like accuracy or relevance</li>
+<li><ul>
+<li>Rate results—determine how well output meets requirements</li>
+</ul></li>
 </ul>
 <hr>
 </section>
 <section id="decision" class="level4" data-number="25.9.1.3">
 <h4 data-number="25.9.1.3" class="anchored" data-anchor-id="decision"><span class="header-section-number">25.9.1.3</span> 3. Decision</h4>
 <ul>
-<li><p>Accept</p></li>
-<li><p>Reject</p></li>
-<li><p>Retry</p></li>
+<li><strong>Accept</strong>—output meets requirements, proceed to user</li>
+<li><strong>Reject</strong>—output fails validation, trigger retry or correction</li>
+<li><strong>Flag</strong>—output is marginal, requires human review</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Evaluation is not passive.<br>
-It drives system behavior.</p>
+<p>Evaluation is not passive. It drives system behavior and ensures quality.</p>
 </blockquote>
 <hr>
 </section>
@@ -871,161 +973,205 @@ It drives system behavior.</p>
 </section>
 <section id="feedback-loops" class="level2" data-number="25.10">
 <h2 data-number="25.10" class="anchored" data-anchor-id="feedback-loops"><span class="header-section-number">25.10</span> Feedback Loops</h2>
-<p>Evaluation enables feedback:</p>
+<p>Evaluation enables feedback—using results to improve the system:</p>
 <hr>
 <section id="immediate-feedback" class="level3" data-number="25.10.1">
 <h3 data-number="25.10.1" class="anchored" data-anchor-id="immediate-feedback"><span class="header-section-number">25.10.1</span> Immediate Feedback</h3>
 <ul>
-<li><p>Reject invalid outputs</p></li>
-<li><p>Trigger retries</p></li>
+<li><strong>Reject invalid outputs</strong>—don’t present to user</li>
+<li><strong>Trigger retries</strong>—attempt to produce better result</li>
+<li><strong>Apply corrections</strong>—automatically fix simple errors</li>
 </ul>
+<p><strong>Purpose:</strong> Ensure user receives only high-quality results</p>
 <hr>
 </section>
 <section id="long-term-feedback" class="level3" data-number="25.10.2">
 <h3 data-number="25.10.2" class="anchored" data-anchor-id="long-term-feedback"><span class="header-section-number">25.10.2</span> Long-Term Feedback</h3>
 <ul>
-<li><p>Improve spec</p></li>
-<li><p>Refine instructions</p></li>
+<li><strong>Improve spec</strong>—refine definitions based on evaluation results</li>
+<li><strong>Refine instructions</strong>—adjust protocols based on what works</li>
+<li><strong>Optimize parameters</strong>—tune system settings for better performance</li>
 </ul>
+<p><strong>Purpose:</strong> Continuous improvement over time</p>
 <hr>
 <blockquote class="blockquote">
-<p>Feedback transforms systems from static to adaptive.</p>
+<p>Feedback transforms systems from static to adaptive. Systems that learn from evaluation become more reliable.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="techniques-for-improving-reliability" class="level2" data-number="25.11">
 <h2 data-number="25.11" class="anchored" data-anchor-id="techniques-for-improving-reliability"><span class="header-section-number">25.11</span> Techniques for Improving Reliability</h2>
+<p>Several techniques can enhance system reliability:</p>
 <hr>
 <section id="multiple-runs-sampling" class="level3" data-number="25.11.1">
 <h3 data-number="25.11.1" class="anchored" data-anchor-id="multiple-runs-sampling"><span class="header-section-number">25.11.1</span> 1. Multiple Runs (Sampling)</h3>
 <ul>
-<li><p>Generate multiple outputs</p></li>
-<li><p>Select best</p></li>
+<li><strong>Generate multiple outputs</strong>—run instruction several times</li>
+<li><strong>Select best</strong>—choose highest quality output</li>
+<li><strong>Average or aggregate</strong>—combine multiple outputs</li>
 </ul>
+<p><strong>Purpose:</strong> Increase chance of good result</p>
 <hr>
 </section>
 <section id="self-consistency" class="level3" data-number="25.11.2">
 <h3 data-number="25.11.2" class="anchored" data-anchor-id="self-consistency"><span class="header-section-number">25.11.2</span> 2. Self-Consistency</h3>
 <ul>
-<li><p>Compare multiple answers</p></li>
-<li><p>Choose consistent result</p></li>
+<li><strong>Compare multiple answers</strong>—run same instruction multiple times</li>
+<li><strong>Choose consistent result</strong>—select output that appears most frequently</li>
+<li><strong>Identify outliers</strong>—flag unusual outputs for review</li>
 </ul>
+<p><strong>Purpose:</strong> Reduce randomness and improve stability</p>
 <hr>
 </section>
 <section id="verification-steps" class="level3" data-number="25.11.3">
 <h3 data-number="25.11.3" class="anchored" data-anchor-id="verification-steps"><span class="header-section-number">25.11.3</span> 3. Verification Steps</h3>
 <ul>
-<li><p>Add validation stages</p></li>
-<li><p>Check correctness</p></li>
+<li><strong>Add validation stages</strong>—check output at multiple points</li>
+<li><strong>Verify correctness</strong>—confirm output meets requirements</li>
+<li><ul>
+<li><strong>Cross-check</strong>—compare against expected patterns</li>
+</ul></li>
 </ul>
+<p><strong>Purpose:</strong> Catch errors before they propagate</p>
 <hr>
 </section>
 <section id="guardrails" class="level3" data-number="25.11.4">
 <h3 data-number="25.11.4" class="anchored" data-anchor-id="guardrails"><span class="header-section-number">25.11.4</span> 4. Guardrails</h3>
 <ul>
-<li><p>Enforce constraints</p></li>
-<li><p>Prevent invalid outputs</p></li>
+<li><strong>Enforce constraints</strong>—prevent outputs that violate rules</li>
+<li><strong>Filter inappropriate content</strong>—block harmful or incorrect outputs</li>
+<li><strong>Limit behavior</strong>—keep system within defined boundaries</li>
 </ul>
-<hr>
+<p><strong>Purpose:</strong> Prevent unacceptable outputs</p>
 <hr>
 <blockquote class="blockquote">
-<p>Reliability is built through layers of verification.</p>
+<p>Reliability is built through layers of verification. Multiple checks ensure quality.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="trade-offs" class="level2" data-number="25.12">
 <h2 data-number="25.12" class="anchored" data-anchor-id="trade-offs"><span class="header-section-number">25.12</span> Trade-offs</h2>
+<p>System design involves balancing competing requirements:</p>
 <hr>
 <section id="reliability-vs-cost" class="level3" data-number="25.12.1">
 <h3 data-number="25.12.1" class="anchored" data-anchor-id="reliability-vs-cost"><span class="header-section-number">25.12.1</span> Reliability vs Cost</h3>
 <ul>
-<li>More checks → higher cost</li>
+<li><strong>More checks → higher cost</strong>—additional evaluation increases computational expense</li>
+<li><strong>Fewer checks → lower cost</strong>—reduced verification saves resources</li>
+<li><strong>Balance:</strong> Choose evaluation depth based on cost constraints</li>
 </ul>
 <hr>
 </section>
 <section id="reliability-vs-speed" class="level3" data-number="25.12.2">
 <h3 data-number="25.12.2" class="anchored" data-anchor-id="reliability-vs-speed"><span class="header-section-number">25.12.2</span> Reliability vs Speed</h3>
 <ul>
-<li>More evaluation → slower execution</li>
+<li><strong>More evaluation → slower execution</strong>—verification takes time</li>
+<li><strong>Less evaluation → faster response</strong>—reduced checks improve speed</li>
+<li><strong>Balance:</strong> Optimize for required latency while maintaining acceptable reliability</li>
 </ul>
 <hr>
 </section>
 <section id="reliability-vs-flexibility" class="level3" data-number="25.12.3">
 <h3 data-number="25.12.3" class="anchored" data-anchor-id="reliability-vs-flexibility"><span class="header-section-number">25.12.3</span> Reliability vs Flexibility</h3>
 <ul>
-<li>More constraints → less flexibility</li>
+<li><strong>More constraints → less flexibility</strong>—strict rules limit options</li>
+<li><strong>Fewer constraints → more flexibility</strong>—loose rules allow more variation</li>
+<li><strong>Balance:</strong> Define constraints that ensure reliability without limiting necessary flexibility</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>System design requires balancing these factors.</p>
+<p>System design requires balancing these factors based on specific requirements and constraints.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="common-mistakes" class="level2" data-number="25.13">
 <h2 data-number="25.13" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">25.13</span> Common Mistakes</h2>
+<p>Several common mistakes undermine reliability:</p>
 <hr>
 <section id="relying-on-single-output" class="level3" data-number="25.13.1">
 <h3 data-number="25.13.1" class="anchored" data-anchor-id="relying-on-single-output"><span class="header-section-number">25.13.1</span> 1. Relying on Single Output</h3>
 <ul>
-<li><p>No validation</p></li>
-<li><p>High risk</p></li>
+<li><strong>No validation</strong>—accept first output without checking</li>
+<li><strong>High risk</strong>—errors propagate to users</li>
+<li><strong>Unpredictable quality</strong>—no guarantee of correctness</li>
 </ul>
+<p><strong>Solution:</strong> Always validate outputs. Implement evaluation pipelines.</p>
 <hr>
 </section>
 <section id="no-clear-metrics" class="level3" data-number="25.13.2">
 <h3 data-number="25.13.2" class="anchored" data-anchor-id="no-clear-metrics"><span class="header-section-number">25.13.2</span> 2. No Clear Metrics</h3>
 <ul>
-<li>Cannot measure improvement</li>
+<li><strong>Cannot measure improvement</strong>—don’t know if system is getting better</li>
+<li><strong>No baseline</strong>—can’t assess performance</li>
+<li><strong>Blind optimization</strong>—changing things without knowing if they help</li>
 </ul>
+<p><strong>Solution:</strong> Define clear metrics. Track performance over time.</p>
 <hr>
 </section>
 <section id="over-reliance-on-human-evaluation" class="level3" data-number="25.13.3">
 <h3 data-number="25.13.3" class="anchored" data-anchor-id="over-reliance-on-human-evaluation"><span class="header-section-number">25.13.3</span> 3. Over-Reliance on Human Evaluation</h3>
 <ul>
-<li>Does not scale</li>
+<li><strong>Does not scale</strong>—can’t evaluate every output manually</li>
+<li><strong>Inconsistent</strong>—human judgment varies</li>
+<li><strong>Slow</strong>—manual evaluation is time-consuming</li>
 </ul>
+<p><strong>Solution:</strong> Implement automatic evaluation. Use human evaluation for special cases.</p>
 <hr>
 </section>
 <section id="ignoring-edge-cases" class="level3" data-number="25.13.4">
 <h3 data-number="25.13.4" class="anchored" data-anchor-id="ignoring-edge-cases"><span class="header-section-number">25.13.4</span> 4. Ignoring Edge Cases</h3>
 <ul>
-<li>System fails under variation</li>
+<li><strong>System fails under variation</strong>—unusual inputs break the system</li>
+<li><strong>Hidden failures</strong>—problems only appear in rare cases</li>
+<li><strong>False confidence</strong>—system works on test data but fails in production</li>
 </ul>
+<p><strong>Solution:</strong> Test diverse inputs. Identify and handle edge cases explicitly.</p>
 <hr>
 </section>
 </section>
 <section id="reliability-in-the-full-system" class="level2" data-number="25.14">
 <h2 data-number="25.14" class="anchored" data-anchor-id="reliability-in-the-full-system"><span class="header-section-number">25.14</span> Reliability in the Full System</h2>
-<p>Reliability integrates into the full pipeline:</p>
+<p>Reliability integrates into the full Minimal Loop pipeline:</p>
 <pre><code>Intent → Spec → Instruction → Execution → Evaluation → Feedback</code></pre>
 <hr>
 <p>It ensures that:</p>
 <ul>
-<li><p>Each stage is validated</p></li>
-<li><p>Errors are detected</p></li>
-<li><p>Systems improve over time</p></li>
+<li><strong>Each stage is validated</strong>—quality checked at every point</li>
+<li><strong>Errors are detected</strong>—problems identified early</li>
+<li><strong>Systems improve over time</strong>—feedback drives refinement</li>
 </ul>
 <hr>
 </section>
 <section id="final-insight" class="level2" data-number="25.15">
 <h2 data-number="25.15" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">25.15</span> Final Insight</h2>
-<p>Reliability is not a feature added at the end.</p>
-<p>It is a property of the entire system.</p>
+<p>Reliability is not a feature added at the end. It is a property of the entire system.</p>
 <hr>
 <blockquote class="blockquote">
-<p>A system is only as reliable as its weakest definition.</p>
+<p>A system is only as reliable as its weakest definition. Every layer—from intent to evaluation—must be designed for reliability.</p>
 </blockquote>
 <hr>
 </section>
 <section id="closing-statement" class="level2" data-number="25.16">
 <h2 data-number="25.16" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">25.16</span> Closing Statement</h2>
-<p>In the LLM era, building systems is not just about making them work.</p>
-<p>It is about making them work <strong>consistently</strong>.</p>
+<p>In the LLM era, building systems is not just about making them work. It is about making them work <strong>consistently</strong>.</p>
 <blockquote class="blockquote">
 <p>Reliability is what turns capability into trust.</p>
+</blockquote>
+<hr>
+</section>
+<section id="key-insight" class="level2" data-number="25.17">
+<h2 data-number="25.17" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">25.17</span> Key Insight</h2>
+<blockquote class="blockquote">
+<p>Reliability enables systems to produce correct results consistently. Key principles include strengthening spec, enforcing structure, controlling context, adding redundancy, and introducing evaluation. Automatic evaluation methods include rule-based, model-based, metric-based, and hybrid approaches.</p>
+</blockquote>
+</section>
+<section id="action-hint" class="level2" data-number="25.18">
+<h2 data-number="25.18" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">25.18</span> Action Hint</h2>
+<blockquote class="blockquote">
+<p>Implement evaluation at every stage. Use rule-based checks for format and constraints. Use model-based evaluation for quality assessment. Track metrics over time. Build feedback loops for continuous improvement. Balance reliability with cost, speed, and flexibility. Test diverse inputs to catch edge cases.</p>
 </blockquote>
 
 

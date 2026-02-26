@@ -295,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The New Bottleneck</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -559,6 +559,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#performance-as-a-system-property" id="toc-performance-as-a-system-property" class="nav-link" data-scroll-target="#performance-as-a-system-property"><span class="header-section-number">27.12</span> Performance as a System Property</a></li>
   <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">27.13</span> Final Insight</a></li>
   <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">27.14</span> Closing Statement</a></li>
+  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">27.15</span> Key Insight</a></li>
+  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">27.16</span> Action Hint</a></li>
   </ul>
 </nav>
     </div>
@@ -589,11 +591,11 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="27.1" class="anchored" data-anchor-id="from-correctness-to-efficiency"><span class="header-section-number">27.1</span> From Correctness to Efficiency</h2>
 <p>So far, we have focused on:</p>
 <ul>
-<li><p>Defining systems</p></li>
-<li><p>Achieving correctness</p></li>
-<li><p>Ensuring reliability</p></li>
+<li><strong>Defining systems</strong>—creating clear specifications</li>
+<li><strong>Achieving correctness</strong>—ensuring systems produce right outputs</li>
+<li><strong>Ensuring reliability</strong>—making systems consistently accurate</li>
 </ul>
-<p>However, a system that is correct but inefficient is not practical.</p>
+<p>However, a system that is correct but inefficient is not practical. A system that produces perfect results but is too slow or too expensive cannot be used in production.</p>
 <p>Real systems must also consider:</p>
 <blockquote class="blockquote">
 <p><strong>Performance and Cost</strong></p>
@@ -602,68 +604,64 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="the-three-core-metrics" class="level2" data-number="27.2">
 <h2 data-number="27.2" class="anchored" data-anchor-id="the-three-core-metrics"><span class="header-section-number">27.2</span> The Three Core Metrics</h2>
-<p>In LLM systems, performance is primarily determined by three factors:</p>
+<p>In LLM systems, performance is primarily determined by three interrelated factors:</p>
 <ul>
-<li><p><strong>Token Usage</strong></p></li>
-<li><p><strong>Latency</strong></p></li>
-<li><p><strong>Cost</strong></p></li>
+<li><strong>Token Usage</strong>—how much text the system processes and generates</li>
+<li><strong>Latency</strong>—how long the system takes to respond</li>
+<li><strong>Cost</strong>—how much money or resources the system consumes</li>
 </ul>
-<p>These are tightly coupled.</p>
+<p>These metrics are tightly coupled—they influence each other and must be balanced together.</p>
 <hr>
 <section id="key-relationship" class="level3" data-number="27.2.1">
 <h3 data-number="27.2.1" class="anchored" data-anchor-id="key-relationship"><span class="header-section-number">27.2.1</span> Key Relationship</h3>
 <pre><code>More Tokens → Higher Latency → Higher Cost</code></pre>
+<p>Processing more text takes more time and costs more money. Optimizing one metric often affects the others.</p>
 <hr>
 <blockquote class="blockquote">
-<p>Efficiency is about controlling these three dimensions.</p>
+<p>Efficiency is about controlling these three dimensions simultaneously. You cannot optimize one in isolation.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="what-are-tokens" class="level2" data-number="27.3">
 <h2 data-number="27.3" class="anchored" data-anchor-id="what-are-tokens"><span class="header-section-number">27.3</span> What Are Tokens?</h2>
-<p>Tokens are the basic unit of processing for language models.</p>
-<p>They represent:</p>
+<p>Tokens are the basic unit of processing for language models. They represent the chunks of text that models read and generate.</p>
+<p>They can be:</p>
 <ul>
-<li><p>Words</p></li>
-<li><p>Parts of words</p></li>
-<li><p>Symbols</p></li>
+<li><strong>Words</strong>—complete words in many cases</li>
+<li><strong>Parts of words</strong>—subword units for complex or rare words</li>
+<li><strong>Symbols</strong>—punctuation, numbers, special characters</li>
 </ul>
 <hr>
 <section id="example" class="level3" data-number="27.3.1">
 <h3 data-number="27.3.1" class="anchored" data-anchor-id="example"><span class="header-section-number">27.3.1</span> Example</h3>
-<p>Sentence:</p>
-<p>“This is a test”</p>
-<p>May be split into:</p>
-<ul>
-<li><p>“This”</p></li>
-<li><p>“is”</p></li>
-<li><p>“a”</p></li>
-<li><p>“test”</p></li>
-</ul>
+<p>Sentence: “This is a test”</p>
+<p>May be tokenized as: - “This” - “is” - “a” - “test”</p>
+<p>Or possibly as: - “This” - ” is” - ” a” - ” test”</p>
+<p>The exact tokenization depends on the model and its tokenizer.</p>
 <hr>
 </section>
 <section id="why-tokens-matter" class="level3" data-number="27.3.2">
 <h3 data-number="27.3.2" class="anchored" data-anchor-id="why-tokens-matter"><span class="header-section-number">27.3.2</span> Why Tokens Matter</h3>
 <ul>
-<li><p>Models process tokens, not words</p></li>
-<li><p>Pricing is based on token usage</p></li>
-<li><p>Latency increases with token count</p></li>
+<li><strong>Models process tokens, not words</strong>—computational cost is per-token</li>
+<li><strong>Pricing is based on token usage</strong>—most LLM APIs charge per token</li>
+<li><strong>Latency increases with token count</strong>—more tokens mean more processing time</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Tokens are the currency of LLM systems.</p>
+<p>Tokens are the currency of LLM systems. Every operation has a token cost.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="token-usage-and-system-design" class="level2" data-number="27.4">
 <h2 data-number="27.4" class="anchored" data-anchor-id="token-usage-and-system-design"><span class="header-section-number">27.4</span> Token Usage and System Design</h2>
-<p>Token usage comes from:</p>
+<p>Token usage comes from multiple sources in the system:</p>
 <ul>
-<li><p>Input context</p></li>
-<li><p>Instructions</p></li>
-<li><p>Output generation</p></li>
+<li><strong>Input context</strong>—information provided to the system</li>
+<li><strong>Instructions</strong>—the protocol defining execution</li>
+<li><strong>Output generation</strong>—the text the system produces</li>
 </ul>
 <hr>
 <section id="sources-of-token-growth" class="level3" data-number="27.4.1">
@@ -672,28 +670,34 @@ ul.task-list li input[type="checkbox"] {
 <section id="long-context" class="level4" data-number="27.4.1.1">
 <h4 data-number="27.4.1.1" class="anchored" data-anchor-id="long-context"><span class="header-section-number">27.4.1.1</span> 1. Long Context</h4>
 <ul>
-<li><p>Large prompts</p></li>
-<li><p>Extensive memory</p></li>
+<li><strong>Large prompts</strong>—extensive input provided to the system</li>
+<li><strong>Extensive memory</strong>—including too much conversation history</li>
+<li><strong>Verbose context</strong>—unnecessarily detailed information</li>
 </ul>
+<p><strong>Impact:</strong> Increases processing time and cost</p>
 <hr>
 </section>
 <section id="verbose-instructions" class="level4" data-number="27.4.1.2">
 <h4 data-number="27.4.1.2" class="anchored" data-anchor-id="verbose-instructions"><span class="header-section-number">27.4.1.2</span> 2. Verbose Instructions</h4>
 <ul>
-<li><p>Unnecessary detail</p></li>
-<li><p>Redundant text</p></li>
+<li><strong>Unnecessary detail</strong>—overly specific or redundant instructions</li>
+<li><strong>Redundant text</strong>—saying the same thing multiple ways</li>
+<li><strong>Excessive examples</strong>—too many demonstration examples</li>
 </ul>
+<p><strong>Impact:</strong> Wastes tokens without improving results</p>
 <hr>
 </section>
 <section id="large-outputs" class="level4" data-number="27.4.1.3">
 <h4 data-number="27.4.1.3" class="anchored" data-anchor-id="large-outputs"><span class="header-section-number">27.4.1.3</span> 3. Large Outputs</h4>
 <ul>
-<li><p>Long responses</p></li>
-<li><p>Unstructured generation</p></li>
+<li><strong>Long responses</strong>—generating more text than needed</li>
+<li><strong>Unstructured generation</strong>—allowing unrestricted output length</li>
+<li><strong>Verbose responses</strong>—wordy or repetitive outputs</li>
 </ul>
+<p><strong>Impact:</strong> Increases generation time and cost</p>
 <hr>
 <blockquote class="blockquote">
-<p>Poor design leads to token waste.</p>
+<p>Poor design leads to token waste. Efficient design minimizes token usage while maintaining quality.</p>
 </blockquote>
 <hr>
 </section>
@@ -703,49 +707,51 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="27.5" class="anchored" data-anchor-id="latency"><span class="header-section-number">27.5</span> Latency</h2>
 <p>Latency is the time it takes for the system to:</p>
 <ul>
-<li><p>Receive input</p></li>
-<li><p>Produce output</p></li>
+<li><strong>Receive input</strong>—accept user query or data</li>
+<li><strong>Process</strong>—run through the model and tools</li>
+<li><strong>Produce output</strong>—generate and return response</li>
 </ul>
 <hr>
 <section id="components-of-latency" class="level3" data-number="27.5.1">
 <h3 data-number="27.5.1" class="anchored" data-anchor-id="components-of-latency"><span class="header-section-number">27.5.1</span> Components of Latency</h3>
 <ul>
-<li><p>Model processing time</p></li>
-<li><p>Network delay</p></li>
-<li><p>Tool execution time</p></li>
+<li><strong>Model processing time</strong>—time for LLM to generate response</li>
+<li><strong>Network delay</strong>—time for data to travel between systems</li>
+<li><strong>Tool execution time</strong>—time for external APIs and services</li>
+<li><strong>System overhead</strong>—time for routing, validation, and other operations</li>
 </ul>
 <hr>
 </section>
 <section id="why-latency-matters" class="level3" data-number="27.5.2">
 <h3 data-number="27.5.2" class="anchored" data-anchor-id="why-latency-matters"><span class="header-section-number">27.5.2</span> Why Latency Matters</h3>
 <ul>
-<li><p>User experience</p></li>
-<li><p>System responsiveness</p></li>
-<li><p>Real-time applications</p></li>
+<li><strong>User experience</strong>—slow systems feel unresponsive</li>
+<li><strong>System responsiveness</strong>—real-time applications require fast responses</li>
+<li><strong>Throughput</strong>—slow latency limits how many requests can be handled</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Fast systems feel intelligent.<br>
-Slow systems feel broken.</p>
+<p>Fast systems feel intelligent. Slow systems feel broken, regardless of output quality.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="cost" class="level2" data-number="27.6">
 <h2 data-number="27.6" class="anchored" data-anchor-id="cost"><span class="header-section-number">27.6</span> Cost</h2>
-<p>Cost is directly tied to:</p>
+<p>Cost is directly tied to token usage and system design:</p>
 <ul>
-<li><p>Token usage</p></li>
-<li><p>Number of calls</p></li>
-<li><p>Model type</p></li>
+<li><strong>Token usage</strong>—primary driver of API costs</li>
+<li><strong>Number of calls</strong>—frequency of API invocations</li>
+<li><strong>Model type</strong>—different models have different pricing</li>
 </ul>
 <hr>
 <section id="cost-drivers" class="level3" data-number="27.6.1">
 <h3 data-number="27.6.1" class="anchored" data-anchor-id="cost-drivers"><span class="header-section-number">27.6.1</span> Cost Drivers</h3>
 <ul>
-<li><p>Large context windows</p></li>
-<li><p>Frequent API calls</p></li>
-<li><p>Complex pipelines</p></li>
+<li><strong>Large context windows</strong>—more tokens per request</li>
+<li><strong>Frequent API calls</strong>—more requests per unit time</li>
+<li><strong>Complex pipelines</strong>—multiple model calls per task</li>
+<li><strong>Large models</strong>—more expensive per token</li>
 </ul>
 <hr>
 </section>
@@ -753,219 +759,249 @@ Slow systems feel broken.</p>
 <h3 data-number="27.6.2" class="anchored" data-anchor-id="implication"><span class="header-section-number">27.6.2</span> Implication</h3>
 <p>Even small inefficiencies:</p>
 <ul>
-<li><p>Scale significantly</p></li>
-<li><p>Increase operational cost</p></li>
+<li><strong>Scale significantly</strong>—small per-request costs multiply at scale</li>
+<li><strong>Increase operational cost</strong>—ongoing expenses accumulate</li>
+<li><strong>Limit feasibility</strong>—high costs make systems uneconomical</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Cost is a function of design, not just usage.</p>
+<p>Cost is a function of design, not just usage. Good design minimizes cost while maintaining quality.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="trade-offs-between-metrics" class="level2" data-number="27.7">
 <h2 data-number="27.7" class="anchored" data-anchor-id="trade-offs-between-metrics"><span class="header-section-number">27.7</span> Trade-offs Between Metrics</h2>
+<p>System design involves balancing competing requirements:</p>
 <hr>
 <section id="token-vs-accuracy" class="level3" data-number="27.7.1">
 <h3 data-number="27.7.1" class="anchored" data-anchor-id="token-vs-accuracy"><span class="header-section-number">27.7.1</span> Token vs Accuracy</h3>
 <ul>
-<li><p>More tokens → more context → better accuracy</p></li>
-<li><p>But higher cost</p></li>
+<li><strong>More tokens → more context → better accuracy</strong></li>
+<li><strong>But higher cost</strong>—increased expense</li>
 </ul>
+<p><strong>Trade-off:</strong> Determine how much context is needed for required accuracy</p>
 <hr>
 </section>
 <section id="latency-vs-quality" class="level3" data-number="27.7.2">
 <h3 data-number="27.7.2" class="anchored" data-anchor-id="latency-vs-quality"><span class="header-section-number">27.7.2</span> Latency vs Quality</h3>
 <ul>
-<li><p>Faster responses → less processing</p></li>
-<li><p>But potentially lower quality</p></li>
+<li><strong>Faster responses → less processing</strong></li>
+<li><strong>But potentially lower quality</strong>—less time for reasoning</li>
 </ul>
+<p><strong>Trade-off:</strong> Balance response speed with output quality requirements</p>
 <hr>
 </section>
 <section id="cost-vs-reliability" class="level3" data-number="27.7.3">
 <h3 data-number="27.7.3" class="anchored" data-anchor-id="cost-vs-reliability"><span class="header-section-number">27.7.3</span> Cost vs Reliability</h3>
 <ul>
-<li><p>More checks → higher cost</p></li>
-<li><p>But better stability</p></li>
+<li><strong>More checks → higher cost</strong></li>
+<li><strong>But better stability</strong>—more validation and evaluation</li>
 </ul>
+<p><strong>Trade-off:</strong> Determine acceptable failure rate vs.&nbsp;cost of prevention</p>
 <hr>
 <blockquote class="blockquote">
-<p>System design requires balancing trade-offs.</p>
+<p>System design requires balancing these factors based on specific requirements and constraints.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="optimization-strategies" class="level2" data-number="27.8">
 <h2 data-number="27.8" class="anchored" data-anchor-id="optimization-strategies"><span class="header-section-number">27.8</span> Optimization Strategies</h2>
+<p>Several strategies can improve performance and reduce cost:</p>
 <hr>
 <section id="reduce-token-usage" class="level3" data-number="27.8.1">
 <h3 data-number="27.8.1" class="anchored" data-anchor-id="reduce-token-usage"><span class="header-section-number">27.8.1</span> 1. Reduce Token Usage</h3>
 <ul>
-<li><p>Compress context</p></li>
-<li><p>Remove redundancy</p></li>
-<li><p>Use summaries</p></li>
+<li><strong>Compress context</strong>—summarize long histories</li>
+<li><strong>Remove redundancy</strong>—eliminate duplicate information</li>
+<li><strong>Use summaries</strong>—replace long text with concise summaries</li>
 </ul>
+<p><strong>Example:</strong> Instead of including full conversation history, include a summary of key points.</p>
 <hr>
 </section>
 <section id="optimize-instructions" class="level3" data-number="27.8.2">
 <h3 data-number="27.8.2" class="anchored" data-anchor-id="optimize-instructions"><span class="header-section-number">27.8.2</span> 2. Optimize Instructions</h3>
 <ul>
-<li><p>Keep concise</p></li>
-<li><p>Avoid unnecessary text</p></li>
+<li><strong>Keep concise</strong>—use minimal text to convey requirements</li>
+<li><strong>Avoid unnecessary detail</strong>—focus on essential information</li>
+<li><strong>Remove redundancy</strong>—don’t repeat information</li>
 </ul>
+<p><strong>Example:</strong> Instead of detailed descriptions, use structured formats like JSON.</p>
 <hr>
 </section>
 <section id="control-output-length" class="level3" data-number="27.8.3">
 <h3 data-number="27.8.3" class="anchored" data-anchor-id="control-output-length"><span class="header-section-number">27.8.3</span> 3. Control Output Length</h3>
 <ul>
-<li><p>Define limits</p></li>
-<li><p>Use structured output</p></li>
+<li><strong>Define limits</strong>—specify maximum output length</li>
+<li><strong>Use structured output</strong>—enforce format constraints</li>
+<li><strong>Request conciseness</strong>—ask for brief, focused responses</li>
 </ul>
+<p><strong>Example:</strong> Specify “under 100 words” or “3 bullet points” to limit output.</p>
 <hr>
 </section>
 <section id="efficient-context-management" class="level3" data-number="27.8.4">
 <h3 data-number="27.8.4" class="anchored" data-anchor-id="efficient-context-management"><span class="header-section-number">27.8.4</span> 4. Efficient Context Management</h3>
 <ul>
-<li><p>Retrieve only relevant data</p></li>
-<li><p>Avoid full history</p></li>
+<li><strong>Retrieve only relevant data</strong>—select specific information</li>
+<li><strong>Avoid full history</strong>—use summaries instead of full conversations</li>
+<li><strong>Prioritize recent information</strong>—focus on most relevant context</li>
 </ul>
+<p><strong>Example:</strong> Use retrieval to find only the most relevant documents, not all available.</p>
 <hr>
 </section>
 <section id="cache-results" class="level3" data-number="27.8.5">
 <h3 data-number="27.8.5" class="anchored" data-anchor-id="cache-results"><span class="header-section-number">27.8.5</span> 5. Cache Results</h3>
 <ul>
-<li><p>Reuse previous outputs</p></li>
-<li><p>Avoid repeated computation</p></li>
+<li><strong>Reuse previous outputs</strong>—avoid recomputing same inputs</li>
+<li><strong>Cache intermediate results</strong>—store results of expensive operations</li>
+<li><strong>Implement memoization</strong>—remember computation results</li>
 </ul>
+<p><strong>Example:</strong> Cache summary of a document so it’s not recomputed for subsequent queries.</p>
 <hr>
 <blockquote class="blockquote">
-<p>Efficiency comes from better design, not shortcuts.</p>
+<p>Efficiency comes from better design, not shortcuts. Optimize structure, not just parameters.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="architectural-optimization" class="level2" data-number="27.9">
 <h2 data-number="27.9" class="anchored" data-anchor-id="architectural-optimization"><span class="header-section-number">27.9</span> Architectural Optimization</h2>
+<p>System architecture significantly impacts performance:</p>
 <hr>
 <section id="pipeline-design" class="level3" data-number="27.9.1">
 <h3 data-number="27.9.1" class="anchored" data-anchor-id="pipeline-design"><span class="header-section-number">27.9.1</span> 1. Pipeline Design</h3>
 <ul>
-<li><p>Break tasks into smaller steps</p></li>
-<li><p>Avoid overloading single calls</p></li>
+<li><strong>Break tasks into smaller steps</strong>—divide complex operations</li>
+<li><strong>Avoid overloading single calls</strong>—distribute work across multiple calls</li>
+<li><strong>Parallelize independent operations</strong>—run multiple steps simultaneously</li>
 </ul>
+<p><strong>Example:</strong> Instead of one complex instruction, use multiple simpler instructions in sequence.</p>
 <hr>
 </section>
 <section id="selective-execution" class="level3" data-number="27.9.2">
 <h3 data-number="27.9.2" class="anchored" data-anchor-id="selective-execution"><span class="header-section-number">27.9.2</span> 2. Selective Execution</h3>
 <ul>
-<li>Only run necessary components</li>
+<li><strong>Only run necessary components</strong>—skip unneeded processing</li>
+<li><strong>Conditional execution</strong>—run components only when needed</li>
+<li><strong>Early termination</strong>—stop processing when result is clear</li>
 </ul>
+<p><strong>Example:</strong> Only run expensive retrieval if the query requires external information.</p>
 <hr>
 </section>
 <section id="model-selection" class="level3" data-number="27.9.3">
 <h3 data-number="27.9.3" class="anchored" data-anchor-id="model-selection"><span class="header-section-number">27.9.3</span> 3. Model Selection</h3>
 <ul>
-<li><p>Use smaller models where possible</p></li>
-<li><p>Reserve larger models for complex tasks</p></li>
+<li><strong>Use smaller models where possible</strong>—not all tasks need largest models</li>
+<li><strong>Reserve larger models for complex tasks</strong>—allocate resources appropriately</li>
+<li><strong>Cascade models</strong>—use smaller models for filtering, larger for final processing</li>
 </ul>
+<p><strong>Example:</strong> Use a small model to classify queries, then route to appropriate specialist models.</p>
 <hr>
 <blockquote class="blockquote">
-<p>Not all tasks require maximum capability.</p>
+<p>Not all tasks require maximum capability. Match model size to task complexity.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="measuring-performance" class="level2" data-number="27.10">
 <h2 data-number="27.10" class="anchored" data-anchor-id="measuring-performance"><span class="header-section-number">27.10</span> Measuring Performance</h2>
-<p>To optimize, you must measure.</p>
+<p>To optimize, you must measure. Performance metrics provide the data needed for improvement.</p>
 <hr>
 <section id="key-metrics" class="level3" data-number="27.10.1">
 <h3 data-number="27.10.1" class="anchored" data-anchor-id="key-metrics"><span class="header-section-number">27.10.1</span> Key Metrics</h3>
 <ul>
-<li><p>Tokens per request</p></li>
-<li><p>Latency per step</p></li>
-<li><p>Cost per task</p></li>
+<li><strong>Tokens per request</strong>—measure input and output token usage</li>
+<li><strong>Latency per step</strong>—track time for each operation</li>
+<li><strong>Cost per task</strong>—calculate expense for each operation</li>
 </ul>
 <hr>
 </section>
 <section id="approach" class="level3" data-number="27.10.2">
 <h3 data-number="27.10.2" class="anchored" data-anchor-id="approach"><span class="header-section-number">27.10.2</span> Approach</h3>
 <ul>
-<li><p>Log system behavior</p></li>
-<li><p>Analyze bottlenecks</p></li>
-<li><p>Iterate design</p></li>
+<li><strong>Log system behavior</strong>—record all operations and metrics</li>
+<li><strong>Analyze bottlenecks</strong>—identify slow or expensive components</li>
+<li><strong>Iterate design</strong>—make changes based on measurement data</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Measurement enables optimization.</p>
+<p>Measurement enables optimization. Without metrics, optimization is guesswork.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="common-mistakes" class="level2" data-number="27.11">
 <h2 data-number="27.11" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">27.11</span> Common Mistakes</h2>
+<p>Several common mistakes undermine performance:</p>
 <hr>
 <section id="ignoring-token-usage" class="level3" data-number="27.11.1">
 <h3 data-number="27.11.1" class="anchored" data-anchor-id="ignoring-token-usage"><span class="header-section-number">27.11.1</span> 1. Ignoring Token Usage</h3>
 <ul>
-<li>Leads to unexpected costs</li>
+<li><strong>Leads to unexpected costs</strong>—bills higher than expected</li>
+<li><strong>Limits scalability</strong>—cannot handle increased load</li>
+<li><strong>Reduces competitiveness</strong>—higher costs than alternatives</li>
 </ul>
+<p><strong>Solution:</strong> Monitor token usage. Set budgets and alerts.</p>
 <hr>
 </section>
 <section id="overloading-context" class="level3" data-number="27.11.2">
 <h3 data-number="27.11.2" class="anchored" data-anchor-id="overloading-context"><span class="header-section-number">27.11.2</span> 2. Overloading Context</h3>
 <ul>
-<li><p>Reduces efficiency</p></li>
-<li><p>Increases latency</p></li>
+<li><strong>Reduces efficiency</strong>—more processing than needed</li>
+<li><strong>Increases latency</strong>—longer response times</li>
+<li><strong>Increases cost</strong>—more tokens processed</li>
 </ul>
+<p><strong>Solution:</strong> Be selective about context. Include only relevant information.</p>
 <hr>
 </section>
 <section id="over-engineering-pipelines" class="level3" data-number="27.11.3">
 <h3 data-number="27.11.3" class="anchored" data-anchor-id="over-engineering-pipelines"><span class="header-section-number">27.11.3</span> 3. Over-Engineering Pipelines</h3>
 <ul>
-<li><p>Too many steps</p></li>
-<li><p>Increased cost</p></li>
+<li><strong>Too many steps</strong>—unnecessary complexity</li>
+<li><strong>Increased cost</strong>—more operations than needed</li>
+<li><strong>Reduced maintainability</strong>—harder to understand and modify</li>
 </ul>
+<p><strong>Solution:</strong> Keep pipelines simple. Only add steps that add value.</p>
 <hr>
 </section>
 <section id="optimizing-too-early" class="level3" data-number="27.11.4">
 <h3 data-number="27.11.4" class="anchored" data-anchor-id="optimizing-too-early"><span class="header-section-number">27.11.4</span> 4. Optimizing Too Early</h3>
 <ul>
-<li><p>Premature optimization</p></li>
-<li><p>Reduced flexibility</p></li>
+<li><strong>Premature optimization</strong>—optimizing before understanding requirements</li>
+<li><strong>Reduced flexibility</strong>—over-optimized systems are hard to change</li>
+<li><strong>Wrong focus</strong>—optimizing non-critical components</li>
 </ul>
+<p><strong>Solution:</strong> Measure first, then optimize. Focus on bottlenecks.</p>
 <hr>
 </section>
 </section>
 <section id="performance-as-a-system-property" class="level2" data-number="27.12">
 <h2 data-number="27.12" class="anchored" data-anchor-id="performance-as-a-system-property"><span class="header-section-number">27.12</span> Performance as a System Property</h2>
-<p>Performance is not determined by a single component.</p>
-<p>It depends on:</p>
+<p>Performance is not determined by a single component. It depends on:</p>
 <ul>
-<li><p>Spec design</p></li>
-<li><p>Instruction efficiency</p></li>
-<li><p>Context management</p></li>
-<li><p>System architecture</p></li>
+<li><strong>Spec design</strong>—how requirements are defined</li>
+<li><strong>Instruction efficiency</strong>—how protocols are structured</li>
+<li><strong>Context management</strong>—how information is selected</li>
+<li><strong>System architecture</strong>—how components are organized</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Efficiency emerges from the entire system.</p>
+<p>Efficiency emerges from the entire system. Optimize the whole, not just parts.</p>
 </blockquote>
 <hr>
 </section>
 <section id="final-insight" class="level2" data-number="27.13">
 <h2 data-number="27.13" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">27.13</span> Final Insight</h2>
-<p>In the LLM era, performance is not just about speed.</p>
-<p>It is about:</p>
+<p>In the LLM era, performance is not just about speed. It is about:</p>
 <ul>
-<li><p>Efficient use of tokens</p></li>
-<li><p>Balanced latency</p></li>
-<li><p>Controlled cost</p></li>
+<li><strong>Efficient use of tokens</strong>—minimizing waste</li>
+<li><strong>Balanced latency</strong>—responding quickly enough</li>
+<li><strong>Controlled cost</strong>—operating within budget</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>The best systems are not just correct.<br>
-They are efficient.</p>
+<p>The best systems are not just correct. They are efficient.</p>
 </blockquote>
 <hr>
 </section>
@@ -973,8 +1009,20 @@ They are efficient.</p>
 <h2 data-number="27.14" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">27.14</span> Closing Statement</h2>
 <p>As systems scale, performance and cost become critical constraints.</p>
 <blockquote class="blockquote">
-<p>A well-designed system delivers value<br>
-not just correctly, but efficiently.</p>
+<p>A well-designed system delivers value not just correctly, but efficiently.</p>
+</blockquote>
+<hr>
+</section>
+<section id="key-insight" class="level2" data-number="27.15">
+<h2 data-number="27.15" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">27.15</span> Key Insight</h2>
+<blockquote class="blockquote">
+<p>Performance in LLM systems is determined by three core metrics: token usage, latency, and cost. These metrics are tightly coupled—more tokens increase latency and cost. Optimization strategies include reducing token usage, optimizing instructions, controlling output length, efficient context management, and caching results.</p>
+</blockquote>
+</section>
+<section id="action-hint" class="level2" data-number="27.16">
+<h2 data-number="27.16" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">27.16</span> Action Hint</h2>
+<blockquote class="blockquote">
+<p>Monitor token usage, latency, and cost. Identify bottlenecks through measurement. Optimize context by including only relevant information. Use structured outputs to control token usage. Select appropriate model size for task complexity. Cache results to avoid recomputation. Balance trade-offs between accuracy, speed, and cost.</p>
 </blockquote>
 
 

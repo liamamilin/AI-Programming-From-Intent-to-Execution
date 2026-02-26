@@ -295,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The New Bottleneck</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -528,11 +528,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#convergence-of-the-system" id="toc-convergence-of-the-system" class="nav-link" data-scroll-target="#convergence-of-the-system"><span class="header-section-number">18.7</span> Convergence of the System</a>
   <ul class="collapse">
   <li><a href="#convergence-condition" id="toc-convergence-condition" class="nav-link" data-scroll-target="#convergence-condition"><span class="header-section-number">18.7.1</span> Convergence Condition</a></li>
+  <li><a href="#signs-of-convergence" id="toc-signs-of-convergence" class="nav-link" data-scroll-target="#signs-of-convergence"><span class="header-section-number">18.7.2</span> Signs of Convergence</a></li>
   </ul></li>
   <li><a href="#from-debugging-code-to-debugging-spec" id="toc-from-debugging-code-to-debugging-spec" class="nav-link" data-scroll-target="#from-debugging-code-to-debugging-spec"><span class="header-section-number">18.8</span> From Debugging Code to Debugging Spec</a>
   <ul class="collapse">
-  <li><a href="#old-model" id="toc-old-model" class="nav-link" data-scroll-target="#old-model"><span class="header-section-number">18.8.1</span> Old Model</a></li>
-  <li><a href="#new-model" id="toc-new-model" class="nav-link" data-scroll-target="#new-model"><span class="header-section-number">18.8.2</span> New Model</a></li>
+  <li><a href="#in-traditional-programming" id="toc-in-traditional-programming" class="nav-link" data-scroll-target="#in-traditional-programming"><span class="header-section-number">18.8.1</span> In Traditional Programming</a></li>
+  <li><a href="#in-the-llm-paradigm" id="toc-in-the-llm-paradigm" class="nav-link" data-scroll-target="#in-the-llm-paradigm"><span class="header-section-number">18.8.2</span> In the LLM Paradigm</a></li>
+  <li><a href="#old-model" id="toc-old-model" class="nav-link" data-scroll-target="#old-model"><span class="header-section-number">18.8.3</span> Old Model</a></li>
+  <li><a href="#new-model" id="toc-new-model" class="nav-link" data-scroll-target="#new-model"><span class="header-section-number">18.8.4</span> New Model</a></li>
   </ul></li>
   <li><a href="#iteration-as-learning" id="toc-iteration-as-learning" class="nav-link" data-scroll-target="#iteration-as-learning"><span class="header-section-number">18.9</span> Iteration as Learning</a></li>
   <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">18.10</span> Common Mistakes</a>
@@ -545,6 +548,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#refinement-as-a-core-skill" id="toc-refinement-as-a-core-skill" class="nav-link" data-scroll-target="#refinement-as-a-core-skill"><span class="header-section-number">18.11</span> Refinement as a Core Skill</a></li>
   <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">18.12</span> Final Insight</a></li>
   <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">18.13</span> Closing Statement</a></li>
+  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">18.14</span> Key Insight</a></li>
+  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">18.15</span> Action Hint</a></li>
   </ul>
 </nav>
     </div>
@@ -573,12 +578,12 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="specification-is-not-static" class="level2" data-number="18.1">
 <h2 data-number="18.1" class="anchored" data-anchor-id="specification-is-not-static"><span class="header-section-number">18.1</span> Specification Is Not Static</h2>
-<p>A common misconception is that a specification can be written once and remain correct.</p>
+<p>A common misconception in software development is that a specification can be written once and remain correct forever. This misconception has led to countless failed projects and wasted effort.</p>
 <p>In reality:</p>
 <ul>
-<li><p>Initial specs are incomplete</p></li>
-<li><p>Assumptions are often hidden</p></li>
-<li><p>Edge cases are not fully known</p></li>
+<li>Initial specs are incomplete—we never know everything upfront</li>
+<li>Assumptions are often hidden—we take things for granted without realizing it</li>
+<li>Edge cases are not fully known—we can’t anticipate every situation</li>
 </ul>
 <p>Therefore:</p>
 <blockquote class="blockquote">
@@ -588,107 +593,105 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="the-reality-of-imperfect-definitions" class="level2" data-number="18.2">
 <h2 data-number="18.2" class="anchored" data-anchor-id="the-reality-of-imperfect-definitions"><span class="header-section-number">18.2</span> The Reality of Imperfect Definitions</h2>
-<p>Even with careful design, the first version of a spec will likely:</p>
+<p>Even with careful design, deep domain knowledge, and extensive planning, the first version of a spec will likely have issues:</p>
 <ul>
-<li><p>Miss constraints</p></li>
-<li><p>Leave ambiguity</p></li>
-<li><p>Fail under certain inputs</p></li>
+<li>Miss constraints—important limitations are not specified</li>
+<li>Leave ambiguity—terms or concepts are not clearly defined</li>
+<li>Fail under certain inputs—edge cases emerge during execution</li>
 </ul>
-<p>This is not a failure of the system.</p>
-<p>It is a natural consequence of:</p>
+<p>This is not a failure of the team or the process. It is a natural consequence of:</p>
 <ul>
-<li><p>Complex problems</p></li>
-<li><p>Limited initial understanding</p></li>
+<li><strong>Complex problems</strong>—we cannot fully understand everything at the start</li>
+<li><strong>Limited initial understanding</strong>—we learn more as we build and test</li>
+<li><strong>Evolving requirements</strong>—what we need changes as we learn</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>You do not discover the correct spec before execution.<br>
-You discover it through execution.</p>
+<p>You do not discover the correct spec before execution. You discover it through execution.</p>
 </blockquote>
 <hr>
 </section>
 <section id="the-refinement-loop" class="level2" data-number="18.3">
 <h2 data-number="18.3" class="anchored" data-anchor-id="the-refinement-loop"><span class="header-section-number">18.3</span> The Refinement Loop</h2>
-<p>Spec Engineering is inherently iterative.</p>
+<p>Spec Engineering is inherently iterative. It is not a linear process of “write spec → implement → done.” It is a cyclical process of continuous improvement.</p>
 <p>The core loop is:</p>
 <pre><code>Spec → Execution → Deviation → Refinement → Spec</code></pre>
 <hr>
 <section id="step-1-spec" class="level3" data-number="18.3.1">
 <h3 data-number="18.3.1" class="anchored" data-anchor-id="step-1-spec"><span class="header-section-number">18.3.1</span> Step 1: Spec</h3>
 <ul>
-<li><p>Define initial structure</p></li>
-<li><p>Set inputs, outputs, constraints</p></li>
+<li>Define initial structure—create the first version of the specification</li>
+<li>Set inputs, outputs, constraints—establish the basic framework</li>
+<li>Make assumptions explicit—state what you’re taking for granted</li>
 </ul>
 <hr>
 </section>
 <section id="step-2-execution" class="level3" data-number="18.3.2">
 <h3 data-number="18.3.2" class="anchored" data-anchor-id="step-2-execution"><span class="header-section-number">18.3.2</span> Step 2: Execution</h3>
 <ul>
-<li><p>Run the system</p></li>
-<li><p>Produce outputs</p></li>
+<li>Run the system—use the spec to guide behavior</li>
+<li>Produce outputs—generate results based on the spec</li>
+<li>Observe behavior—see what actually happens</li>
 </ul>
 <hr>
 </section>
 <section id="step-3-deviation" class="level3" data-number="18.3.3">
 <h3 data-number="18.3.3" class="anchored" data-anchor-id="step-3-deviation"><span class="header-section-number">18.3.3</span> Step 3: Deviation</h3>
 <ul>
-<li><p>Compare output with expectations</p></li>
-<li><p>Identify mismatches</p></li>
+<li>Compare output with expectations—did we get what we wanted?</li>
+<li>Identify mismatches—where does behavior differ from intent?</li>
+<li>Recognize patterns—are certain types of errors recurring?</li>
 </ul>
 <hr>
 </section>
 <section id="step-4-refinement" class="level3" data-number="18.3.4">
 <h3 data-number="18.3.4" class="anchored" data-anchor-id="step-4-refinement"><span class="header-section-number">18.3.4</span> Step 4: Refinement</h3>
 <ul>
-<li><p>Adjust spec</p></li>
-<li><p>Add constraints</p></li>
-<li><p>Clarify definitions</p></li>
+<li>Adjust spec—update the specification based on observations</li>
+<li>Add constraints—specify boundaries that were missing</li>
+<li>Clarify definitions—make ambiguous terms precise</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Each iteration reduces ambiguity.</p>
+<p>Each iteration reduces ambiguity and moves the system closer to the desired behavior.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="what-is-deviation" class="level2" data-number="18.4">
 <h2 data-number="18.4" class="anchored" data-anchor-id="what-is-deviation"><span class="header-section-number">18.4</span> What is Deviation?</h2>
-<p>Deviation is the gap between:</p>
+<p>Deviation is the gap between what we expect and what we actually observe:</p>
 <pre><code>Expected Behavior ≠ Actual Output</code></pre>
+<p>Understanding the types of deviation helps diagnose where the spec needs improvement.</p>
 <hr>
 <section id="types-of-deviation" class="level3" data-number="18.4.1">
 <h3 data-number="18.4.1" class="anchored" data-anchor-id="types-of-deviation"><span class="header-section-number">18.4.1</span> Types of Deviation</h3>
 <hr>
 <section id="missing-information" class="level4" data-number="18.4.1.1">
 <h4 data-number="18.4.1.1" class="anchored" data-anchor-id="missing-information"><span class="header-section-number">18.4.1.1</span> 1. Missing Information</h4>
-<ul>
-<li>Output lacks required content</li>
-</ul>
+<p>The output lacks required content or elements.</p>
+<p><strong>Example:</strong> - Expected: Summary includes all key points - Actual: Summary misses some important points - Diagnosis: Success criteria not specific enough</p>
 <hr>
 </section>
 <section id="incorrect-interpretation" class="level4" data-number="18.4.1.2">
 <h4 data-number="18.4.1.2" class="anchored" data-anchor-id="incorrect-interpretation"><span class="header-section-number">18.4.1.2</span> 2. Incorrect Interpretation</h4>
-<ul>
-<li>System misunderstands intent</li>
-</ul>
+<p>The system misunderstands the intent or requirements.</p>
+<p><strong>Example:</strong> - Expected: Formal tone in responses - Actual: Casual language used - Diagnosis: Constraint not clearly specified</p>
 <hr>
 </section>
 <section id="overgeneralization" class="level4" data-number="18.4.1.3">
 <h4 data-number="18.4.1.3" class="anchored" data-anchor-id="overgeneralization"><span class="header-section-number">18.4.1.3</span> 3. Overgeneralization</h4>
-<ul>
-<li>Output is too broad</li>
-</ul>
+<p>The output is too broad or includes unnecessary information.</p>
+<p><strong>Example:</strong> - Expected: Specific answer to a question - Actual: Long explanation with tangential information - Diagnosis: Output scope not constrained</p>
 <hr>
 </section>
 <section id="inconsistency" class="level4" data-number="18.4.1.4">
 <h4 data-number="18.4.1.4" class="anchored" data-anchor-id="inconsistency"><span class="header-section-number">18.4.1.4</span> 4. Inconsistency</h4>
-<ul>
-<li>Different outputs for similar inputs</li>
-</ul>
+<p>Different runs produce different outputs for similar inputs.</p>
+<p><strong>Example:</strong> - Expected: Consistent formatting across all responses - Actual: Format varies between runs - Diagnosis: Output structure not specified precisely</p>
 <hr>
 <blockquote class="blockquote">
-<p>Deviation is not noise.<br>
-It is a signal.</p>
+<p>Deviation is not noise. It is a signal—a valuable indicator of where the spec needs improvement.</p>
 </blockquote>
 <hr>
 </section>
@@ -696,147 +699,174 @@ It is a signal.</p>
 </section>
 <section id="where-to-apply-fixes" class="level2" data-number="18.5">
 <h2 data-number="18.5" class="anchored" data-anchor-id="where-to-apply-fixes"><span class="header-section-number">18.5</span> Where to Apply Fixes</h2>
-<p>A critical principle:</p>
+<p>A critical principle for effective refinement:</p>
 <blockquote class="blockquote">
 <p><strong>Fix problems at the highest possible level</strong></p>
 </blockquote>
+<p>When you observe deviation, resist the urge to immediately tweak execution parameters. Instead, look upstream to find the root cause.</p>
 <hr>
 <section id="incorrect-approach" class="level3" data-number="18.5.1">
 <h3 data-number="18.5.1" class="anchored" data-anchor-id="incorrect-approach"><span class="header-section-number">18.5.1</span> Incorrect Approach</h3>
 <ul>
-<li><p>Adjust model parameters</p></li>
-<li><p>Add more prompts</p></li>
-<li><p>Patch outputs</p></li>
+<li>Change the model—switch to a different AI system</li>
+<li>Add more prompts—inject additional instructions</li>
+<li>Adjust parameters—modify temperature, top-k, or other settings</li>
 </ul>
+<p>These changes address symptoms, not causes. They may temporarily improve results but don’t solve the underlying problem.</p>
 <hr>
 </section>
 <section id="correct-approach" class="level3" data-number="18.5.2">
 <h3 data-number="18.5.2" class="anchored" data-anchor-id="correct-approach"><span class="header-section-number">18.5.2</span> Correct Approach</h3>
 <ul>
-<li><p>Improve spec</p></li>
-<li><p>Clarify constraints</p></li>
-<li><p>Define success criteria</p></li>
+<li>Improve spec—clarify the definition</li>
+<li>Add constraints—specify missing boundaries</li>
+<li>Define success criteria—make evaluation more precise</li>
 </ul>
+<p>These changes address the root cause. They improve the definition, which leads to better execution.</p>
 <hr>
 <blockquote class="blockquote">
 <p>Most issues originate in definition, not execution.</p>
 </blockquote>
+<p>The vast majority of problems with AI systems are not bugs in the implementation—they are gaps or ambiguities in the specification.</p>
 <hr>
 </section>
 </section>
 <section id="refinement-strategies" class="level2" data-number="18.6">
 <h2 data-number="18.6" class="anchored" data-anchor-id="refinement-strategies"><span class="header-section-number">18.6</span> Refinement Strategies</h2>
+<p>When you identify deviation, use these strategies to refine the spec effectively:</p>
 <hr>
 <section id="add-constraints" class="level3" data-number="18.6.1">
 <h3 data-number="18.6.1" class="anchored" data-anchor-id="add-constraints"><span class="header-section-number">18.6.1</span> 1. Add Constraints</h3>
-<p>If outputs are too broad:</p>
+<p>If outputs are too broad or uncontrolled:</p>
 <ul>
-<li><p>Introduce limits</p></li>
-<li><p>Define boundaries</p></li>
+<li>Introduce limits—specify maximum length, number of items, etc.</li>
+<li>Define boundaries—what is included and what is excluded</li>
+<li>Specify format—exact structure of the output</li>
 </ul>
 <hr>
 </section>
 <section id="clarify-output-structure" class="level3" data-number="18.6.2">
 <h3 data-number="18.6.2" class="anchored" data-anchor-id="clarify-output-structure"><span class="header-section-number">18.6.2</span> 2. Clarify Output Structure</h3>
-<p>If outputs are inconsistent:</p>
+<p>If outputs are inconsistent or unpredictable:</p>
 <ul>
-<li><p>Define format</p></li>
-<li><p>Specify required elements</p></li>
+<li>Define format—specify exact structure (JSON, array, etc.)</li>
+<li>Specify required elements—what must always be included</li>
+<li>Provide examples—show what good output looks like</li>
 </ul>
 <hr>
 </section>
 <section id="define-edge-cases" class="level3" data-number="18.6.3">
 <h3 data-number="18.6.3" class="anchored" data-anchor-id="define-edge-cases"><span class="header-section-number">18.6.3</span> 3. Define Edge Cases</h3>
-<p>If system fails under certain inputs:</p>
+<p>If the system fails under certain inputs:</p>
 <ul>
-<li><p>Add explicit rules</p></li>
-<li><p>Extend spec</p></li>
+<li>Add explicit rules—how to handle unusual situations</li>
+<li>Extend spec—cover more scenarios</li>
+<li>Provide fallback behavior—what to do when standard approach fails</li>
 </ul>
 <hr>
 </section>
 <section id="strengthen-success-criteria" class="level3" data-number="18.6.4">
 <h3 data-number="18.6.4" class="anchored" data-anchor-id="strengthen-success-criteria"><span class="header-section-number">18.6.4</span> 4. Strengthen Success Criteria</h3>
-<p>If evaluation is unclear:</p>
+<p>If evaluation is unclear or subjective:</p>
 <ul>
-<li><p>Make criteria measurable</p></li>
-<li><p>Reduce subjectivity</p></li>
+<li>Make criteria measurable—use quantitative metrics where possible</li>
+<li>Reduce subjectivity—make evaluation more objective</li>
+<li>Provide evaluation examples—show what counts as success</li>
 </ul>
 <hr>
 </section>
 </section>
 <section id="convergence-of-the-system" class="level2" data-number="18.7">
 <h2 data-number="18.7" class="anchored" data-anchor-id="convergence-of-the-system"><span class="header-section-number">18.7</span> Convergence of the System</h2>
-<p>With each iteration:</p>
-<ul>
-<li><p>Ambiguity decreases</p></li>
-<li><p>Behavior stabilizes</p></li>
-<li><p>Outputs become predictable</p></li>
-</ul>
+<p>With each iteration, the system should move toward convergence—stable, predictable behavior that meets the requirements.</p>
 <hr>
 <section id="convergence-condition" class="level3" data-number="18.7.1">
 <h3 data-number="18.7.1" class="anchored" data-anchor-id="convergence-condition"><span class="header-section-number">18.7.1</span> Convergence Condition</h3>
 <p>A system is considered stable when:</p>
 <ul>
-<li><p>Outputs consistently meet success criteria</p></li>
-<li><p>Variations are within acceptable bounds</p></li>
+<li>Outputs consistently meet success criteria—95%+ of runs pass evaluation</li>
+<li>Variations are within acceptable bounds—minor differences don’t matter</li>
+<li>Behavior is predictable—similar inputs produce similar outputs</li>
+</ul>
+<hr>
+</section>
+<section id="signs-of-convergence" class="level3" data-number="18.7.2">
+<h3 data-number="18.7.2" class="anchored" data-anchor-id="signs-of-convergence"><span class="header-section-number">18.7.2</span> Signs of Convergence</h3>
+<ul>
+<li>Deviations become less frequent—errors are rare</li>
+<li>Refinements become smaller—adjustments are minor tweaks</li>
+<li>Evaluation scores stabilize—quality metrics stop improving significantly</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Stability emerges through iteration.</p>
+<p>Stability emerges through iteration. It is not achieved instantly but develops over time.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="from-debugging-code-to-debugging-spec" class="level2" data-number="18.8">
 <h2 data-number="18.8" class="anchored" data-anchor-id="from-debugging-code-to-debugging-spec"><span class="header-section-number">18.8</span> From Debugging Code to Debugging Spec</h2>
-<p>In traditional programming:</p>
-<ul>
-<li>You debug code</li>
-</ul>
-<p>In this paradigm:</p>
-<ul>
-<li>You debug definitions</li>
-</ul>
+<p>The shift to iterative refinement represents a fundamental change in how we think about debugging and improvement.</p>
 <hr>
-<section id="old-model" class="level3" data-number="18.8.1">
-<h3 data-number="18.8.1" class="anchored" data-anchor-id="old-model"><span class="header-section-number">18.8.1</span> Old Model</h3>
+<section id="in-traditional-programming" class="level3" data-number="18.8.1">
+<h3 data-number="18.8.1" class="anchored" data-anchor-id="in-traditional-programming"><span class="header-section-number">18.8.1</span> In Traditional Programming</h3>
 <ul>
-<li><p>Fix logic errors</p></li>
-<li><p>Trace execution paths</p></li>
+<li><strong>You debug code</strong>—find and fix errors in the implementation</li>
+<li><strong>Trace execution paths</strong>—follow the code to find where things go wrong</li>
+<li><strong>Fix logic errors</strong>—correct mistakes in the algorithm or control flow</li>
 </ul>
 <hr>
 </section>
-<section id="new-model" class="level3" data-number="18.8.2">
-<h3 data-number="18.8.2" class="anchored" data-anchor-id="new-model"><span class="header-section-number">18.8.2</span> New Model</h3>
+<section id="in-the-llm-paradigm" class="level3" data-number="18.8.2">
+<h3 data-number="18.8.2" class="anchored" data-anchor-id="in-the-llm-paradigm"><span class="header-section-number">18.8.2</span> In the LLM Paradigm</h3>
 <ul>
-<li><p>Fix ambiguity</p></li>
-<li><p>Clarify intent</p></li>
-<li><p>Adjust constraints</p></li>
+<li><strong>You debug definitions</strong>—find and fix gaps in the specification</li>
+<li><strong>Clarify intent</strong>—make sure the goal is understood correctly</li>
+<li><strong>Adjust constraints</strong>—specify boundaries more precisely</li>
+</ul>
+<hr>
+</section>
+<section id="old-model" class="level3" data-number="18.8.3">
+<h3 data-number="18.8.3" class="anchored" data-anchor-id="old-model"><span class="header-section-number">18.8.3</span> Old Model</h3>
+<ul>
+<li>Fix logic errors—correct the implementation</li>
+<li>Trace execution paths—find where code goes wrong</li>
+<li>Optimize performance—make code run faster</li>
+</ul>
+<hr>
+</section>
+<section id="new-model" class="level3" data-number="18.8.4">
+<h3 data-number="18.8.4" class="anchored" data-anchor-id="new-model"><span class="header-section-number">18.8.4</span> New Model</h3>
+<ul>
+<li>Fix ambiguity—clarify what is meant</li>
+<li>Clarify intent—make sure goals are understood</li>
+<li>Adjust constraints—specify boundaries more precisely</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>The object of debugging has changed.</p>
+<p>The object of debugging has changed from code to definition.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="iteration-as-learning" class="level2" data-number="18.9">
 <h2 data-number="18.9" class="anchored" data-anchor-id="iteration-as-learning"><span class="header-section-number">18.9</span> Iteration as Learning</h2>
-<p>Each refinement cycle improves:</p>
+<p>Each refinement cycle improves more than just the spec—it improves understanding:</p>
 <ul>
-<li><p>The spec</p></li>
-<li><p>Your understanding of the problem</p></li>
-<li><p>The system’s behavior</p></li>
+<li><strong>The spec</strong>—becomes clearer and more complete</li>
+<li><strong>Your understanding of the problem</strong>—deepens with each iteration</li>
+<li><strong>The system’s behavior</strong>—becomes more predictable and reliable</li>
 </ul>
 <hr>
-<p>This creates a feedback loop:</p>
+<p>This creates a virtuous feedback loop:</p>
 <ul>
-<li>Better understanding → better spec → better output</li>
+<li><strong>Better understanding → better spec</strong>—as you learn more, you can define better</li>
+<li><strong>Better spec → better output</strong>—clearer definitions lead to better results</li>
+<li><strong>Better output → better understanding</strong>—seeing what works teaches you more</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Iteration is not repetition.<br>
-It is progressive clarification.</p>
+<p>Iteration is not repetition. It is progressive clarification and improvement.</p>
 </blockquote>
 <hr>
 </section>
@@ -846,63 +876,84 @@ It is progressive clarification.</p>
 <section id="treating-first-output-as-final" class="level3" data-number="18.10.1">
 <h3 data-number="18.10.1" class="anchored" data-anchor-id="treating-first-output-as-final"><span class="header-section-number">18.10.1</span> 1. Treating First Output as Final</h3>
 <ul>
-<li><p>Accepting early results</p></li>
-<li><p>Skipping refinement</p></li>
+<li>Accepting early results—assuming the first version is good enough</li>
+<li>Skipping refinement—moving on without improving</li>
+<li>Settling for “good enough”—not pushing for excellence</li>
 </ul>
+<p><strong>Solution:</strong> Always assume the first version will need refinement. Plan for iteration from the start.</p>
 <hr>
 </section>
 <section id="fixing-symptoms-instead-of-causes" class="level3" data-number="18.10.2">
 <h3 data-number="18.10.2" class="anchored" data-anchor-id="fixing-symptoms-instead-of-causes"><span class="header-section-number">18.10.2</span> 2. Fixing Symptoms Instead of Causes</h3>
 <ul>
-<li>Adjusting outputs instead of spec</li>
+<li>Adjusting outputs instead of spec—tweaking results without addressing root cause</li>
+<li>Adding patches instead of fixing definitions—applying band-aid solutions</li>
+<li>Treating symptoms rather than disease—addressing what you see, not what causes it</li>
 </ul>
+<p><strong>Solution:</strong> Always look upstream. When you see a problem, ask “what in the spec caused this?”</p>
 <hr>
 </section>
 <section id="lack-of-evaluation" class="level3" data-number="18.10.3">
 <h3 data-number="18.10.3" class="anchored" data-anchor-id="lack-of-evaluation"><span class="header-section-number">18.10.3</span> 3. Lack of Evaluation</h3>
 <ul>
-<li>No clear signal for improvement</li>
+<li>No clear signal for improvement—can’t tell if changes help</li>
+<li>Subjective assessment—relying on gut feeling rather than data</li>
+<li>No baseline for comparison—don’t know if you’re getting better</li>
 </ul>
+<p><strong>Solution:</strong> Define explicit success criteria and measure consistently. Use data to guide refinement.</p>
 <hr>
 </section>
 <section id="overreacting-to-noise" class="level3" data-number="18.10.4">
 <h3 data-number="18.10.4" class="anchored" data-anchor-id="overreacting-to-noise"><span class="header-section-number">18.10.4</span> 4. Overreacting to Noise</h3>
 <ul>
-<li>Changing spec based on single outputs</li>
+<li>Changing spec based on single outputs—treating outliers as patterns</li>
+<li>Making large changes for small issues—overcorrecting for minor problems</li>
+<li>Chasing random variation—trying to fix things that aren’t really problems</li>
 </ul>
+<p><strong>Solution:</strong> Look for patterns across multiple runs. Don’t change the spec based on single observations.</p>
 <hr>
 </section>
 </section>
 <section id="refinement-as-a-core-skill" class="level2" data-number="18.11">
 <h2 data-number="18.11" class="anchored" data-anchor-id="refinement-as-a-core-skill"><span class="header-section-number">18.11</span> Refinement as a Core Skill</h2>
-<p>Iterative refinement is not optional.</p>
-<p>It is central to Spec Engineering.</p>
+<p>Iterative refinement is not optional. It is central to Spec Engineering and effective system development.</p>
 <p>It requires:</p>
 <ul>
-<li><p>Observation</p></li>
-<li><p>Diagnosis</p></li>
-<li><p>Controlled adjustment</p></li>
+<li><strong>Observation</strong>—carefully watching what the system actually does</li>
+<li><strong>Diagnosis</strong>—understanding why deviations occur</li>
+<li><strong>Controlled adjustment</strong>—making targeted, thoughtful changes</li>
 </ul>
+<p>Developing this skill takes practice, but it is essential for success in the LLM era.</p>
 <hr>
 </section>
 <section id="final-insight" class="level2" data-number="18.12">
 <h2 data-number="18.12" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">18.12</span> Final Insight</h2>
-<p>A good spec is not written once.</p>
-<p>It is discovered through iteration.</p>
+<p>A good spec is not written once. It is discovered through iteration.</p>
+<p>The process of refinement is not a sign of failure—it is the path to success. Each iteration brings you closer to a specification that produces reliable, predictable results.</p>
 <hr>
 <blockquote class="blockquote">
-<p>The path to correctness is not direct.<br>
-It is iterative.</p>
+<p>The path to correctness is not direct. It is iterative.</p>
 </blockquote>
 <hr>
 </section>
 <section id="closing-statement" class="level2" data-number="18.13">
 <h2 data-number="18.13" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">18.13</span> Closing Statement</h2>
-<p>In the LLM era, programming is no longer about writing perfect code.</p>
-<p>It is about refining imperfect definitions until they become reliable.</p>
+<p>In the LLM era, programming is no longer about writing perfect code once. It is about refining imperfect definitions until they become reliable.</p>
 <blockquote class="blockquote">
-<p>You do not get the spec right the first time.<br>
-You make it right over time.</p>
+<p>You do not get the spec right the first time. You make it right over time.</p>
+</blockquote>
+<hr>
+</section>
+<section id="key-insight" class="level2" data-number="18.14">
+<h2 data-number="18.14" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">18.14</span> Key Insight</h2>
+<blockquote class="blockquote">
+<p>Spec refinement is an iterative process: Spec → Execution → Deviation → Refinement → Spec. Most issues originate in definition, not execution. Fix problems at the highest possible level by improving the spec.</p>
+</blockquote>
+</section>
+<section id="action-hint" class="level2" data-number="18.15">
+<h2 data-number="18.15" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">18.15</span> Action Hint</h2>
+<blockquote class="blockquote">
+<p>Plan for iteration from the start. Don’t expect your first spec to be perfect. Set up a systematic refinement process: execute, evaluate, identify deviations, refine spec, repeat. Keep track of changes and their effects to build understanding over time.</p>
 </blockquote>
 
 

@@ -295,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The New Bottleneck</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -524,6 +524,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#too-vague" id="toc-too-vague" class="nav-link" data-scroll-target="#too-vague"><span class="header-section-number">8.7.1</span> Too vague</a></li>
   <li><a href="#too-rigid" id="toc-too-rigid" class="nav-link" data-scroll-target="#too-rigid"><span class="header-section-number">8.7.2</span> Too rigid</a></li>
+  <li><a href="#a-good-instruction" id="toc-a-good-instruction" class="nav-link" data-scroll-target="#a-good-instruction"><span class="header-section-number">8.7.3</span> A good instruction</a></li>
   </ul></li>
   <li><a href="#instruction-as-interface" id="toc-instruction-as-interface" class="nav-link" data-scroll-target="#instruction-as-interface"><span class="header-section-number">8.8</span> Instruction as Interface</a>
   <ul class="collapse">
@@ -543,6 +544,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#instruction-and-control" id="toc-instruction-and-control" class="nav-link" data-scroll-target="#instruction-and-control"><span class="header-section-number">8.11</span> Instruction and Control</a></li>
   <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">8.12</span> Final Insight</a></li>
   <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">8.13</span> Closing Statement</a></li>
+  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">8.14</span> Key Insight</a></li>
+  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">8.15</span> Action Hint</a></li>
   </ul>
 </nav>
     </div>
@@ -571,29 +574,27 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="from-definition-to-action" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="from-definition-to-action"><span class="header-section-number">8.1</span> From Definition to Action</h2>
-<p>Intent defines what we want.<br>
-Spec defines what it means.</p>
-<p>But neither of them produces results.</p>
-<p>To make a system act, we need one more step:</p>
+<p>Intent defines what we want—the human goal and aspiration.</p>
+<p>Spec defines what it means—the structured, precise specification of behavior.</p>
+<p>But neither of these produces results. A perfectly clear intent and a perfectly precise spec, by themselves, do nothing. They are static descriptions of what should exist, not dynamic processes that create results.</p>
+<p>To make a system act, to transform definitions into outcomes, we need one more step:</p>
 <blockquote class="blockquote">
 <p><strong>Instruction — the executable form of definition</strong></p>
 </blockquote>
-<p>Instruction is where a defined system becomes operational.</p>
+<p>Instruction is where a defined system becomes operational. It is the bridge between static definition and dynamic execution.</p>
 <hr>
 </section>
 <section id="what-is-an-instruction" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="what-is-an-instruction"><span class="header-section-number">8.2</span> What is an Instruction?</h2>
-<p>An Instruction is a <strong>machine-executable task definition</strong>.</p>
-<p>It translates a specification into a form that a system can act upon.</p>
-<p>It defines:</p>
+<p>An Instruction is a <strong>machine-executable task definition</strong>. It translates a specification into a form that a system can act upon directly and reliably.</p>
+<p>An instruction defines:</p>
 <ul>
-<li><p>What task to perform</p></li>
-<li><p>What inputs to use</p></li>
-<li><p>What outputs to produce</p></li>
-<li><p>What constraints to follow</p></li>
+<li><strong>What task to perform</strong>—the specific operation the system should execute</li>
+<li><strong>What inputs to use</strong>—the data and parameters the system should work with</li>
+<li><strong>What outputs to produce</strong>—the format and structure of the results</li>
+<li><strong>What constraints to follow</strong>—the rules and boundaries the system must respect during execution</li>
 </ul>
-<p>Instruction is not abstract.</p>
-<p>It is operational.</p>
+<p>Instruction is not abstract or descriptive. It is operational. It is the protocol that tells a system exactly how to behave.</p>
 <blockquote class="blockquote">
 <p>If Spec defines the system, Instruction runs the system.</p>
 </blockquote>
@@ -601,179 +602,172 @@ Spec defines what it means.</p>
 </section>
 <section id="instruction-vs-prompt" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="instruction-vs-prompt"><span class="header-section-number">8.3</span> Instruction vs Prompt</h2>
-<p>A common misconception is to equate instruction with prompt.</p>
-<p>They are related, but not the same.</p>
+<p>A common and persistent misconception is to equate instruction with prompt. While related, they are fundamentally different concepts that serve different purposes.</p>
 <hr>
 <section id="prompt" class="level3" data-number="8.3.1">
 <h3 data-number="8.3.1" class="anchored" data-anchor-id="prompt"><span class="header-section-number">8.3.1</span> Prompt</h3>
+<p>A prompt is:</p>
 <ul>
-<li><p>Informal</p></li>
-<li><p>Flexible</p></li>
-<li><p>Often ambiguous</p></li>
-<li><p>Designed for one-off interaction</p></li>
+<li><strong>Informal</strong>—conversational and flexible in structure</li>
+<li><strong>Flexible</strong>—designed for exploration and experimentation</li>
+<li><strong>Often ambiguous</strong>—leaves room for interpretation</li>
+<li><strong>Designed for one-off interaction</strong>—intended for single-use conversations</li>
 </ul>
-<p>Example:</p>
-<p>“Summarize this text in a few sentences.”</p>
+<p><strong>Example:</strong> &gt; “Summarize this text in a few sentences.”</p>
+<p>This prompt works for casual interaction but lacks the precision needed for reliable system execution.</p>
 <hr>
 </section>
 <section id="instruction" class="level3" data-number="8.3.2">
 <h3 data-number="8.3.2" class="anchored" data-anchor-id="instruction"><span class="header-section-number">8.3.2</span> Instruction</h3>
+<p>An instruction is:</p>
 <ul>
-<li><p>Structured</p></li>
-<li><p>Explicit</p></li>
-<li><p>Repeatable</p></li>
-<li><p>Designed for system execution</p></li>
+<li><strong>Structured</strong>—organized according to a defined format</li>
+<li><strong>Explicit</strong>—leaves nothing implicit or assumed</li>
+<li><strong>Repeatable</strong>—produces consistent results across multiple executions</li>
+<li><strong>Designed for system execution</strong>—intended for automated, reliable operation</li>
 </ul>
-<p>Example:</p>
-<ul>
-<li><p>Task: Summarize the input text</p></li>
-<li><p>Input: {text}</p></li>
-<li><p>Output: bullet points</p></li>
-<li><p>Constraints: max 5 items, each under 20 words</p></li>
-</ul>
+<p><strong>Example:</strong> &gt; - <strong>Task</strong>: Summarize the input text &gt; - <strong>Input</strong>: <code>{text: string}</code> &gt; - <strong>Output</strong>: <code>{summary: string, key_points: Array&lt;string&gt;}</code> &gt; - <strong>Constraints</strong>: &gt; - Maximum 5 key points &gt; - Each key point under 20 words &gt; - Summary must include all key points &gt; - Preserve original meaning and tone</p>
+<p>This instruction is precise, structured, and executable.</p>
 <hr>
 <blockquote class="blockquote">
-<p>A prompt asks.<br>
-An instruction defines.</p>
+<p>A prompt asks. An instruction defines.</p>
 </blockquote>
+<p>The difference is crucial. Prompts are for conversation and exploration. Instructions are for operation and execution.</p>
 <hr>
 </section>
 </section>
 <section id="why-prompts-are-not-enough" class="level2" data-number="8.4">
 <h2 data-number="8.4" class="anchored" data-anchor-id="why-prompts-are-not-enough"><span class="header-section-number">8.4</span> Why Prompts Are Not Enough</h2>
-<p>Prompts work well for:</p>
+<p>Prompts work well for certain contexts:</p>
 <ul>
-<li><p>Exploration</p></li>
-<li><p>Experimentation</p></li>
-<li><p>Quick interaction</p></li>
+<li><strong>Exploration</strong>—trying out ideas and seeing what happens</li>
+<li><strong>Experimentation</strong>—testing hypotheses and gathering information</li>
+<li><strong>Quick interaction</strong>—casual conversations with AI systems</li>
 </ul>
-<p>But they fail when:</p>
+<p>But prompts fail when:</p>
 <ul>
-<li><p>Consistency is required</p></li>
-<li><p>Systems must be reliable</p></li>
-<li><p>Outputs must be structured</p></li>
+<li><strong>Consistency is required</strong>—the system must produce reliable, repeatable results</li>
+<li><strong>Systems must be reliable</strong>—behavior must be predictable and trustworthy</li>
+<li><strong>Outputs must be structured</strong>—results need to be processed by other systems</li>
 </ul>
-<p>Problems with prompts:</p>
+<p>Problems with prompts include:</p>
 <ul>
-<li><p>Ambiguity</p></li>
-<li><p>Lack of constraints</p></li>
-<li><p>Unstable results</p></li>
+<li><strong>Ambiguity</strong>—multiple interpretations are possible</li>
+<li><strong>Lack of constraints</strong>—no boundaries on what the system can produce</li>
+<li><strong>Unstable results</strong>—different runs produce different outputs</li>
 </ul>
 <blockquote class="blockquote">
-<p>Prompts are conversational.<br>
-Instructions are operational.</p>
+<p>Prompts are conversational. Instructions are operational.</p>
 </blockquote>
+<p>For building production systems, we need instructions, not prompts.</p>
 <hr>
 </section>
 <section id="instruction-as-execution-protocol" class="level2" data-number="8.5">
 <h2 data-number="8.5" class="anchored" data-anchor-id="instruction-as-execution-protocol"><span class="header-section-number">8.5</span> Instruction as Execution Protocol</h2>
-<p>Instruction should be understood as an <strong>execution protocol</strong>.</p>
+<p>Instruction should be understood as an <strong>execution protocol</strong>—a formal set of rules that govern how a system should behave.</p>
 <p>A protocol defines:</p>
 <ul>
-<li><p>The format of communication</p></li>
-<li><p>The rules of interaction</p></li>
-<li><p>The expected behavior</p></li>
+<li><strong>The format of communication</strong>—how information is exchanged</li>
+<li><strong>The rules of interaction</strong>—what operations are permitted and how they should be performed</li>
+<li><strong>The expected behavior</strong>—what the system should do in different situations</li>
 </ul>
 <hr>
 <section id="an-instruction-protocol-typically-includes" class="level3" data-number="8.5.1">
 <h3 data-number="8.5.1" class="anchored" data-anchor-id="an-instruction-protocol-typically-includes"><span class="header-section-number">8.5.1</span> An Instruction Protocol Typically Includes:</h3>
 <ul>
-<li><p>Task definition</p></li>
-<li><p>Input schema</p></li>
-<li><p>Output schema</p></li>
-<li><p>Constraints</p></li>
-<li><p>Optional steps or procedures</p></li>
+<li><strong>Task definition</strong>—clear statement of what should be accomplished</li>
+<li><strong>Input schema</strong>—precise specification of input format and structure</li>
+<li><strong>Output schema</strong>—precise specification of output format and structure</li>
+<li><strong>Constraints</strong>—rules that must be followed during execution</li>
+<li><strong>Optional steps or procedures</strong>—algorithms or workflows that should be followed</li>
 </ul>
 <hr>
-<p>This makes the system:</p>
+<p>This protocol-based approach makes the system:</p>
 <ul>
-<li><p>Predictable</p></li>
-<li><p>Reusable</p></li>
-<li><p>Composable</p></li>
+<li><strong>Predictable</strong>—behavior follows defined rules</li>
+<li><strong>Reusable</strong>—the same instruction can be used multiple times</li>
+<li><strong>Composable</strong>—instructions can be combined into larger systems</li>
 </ul>
 <hr>
 </section>
 </section>
 <section id="structure-of-a-good-instruction" class="level2" data-number="8.6">
 <h2 data-number="8.6" class="anchored" data-anchor-id="structure-of-a-good-instruction"><span class="header-section-number">8.6</span> Structure of a Good Instruction</h2>
-<p>A well-designed instruction has several key components.</p>
+<p>A well-designed instruction has several key components that work together to ensure reliable execution.</p>
 <hr>
 <section id="task" class="level3" data-number="8.6.1">
 <h3 data-number="8.6.1" class="anchored" data-anchor-id="task"><span class="header-section-number">8.6.1</span> 1. Task</h3>
-<p>What should be done?</p>
-<p>Example:</p>
-<ul>
-<li>“Classify the sentiment of the input text”</li>
-</ul>
+<p>What should be done? This is the core operation the system must perform.</p>
+<p><strong>Example:</strong> &gt; “Classify the sentiment of the input text”</p>
+<p>The task should be specific and unambiguous.</p>
 <hr>
 </section>
 <section id="input" class="level3" data-number="8.6.2">
 <h3 data-number="8.6.2" class="anchored" data-anchor-id="input"><span class="header-section-number">8.6.2</span> 2. Input</h3>
-<p>What data is provided?</p>
-<p>Example:</p>
-<ul>
-<li>{text}</li>
-</ul>
+<p>What data is provided? This specifies what the system will work with.</p>
+<p><strong>Example:</strong> &gt; <code>{text: string, language: string}</code></p>
+<p>The input schema should be precise and include all relevant information.</p>
 <hr>
 </section>
 <section id="output" class="level3" data-number="8.6.3">
 <h3 data-number="8.6.3" class="anchored" data-anchor-id="output"><span class="header-section-number">8.6.3</span> 3. Output</h3>
-<p>What format is expected?</p>
-<p>Example:</p>
-<ul>
-<li>{label: positive | negative | neutral}</li>
-</ul>
+<p>What format is expected? This defines the structure of the results.</p>
+<p><strong>Example:</strong> &gt; <code>{sentiment: "positive" | "negative" | "neutral", confidence: number}</code></p>
+<p>The output schema should be structured and match the needs of downstream systems.</p>
 <hr>
 </section>
 <section id="constraints" class="level3" data-number="8.6.4">
 <h3 data-number="8.6.4" class="anchored" data-anchor-id="constraints"><span class="header-section-number">8.6.4</span> 4. Constraints</h3>
-<p>What rules must be followed?</p>
-<p>Example:</p>
-<ul>
-<li><p>Use only one label</p></li>
-<li><p>Do not add explanation</p></li>
-</ul>
+<p>What rules must be followed? These are the boundaries within which the system must operate.</p>
+<p><strong>Example:</strong> &gt; - Use only one sentiment label &gt; Do not add explanation or justification &gt; - Confidence must be between 0 and 1</p>
+<p>Constraints ensure that the system produces appropriate results.</p>
 <hr>
 </section>
 <section id="evaluation-optional-but-critical" class="level3" data-number="8.6.5">
 <h3 data-number="8.6.5" class="anchored" data-anchor-id="evaluation-optional-but-critical"><span class="header-section-number">8.6.5</span> 5. Evaluation (optional but critical)</h3>
-<p>How do we know it is correct?</p>
-<p>Example:</p>
-<ul>
-<li>Output must match one of the predefined categories</li>
-</ul>
+<p>How do we know it is correct? This defines how to assess the quality of the output.</p>
+<p><strong>Example:</strong> &gt; - Output must match one of the predefined categories &gt; - Confidence should correlate with human judgment &gt; - Processing time should be under 1 second</p>
+<p>Evaluation criteria provide a basis for improving the instruction.</p>
 <hr>
 </section>
 </section>
 <section id="determinism-vs-flexibility" class="level2" data-number="8.7">
 <h2 data-number="8.7" class="anchored" data-anchor-id="determinism-vs-flexibility"><span class="header-section-number">8.7</span> Determinism vs Flexibility</h2>
-<p>Instructions operate in a space between:</p>
+<p>Instructions operate in a challenging space between two extremes:</p>
 <ul>
-<li><p>Deterministic systems (strict rules)</p></li>
-<li><p>Probabilistic systems (LLMs)</p></li>
+<li><strong>Deterministic systems</strong>—strict rules that always produce the same output</li>
+<li><strong>Probabilistic systems</strong>—LLMs that generate variable outputs based on probability</li>
 </ul>
 <hr>
 <section id="too-vague" class="level3" data-number="8.7.1">
 <h3 data-number="8.7.1" class="anchored" data-anchor-id="too-vague"><span class="header-section-number">8.7.1</span> Too vague</h3>
 <ul>
 <li>Leads to unpredictable outputs</li>
+<li>Behavior varies widely between runs</li>
+<li>System cannot be relied upon for consistent results</li>
 </ul>
+<hr>
 </section>
 <section id="too-rigid" class="level3" data-number="8.7.2">
 <h3 data-number="8.7.2" class="anchored" data-anchor-id="too-rigid"><span class="header-section-number">8.7.2</span> Too rigid</h3>
 <ul>
-<li>Reduces the strengths of the model</li>
+<li>Reduces the strengths and capabilities of the model</li>
+<li>Prevents the system from handling novel situations</li>
+<li>Makes the instruction brittle and fragile</li>
 </ul>
 <hr>
-<p>A good instruction:</p>
+</section>
+<section id="a-good-instruction" class="level3" data-number="8.7.3">
+<h3 data-number="8.7.3" class="anchored" data-anchor-id="a-good-instruction"><span class="header-section-number">8.7.3</span> A good instruction</h3>
 <ul>
-<li><p>Constrains structure</p></li>
-<li><p>Allows flexibility in generation</p></li>
+<li><strong>Constrains structure</strong>—specifies the format and organization of outputs</li>
+<li><strong>Allows flexibility in generation</strong>—lets the model use its capabilities within those structural constraints</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
 <p>Define the boundaries, not every step.</p>
 </blockquote>
+<p>The art of instruction design is finding the right balance between structure and flexibility.</p>
 <hr>
 </section>
 </section>
@@ -781,51 +775,67 @@ Instructions are operational.</p>
 <h2 data-number="8.8" class="anchored" data-anchor-id="instruction-as-interface"><span class="header-section-number">8.8</span> Instruction as Interface</h2>
 <p>Instruction is the interface between:</p>
 <ul>
-<li><p>Human-defined systems</p></li>
-<li><p>Machine-executed behavior</p></li>
+<li><strong>Human-defined systems</strong>—specs, constraints, and requirements</li>
+<li><strong>Machine-executed behavior</strong>—the actual execution performed by LLMs and agents</li>
 </ul>
 <p>It plays a role similar to:</p>
 <ul>
-<li><p>APIs in traditional systems</p></li>
-<li><p>Function signatures in programming</p></li>
+<li><strong>APIs</strong> in traditional systems—defining how to interact with a component</li>
+<li><strong>Function signatures</strong> in programming—specifying inputs, outputs, and behavior</li>
 </ul>
 <hr>
 <section id="example-analogy" class="level3" data-number="8.8.1">
 <h3 data-number="8.8.1" class="anchored" data-anchor-id="example-analogy"><span class="header-section-number">8.8.1</span> Example Analogy</h3>
+<p>In traditional programming:</p>
 <ul>
-<li><p>Spec = what a function should do</p></li>
-<li><p>Instruction = how to call the function</p></li>
+<li><strong>Spec</strong> = what a function should do (the contract)</li>
+<li><strong>Instruction</strong> = how to call the function (the invocation)</li>
 </ul>
+<p>The spec defines the behavior, while the instruction enables execution.</p>
 <hr>
-<p>This makes instructions:</p>
+<p>This interface-based perspective makes instructions:</p>
 <ul>
-<li><p>Modular</p></li>
-<li><p>Reusable</p></li>
-<li><p>Composable</p></li>
+<li><strong>Modular</strong>—can be developed, tested, and improved independently</li>
+<li><strong>Reusable</strong>—can be used in multiple contexts and systems</li>
+<li><strong>Composable</strong>—can be combined into larger workflows</li>
 </ul>
 <hr>
 </section>
 </section>
 <section id="composing-instructions" class="level2" data-number="8.9">
 <h2 data-number="8.9" class="anchored" data-anchor-id="composing-instructions"><span class="header-section-number">8.9</span> Composing Instructions</h2>
-<p>Complex systems are not built from a single instruction.</p>
-<p>They are composed of multiple instructions.</p>
+<p>Complex systems are not built from a single instruction. They are composed of multiple instructions that work together.</p>
 <hr>
 <section id="example" class="level3" data-number="8.9.1">
 <h3 data-number="8.9.1" class="anchored" data-anchor-id="example"><span class="header-section-number">8.9.1</span> Example</h3>
-<p>A pipeline may include:</p>
+<p>A document processing pipeline may include multiple instructions:</p>
 <ol type="1">
-<li><p>Retrieve data</p></li>
-<li><p>Process data</p></li>
-<li><p>Generate output</p></li>
+<li><strong>Retrieve data</strong>
+<ul>
+<li>Task: Fetch document from storage</li>
+<li>Input: <code>{document_id: string}</code></li>
+<li>Output: <code>{content: string, metadata: object}</code></li>
+</ul></li>
+<li><strong>Process data</strong>
+<ul>
+<li>Task: Extract key information</li>
+<li>Input: <code>{content: string, metadata: object}</code></li>
+<li>Output: <code>{entities: Array&lt;object&gt;, topics: Array&lt;string&gt;}</code></li>
+</ul></li>
+<li><strong>Generate output</strong>
+<ul>
+<li>Task: Create summary</li>
+<li>Input: <code>{entities: Array&lt;object&gt;, topics: Array&lt;string&gt;}</code></li>
+<li>Output: <code>{summary: string, highlights: Array&lt;string&gt;}</code></li>
+</ul></li>
 </ol>
+<hr>
 <p>Each step:</p>
 <ul>
-<li><p>Has its own instruction</p></li>
-<li><p>Produces structured output</p></li>
-<li><p>Feeds into the next step</p></li>
+<li>Has its own instruction</li>
+<li>Produces structured output</li>
+<li>Feeds into the next step</li>
 </ul>
-<hr>
 <blockquote class="blockquote">
 <p>Systems are networks of instructions.</p>
 </blockquote>
@@ -838,33 +848,40 @@ Instructions are operational.</p>
 <section id="treating-instructions-as-prompts" class="level3" data-number="8.10.1">
 <h3 data-number="8.10.1" class="anchored" data-anchor-id="treating-instructions-as-prompts"><span class="header-section-number">8.10.1</span> 1. Treating Instructions as Prompts</h3>
 <ul>
-<li><p>Leads to inconsistent behavior</p></li>
-<li><p>Makes systems unreliable</p></li>
+<li>Leads to inconsistent and unpredictable behavior</li>
+<li>Makes systems unreliable for production use</li>
 </ul>
+<p>Instruction requires structure and precision, not conversational flexibility.</p>
 <hr>
 </section>
 <section id="ignoring-output-structure" class="level3" data-number="8.10.2">
 <h3 data-number="8.10.2" class="anchored" data-anchor-id="ignoring-output-structure"><span class="header-section-number">8.10.2</span> 2. Ignoring Output Structure</h3>
 <ul>
-<li><p>Results become hard to use</p></li>
-<li><p>Breaks downstream processes</p></li>
+<li>Results become hard to use</li>
+<li>Breaks downstream processes</li>
+<li>Makes integration difficult</li>
 </ul>
+<p>Output structure is essential for building reliable systems.</p>
 <hr>
 </section>
 <section id="missing-constraints" class="level3" data-number="8.10.3">
 <h3 data-number="8.10.3" class="anchored" data-anchor-id="missing-constraints"><span class="header-section-number">8.10.3</span> 3. Missing Constraints</h3>
 <ul>
-<li><p>Outputs drift</p></li>
-<li><p>Quality degrades</p></li>
+<li>Outputs drift away from intended behavior</li>
+<li>Quality degrades over time</li>
+<li>System becomes unpredictable</li>
 </ul>
+<p>Constraints define the boundaries within which the system must operate.</p>
 <hr>
 </section>
 <section id="overloading-instructions" class="level3" data-number="8.10.4">
 <h3 data-number="8.10.4" class="anchored" data-anchor-id="overloading-instructions"><span class="header-section-number">8.10.4</span> 4. Overloading Instructions</h3>
 <ul>
-<li><p>Trying to do too much in one step</p></li>
-<li><p>Reduces clarity and control</p></li>
+<li>Trying to do too much in one step</li>
+<li>Reduces clarity and control</li>
+<li>Makes debugging and improvement difficult</li>
 </ul>
+<p>Each instruction should have a single, clear responsibility.</p>
 <hr>
 </section>
 </section>
@@ -873,37 +890,51 @@ Instructions are operational.</p>
 <p>In traditional programming, control is explicit:</p>
 <ul>
 <li>Step-by-step execution</li>
+<li>Precise control over every operation</li>
+<li>Deterministic behavior</li>
 </ul>
 <p>In instruction-based systems, control is indirect:</p>
 <ul>
-<li><p>Through constraints</p></li>
-<li><p>Through structure</p></li>
-<li><p>Through evaluation</p></li>
+<li>Through constraints—defining boundaries</li>
+<li>Through structure—specifying formats</li>
+<li>Through evaluation—measuring and correcting behavior</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>You do not control every step.<br>
-You control the shape of execution.</p>
+<p>You do not control every step. You control the shape of execution.</p>
 </blockquote>
+<p>This is a fundamental shift in how we think about control in software systems.</p>
 <hr>
 </section>
 <section id="final-insight" class="level2" data-number="8.12">
 <h2 data-number="8.12" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">8.12</span> Final Insight</h2>
-<p>Instruction is where definition becomes action.</p>
-<p>It is the point where:</p>
+<p>Instruction is where definition becomes action. It is the point where:</p>
 <ul>
-<li><p>Systems stop being conceptual</p></li>
-<li><p>Systems begin to produce results</p></li>
+<li>Systems stop being conceptual descriptions</li>
+<li>Systems begin to produce actual results</li>
 </ul>
+<p>Without instruction, even the best spec remains a static document. With instruction, specs become operational systems.</p>
 <hr>
 </section>
 <section id="closing-statement" class="level2" data-number="8.13">
 <h2 data-number="8.13" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">8.13</span> Closing Statement</h2>
-<p>In the LLM era, writing instructions is not about asking better questions.</p>
-<p>It is about defining executable protocols.</p>
+<p>In the LLM era, writing instructions is not about asking better questions or crafting clever prompts. It is about defining executable protocols.</p>
 <blockquote class="blockquote">
-<p>A well-defined instruction does not request behavior.<br>
-It produces it.</p>
+<p>A well-defined instruction does not request behavior. It produces it.</p>
+</blockquote>
+<p>The ability to design good instructions is now a core skill for system builders.</p>
+<hr>
+</section>
+<section id="key-insight" class="level2" data-number="8.14">
+<h2 data-number="8.14" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">8.14</span> Key Insight</h2>
+<blockquote class="blockquote">
+<p>Instruction translates specification into executable form. Unlike prompts, instructions are structured, explicit, and designed for reliable system execution. Good instructions balance structure with flexibility.</p>
+</blockquote>
+</section>
+<section id="action-hint" class="level2" data-number="8.15">
+<h2 data-number="8.15" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">8.15</span> Action Hint</h2>
+<blockquote class="blockquote">
+<p>Practice writing instructions for simple tasks. Use this format: Task, Input Schema, Output Schema, Constraints. Test your instructions by running them multiple times and checking for consistency. If results vary, your instruction needs more structure.</p>
 </blockquote>
 
 

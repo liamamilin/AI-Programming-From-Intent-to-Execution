@@ -295,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The New Bottleneck</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -551,6 +551,8 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">21.12</span> Final Insight</a></li>
   <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">21.13</span> Closing Statement</a></li>
+  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">21.14</span> Key Insight</a></li>
+  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">21.15</span> Action Hint</a></li>
   </ul>
 </nav>
     </div>
@@ -581,15 +583,15 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="21.1" class="anchored" data-anchor-id="from-generation-to-action"><span class="header-section-number">21.1</span> From Generation to Action</h2>
 <p>So far, we have focused on systems that:</p>
 <ul>
-<li><p>Process inputs</p></li>
-<li><p>Generate outputs</p></li>
+<li>Process inputs—receive information</li>
+<li>Generate outputs—produce text, code, or other content</li>
 </ul>
-<p>However, many real-world tasks require more than generation.</p>
-<p>They require:</p>
+<p>These systems are powerful but limited. They operate entirely within the realm of language and knowledge, without the ability to interact with the external world.</p>
+<p>However, many real-world tasks require more than generation. They require:</p>
 <ul>
-<li><p>Access to external data</p></li>
-<li><p>Interaction with systems</p></li>
-<li><p>Execution of operations</p></li>
+<li><strong>Access to external data</strong>—retrieving information from databases, APIs, or the web</li>
+<li><strong>Interaction with systems</strong>—calling services, executing commands, controlling hardware</li>
+<li><strong>Execution of operations</strong>—performing calculations, accessing files, sending messages</li>
 </ul>
 <p>This introduces a new capability:</p>
 <blockquote class="blockquote">
@@ -603,170 +605,145 @@ ul.task-list li input[type="checkbox"] {
 <blockquote class="blockquote">
 <p><strong>Invoke external functions or systems to extend its capabilities</strong></p>
 </blockquote>
+<p>It transforms a system from a language processor into an operational agent that can interact with the world.</p>
 <hr>
 <section id="examples-of-tools" class="level3" data-number="21.2.1">
 <h3 data-number="21.2.1" class="anchored" data-anchor-id="examples-of-tools"><span class="header-section-number">21.2.1</span> Examples of Tools</h3>
 <ul>
-<li><p>APIs (weather, search, database)</p></li>
-<li><p>Calculators</p></li>
-<li><p>File systems</p></li>
-<li><p>External services</p></li>
+<li><strong>APIs</strong>—weather services, search engines, databases</li>
+<li><strong>Calculators</strong>—performing mathematical computations</li>
+<li><strong>File systems</strong>—reading and writing files</li>
+<li><strong>External services</strong>—sending emails, making payments, controlling devices</li>
 </ul>
 <hr>
 <p>Without tools, an agent is limited to:</p>
 <ul>
-<li><p>Its internal knowledge</p></li>
-<li><p>Its generative ability</p></li>
+<li>Its internal knowledge—what it learned during training</li>
+<li>Its generative ability—what it can create from that knowledge</li>
+<li>Its understanding—how it interprets and processes information</li>
 </ul>
 <p>With tools, an agent can:</p>
 <ul>
-<li><p>Retrieve real-time data</p></li>
-<li><p>Perform computations</p></li>
-<li><p>Interact with the environment</p></li>
+<li><strong>Retrieve real-time data</strong>—access current information not in training data</li>
+<li><strong>Perform computations</strong>—execute calculations with precision</li>
+<li><strong>Interact with the environment</strong>—control and modify external systems</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Tools extend the system beyond language.</p>
+<p>Tools extend the system beyond language, enabling action in the real world.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="why-tool-use-is-necessary" class="level2" data-number="21.3">
 <h2 data-number="21.3" class="anchored" data-anchor-id="why-tool-use-is-necessary"><span class="header-section-number">21.3</span> Why Tool Use is Necessary</h2>
-<p>LLMs alone have limitations:</p>
+<p>LLMs alone have inherent limitations that restrict their usefulness for many real-world applications:</p>
 <ul>
-<li><p>No real-time knowledge</p></li>
-<li><p>Limited precision in computation</p></li>
-<li><p>No direct interaction with external systems</p></li>
+<li><strong>No real-time knowledge</strong>—training data has a cutoff date</li>
+<li><strong>Limited precision in computation</strong>—not designed for exact calculations</li>
+<li><strong>No direct interaction with external systems</strong>—cannot access databases, APIs, or services</li>
 </ul>
-<p>Tool use addresses these limitations.</p>
+<p>Tool use addresses these limitations, enabling systems to overcome their inherent constraints.</p>
 <hr>
 <section id="example" class="level3" data-number="21.3.1">
 <h3 data-number="21.3.1" class="anchored" data-anchor-id="example"><span class="header-section-number">21.3.1</span> Example</h3>
-<p>Without tools:</p>
-<ul>
-<li>“What is the current weather?” → guessed or outdated</li>
-</ul>
-<p>With tools:</p>
-<ul>
-<li>Agent calls weather API → accurate answer</li>
-</ul>
+<p><strong>Without tools:</strong> - “What is the current weather in Tokyo?” - Response may be outdated or incorrect—system relies on training data</p>
+<p><strong>With tools:</strong> - Agent calls weather API → retrieves current data → provides accurate answer - Response is current and accurate—system accesses real-time information</p>
 <hr>
 <blockquote class="blockquote">
-<p>Tools bridge the gap between language and reality.</p>
+<p>Tools bridge the gap between language and reality. They enable systems to go beyond knowledge to action.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="agents-as-orchestrators" class="level2" data-number="21.4">
 <h2 data-number="21.4" class="anchored" data-anchor-id="agents-as-orchestrators"><span class="header-section-number">21.4</span> Agents as Orchestrators</h2>
-<p>With tool use, the role of the agent changes.</p>
-<p>It becomes:</p>
-<blockquote class="blockquote">
-<p><strong>An orchestrator of capabilities</strong></p>
-</blockquote>
+<p>With tool use, the role of the agent changes fundamentally. It transforms from a processor of language into an <strong>orchestrator of capabilities</strong>.</p>
 <hr>
 <p>Instead of:</p>
 <ul>
-<li>Directly solving every problem</li>
+<li>Directly solving every problem—generating answers from internal knowledge</li>
 </ul>
 <p>The agent:</p>
 <ul>
-<li><p>Decides when to use a tool</p></li>
-<li><p>Selects the appropriate tool</p></li>
-<li><p>Integrates the result</p></li>
+<li><strong>Decides when to use a tool</strong>—determining what capabilities are needed</li>
+<li><strong>Selects the appropriate tool</strong>—choosing the right function for the task</li>
+<li><strong>Integrates the result</strong>—combining tool output with reasoning to produce final answers</li>
 </ul>
 <hr>
 <section id="example-flow" class="level3" data-number="21.4.1">
 <h3 data-number="21.4.1" class="anchored" data-anchor-id="example-flow"><span class="header-section-number">21.4.1</span> Example Flow</h3>
 <pre><code>User Query → Agent → Tool Selection → API Call → Result → Final Response</code></pre>
+<p>The agent doesn’t know the answer directly, but it knows how to get it.</p>
 <hr>
 <blockquote class="blockquote">
-<p>The agent coordinates, rather than performs everything itself.</p>
+<p>The agent coordinates capabilities rather than performing everything itself. It becomes a manager of tools and resources.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="what-is-an-api" class="level2" data-number="21.5">
 <h2 data-number="21.5" class="anchored" data-anchor-id="what-is-an-api"><span class="header-section-number">21.5</span> What is an API?</h2>
-<p>An API (Application Programming Interface) is a defined way for systems to interact.</p>
-<p>It specifies:</p>
+<p>An API (Application Programming Interface) is a defined way for systems to interact. It specifies how different software components can communicate with each other.</p>
+<p>An API specifies:</p>
 <ul>
-<li><p>What functions are available</p></li>
-<li><p>What inputs they require</p></li>
-<li><p>What outputs they return</p></li>
+<li><strong>What functions are available</strong>—the operations that can be performed</li>
+<li><strong>What inputs they require</strong>—the parameters and data needed</li>
+<li><strong>What outputs they return</strong>—the results and format of responses</li>
 </ul>
 <hr>
 <section id="example-1" class="level3" data-number="21.5.1">
 <h3 data-number="21.5.1" class="anchored" data-anchor-id="example-1"><span class="header-section-number">21.5.1</span> Example</h3>
-<p>Weather API:</p>
-<ul>
-<li><p>Input: location</p></li>
-<li><p>Output: temperature, conditions</p></li>
-</ul>
+<p><strong>Weather API:</strong> - <strong>Input</strong>: location (city name or coordinates) - <strong>Output</strong>: temperature, conditions, humidity, forecast</p>
 <hr>
 <p>APIs are:</p>
 <ul>
-<li><p>Structured</p></li>
-<li><p>Predictable</p></li>
-<li><p>Machine-readable</p></li>
+<li><strong>Structured</strong>—follow defined formats and protocols</li>
+<li><strong>Predictable</strong>—same input produces same output</li>
+<li><strong>Machine-readable</strong>—designed for automated interaction</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>APIs are the standard interface for tool use.</p>
+<p>APIs are the standard interface for tool use. They provide a structured way for systems to interact.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="function-calling" class="level2" data-number="21.6">
 <h2 data-number="21.6" class="anchored" data-anchor-id="function-calling"><span class="header-section-number">21.6</span> Function Calling</h2>
-<p>Function calling is a mechanism that allows an agent to:</p>
-<blockquote class="blockquote">
-<p><strong>Select and invoke a predefined function with structured arguments</strong></p>
-</blockquote>
+<p>Function calling is a mechanism that allows an agent to select and invoke a predefined function with structured arguments.</p>
 <hr>
 <section id="key-idea" class="level3" data-number="21.6.1">
 <h3 data-number="21.6.1" class="anchored" data-anchor-id="key-idea"><span class="header-section-number">21.6.1</span> Key Idea</h3>
-<p>Instead of generating free text, the model generates:</p>
+<p>Instead of generating free text as output, the model generates:</p>
 <ul>
-<li><p>A function name</p></li>
-<li><p>A set of parameters</p></li>
+<li>A <strong>function name</strong>—which tool to use</li>
+<li>A set of <strong>parameters</strong>—what arguments to pass to the function</li>
 </ul>
 <hr>
 </section>
 <section id="example-2" class="level3" data-number="21.6.2">
 <h3 data-number="21.6.2" class="anchored" data-anchor-id="example-2"><span class="header-section-number">21.6.2</span> Example</h3>
-<p>Function:</p>
+<p><strong>Function:</strong></p>
 <pre><code>get_weather(location)</code></pre>
-<hr>
-<p>Agent Output:</p>
+<p><strong>Agent Output:</strong></p>
 <pre><code>call get_weather with {location: "Seattle"}</code></pre>
-<hr>
-<p>System executes:</p>
-<ul>
-<li><p>Calls API</p></li>
-<li><p>Returns result</p></li>
-</ul>
-<hr>
-<p>Agent continues:</p>
-<ul>
-<li>Integrates result into response</li>
-</ul>
+<p><strong>System executes:</strong> - Calls the weather API with “Seattle” as parameter - Returns the weather data for Seattle - Agent processes the result and formulates final response</p>
 <hr>
 <blockquote class="blockquote">
-<p>Function calling makes tool use structured and reliable.</p>
+<p>Function calling makes tool use structured and reliable. The agent doesn’t just guess—it follows a defined protocol.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="the-tool-use-loop" class="level2" data-number="21.7">
 <h2 data-number="21.7" class="anchored" data-anchor-id="the-tool-use-loop"><span class="header-section-number">21.7</span> The Tool Use Loop</h2>
-<p>Tool use introduces a new loop within execution:</p>
+<p>Tool use introduces a new loop within the execution phase—a cycle of reasoning, action, and observation.</p>
 <pre><code>Reason → Select Tool → Call Tool → Observe Result → Continue</code></pre>
 <hr>
 <p>This is often referred to as:</p>
 <ul>
-<li>ReAct (Reasoning + Acting)</li>
+<li><strong>ReAct</strong> (Reasoning + Acting)—a framework for tool-using agents</li>
 </ul>
 <hr>
 <section id="steps" class="level3" data-number="21.7.1">
@@ -775,40 +752,49 @@ ul.task-list li input[type="checkbox"] {
 <section id="reason" class="level4" data-number="21.7.1.1">
 <h4 data-number="21.7.1.1" class="anchored" data-anchor-id="reason"><span class="header-section-number">21.7.1.1</span> 1. Reason</h4>
 <ul>
-<li><p>Understand the task</p></li>
-<li><p>Determine if a tool is needed</p></li>
+<li>Understand the task—analyze what needs to be done</li>
+<li>Determine if a tool is needed—assess whether external capabilities are required</li>
+<li>Identify the right tool—choose the appropriate function for the situation</li>
 </ul>
 <hr>
 </section>
 <section id="select-tool" class="level4" data-number="21.7.1.2">
 <h4 data-number="21.7.1.2" class="anchored" data-anchor-id="select-tool"><span class="header-section-number">21.7.1.2</span> 2. Select Tool</h4>
 <ul>
-<li>Choose appropriate function</li>
+<li>Choose appropriate function—match tool to task</li>
+<li>Prepare parameters—format arguments correctly</li>
+<li>Validate inputs—ensure parameters are correct</li>
 </ul>
 <hr>
 </section>
 <section id="call-tool" class="level4" data-number="21.7.1.3">
 <h4 data-number="21.7.1.3" class="anchored" data-anchor-id="call-tool"><span class="header-section-number">21.7.1.3</span> 3. Call Tool</h4>
 <ul>
-<li>Provide structured input</li>
+<li>Provide structured input—pass parameters in correct format</li>
+<li>Execute the function—make the API call or run the operation</li>
+<li>Handle responses—process the tool’s output</li>
 </ul>
 <hr>
 </section>
 <section id="observe-result" class="level4" data-number="21.7.1.4">
 <h4 data-number="21.7.1.4" class="anchored" data-anchor-id="observe-result"><span class="header-section-number">21.7.1.4</span> 4. Observe Result</h4>
 <ul>
-<li>Receive output</li>
+<li>Receive output—get the result from the tool</li>
+<li>Analyze the result—understand what the tool returned</li>
+<li>Determine next steps—decide whether to continue or conclude</li>
 </ul>
 <hr>
 </section>
 <section id="continue" class="level4" data-number="21.7.1.5">
 <h4 data-number="21.7.1.5" class="anchored" data-anchor-id="continue"><span class="header-section-number">21.7.1.5</span> 5. Continue</h4>
 <ul>
-<li>Use result to produce final output</li>
+<li>Use result to produce final output—integrate tool results into response</li>
+<li>Decide if more tools are needed—assess whether additional capabilities are required</li>
+<li>Complete the task—produce the final answer or action</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Tool use integrates reasoning with action.</p>
+<p>Tool use integrates reasoning with action. The agent doesn’t just think—it acts, observes, and continues.</p>
 </blockquote>
 <hr>
 </section>
@@ -816,153 +802,180 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="designing-tools-for-agents" class="level2" data-number="21.8">
 <h2 data-number="21.8" class="anchored" data-anchor-id="designing-tools-for-agents"><span class="header-section-number">21.8</span> Designing Tools for Agents</h2>
-<p>Not all tools are equally usable.</p>
+<p>Not all tools are equally usable by AI agents. Designing effective tools requires understanding how agents think and interact.</p>
+<hr>
 <p>Good tools for agents have:</p>
 <hr>
 <section id="clear-interface" class="level3" data-number="21.8.1">
 <h3 data-number="21.8.1" class="anchored" data-anchor-id="clear-interface"><span class="header-section-number">21.8.1</span> 1. Clear Interface</h3>
 <ul>
-<li>Well-defined inputs and outputs</li>
+<li>Well-defined inputs and outputs—exact specifications of parameters and results</li>
+<li>Clear function names—descriptive names that indicate purpose</li>
+<li>Consistent behavior—predictable responses</li>
 </ul>
 <hr>
 </section>
 <section id="structured-data" class="level3" data-number="21.8.2">
 <h3 data-number="21.8.2" class="anchored" data-anchor-id="structured-data"><span class="header-section-number">21.8.2</span> 2. Structured Data</h3>
 <ul>
-<li>Machine-readable formats</li>
+<li>Machine-readable formats—JSON, XML, or other structured formats</li>
+<li>Explicit schemas—clear definition of data structures</li>
+<li>Type information—specification of data types</li>
 </ul>
 <hr>
 </section>
 <section id="minimal-ambiguity" class="level3" data-number="21.8.3">
 <h3 data-number="21.8.3" class="anchored" data-anchor-id="minimal-ambiguity"><span class="header-section-number">21.8.3</span> 3. Minimal Ambiguity</h3>
 <ul>
-<li>No hidden assumptions</li>
+<li>No hidden assumptions—all requirements are explicit</li>
+<li>Clear documentation—comprehensive descriptions of behavior</li>
+<li><ul>
+<li>Explicit error handling—defined behavior for error conditions</li>
+</ul></li>
 </ul>
 <hr>
 </section>
 <section id="focused-functionality" class="level3" data-number="21.8.4">
 <h3 data-number="21.8.4" class="anchored" data-anchor-id="focused-functionality"><span class="header-section-number">21.8.4</span> 4. Focused Functionality</h3>
 <ul>
-<li>One clear purpose per tool</li>
+<li>One clear purpose per tool—single responsibility</li>
+<li>Composable design—tools can be combined</li>
+<li>Atomic operations—tools do one thing well</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Tools should be designed for machines, not humans.</p>
+<p>Tools should be designed for machines, not humans. They need precision, structure, and clarity.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="integration-with-instruction-design" class="level2" data-number="21.9">
 <h2 data-number="21.9" class="anchored" data-anchor-id="integration-with-instruction-design"><span class="header-section-number">21.9</span> Integration with Instruction Design</h2>
-<p>Tool use must be reflected in instructions.</p>
-<p>An instruction should specify:</p>
+<p>Tool use must be reflected in system instructions. The instruction should specify:</p>
 <ul>
-<li><p>Available tools</p></li>
-<li><p>When to use them</p></li>
-<li><p>How to format calls</p></li>
+<li><strong>Available tools</strong>—what functions the agent can use</li>
+<li><strong>When to use them</strong>—under what conditions tools should be invoked</li>
+<li><strong>How to format calls</strong>—the correct structure for tool invocations</li>
 </ul>
 <hr>
 <section id="example-3" class="level3" data-number="21.9.1">
 <h3 data-number="21.9.1" class="anchored" data-anchor-id="example-3"><span class="header-section-number">21.9.1</span> Example</h3>
-<ul>
-<li><p>“If real-time data is required, call the appropriate API.”</p></li>
-<li><p>“Use get_weather for weather queries.”</p></li>
-</ul>
+<p><strong>Instruction:</strong> - “If real-time data is required, call the appropriate API” - “Use get_weather for weather queries” - “Use search_api for information retrieval” - “Format tool calls as JSON: {tool: string, parameters: object}”</p>
 <hr>
 <blockquote class="blockquote">
-<p>Instruction defines the tool usage policy.</p>
+<p>Instruction defines the tool usage policy. It tells the agent when and how to use tools.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="common-mistakes" class="level2" data-number="21.10">
 <h2 data-number="21.10" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">21.10</span> Common Mistakes</h2>
+<p>Several common mistakes can undermine effective tool use:</p>
 <hr>
 <section id="overusing-tools" class="level3" data-number="21.10.1">
 <h3 data-number="21.10.1" class="anchored" data-anchor-id="overusing-tools"><span class="header-section-number">21.10.1</span> 1. Overusing Tools</h3>
 <ul>
-<li><p>Calling tools unnecessarily</p></li>
-<li><p>Reduces efficiency</p></li>
+<li><strong>Calling tools unnecessarily</strong>—invoking functions when not needed</li>
+<li><strong>Reducing efficiency</strong>—wasting time and resources</li>
+<li><strong>Complicating simple tasks</strong>—adding complexity where it’s not needed</li>
 </ul>
+<p><strong>Solution:</strong> Only use tools when necessary. Assess whether the task requires external capabilities.</p>
 <hr>
 </section>
 <section id="underusing-tools" class="level3" data-number="21.10.2">
 <h3 data-number="21.10.2" class="anchored" data-anchor-id="underusing-tools"><span class="header-section-number">21.10.2</span> 2. Underusing Tools</h3>
 <ul>
-<li><p>Ignoring available capabilities</p></li>
-<li><p>Leads to inaccurate results</p></li>
+<li><strong>Ignoring available capabilities</strong>—not using tools when they would help</li>
+<li><strong>Limiting system potential</strong>—failing to leverage available resources</li>
+<li><strong>Producing inferior results</strong>—answers could be better with tools</li>
 </ul>
+<p><strong>Solution:</strong> Recognize when tools would improve results. Don’t hesitate to use appropriate capabilities.</p>
 <hr>
 </section>
 <section id="poor-tool-design" class="level3" data-number="21.10.3">
 <h3 data-number="21.10.3" class="anchored" data-anchor-id="poor-tool-design"><span class="header-section-number">21.10.3</span> 3. Poor Tool Design</h3>
 <ul>
-<li><p>Ambiguous interfaces</p></li>
-<li><p>Hard to integrate</p></li>
+<li><strong>Ambiguous interfaces</strong>—unclear inputs or outputs</li>
+<li><strong>Hard to integrate</strong>—difficult to use with agents</li>
+<li><strong>Unreliable behavior</strong>—inconsistent or unpredictable responses</li>
 </ul>
+<p><strong>Solution:</strong> Design tools with agents in mind. Clear interfaces, structured data, and consistent behavior.</p>
 <hr>
 </section>
 <section id="lack-of-error-handling" class="level3" data-number="21.10.4">
 <h3 data-number="21.10.4" class="anchored" data-anchor-id="lack-of-error-handling"><span class="header-section-number">21.10.4</span> 4. Lack of Error Handling</h3>
 <ul>
-<li><p>Tool failures not handled</p></li>
-<li><p>System breaks</p></li>
+<li><strong>Tool failures not handled</strong>—system breaks when tools fail</li>
+<li><strong>No fallback mechanisms</strong>—no alternative when tools are unavailable</li>
+<li><strong>Poor error recovery</strong>—cannot recover from tool errors</li>
 </ul>
+<p><strong>Solution:</strong> Implement robust error handling. Define fallback behavior and recovery mechanisms.</p>
 <hr>
 </section>
 </section>
 <section id="tool-use-as-capability-expansion" class="level2" data-number="21.11">
 <h2 data-number="21.11" class="anchored" data-anchor-id="tool-use-as-capability-expansion"><span class="header-section-number">21.11</span> Tool Use as Capability Expansion</h2>
-<p>Tool use fundamentally changes what systems can do.</p>
+<p>Tool use fundamentally changes what systems can do. It transforms systems from language processors into operational agents.</p>
 <hr>
 <section id="without-tools" class="level3" data-number="21.11.1">
 <h3 data-number="21.11.1" class="anchored" data-anchor-id="without-tools"><span class="header-section-number">21.11.1</span> Without Tools</h3>
 <ul>
-<li><p>Generate text</p></li>
-<li><p>Perform reasoning</p></li>
+<li><strong>Generate text</strong>—create written content</li>
+<li><strong>Perform reasoning</strong>—draw inferences and conclusions</li>
+<li><strong>Process information</strong>—analyze and synthesize knowledge</li>
 </ul>
 <hr>
 </section>
 <section id="with-tools" class="level3" data-number="21.11.2">
 <h3 data-number="21.11.2" class="anchored" data-anchor-id="with-tools"><span class="header-section-number">21.11.2</span> With Tools</h3>
 <ul>
-<li><p>Interact with real systems</p></li>
-<li><p>Execute actions</p></li>
-<li><p>Access external knowledge</p></li>
+<li><strong>Interact with real systems</strong>—access databases, APIs, and services</li>
+<li><strong>Execute actions</strong>—perform operations in the external world</li>
+<li><strong>Access external knowledge</strong>—retrieve current and specific information</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Tool use turns language systems into operational systems.</p>
+<p>Tool use turns language systems into operational systems. It enables action, not just understanding.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="final-insight" class="level2" data-number="21.12">
 <h2 data-number="21.12" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">21.12</span> Final Insight</h2>
-<p>Tool use extends the Minimal Loop.</p>
+<p>Tool use extends the Minimal Loop, transforming systems from processors to agents:</p>
 <pre><code>Intent → Spec → Instruction → Execution (with Tools) → Evaluation</code></pre>
 <hr>
-<p>Execution is no longer:</p>
+<p>Execution is no longer just generation. It becomes:</p>
 <ul>
-<li>Just generation</li>
-</ul>
-<p>It becomes:</p>
-<ul>
-<li>Coordination of capabilities</li>
+<li><strong>Coordination of capabilities</strong>—managing multiple tools and resources</li>
+<li><strong>Integration of results</strong>—combining tool outputs with reasoning</li>
+<li><strong>Action in the world</strong>—interacting with external systems</li>
 </ul>
 <hr>
 </section>
 <section id="closing-statement" class="level2" data-number="21.13">
 <h2 data-number="21.13" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">21.13</span> Closing Statement</h2>
-<p>In the LLM era, the most powerful systems are not those that generate the best text.</p>
-<p>They are those that can:</p>
+<p>In the LLM era, the most powerful systems are not those that generate the best text. They are those that can:</p>
 <ul>
-<li><p>Use the right tools</p></li>
-<li><p>At the right time</p></li>
-<li><p>In the right way</p></li>
+<li><strong>Use the right tools</strong>—select appropriate capabilities for each task</li>
+<li><strong>At the right time</strong>—invoke tools when needed</li>
+<li><strong>In the right way</strong>—format calls correctly and handle responses</li>
 </ul>
 <blockquote class="blockquote">
 <p>Tool use is how systems move from understanding to action.</p>
+</blockquote>
+<hr>
+</section>
+<section id="key-insight" class="level2" data-number="21.14">
+<h2 data-number="21.14" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">21.14</span> Key Insight</h2>
+<blockquote class="blockquote">
+<p>Tool use enables agents to invoke external functions, extending their capabilities beyond language. Key components include APIs, function calling, and the tool use loop (Reason → Select → Call → Observe → Continue).</p>
+</blockquote>
+</section>
+<section id="action-hint" class="level2" data-number="21.15">
+<h2 data-number="21.15" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">21.15</span> Action Hint</h2>
+<blockquote class="blockquote">
+<p>When designing systems, identify what external capabilities are needed. Design tools with clear interfaces and structured data. Implement robust error handling. In instructions, specify when and how to use tools. Test tool integration thoroughly.</p>
 </blockquote>
 
 

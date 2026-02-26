@@ -295,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The New Bottleneck</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -520,7 +520,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#memory-system" id="toc-memory-system" class="nav-link" data-scroll-target="#memory-system"><span class="header-section-number">24.4.6</span> 6. Memory System</a></li>
   <li><a href="#evaluation-layer" id="toc-evaluation-layer" class="nav-link" data-scroll-target="#evaluation-layer"><span class="header-section-number">24.4.7</span> 7. Evaluation Layer</a></li>
   </ul></li>
-  <li><a href="#the-main-flow-of-an-agent-system" id="toc-the-main-flow-of-an-agent-system" class="nav-link" data-scroll-target="#the-main-flow-of-an-agent-system"><span class="header-section-number">24.5</span> The Main Flow of an Agent System</a></li>
+  <li><a href="#the-main-flow-of-an-agent-system" id="toc-the-main-flow-of-an-agent-system" class="nav-link" data-scroll-target="#the-main-flow-of-an-agent-system"><span class="header-section-number">24.5</span> The Main Flow of an Agent System</a>
+  <ul class="collapse">
+  <li><a href="#step-by-step-breakdown" id="toc-step-by-step-breakdown" class="nav-link" data-scroll-target="#step-by-step-breakdown"><span class="header-section-number">24.5.1</span> Step-by-Step Breakdown</a></li>
+  </ul></li>
   <li><a href="#designing-the-system" id="toc-designing-the-system" class="nav-link" data-scroll-target="#designing-the-system"><span class="header-section-number">24.6</span> Designing the System</a>
   <ul class="collapse">
   <li><a href="#step-1-define-the-goal" id="toc-step-1-define-the-goal" class="nav-link" data-scroll-target="#step-1-define-the-goal"><span class="header-section-number">24.6.1</span> Step 1: Define the Goal</a></li>
@@ -558,6 +561,8 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">24.12</span> Final Insight</a></li>
   <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">24.13</span> Closing Statement</a></li>
+  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">24.14</span> Key Insight</a></li>
+  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">24.15</span> Action Hint</a></li>
   </ul>
 </nav>
     </div>
@@ -588,19 +593,23 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="24.1" class="anchored" data-anchor-id="from-task-to-system"><span class="header-section-number">24.1</span> From Task to System</h2>
 <p>Up to this point, we have focused on:</p>
 <ul>
-<li><p>Single tasks</p></li>
-<li><p>Individual instructions</p></li>
-<li><p>Isolated executions</p></li>
+<li><strong>Single tasks</strong>—individual operations or queries</li>
+<li><strong>Individual instructions</strong>—specific protocols for execution</li>
+<li><strong>Isolated executions</strong>—one-off actions without persistence</li>
 </ul>
-<p>This is useful for understanding components.</p>
-<p>But real-world applications are not single tasks.</p>
-<p>They are:</p>
+<p>This approach is useful for:</p>
 <ul>
-<li><p>Multi-step</p></li>
-<li><p>Stateful</p></li>
-<li><p>Interactive</p></li>
+<li>Understanding components—learning how each part works</li>
+<li>Testing capabilities—verifying that functions work correctly</li>
+<li>Simple applications—handling straightforward use cases</li>
 </ul>
-<p>This requires a shift:</p>
+<p>But real-world applications are not single tasks. They are:</p>
+<ul>
+<li><strong>Multi-step</strong>—requiring sequences of operations</li>
+<li><strong>Stateful</strong>—maintaining information across interactions</li>
+<li><strong>Interactive</strong>—responding to user input and feedback</li>
+</ul>
+<p>This requires a fundamental shift:</p>
 <blockquote class="blockquote">
 <p><strong>From solving one task → to building a system that continuously solves tasks</strong></p>
 </blockquote>
@@ -614,144 +623,168 @@ ul.task-list li input[type="checkbox"] {
 </blockquote>
 <p>It is not:</p>
 <ul>
-<li><p>A single prompt</p></li>
-<li><p>A one-time execution</p></li>
+<li>A single prompt—a one-time request to a model</li>
+<li>A one-time execution—a single operation that completes and ends</li>
+<li>An isolated process—a standalone function with no connection to others</li>
 </ul>
 <p>It is:</p>
 <ul>
-<li><p>A structured pipeline</p></li>
-<li><p>With memory, tools, and coordination</p></li>
+<li>A <strong>structured pipeline</strong>—a sequence of processing stages</li>
+<li>With <strong>memory</strong>—preserving information across time</li>
+<li>With <strong>tools</strong>—accessing external capabilities</li>
+<li>With <strong>coordination</strong>—managing multiple components and flows</li>
 </ul>
 <hr>
 </section>
 <section id="the-evolution-path" class="level2" data-number="24.3">
 <h2 data-number="24.3" class="anchored" data-anchor-id="the-evolution-path"><span class="header-section-number">24.3</span> The Evolution Path</h2>
-<p>Building an agent system follows a natural progression.</p>
+<p>Building an agent system follows a natural progression, from simple to complex. Understanding this path helps design systems incrementally, adding capabilities as needed.</p>
 <hr>
 <section id="stage-1-single-task" class="level3" data-number="24.3.1">
 <h3 data-number="24.3.1" class="anchored" data-anchor-id="stage-1-single-task"><span class="header-section-number">24.3.1</span> Stage 1 — Single Task</h3>
 <ul>
-<li><p>One input</p></li>
-<li><p>One output</p></li>
-<li><p>No memory</p></li>
+<li><strong>One input</strong>—a single query or request</li>
+<li><strong>One output</strong>—a single response or result</li>
+<li><strong>No memory</strong>—each execution is independent</li>
 </ul>
-<p>Example:</p>
-<ul>
-<li>Summarize a document</li>
-</ul>
+<p><strong>Example:</strong> - Summarize a document - Answer a question - Classify text</p>
+<p><strong>Use case:</strong> - Simple, one-off operations - Testing capabilities - Prototyping functionality</p>
 <hr>
 </section>
 <section id="stage-2-structured-task" class="level3" data-number="24.3.2">
 <h3 data-number="24.3.2" class="anchored" data-anchor-id="stage-2-structured-task"><span class="header-section-number">24.3.2</span> Stage 2 — Structured Task</h3>
 <ul>
-<li><p>Defined spec</p></li>
-<li><p>Structured instruction</p></li>
-<li><p>Controlled output</p></li>
+<li><strong>Defined spec</strong>—clear specification of requirements</li>
+<li><strong>Structured instruction</strong>—explicit protocol for execution</li>
+<li><strong>Controlled output</strong>—predictable, consistent results</li>
 </ul>
+<p><strong>Example:</strong> - Summarize with specific constraints (length, format, content) - Answer with reference to sources - Classify with confidence scores</p>
+<p><strong>Use case:</strong> - More reliable single tasks - Production-ready individual operations - - Components of larger systems</p>
 <hr>
 </section>
 <section id="stage-3-multi-step-task" class="level3" data-number="24.3.3">
 <h3 data-number="24.3.3" class="anchored" data-anchor-id="stage-3-multi-step-task"><span class="header-section-number">24.3.3</span> Stage 3 — Multi-Step Task</h3>
 <ul>
-<li><p>Multiple instructions</p></li>
-<li><p>Sequential flow</p></li>
+<li><strong>Multiple instructions</strong>—sequence of operations</li>
+<li><strong>Sequential flow</strong>—each step builds on previous</li>
+<li><strong>Intermediate outputs</strong>—results passed between steps</li>
 </ul>
-<p>Example:</p>
-<ul>
-<li>Retrieve → summarize → format</li>
-</ul>
+<p><strong>Example:</strong> - Retrieve documents → Summarize → Format → Output - Analyze → Classify → Report → Store - Extract → Transform → Load (ETL)</p>
+<p><strong>Use case:</strong> - Complex workflows - Data processing pipelines - - Multi-stage reasoning</p>
 <hr>
 </section>
 <section id="stage-4-stateful-system" class="level3" data-number="24.3.4">
 <h3 data-number="24.3.4" class="anchored" data-anchor-id="stage-4-stateful-system"><span class="header-section-number">24.3.4</span> Stage 4 — Stateful System</h3>
 <ul>
-<li><p>Maintains context</p></li>
-<li><p>Uses memory</p></li>
+<li><strong>Maintains context</strong>—preserves information across executions</li>
+<li><strong>Uses memory</strong>—stores and retrieves data over time</li>
+<li><strong>Adapts behavior</strong>—changes based on history</li>
 </ul>
+<p><strong>Example:</strong> - Conversation system that remembers previous turns - Personalized assistant that learns preferences - - Adaptive system that improves with use</p>
+<p><strong>Use case:</strong> - Interactive applications - Long-running processes - - Personalized experiences</p>
 <hr>
 </section>
 <section id="stage-5-full-agent-system" class="level3" data-number="24.3.5">
 <h3 data-number="24.3.5" class="anchored" data-anchor-id="stage-5-full-agent-system"><span class="header-section-number">24.3.5</span> Stage 5 — Full Agent System</h3>
 <ul>
-<li><p>Uses tools</p></li>
-<li><p>Handles multiple tasks</p></li>
-<li><p>Iterates and adapts</p></li>
+<li><strong>Uses tools</strong>—accesses external APIs and services</li>
+<li><strong>Handles multiple tasks</strong>—supports various operations</li>
+<li><strong>Iterates and adapts</strong>—improves through feedback</li>
 </ul>
+<p><strong>Example:</strong> - Virtual assistant with search, calculation, and reasoning capabilities - - Research agent that can query databases, analyze data, and generate reports - - Autonomous agent that can plan, execute, and evaluate tasks</p>
+<p><strong>Use case:</strong> - Production systems - - Complex applications - - Autonomous operation</p>
 <hr>
 <pre><code>Task → Structured Task → Multi-Step → Stateful → Agent System</code></pre>
+<p>Each stage adds capabilities, transforming from a simple function to a sophisticated system.</p>
 <hr>
 <blockquote class="blockquote">
-<p>Systems evolve through layering capabilities.</p>
+<p>Systems evolve through layering capabilities. Start simple, add complexity as needed.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="core-components-of-an-agent-system" class="level2" data-number="24.4">
 <h2 data-number="24.4" class="anchored" data-anchor-id="core-components-of-an-agent-system"><span class="header-section-number">24.4</span> Core Components of an Agent System</h2>
-<p>A complete agent system typically includes:</p>
+<p>A complete agent system typically includes several layers, each with specific responsibilities:</p>
 <hr>
 <section id="input-interface" class="level3" data-number="24.4.1">
 <h3 data-number="24.4.1" class="anchored" data-anchor-id="input-interface"><span class="header-section-number">24.4.1</span> 1. Input Interface</h3>
 <ul>
-<li><p>Receives user input</p></li>
-<li><p>Validates format</p></li>
+<li><strong>Receives user input</strong>—accepts queries, commands, or data</li>
+<li><strong>Validates format</strong>—ensures input is correct and usable</li>
+<li><strong>Routes to appropriate handler</strong>—directs input to right component</li>
 </ul>
+<p><strong>Purpose:</strong> Ensure clean, valid input enters the system</p>
 <hr>
 </section>
 <section id="spec-layer" class="level3" data-number="24.4.2">
 <h3 data-number="24.4.2" class="anchored" data-anchor-id="spec-layer"><span class="header-section-number">24.4.2</span> 2. Spec Layer</h3>
 <ul>
-<li><p>Defines behavior</p></li>
-<li><p>Sets constraints</p></li>
+<li><strong>Defines behavior</strong>—specifies what the system should do</li>
+<li><strong>Sets constraints</strong>—establishes boundaries and limits</li>
+<li><strong>Determines success criteria</strong>—defines how to evaluate results</li>
 </ul>
+<p><strong>Purpose:</strong> Provide clear definition and guidance for execution</p>
 <hr>
 </section>
 <section id="instruction-layer" class="level3" data-number="24.4.3">
 <h3 data-number="24.4.3" class="anchored" data-anchor-id="instruction-layer"><span class="header-section-number">24.4.3</span> 3. Instruction Layer</h3>
 <ul>
-<li>Converts spec into executable form</li>
+<li><strong>Converts spec into executable form</strong>—translates definition into protocol</li>
+<li><strong>Manages instruction library</strong>—stores and retrieves instructions</li>
+<li><strong>Handles instruction composition</strong>—combines multiple instructions</li>
 </ul>
+<p><strong>Purpose:</strong> Transform definitions into executable operations</p>
 <hr>
 </section>
 <section id="execution-engine" class="level3" data-number="24.4.4">
 <h3 data-number="24.4.4" class="anchored" data-anchor-id="execution-engine"><span class="header-section-number">24.4.4</span> 4. Execution Engine</h3>
 <ul>
-<li><p>Runs instructions</p></li>
-<li><p>Coordinates actions</p></li>
+<li><strong>Runs instructions</strong>—executes the defined operations</li>
+<li><strong>Coordinates components</strong>—manages interaction between system parts</li>
+<li><strong>Handles tools</strong>—invokes external functions and services</li>
 </ul>
+<p><strong>Purpose:</strong> Actually perform the work defined in instructions</p>
 <hr>
 </section>
 <section id="tool-layer" class="level3" data-number="24.4.5">
 <h3 data-number="24.4.5" class="anchored" data-anchor-id="tool-layer"><span class="header-section-number">24.4.5</span> 5. Tool Layer</h3>
 <ul>
-<li><p>External APIs</p></li>
-<li><p>Functional capabilities</p></li>
+<li><strong>External APIs</strong>—interfaces to external services</li>
+<li><strong>Functional capabilities</strong>—computational and operational functions</li>
+<li><strong>Resource access</strong>—connections to databases, files, and systems</li>
 </ul>
+<p><strong>Purpose:</strong> Extend system capabilities beyond internal processing</p>
 <hr>
 </section>
 <section id="memory-system" class="level3" data-number="24.4.6">
 <h3 data-number="24.4.6" class="anchored" data-anchor-id="memory-system"><span class="header-section-number">24.4.6</span> 6. Memory System</h3>
 <ul>
-<li>Stores and retrieves information</li>
+<li><strong>Stores information</strong>—persists data across executions</li>
+<li><strong>Retrieves context</strong>—fetches relevant information for current task</li>
+<li><strong>Manages state</strong>—tracks system status and history</li>
 </ul>
+<p><strong>Purpose:</strong> Enable continuity and learning across time</p>
 <hr>
 </section>
 <section id="evaluation-layer" class="level3" data-number="24.4.7">
 <h3 data-number="24.4.7" class="anchored" data-anchor-id="evaluation-layer"><span class="header-section-number">24.4.7</span> 7. Evaluation Layer</h3>
 <ul>
-<li><p>Checks output quality</p></li>
-<li><p>Provides feedback</p></li>
+<li><strong>Checks output quality</strong>—validates results against requirements</li>
+<li><strong>Provides feedback</strong>—enables system improvement</li>
+<li><strong>Triggers corrections</strong>—handles failures and errors</li>
 </ul>
+<p><strong>Purpose:</strong> Ensure quality and enable continuous improvement</p>
 <hr>
 <blockquote class="blockquote">
-<p>An agent system is a composition of layers.</p>
+<p>An agent system is a composition of layers. Each layer has a specific responsibility, working together to produce reliable outcomes.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="the-main-flow-of-an-agent-system" class="level2" data-number="24.5">
 <h2 data-number="24.5" class="anchored" data-anchor-id="the-main-flow-of-an-agent-system"><span class="header-section-number">24.5</span> The Main Flow of an Agent System</h2>
-<p>A typical system flow:</p>
+<p>A typical agent system follows a structured flow from input to output:</p>
 <pre><code>Input
 → Context Construction
 → Spec / Instruction Selection
@@ -762,220 +795,347 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 <p>Each step is:</p>
 <ul>
-<li><p>Defined</p></li>
-<li><p>Structured</p></li>
-<li><p>Interconnected</p></li>
+<li><strong>Defined</strong>—has clear purpose and function</li>
+<li><strong>Structured</strong>—follows established protocols</li>
+<li><strong>Interconnected</strong>—relies on and feeds into other steps</li>
+</ul>
+<hr>
+<section id="step-by-step-breakdown" class="level3" data-number="24.5.1">
+<h3 data-number="24.5.1" class="anchored" data-anchor-id="step-by-step-breakdown"><span class="header-section-number">24.5.1</span> Step-by-Step Breakdown</h3>
+<hr>
+<section id="input" class="level4" data-number="24.5.1.1">
+<h4 data-number="24.5.1.1" class="anchored" data-anchor-id="input"><span class="header-section-number">24.5.1.1</span> 1. Input</h4>
+<ul>
+<li>Receive user query or task</li>
+<li>Validate format and content</li>
+<li>Route to appropriate handler</li>
 </ul>
 <hr>
 </section>
+<section id="context-construction" class="level4" data-number="24.5.1.2">
+<h4 data-number="24.5.1.2" class="anchored" data-anchor-id="context-construction"><span class="header-section-number">24.5.1.2</span> 2. Context Construction</h4>
+<ul>
+<li>Retrieve relevant information from memory</li>
+<li>Construct context for current task</li>
+<li>Prepare environment for execution</li>
+</ul>
+<hr>
+</section>
+<section id="specinstruction-selection" class="level4" data-number="24.5.1.3">
+<h4 data-number="24.5.1.3" class="anchored" data-anchor-id="specinstruction-selection"><span class="header-section-number">24.5.1.3</span> 3. Spec/Instruction Selection</h4>
+<ul>
+<li>Identify appropriate spec for task</li>
+<li>Select or generate corresponding instruction</li>
+<li>Prepare execution protocol</li>
+</ul>
+<hr>
+</section>
+<section id="execution" class="level4" data-number="24.5.1.4">
+<h4 data-number="24.5.1.4" class="anchored" data-anchor-id="execution"><span class="header-section-number">24.5.1.4</span> 4. Execution</h4>
+<ul>
+<li>Run instruction</li>
+<li>Use tools as needed</li>
+<li><ul>
+<li>Handle intermediate results</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="output" class="level4" data-number="24.5.1.5">
+<h4 data-number="24.5.1.5" class="anchored" data-anchor-id="output"><span class="header-section-number">24.5.1.5</span> 5. Output</h4>
+<ul>
+<li>Generate response or result</li>
+<li>Format for user or downstream system</li>
+<li><ul>
+<li>Present to user or pass to next stage</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="evaluation" class="level4" data-number="24.5.1.6">
+<h4 data-number="24.5.1.6" class="anchored" data-anchor-id="evaluation"><span class="header-section-number">24.5.1.6</span> 6. Evaluation</h4>
+<ul>
+<li>Validate output against requirements</li>
+<li>Check quality and correctness</li>
+<li><ul>
+<li>Determine if output is acceptable</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="memory-update" class="level4" data-number="24.5.1.7">
+<h4 data-number="24.5.1.7" class="anchored" data-anchor-id="memory-update"><span class="header-section-number">24.5.1.7</span> 7. Memory Update</h4>
+<ul>
+<li>Store interaction for future reference</li>
+<li><ul>
+<li>Update system state</li>
+</ul></li>
+<li><ul>
+<li>Learn from results</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+</section>
+</section>
 <section id="designing-the-system" class="level2" data-number="24.6">
 <h2 data-number="24.6" class="anchored" data-anchor-id="designing-the-system"><span class="header-section-number">24.6</span> Designing the System</h2>
-<p>Building an agent system requires structural thinking.</p>
+<p>Building an agent system requires structural thinking and careful design. The process involves:</p>
 <hr>
 <section id="step-1-define-the-goal" class="level3" data-number="24.6.1">
 <h3 data-number="24.6.1" class="anchored" data-anchor-id="step-1-define-the-goal"><span class="header-section-number">24.6.1</span> Step 1: Define the Goal</h3>
 <ul>
 <li>What problem does the system solve?</li>
+<li>What value does it provide?</li>
+<li>Who will use it?</li>
 </ul>
+<p><strong>Purpose:</strong> Establish clear objectives and constraints</p>
 <hr>
 </section>
 <section id="step-2-define-capabilities" class="level3" data-number="24.6.2">
 <h3 data-number="24.6.2" class="anchored" data-anchor-id="step-2-define-capabilities"><span class="header-section-number">24.6.2</span> Step 2: Define Capabilities</h3>
 <ul>
 <li>What can the system do?</li>
+<li>What tools does it need?</li>
+<li>What information must it access?</li>
 </ul>
+<p><strong>Purpose:</strong> Identify required functionality and resources</p>
 <hr>
 </section>
 <section id="step-3-define-modules" class="level3" data-number="24.6.3">
 <h3 data-number="24.6.3" class="anchored" data-anchor-id="step-3-define-modules"><span class="header-section-number">24.6.3</span> Step 3: Define Modules</h3>
 <ul>
 <li>What components are needed?</li>
+<li>How should they be organized?</li>
+<li>What are their responsibilities?</li>
 </ul>
+<p><strong>Purpose:</strong> Design system architecture and component structure</p>
 <hr>
 </section>
 <section id="step-4-define-flow" class="level3" data-number="24.6.4">
 <h3 data-number="24.6.4" class="anchored" data-anchor-id="step-4-define-flow"><span class="header-section-number">24.6.4</span> Step 4: Define Flow</h3>
 <ul>
 <li>How do components interact?</li>
+<li>What is the sequence of operations?</li>
+<li>How does data flow through the system?</li>
 </ul>
+<p><strong>Purpose:</strong> Establish clear processes and communication protocols</p>
 <hr>
 </section>
 <section id="step-5-define-interfaces" class="level3" data-number="24.6.5">
 <h3 data-number="24.6.5" class="anchored" data-anchor-id="step-5-define-interfaces"><span class="header-section-number">24.6.5</span> Step 5: Define Interfaces</h3>
 <ul>
-<li>How data moves between modules?</li>
+<li>How do modules communicate?</li>
+<li>What formats do they use?</li>
+<li>How are errors handled?</li>
 </ul>
+<p><strong>Purpose:</strong> Ensure reliable integration between components</p>
 <hr>
 <blockquote class="blockquote">
-<p>Design precedes implementation.</p>
+<p>Design precedes implementation. A well-designed system is easier to build, test, and maintain.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="from-instructions-to-pipelines" class="level2" data-number="24.7">
 <h2 data-number="24.7" class="anchored" data-anchor-id="from-instructions-to-pipelines"><span class="header-section-number">24.7</span> From Instructions to Pipelines</h2>
-<p>A system is not a single instruction.</p>
-<p>It is a pipeline of instructions.</p>
+<p>A system is not a single instruction. It is a pipeline of instructions—multiple operations working together to achieve complex goals.</p>
 <hr>
 <section id="example" class="level3" data-number="24.7.1">
 <h3 data-number="24.7.1" class="anchored" data-anchor-id="example"><span class="header-section-number">24.7.1</span> Example</h3>
 <pre><code>User Query
-→ Retrieval Instruction
-→ Processing Instruction
-→ Generation Instruction
-→ Formatting Instruction</code></pre>
+→ Retrieval Instruction (fetch relevant information)
+→ Processing Instruction (analyze and extract)
+→ Generation Instruction (create response)
+→ Formatting Instruction (structure and style output)</code></pre>
 <hr>
 <p>Each instruction:</p>
 <ul>
-<li><p>Has a clear role</p></li>
-<li><p>Produces structured output</p></li>
+<li><strong>Has a clear role</strong>—performs a specific function</li>
+<li><strong>Produces structured output</strong>—results in defined format</li>
+<li><strong>Feeds into next step</strong>—output becomes input for subsequent instruction</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Pipelines turn instructions into systems.</p>
+<p>Pipelines turn instructions into systems. They enable complex, multi-stage processing.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="adding-memory-and-feedback" class="level2" data-number="24.8">
 <h2 data-number="24.8" class="anchored" data-anchor-id="adding-memory-and-feedback"><span class="header-section-number">24.8</span> Adding Memory and Feedback</h2>
-<p>To make the system adaptive:</p>
+<p>To make the system adaptive and intelligent, it must incorporate memory and feedback mechanisms:</p>
 <hr>
 <section id="memory" class="level3" data-number="24.8.1">
 <h3 data-number="24.8.1" class="anchored" data-anchor-id="memory"><span class="header-section-number">24.8.1</span> Memory</h3>
 <ul>
-<li><p>Store past interactions</p></li>
-<li><p>Retrieve relevant data</p></li>
+<li><strong>Store past interactions</strong>—preserve conversation history and results</li>
+<li><strong>Retrieve relevant data</strong>—access information that informs current processing</li>
+<li><strong>Maintain state</strong>—track system status and configuration</li>
 </ul>
+<p><strong>Purpose:</strong> Enable continuity and learning</p>
 <hr>
 </section>
 <section id="feedback" class="level3" data-number="24.8.2">
 <h3 data-number="24.8.2" class="anchored" data-anchor-id="feedback"><span class="header-section-number">24.8.2</span> Feedback</h3>
 <ul>
-<li><p>Evaluate outputs</p></li>
-<li><p>Refine behavior</p></li>
+<li><strong>Evaluate outputs</strong>—assess quality and correctness</li>
+<li><strong>Identify errors</strong>—detect problems and failures</li>
+<li><strong>Refine behavior</strong>—improve instructions and processes</li>
 </ul>
+<p><strong>Purpose:</strong> Enable continuous improvement</p>
 <hr>
 <p>This creates:</p>
 <ul>
-<li><p>Continuous improvement</p></li>
-<li><p>Context-aware behavior</p></li>
+<li><strong>Continuous improvement</strong>—system gets better over time</li>
+<li><strong>Context-aware behavior</strong>—responses are informed by history</li>
+<li><strong>Adaptive operation</strong>—system adjusts based on experience</li>
 </ul>
 <hr>
 </section>
 </section>
 <section id="scaling-the-system" class="level2" data-number="24.9">
 <h2 data-number="24.9" class="anchored" data-anchor-id="scaling-the-system"><span class="header-section-number">24.9</span> Scaling the System</h2>
-<p>As systems grow:</p>
+<p>As systems grow in complexity and capability, they must scale effectively:</p>
 <hr>
 <section id="add-capabilities" class="level3" data-number="24.9.1">
 <h3 data-number="24.9.1" class="anchored" data-anchor-id="add-capabilities"><span class="header-section-number">24.9.1</span> Add Capabilities</h3>
 <ul>
-<li><p>More tools</p></li>
-<li><p>More functions</p></li>
+<li><strong>More tools</strong>—access additional external services</li>
+<li><strong>More functions</strong>—perform a wider range of operations</li>
+<li><strong>More knowledge</strong>—incorporate additional information</li>
 </ul>
 <hr>
 </section>
 <section id="add-agents" class="level3" data-number="24.9.2">
 <h3 data-number="24.9.2" class="anchored" data-anchor-id="add-agents"><span class="header-section-number">24.9.2</span> Add Agents</h3>
 <ul>
-<li><p>Specialized roles</p></li>
-<li><p>Distributed tasks</p></li>
+<li><strong>Specialized roles</strong>—agents focused on specific tasks</li>
+<li><strong>Distributed processing</strong>—parallel execution across agents</li>
+<li><strong>Collaborative operation</strong>—agents working together</li>
 </ul>
 <hr>
 </section>
 <section id="improve-spec" class="level3" data-number="24.9.3">
 <h3 data-number="24.9.3" class="anchored" data-anchor-id="improve-spec"><span class="header-section-number">24.9.3</span> Improve Spec</h3>
 <ul>
-<li><p>Better definitions</p></li>
-<li><p>More constraints</p></li>
+<li><strong>Better definitions</strong>—more precise and complete specifications</li>
+<li><strong>More constraints</strong>—clearer boundaries and requirements</li>
+<li><strong>Better evaluation</strong>—more accurate assessment of results</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>Scaling is achieved by adding structure, not complexity.</p>
+<p>Scaling is achieved by adding structure, not complexity. Well-architected systems scale gracefully.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="common-mistakes" class="level2" data-number="24.10">
 <h2 data-number="24.10" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">24.10</span> Common Mistakes</h2>
+<p>Several common mistakes undermine effective agent system design:</p>
 <hr>
 <section id="starting-too-complex" class="level3" data-number="24.10.1">
 <h3 data-number="24.10.1" class="anchored" data-anchor-id="starting-too-complex"><span class="header-section-number">24.10.1</span> 1. Starting Too Complex</h3>
 <ul>
-<li>Over-engineering early</li>
+<li><strong>Over-engineering early</strong>—building more than needed</li>
+<li><strong>Unnecessary complexity</strong>—making systems harder to understand and maintain</li>
+<li><strong>Wasted effort</strong>—building capabilities that aren’t used</li>
 </ul>
+<p><strong>Solution:</strong> Start simple. Add complexity as needed. Follow the evolution path from single task to full system.</p>
 <hr>
 </section>
 <section id="skipping-spec" class="level3" data-number="24.10.2">
 <h3 data-number="24.10.2" class="anchored" data-anchor-id="skipping-spec"><span class="header-section-number">24.10.2</span> 2. Skipping Spec</h3>
 <ul>
-<li>Leads to unstable systems</li>
+<li><strong>Undefined behavior</strong>—system actions are unclear</li>
+<li><strong>Unstable systems</strong>—inconsistent, unpredictable results</li>
+<li><strong>Difficult debugging</strong>—hard to identify and fix problems</li>
 </ul>
+<p><strong>Solution:</strong> Always define spec first. Clear specification leads to reliable systems.</p>
 <hr>
 </section>
 <section id="poor-interfaces" class="level3" data-number="24.10.3">
 <h3 data-number="24.10.3" class="anchored" data-anchor-id="poor-interfaces"><span class="header-section-number">24.10.3</span> 3. Poor Interfaces</h3>
 <ul>
-<li>Data mismatch between modules</li>
+<li><strong>Data mismatch</strong>—incompatible formats between components</li>
+<li><strong>Integration failures</strong>—components can’t communicate effectively</li>
+<li><strong>System brittleness</strong>—changes break existing functionality</li>
 </ul>
+<p><strong>Solution:</strong> Design clear interfaces. Specify formats, protocols, and error handling.</p>
 <hr>
 </section>
 <section id="lack-of-evaluation" class="level3" data-number="24.10.4">
 <h3 data-number="24.10.4" class="anchored" data-anchor-id="lack-of-evaluation"><span class="header-section-number">24.10.4</span> 4. Lack of Evaluation</h3>
 <ul>
-<li>No feedback loop</li>
+<li><strong>No feedback loop</strong>—system can’t learn or improve</li>
+<li><strong>Unknown quality</strong>—don’t know if results are correct</li>
+<li><strong>Silent failures</strong>—errors go undetected</li>
 </ul>
+<p><strong>Solution:</strong> Implement evaluation at every stage. Check quality, measure performance, and track errors.</p>
 <hr>
 </section>
 </section>
 <section id="system-thinking-vs-task-thinking" class="level2" data-number="24.11">
 <h2 data-number="24.11" class="anchored" data-anchor-id="system-thinking-vs-task-thinking"><span class="header-section-number">24.11</span> System Thinking vs Task Thinking</h2>
+<p>The shift from task to system represents a fundamental change in mindset:</p>
 <hr>
 <section id="task-thinking" class="level3" data-number="24.11.1">
 <h3 data-number="24.11.1" class="anchored" data-anchor-id="task-thinking"><span class="header-section-number">24.11.1</span> Task Thinking</h3>
 <ul>
-<li><p>Solve one problem</p></li>
-<li><p>One-time execution</p></li>
+<li><strong>Solve one problem</strong>—focus on individual operations</li>
+<li><strong>One-time execution</strong>—complete and forget</li>
+<li><strong>Isolated processes</strong>—no connection between operations</li>
 </ul>
+<p><strong>Limitations:</strong> - Can’t handle complexity - No continuity or learning - - Difficult to scale</p>
 <hr>
 </section>
 <section id="system-thinking" class="level3" data-number="24.11.2">
 <h3 data-number="24.11.2" class="anchored" data-anchor-id="system-thinking"><span class="header-section-number">24.11.2</span> System Thinking</h3>
 <ul>
-<li><p>Design repeatable processes</p></li>
-<li><p>Handle multiple inputs over time</p></li>
+<li><strong>Design repeatable processes</strong>—create sustainable workflows</li>
+<li><strong>Handle multiple inputs over time</strong>—maintain continuity</li>
+<li><strong>Build for scale</strong>—architect for growth and evolution</li>
 </ul>
+<p><strong>Benefits:</strong> - Handles complex problems - Learns and improves - - Scales effectively</p>
 <hr>
 <blockquote class="blockquote">
-<p>Systems produce value repeatedly.</p>
+<p>Systems produce value repeatedly. Tasks produce value once.</p>
 </blockquote>
 <hr>
 </section>
 </section>
 <section id="final-insight" class="level2" data-number="24.12">
 <h2 data-number="24.12" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">24.12</span> Final Insight</h2>
-<p>An agent system is not built in one step.</p>
-<p>It is constructed by:</p>
+<p>An agent system is not built in one step. It is constructed by:</p>
 <ul>
-<li><p>Layering capabilities</p></li>
-<li><p>Connecting components</p></li>
-<li><p>Refining definitions</p></li>
+<li><strong>Layering capabilities</strong>—adding functionality incrementally</li>
+<li><strong>Connecting components</strong>—integrating parts into a coherent whole</li>
+<li><strong>Refining definitions</strong>—improving specs and instructions over time</li>
 </ul>
 <hr>
 <blockquote class="blockquote">
-<p>You do not build systems all at once.<br>
-You evolve them from simple tasks.</p>
+<p>You do not build systems all at once. You evolve them from simple tasks, adding capabilities as needed, refining structure as you learn.</p>
 </blockquote>
 <hr>
 </section>
 <section id="closing-statement" class="level2" data-number="24.13">
 <h2 data-number="24.13" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">24.13</span> Closing Statement</h2>
-<p>In the LLM era, the goal is not to solve one problem.</p>
-<p>It is to build systems that solve classes of problems.</p>
+<p>In the LLM era, the goal is not to solve one problem. It is to build systems that solve classes of problems.</p>
 <blockquote class="blockquote">
-<p>From single tasks to systems,<br>
-structure is what enables scale.</p>
+<p>From single tasks to systems, structure is what enables scale.</p>
+</blockquote>
+<hr>
+</section>
+<section id="key-insight" class="level2" data-number="24.14">
+<h2 data-number="24.14" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">24.14</span> Key Insight</h2>
+<blockquote class="blockquote">
+<p>Agent systems evolve from single tasks through structured tasks, multi-step workflows, stateful systems, to full agent systems. Core components include input interface, spec layer, instruction layer, execution engine, tool layer, memory system, and evaluation layer.</p>
+</blockquote>
+</section>
+<section id="action-hint" class="level2" data-number="24.15">
+<h2 data-number="24.15" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">24.15</span> Action Hint</h2>
+<blockquote class="blockquote">
+<p>Follow the evolution path—start simple, add complexity as needed. Design components with clear responsibilities. Define interfaces for communication. Implement evaluation at every stage. Add memory and feedback for continuous improvement. Build for scale by adding structure, not complexity.</p>
 </blockquote>
 
 
