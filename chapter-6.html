@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Spec: Eliminating Ambiguity – AI Programming: From Intent to Execution</title>
+<title>7&nbsp; 规格说明：消除歧义（Spec: Eliminating Ambiguity） – AI Programming: From Intent to Execution</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,19 +37,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="./chapter-5.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-aa873432a3c62897e6c2091c0d30a948.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -250,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-6.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-6.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">规格说明：消除歧义（Spec: Eliminating Ambiguity）</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -263,9 +265,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AI Programming: From Intent to Execution</a> 
         <div class="sidebar-tools-main">
@@ -283,211 +283,211 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">前言（Preface）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">转变：从编码到定义（The Shift: From Coding to Defining）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">新的瓶颈：定义（The New Bottleneck: Definition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">编程现在是什么？（What is Programming Now?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">最小循环（The Minimal Loop）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">意图：定义要做什么（Intent: Defining What to Do）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">规格说明：消除歧义（Spec: Eliminating Ambiguity）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">指令：使其可执行（Instruction: Making It Executable）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">评估与迭代（Evaluation &amp; Iteration）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">可能性空间（Possibility Space）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">从 Spec 到指令（From Spec to Instruction）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">指令设计（Instruction Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">工具使用与 API（Tool Use &amp; APIs）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">构建智能体系统（Building an Agent System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">构建聊天系统（Building a Chat System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">从理想到产品（From Idea to Product）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-31.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">编程即系统设计（Programming as System Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">语言即操作系统（Language as an Operating System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">人类 + AI 认知（Human + AI Cognition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">构建者的未来（The Future of Builders）</span></span></a>
   </div>
 </li>
     </ul>
@@ -500,47 +500,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#from-intent-to-precision" id="toc-from-intent-to-precision" class="nav-link active" data-scroll-target="#from-intent-to-precision"><span class="header-section-number">7.1</span> From Intent to Precision</a></li>
-  <li><a href="#what-is-a-spec" id="toc-what-is-a-spec" class="nav-link" data-scroll-target="#what-is-a-spec"><span class="header-section-number">7.2</span> What is a Spec?</a></li>
-  <li><a href="#spec-as-constraint-not-description" id="toc-spec-as-constraint-not-description" class="nav-link" data-scroll-target="#spec-as-constraint-not-description"><span class="header-section-number">7.3</span> Spec as Constraint, Not Description</a>
+  <li><a href="#从意图到精确性" id="toc-从意图到精确性" class="nav-link active" data-scroll-target="#从意图到精确性"><span class="header-section-number">7.1</span> 从意图到精确性</a></li>
+  <li><a href="#什么是-specwhat-is-a-spec" id="toc-什么是-specwhat-is-a-spec" class="nav-link" data-scroll-target="#什么是-specwhat-is-a-spec"><span class="header-section-number">7.2</span> 什么是 Spec？（What is a Spec?）</a></li>
+  <li><a href="#spec-即约束而非描述spec-as-constraint-not-description" id="toc-spec-即约束而非描述spec-as-constraint-not-description" class="nav-link" data-scroll-target="#spec-即约束而非描述spec-as-constraint-not-description"><span class="header-section-number">7.3</span> Spec 即约束，而非描述（Spec as Constraint, Not Description）</a>
   <ul class="collapse">
-  <li><a href="#description-vs-specification" id="toc-description-vs-specification" class="nav-link" data-scroll-target="#description-vs-specification"><span class="header-section-number">7.3.1</span> Description vs Specification</a></li>
+  <li><a href="#描述-vs-规格说明" id="toc-描述-vs-规格说明" class="nav-link" data-scroll-target="#描述-vs-规格说明"><span class="header-section-number">7.3.1</span> 描述 vs 规格说明</a></li>
   </ul></li>
-  <li><a href="#the-function-of-spec" id="toc-the-function-of-spec" class="nav-link" data-scroll-target="#the-function-of-spec"><span class="header-section-number">7.4</span> The Function of Spec</a>
+  <li><a href="#spec-的功能the-function-of-spec" id="toc-spec-的功能the-function-of-spec" class="nav-link" data-scroll-target="#spec-的功能the-function-of-spec"><span class="header-section-number">7.4</span> Spec 的功能（The Function of Spec）</a>
   <ul class="collapse">
-  <li><a href="#remove-ambiguity" id="toc-remove-ambiguity" class="nav-link" data-scroll-target="#remove-ambiguity"><span class="header-section-number">7.4.1</span> 1. Remove Ambiguity</a></li>
-  <li><a href="#align-humans-and-systems" id="toc-align-humans-and-systems" class="nav-link" data-scroll-target="#align-humans-and-systems"><span class="header-section-number">7.4.2</span> 2. Align Humans and Systems</a></li>
-  <li><a href="#enable-execution" id="toc-enable-execution" class="nav-link" data-scroll-target="#enable-execution"><span class="header-section-number">7.4.3</span> 3. Enable Execution</a></li>
+  <li><a href="#消除歧义" id="toc-消除歧义" class="nav-link" data-scroll-target="#消除歧义"><span class="header-section-number">7.4.1</span> 1. 消除歧义</a></li>
+  <li><a href="#启用执行" id="toc-启用执行" class="nav-link" data-scroll-target="#启用执行"><span class="header-section-number">7.4.2</span> 2. 启用执行</a></li>
+  <li><a href="#促进评估" id="toc-促进评估" class="nav-link" data-scroll-target="#促进评估"><span class="header-section-number">7.4.3</span> 3. 促进评估</a></li>
   </ul></li>
-  <li><a href="#why-spec-is-the-core-layer" id="toc-why-spec-is-the-core-layer" class="nav-link" data-scroll-target="#why-spec-is-the-core-layer"><span class="header-section-number">7.5</span> Why Spec is the Core Layer</a>
-  <ul class="collapse">
-  <li><a href="#it-connects-both-sides" id="toc-it-connects-both-sides" class="nav-link" data-scroll-target="#it-connects-both-sides"><span class="header-section-number">7.5.1</span> It connects both sides</a></li>
-  <li><a href="#it-transforms-meaning" id="toc-it-transforms-meaning" class="nav-link" data-scroll-target="#it-transforms-meaning"><span class="header-section-number">7.5.2</span> It transforms meaning</a></li>
-  </ul></li>
-  <li><a href="#the-cost-of-missing-spec" id="toc-the-cost-of-missing-spec" class="nav-link" data-scroll-target="#the-cost-of-missing-spec"><span class="header-section-number">7.6</span> The Cost of Missing Spec</a>
-  <ul class="collapse">
-  <li><a href="#systems-behave-unpredictably" id="toc-systems-behave-unpredictably" class="nav-link" data-scroll-target="#systems-behave-unpredictably"><span class="header-section-number">7.6.1</span> 1. Systems behave unpredictably</a></li>
-  <li><a href="#iteration-becomes-inefficient" id="toc-iteration-becomes-inefficient" class="nav-link" data-scroll-target="#iteration-becomes-inefficient"><span class="header-section-number">7.6.2</span> 2. Iteration becomes inefficient</a></li>
-  <li><a href="#errors-are-misdiagnosed" id="toc-errors-are-misdiagnosed" class="nav-link" data-scroll-target="#errors-are-misdiagnosed"><span class="header-section-number">7.6.3</span> 3. Errors are misdiagnosed</a></li>
-  </ul></li>
-  <li><a href="#spec-vs-code" id="toc-spec-vs-code" class="nav-link" data-scroll-target="#spec-vs-code"><span class="header-section-number">7.7</span> Spec vs Code</a>
-  <ul class="collapse">
-  <li><a href="#before" id="toc-before" class="nav-link" data-scroll-target="#before"><span class="header-section-number">7.7.1</span> Before</a></li>
-  <li><a href="#now" id="toc-now" class="nav-link" data-scroll-target="#now"><span class="header-section-number">7.7.2</span> Now</a></li>
-  </ul></li>
-  <li><a href="#spec-as-a-first-class-artifact" id="toc-spec-as-a-first-class-artifact" class="nav-link" data-scroll-target="#spec-as-a-first-class-artifact"><span class="header-section-number">7.8</span> Spec as a First-Class Artifact</a></li>
-  <li><a href="#spec-enables-iteration" id="toc-spec-enables-iteration" class="nav-link" data-scroll-target="#spec-enables-iteration"><span class="header-section-number">7.9</span> Spec Enables Iteration</a></li>
-  <li><a href="#spec-and-control" id="toc-spec-and-control" class="nav-link" data-scroll-target="#spec-and-control"><span class="header-section-number">7.10</span> Spec and Control</a></li>
-  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">7.11</span> Common Mistakes</a>
-  <ul class="collapse">
-  <li><a href="#treating-spec-as-optional" id="toc-treating-spec-as-optional" class="nav-link" data-scroll-target="#treating-spec-as-optional"><span class="header-section-number">7.11.1</span> 1. Treating Spec as Optional</a></li>
-  <li><a href="#over-specifying" id="toc-over-specifying" class="nav-link" data-scroll-target="#over-specifying"><span class="header-section-number">7.11.2</span> 2. Over-specifying</a></li>
-  <li><a href="#under-specifying" id="toc-under-specifying" class="nav-link" data-scroll-target="#under-specifying"><span class="header-section-number">7.11.3</span> 3. Under-specifying</a></li>
-  </ul></li>
-  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">7.12</span> Final Insight</a></li>
-  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">7.13</span> Closing Statement</a></li>
-  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">7.14</span> Key Insight</a></li>
-  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">7.15</span> Action Hint</a></li>
+  <li><a href="#良好-spec-的特征characteristics-of-a-good-spec" id="toc-良好-spec-的特征characteristics-of-a-good-spec" class="nav-link" data-scroll-target="#良好-spec-的特征characteristics-of-a-good-spec"><span class="header-section-number">7.5</span> 良好 Spec 的特征（Characteristics of a Good Spec）</a></li>
+  <li><a href="#spec-不是什么what-spec-is-not" id="toc-spec-不是什么what-spec-is-not" class="nav-link" data-scroll-target="#spec-不是什么what-spec-is-not"><span class="header-section-number">7.6</span> Spec 不是什么（What Spec is Not）</a></li>
+  <li><a href="#实践编写一个-specpractice-writing-a-spec" id="toc-实践编写一个-specpractice-writing-a-spec" class="nav-link" data-scroll-target="#实践编写一个-specpractice-writing-a-spec"><span class="header-section-number">7.7</span> 实践：编写一个 Spec（Practice: Writing a Spec）</a></li>
+  <li><a href="#spec-作为桥梁spec-as-bridge" id="toc-spec-作为桥梁spec-as-bridge" class="nav-link" data-scroll-target="#spec-作为桥梁spec-as-bridge"><span class="header-section-number">7.8</span> Spec 作为桥梁（Spec as Bridge）</a></li>
   </ul>
 </nav>
     </div>
@@ -550,7 +525,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">规格说明：消除歧义（Spec: Eliminating Ambiguity）</span></h1>
 </div>
 
 
@@ -567,335 +542,119 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="from-intent-to-precision" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="from-intent-to-precision"><span class="header-section-number">7.1</span> From Intent to Precision</h2>
-<p>Intent defines what we want—it captures the human goal and aspiration. But intent alone is not enough to guide system development effectively.</p>
-<p>Intent, by its nature, is:</p>
-<ul>
-<li><strong>Incomplete</strong>—it doesn’t specify all necessary details</li>
-<li><strong>Context-dependent</strong>—it relies on unstated assumptions and background knowledge</li>
-<li><strong>Often ambiguous</strong>—it can be interpreted in multiple ways</li>
-</ul>
-<p>To make a system work reliably, intent must be transformed into something more precise and actionable. This transformation is the role of <strong>Spec (Specification)</strong>.</p>
+<section id="从意图到精确性" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="从意图到精确性"><span class="header-section-number">7.1</span> 从意图到精确性</h2>
+<p>意图定义了我们想要什么——它捕捉了人类的目标和愿望。但仅有意图不足以有效指导系统开发。</p>
+<p>意图本质上是不完整的、上下文依赖的、常常是歧义的。</p>
+<p>要让系统可靠地工作，意图必须被转化为更精确和可操作的东西。这种转化就是<strong>Spec（规格说明）</strong>的角色。</p>
 <blockquote class="blockquote">
-<p>Spec is where vague intention becomes structured definition.</p>
+<p>Spec 是将模糊的意图变成结构化定义的地方。</p>
 </blockquote>
 <hr>
 </section>
-<section id="what-is-a-spec" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="what-is-a-spec"><span class="header-section-number">7.2</span> What is a Spec?</h2>
-<p>A Spec is a <strong>structured, unambiguous description of a system’s behavior</strong>. It is the bridge between human intent and machine execution.</p>
-<p>A spec defines:</p>
+<section id="什么是-specwhat-is-a-spec" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="什么是-specwhat-is-a-spec"><span class="header-section-number">7.2</span> 什么是 Spec？（What is a Spec?）</h2>
+<p>Spec 是一个<strong>结构化的、无歧义的系统行为描述</strong>。它是人类意图和机器执行之间的桥梁。</p>
+<p>一个 Spec 定义：</p>
 <ul>
-<li><strong>What inputs the system receives</strong>—the data and information the system works with</li>
-<li><strong>What outputs it produces</strong>—the results and responses the system generates</li>
-<li><strong>What constraints it must follow</strong>—the boundaries and limitations the system must respect</li>
-<li><strong>What conditions determine success</strong>—the criteria for evaluating whether the system works correctly</li>
+<li><strong>系统接收什么输入</strong>——系统使用的数据和信息</li>
+<li><strong>产生什么输出</strong>——系统生成的结果和响应</li>
+<li><strong>必须遵循什么约束</strong>——系统必须尊重的边界和限制</li>
+<li><strong>什么条件决定成功</strong>——评估系统是否正常工作的标准</li>
 </ul>
-<p>Unlike intent, which is human-oriented and can be expressed in natural language, spec is:</p>
+<p>与意图不同——意图是人类导向的，可以用自然语言表达——Spec 是：</p>
 <ul>
-<li><strong>System-oriented</strong>—designed for machine interpretation and execution</li>
-<li><strong>Explicit</strong>—leaves nothing implicit or assumed</li>
-<li><strong>Verifiable</strong>—can be tested against objective criteria</li>
+<li><strong>系统导向的</strong>——设计用于机器解释和执行</li>
+<li><strong>显式的</strong>——不留下任何隐式或假设的东西</li>
+<li><strong>可验证的</strong>——可以对照客观标准进行测试</li>
 </ul>
 <hr>
 </section>
-<section id="spec-as-constraint-not-description" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="spec-as-constraint-not-description"><span class="header-section-number">7.3</span> Spec as Constraint, Not Description</h2>
-<p>A common and fundamental misunderstanding is to treat a spec as a “detailed description” of a system. This is incorrect and leads to poor specifications.</p>
-<p>A spec is not about describing everything a system does in exhaustive detail. It is about <strong>defining boundaries</strong>—specifying what the system must do, must not do, and how it must behave.</p>
-<hr>
-<section id="description-vs-specification" class="level3" data-number="7.3.1">
-<h3 data-number="7.3.1" class="anchored" data-anchor-id="description-vs-specification"><span class="header-section-number">7.3.1</span> Description vs Specification</h3>
-<p>Consider this example:</p>
-<p><strong>Description:</strong> &gt; “The system should respond quickly and accurately to user questions.”</p>
-<p>This description feels helpful but is fundamentally useless for system development. “Quickly” and “accurately” are subjective terms that cannot be measured or tested.</p>
-<p><strong>Specification:</strong> &gt; “Response time must be under 2 seconds for 95% of queries. Answers must reference retrieved documents when available. When no relevant documents are found, the system must explicitly state this limitation.”</p>
-<p>This specification is actionable. It defines concrete, measurable constraints that can be implemented and tested.</p>
-<hr>
+<section id="spec-即约束而非描述spec-as-constraint-not-description" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="spec-即约束而非描述spec-as-constraint-not-description"><span class="header-section-number">7.3</span> Spec 即约束，而非描述（Spec as Constraint, Not Description）</h2>
+<p>一个常见且根本性的误解是将 Spec 视为系统的”详细描述”。这并不正确，而且会导致糟糕的规格说明。</p>
+<p>Spec 不是以穷尽的细节描述系统做的一切。它是关于<strong>定义边界</strong>——指定系统必须做什么、不得做什么以及它必须如何行为。</p>
+<section id="描述-vs-规格说明" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="描述-vs-规格说明"><span class="header-section-number">7.3.1</span> 描述 vs 规格说明</h3>
+<p><strong>描述：</strong> “系统应快速、准确地响应用户问题。”</p>
+<p>这个描述感觉有帮助，但对系统开发基本无用。“快速”和”准确”是主观术语，无法衡量或测试。</p>
+<p><strong>规格说明：</strong> “95% 的查询响应时间必须在 2 秒以下。答案在可用时必须引用检索到的文档。当未找到相关文档时，系统必须明确说明这一限制。”</p>
+<p>这个规格说明是可操作的。它定义了一组具体、可衡量的约束，可以被实现和测试。</p>
 <blockquote class="blockquote">
-<p>Description explains. Specification constrains.</p>
+<p>描述解释。规格说明约束。</p>
 </blockquote>
-<p>The purpose of a spec is not to tell the system everything it might do. It is to tell the system what it must do and what it must not do.</p>
+<p>Spec 的目的不是告诉系统它可能做的一切。而是告诉系统它必须做什么和必须不做什么。</p>
 <hr>
 </section>
 </section>
-<section id="the-function-of-spec" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="the-function-of-spec"><span class="header-section-number">7.4</span> The Function of Spec</h2>
-<p>Spec performs three critical functions in system development:</p>
-<hr>
-<section id="remove-ambiguity" class="level3" data-number="7.4.1">
-<h3 data-number="7.4.1" class="anchored" data-anchor-id="remove-ambiguity"><span class="header-section-number">7.4.1</span> 1. Remove Ambiguity</h3>
-<p>Natural language allows multiple interpretations. A single statement can mean different things to different people or systems.</p>
-<p>Spec reduces this by:</p>
+<section id="spec-的功能the-function-of-spec" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="spec-的功能the-function-of-spec"><span class="header-section-number">7.4</span> Spec 的功能（The Function of Spec）</h2>
+<p>Spec 在系统开发中执行三个关键功能：</p>
+<section id="消除歧义" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="消除歧义"><span class="header-section-number">7.4.1</span> 1. 消除歧义</h3>
+<p>自然语言允许多种解释。一个陈述可以对不同的人或系统意味着不同的事情。</p>
+<p>Spec 通过以下方式减少这种情况：</p>
 <ul>
-<li><strong>Defining explicit inputs and outputs</strong>—specifying exactly what data goes in and comes out</li>
-<li><strong>Clarifying edge cases</strong>—determining how the system should handle unusual situations</li>
-<li><strong>Making assumptions visible</strong>—explicitly stating what is being assumed about context or environment</li>
+<li><strong>定义显式的输入和输出</strong>——精确指定什么数据进入和离开</li>
+<li><strong>设定具体、可衡量的标准</strong>——可测试的标准代替主观术语</li>
+<li><strong>使假设显式化</strong>——澄清未陈述的期望</li>
 </ul>
-<p>Without spec, different implementations will interpret the same intent in different ways, leading to inconsistent behavior.</p>
-<hr>
 </section>
-<section id="align-humans-and-systems" class="level3" data-number="7.4.2">
-<h3 data-number="7.4.2" class="anchored" data-anchor-id="align-humans-and-systems"><span class="header-section-number">7.4.2</span> 2. Align Humans and Systems</h3>
-<p>Spec serves as a shared contract between different stakeholders:</p>
-<ul>
-<li><strong>Humans</strong>—designers, developers, users, and stakeholders</li>
-<li><strong>Systems</strong>—LLMs, agents, and execution engines</li>
-</ul>
-<p>It ensures:</p>
-<ul>
-<li>Everyone is operating under the same definition</li>
-<li>There is no hidden interpretation gap between human intent and machine execution</li>
-<li>Success criteria are agreed upon upfront</li>
-</ul>
-<p>Without this alignment, systems may behave in ways that surprise their human counterparts, and humans may have unrealistic expectations of what systems can achieve.</p>
-<hr>
+<section id="启用执行" class="level3" data-number="7.4.2">
+<h3 data-number="7.4.2" class="anchored" data-anchor-id="启用执行"><span class="header-section-number">7.4.2</span> 2. 启用执行</h3>
+<p>一旦 Spec 被定义，它可以被转化为系统可以遵循的指令。没有 Spec，指令就没有基础——你不知道系统应该实现什么。</p>
+<p>Spec 的<strong>可执行性</strong>使其与普通文档区分开来。</p>
 </section>
-<section id="enable-execution" class="level3" data-number="7.4.3">
-<h3 data-number="7.4.3" class="anchored" data-anchor-id="enable-execution"><span class="header-section-number">7.4.3</span> 3. Enable Execution</h3>
-<p>Without spec:</p>
-<ul>
-<li>Systems must guess at what is intended</li>
-<li>Outputs vary widely between runs</li>
-<li>Behavior is unpredictable and unreliable</li>
-</ul>
-<p>With spec:</p>
-<ul>
-<li>Systems have clear constraints to operate within</li>
-<li>Outputs become consistent and predictable</li>
-<li>Behavior becomes controllable and verifiable</li>
-</ul>
-<p>Spec provides the guidance necessary for automated execution to produce reliable results.</p>
+<section id="促进评估" class="level3" data-number="7.4.3">
+<h3 data-number="7.4.3" class="anchored" data-anchor-id="促进评估"><span class="header-section-number">7.4.3</span> 3. 促进评估</h3>
+<p>Spec 提供了评估的基础。对照 Spec 定义的标准，你可以判断系统是否工作正常。</p>
+<p>没有 Spec，评估是主观和武断的。</p>
 <hr>
 </section>
 </section>
-<section id="why-spec-is-the-core-layer" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="why-spec-is-the-core-layer"><span class="header-section-number">7.5</span> Why Spec is the Core Layer</h2>
-<p>In the minimal loop:</p>
-<pre><code>Intent → Spec → Instruction → Execution → Evaluation</code></pre>
-<p>Spec sits at the center of the loop. This is not accidental—it reflects spec’s critical role.</p>
-<hr>
-<section id="it-connects-both-sides" class="level3" data-number="7.5.1">
-<h3 data-number="7.5.1" class="anchored" data-anchor-id="it-connects-both-sides"><span class="header-section-number">7.5.1</span> It connects both sides</h3>
+<section id="良好-spec-的特征characteristics-of-a-good-spec" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="良好-spec-的特征characteristics-of-a-good-spec"><span class="header-section-number">7.5</span> 良好 Spec 的特征（Characteristics of a Good Spec）</h2>
+<p>一个好的 Spec 有几个关键特征：</p>
 <ul>
-<li><strong>Upstream</strong>: human intent and understanding</li>
-<li><strong>Downstream</strong>: machine execution and behavior</li>
+<li><strong>具体的</strong>——避免模糊术语如”快速”或”用户友好”。使用可衡量的定义</li>
+<li><strong>可测试的</strong>——每个陈述都应该可以被验证为真或假</li>
+<li><strong>完整的</strong>——涵盖相关的输入、输出、约束和成功标准</li>
+<li><strong>一致的</strong>——各部分之间没有内部矛盾</li>
+<li><strong>最小化的</strong>——包含必要的内容，但不再多</li>
 </ul>
-<p>Spec is the translation layer that converts human thinking into machine-understandable form.</p>
+<p>一个有用的测试：如果你给两个不同的人（或两个 AI 系统）这个 Spec，他们应该对什么是正确的输出达成一致。</p>
 <hr>
 </section>
-<section id="it-transforms-meaning" class="level3" data-number="7.5.2">
-<h3 data-number="7.5.2" class="anchored" data-anchor-id="it-transforms-meaning"><span class="header-section-number">7.5.2</span> It transforms meaning</h3>
+<section id="spec-不是什么what-spec-is-not" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="spec-不是什么what-spec-is-not"><span class="header-section-number">7.6</span> Spec 不是什么（What Spec is Not）</h2>
 <ul>
-<li><strong>From semantic → structural</strong>: converting meaning into formal structure</li>
-<li><strong>From vague → explicit</strong>: making implicit assumptions clear</li>
-<li><strong>From idea → system</strong>: transforming abstract concepts into concrete definitions</li>
+<li><strong>不是需求文档</strong>——需求文档描述问题。Spec 描述解法的结构</li>
+<li><strong>不是设计文档</strong>——设计文档描述系统如何实现。Spec 描述系统必须做什么</li>
+<li><strong>不是代码</strong>——Spec 比代码更抽象，但也更结构化</li>
 </ul>
-<p>This transformation is essential for bridging the gap between human cognition and machine execution.</p>
+<p>Spec 有自己的类别——一个在人类意图和机器执行之间运行的结构化工件。</p>
 <hr>
+</section>
+<section id="实践编写一个-specpractice-writing-a-spec" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="实践编写一个-specpractice-writing-a-spec"><span class="header-section-number">7.7</span> 实践：编写一个 Spec（Practice: Writing a Spec）</h2>
+<p><strong>第一步：从意图开始</strong></p>
+<p>意图：“构建一个客户服务聊天机器人”。</p>
+<p><strong>第二步：定义输入</strong></p>
+<p>用户通过 Web 界面提交自然语言问题。输入长度最多 2000 字符。系统可以使用可选的用户上下文。</p>
+<p><strong>第三步：定义输出</strong></p>
+<p>系统返回 50-500 字符的自然语言回复。回复可以是答案、澄清问题或承认无法回答。系统在有数据时提供来源引用。</p>
+<p><strong>第四步：定义约束</strong></p>
+<p>回复时间 &lt; 2 秒（95%）。系统不得编造信息。系统在无法回答时必须明确说明。系统必须使用与用户相同的语言回复。</p>
+<p><strong>第五步：定义成功标准</strong></p>
+<p>用户反馈满意度 &gt; 80%。首次回复解决率 &gt; 60%。每周 7 天、每天 24 小时可用。</p>
+<hr>
+</section>
+<section id="spec-作为桥梁spec-as-bridge" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="spec-作为桥梁spec-as-bridge"><span class="header-section-number">7.8</span> Spec 作为桥梁（Spec as Bridge）</h2>
 <blockquote class="blockquote">
-<p>Spec is the bridge between thinking and execution.</p>
+<p>Spec 是意图和指令之间的桥梁。它将人类的”想要”转化为系统的”做”。</p>
 </blockquote>
-<p>Without spec, there is no reliable way to convert human intent into machine behavior.</p>
-<hr>
-</section>
-</section>
-<section id="the-cost-of-missing-spec" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="the-cost-of-missing-spec"><span class="header-section-number">7.6</span> The Cost of Missing Spec</h2>
-<p>When spec is weak or absent from the development process, several problems emerge:</p>
-<hr>
-<section id="systems-behave-unpredictably" class="level3" data-number="7.6.1">
-<h3 data-number="7.6.1" class="anchored" data-anchor-id="systems-behave-unpredictably"><span class="header-section-number">7.6.1</span> 1. Systems behave unpredictably</h3>
-<ul>
-<li>Different outputs for similar inputs</li>
-<li>Inconsistent behavior across different runs</li>
-<li>Unexpected responses in edge cases</li>
-</ul>
-<p>The system becomes unreliable and difficult to trust.</p>
-<hr>
-</section>
-<section id="iteration-becomes-inefficient" class="level3" data-number="7.6.2">
-<h3 data-number="7.6.2" class="anchored" data-anchor-id="iteration-becomes-inefficient"><span class="header-section-number">7.6.2</span> 2. Iteration becomes inefficient</h3>
-<ul>
-<li>Changes are trial-and-error rather than systematic</li>
-<li>Improvements are not cumulative—each iteration starts from scratch</li>
-<li>Progress is slow and directionless</li>
-</ul>
-<p>Without clear specs, you don’t know what to change or how to measure improvement.</p>
-<hr>
-</section>
-<section id="errors-are-misdiagnosed" class="level3" data-number="7.6.3">
-<h3 data-number="7.6.3" class="anchored" data-anchor-id="errors-are-misdiagnosed"><span class="header-section-number">7.6.3</span> 3. Errors are misdiagnosed</h3>
-<p>Developers often blame:</p>
-<ul>
-<li>The model—“This LLM isn’t smart enough”</li>
-<li>The tool—“This framework has bugs”</li>
-<li>The framework—“This approach doesn’t work”</li>
-</ul>
-<p>But the real issue is often:</p>
-<blockquote class="blockquote">
-<p>The system was never clearly defined.</p>
-</blockquote>
-<p>Blaming tools and technologies when the real problem is poor spec leads to wasted effort and frustration.</p>
-<hr>
-</section>
-</section>
-<section id="spec-vs-code" class="level2" data-number="7.7">
-<h2 data-number="7.7" class="anchored" data-anchor-id="spec-vs-code"><span class="header-section-number">7.7</span> Spec vs Code</h2>
-<p>Traditionally, code served as the primary definition of a system’s behavior. The code was the specification—if you wanted to know what a system did, you read the code.</p>
-<p>Now, that role is shifting. Spec is becoming the primary definition, with code serving as one possible realization of that spec.</p>
-<hr>
-<section id="before" class="level3" data-number="7.7.1">
-<h3 data-number="7.7.1" class="anchored" data-anchor-id="before"><span class="header-section-number">7.7.1</span> Before</h3>
-<ul>
-<li>Code = behavior</li>
-<li>Logic embedded in implementation details</li>
-<li>Understanding required reading code</li>
-</ul>
-<hr>
-</section>
-<section id="now" class="level3" data-number="7.7.2">
-<h3 data-number="7.7.2" class="anchored" data-anchor-id="now"><span class="header-section-number">7.7.2</span> Now</h3>
-<ul>
-<li>Spec = behavior</li>
-<li>Code = one possible implementation of the spec</li>
-<li>Understanding requires reading the spec</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Code implements. Spec defines.</p>
-</blockquote>
-<p>This shift is profound. It means that behavior is no longer determined by implementation details, but by explicit specification. Multiple different code implementations could satisfy the same spec, and changing the implementation doesn’t necessarily change the behavior.</p>
-<hr>
-</section>
-</section>
-<section id="spec-as-a-first-class-artifact" class="level2" data-number="7.8">
-<h2 data-number="7.8" class="anchored" data-anchor-id="spec-as-a-first-class-artifact"><span class="header-section-number">7.8</span> Spec as a First-Class Artifact</h2>
-<p>In the LLM era, spec becomes:</p>
-<ul>
-<li><strong>A primary artifact</strong>—as important as code, perhaps more so</li>
-<li><strong>A reusable asset</strong>—can be shared, improved, and applied across projects</li>
-<li><strong>A unit of iteration</strong>—the thing we refine to improve systems</li>
-</ul>
-<p>Instead of focusing on:</p>
-<ul>
-<li>Code repositories—managing and organizing code</li>
-</ul>
-<p>We begin to focus on:</p>
-<ul>
-<li>Spec repositories—managing and organizing specifications</li>
-</ul>
-<p>This shift requires new tools, new practices, and new ways of thinking about what constitutes the “source code” of a system.</p>
-<hr>
-</section>
-<section id="spec-enables-iteration" class="level2" data-number="7.9">
-<h2 data-number="7.9" class="anchored" data-anchor-id="spec-enables-iteration"><span class="header-section-number">7.9</span> Spec Enables Iteration</h2>
-<p>Iteration in traditional programming often focuses on code changes—finding and fixing bugs, optimizing performance, refactoring for clarity.</p>
-<p>In the new paradigm:</p>
-<ul>
-<li>Iteration focuses on refining the spec</li>
-</ul>
-<p>The process becomes:</p>
-<ul>
-<li>Define spec</li>
-<li>Execute</li>
-<li>Evaluate</li>
-<li>Adjust spec</li>
-</ul>
-<blockquote class="blockquote">
-<p>Improvement comes from better definition, not more code.</p>
-</blockquote>
-<p>This is a more efficient form of iteration because spec is at a higher level of abstraction than code. Small changes in spec can lead to large improvements in system behavior.</p>
-<hr>
-</section>
-<section id="spec-and-control" class="level2" data-number="7.10">
-<h2 data-number="7.10" class="anchored" data-anchor-id="spec-and-control"><span class="header-section-number">7.10</span> Spec and Control</h2>
-<p>One concern that often arises with this approach is the loss of control:</p>
-<blockquote class="blockquote">
-<p>“If the system executes automatically based on a spec, do we lose control?”</p>
-</blockquote>
-<p>In reality, control shifts rather than disappears:</p>
-<ul>
-<li><strong>From controlling steps</strong>—specifying every operation and decision</li>
-<li><strong>To controlling constraints</strong>—defining the boundaries within which the system operates</li>
-</ul>
-<p>You no longer dictate every action the system takes. Instead, you define the <strong>space within which actions occur</strong>. You control the boundaries, not the path.</p>
-<p>This is analogous to herding sheep versus directing individual sheep. The shepherd doesn’t control each sheep’s movement directly but defines boundaries that keep the flock moving in the right direction.</p>
-<hr>
-</section>
-<section id="common-mistakes" class="level2" data-number="7.11">
-<h2 data-number="7.11" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">7.11</span> Common Mistakes</h2>
-<hr>
-<section id="treating-spec-as-optional" class="level3" data-number="7.11.1">
-<h3 data-number="7.11.1" class="anchored" data-anchor-id="treating-spec-as-optional"><span class="header-section-number">7.11.1</span> 1. Treating Spec as Optional</h3>
-<p>Skipping spec or treating it as a mere formality leads to:</p>
-<ul>
-<li>Unstable systems with unpredictable behavior</li>
-<li>Poor reproducibility—different runs produce different results</li>
-<li>Difficulty debugging and improving the system</li>
-</ul>
-<p>Spec is not optional. It is essential.</p>
-<hr>
-</section>
-<section id="over-specifying" class="level3" data-number="7.11.2">
-<h3 data-number="7.11.2" class="anchored" data-anchor-id="over-specifying"><span class="header-section-number">7.11.2</span> 2. Over-specifying</h3>
-<p>Trying to define every detail, every edge case, every possible behavior:</p>
-<ul>
-<li>Reduces flexibility and adaptability</li>
-<li>Conflicts with the probabilistic nature of LLM systems</li>
-<li>Creates maintenance burden</li>
-</ul>
-<p>Good spec finds the right balance between clarity and flexibility.</p>
-<hr>
-</section>
-<section id="under-specifying" class="level3" data-number="7.11.3">
-<h3 data-number="7.11.3" class="anchored" data-anchor-id="under-specifying"><span class="header-section-number">7.11.3</span> 3. Under-specifying</h3>
-<p>Leaving too much implicit, assuming the system will figure it out:</p>
-<ul>
-<li>Leads to ambiguity and multiple interpretations</li>
-<li>Produces inconsistent and unpredictable results</li>
-<li>Makes evaluation impossible</li>
-</ul>
-<p>You must be explicit about what matters.</p>
-<hr>
-<blockquote class="blockquote">
-<p>Good spec balances clarity and flexibility. It specifies what must be true without dictating how it must be achieved.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="final-insight" class="level2" data-number="7.12">
-<h2 data-number="7.12" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">7.12</span> Final Insight</h2>
-<p>Spec is not an intermediate step or a preliminary activity. It is the core of the system. It determines:</p>
-<ul>
-<li>What the system does—the behavior it exhibits</li>
-<li>How it behaves—the constraints it operates within</li>
-<li>Whether it succeeds—whether it meets the intended goals</li>
-</ul>
-<p>Without a good spec, no amount of clever code or powerful tools can produce a reliable system. With a good spec, implementation becomes straightforward and almost mechanical.</p>
-<hr>
-</section>
-<section id="closing-statement" class="level2" data-number="7.13">
-<h2 data-number="7.13" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">7.13</span> Closing Statement</h2>
-<p>In the LLM era, the most important artifact is no longer code. It is specification.</p>
-<blockquote class="blockquote">
-<p>If intent defines what you want, spec determines whether you can actually get it.</p>
-</blockquote>
-<p>The ability to write good specs is now a core programming skill—perhaps the most important skill.</p>
-<hr>
-</section>
-<section id="key-insight" class="level2" data-number="7.14">
-<h2 data-number="7.14" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">7.14</span> Key Insight</h2>
-<blockquote class="blockquote">
-<p>Spec transforms vague intent into structured, unambiguous definition. It functions as a contract between humans and systems, removing ambiguity and enabling reliable execution.</p>
-</blockquote>
-</section>
-<section id="action-hint" class="level2" data-number="7.15">
-<h2 data-number="7.15" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">7.15</span> Action Hint</h2>
-<blockquote class="blockquote">
-<p>Practice writing specs for simple systems. Use this structure: Input, Output, Constraints, Success Criteria. Make each element explicit and testable. Review your specs for ambiguity—any vagueness will propagate through the entire system.</p>
-</blockquote>
+<p>没有 Spec，指令就没有基础，评估就没有标准。Spec 是将编程从模糊想法转变为精确结果的核心工件。</p>
 
 
 </section>
@@ -1316,13 +1075,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-5.html" class="pagination-link" aria-label="Intent: Defining What to Do">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span>
+      <a href="./chapter-5.html" class="pagination-link" aria-label="意图：定义要做什么（Intent: Defining What to Do）">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">意图：定义要做什么（Intent: Defining What to Do）</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-7.html" class="pagination-link" aria-label="Instruction: Making It Executable">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-7.html" class="pagination-link" aria-label="指令：使其可执行（Instruction: Making It Executable）">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">指令：使其可执行（Instruction: Making It Executable）</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

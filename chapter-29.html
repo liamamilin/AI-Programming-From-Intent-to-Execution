@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>30&nbsp; Building an AI Tool – AI Programming: From Intent to Execution</title>
+<title>30&nbsp; 构建 AI 工具（Building an AI Tool） – AI Programming: From Intent to Execution</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -19,6 +22,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -34,19 +72,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="./chapter-28.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-aa873432a3c62897e6c2091c0d30a948.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -250,7 +287,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-29.html"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-29.html"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -263,9 +300,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AI Programming: From Intent to Execution</a> 
         <div class="sidebar-tools-main">
@@ -283,211 +318,211 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">前言（Preface）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">转变：从编码到定义（The Shift: From Coding to Defining）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">新的瓶颈：定义（The New Bottleneck: Definition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">编程现在是什么？（What is Programming Now?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">最小循环（The Minimal Loop）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">意图：定义要做什么（Intent: Defining What to Do）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">规格说明：消除歧义（Spec: Eliminating Ambiguity）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">指令：使其可执行（Instruction: Making It Executable）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">评估与迭代（Evaluation &amp; Iteration）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">可能性空间（Possibility Space）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">从 Spec 到指令（From Spec to Instruction）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">指令设计（Instruction Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">工具使用与 API（Tool Use &amp; APIs）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">构建智能体系统（Building an Agent System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">构建聊天系统（Building a Chat System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-29.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">从理想到产品（From Idea to Product）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-31.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">编程即系统设计（Programming as System Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">语言即操作系统（Language as an Operating System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">人类 + AI 认知（Human + AI Cognition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">构建者的未来（The Future of Builders）</span></span></a>
   </div>
 </li>
     </ul>
@@ -500,68 +535,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#from-system-to-product" id="toc-from-system-to-product" class="nav-link active" data-scroll-target="#from-system-to-product"><span class="header-section-number">30.1</span> From System to Product</a></li>
-  <li><a href="#what-is-an-ai-tool" id="toc-what-is-an-ai-tool" class="nav-link" data-scroll-target="#what-is-an-ai-tool"><span class="header-section-number">30.2</span> What is an AI Tool?</a>
-  <ul class="collapse">
-  <li><a href="#key-elements" id="toc-key-elements" class="nav-link" data-scroll-target="#key-elements"><span class="header-section-number">30.2.1</span> Key Elements</a></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">30.2.2</span> Examples</a></li>
-  </ul></li>
-  <li><a href="#the-shift-from-capability-to-usability" id="toc-the-shift-from-capability-to-usability" class="nav-link" data-scroll-target="#the-shift-from-capability-to-usability"><span class="header-section-number">30.3</span> The Shift: From Capability to Usability</a>
-  <ul class="collapse">
-  <li><a href="#difference" id="toc-difference" class="nav-link" data-scroll-target="#difference"><span class="header-section-number">30.3.1</span> Difference</a></li>
-  </ul></li>
-  <li><a href="#defining-the-tool" id="toc-defining-the-tool" class="nav-link" data-scroll-target="#defining-the-tool"><span class="header-section-number">30.4</span> Defining the Tool</a>
-  <ul class="collapse">
-  <li><a href="#core-questions" id="toc-core-questions" class="nav-link" data-scroll-target="#core-questions"><span class="header-section-number">30.4.1</span> Core Questions</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">30.4.2</span> Example</a></li>
-  </ul></li>
-  <li><a href="#internal-structure-of-an-ai-tool" id="toc-internal-structure-of-an-ai-tool" class="nav-link" data-scroll-target="#internal-structure-of-an-ai-tool"><span class="header-section-number">30.5</span> Internal Structure of an AI Tool</a>
-  <ul class="collapse">
-  <li><a href="#layers" id="toc-layers" class="nav-link" data-scroll-target="#layers"><span class="header-section-number">30.5.1</span> Layers</a></li>
-  <li><a href="#flow" id="toc-flow" class="nav-link" data-scroll-target="#flow"><span class="header-section-number">30.5.2</span> Flow</a></li>
-  </ul></li>
-  <li><a href="#interface-design" id="toc-interface-design" class="nav-link" data-scroll-target="#interface-design"><span class="header-section-number">30.6</span> Interface Design</a>
-  <ul class="collapse">
-  <li><a href="#types-of-interfaces" id="toc-types-of-interfaces" class="nav-link" data-scroll-target="#types-of-interfaces"><span class="header-section-number">30.6.1</span> Types of Interfaces</a></li>
-  <li><a href="#principles" id="toc-principles" class="nav-link" data-scroll-target="#principles"><span class="header-section-number">30.6.2</span> Principles</a></li>
-  </ul></li>
-  <li><a href="#constraining-the-system" id="toc-constraining-the-system" class="nav-link" data-scroll-target="#constraining-the-system"><span class="header-section-number">30.7</span> Constraining the System</a>
-  <ul class="collapse">
-  <li><a href="#why" id="toc-why" class="nav-link" data-scroll-target="#why"><span class="header-section-number">30.7.1</span> Why?</a></li>
-  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"><span class="header-section-number">30.7.2</span> Methods</a></li>
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">30.7.3</span> Example</a></li>
-  </ul></li>
-  <li><a href="#reusability-and-modularity" id="toc-reusability-and-modularity" class="nav-link" data-scroll-target="#reusability-and-modularity"><span class="header-section-number">30.8</span> Reusability and Modularity</a>
-  <ul class="collapse">
-  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2"><span class="header-section-number">30.8.1</span> Example</a></li>
-  <li><a href="#benefits" id="toc-benefits" class="nav-link" data-scroll-target="#benefits"><span class="header-section-number">30.8.2</span> Benefits</a></li>
-  </ul></li>
-  <li><a href="#evaluation-in-tools" id="toc-evaluation-in-tools" class="nav-link" data-scroll-target="#evaluation-in-tools"><span class="header-section-number">30.9</span> Evaluation in Tools</a>
-  <ul class="collapse">
-  <li><a href="#methods-1" id="toc-methods-1" class="nav-link" data-scroll-target="#methods-1"><span class="header-section-number">30.9.1</span> Methods</a></li>
-  <li><a href="#goals" id="toc-goals" class="nav-link" data-scroll-target="#goals"><span class="header-section-number">30.9.2</span> Goals</a></li>
-  </ul></li>
-  <li><a href="#iteration-and-improvement" id="toc-iteration-and-improvement" class="nav-link" data-scroll-target="#iteration-and-improvement"><span class="header-section-number">30.10</span> Iteration and Improvement</a>
-  <ul class="collapse">
-  <li><a href="#feedback-sources" id="toc-feedback-sources" class="nav-link" data-scroll-target="#feedback-sources"><span class="header-section-number">30.10.1</span> Feedback Sources</a></li>
-  <li><a href="#improvements" id="toc-improvements" class="nav-link" data-scroll-target="#improvements"><span class="header-section-number">30.10.2</span> Improvements</a></li>
-  </ul></li>
-  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">30.11</span> Common Mistakes</a>
-  <ul class="collapse">
-  <li><a href="#overgeneralization" id="toc-overgeneralization" class="nav-link" data-scroll-target="#overgeneralization"><span class="header-section-number">30.11.1</span> 1. Overgeneralization</a></li>
-  <li><a href="#weak-constraints" id="toc-weak-constraints" class="nav-link" data-scroll-target="#weak-constraints"><span class="header-section-number">30.11.2</span> 2. Weak Constraints</a></li>
-  <li><a href="#poor-interface" id="toc-poor-interface" class="nav-link" data-scroll-target="#poor-interface"><span class="header-section-number">30.11.3</span> 3. Poor Interface</a></li>
-  <li><a href="#ignoring-evaluation" id="toc-ignoring-evaluation" class="nav-link" data-scroll-target="#ignoring-evaluation"><span class="header-section-number">30.11.4</span> 4. Ignoring Evaluation</a></li>
-  </ul></li>
-  <li><a href="#from-tool-to-platform" id="toc-from-tool-to-platform" class="nav-link" data-scroll-target="#from-tool-to-platform"><span class="header-section-number">30.12</span> From Tool to Platform</a>
-  <ul class="collapse">
-  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3"><span class="header-section-number">30.12.1</span> Example</a></li>
-  <li><a href="#platform-characteristics" id="toc-platform-characteristics" class="nav-link" data-scroll-target="#platform-characteristics"><span class="header-section-number">30.12.2</span> Platform Characteristics</a></li>
-  </ul></li>
-  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">30.13</span> Final Insight</a></li>
-  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">30.14</span> Closing Statement</a></li>
-  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">30.15</span> Key Insight</a></li>
-  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">30.16</span> Action Hint</a></li>
+  <li><a href="#工具作为产品" id="toc-工具作为产品" class="nav-link active" data-scroll-target="#工具作为产品"><span class="header-section-number">30.1</span> 工具作为产品</a></li>
+  <li><a href="#定义工具意图define-tool-intent" id="toc-定义工具意图define-tool-intent" class="nav-link" data-scroll-target="#定义工具意图define-tool-intent"><span class="header-section-number">30.2</span> 定义工具意图（Define Tool Intent）</a></li>
+  <li><a href="#工具-spec" id="toc-工具-spec" class="nav-link" data-scroll-target="#工具-spec"><span class="header-section-number">30.3</span> 工具 Spec</a></li>
+  <li><a href="#工具架构tool-architecture" id="toc-工具架构tool-architecture" class="nav-link" data-scroll-target="#工具架构tool-architecture"><span class="header-section-number">30.4</span> 工具架构（Tool Architecture）</a></li>
+  <li><a href="#指令示例instruction-example" id="toc-指令示例instruction-example" class="nav-link" data-scroll-target="#指令示例instruction-example"><span class="header-section-number">30.5</span> 指令示例（Instruction Example）</a></li>
+  <li><a href="#评估与精化evaluate-and-refine" id="toc-评估与精化evaluate-and-refine" class="nav-link" data-scroll-target="#评估与精化evaluate-and-refine"><span class="header-section-number">30.6</span> 评估与精化（Evaluate and Refine）</a></li>
+  <li><a href="#集成与部署" id="toc-集成与部署" class="nav-link" data-scroll-target="#集成与部署"><span class="header-section-number">30.7</span> 集成与部署</a></li>
+  <li><a href="#小结" id="toc-小结" class="nav-link" data-scroll-target="#小结"><span class="header-section-number">30.8</span> 小结</a></li>
   </ul>
 </nav>
     </div>
@@ -571,7 +552,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></h1>
+<h1 class="title"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></h1>
 </div>
 
 
@@ -588,486 +569,92 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="from-system-to-product" class="level2" data-number="30.1">
-<h2 data-number="30.1" class="anchored" data-anchor-id="from-system-to-product"><span class="header-section-number">30.1</span> From System to Product</h2>
-<p>So far, we have built:</p>
+<section id="工具作为产品" class="level2" data-number="30.1">
+<h2 data-number="30.1" class="anchored" data-anchor-id="工具作为产品"><span class="header-section-number">30.1</span> 工具作为产品</h2>
+<p>AI 工具（tool）封装特定能力，以便其他系统可以调用。工具是 AI 系统构建中的构建块——独立的、可复用的功能单元。</p>
+<p>与传统软件工具不同，AI 工具通常涉及概率性处理。它们的输出不是确定性的，而是基于模型推理的结果。这给工具设计带来了独特的挑战：你需要定义清晰的接口（interface），同时接受内部行为的不确定性。</p>
+<p>本章使用最小循环（Minimal Loop）方法构建一个 AI 驱动的代码评论工具（code review tool）。</p>
+<hr>
+</section>
+<section id="定义工具意图define-tool-intent" class="level2" data-number="30.2">
+<h2 data-number="30.2" class="anchored" data-anchor-id="定义工具意图define-tool-intent"><span class="header-section-number">30.2</span> 定义工具意图（Define Tool Intent）</h2>
+<p><strong>意图：</strong> 构建一个代码评论工具——给定代码片段，提供关于风格、潜在 bug 和优化建议的反馈。</p>
+<p><strong>精化后的目标：</strong> - <strong>目标</strong>：在代码审查过程中提供即时的、有针对性的反馈 - <strong>对象</strong>：Python 和 JavaScript 代码片段（其他语言逐步增加） - <strong>上下文</strong>：开发者提交代码时的即时反馈场景 - <strong>约束</strong>：不执行代码（仅静态分析），每条评论必须引用具体行号，不提供虚假的安全警报 - <strong>成功标准</strong>：建议被开发者采纳率 &gt; 60%，误报率 &lt; 10%</p>
+<hr>
+</section>
+<section id="工具-spec" class="level2" data-number="30.3">
+<h2 data-number="30.3" class="anchored" data-anchor-id="工具-spec"><span class="header-section-number">30.3</span> 工具 Spec</h2>
+<p><strong>输入：</strong> 代码字符串（最多 2000 字符），编程语言，可选的编码风格指南（style guide）。</p>
+<p><strong>输出：</strong> 结构化评论列表，每条包含：行号、严重性、消息、改进建议。</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">{</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"line"</span><span class="fu">:</span> <span class="dv">15</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"severity"</span><span class="fu">:</span> <span class="st">"warning"</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"message"</span><span class="fu">:</span> <span class="st">"使用 == 而非 === 可能造成类型转换问题"</span><span class="fu">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"suggestion"</span><span class="fu">:</span> <span class="st">"用 === 替代 =="</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ot">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>严重性等级（Severity Levels）：</strong> - <strong>error</strong>：确定会出错的代码（安全漏洞、语法错误） - <strong>warning</strong>：可能出问题的代码（类型转换、未定义变量） - <strong>suggestion</strong>：改进建议（性能优化、代码风格）</p>
+<p><strong>约束：</strong> 不执行代码，仅基于静态分析（static analysis），尊重语言特定的最佳实践，保持每条评论简洁。</p>
+<p><strong>边界情况：</strong> 空代码（返回空列表），无法识别语言（使用通用规则），代码包含注释（跳过注释）。</p>
+<hr>
+</section>
+<section id="工具架构tool-architecture" class="level2" data-number="30.4">
+<h2 data-number="30.4" class="anchored" data-anchor-id="工具架构tool-architecture"><span class="header-section-number">30.4</span> 工具架构（Tool Architecture）</h2>
+<p><strong>主流程：</strong></p>
+<pre><code>代码输入 → 语言检测 → 解析结构 → 分析模式 → 生成评论 → 格式化输出</code></pre>
+<p><strong>模块：</strong> - <strong>语言检测器（Language Detector）</strong>：识别输入代码的编程语言。基于文件扩展名、代码特征和魔数（shebang 等）。 - <strong>结构分析器（Structure Analyzer）</strong>：解析代码结构，提取函数、类、变量声明。构建抽象语法树（AST）概览。 - <strong>模式分析器（Pattern Analyzer）</strong>：对照最佳实践检查代码。识别常见反模式（antipatterns）和潜在漏洞。 - <strong>评论生成器（Comment Generator）</strong>：将分析结果转化为结构化评论。添加行号引用和严重性评级。 - <strong>格式化器（Formatter）</strong>：将评论格式化为统一输出。支持 JSON 和格式化文本输出。</p>
+<hr>
+</section>
+<section id="指令示例instruction-example" class="level2" data-number="30.5">
+<h2 data-number="30.5" class="anchored" data-anchor-id="指令示例instruction-example"><span class="header-section-number">30.5</span> 指令示例（Instruction Example）</h2>
+<pre><code>角色：你是一个代码评审专家。你有 15 年的软件开发经验，精通多种编程语言的最佳实践。
+
+任务：审查提供的代码片段，识别潜在问题、反模式和改进机会。
+
+输入：代码字符串 + 编程语言名称
+
+输出要求：
+以 JSON 数组格式输出每条评论，包含：
+- "line": 行号（整数，必须精确）
+- "severity": "error" | "warning" | "suggestion"
+- "message": 简洁的问题描述（&lt; 100 字符）
+- "suggestion": 改进后的代码示例（可选）
+
+约束：
+- 只进行静态分析，不执行代码
+- 优先报告错误和潜在安全问题
+- 每条评论要有具体的行号引用
+- 不报告虚假问题（宁可漏报不可误报）
+
+示例：
+输入：var x = "hello";
+输出：[{"line":1, "severity":"suggestion", "message":"使用 const 替代 var", "suggestion":"const x = 'hello';"}]</code></pre>
+<hr>
+</section>
+<section id="评估与精化evaluate-and-refine" class="level2" data-number="30.6">
+<h2 data-number="30.6" class="anchored" data-anchor-id="评估与精化evaluate-and-refine"><span class="header-section-number">30.6</span> 评估与精化（Evaluate and Refine）</h2>
+<p><strong>测试数据集：</strong> 20 个代码样本，包含已知问题（错误、警告、建议各 5+ 个），5 个干净代码（测试误报率）。</p>
+<p><strong>评估指标：</strong> - <strong>问题检出率</strong> &gt; 80%（已知问题的检测比例） - <strong>误报率</strong> &lt; 10%（标记为问题但不正确的比例） - <strong>采纳率</strong> &gt; 60%（开发者在实际使用中采纳建议的比例）</p>
+<p><strong>迭代策略：</strong> 基于误报分析精化指令，添加更多特定模式的边界条件，扩展支持语言列表。</p>
+<hr>
+</section>
+<section id="集成与部署" class="level2" data-number="30.7">
+<h2 data-number="30.7" class="anchored" data-anchor-id="集成与部署"><span class="header-section-number">30.7</span> 集成与部署</h2>
+<p><strong>打包：</strong> 将工具封装为 API 端点、CLI 命令或 IDE 插件。</p>
 <ul>
-<li><strong>Chat systems</strong>—conversational interfaces for interaction</li>
-<li><strong>Data pipelines</strong>—automated processing of information flows</li>
-<li><strong>Agent systems</strong>—intelligent entities that reason and act</li>
+<li><strong>API</strong>：REST 端点，接受 POST 请求返回 JSON 评论</li>
+<li><strong>CLI</strong>：<code>review-tool file.py</code> 或 <code>review-tool --stdin</code></li>
+<li><strong>IDE 集成</strong>：通过语言服务器协议（LSP）集成到编辑器</li>
 </ul>
-<p>These are all <strong>systems</strong>—functional collections of components that perform tasks.</p>
-<p>But users do not interact with systems directly. They don’t see the spec, instruction, or execution layers.</p>
-<p>They interact with:</p>
-<blockquote class="blockquote">
-<p><strong>Tools</strong></p>
-</blockquote>
+<p><strong>文档：</strong> 清晰的输入/输出规范，可直接运行的示例代码，错误码和解释。</p>
+<p><strong>版本管理：</strong> 语义化版本，变更日志，发布说明。</p>
 <hr>
 </section>
-<section id="what-is-an-ai-tool" class="level2" data-number="30.2">
-<h2 data-number="30.2" class="anchored" data-anchor-id="what-is-an-ai-tool"><span class="header-section-number">30.2</span> What is an AI Tool?</h2>
-<p>An AI tool is:</p>
-<blockquote class="blockquote">
-<p><strong>A system packaged into a usable interface that solves a specific problem for a user</strong></p>
-</blockquote>
-<hr>
-<section id="key-elements" class="level3" data-number="30.2.1">
-<h3 data-number="30.2.1" class="anchored" data-anchor-id="key-elements"><span class="header-section-number">30.2.1</span> Key Elements</h3>
-<ul>
-<li><strong>A clear purpose</strong>—solves a specific, well-defined problem</li>
-<li><strong>A defined interface</strong>—predictable way for users to interact</li>
-<li><strong>A reliable system behind it</strong>—robust machinery that produces results</li>
-</ul>
-<hr>
-</section>
-<section id="examples" class="level3" data-number="30.2.2">
-<h3 data-number="30.2.2" class="anchored" data-anchor-id="examples"><span class="header-section-number">30.2.2</span> Examples</h3>
-<ul>
-<li><strong>Chat assistant</strong>—conversational interface for information and help</li>
-<li><strong>Document summarizer</strong>—tool that condenses long documents</li>
-<li><strong>Code generator</strong>—tool that produces code from descriptions</li>
-<li><strong>Data analysis tool</strong>—tool that extracts insights from data</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>A tool is where system meets user. It’s the visible, usable face of the underlying system.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="the-shift-from-capability-to-usability" class="level2" data-number="30.3">
-<h2 data-number="30.3" class="anchored" data-anchor-id="the-shift-from-capability-to-usability"><span class="header-section-number">30.3</span> The Shift: From Capability to Usability</h2>
-<p>Having a powerful system is not enough. A system that works perfectly but is difficult to use is not a successful tool.</p>
-<p>A tool must be:</p>
-<ul>
-<li><strong>Usable</strong>—easy to understand and operate</li>
-<li><strong>Predictable</strong>—behaves consistently and reliably</li>
-<li><strong>Focused</strong>—solves a specific problem well</li>
-</ul>
-<hr>
-<section id="difference" class="level3" data-number="30.3.1">
-<h3 data-number="30.3.1" class="anchored" data-anchor-id="difference"><span class="header-section-number">30.3.1</span> Difference</h3>
-<hr>
-<section id="system" class="level4" data-number="30.3.1.1">
-<h4 data-number="30.3.1.1" class="anchored" data-anchor-id="system"><span class="header-section-number">30.3.1.1</span> System</h4>
-<ul>
-<li><strong>General</strong>—can handle many types of tasks</li>
-<li><strong>Flexible</strong>—adaptable to various situations</li>
-<li><strong>Complex</strong>—many components and capabilities</li>
-</ul>
-<p><strong>Focus:</strong> Functionality and capability</p>
-<hr>
-</section>
-<section id="tool" class="level4" data-number="30.3.1.2">
-<h4 data-number="30.3.1.2" class="anchored" data-anchor-id="tool"><span class="header-section-number">30.3.1.2</span> Tool</h4>
-<ul>
-<li><strong>Specific</strong>—designed for one primary purpose</li>
-<li><strong>Constrained</strong>—limited to defined scope</li>
-<li><strong>Simple</strong>—easy to use for intended purpose</li>
-</ul>
-<p><strong>Focus:</strong> Usability and user experience</p>
-<hr>
-<blockquote class="blockquote">
-<p>Tools are designed for use, not exploration. Systems enable capability; tools deliver value.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-</section>
-<section id="defining-the-tool" class="level2" data-number="30.4">
-<h2 data-number="30.4" class="anchored" data-anchor-id="defining-the-tool"><span class="header-section-number">30.4</span> Defining the Tool</h2>
-<p>Every AI tool begins with a clear definition of its purpose and scope:</p>
-<hr>
-<section id="core-questions" class="level3" data-number="30.4.1">
-<h3 data-number="30.4.1" class="anchored" data-anchor-id="core-questions"><span class="header-section-number">30.4.1</span> Core Questions</h3>
-<ul>
-<li><strong>What problem does it solve?</strong>—the user need it addresses</li>
-<li><strong>Who is it for?</strong>—the target user or audience</li>
-<li><strong>What input does it accept?</strong>—what users provide</li>
-<li><strong>What output does it produce?</strong>—what users get back</li>
-</ul>
-<hr>
-</section>
-<section id="example" class="level3" data-number="30.4.2">
-<h3 data-number="30.4.2" class="anchored" data-anchor-id="example"><span class="header-section-number">30.4.2</span> Example</h3>
-<p><strong>Tool: Document Summarizer</strong></p>
-<ul>
-<li><strong>Input</strong>: document (text file or URL)</li>
-<li><strong>Output</strong>: summary (concise text with key points)</li>
-<li><strong>Constraint</strong>: under 100 words, captures main ideas</li>
-<li><strong>User</strong>: anyone needing quick understanding of long documents</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>A tool is a compressed system—focused, constrained, and optimized for a specific use case.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="internal-structure-of-an-ai-tool" class="level2" data-number="30.5">
-<h2 data-number="30.5" class="anchored" data-anchor-id="internal-structure-of-an-ai-tool"><span class="header-section-number">30.5</span> Internal Structure of an AI Tool</h2>
-<p>Even simple tools have layered systems inside. The interface hides complexity:</p>
-<hr>
-<section id="layers" class="level3" data-number="30.5.1">
-<h3 data-number="30.5.1" class="anchored" data-anchor-id="layers"><span class="header-section-number">30.5.1</span> Layers</h3>
-<hr>
-<section id="input-interface" class="level4" data-number="30.5.1.1">
-<h4 data-number="30.5.1.1" class="anchored" data-anchor-id="input-interface"><span class="header-section-number">30.5.1.1</span> Input Interface</h4>
-<ul>
-<li>Accepts user input</li>
-<li>Validates format and content</li>
-<li><ul>
-<li>Routes to processing layer</li>
-</ul></li>
-</ul>
-<hr>
-</section>
-<section id="spec-layer" class="level4" data-number="30.5.1.2">
-<h4 data-number="30.5.1.2" class="anchored" data-anchor-id="spec-layer"><span class="header-section-number">30.5.1.2</span> Spec Layer</h4>
-<ul>
-<li>Defines tool behavior</li>
-<li><ul>
-<li>Specifies constraints</li>
-</ul></li>
-<li><ul>
-<li>Sets success criteria</li>
-</ul></li>
-</ul>
-<hr>
-</section>
-<section id="instruction-layer" class="level4" data-number="30.5.1.3">
-<h4 data-number="30.5.1.3" class="anchored" data-anchor-id="instruction-layer"><span class="header-section-number">30.5.1.3</span> Instruction Layer</h4>
-<ul>
-<li>Converts spec into executable form</li>
-<li><ul>
-<li>Manages instruction templates</li>
-</ul></li>
-<li><ul>
-<li>Handles parameter substitution</li>
-</ul></li>
-</ul>
-<hr>
-</section>
-<section id="execution-engine" class="level4" data-number="30.5.1.4">
-<h4 data-number="30.5.1.4" class="anchored" data-anchor-id="execution-engine"><span class="header-section-number">30.5.1.4</span> Execution Engine</h4>
-<ul>
-<li>Runs instructions</li>
-<li><ul>
-<li>Uses tools and APIs</li>
-</ul></li>
-<li><ul>
-<li>Generates results</li>
-</ul></li>
-</ul>
-<hr>
-</section>
-<section id="evaluation-layer" class="level4" data-number="30.5.1.5">
-<h4 data-number="30.5.1.5" class="anchored" data-anchor-id="evaluation-layer"><span class="header-section-number">30.5.1.5</span> Evaluation Layer</h4>
-<ul>
-<li>Validates output quality</li>
-<li><ul>
-<li>Checks constraints</li>
-</ul></li>
-<li><ul>
-<li>Ensures reliability</li>
-</ul></li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="flow" class="level3" data-number="30.5.2">
-<h3 data-number="30.5.2" class="anchored" data-anchor-id="flow"><span class="header-section-number">30.5.2</span> Flow</h3>
-<pre><code>User Input
-→ Validation
-→ Spec / Instruction
-→ Execution
-→ Evaluation
-→ Output</code></pre>
-<hr>
-<blockquote class="blockquote">
-<p>Tools hide complexity behind simple interfaces. Users see only input and output.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="interface-design" class="level2" data-number="30.6">
-<h2 data-number="30.6" class="anchored" data-anchor-id="interface-design"><span class="header-section-number">30.6</span> Interface Design</h2>
-<p>The interface defines how users interact with the tool. It’s the critical bridge between system and user:</p>
-<hr>
-<section id="types-of-interfaces" class="level3" data-number="30.6.1">
-<h3 data-number="30.6.1" class="anchored" data-anchor-id="types-of-interfaces"><span class="header-section-number">30.6.1</span> Types of Interfaces</h3>
-<hr>
-<section id="text-interface" class="level4" data-number="30.6.1.1">
-<h4 data-number="30.6.1.1" class="anchored" data-anchor-id="text-interface"><span class="header-section-number">30.6.1.1</span> 1. Text Interface</h4>
-<ul>
-<li><strong>Chat-based</strong>—conversational interaction</li>
-<li><strong>Flexible</strong>—can handle variety of inputs</li>
-<li><strong>Natural</strong>—feels like human conversation</li>
-</ul>
-<p><strong>Use for:</strong> Complex queries, exploration, assistance</p>
-<hr>
-</section>
-<section id="form-interface" class="level4" data-number="30.6.1.2">
-<h4 data-number="30.6.1.2" class="anchored" data-anchor-id="form-interface"><span class="header-section-number">30.6.1.2</span> 2. Form Interface</h4>
-<ul>
-<li><strong>Structured input fields</strong>—defined inputs with validation</li>
-<li><strong>Predictable</strong>—clear what information is needed</li>
-<li><strong>Efficient</strong>—quick for repeated use</li>
-</ul>
-<p><strong>Use for:</strong> Routine tasks, standardized operations</p>
-<hr>
-</section>
-<section id="api-interface" class="level4" data-number="30.6.1.3">
-<h4 data-number="30.6.1.3" class="anchored" data-anchor-id="api-interface"><span class="header-section-number">30.6.1.3</span> 3. API Interface</h4>
-<ul>
-<li><strong>Programmatic access</strong>—for integration with other systems</li>
-<li><strong>Automated</strong>—no human interaction needed</li>
-<li><strong>Scalable</strong>—can be called frequently</li>
-</ul>
-<p><strong>Use for:</strong> System integration, automation, batch processing</p>
-<hr>
-</section>
-</section>
-<section id="principles" class="level3" data-number="30.6.2">
-<h3 data-number="30.6.2" class="anchored" data-anchor-id="principles"><span class="header-section-number">30.6.2</span> Principles</h3>
-<ul>
-<li><strong>Simplicity</strong>—easy to understand and use</li>
-<li><strong>Clarity</strong>—obvious how to interact</li>
-<li><strong>Minimal friction</strong>—fast and efficient</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Good interfaces reduce cognitive load. They make the tool’s power accessible without complexity.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="constraining-the-system" class="level2" data-number="30.7">
-<h2 data-number="30.7" class="anchored" data-anchor-id="constraining-the-system"><span class="header-section-number">30.7</span> Constraining the System</h2>
-<p>Tools must constrain underlying systems to ensure usability and reliability:</p>
-<hr>
-<section id="why" class="level3" data-number="30.7.1">
-<h3 data-number="30.7.1" class="anchored" data-anchor-id="why"><span class="header-section-number">30.7.1</span> Why?</h3>
-<ul>
-<li><strong>Reduce unpredictability</strong>—limit variations in output</li>
-<li><strong>Improve reliability</strong>—ensure consistent behavior</li>
-<li><strong>Simplify usage</strong>—make the tool easy to understand</li>
-</ul>
-<hr>
-</section>
-<section id="methods" class="level3" data-number="30.7.2">
-<h3 data-number="30.7.2" class="anchored" data-anchor-id="methods"><span class="header-section-number">30.7.2</span> Methods</h3>
-<ul>
-<li><strong>Fixed output formats</strong>—enforce specific structure</li>
-<li><strong>Limited input types</strong>—accept only defined inputs</li>
-<li><strong>Clear constraints</strong>—explicit boundaries on behavior</li>
-</ul>
-<hr>
-</section>
-<section id="example-1" class="level3" data-number="30.7.3">
-<h3 data-number="30.7.3" class="anchored" data-anchor-id="example-1"><span class="header-section-number">30.7.3</span> Example</h3>
-<p>Instead of a general-purpose chat system that can answer any question:</p>
-<ul>
-<li><strong>Constrained tool</strong>: Document summarizer</li>
-<li><strong>Input</strong>: document only</li>
-<li><strong>Output</strong>: summary only</li>
-<li><strong>Constraints</strong>: length, format, content requirements</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Constraints make tools usable. They focus the system’s power on a specific task.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="reusability-and-modularity" class="level2" data-number="30.8">
-<h2 data-number="30.8" class="anchored" data-anchor-id="reusability-and-modularity"><span class="header-section-number">30.8</span> Reusability and Modularity</h2>
-<p>A well-built tool reuses components and composes existing systems:</p>
-<hr>
-<section id="example-2" class="level3" data-number="30.8.1">
-<h3 data-number="30.8.1" class="anchored" data-anchor-id="example-2"><span class="header-section-number">30.8.1</span> Example</h3>
-<p>A document summarizer tool may use:</p>
-<ul>
-<li><strong>A chat system</strong>—for generating natural language</li>
-<li><strong>A retrieval pipeline</strong>—for finding relevant information</li>
-<li><strong>An evaluation module</strong>—for checking summary quality</li>
-</ul>
-<hr>
-</section>
-<section id="benefits" class="level3" data-number="30.8.2">
-<h3 data-number="30.8.2" class="anchored" data-anchor-id="benefits"><span class="header-section-number">30.8.2</span> Benefits</h3>
-<ul>
-<li><strong>Faster development</strong>—reuse existing components</li>
-<li><strong>Better quality</strong>—use proven, tested systems</li>
-<li><strong>Easier maintenance</strong>—fixes improve multiple tools</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Tools are compositions of systems. They don’t reinvent capabilities—they orchestrate them.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="evaluation-in-tools" class="level2" data-number="30.9">
-<h2 data-number="30.9" class="anchored" data-anchor-id="evaluation-in-tools"><span class="header-section-number">30.9</span> Evaluation in Tools</h2>
-<p>Tools must ensure output quality to maintain user trust and satisfaction:</p>
-<hr>
-<section id="methods-1" class="level3" data-number="30.9.1">
-<h3 data-number="30.9.1" class="anchored" data-anchor-id="methods-1"><span class="header-section-number">30.9.1</span> Methods</h3>
-<ul>
-<li><strong>Validation checks</strong>—verify format and constraints</li>
-<li><strong>Automatic evaluation</strong>—assess quality without human intervention</li>
-<li><strong>Retry mechanisms</strong>—regenerate if output fails checks</li>
-</ul>
-<hr>
-</section>
-<section id="goals" class="level3" data-number="30.9.2">
-<h3 data-number="30.9.2" class="anchored" data-anchor-id="goals"><span class="header-section-number">30.9.2</span> Goals</h3>
-<ul>
-<li><strong>Ensure reliability</strong>—consistent, correct outputs</li>
-<li><strong>Maintain trust</strong>—users can depend on the tool</li>
-<li><strong>Enable improvement</strong>—feedback drives refinement</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Users expect reliability without seeing the system. The tool must guarantee quality.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="iteration-and-improvement" class="level2" data-number="30.10">
-<h2 data-number="30.10" class="anchored" data-anchor-id="iteration-and-improvement"><span class="header-section-number">30.10</span> Iteration and Improvement</h2>
-<p>Tools evolve over time based on usage and feedback:</p>
-<hr>
-<section id="feedback-sources" class="level3" data-number="30.10.1">
-<h3 data-number="30.10.1" class="anchored" data-anchor-id="feedback-sources"><span class="header-section-number">30.10.1</span> Feedback Sources</h3>
-<ul>
-<li><strong>User behavior</strong>—how users interact with the tool</li>
-<li><strong>Evaluation metrics</strong>—automated quality measurements</li>
-<li><strong>Error logs</strong>—failures and exceptions</li>
-</ul>
-<hr>
-</section>
-<section id="improvements" class="level3" data-number="30.10.2">
-<h3 data-number="30.10.2" class="anchored" data-anchor-id="improvements"><span class="header-section-number">30.10.2</span> Improvements</h3>
-<ul>
-<li><strong>Refine spec</strong>—clarify requirements and constraints</li>
-<li><strong>Improve instructions</strong>—enhance execution protocols</li>
-<li><strong>Optimize performance</strong>—reduce latency and cost</li>
-<li><strong>Enhance interface</strong>—improve user experience</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Tools improve through usage. Real-world feedback drives continuous refinement.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="common-mistakes" class="level2" data-number="30.11">
-<h2 data-number="30.11" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">30.11</span> Common Mistakes</h2>
-<p>Several common mistakes undermine tool effectiveness:</p>
-<hr>
-<section id="overgeneralization" class="level3" data-number="30.11.1">
-<h3 data-number="30.11.1" class="anchored" data-anchor-id="overgeneralization"><span class="header-section-number">30.11.1</span> 1. Overgeneralization</h3>
-<ul>
-<li><strong>Trying to do too much</strong>—one tool for many purposes</li>
-<li><strong>Lack of focus</strong>—unclear what the tool does</li>
-<li><strong>User confusion</strong>—users don’t know how to use it</li>
-</ul>
-<p><strong>Solution:</strong> Focus on one clear problem. Solve it well.</p>
-<hr>
-</section>
-<section id="weak-constraints" class="level3" data-number="30.11.2">
-<h3 data-number="30.11.2" class="anchored" data-anchor-id="weak-constraints"><span class="header-section-number">30.11.2</span> 2. Weak Constraints</h3>
-<ul>
-<li><strong>Unpredictable outputs</strong>—results vary widely</li>
-<li><strong>Poor reliability</strong>—users can’t depend on the tool</li>
-<li><strong>User frustration</strong>—inconsistent behavior</li>
-</ul>
-<p><strong>Solution:</strong> Enforce clear constraints on inputs and outputs.</p>
-<hr>
-</section>
-<section id="poor-interface" class="level3" data-number="30.11.3">
-<h3 data-number="30.11.3" class="anchored" data-anchor-id="poor-interface"><span class="header-section-number">30.11.3</span> 3. Poor Interface</h3>
-<ul>
-<li><strong>Hard to use</strong>—users struggle to interact</li>
-<li><strong>Confusing</strong>—unclear how to provide input</li>
-<li><strong>Inefficient</strong>—too many steps or clicks</li>
-</ul>
-<p><strong>Solution:</strong> Design simple, clear interfaces. Test with real users.</p>
-<hr>
-</section>
-<section id="ignoring-evaluation" class="level3" data-number="30.11.4">
-<h3 data-number="30.11.4" class="anchored" data-anchor-id="ignoring-evaluation"><span class="header-section-number">30.11.4</span> 4. Ignoring Evaluation</h3>
-<ul>
-<li><strong>Quality degradation</strong>—output gets worse over time</li>
-<li><strong>Silent failures</strong>—errors go undetected</li>
-<li><strong>No improvement</strong>—system doesn’t learn from mistakes</li>
-</ul>
-<p><strong>Solution:</strong> Implement evaluation at every stage. Use feedback to improve.</p>
-<hr>
-</section>
-</section>
-<section id="from-tool-to-platform" class="level2" data-number="30.12">
-<h2 data-number="30.12" class="anchored" data-anchor-id="from-tool-to-platform"><span class="header-section-number">30.12</span> From Tool to Platform</h2>
-<p>As tools grow and succeed, they can evolve into platforms:</p>
-<hr>
-<section id="example-3" class="level3" data-number="30.12.1">
-<h3 data-number="30.12.1" class="anchored" data-anchor-id="example-3"><span class="header-section-number">30.12.1</span> Example</h3>
-<ul>
-<li><strong>Single tool</strong> → multiple related tools</li>
-<li><strong>Shared components</strong> → common infrastructure</li>
-<li><strong>Integrated workflows</strong> → connected tool ecosystems</li>
-</ul>
-<hr>
-</section>
-<section id="platform-characteristics" class="level3" data-number="30.12.2">
-<h3 data-number="30.12.2" class="anchored" data-anchor-id="platform-characteristics"><span class="header-section-number">30.12.2</span> Platform Characteristics</h3>
-<ul>
-<li><strong>Multiple tools</strong>—collection of specialized capabilities</li>
-<li><strong>Shared infrastructure</strong>—common systems and data</li>
-<li><strong>Integration</strong>—tools work together seamlessly</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Platforms emerge from well-designed tools. Success leads to expansion.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="final-insight" class="level2" data-number="30.13">
-<h2 data-number="30.13" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">30.13</span> Final Insight</h2>
-<p>An AI tool is not just a system. It is:</p>
-<ul>
-<li><strong>A system shaped for use</strong>—optimized for a specific purpose</li>
-<li><strong>A system made reliable</strong>—guaranteeing quality and consistency</li>
-<li><strong>A system made accessible</strong>—presented through simple interfaces</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>The value of AI is realized through tools. Systems provide capability; tools deliver value.</p>
-</blockquote>
-<hr>
-</section>
-<section id="closing-statement" class="level2" data-number="30.14">
-<h2 data-number="30.14" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">30.14</span> Closing Statement</h2>
-<p>Building an AI tool is the final step in turning capability into value.</p>
-<blockquote class="blockquote">
-<p>From system to tool, definition becomes experience.</p>
-</blockquote>
-<hr>
-</section>
-<section id="key-insight" class="level2" data-number="30.15">
-<h2 data-number="30.15" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">30.15</span> Key Insight</h2>
-<blockquote class="blockquote">
-<p>AI tools are systems packaged into usable interfaces that solve specific problems. Key elements include clear purpose, defined interface, and reliable system. Tools constrain underlying systems to ensure usability and reliability.</p>
-</blockquote>
-</section>
-<section id="action-hint" class="level2" data-number="30.16">
-<h2 data-number="30.16" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">30.16</span> Action Hint</h2>
-<blockquote class="blockquote">
-<p>Define the tool’s purpose clearly. Focus on one specific problem. Design simple, intuitive interfaces. Constrain the system to ensure predictable behavior. Implement evaluation to guarantee quality. Build from reusable components. Iterate based on user feedback. Start with a focused tool, expand to platform as needed.</p>
-</blockquote>
+<section id="小结" class="level2" data-number="30.8">
+<h2 data-number="30.8" class="anchored" data-anchor-id="小结"><span class="header-section-number">30.8</span> 小结</h2>
+<p>AI 工具是 AI 系统的基本构建块。通过将能力封装为具有清晰 Spec 的工具，你可以构建可复用、可测试、可组合的功能单元。</p>
+<p>构建良好 AI 工具的关键是：清晰的接口定义、精确的指令、系统化的评估和迭代。掌握了工具构建，你就为构建更复杂的 AI 系统奠定了坚实的基础。</p>
 
 
 </section>
@@ -1488,13 +1075,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-28.html" class="pagination-link" aria-label="Building a Data Pipeline">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span>
+      <a href="./chapter-28.html" class="pagination-link" aria-label="构建数据管道（Building a Data Pipeline）">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-30.html" class="pagination-link" aria-label="From Idea to Product">
-        <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-30.html" class="pagination-link" aria-label="从理想到产品（From Idea to Product）">
+        <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">从理想到产品（From Idea to Product）</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>13&nbsp; Goal Compression – AI Programming: From Intent to Execution</title>
+<title>13&nbsp; 目标压缩（Goal Compression） – AI Programming: From Intent to Execution</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,19 +37,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="./chapter-11.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-aa873432a3c62897e6c2091c0d30a948.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -250,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-12.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-12.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -263,9 +265,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AI Programming: From Intent to Execution</a> 
         <div class="sidebar-tools-main">
@@ -283,211 +283,211 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">前言（Preface）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">转变：从编码到定义（The Shift: From Coding to Defining）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">新的瓶颈：定义（The New Bottleneck: Definition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">编程现在是什么？（What is Programming Now?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">最小循环（The Minimal Loop）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">意图：定义要做什么（Intent: Defining What to Do）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">规格说明：消除歧义（Spec: Eliminating Ambiguity）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">指令：使其可执行（Instruction: Making It Executable）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">评估与迭代（Evaluation &amp; Iteration）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">可能性空间（Possibility Space）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-12.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">从 Spec 到指令（From Spec to Instruction）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">指令设计（Instruction Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">工具使用与 API（Tool Use &amp; APIs）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">构建智能体系统（Building an Agent System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">构建聊天系统（Building a Chat System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">从理想到产品（From Idea to Product）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-31.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">编程即系统设计（Programming as System Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">语言即操作系统（Language as an Operating System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">人类 + AI 认知（Human + AI Cognition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">构建者的未来（The Future of Builders）</span></span></a>
   </div>
 </li>
     </ul>
@@ -500,55 +500,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#from-complexity-to-clarity" id="toc-from-complexity-to-clarity" class="nav-link active" data-scroll-target="#from-complexity-to-clarity"><span class="header-section-number">13.1</span> From Complexity to Clarity</a></li>
-  <li><a href="#what-is-goal-compression" id="toc-what-is-goal-compression" class="nav-link" data-scroll-target="#what-is-goal-compression"><span class="header-section-number">13.2</span> What is Goal Compression?</a>
-  <ul class="collapse">
-  <li><a href="#key-idea" id="toc-key-idea" class="nav-link" data-scroll-target="#key-idea"><span class="header-section-number">13.2.1</span> Key Idea</a></li>
-  </ul></li>
-  <li><a href="#why-compression-is-necessary" id="toc-why-compression-is-necessary" class="nav-link" data-scroll-target="#why-compression-is-necessary"><span class="header-section-number">13.3</span> Why Compression is Necessary</a></li>
-  <li><a href="#from-vague-to-verifiable" id="toc-from-vague-to-verifiable" class="nav-link" data-scroll-target="#from-vague-to-verifiable"><span class="header-section-number">13.4</span> From Vague to Verifiable</a>
-  <ul class="collapse">
-  <li><a href="#example-transformation" id="toc-example-transformation" class="nav-link" data-scroll-target="#example-transformation"><span class="header-section-number">13.4.1</span> Example Transformation</a></li>
-  </ul></li>
-  <li><a href="#the-core-dimensions-of-a-clear-goal" id="toc-the-core-dimensions-of-a-clear-goal" class="nav-link" data-scroll-target="#the-core-dimensions-of-a-clear-goal"><span class="header-section-number">13.5</span> The Core Dimensions of a Clear Goal</a>
-  <ul class="collapse">
-  <li><a href="#objective" id="toc-objective" class="nav-link" data-scroll-target="#objective"><span class="header-section-number">13.5.1</span> 1. Objective</a></li>
-  <li><a href="#object" id="toc-object" class="nav-link" data-scroll-target="#object"><span class="header-section-number">13.5.2</span> 2. Object</a></li>
-  <li><a href="#context" id="toc-context" class="nav-link" data-scroll-target="#context"><span class="header-section-number">13.5.3</span> 3. Context</a></li>
-  <li><a href="#constraints" id="toc-constraints" class="nav-link" data-scroll-target="#constraints"><span class="header-section-number">13.5.4</span> 4. Constraints</a></li>
-  <li><a href="#success-criteria" id="toc-success-criteria" class="nav-link" data-scroll-target="#success-criteria"><span class="header-section-number">13.5.5</span> 5. Success Criteria</a></li>
-  </ul></li>
-  <li><a href="#compression-as-reduction-of-degrees-of-freedom" id="toc-compression-as-reduction-of-degrees-of-freedom" class="nav-link" data-scroll-target="#compression-as-reduction-of-degrees-of-freedom"><span class="header-section-number">13.6</span> Compression as Reduction of Degrees of Freedom</a>
-  <ul class="collapse">
-  <li><a href="#before-compression" id="toc-before-compression" class="nav-link" data-scroll-target="#before-compression"><span class="header-section-number">13.6.1</span> Before Compression</a></li>
-  <li><a href="#after-compression" id="toc-after-compression" class="nav-link" data-scroll-target="#after-compression"><span class="header-section-number">13.6.2</span> After Compression</a></li>
-  </ul></li>
-  <li><a href="#compression-vs-over-specification" id="toc-compression-vs-over-specification" class="nav-link" data-scroll-target="#compression-vs-over-specification"><span class="header-section-number">13.7</span> Compression vs Over-Specification</a>
-  <ul class="collapse">
-  <li><a href="#compression" id="toc-compression" class="nav-link" data-scroll-target="#compression"><span class="header-section-number">13.7.1</span> Compression</a></li>
-  <li><a href="#over-specification" id="toc-over-specification" class="nav-link" data-scroll-target="#over-specification"><span class="header-section-number">13.7.2</span> Over-Specification</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">13.7.3</span> Example</a></li>
-  </ul></li>
-  <li><a href="#techniques-for-goal-compression" id="toc-techniques-for-goal-compression" class="nav-link" data-scroll-target="#techniques-for-goal-compression"><span class="header-section-number">13.8</span> Techniques for Goal Compression</a>
-  <ul class="collapse">
-  <li><a href="#ask-what-does-success-look-like" id="toc-ask-what-does-success-look-like" class="nav-link" data-scroll-target="#ask-what-does-success-look-like"><span class="header-section-number">13.8.1</span> 1. Ask “What Does Success Look Like?”</a></li>
-  <li><a href="#identify-the-transformation" id="toc-identify-the-transformation" class="nav-link" data-scroll-target="#identify-the-transformation"><span class="header-section-number">13.8.2</span> 2. Identify the Transformation</a></li>
-  <li><a href="#remove-ambiguous-terms" id="toc-remove-ambiguous-terms" class="nav-link" data-scroll-target="#remove-ambiguous-terms"><span class="header-section-number">13.8.3</span> 3. Remove Ambiguous Terms</a></li>
-  <li><a href="#add-constraints" id="toc-add-constraints" class="nav-link" data-scroll-target="#add-constraints"><span class="header-section-number">13.8.4</span> 4. Add Constraints</a></li>
-  <li><a href="#test-for-interpretability" id="toc-test-for-interpretability" class="nav-link" data-scroll-target="#test-for-interpretability"><span class="header-section-number">13.8.5</span> 5. Test for Interpretability</a></li>
-  </ul></li>
-  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">13.9</span> Common Mistakes</a>
-  <ul class="collapse">
-  <li><a href="#staying-at-the-idea-level" id="toc-staying-at-the-idea-level" class="nav-link" data-scroll-target="#staying-at-the-idea-level"><span class="header-section-number">13.9.1</span> 1. Staying at the Idea Level</a></li>
-  <li><a href="#mixing-goals-with-implementation" id="toc-mixing-goals-with-implementation" class="nav-link" data-scroll-target="#mixing-goals-with-implementation"><span class="header-section-number">13.9.2</span> 2. Mixing Goals with Implementation</a></li>
-  <li><a href="#ignoring-evaluation" id="toc-ignoring-evaluation" class="nav-link" data-scroll-target="#ignoring-evaluation"><span class="header-section-number">13.9.3</span> 3. Ignoring Evaluation</a></li>
-  <li><a href="#overcomplicating-the-goal" id="toc-overcomplicating-the-goal" class="nav-link" data-scroll-target="#overcomplicating-the-goal"><span class="header-section-number">13.9.4</span> 4. Overcomplicating the Goal</a></li>
-  </ul></li>
-  <li><a href="#goal-compression-as-a-skill" id="toc-goal-compression-as-a-skill" class="nav-link" data-scroll-target="#goal-compression-as-a-skill"><span class="header-section-number">13.10</span> Goal Compression as a Skill</a></li>
-  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">13.11</span> Final Insight</a></li>
-  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">13.12</span> Closing Statement</a></li>
-  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">13.13</span> Key Insight</a></li>
-  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">13.14</span> Action Hint</a></li>
+  <li><a href="#从复杂到清晰" id="toc-从复杂到清晰" class="nav-link active" data-scroll-target="#从复杂到清晰"><span class="header-section-number">13.1</span> 从复杂到清晰</a></li>
+  <li><a href="#什么是目标压缩what-is-goal-compression" id="toc-什么是目标压缩what-is-goal-compression" class="nav-link" data-scroll-target="#什么是目标压缩what-is-goal-compression"><span class="header-section-number">13.2</span> 什么是目标压缩？（What is Goal Compression?）</a></li>
+  <li><a href="#为什么压缩是必要的why-compression-is-necessary" id="toc-为什么压缩是必要的why-compression-is-necessary" class="nav-link" data-scroll-target="#为什么压缩是必要的why-compression-is-necessary"><span class="header-section-number">13.3</span> 为什么压缩是必要的（Why Compression is Necessary）</a></li>
+  <li><a href="#压缩框架the-compression-framework" id="toc-压缩框架the-compression-framework" class="nav-link" data-scroll-target="#压缩框架the-compression-framework"><span class="header-section-number">13.4</span> 压缩框架（The Compression Framework）</a></li>
+  <li><a href="#压缩实践compression-in-practice" id="toc-压缩实践compression-in-practice" class="nav-link" data-scroll-target="#压缩实践compression-in-practice"><span class="header-section-number">13.5</span> 压缩实践（Compression in Practice）</a></li>
   </ul>
 </nav>
     </div>
@@ -558,7 +514,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></h1>
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></h1>
 </div>
 
 
@@ -575,346 +531,67 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="from-complexity-to-clarity" class="level2" data-number="13.1">
-<h2 data-number="13.1" class="anchored" data-anchor-id="from-complexity-to-clarity"><span class="header-section-number">13.1</span> From Complexity to Clarity</h2>
-<p>In our exploration of Possibility Space, we identified Goal Space as the first layer—the set of all possible outcomes (Z) we might aim for. We discovered that many people struggle with “I don’t know what to build” precisely because they cannot see the Goal Space clearly.</p>
-<p>But even when we can see the Goal Space, we face another challenge: the goals we discover are often vague, complex, and unstructured. They capture an intuition or aspiration but lack the precision necessary for system development.</p>
-<p>Consider these common initial goals:</p>
+<section id="从复杂到清晰" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="从复杂到清晰"><span class="header-section-number">13.1</span> 从复杂到清晰</h2>
+<p>在我们对可能性空间的探索中，我们将目标空间确定为第一层——我们可能瞄准的所有可能结果（Z）的集合。我们发现许多人挣扎于”不知道构建什么”，正是因为他们无法清晰地看到目标空间。</p>
+<p>但即使我们能看到目标空间，我们也面临另一个挑战：我们发现的目标常常是模糊的、复杂的、非结构化的。它们捕捉了一种直觉或愿望，但缺乏系统开发所需的精确性。</p>
+<p>考虑这些常见的初始目标：</p>
 <ul>
-<li>“Build something useful”</li>
-<li>“Improve user experience”</li>
-<li>“Make it smarter”</li>
-<li>“Enhance productivity”</li>
+<li>“构建一些有用的东西”</li>
+<li>“改善用户体验”</li>
+<li>“让它更智能”</li>
+<li>“提高生产力”</li>
 </ul>
-<p>These statements feel meaningful and inspiring. They communicate a general direction and aspiration. But they are not actionable. They cannot guide system development effectively.</p>
-<p>To build systems, we must do more than identify possible goals from the Goal Space. We must transform them. They must move from vague aspirations to precise, testable definitions.</p>
+<p>这些陈述感觉有意义且鼓舞人心。它们传达了一个通用的方向和愿望。但它们不是可操作的。它们不能有效指导系统开发。</p>
+<p>要构建系统，我们必须做更多的事情，而不仅仅从目标空间中识别可能的目标。我们必须转化它们。它们必须从模糊的愿望变为精确的、可测试的定义。</p>
 <blockquote class="blockquote">
-<p><strong>Goal Compression is the process of turning vague intentions into precise, testable definitions.</strong></p>
+<p><strong>目标压缩（Goal Compression）是将模糊意图转化为精确、可测试定义的过程。</strong></p>
 </blockquote>
 <hr>
 </section>
-<section id="what-is-goal-compression" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="what-is-goal-compression"><span class="header-section-number">13.2</span> What is Goal Compression?</h2>
-<p>Goal compression is the act of:</p>
+<section id="什么是目标压缩what-is-goal-compression" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="什么是目标压缩what-is-goal-compression"><span class="header-section-number">13.2</span> 什么是目标压缩？（What is Goal Compression?）</h2>
+<p>目标压缩是以下行为：</p>
 <blockquote class="blockquote">
-<p><strong>Reducing ambiguity while preserving intent</strong></p>
+<p><strong>在保持意图的同时减少歧义</strong></p>
 </blockquote>
-<p>It does not simplify the goal by removing meaning or value. Instead, it simplifies by:</p>
+<p>它不通过移除意义或价值来简化目标。它通过以下方式简化：</p>
 <ul>
-<li><strong>Eliminating vagueness</strong>—making implicit assumptions explicit</li>
-<li><strong>Defining boundaries</strong>—specifying what is included and excluded</li>
-<li><strong>Making outcomes observable</strong>—defining how success can be measured</li>
+<li><strong>消除模糊性</strong>——使隐式假设显式化</li>
+<li><strong>定义边界</strong>——指定包含和排除什么</li>
+<li><strong>使结果可观察</strong>——定义如何衡量成功</li>
 </ul>
-<hr>
-<section id="key-idea" class="level3" data-number="13.2.1">
-<h3 data-number="13.2.1" class="anchored" data-anchor-id="key-idea"><span class="header-section-number">13.2.1</span> Key Idea</h3>
-<p>A compressed goal is:</p>
+<p>一个压缩后的目标是：</p>
 <ul>
-<li><strong>Clear</strong>—unambiguous and specific</li>
-<li><strong>Bounded</strong>—has defined scope and limits</li>
-<li><strong>Verifiable</strong>—can be tested against objective criteria</li>
+<li><strong>清晰的</strong>——无歧义且具体</li>
+<li><strong>有界的</strong>——有定义的Scope和限制</li>
+<li><strong>可验证的</strong>——可以对照客观标准进行测试</li>
 </ul>
 <hr>
 </section>
+<section id="为什么压缩是必要的why-compression-is-necessary" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="为什么压缩是必要的why-compression-is-necessary"><span class="header-section-number">13.3</span> 为什么压缩是必要的（Why Compression is Necessary）</h2>
+<p>没有目标压缩，整个系统开发过程都会受损：意图保持不清晰、Spec 变得不一致、指令变得不稳定、评估变得主观。</p>
+<p>整个系统变得不可靠且难以管理。</p>
+<hr>
 </section>
-<section id="why-compression-is-necessary" class="level2" data-number="13.3">
-<h2 data-number="13.3" class="anchored" data-anchor-id="why-compression-is-necessary"><span class="header-section-number">13.3</span> Why Compression is Necessary</h2>
-<p>Without goal compression, the entire system development process is compromised:</p>
-<ul>
-<li><strong>Intent remains unclear</strong>—the team doesn’t agree on what they’re building</li>
-<li><strong>Spec becomes inconsistent</strong>—requirements conflict or contradict each other</li>
-<li><strong>Instruction becomes unstable</strong>—execution produces unreliable results</li>
-<li><strong>Evaluation becomes subjective</strong>—there’s no way to measure success</li>
-</ul>
-<p>In other words:</p>
+<section id="压缩框架the-compression-framework" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="压缩框架the-compression-framework"><span class="header-section-number">13.4</span> 压缩框架（The Compression Framework）</h2>
+<p>一个实用的压缩使用五个维度的框架：</p>
+<p><strong>1. 目标（Objective）</strong>：这个努力的主要目标是什么？“改善用户体验”→“将首次使用时的任务完成时间减少 30%”</p>
+<p><strong>2. 对象（Object）</strong>：受影响的实体或领域是什么？“所有用户”→“过去 30 天内注册的新用户”</p>
+<p><strong>3. 上下文（Context）</strong>：目标适用的环境或情况是什么？“在系统中”→“在桌面 Web 应用中，标准网络条件下”</p>
+<p><strong>4. 约束（Constraints）</strong>：必须遵守什么限制？“保持现有功能”→“不改变现有 API，不增加加载时间超过 200ms”</p>
+<p><strong>5. 成功标准（Success Criteria）</strong>：我们如何知道我们已经实现了目标？“用户更开心”→“任务完成率 &gt; 85%，NPS &gt; 50”</p>
+<hr>
+</section>
+<section id="压缩实践compression-in-practice" class="level2" data-number="13.5">
+<h2 data-number="13.5" class="anchored" data-anchor-id="压缩实践compression-in-practice"><span class="header-section-number">13.5</span> 压缩实践（Compression in Practice）</h2>
+<p><strong>模糊的意图：</strong> “改善搜索”。</p>
+<p><strong>压缩后的目标：</strong> - <strong>目标</strong>：减少找到相关结果所需的时间 - <strong>对象</strong>：文档搜索功能 - <strong>上下文</strong>：包含超过 1000 个文档的知识库 - <strong>约束</strong>：不改变 UI，不引入外部搜索服务，维护 99.9% 的正常运行时间 - <strong>成功标准</strong>：前三个结果的相关性评级 &gt; 80%，搜索时间 &lt; 500ms</p>
+<p>压缩将”改善搜索”从一个模糊的愿望变成了可执行的定义。</p>
 <blockquote class="blockquote">
-<p>The entire system becomes unreliable and difficult to manage.</p>
-</blockquote>
-<hr>
-</section>
-<section id="from-vague-to-verifiable" class="level2" data-number="13.4">
-<h2 data-number="13.4" class="anchored" data-anchor-id="from-vague-to-verifiable"><span class="header-section-number">13.4</span> From Vague to Verifiable</h2>
-<p>Goal compression transforms goals along a spectrum, moving them from vague inspiration to precise, testable specification:</p>
-<pre><code>Vague → Clear → Structured → Verifiable</code></pre>
-<hr>
-<section id="example-transformation" class="level3" data-number="13.4.1">
-<h3 data-number="13.4.1" class="anchored" data-anchor-id="example-transformation"><span class="header-section-number">13.4.1</span> Example Transformation</h3>
-<p>Consider the goal: “Build a smart assistant”</p>
-<p><strong>Vague:</strong> &gt; “Build a smart assistant.”</p>
-<p>This captures the aspiration but provides no guidance for implementation.</p>
-<p><strong>Clear:</strong> &gt; “Build an assistant that answers user questions.”</p>
-<p>Better—we now know what the system should do. But still not specific enough.</p>
-<p><strong>Structured:</strong> &gt; “Build a system that answers user questions using retrieved knowledge.”</p>
-<p>Good—we now understand the mechanism. But still missing important details.</p>
-<p><strong>Verifiable:</strong> &gt; “Given a user query, the system retrieves relevant documents from a knowledge base and generates an answer grounded in those documents, with a response time under 2 seconds and an accuracy of at least 80% as measured by human evaluators.”</p>
-<p>Now we have a goal that can guide implementation and be tested for success.</p>
-<hr>
-<blockquote class="blockquote">
-<p>The final stage allows evaluation and systematic improvement.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="the-core-dimensions-of-a-clear-goal" class="level2" data-number="13.5">
-<h2 data-number="13.5" class="anchored" data-anchor-id="the-core-dimensions-of-a-clear-goal"><span class="header-section-number">13.5</span> The Core Dimensions of a Clear Goal</h2>
-<p>A well-compressed goal typically defines five essential dimensions. These dimensions provide a complete picture of what the goal entails.</p>
-<hr>
-<section id="objective" class="level3" data-number="13.5.1">
-<h3 data-number="13.5.1" class="anchored" data-anchor-id="objective"><span class="header-section-number">13.5.1</span> 1. Objective</h3>
-<p>What outcome is expected? What is the primary purpose?</p>
-<p>This defines the “what” of the goal—the core result that should be achieved.</p>
-<p><strong>Example:</strong> &gt; “Answer user questions”</p>
-<hr>
-</section>
-<section id="object" class="level3" data-number="13.5.2">
-<h3 data-number="13.5.2" class="anchored" data-anchor-id="object"><span class="header-section-number">13.5.2</span> 2. Object</h3>
-<p>What is being acted upon? What entity or domain is the target?</p>
-<p>This defines the scope and focus of the effort.</p>
-<p><strong>Example:</strong> &gt; “User queries”</p>
-<hr>
-</section>
-<section id="context" class="level3" data-number="13.5.3">
-<h3 data-number="13.5.3" class="anchored" data-anchor-id="context"><span class="header-section-number">13.5.3</span> 3. Context</h3>
-<p>Under what conditions does the goal apply? What is the environment or situation?</p>
-<p>This provides the boundaries within which the system must operate.</p>
-<p><strong>Example:</strong> &gt; “Within a web application with 1000+ concurrent users”</p>
-<hr>
-</section>
-<section id="constraints" class="level3" data-number="13.5.4">
-<h3 data-number="13.5.4" class="anchored" data-anchor-id="constraints"><span class="header-section-number">13.5.4</span> 4. Constraints</h3>
-<p>What limits exist? What boundaries must be respected?</p>
-<p>Constraints define both what must be done and what must not be done.</p>
-<p><strong>Example:</strong> &gt; “Response time &lt; 2 seconds, 95% accuracy”</p>
-<hr>
-</section>
-<section id="success-criteria" class="level3" data-number="13.5.5">
-<h3 data-number="13.5.5" class="anchored" data-anchor-id="success-criteria"><span class="header-section-number">13.5.5</span> 5. Success Criteria</h3>
-<p>How do we measure success? What indicates that the goal has been achieved?</p>
-<p>Success criteria provide the basis for evaluation and improvement.</p>
-<p><strong>Example:</strong> &gt; “Answers are relevant and grounded in retrieved documents, as measured by human evaluation”</p>
-<hr>
-<blockquote class="blockquote">
-<p>Without these dimensions, a goal is incomplete and cannot effectively guide system development.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="compression-as-reduction-of-degrees-of-freedom" class="level2" data-number="13.6">
-<h2 data-number="13.6" class="anchored" data-anchor-id="compression-as-reduction-of-degrees-of-freedom"><span class="header-section-number">13.6</span> Compression as Reduction of Degrees of Freedom</h2>
-<p>Another way to understand goal compression is in terms of reducing the number of possible interpretations.</p>
-<hr>
-<section id="before-compression" class="level3" data-number="13.6.1">
-<h3 data-number="13.6.1" class="anchored" data-anchor-id="before-compression"><span class="header-section-number">13.6.1</span> Before Compression</h3>
-<ul>
-<li>Many possible meanings—the goal can be interpreted in multiple ways</li>
-<li>Many possible outputs—the system could produce many different results</li>
-<li>High uncertainty—it’s unclear what the right approach is</li>
-</ul>
-<hr>
-</section>
-<section id="after-compression" class="level3" data-number="13.6.2">
-<h3 data-number="13.6.2" class="anchored" data-anchor-id="after-compression"><span class="header-section-number">13.6.2</span> After Compression</h3>
-<ul>
-<li>Narrowed interpretation—the goal has a single, clear meaning</li>
-<li>Constrained outputs—the system has limited freedom in what it produces</li>
-<li>Reduced uncertainty—the path forward is clear</li>
-</ul>
-<hr>
-<p>This is critical for systems:</p>
-<ul>
-<li>Systems cannot choose among infinite interpretations—they need explicit guidance</li>
-<li>They require bounded spaces to operate effectively</li>
-<li>Ambiguity leads to unpredictable and unreliable behavior</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="compression-vs-over-specification" class="level2" data-number="13.7">
-<h2 data-number="13.7" class="anchored" data-anchor-id="compression-vs-over-specification"><span class="header-section-number">13.7</span> Compression vs Over-Specification</h2>
-<p>There is an important distinction between:</p>
-<ul>
-<li><strong>Compressing a goal</strong>—removing ambiguity while preserving intent</li>
-<li><strong>Over-constraining a goal</strong>—adding unnecessary restrictions that limit flexibility</li>
-</ul>
-<hr>
-<section id="compression" class="level3" data-number="13.7.1">
-<h3 data-number="13.7.1" class="anchored" data-anchor-id="compression"><span class="header-section-number">13.7.1</span> Compression</h3>
-<ul>
-<li>Removes ambiguity—makes the goal clear and specific</li>
-<li>Defines boundaries—specifies what is included and excluded</li>
-<li>Preserves intent—maintains the original purpose and value</li>
-</ul>
-<hr>
-</section>
-<section id="over-specification" class="level3" data-number="13.7.2">
-<h3 data-number="13.7.2" class="anchored" data-anchor-id="over-specification"><span class="header-section-number">13.7.2</span> Over-Specification</h3>
-<ul>
-<li>Fixes too many details—specifies implementation choices unnecessarily</li>
-<li>Limits flexibility—reduces the system’s ability to adapt</li>
-<li>Adds constraints without purpose—creates unnecessary complexity</li>
-</ul>
-<hr>
-</section>
-<section id="example" class="level3" data-number="13.7.3">
-<h3 data-number="13.7.3" class="anchored" data-anchor-id="example"><span class="header-section-number">13.7.3</span> Example</h3>
-<p><strong>Compressed:</strong> &gt; “Generate a summary under 100 words.”</p>
-<p>This specifies a clear constraint without dictating the content or style.</p>
-<p><strong>Over-specified:</strong> &gt; “Use exactly 3 sentences, each with 12–15 words, using formal academic tone, beginning with a clear topic sentence.”</p>
-<p>This specifies too many details and unnecessarily limits the system’s flexibility.</p>
-<hr>
-<blockquote class="blockquote">
-<p>Good compression clarifies. Over-specification restricts unnecessarily.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="techniques-for-goal-compression" class="level2" data-number="13.8">
-<h2 data-number="13.8" class="anchored" data-anchor-id="techniques-for-goal-compression"><span class="header-section-number">13.8</span> Techniques for Goal Compression</h2>
-<p>Several practical techniques can help compress goals effectively:</p>
-<hr>
-<section id="ask-what-does-success-look-like" class="level3" data-number="13.8.1">
-<h3 data-number="13.8.1" class="anchored" data-anchor-id="ask-what-does-success-look-like"><span class="header-section-number">13.8.1</span> 1. Ask “What Does Success Look Like?”</h3>
-<p>Force yourself to define observable, measurable outcomes:</p>
-<ul>
-<li>What will we see when the goal is achieved?</li>
-<li>What will be different?</li>
-<li>How will we know it works?</li>
-</ul>
-<p>This forces specificity and creates evaluation criteria.</p>
-<hr>
-</section>
-<section id="identify-the-transformation" class="level3" data-number="13.8.2">
-<h3 data-number="13.8.2" class="anchored" data-anchor-id="identify-the-transformation"><span class="header-section-number">13.8.2</span> 2. Identify the Transformation</h3>
-<p>Define the change the system should create:</p>
-<pre><code>Current State → Desired State</code></pre>
-<p>What is the situation now? What should it be after the system is deployed?</p>
-<hr>
-</section>
-<section id="remove-ambiguous-terms" class="level3" data-number="13.8.3">
-<h3 data-number="13.8.3" class="anchored" data-anchor-id="remove-ambiguous-terms"><span class="header-section-number">13.8.3</span> 3. Remove Ambiguous Terms</h3>
-<p>Replace subjective or vague terms with specific, measurable ones:</p>
-<ul>
-<li>“better” → “20% faster”</li>
-<li>“fast” → “under 2 seconds”</li>
-<li>“smart” → “accurate on 95% of test cases”</li>
-</ul>
-<hr>
-</section>
-<section id="add-constraints" class="level3" data-number="13.8.4">
-<h3 data-number="13.8.4" class="anchored" data-anchor-id="add-constraints"><span class="header-section-number">13.8.4</span> 4. Add Constraints</h3>
-<p>Define limits explicitly:</p>
-<ul>
-<li>Time constraints—“must complete within X seconds”</li>
-<li>Format constraints—“must output JSON”</li>
-<li>Scope constraints—“only process documents under 10MB”</li>
-</ul>
-<hr>
-</section>
-<section id="test-for-interpretability" class="level3" data-number="13.8.5">
-<h3 data-number="13.8.5" class="anchored" data-anchor-id="test-for-interpretability"><span class="header-section-number">13.8.5</span> 5. Test for Interpretability</h3>
-<p>Ask yourself:</p>
-<blockquote class="blockquote">
-<p>Can another person (or system) execute this without guessing?</p>
-</blockquote>
-<p>If the answer is no, the goal needs more compression.</p>
-<hr>
-</section>
-</section>
-<section id="common-mistakes" class="level2" data-number="13.9">
-<h2 data-number="13.9" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">13.9</span> Common Mistakes</h2>
-<hr>
-<section id="staying-at-the-idea-level" class="level3" data-number="13.9.1">
-<h3 data-number="13.9.1" class="anchored" data-anchor-id="staying-at-the-idea-level"><span class="header-section-number">13.9.1</span> 1. Staying at the Idea Level</h3>
-<ul>
-<li>Never defining details—remaining abstract and vague</li>
-<li>Remaining inspirational—failing to become actionable</li>
-<li>Moving to implementation prematurely—without clarifying the goal</li>
-</ul>
-<hr>
-</section>
-<section id="mixing-goals-with-implementation" class="level3" data-number="13.9.2">
-<h3 data-number="13.9.2" class="anchored" data-anchor-id="mixing-goals-with-implementation"><span class="header-section-number">13.9.2</span> 2. Mixing Goals with Implementation</h3>
-<ul>
-<li>Jumping to tools or frameworks—before clarifying what’s needed</li>
-<li>Focusing on how to build—before understanding what to build</li>
-<li>Losing focus on outcome—getting distracted by implementation details</li>
-</ul>
-<hr>
-</section>
-<section id="ignoring-evaluation" class="level3" data-number="13.9.3">
-<h3 data-number="13.9.3" class="anchored" data-anchor-id="ignoring-evaluation"><span class="header-section-number">13.9.3</span> 3. Ignoring Evaluation</h3>
-<ul>
-<li>No way to verify success—no criteria for measurement</li>
-<li>Can’t assess improvement—no baseline for comparison</li>
-<li>Subjective assessment—relying on gut feel rather than data</li>
-</ul>
-<hr>
-</section>
-<section id="overcomplicating-the-goal" class="level3" data-number="13.9.4">
-<h3 data-number="13.9.4" class="anchored" data-anchor-id="overcomplicating-the-goal"><span class="header-section-number">13.9.4</span> 4. Overcomplicating the Goal</h3>
-<ul>
-<li>Adding unnecessary details—cluttering the goal with irrelevant information</li>
-<li>Reducing clarity—too much information obscures the core objective</li>
-<li>Making it hard to remember—complex goals are difficult to communicate</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="goal-compression-as-a-skill" class="level2" data-number="13.10">
-<h2 data-number="13.10" class="anchored" data-anchor-id="goal-compression-as-a-skill"><span class="header-section-number">13.10</span> Goal Compression as a Skill</h2>
-<p>Goal compression improves with practice. It is not a natural talent but a learnable skill.</p>
-<p>It requires:</p>
-<ul>
-<li><strong>Clear thinking</strong>—the ability to distill complex ideas to their essence</li>
-<li><strong>Precision in language</strong>—choosing words carefully and specifically</li>
-<li><strong>Awareness of system behavior</strong>—understanding what systems need to execute effectively</li>
-</ul>
-<p>The more you practice, the faster you can:</p>
-<ul>
-<li>Move from vague to precise—compressing goals rapidly</li>
-<li>Define systems effectively—creating actionable specifications</li>
-<li>Communicate clearly—ensuring everyone understands the goal</li>
-</ul>
-<hr>
-</section>
-<section id="final-insight" class="level2" data-number="13.11">
-<h2 data-number="13.11" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">13.11</span> Final Insight</h2>
-<p>Goal compression is the bridge between intention and specification. Without it:</p>
-<ul>
-<li>Intent remains unusable—ideas cannot be realized</li>
-<li>Spec cannot be formed—requirements cannot be specified</li>
-<li>Systems cannot be built—there’s no clear direction</li>
-</ul>
-<p>With it:</p>
-<ul>
-<li>Intent becomes actionable—ideas can guide development</li>
-<li>Spec becomes possible—requirements can be specified</li>
-<li>Systems become buildable—there’s a clear path forward</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>You cannot build what you cannot define.</p>
-</blockquote>
-<hr>
-</section>
-<section id="closing-statement" class="level2" data-number="13.12">
-<h2 data-number="13.12" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">13.12</span> Closing Statement</h2>
-<p>In the LLM era, the ability to compress goals is a core capability. It is the foundation of effective system development.</p>
-<blockquote class="blockquote">
-<p>The clearer the goal, the more reliable the system.</p>
-</blockquote>
-<hr>
-</section>
-<section id="key-insight" class="level2" data-number="13.13">
-<h2 data-number="13.13" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">13.13</span> Key Insight</h2>
-<blockquote class="blockquote">
-<p>Goal compression transforms vague intentions into precise, testable definitions. A well-compressed goal specifies objective, object, context, constraints, and success criteria.</p>
-</blockquote>
-</section>
-<section id="action-hint" class="level2" data-number="13.14">
-<h2 data-number="13.14" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">13.14</span> Action Hint</h2>
-<blockquote class="blockquote">
-<p>Practice goal compression on your current projects. Take your existing goals and run them through the compression process: Vague → Clear → Structured → Verifiable. Ask yourself: “Is this specific enough that someone else could execute it without guessing?”</p>
+<p>一个良好的压缩目标具有三要素：清晰（无歧义）、有界（范围明确）、可验证（可测试）。</p>
 </blockquote>
 
 
@@ -1336,13 +1013,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-11.html" class="pagination-link" aria-label="Composition">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span>
+      <a href="./chapter-11.html" class="pagination-link" aria-label="组合（Composition）">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-13.html" class="pagination-link" aria-label="What is Spec Engineering?">
-        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-13.html" class="pagination-link" aria-label="什么是规格工程？（What is Spec Engineering?）">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

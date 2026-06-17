@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>26&nbsp; Debugging in the LLM Era – AI Programming: From Intent to Execution</title>
+<title>26&nbsp; LLM 时代的调试（Debugging in the LLM Era） – AI Programming: From Intent to Execution</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,19 +37,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="./chapter-24.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-aa873432a3c62897e6c2091c0d30a948.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -250,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-25.html"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-25.html"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -263,9 +265,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AI Programming: From Intent to Execution</a> 
         <div class="sidebar-tools-main">
@@ -283,211 +283,211 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">前言（Preface）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">转变：从编码到定义（The Shift: From Coding to Defining）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">新的瓶颈：定义（The New Bottleneck: Definition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">编程现在是什么？（What is Programming Now?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">最小循环（The Minimal Loop）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">意图：定义要做什么（Intent: Defining What to Do）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">规格说明：消除歧义（Spec: Eliminating Ambiguity）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">指令：使其可执行（Instruction: Making It Executable）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">评估与迭代（Evaluation &amp; Iteration）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">可能性空间（Possibility Space）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">从 Spec 到指令（From Spec to Instruction）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">指令设计（Instruction Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">工具使用与 API（Tool Use &amp; APIs）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">构建智能体系统（Building an Agent System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-25.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">构建聊天系统（Building a Chat System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">从理想到产品（From Idea to Product）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-31.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">编程即系统设计（Programming as System Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">语言即操作系统（Language as an Operating System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">人类 + AI 认知（Human + AI Cognition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">构建者的未来（The Future of Builders）</span></span></a>
   </div>
 </li>
     </ul>
@@ -500,68 +500,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-shift-in-debugging" id="toc-the-shift-in-debugging" class="nav-link active" data-scroll-target="#the-shift-in-debugging"><span class="header-section-number">26.1</span> The Shift in Debugging</a></li>
-  <li><a href="#what-are-we-debugging-now" id="toc-what-are-we-debugging-now" class="nav-link" data-scroll-target="#what-are-we-debugging-now"><span class="header-section-number">26.2</span> What Are We Debugging Now?</a>
+  <li><a href="#调试已经改变" id="toc-调试已经改变" class="nav-link active" data-scroll-target="#调试已经改变"><span class="header-section-number">26.1</span> 调试已经改变</a></li>
+  <li><a href="#错误类型types-of-errors" id="toc-错误类型types-of-errors" class="nav-link" data-scroll-target="#错误类型types-of-errors"><span class="header-section-number">26.2</span> 错误类型（Types of Errors）</a>
   <ul class="collapse">
-  <li><a href="#new-debug-targets" id="toc-new-debug-targets" class="nav-link" data-scroll-target="#new-debug-targets"><span class="header-section-number">26.2.1</span> New Debug Targets</a></li>
+  <li><a href="#定义错误" id="toc-定义错误" class="nav-link" data-scroll-target="#定义错误"><span class="header-section-number">26.2.1</span> 定义错误</a></li>
+  <li><a href="#执行错误" id="toc-执行错误" class="nav-link" data-scroll-target="#执行错误"><span class="header-section-number">26.2.2</span> 执行错误</a></li>
+  <li><a href="#模型错误" id="toc-模型错误" class="nav-link" data-scroll-target="#模型错误"><span class="header-section-number">26.2.3</span> 模型错误</a></li>
   </ul></li>
-  <li><a href="#types-of-failures" id="toc-types-of-failures" class="nav-link" data-scroll-target="#types-of-failures"><span class="header-section-number">26.3</span> Types of Failures</a>
-  <ul class="collapse">
-  <li><a href="#incorrect-output" id="toc-incorrect-output" class="nav-link" data-scroll-target="#incorrect-output"><span class="header-section-number">26.3.1</span> 1. Incorrect Output</a></li>
-  <li><a href="#inconsistent-behavior" id="toc-inconsistent-behavior" class="nav-link" data-scroll-target="#inconsistent-behavior"><span class="header-section-number">26.3.2</span> 2. Inconsistent Behavior</a></li>
-  <li><a href="#format-violations" id="toc-format-violations" class="nav-link" data-scroll-target="#format-violations"><span class="header-section-number">26.3.3</span> 3. Format Violations</a></li>
-  <li><a href="#missing-information" id="toc-missing-information" class="nav-link" data-scroll-target="#missing-information"><span class="header-section-number">26.3.4</span> 4. Missing Information</a></li>
-  </ul></li>
-  <li><a href="#debugging-as-diagnosis" id="toc-debugging-as-diagnosis" class="nav-link" data-scroll-target="#debugging-as-diagnosis"><span class="header-section-number">26.4</span> Debugging as Diagnosis</a>
-  <ul class="collapse">
-  <li><a href="#key-question" id="toc-key-question" class="nav-link" data-scroll-target="#key-question"><span class="header-section-number">26.4.1</span> Key Question</a></li>
-  <li><a href="#layered-diagnosis" id="toc-layered-diagnosis" class="nav-link" data-scroll-target="#layered-diagnosis"><span class="header-section-number">26.4.2</span> Layered Diagnosis</a></li>
-  </ul></li>
-  <li><a href="#debugging-spec" id="toc-debugging-spec" class="nav-link" data-scroll-target="#debugging-spec"><span class="header-section-number">26.5</span> Debugging Spec</a>
-  <ul class="collapse">
-  <li><a href="#symptoms" id="toc-symptoms" class="nav-link" data-scroll-target="#symptoms"><span class="header-section-number">26.5.1</span> Symptoms</a></li>
-  <li><a href="#fixes" id="toc-fixes" class="nav-link" data-scroll-target="#fixes"><span class="header-section-number">26.5.2</span> Fixes</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">26.5.3</span> Example</a></li>
-  </ul></li>
-  <li><a href="#debugging-instruction" id="toc-debugging-instruction" class="nav-link" data-scroll-target="#debugging-instruction"><span class="header-section-number">26.6</span> Debugging Instruction</a>
-  <ul class="collapse">
-  <li><a href="#symptoms-1" id="toc-symptoms-1" class="nav-link" data-scroll-target="#symptoms-1"><span class="header-section-number">26.6.1</span> Symptoms</a></li>
-  <li><a href="#fixes-1" id="toc-fixes-1" class="nav-link" data-scroll-target="#fixes-1"><span class="header-section-number">26.6.2</span> Fixes</a></li>
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">26.6.3</span> Example</a></li>
-  </ul></li>
-  <li><a href="#debugging-context" id="toc-debugging-context" class="nav-link" data-scroll-target="#debugging-context"><span class="header-section-number">26.7</span> Debugging Context</a>
-  <ul class="collapse">
-  <li><a href="#symptoms-2" id="toc-symptoms-2" class="nav-link" data-scroll-target="#symptoms-2"><span class="header-section-number">26.7.1</span> Symptoms</a></li>
-  <li><a href="#fixes-2" id="toc-fixes-2" class="nav-link" data-scroll-target="#fixes-2"><span class="header-section-number">26.7.2</span> Fixes</a></li>
-  </ul></li>
-  <li><a href="#debugging-as-iteration" id="toc-debugging-as-iteration" class="nav-link" data-scroll-target="#debugging-as-iteration"><span class="header-section-number">26.8</span> Debugging as Iteration</a>
-  <ul class="collapse">
-  <li><a href="#iterative-process" id="toc-iterative-process" class="nav-link" data-scroll-target="#iterative-process"><span class="header-section-number">26.8.1</span> Iterative Process</a></li>
-  </ul></li>
-  <li><a href="#avoiding-common-pitfalls" id="toc-avoiding-common-pitfalls" class="nav-link" data-scroll-target="#avoiding-common-pitfalls"><span class="header-section-number">26.9</span> Avoiding Common Pitfalls</a>
-  <ul class="collapse">
-  <li><a href="#blaming-the-model" id="toc-blaming-the-model" class="nav-link" data-scroll-target="#blaming-the-model"><span class="header-section-number">26.9.1</span> 1. Blaming the Model</a></li>
-  <li><a href="#random-adjustments" id="toc-random-adjustments" class="nav-link" data-scroll-target="#random-adjustments"><span class="header-section-number">26.9.2</span> 2. Random Adjustments</a></li>
-  <li><a href="#overfitting-fixes" id="toc-overfitting-fixes" class="nav-link" data-scroll-target="#overfitting-fixes"><span class="header-section-number">26.9.3</span> 3. Overfitting Fixes</a></li>
-  <li><a href="#mixing-layers" id="toc-mixing-layers" class="nav-link" data-scroll-target="#mixing-layers"><span class="header-section-number">26.9.4</span> 4. Mixing Layers</a></li>
-  </ul></li>
-  <li><a href="#debugging-tools-and-techniques" id="toc-debugging-tools-and-techniques" class="nav-link" data-scroll-target="#debugging-tools-and-techniques"><span class="header-section-number">26.10</span> Debugging Tools and Techniques</a>
-  <ul class="collapse">
-  <li><a href="#test-cases" id="toc-test-cases" class="nav-link" data-scroll-target="#test-cases"><span class="header-section-number">26.10.1</span> 1. Test Cases</a></li>
-  <li><a href="#controlled-inputs" id="toc-controlled-inputs" class="nav-link" data-scroll-target="#controlled-inputs"><span class="header-section-number">26.10.2</span> 2. Controlled Inputs</a></li>
-  <li><a href="#logging" id="toc-logging" class="nav-link" data-scroll-target="#logging"><span class="header-section-number">26.10.3</span> 3. Logging</a></li>
-  <li><a href="#evaluation-metrics" id="toc-evaluation-metrics" class="nav-link" data-scroll-target="#evaluation-metrics"><span class="header-section-number">26.10.4</span> 4. Evaluation Metrics</a></li>
-  </ul></li>
-  <li><a href="#debugging-as-understanding" id="toc-debugging-as-understanding" class="nav-link" data-scroll-target="#debugging-as-understanding"><span class="header-section-number">26.11</span> Debugging as Understanding</a></li>
-  <li><a href="#from-debugging-code-to-debugging-meaning" id="toc-from-debugging-code-to-debugging-meaning" class="nav-link" data-scroll-target="#from-debugging-code-to-debugging-meaning"><span class="header-section-number">26.12</span> From Debugging Code to Debugging Meaning</a>
-  <ul class="collapse">
-  <li><a href="#before" id="toc-before" class="nav-link" data-scroll-target="#before"><span class="header-section-number">26.12.1</span> Before</a></li>
-  <li><a href="#now" id="toc-now" class="nav-link" data-scroll-target="#now"><span class="header-section-number">26.12.2</span> Now</a></li>
-  </ul></li>
-  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">26.13</span> Final Insight</a></li>
-  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">26.14</span> Closing Statement</a></li>
-  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">26.15</span> Key Insight</a></li>
-  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">26.16</span> Action Hint</a></li>
+  <li><a href="#调试过程the-debugging-process" id="toc-调试过程the-debugging-process" class="nav-link" data-scroll-target="#调试过程the-debugging-process"><span class="header-section-number">26.3</span> 调试过程（The Debugging Process）</a></li>
+  <li><a href="#定义错误的调试技术debugging-definition-errors" id="toc-定义错误的调试技术debugging-definition-errors" class="nav-link" data-scroll-target="#定义错误的调试技术debugging-definition-errors"><span class="header-section-number">26.4</span> 定义错误的调试技术（Debugging Definition Errors）</a></li>
   </ul>
 </nav>
     </div>
@@ -571,7 +518,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></h1>
+<h1 class="title"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></h1>
 </div>
 
 
@@ -588,467 +535,54 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="the-shift-in-debugging" class="level2" data-number="26.1">
-<h2 data-number="26.1" class="anchored" data-anchor-id="the-shift-in-debugging"><span class="header-section-number">26.1</span> The Shift in Debugging</h2>
-<p>In traditional programming, debugging has a clear, well-defined meaning:</p>
-<ul>
-<li><strong>Finding bugs in code</strong>—locating errors in implementation</li>
-<li><strong>Fixing logic errors</strong>—correcting flawed reasoning or algorithms</li>
-<li><strong>Tracing execution paths</strong>—following program flow to identify issues</li>
-</ul>
-<p>The object of debugging is clear and specific:</p>
+<section id="调试已经改变" class="level2" data-number="26.1">
+<h2 data-number="26.1" class="anchored" data-anchor-id="调试已经改变"><span class="header-section-number">26.1</span> 调试已经改变</h2>
+<p>在传统编程中，调试是查找和修复代码中的错误。错误是确定性的、可重现的和可追踪的。你可以逐行跟踪执行，观察状态变化，并确定问题发生的确切位置。</p>
+<p>在 LLM 时代，调试从根本上不同。错误是概率性的、上下文相关的，并且通常不是由代码中的错误引起，而是由定义中的差距引起。</p>
 <blockquote class="blockquote">
-<p><strong>Code</strong></p>
-</blockquote>
-<hr>
-<p>In the LLM era, this changes fundamentally. Systems are no longer defined primarily by code. They are defined by:</p>
-<ul>
-<li><strong>Spec</strong>—the specification of what the system should do</li>
-<li><strong>Instruction</strong>—the protocol for how the system should execute</li>
-<li><strong>Context</strong>—the information available to the system at execution time</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Debugging is no longer about fixing code. It is about fixing definitions.</p>
+<p>调试从代码缺陷转向定义差距。</p>
 </blockquote>
 <hr>
 </section>
-<section id="what-are-we-debugging-now" class="level2" data-number="26.2">
-<h2 data-number="26.2" class="anchored" data-anchor-id="what-are-we-debugging-now"><span class="header-section-number">26.2</span> What Are We Debugging Now?</h2>
-<p>When an LLM system produces incorrect output, the problem is rarely:</p>
-<ul>
-<li>A syntax error—grammatical or structural mistake in code</li>
-<li>A runtime exception—program crashes or errors during execution</li>
-<li>A logical bug—error in algorithmic reasoning</li>
-</ul>
-<p>Instead, the problem is usually:</p>
-<ul>
-<li><strong>Ambiguity</strong>—unclear or multiple interpretations of requirements</li>
-<li><strong>Missing constraints</strong>—insufficient boundaries on acceptable behavior</li>
-<li><strong>Poor structure</strong>—lack of clear organization or framework</li>
-</ul>
+<section id="错误类型types-of-errors" class="level2" data-number="26.2">
+<h2 data-number="26.2" class="anchored" data-anchor-id="错误类型types-of-errors"><span class="header-section-number">26.2</span> 错误类型（Types of Errors）</h2>
+<section id="定义错误" class="level3" data-number="26.2.1">
+<h3 data-number="26.2.1" class="anchored" data-anchor-id="定义错误"><span class="header-section-number">26.2.1</span> 定义错误</h3>
+<p>Spec 不完整、约束缺失、边界情况未覆盖、歧义。</p>
+<p><strong>症状：</strong> 不一致的输出；系统”几乎”正确；在边界情况下意外失败。</p>
+<p><strong>解决方案：</strong> 精化定义。添加约束。覆盖更多的边界情况。</p>
+</section>
+<section id="执行错误" class="level3" data-number="26.2.2">
+<h3 data-number="26.2.2" class="anchored" data-anchor-id="执行错误"><span class="header-section-number">26.2.2</span> 执行错误</h3>
+<p>指令未正确编译、上下文窗口溢出、工具调用失败。</p>
+<p><strong>症状：</strong> 运行时错误、意外的工具行为、截断的输出。</p>
+<p><strong>解决方案：</strong> 修复指令。管理上下文窗口。改进错误处理。</p>
+</section>
+<section id="模型错误" class="level3" data-number="26.2.3">
+<h3 data-number="26.2.3" class="anchored" data-anchor-id="模型错误"><span class="header-section-number">26.2.3</span> 模型错误</h3>
+<p>模型能力限制、知识边界、理解不足。</p>
+<p><strong>症状：</strong> 输出质量低、不正确的事实、无法处理复杂逻辑。</p>
+<p><strong>解决方案：</strong> 简化任务。提供更多上下文。使用不同的模型。</p>
 <hr>
-<section id="new-debug-targets" class="level3" data-number="26.2.1">
-<h3 data-number="26.2.1" class="anchored" data-anchor-id="new-debug-targets"><span class="header-section-number">26.2.1</span> New Debug Targets</h3>
-<p>In the LLM era, debugging focuses on:</p>
-<ul>
-<li><strong>Spec</strong>—unclear or incomplete definition of requirements</li>
-<li><strong>Instruction</strong>—poorly designed execution protocol</li>
-<li><strong>Context</strong>—irrelevant or missing information</li>
-</ul>
+</section>
+</section>
+<section id="调试过程the-debugging-process" class="level2" data-number="26.3">
+<h2 data-number="26.3" class="anchored" data-anchor-id="调试过程the-debugging-process"><span class="header-section-number">26.3</span> 调试过程（The Debugging Process）</h2>
+<p><strong>第 1 步：观察失败。</strong> 发生了什么？输出有什么问题？是正确性、格式还是性能问题？</p>
+<p><strong>第 2 步：分类错误。</strong> 它是定义错误、执行错误还是模型错误？这决定了你的调试方法。</p>
+<p><strong>第 3 步：追溯到源头。</strong> 定义错误追溯到 Spec。执行错误追溯到指令。模型错误可能需要对任务或上下文进行调整。</p>
+<p><strong>第 4 步：修复和测试。</strong> 修复根本原因而不是表象。测试。观察变化。</p>
 <hr>
+</section>
+<section id="定义错误的调试技术debugging-definition-errors" class="level2" data-number="26.4">
+<h2 data-number="26.4" class="anchored" data-anchor-id="定义错误的调试技术debugging-definition-errors"><span class="header-section-number">26.4</span> 定义错误的调试技术（Debugging Definition Errors）</h2>
+<p>定义错误是最难调试的，因为它们不是代码中的错误。它们是理解中的错误。</p>
+<p><strong>技术 1：暴露假设。</strong> 写下你关于系统的所有假设。然后问：这些中哪些可能是错误的？</p>
+<p><strong>技术 2：检查边界。</strong> 系统失败的地方通常是边界——你的定义结束和未知开始的地方。</p>
+<p><strong>技术 3：添加约束。</strong> 定义失败通常是因为约束过少。添加约束减少了输出空间，缩小了可能的行为。</p>
+<p><strong>技术 4：简化测试用例。</strong> 创建一个最小、最简版本的输入。逐步增加复杂性，直到系统失败。这会显示失败发生在哪里。</p>
 <blockquote class="blockquote">
-<p>The bug is often in what we said, not how it was executed. The system follows our definition—when the definition is flawed, the result is flawed.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="types-of-failures" class="level2" data-number="26.3">
-<h2 data-number="26.3" class="anchored" data-anchor-id="types-of-failures"><span class="header-section-number">26.3</span> Types of Failures</h2>
-<p>LLM systems can fail in different ways, each pointing to different underlying issues:</p>
-<hr>
-<section id="incorrect-output" class="level3" data-number="26.3.1">
-<h3 data-number="26.3.1" class="anchored" data-anchor-id="incorrect-output"><span class="header-section-number">26.3.1</span> 1. Incorrect Output</h3>
-<ul>
-<li><strong>Wrong answer</strong>—response doesn’t match expected result</li>
-<li><strong>Irrelevant content</strong>—output addresses different question</li>
-<li><strong>Hallucination</strong>—system invents information</li>
-</ul>
-<p><strong>Likely causes:</strong> - Unclear spec—requirements not well-defined - Weak instruction—execution protocol insufficient - Poor context—missing or irrelevant information</p>
-<hr>
-</section>
-<section id="inconsistent-behavior" class="level3" data-number="26.3.2">
-<h3 data-number="26.3.2" class="anchored" data-anchor-id="inconsistent-behavior"><span class="header-section-number">26.3.2</span> 2. Inconsistent Behavior</h3>
-<ul>
-<li><strong>Same input → different outputs</strong>—results vary unpredictably</li>
-<li><strong>Random variation</strong>—no clear pattern in differences</li>
-<li><strong>Context-dependent inconsistency</strong>—behavior changes with session</li>
-</ul>
-<p><strong>Likely causes:</strong> - Weak constraints—insufficient boundaries - Poor instruction design—lack of structure - Context variability—different context construction</p>
-<hr>
-</section>
-<section id="format-violations" class="level3" data-number="26.3.3">
-<h3 data-number="26.3.3" class="anchored" data-anchor-id="format-violations"><span class="header-section-number">26.3.3</span> 3. Format Violations</h3>
-<ul>
-<li><strong>Output does not match expected structure</strong>—wrong JSON, missing fields</li>
-<li><strong>Incorrect format</strong>—wrong data types, organization</li>
-<li><strong>Parsing errors</strong>—output can’t be processed downstream</li>
-</ul>
-<p><strong>Likely causes:</strong> - Poor output design—unclear format requirements - Weak instruction—inadequate format specification - Missing validation—no format checking</p>
-<hr>
-</section>
-<section id="missing-information" class="level3" data-number="26.3.4">
-<h3 data-number="26.3.4" class="anchored" data-anchor-id="missing-information"><span class="header-section-number">26.3.4</span> 4. Missing Information</h3>
-<ul>
-<li><strong>Incomplete responses</strong>—output lacks required elements</li>
-<li><strong>Partial answers</strong>—only addresses part of query</li>
-<li><strong>Omitted details</strong>—important information missing</li>
-</ul>
-<p><strong>Likely causes:</strong> - Incomplete spec—requirements not fully specified - Weak constraints—no requirement for completeness - Poor context—missing source information</p>
-<hr>
-<p>Each type of failure points to a different layer—spec, instruction, or context—where the fix should be applied.</p>
-<hr>
-</section>
-</section>
-<section id="debugging-as-diagnosis" class="level2" data-number="26.4">
-<h2 data-number="26.4" class="anchored" data-anchor-id="debugging-as-diagnosis"><span class="header-section-number">26.4</span> Debugging as Diagnosis</h2>
-<p>Debugging begins with diagnosis—identifying where the problem originates.</p>
-<hr>
-<section id="key-question" class="level3" data-number="26.4.1">
-<h3 data-number="26.4.1" class="anchored" data-anchor-id="key-question"><span class="header-section-number">26.4.1</span> Key Question</h3>
-<blockquote class="blockquote">
-<p><strong>Where is the problem?</strong></p>
-</blockquote>
-<hr>
-</section>
-<section id="layered-diagnosis" class="level3" data-number="26.4.2">
-<h3 data-number="26.4.2" class="anchored" data-anchor-id="layered-diagnosis"><span class="header-section-number">26.4.2</span> Layered Diagnosis</h3>
-<p>Diagnosing LLM systems requires examining each layer:</p>
-<hr>
-<section id="spec-layer" class="level4" data-number="26.4.2.1">
-<h4 data-number="26.4.2.1" class="anchored" data-anchor-id="spec-layer"><span class="header-section-number">26.4.2.1</span> Spec Layer</h4>
-<ul>
-<li>Is the goal clearly defined?</li>
-<li>Are constraints complete?</li>
-<li>Are success criteria explicit?</li>
-<li>Is there ambiguity in requirements?</li>
-</ul>
-<p><strong>Questions to ask:</strong> - What exactly should the system do? - What are the boundaries of acceptable behavior? - How do we know when the system is correct?</p>
-<hr>
-</section>
-<section id="instruction-layer" class="level4" data-number="26.4.2.2">
-<h4 data-number="26.4.2.2" class="anchored" data-anchor-id="instruction-layer"><span class="header-section-number">26.4.2.2</span> Instruction Layer</h4>
-<ul>
-<li>Is the task explicit?</li>
-<li>Is the output structured?</li>
-<li>Are constraints enforced?</li>
-<li>Is the protocol clear?</li>
-</ul>
-<p><strong>Questions to ask:</strong> - How does the instruction define the task? - What format is expected for output? - What rules constrain behavior?</p>
-<hr>
-</section>
-<section id="context-layer" class="level4" data-number="26.4.2.3">
-<h4 data-number="26.4.2.3" class="anchored" data-anchor-id="context-layer"><span class="header-section-number">26.4.2.3</span> Context Layer</h4>
-<ul>
-<li>Is relevant information included?</li>
-<li>Is noise removed?</li>
-<li>Is context consistent?</li>
-<li>Is retrieval effective?</li>
-</ul>
-<p><strong>Questions to ask:</strong> - What information is available to the system? - Is the right information being retrieved? - Is context constructed consistently?</p>
-<hr>
-<blockquote class="blockquote">
-<p>Correct diagnosis determines correct fixes. Debugging is systematic, not random.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-</section>
-<section id="debugging-spec" class="level2" data-number="26.5">
-<h2 data-number="26.5" class="anchored" data-anchor-id="debugging-spec"><span class="header-section-number">26.5</span> Debugging Spec</h2>
-<p>When the issue is in the spec, the problem is at the definition level—the system is trying to do the wrong thing.</p>
-<hr>
-<section id="symptoms" class="level3" data-number="26.5.1">
-<h3 data-number="26.5.1" class="anchored" data-anchor-id="symptoms"><span class="header-section-number">26.5.1</span> Symptoms</h3>
-<ul>
-<li><strong>Outputs are generally off-target</strong>—system consistently misunderstands requirements</li>
-<li><strong>System misunderstands intent</strong>—results don’t match original goals</li>
-<li><strong>Behavior is systematically wrong</strong>—same error pattern across multiple runs</li>
-</ul>
-<hr>
-</section>
-<section id="fixes" class="level3" data-number="26.5.2">
-<h3 data-number="26.5.2" class="anchored" data-anchor-id="fixes"><span class="header-section-number">26.5.2</span> Fixes</h3>
-<ul>
-<li><strong>Clarify objective</strong>—make goals more explicit and precise</li>
-<li><strong>Add constraints</strong>—define boundaries and limitations</li>
-<li><strong>Define success criteria</strong>—specify how to evaluate correctness</li>
-<li><strong>Remove ambiguity</strong>—eliminate multiple interpretations</li>
-</ul>
-<hr>
-</section>
-<section id="example" class="level3" data-number="26.5.3">
-<h3 data-number="26.5.3" class="anchored" data-anchor-id="example"><span class="header-section-number">26.5.3</span> Example</h3>
-<p><strong>Spec:</strong></p>
-<pre><code>Summarize the document</code></pre>
-<p><strong>Problem:</strong> Too vague—what kind of summary? How long? What to include?</p>
-<p><strong>Improved Spec:</strong></p>
-<pre><code>Summarize the document into 5 key points, each under 20 words, focusing on main arguments and excluding minor details</code></pre>
-<p><strong>Result:</strong> System produces summaries that match requirements more precisely.</p>
-<hr>
-<blockquote class="blockquote">
-<p>Improve definition, not execution. When the spec is wrong, fixing execution won’t help.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="debugging-instruction" class="level2" data-number="26.6">
-<h2 data-number="26.6" class="anchored" data-anchor-id="debugging-instruction"><span class="header-section-number">26.6</span> Debugging Instruction</h2>
-<p>When the issue is in the instruction, the problem is at the protocol level—the system doesn’t know how to do what’s asked.</p>
-<hr>
-<section id="symptoms-1" class="level3" data-number="26.6.1">
-<h3 data-number="26.6.1" class="anchored" data-anchor-id="symptoms-1"><span class="header-section-number">26.6.1</span> Symptoms</h3>
-<ul>
-<li><strong>Output format is inconsistent</strong>—results vary in structure</li>
-<li><strong>Behavior varies widely</strong>—same instruction produces different results</li>
-<li><strong>Format violations</strong>—output doesn’t match expected structure</li>
-</ul>
-<hr>
-</section>
-<section id="fixes-1" class="level3" data-number="26.6.2">
-<h3 data-number="26.6.2" class="anchored" data-anchor-id="fixes-1"><span class="header-section-number">26.6.2</span> Fixes</h3>
-<ul>
-<li><strong>Define output structure</strong>—specify exact format requirements</li>
-<li><strong>Add explicit rules</strong>—create clear constraints on behavior</li>
-<li><strong>Simplify task</strong>—break complex instructions into simpler steps</li>
-<li><strong>Standardize format</strong>—use consistent data structures</li>
-</ul>
-<hr>
-</section>
-<section id="example-1" class="level3" data-number="26.6.3">
-<h3 data-number="26.6.3" class="anchored" data-anchor-id="example-1"><span class="header-section-number">26.6.3</span> Example</h3>
-<p><strong>Instruction:</strong></p>
-<pre><code>Explain the result</code></pre>
-<p><strong>Problem:</strong> Too vague—what kind of explanation? How long? What format?</p>
-<p><strong>Improved Instruction:</strong></p>
-<pre><code>Provide a 3-step explanation in bullet points, each under 15 words, covering: (1) what was found, (2) why it matters, (3) what to do next</code></pre>
-<p><strong>Result:</strong> System produces consistent, structured explanations.</p>
-<hr>
-</section>
-</section>
-<section id="debugging-context" class="level2" data-number="26.7">
-<h2 data-number="26.7" class="anchored" data-anchor-id="debugging-context"><span class="header-section-number">26.7</span> Debugging Context</h2>
-<p>When the issue is in context, the problem is at the information level—the system doesn’t have the right information.</p>
-<hr>
-<section id="symptoms-2" class="level3" data-number="26.7.1">
-<h3 data-number="26.7.1" class="anchored" data-anchor-id="symptoms-2"><span class="header-section-number">26.7.1</span> Symptoms</h3>
-<ul>
-<li><strong>Irrelevant answers</strong>—response doesn’t address question</li>
-<li><strong>Missing key information</strong>—important facts omitted</li>
-<li><strong>Context-dependent failures</strong>—works sometimes, fails others</li>
-</ul>
-<hr>
-</section>
-<section id="fixes-2" class="level3" data-number="26.7.2">
-<h3 data-number="26.7.2" class="anchored" data-anchor-id="fixes-2"><span class="header-section-number">26.7.2</span> Fixes</h3>
-<ul>
-<li><strong>Add relevant context</strong>—include information system needs</li>
-<li><strong>Remove noise</strong>—eliminate irrelevant information</li>
-<li><strong>Improve retrieval</strong>—enhance search and selection</li>
-<li><strong>Standardize context</strong>—consistent context construction</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Context determines what the system sees. Better context leads to better results.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="debugging-as-iteration" class="level2" data-number="26.8">
-<h2 data-number="26.8" class="anchored" data-anchor-id="debugging-as-iteration"><span class="header-section-number">26.8</span> Debugging as Iteration</h2>
-<p>Debugging is not a one-time fix. It follows a loop of continuous improvement:</p>
-<pre><code>Observe → Diagnose → Modify → Test → Repeat</code></pre>
-<hr>
-<p>Each iteration:</p>
-<ul>
-<li><strong>Reduces ambiguity</strong>—definition becomes clearer</li>
-<li><strong>Improves stability</strong>—behavior becomes more consistent</li>
-<li><strong>Moves toward correctness</strong>—results better meet requirements</li>
-</ul>
-<hr>
-<section id="iterative-process" class="level3" data-number="26.8.1">
-<h3 data-number="26.8.1" class="anchored" data-anchor-id="iterative-process"><span class="header-section-number">26.8.1</span> Iterative Process</h3>
-<ol type="1">
-<li><strong>Observe</strong>—identify the failure or issue</li>
-<li><strong>Diagnose</strong>—determine which layer has the problem</li>
-<li><strong>Modify</strong>—adjust spec, instruction, or context</li>
-<li><strong>Test</strong>—run system to verify fix</li>
-<li><strong>Repeat</strong>—continue until issue resolved</li>
-</ol>
-<hr>
-</section>
-</section>
-<section id="avoiding-common-pitfalls" class="level2" data-number="26.9">
-<h2 data-number="26.9" class="anchored" data-anchor-id="avoiding-common-pitfalls"><span class="header-section-number">26.9</span> Avoiding Common Pitfalls</h2>
-<p>Several common mistakes undermine effective debugging:</p>
-<hr>
-<section id="blaming-the-model" class="level3" data-number="26.9.1">
-<h3 data-number="26.9.1" class="anchored" data-anchor-id="blaming-the-model"><span class="header-section-number">26.9.1</span> 1. Blaming the Model</h3>
-<ul>
-<li><strong>Assuming the system is flawed</strong>—blaming the LLM for poor results</li>
-<li><strong>Ignoring definition issues</strong>—overlooking problems in spec or instruction</li>
-<li><strong>Changing parameters without diagnosis</strong>—tuning settings without understanding cause</li>
-</ul>
-<p><strong>Solution:</strong> Focus on definition first. The model follows your definition—if definition is wrong, output will be wrong.</p>
-<hr>
-</section>
-<section id="random-adjustments" class="level3" data-number="26.9.2">
-<h3 data-number="26.9.2" class="anchored" data-anchor-id="random-adjustments"><span class="header-section-number">26.9.2</span> 2. Random Adjustments</h3>
-<ul>
-<li><strong>Changing parameters without diagnosis</strong>—tweaking settings randomly</li>
-<li><strong>Trial and error</strong>—making changes without understanding impact</li>
-<li><strong>No systematic approach</strong>—jumping between different fixes</li>
-</ul>
-<p><strong>Solution:</strong> Diagnose first, then fix. Identify the root cause before making changes.</p>
-<hr>
-</section>
-<section id="overfitting-fixes" class="level3" data-number="26.9.3">
-<h3 data-number="26.9.3" class="anchored" data-anchor-id="overfitting-fixes"><span class="header-section-number">26.9.3</span> 3. Overfitting Fixes</h3>
-<ul>
-<li><strong>Fixing one case but breaking others</strong>—optimizing for specific inputs</li>
-<li><strong>Narrow focus</strong>—addressing symptoms not causes</li>
-<li><strong>Fragile solutions</strong>—fixes that break easily</li>
-</ul>
-<p><strong>Solution:</strong> Understand the underlying problem. Fix at the appropriate layer.</p>
-<hr>
-</section>
-<section id="mixing-layers" class="level3" data-number="26.9.4">
-<h3 data-number="26.9.4" class="anchored" data-anchor-id="mixing-layers"><span class="header-section-number">26.9.4</span> 4. Mixing Layers</h3>
-<ul>
-<li><strong>Changing instruction when spec is the problem</strong>—treating symptoms not causes</li>
-<li><strong>Adjusting context when instruction is wrong</strong>—wrong layer for fix</li>
-<li><strong>Modifying everything at once</strong>—no way to isolate what works</li>
-</ul>
-<p><strong>Solution:</strong> Identify which layer has the problem. Fix at that layer only.</p>
-<hr>
-<blockquote class="blockquote">
-<p>Debugging requires discipline, not guesswork. Systematic diagnosis leads to effective fixes.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="debugging-tools-and-techniques" class="level2" data-number="26.10">
-<h2 data-number="26.10" class="anchored" data-anchor-id="debugging-tools-and-techniques"><span class="header-section-number">26.10</span> Debugging Tools and Techniques</h2>
-<p>Effective debugging requires appropriate tools and methods:</p>
-<hr>
-<section id="test-cases" class="level3" data-number="26.10.1">
-<h3 data-number="26.10.1" class="anchored" data-anchor-id="test-cases"><span class="header-section-number">26.10.1</span> 1. Test Cases</h3>
-<ul>
-<li><strong>Define inputs and expected outputs</strong>—create test scenarios</li>
-<li><strong>Cover edge cases</strong>—test unusual or boundary conditions</li>
-<li><strong>Document behavior</strong>—track what works and what doesn’t</li>
-</ul>
-<p><strong>Purpose:</strong> Understand system behavior systematically</p>
-<hr>
-</section>
-<section id="controlled-inputs" class="level3" data-number="26.10.2">
-<h3 data-number="26.10.2" class="anchored" data-anchor-id="controlled-inputs"><span class="header-section-number">26.10.2</span> 2. Controlled Inputs</h3>
-<ul>
-<li><strong>Reduce variability</strong>—use consistent, controlled inputs</li>
-<li><strong>Isolate issues</strong>—test one variable at a time</li>
-<li><strong>Reproduce failures</strong>—create reliable test cases</li>
-</ul>
-<p><strong>Purpose:</strong> Make debugging predictable and repeatable</p>
-<hr>
-</section>
-<section id="logging" class="level3" data-number="26.10.3">
-<h3 data-number="26.10.3" class="anchored" data-anchor-id="logging"><span class="header-section-number">26.10.3</span> 3. Logging</h3>
-<ul>
-<li><strong>Track inputs, outputs, context</strong>—record what happens at each stage</li>
-<li><strong>Monitor performance</strong>—track latency, cost, success rates</li>
-<li><strong>Identify patterns</strong>—find recurring issues</li>
-</ul>
-<p><strong>Purpose:</strong> Understand system behavior and identify problems</p>
-<hr>
-</section>
-<section id="evaluation-metrics" class="level3" data-number="26.10.4">
-<h3 data-number="26.10.4" class="anchored" data-anchor-id="evaluation-metrics"><span class="header-section-number">26.10.4</span> 4. Evaluation Metrics</h3>
-<ul>
-<li><strong>Measure performance</strong>—quantify system behavior</li>
-<li><strong>Track improvement</strong>—monitor progress over time</li>
-<li><strong>Set benchmarks</strong>—establish standards for success</li>
-</ul>
-<p><strong>Purpose:</strong> Make debugging objective and measurable</p>
-<hr>
-<blockquote class="blockquote">
-<p>Measurement enables debugging. Without metrics, debugging is guesswork.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="debugging-as-understanding" class="level2" data-number="26.11">
-<h2 data-number="26.11" class="anchored" data-anchor-id="debugging-as-understanding"><span class="header-section-number">26.11</span> Debugging as Understanding</h2>
-<p>Debugging improves more than just the system—it improves understanding:</p>
-<hr>
-<p>Each failure reveals:</p>
-<ul>
-<li><strong>Missing constraints</strong>—boundaries that weren’t specified</li>
-<li><strong>Hidden assumptions</strong>—implicit requirements that weren’t stated</li>
-<li><strong>Weak definitions</strong>—specifications that needed clarification</li>
-</ul>
-<hr>
-<p>Debugging is learning:</p>
-<ul>
-<li><strong>The system</strong>—how it behaves and what it needs</li>
-<li><strong>The problem</strong>—what the real requirements are</li>
-<li><strong>Your understanding</strong>—how to define problems more clearly</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Every bug is a signal. It tells you something about the definition that needs to be clarified.</p>
-</blockquote>
-<hr>
-</section>
-<section id="from-debugging-code-to-debugging-meaning" class="level2" data-number="26.12">
-<h2 data-number="26.12" class="anchored" data-anchor-id="from-debugging-code-to-debugging-meaning"><span class="header-section-number">26.12</span> From Debugging Code to Debugging Meaning</h2>
-<p>The fundamental shift in debugging:</p>
-<hr>
-<section id="before" class="level3" data-number="26.12.1">
-<h3 data-number="26.12.1" class="anchored" data-anchor-id="before"><span class="header-section-number">26.12.1</span> Before</h3>
-<ul>
-<li><strong>Debug logic</strong>—find errors in reasoning or implementation</li>
-<li><strong>Trace execution</strong>—follow program flow to identify issues</li>
-<li><strong>Fix code</strong>—correct syntax or logic errors</li>
-</ul>
-<p><strong>Focus:</strong> How the system is implemented</p>
-<hr>
-</section>
-<section id="now" class="level3" data-number="26.12.2">
-<h3 data-number="26.12.2" class="anchored" data-anchor-id="now"><span class="header-section-number">26.12.2</span> Now</h3>
-<ul>
-<li><strong>Debug meaning</strong>—clarify what the system should do</li>
-<li><strong>Refine definition</strong>—improve spec and instruction</li>
-<li><strong>Adjust context</strong>—optimize information available to system</li>
-</ul>
-<p><strong>Focus:</strong> What the system should do</p>
-<hr>
-<p>This requires:</p>
-<ul>
-<li><strong>Precision in language</strong>—clear, unambiguous definitions</li>
-<li><strong>Clarity in definition</strong>—explicit requirements and constraints</li>
-<li><strong>Awareness of system behavior</strong>—understanding how systems interpret definitions</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="final-insight" class="level2" data-number="26.13">
-<h2 data-number="26.13" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">26.13</span> Final Insight</h2>
-<p>Debugging in the LLM era is not about fixing what the system did.</p>
-<p>It is about clarifying what the system should have done.</p>
-<hr>
-<blockquote class="blockquote">
-<p>The system reflects your definition. If the output is wrong, the definition is incomplete. Debugging is the process of completing and refining that definition.</p>
-</blockquote>
-<hr>
-</section>
-<section id="closing-statement" class="level2" data-number="26.14">
-<h2 data-number="26.14" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">26.14</span> Closing Statement</h2>
-<p>As programming shifts from implementation to definition, debugging shifts with it.</p>
-<blockquote class="blockquote">
-<p>You are no longer debugging code. You are debugging your understanding.</p>
-</blockquote>
-<hr>
-</section>
-<section id="key-insight" class="level2" data-number="26.15">
-<h2 data-number="26.15" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">26.15</span> Key Insight</h2>
-<blockquote class="blockquote">
-<p>Debugging in the LLM era focuses on fixing definitions—spec, instruction, and context—rather than code. The process involves systematic diagnosis to identify which layer has the problem, then applying targeted fixes at that layer.</p>
-</blockquote>
-</section>
-<section id="action-hint" class="level2" data-number="26.16">
-<h2 data-number="26.16" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">26.16</span> Action Hint</h2>
-<blockquote class="blockquote">
-<p>Diagnose first, then fix. Identify whether the problem is in spec, instruction, or context. Use test cases, controlled inputs, logging, and evaluation metrics to understand system behavior. Avoid blaming the model—focus on definition. Debug iteratively: observe, diagnose, modify, test, repeat.</p>
+<p>LLM 调试最有用的问题是：“我定义中哪里不完整或歧义？”</p>
 </blockquote>
 
 
@@ -1470,13 +1004,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-24.html" class="pagination-link" aria-label="Reliability &amp; Evaluation">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span>
+      <a href="./chapter-24.html" class="pagination-link" aria-label="可靠性与评估（Reliability &amp; Evaluation）">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-26.html" class="pagination-link" aria-label="Performance &amp; Cost">
-        <span class="nav-page-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-26.html" class="pagination-link" aria-label="性能与成本（Performance &amp; Cost）">
+        <span class="nav-page-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

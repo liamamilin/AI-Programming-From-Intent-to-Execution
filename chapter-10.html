@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; Structural Thinking – AI Programming: From Intent to Execution</title>
+<title>11&nbsp; 结构性思维（Structural Thinking） – AI Programming: From Intent to Execution</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,19 +37,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="./chapter-9.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-aa873432a3c62897e6c2091c0d30a948.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -250,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-10.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-10.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -263,9 +265,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AI Programming: From Intent to Execution</a> 
         <div class="sidebar-tools-main">
@@ -283,211 +283,211 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">前言（Preface）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">转变：从编码到定义（The Shift: From Coding to Defining）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">新的瓶颈：定义（The New Bottleneck: Definition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">编程现在是什么？（What is Programming Now?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">最小循环（The Minimal Loop）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">意图：定义要做什么（Intent: Defining What to Do）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">规格说明：消除歧义（Spec: Eliminating Ambiguity）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">指令：使其可执行（Instruction: Making It Executable）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">评估与迭代（Evaluation &amp; Iteration）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">可能性空间（Possibility Space）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-10.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">从 Spec 到指令（From Spec to Instruction）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">指令设计（Instruction Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">工具使用与 API（Tool Use &amp; APIs）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">构建智能体系统（Building an Agent System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">构建聊天系统（Building a Chat System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">从理想到产品（From Idea to Product）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-31.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">编程即系统设计（Programming as System Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">语言即操作系统（Language as an Operating System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">人类 + AI 认知（Human + AI Cognition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">构建者的未来（The Future of Builders）</span></span></a>
   </div>
 </li>
     </ul>
@@ -500,58 +500,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#from-ideas-to-structures" id="toc-from-ideas-to-structures" class="nav-link active" data-scroll-target="#from-ideas-to-structures"><span class="header-section-number">11.1</span> From Ideas to Structures</a></li>
-  <li><a href="#what-is-structural-thinking" id="toc-what-is-structural-thinking" class="nav-link" data-scroll-target="#what-is-structural-thinking"><span class="header-section-number">11.2</span> What is Structural Thinking?</a></li>
-  <li><a href="#the-three-core-elements" id="toc-the-three-core-elements" class="nav-link" data-scroll-target="#the-three-core-elements"><span class="header-section-number">11.3</span> The Three Core Elements</a></li>
-  <li><a href="#main-flow-the-backbone-of-the-system" id="toc-main-flow-the-backbone-of-the-system" class="nav-link" data-scroll-target="#main-flow-the-backbone-of-the-system"><span class="header-section-number">11.4</span> Main Flow: The Backbone of the System</a>
-  <ul class="collapse">
-  <li><a href="#what-is-the-main-flow" id="toc-what-is-the-main-flow" class="nav-link" data-scroll-target="#what-is-the-main-flow"><span class="header-section-number">11.4.1</span> What is the Main Flow?</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">11.4.2</span> Example</a></li>
-  <li><a href="#characteristics-of-a-good-main-flow" id="toc-characteristics-of-a-good-main-flow" class="nav-link" data-scroll-target="#characteristics-of-a-good-main-flow"><span class="header-section-number">11.4.3</span> Characteristics of a Good Main Flow</a></li>
-  <li><a href="#why-it-matters" id="toc-why-it-matters" class="nav-link" data-scroll-target="#why-it-matters"><span class="header-section-number">11.4.4</span> Why It Matters</a></li>
-  </ul></li>
-  <li><a href="#modules-the-building-blocks" id="toc-modules-the-building-blocks" class="nav-link" data-scroll-target="#modules-the-building-blocks"><span class="header-section-number">11.5</span> Modules: The Building Blocks</a>
-  <ul class="collapse">
-  <li><a href="#what-are-modules" id="toc-what-are-modules" class="nav-link" data-scroll-target="#what-are-modules"><span class="header-section-number">11.5.1</span> What are Modules?</a></li>
-  <li><a href="#example-modules-in-a-chat-system" id="toc-example-modules-in-a-chat-system" class="nav-link" data-scroll-target="#example-modules-in-a-chat-system"><span class="header-section-number">11.5.2</span> Example Modules in a Chat System</a></li>
-  <li><a href="#principles-of-good-modules" id="toc-principles-of-good-modules" class="nav-link" data-scroll-target="#principles-of-good-modules"><span class="header-section-number">11.5.3</span> Principles of Good Modules</a></li>
-  <li><a href="#why-it-matters-1" id="toc-why-it-matters-1" class="nav-link" data-scroll-target="#why-it-matters-1"><span class="header-section-number">11.5.4</span> Why It Matters</a></li>
-  </ul></li>
-  <li><a href="#state-what-the-system-knows" id="toc-state-what-the-system-knows" class="nav-link" data-scroll-target="#state-what-the-system-knows"><span class="header-section-number">11.6</span> State: What the System Knows</a>
-  <ul class="collapse">
-  <li><a href="#what-is-state" id="toc-what-is-state" class="nav-link" data-scroll-target="#what-is-state"><span class="header-section-number">11.6.1</span> What is State?</a></li>
-  <li><a href="#examples-of-state" id="toc-examples-of-state" class="nav-link" data-scroll-target="#examples-of-state"><span class="header-section-number">11.6.2</span> Examples of State</a></li>
-  <li><a href="#types-of-state" id="toc-types-of-state" class="nav-link" data-scroll-target="#types-of-state"><span class="header-section-number">11.6.3</span> Types of State</a></li>
-  <li><a href="#why-it-matters-2" id="toc-why-it-matters-2" class="nav-link" data-scroll-target="#why-it-matters-2"><span class="header-section-number">11.6.4</span> Why It Matters</a></li>
-  </ul></li>
-  <li><a href="#data-flow-how-information-moves" id="toc-data-flow-how-information-moves" class="nav-link" data-scroll-target="#data-flow-how-information-moves"><span class="header-section-number">11.7</span> Data Flow: How Information Moves</a>
-  <ul class="collapse">
-  <li><a href="#what-is-data-flow" id="toc-what-is-data-flow" class="nav-link" data-scroll-target="#what-is-data-flow"><span class="header-section-number">11.7.1</span> What is Data Flow?</a></li>
-  <li><a href="#example-data-flow" id="toc-example-data-flow" class="nav-link" data-scroll-target="#example-data-flow"><span class="header-section-number">11.7.2</span> Example Data Flow</a></li>
-  <li><a href="#characteristics-of-good-data-flow" id="toc-characteristics-of-good-data-flow" class="nav-link" data-scroll-target="#characteristics-of-good-data-flow"><span class="header-section-number">11.7.3</span> Characteristics of Good Data Flow</a></li>
-  <li><a href="#why-it-matters-3" id="toc-why-it-matters-3" class="nav-link" data-scroll-target="#why-it-matters-3"><span class="header-section-number">11.7.4</span> Why It Matters</a></li>
-  </ul></li>
-  <li><a href="#putting-it-together" id="toc-putting-it-together" class="nav-link" data-scroll-target="#putting-it-together"><span class="header-section-number">11.8</span> Putting It Together</a>
-  <ul class="collapse">
-  <li><a href="#example-system" id="toc-example-system" class="nav-link" data-scroll-target="#example-system"><span class="header-section-number">11.8.1</span> Example System</a></li>
-  </ul></li>
-  <li><a href="#structural-thinking-vs-implementation-thinking" id="toc-structural-thinking-vs-implementation-thinking" class="nav-link" data-scroll-target="#structural-thinking-vs-implementation-thinking"><span class="header-section-number">11.9</span> Structural Thinking vs Implementation Thinking</a>
-  <ul class="collapse">
-  <li><a href="#implementation-thinking" id="toc-implementation-thinking" class="nav-link" data-scroll-target="#implementation-thinking"><span class="header-section-number">11.9.1</span> Implementation Thinking</a></li>
-  <li><a href="#structural-thinking" id="toc-structural-thinking" class="nav-link" data-scroll-target="#structural-thinking"><span class="header-section-number">11.9.2</span> Structural Thinking</a></li>
-  </ul></li>
-  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">11.10</span> Common Mistakes</a>
-  <ul class="collapse">
-  <li><a href="#skipping-structure" id="toc-skipping-structure" class="nav-link" data-scroll-target="#skipping-structure"><span class="header-section-number">11.10.1</span> 1. Skipping Structure</a></li>
-  <li><a href="#mixing-concerns" id="toc-mixing-concerns" class="nav-link" data-scroll-target="#mixing-concerns"><span class="header-section-number">11.10.2</span> 2. Mixing Concerns</a></li>
-  <li><a href="#ignoring-state" id="toc-ignoring-state" class="nav-link" data-scroll-target="#ignoring-state"><span class="header-section-number">11.10.3</span> 3. Ignoring State</a></li>
-  <li><a href="#implicit-data-flow" id="toc-implicit-data-flow" class="nav-link" data-scroll-target="#implicit-data-flow"><span class="header-section-number">11.10.4</span> 4. Implicit Data Flow</a></li>
-  </ul></li>
-  <li><a href="#structural-thinking-as-a-skill" id="toc-structural-thinking-as-a-skill" class="nav-link" data-scroll-target="#structural-thinking-as-a-skill"><span class="header-section-number">11.11</span> Structural Thinking as a Skill</a></li>
-  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">11.12</span> Final Insight</a></li>
-  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">11.13</span> Closing Statement</a></li>
-  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">11.14</span> Key Insight</a></li>
-  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">11.15</span> Action Hint</a></li>
+  <li><a href="#从想法到结构" id="toc-从想法到结构" class="nav-link active" data-scroll-target="#从想法到结构"><span class="header-section-number">11.1</span> 从想法到结构</a></li>
+  <li><a href="#什么是结构性思维what-is-structural-thinking" id="toc-什么是结构性思维what-is-structural-thinking" class="nav-link" data-scroll-target="#什么是结构性思维what-is-structural-thinking"><span class="header-section-number">11.2</span> 什么是结构性思维？（What is Structural Thinking?）</a></li>
+  <li><a href="#三个核心元素the-three-core-elements" id="toc-三个核心元素the-three-core-elements" class="nav-link" data-scroll-target="#三个核心元素the-three-core-elements"><span class="header-section-number">11.3</span> 三个核心元素（The Three Core Elements）</a></li>
+  <li><a href="#主流程系统的骨干main-flow-the-backbone-of-the-system" id="toc-主流程系统的骨干main-flow-the-backbone-of-the-system" class="nav-link" data-scroll-target="#主流程系统的骨干main-flow-the-backbone-of-the-system"><span class="header-section-number">11.4</span> 主流程：系统的骨干（Main Flow: The Backbone of the System）</a></li>
+  <li><a href="#模块功能组件modules-functional-components" id="toc-模块功能组件modules-functional-components" class="nav-link" data-scroll-target="#模块功能组件modules-functional-components"><span class="header-section-number">11.5</span> 模块：功能组件（Modules: Functional Components）</a></li>
+  <li><a href="#状态与数据流操作记忆state-data-flow-operational-memory" id="toc-状态与数据流操作记忆state-data-flow-operational-memory" class="nav-link" data-scroll-target="#状态与数据流操作记忆state-data-flow-operational-memory"><span class="header-section-number">11.6</span> 状态与数据流：操作记忆（State &amp; Data Flow: Operational Memory）</a></li>
+  <li><a href="#结构性思维的应用applying-structural-thinking" id="toc-结构性思维的应用applying-structural-thinking" class="nav-link" data-scroll-target="#结构性思维的应用applying-structural-thinking"><span class="header-section-number">11.7</span> 结构性思维的应用（Applying Structural Thinking）</a></li>
   </ul>
 </nav>
     </div>
@@ -561,7 +516,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></h1>
 </div>
 
 
@@ -578,397 +533,76 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="from-ideas-to-structures" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="from-ideas-to-structures"><span class="header-section-number">11.1</span> From Ideas to Structures</h2>
-<p>Having explored the Possibility Space and discovered what can be built, the next step is not to generate more ideas or expand the space further. The next step is to organize what we have discovered.</p>
-<p>In the previous chapter, we introduced the three-layer model of possibility: Goal Space (what outcomes are possible), Path Space (what structures connect start to goal), and Option Space (what choices exist at each step). We saw that possibilities exist as a graph, not a linear path.</p>
-<p>Now we must navigate that graph effectively. To do this, we need to transform the raw possibilities we’ve discovered into organized, workable structures.</p>
-<p>Ideas alone are insufficient for building systems. They are:</p>
-<ul>
-<li><strong>Fragmented</strong>—scattered and disconnected thoughts</li>
-<li><strong>Unbounded</strong>—lacking clear boundaries or limits</li>
-<li><strong>Difficult to execute</strong>—cannot be directly translated into working systems</li>
-</ul>
-<p>To build effective systems, ideas must be transformed into <strong>structures</strong>. This transformation is the essence of structural thinking.</p>
+<section id="从想法到结构" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="从想法到结构"><span class="header-section-number">11.1</span> 从想法到结构</h2>
+<p>在探索了可能性空间并发现了什么是可构建的之后，下一步不是产生更多想法或进一步扩展空间。下一步是组织我们已经发现的东西。</p>
+<p>在上一章中，我们引入了可能性的三层模型：目标空间（什么结果是可能的）、路径空间（什么结构连接起点和目标）和选项空间（每一步有什么选择）。我们看到可能性作为一个图存在，而不是一条线性路径。</p>
+<p>现在我们必须有效地导航那个图。为此，我们需要将我们已经发现的原始可能性组织成可工作的结构。</p>
+<p>仅有想法不足以构建系统。它们是碎片化的、无界的、难以执行的。</p>
+<p>要构建有效的系统，想法必须转化为<strong>结构</strong>。这种转化是结构性思维的本质。</p>
 <blockquote class="blockquote">
-<p>Structural thinking is the ability to organize components into a coherent system. It is the art of navigating the Path Space we discovered in the Possibility Space.</p>
+<p>结构性思维是将组件组织成连贯系统的能力。它是在可能性空间中导航路径空间的艺术。</p>
 </blockquote>
 <hr>
 </section>
-<section id="what-is-structural-thinking" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="what-is-structural-thinking"><span class="header-section-number">11.2</span> What is Structural Thinking?</h2>
-<p>Structural thinking is the process of defining how a system is organized and how its parts work together. It is the bridge between having ideas and building systems.</p>
-<p>Structural thinking involves:</p>
+<section id="什么是结构性思维what-is-structural-thinking" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="什么是结构性思维what-is-structural-thinking"><span class="header-section-number">11.2</span> 什么是结构性思维？（What is Structural Thinking?）</h2>
+<p>结构性思维是定义系统如何组织以及各部分如何协同工作的过程。它是在拥有想法和构建系统之间的桥梁。</p>
+<p>结构性思维涉及：</p>
 <ul>
-<li><strong>How a system is organized</strong>—what components exist and how they relate</li>
-<li><strong>How its parts interact</strong>—how components communicate and coordinate</li>
-<li><strong>How information flows through it</strong>—how data moves and transforms</li>
+<li><strong>系统如何组织</strong>——存在什么组件以及它们如何关联</li>
+<li><strong>各部分如何交互</strong>——组件如何通信和协调</li>
+<li><strong>信息如何流过系统</strong>——数据如何移动和转换</li>
 </ul>
-<p>Structural thinking answers fundamental questions:</p>
-<ul>
-<li>What are the main steps in the process?</li>
-<li>What components are involved?</li>
-<li>How does the system change over time?</li>
-<li>What are the key relationships between parts?</li>
-</ul>
-<p>Without structural thinking, we have ideas but no way to realize them. With structural thinking, we have the blueprint for building.</p>
+<p>结构性思维回答基本问题： - 过程中的主要步骤是什么？ - 涉及什么组件？ - 系统如何随时间变化？ - 各部分之间的关键关系是什么？</p>
+<p>没有结构性思维，我们只有想法但没有实现它们的方式。有了结构性思维，我们有了构建的蓝图。</p>
 <hr>
 </section>
-<section id="the-three-core-elements" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="the-three-core-elements"><span class="header-section-number">11.3</span> The Three Core Elements</h2>
-<p>Any system, regardless of its complexity, can be described and understood using three fundamental elements. These elements provide a framework for structural thinking:</p>
+<section id="三个核心元素the-three-core-elements" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="三个核心元素the-three-core-elements"><span class="header-section-number">11.3</span> 三个核心元素（The Three Core Elements）</h2>
+<p>任何系统，无论其复杂度如何，都可以使用三个基本元素来描述和理解：</p>
 <ul>
-<li><strong>Main Flow</strong>—the primary sequence of actions that defines the system’s behavior</li>
-<li><strong>Modules</strong>—the components that perform specific functions within the system</li>
-<li><strong>State &amp; Data Flow</strong>—how information moves through the system and what the system remembers</li>
+<li><strong>主流程（Main Flow）</strong>——定义系统行为的动作的主要序列</li>
+<li><strong>模块（Modules）</strong>——在系统内执行特定功能的组件</li>
+<li><strong>状态与数据流（State &amp; Data Flow）</strong>——信息如何在系统中移动以及系统记住什么</li>
 </ul>
-<p>These three elements form the backbone of structural thinking. Mastering them allows you to understand and design any system.</p>
+<p>这三个元素构成了结构性思维的支柱。掌握它们允许你理解和设计任何系统。</p>
 <hr>
 </section>
-<section id="main-flow-the-backbone-of-the-system" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="main-flow-the-backbone-of-the-system"><span class="header-section-number">11.4</span> Main Flow: The Backbone of the System</h2>
-<p>The main flow defines the primary path through the system—the sequence of actions that transforms inputs into outputs.</p>
+<section id="主流程系统的骨干main-flow-the-backbone-of-the-system" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="主流程系统的骨干main-flow-the-backbone-of-the-system"><span class="header-section-number">11.4</span> 主流程：系统的骨干（Main Flow: The Backbone of the System）</h2>
+<p>主流程定义了通过系统的主要路径——将输入转化为输出的动作序列。</p>
+<p>主流程是系统核心叙事——输入如何变成输出的故事。</p>
+<p><strong>示例：</strong> 一个简单的聊天系统。它的主流程可能是：</p>
+<pre><code>用户输入 → 处理输入 → 生成响应 → 显示输出</code></pre>
+<p>这个流程描述了从头到尾的主要动作序列。</p>
 <hr>
-<section id="what-is-the-main-flow" class="level3" data-number="11.4.1">
-<h3 data-number="11.4.1" class="anchored" data-anchor-id="what-is-the-main-flow"><span class="header-section-number">11.4.1</span> What is the Main Flow?</h3>
-<p>The main flow is:</p>
+</section>
+<section id="模块功能组件modules-functional-components" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="模块功能组件modules-functional-components"><span class="header-section-number">11.5</span> 模块：功能组件（Modules: Functional Components）</h2>
+<p>一旦主流程被定义，下一步是识别系统的构建块——执行每个步骤中所需工作的模块。</p>
+<p>一个模块是系统内一个明确定义的部分，具有特定的责任。好的模块有一个单一的目标，可以独立理解。</p>
+<p><strong>示例：</strong> 在聊天系统中，可能的模块包括： - <strong>输入模块</strong>——接收和处理用户消息 - <strong>处理模块</strong>——理解意图并生成响应 - <strong>输出模块</strong>——格式化并呈现响应</p>
+<p>每个模块执行一个清晰定义的功能。</p>
+<hr>
+</section>
+<section id="状态与数据流操作记忆state-data-flow-operational-memory" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="状态与数据流操作记忆state-data-flow-operational-memory"><span class="header-section-number">11.6</span> 状态与数据流：操作记忆（State &amp; Data Flow: Operational Memory）</h2>
+<p>状态是系统在任何给定时刻记住并且知道的信息。数据流是信息如何在模块之间移动。</p>
+<p>理解状态和数据流对设计系统至关重要：什么数据进入？什么数据保留？什么数据在模块之间传递？系统记住之前交互的什么信息？</p>
+<hr>
+</section>
+<section id="结构性思维的应用applying-structural-thinking" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="结构性思维的应用applying-structural-thinking"><span class="header-section-number">11.7</span> 结构性思维的应用（Applying Structural Thinking）</h2>
+<p>给定一个新问题，应用结构性思维的系统过程：</p>
+<ol type="1">
+<li><strong>定义主流程</strong>：画出步骤的序列。输入如何变为输出？</li>
+<li><strong>识别模块</strong>：哪些组件执行这些步骤？每个组件负责什么？</li>
+<li><strong>映射数据流</strong>：信息如何在模块之间移动？什么状态需要被维护？</li>
+</ol>
+<p>这种结构化方法将模糊的想法转化为清晰的架构。它使得决定什么去构建、如何组织它以及如何推理其行为成为可能。</p>
 <blockquote class="blockquote">
-<p><strong>What happens, in what order</strong></p>
-</blockquote>
-<p>It is the core narrative of the system—the story of how inputs become outputs.</p>
-<hr>
-</section>
-<section id="example" class="level3" data-number="11.4.2">
-<h3 data-number="11.4.2" class="anchored" data-anchor-id="example"><span class="header-section-number">11.4.2</span> Example</h3>
-<p>Consider a simple chat system. Its main flow might be:</p>
-<pre><code>User Input → Process Input → Generate Response → Display Output</code></pre>
-<p>This flow describes the primary sequence of actions from start to finish.</p>
-<hr>
-</section>
-<section id="characteristics-of-a-good-main-flow" class="level3" data-number="11.4.3">
-<h3 data-number="11.4.3" class="anchored" data-anchor-id="characteristics-of-a-good-main-flow"><span class="header-section-number">11.4.3</span> Characteristics of a Good Main Flow</h3>
-<p>A well-defined main flow should have:</p>
-<ul>
-<li><strong>Clear sequence</strong>—the order of steps is unambiguous</li>
-<li><strong>Minimal ambiguity</strong>—each step is well-defined</li>
-<li><strong>Covers the core use case</strong>—captures the primary path through the system</li>
-</ul>
-<hr>
-</section>
-<section id="why-it-matters" class="level3" data-number="11.4.4">
-<h3 data-number="11.4.4" class="anchored" data-anchor-id="why-it-matters"><span class="header-section-number">11.4.4</span> Why It Matters</h3>
-<p>Without a defined main flow:</p>
-<ul>
-<li>Systems become fragmented—components operate independently without coordination</li>
-<li>Components lack direction—there’s no clear order of operations</li>
-<li>Execution becomes unpredictable—different runs may follow different paths</li>
-</ul>
-<p>The main flow provides direction and coherence to the system.</p>
-<hr>
-<blockquote class="blockquote">
-<p>The main flow provides direction. Without it, systems wander aimlessly.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="modules-the-building-blocks" class="level2" data-number="11.5">
-<h2 data-number="11.5" class="anchored" data-anchor-id="modules-the-building-blocks"><span class="header-section-number">11.5</span> Modules: The Building Blocks</h2>
-<p>Modules are the components that perform specific functions within the system. They are the units of work that accomplish the tasks defined by the main flow.</p>
-<hr>
-<section id="what-are-modules" class="level3" data-number="11.5.1">
-<h3 data-number="11.5.1" class="anchored" data-anchor-id="what-are-modules"><span class="header-section-number">11.5.1</span> What are Modules?</h3>
-<p>A module is a component that:</p>
-<ul>
-<li>Has a clear responsibility—does one thing well</li>
-<li>Operates on defined inputs—accepts specific data</li>
-<li>Produces defined outputs—returns structured results</li>
-</ul>
-<hr>
-</section>
-<section id="example-modules-in-a-chat-system" class="level3" data-number="11.5.2">
-<h3 data-number="11.5.2" class="anchored" data-anchor-id="example-modules-in-a-chat-system"><span class="header-section-number">11.5.2</span> Example Modules in a Chat System</h3>
-<p>A chat system might include these modules:</p>
-<ul>
-<li><strong>Input Handler</strong>—receives and validates user input</li>
-<li><strong>Context Manager</strong>—maintains conversation history and context</li>
-<li><strong>Response Generator</strong>—creates responses based on context</li>
-<li><strong>Output Renderer</strong>—formats and displays responses to the user</li>
-</ul>
-<hr>
-</section>
-<section id="principles-of-good-modules" class="level3" data-number="11.5.3">
-<h3 data-number="11.5.3" class="anchored" data-anchor-id="principles-of-good-modules"><span class="header-section-number">11.5.3</span> Principles of Good Modules</h3>
-<p>Effective modules follow key principles:</p>
-<ul>
-<li><strong>Single responsibility</strong>—each module does one thing</li>
-<li><strong>Clear boundaries</strong>—each module has a well-defined interface</li>
-<li><strong>Reusable</strong>—modules can be used in different contexts</li>
-</ul>
-<hr>
-</section>
-<section id="why-it-matters-1" class="level3" data-number="11.5.4">
-<h3 data-number="11.5.4" class="anchored" data-anchor-id="why-it-matters-1"><span class="header-section-number">11.5.4</span> Why It Matters</h3>
-<p>Without modularization:</p>
-<ul>
-<li>Systems become monolithic—everything is tangled together</li>
-<li>Changes are difficult—modifying one thing breaks others</li>
-<li>Reuse is limited—code cannot be shared or repurposed</li>
-</ul>
-<p>Modules provide structure and make systems manageable.</p>
-<hr>
-<blockquote class="blockquote">
-<p>Modules provide structure. Without them, systems are chaotic and unmanageable.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="state-what-the-system-knows" class="level2" data-number="11.6">
-<h2 data-number="11.6" class="anchored" data-anchor-id="state-what-the-system-knows"><span class="header-section-number">11.6</span> State: What the System Knows</h2>
-<p>State represents the information that the system maintains over time. It is the system’s memory—what it knows and remembers from past interactions.</p>
-<hr>
-<section id="what-is-state" class="level3" data-number="11.6.1">
-<h3 data-number="11.6.1" class="anchored" data-anchor-id="what-is-state"><span class="header-section-number">11.6.1</span> What is State?</h3>
-<p>State answers:</p>
-<blockquote class="blockquote">
-<p><strong>What does the system remember?</strong></p>
-</blockquote>
-<p>It includes:</p>
-<ul>
-<li>Current session data</li>
-<li>User information and preferences</li>
-<li>Historical information</li>
-<li>Intermediate results</li>
-</ul>
-<hr>
-</section>
-<section id="examples-of-state" class="level3" data-number="11.6.2">
-<h3 data-number="11.6.2" class="anchored" data-anchor-id="examples-of-state"><span class="header-section-number">11.6.2</span> Examples of State</h3>
-<p>In a chat system:</p>
-<ul>
-<li><strong>Conversation history</strong>—previous messages in the current conversation</li>
-<li><strong>User preferences</strong>—settings and choices the user has made</li>
-<li><strong>Current session data</strong>—temporary information about the active session</li>
-</ul>
-<hr>
-</section>
-<section id="types-of-state" class="level3" data-number="11.6.3">
-<h3 data-number="11.6.3" class="anchored" data-anchor-id="types-of-state"><span class="header-section-number">11.6.3</span> Types of State</h3>
-<p>State can be categorized in several ways:</p>
-<ul>
-<li><strong>Temporary (session-based)</strong>—information that persists only during a single interaction</li>
-<li><strong>Persistent (long-term)</strong>—information that is stored and accessed across sessions</li>
-</ul>
-<hr>
-</section>
-<section id="why-it-matters-2" class="level3" data-number="11.6.4">
-<h3 data-number="11.6.4" class="anchored" data-anchor-id="why-it-matters-2"><span class="header-section-number">11.6.4</span> Why It Matters</h3>
-<p>Without state:</p>
-<ul>
-<li>Systems cannot maintain continuity—each interaction is isolated</li>
-<li>Behavior becomes stateless and limited—systems cannot remember or learn</li>
-<li>Complex workflows become impossible—multi-step processes cannot be supported</li>
-</ul>
-<p>State enables systems to be adaptive and context-aware.</p>
-<hr>
-<blockquote class="blockquote">
-<p>State provides memory. Without it, systems are forgetful and reactive.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="data-flow-how-information-moves" class="level2" data-number="11.7">
-<h2 data-number="11.7" class="anchored" data-anchor-id="data-flow-how-information-moves"><span class="header-section-number">11.7</span> Data Flow: How Information Moves</h2>
-<p>Data flow describes how information moves between modules within the system. It defines the pathways through which data travels and transforms.</p>
-<hr>
-<section id="what-is-data-flow" class="level3" data-number="11.7.1">
-<h3 data-number="11.7.1" class="anchored" data-anchor-id="what-is-data-flow"><span class="header-section-number">11.7.1</span> What is Data Flow?</h3>
-<p>Data flow defines:</p>
-<ul>
-<li>Where data originates—its sources and inputs</li>
-<li>How it is transformed—the processing it undergoes</li>
-<li>Where it is consumed—its destinations and uses</li>
-</ul>
-<hr>
-</section>
-<section id="example-data-flow" class="level3" data-number="11.7.2">
-<h3 data-number="11.7.2" class="anchored" data-anchor-id="example-data-flow"><span class="header-section-number">11.7.2</span> Example Data Flow</h3>
-<p>In a chat system:</p>
-<pre><code>User Input → Input Handler → Context Manager → Response Generator → Output</code></pre>
-<p>Data flows from the user through each module, being transformed at each step.</p>
-<hr>
-</section>
-<section id="characteristics-of-good-data-flow" class="level3" data-number="11.7.3">
-<h3 data-number="11.7.3" class="anchored" data-anchor-id="characteristics-of-good-data-flow"><span class="header-section-number">11.7.3</span> Characteristics of Good Data Flow</h3>
-<p>Effective data flow should be:</p>
-<ul>
-<li><strong>Explicit</strong>—it’s clear where data comes from and where it goes</li>
-<li><strong>Traceable</strong>—you can follow data through the system</li>
-<li><strong>Consistent</strong>—data flows in predictable patterns</li>
-</ul>
-<hr>
-</section>
-<section id="why-it-matters-3" class="level3" data-number="11.7.4">
-<h3 data-number="11.7.4" class="anchored" data-anchor-id="why-it-matters-3"><span class="header-section-number">11.7.4</span> Why It Matters</h3>
-<p>Without clear data flow:</p>
-<ul>
-<li>Systems become opaque—you can’t understand how data moves</li>
-<li>Debugging becomes difficult—you can’t trace where problems originate</li>
-<li>Errors propagate unpredictably—you can’t isolate issues</li>
-</ul>
-<p>Data flow provides clarity and makes systems understandable.</p>
-<hr>
-<blockquote class="blockquote">
-<p>Data flow provides clarity. Without it, systems are opaque and mysterious.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="putting-it-together" class="level2" data-number="11.8">
-<h2 data-number="11.8" class="anchored" data-anchor-id="putting-it-together"><span class="header-section-number">11.8</span> Putting It Together</h2>
-<p>A complete structural view combines all three elements—main flow, modules, and data flow—into a coherent picture of how the system works.</p>
-<hr>
-<section id="example-system" class="level3" data-number="11.8.1">
-<h3 data-number="11.8.1" class="anchored" data-anchor-id="example-system"><span class="header-section-number">11.8.1</span> Example System</h3>
-<p>Consider a chat system with this structure:</p>
-<p><strong>Main Flow:</strong></p>
-<pre><code>User Input → Generate Response → Output</code></pre>
-<p><strong>Modules:</strong> - Input Handler - Context Manager - Response Generator</p>
-<p><strong>State:</strong> - Conversation History</p>
-<p><strong>Data Flow:</strong></p>
-<pre><code>Input → Handler → Context → Generator → Output</code></pre>
-<hr>
-<p>This representation allows you to:</p>
-<ul>
-<li>Understand the system at a glance</li>
-<li>Identify missing components</li>
-<li>Improve clarity before implementation</li>
-<li>Communicate the design to others</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="structural-thinking-vs-implementation-thinking" class="level2" data-number="11.9">
-<h2 data-number="11.9" class="anchored" data-anchor-id="structural-thinking-vs-implementation-thinking"><span class="header-section-number">11.9</span> Structural Thinking vs Implementation Thinking</h2>
-<p>The shift to structural thinking represents a fundamental change in how we approach system design.</p>
-<hr>
-<section id="implementation-thinking" class="level3" data-number="11.9.1">
-<h3 data-number="11.9.1" class="anchored" data-anchor-id="implementation-thinking"><span class="header-section-number">11.9.1</span> Implementation Thinking</h3>
-<p>Focuses on:</p>
-<ul>
-<li>Code—writing the actual implementation</li>
-<li>Tools—choosing frameworks and libraries</li>
-<li>Syntax—mastering programming languages</li>
-</ul>
-<p>Implementation thinking is necessary but not sufficient. It focuses on the “how” without first establishing the “what” and “why.”</p>
-<hr>
-</section>
-<section id="structural-thinking" class="level3" data-number="11.9.2">
-<h3 data-number="11.9.2" class="anchored" data-anchor-id="structural-thinking"><span class="header-section-number">11.9.2</span> Structural Thinking</h3>
-<p>Focuses on:</p>
-<ul>
-<li>System design—understanding the overall architecture</li>
-<li>Relationships—how components connect and interact</li>
-<li>Flow and state—how information moves and what is remembered</li>
-</ul>
-<p>Structural thinking operates at a higher level of abstraction. It focuses on the “what” and “why” before addressing the “how.”</p>
-<hr>
-<blockquote class="blockquote">
-<p>Implementation builds details. Structure defines the system.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="common-mistakes" class="level2" data-number="11.10">
-<h2 data-number="11.10" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">11.10</span> Common Mistakes</h2>
-<hr>
-<section id="skipping-structure" class="level3" data-number="11.10.1">
-<h3 data-number="11.10.1" class="anchored" data-anchor-id="skipping-structure"><span class="header-section-number">11.10.1</span> 1. Skipping Structure</h3>
-<p>Jumping directly to coding without defining:</p>
-<ul>
-<li>Flow—what happens in what order</li>
-<li>Modules—what components are needed</li>
-<li>State—what information is maintained</li>
-</ul>
-<p>This leads to tangled, hard-to-maintain code.</p>
-<hr>
-</section>
-<section id="mixing-concerns" class="level3" data-number="11.10.2">
-<h3 data-number="11.10.2" class="anchored" data-anchor-id="mixing-concerns"><span class="header-section-number">11.10.2</span> 2. Mixing Concerns</h3>
-<p>Creating modules without clear boundaries:</p>
-<ul>
-<li>Overlapping responsibilities—modules do too many things</li>
-<li>Hard to maintain—changes ripple through the system</li>
-<li>Difficult to test—each module is hard to isolate</li>
-</ul>
-<hr>
-</section>
-<section id="ignoring-state" class="level3" data-number="11.10.3">
-<h3 data-number="11.10.3" class="anchored" data-anchor-id="ignoring-state"><span class="header-section-number">11.10.3</span> 3. Ignoring State</h3>
-<p>Treating systems as stateless when they require memory:</p>
-<ul>
-<li>Can’t maintain context—each interaction is isolated</li>
-<li>Limited functionality—can’t support complex workflows</li>
-<li>Poor user experience—systems seem forgetful</li>
-</ul>
-<hr>
-</section>
-<section id="implicit-data-flow" class="level3" data-number="11.10.4">
-<h3 data-number="11.10.4" class="anchored" data-anchor-id="implicit-data-flow"><span class="header-section-number">11.10.4</span> 4. Implicit Data Flow</h3>
-<p>Making data movement unclear or hidden:</p>
-<ul>
-<li>Hard to understand—data appears and disappears mysteriously</li>
-<li>Difficult to debug—can’t trace where problems occur</li>
-<li>Errors propagate—issues spread without clear paths</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="structural-thinking-as-a-skill" class="level2" data-number="11.11">
-<h2 data-number="11.11" class="anchored" data-anchor-id="structural-thinking-as-a-skill"><span class="header-section-number">11.11</span> Structural Thinking as a Skill</h2>
-<p>Structural thinking is not a natural talent—it is a skill that can be developed and improved through practice.</p>
-<p>It requires:</p>
-<ul>
-<li><strong>Breaking systems into components</strong>—identifying the natural divisions in a system</li>
-<li><strong>Mapping flows explicitly</strong>—drawing or describing how information moves</li>
-<li><strong>Identifying state transitions</strong>—understanding how the system changes over time</li>
-</ul>
-<p>The more systems you analyze and build, the stronger this skill becomes. With practice, you can look at a complex system and quickly understand its structure.</p>
-<hr>
-</section>
-<section id="final-insight" class="level2" data-number="11.12">
-<h2 data-number="11.12" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">11.12</span> Final Insight</h2>
-<p>Structure is what makes a system understandable, buildable, and scalable. Without structure:</p>
-<ul>
-<li>Intent remains abstract—ideas cannot be realized</li>
-<li>Spec becomes incomplete—requirements are missed</li>
-<li>Execution becomes unreliable—systems are unpredictable</li>
-</ul>
-<p>With structure:</p>
-<ul>
-<li>Ideas become systems—abstractions become concrete</li>
-<li>Specifications become actionable—requirements guide implementation</li>
-<li>Execution becomes predictable—systems behave reliably</li>
-</ul>
-<hr>
-</section>
-<section id="closing-statement" class="level2" data-number="11.13">
-<h2 data-number="11.13" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">11.13</span> Closing Statement</h2>
-<p>In the LLM era, the ability to define structure is as important as the ability to define intent. Both are essential for building effective systems.</p>
-<blockquote class="blockquote">
-<p>A clear structure turns ideas into systems.</p>
-</blockquote>
-<hr>
-</section>
-<section id="key-insight" class="level2" data-number="11.14">
-<h2 data-number="11.14" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">11.14</span> Key Insight</h2>
-<blockquote class="blockquote">
-<p>Structural thinking organizes systems into three core elements: main flow, modules, and state &amp; data flow. Mastering these elements enables you to understand and design any system.</p>
-</blockquote>
-</section>
-<section id="action-hint" class="level2" data-number="11.15">
-<h2 data-number="11.15" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">11.15</span> Action Hint</h2>
-<blockquote class="blockquote">
-<p>For your next project, explicitly map out the structure before coding. Draw the main flow, identify modules, define state requirements, and trace data flow. Don’t start implementing until the structure is clear.</p>
+<p>结构性思维将模糊的想法转化为清晰的架构。</p>
 </blockquote>
 
 
@@ -1390,13 +1024,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-9.html" class="pagination-link" aria-label="Possibility Space">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span>
+      <a href="./chapter-9.html" class="pagination-link" aria-label="可能性空间（Possibility Space）">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">可能性空间（Possibility Space）</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-11.html" class="pagination-link" aria-label="Composition">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-11.html" class="pagination-link" aria-label="组合（Composition）">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

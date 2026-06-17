@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>23&nbsp; Memory &amp; Context – AI Programming: From Intent to Execution</title>
+<title>23&nbsp; 记忆与上下文（Memory &amp; Context） – AI Programming: From Intent to Execution</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,19 +37,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="./chapter-21.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-aa873432a3c62897e6c2091c0d30a948.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -250,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-22.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-22.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -263,9 +265,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AI Programming: From Intent to Execution</a> 
         <div class="sidebar-tools-main">
@@ -283,211 +283,211 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">前言（Preface）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">转变：从编码到定义（The Shift: From Coding to Defining）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">新的瓶颈：定义（The New Bottleneck: Definition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">编程现在是什么？（What is Programming Now?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">最小循环（The Minimal Loop）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">意图：定义要做什么（Intent: Defining What to Do）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">规格说明：消除歧义（Spec: Eliminating Ambiguity）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">指令：使其可执行（Instruction: Making It Executable）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">评估与迭代（Evaluation &amp; Iteration）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">可能性空间（Possibility Space）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">从 Spec 到指令（From Spec to Instruction）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">指令设计（Instruction Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">工具使用与 API（Tool Use &amp; APIs）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-22.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">构建智能体系统（Building an Agent System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">构建聊天系统（Building a Chat System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">从理想到产品（From Idea to Product）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-31.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">编程即系统设计（Programming as System Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">语言即操作系统（Language as an Operating System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">人类 + AI 认知（Human + AI Cognition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">构建者的未来（The Future of Builders）</span></span></a>
   </div>
 </li>
     </ul>
@@ -500,64 +500,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#why-memory-matters" id="toc-why-memory-matters" class="nav-link active" data-scroll-target="#why-memory-matters"><span class="header-section-number">23.1</span> Why Memory Matters</a></li>
-  <li><a href="#what-is-context" id="toc-what-is-context" class="nav-link" data-scroll-target="#what-is-context"><span class="header-section-number">23.2</span> What is Context?</a>
-  <ul class="collapse">
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">23.2.1</span> Example</a></li>
-  </ul></li>
-  <li><a href="#context-as-a-working-set" id="toc-context-as-a-working-set" class="nav-link" data-scroll-target="#context-as-a-working-set"><span class="header-section-number">23.3</span> Context as a Working Set</a>
-  <ul class="collapse">
-  <li><a href="#characteristics" id="toc-characteristics" class="nav-link" data-scroll-target="#characteristics"><span class="header-section-number">23.3.1</span> Characteristics</a></li>
-  </ul></li>
-  <li><a href="#what-is-memory" id="toc-what-is-memory" class="nav-link" data-scroll-target="#what-is-memory"><span class="header-section-number">23.4</span> What is Memory?</a>
-  <ul class="collapse">
-  <li><a href="#types-of-memory" id="toc-types-of-memory" class="nav-link" data-scroll-target="#types-of-memory"><span class="header-section-number">23.4.1</span> Types of Memory</a></li>
-  </ul></li>
-  <li><a href="#context-vs-memory" id="toc-context-vs-memory" class="nav-link" data-scroll-target="#context-vs-memory"><span class="header-section-number">23.5</span> Context vs Memory</a>
-  <ul class="collapse">
-  <li><a href="#context" id="toc-context" class="nav-link" data-scroll-target="#context"><span class="header-section-number">23.5.1</span> Context</a></li>
-  <li><a href="#memory" id="toc-memory" class="nav-link" data-scroll-target="#memory"><span class="header-section-number">23.5.2</span> Memory</a></li>
-  <li><a href="#relationship" id="toc-relationship" class="nav-link" data-scroll-target="#relationship"><span class="header-section-number">23.5.3</span> Relationship</a></li>
-  </ul></li>
-  <li><a href="#context-management" id="toc-context-management" class="nav-link" data-scroll-target="#context-management"><span class="header-section-number">23.6</span> Context Management</a>
-  <ul class="collapse">
-  <li><a href="#challenges" id="toc-challenges" class="nav-link" data-scroll-target="#challenges"><span class="header-section-number">23.6.1</span> Challenges</a></li>
-  <li><a href="#strategies" id="toc-strategies" class="nav-link" data-scroll-target="#strategies"><span class="header-section-number">23.6.2</span> Strategies</a></li>
-  </ul></li>
-  <li><a href="#long-term-memory-systems" id="toc-long-term-memory-systems" class="nav-link" data-scroll-target="#long-term-memory-systems"><span class="header-section-number">23.7</span> Long-Term Memory Systems</a>
-  <ul class="collapse">
-  <li><a href="#storage" id="toc-storage" class="nav-link" data-scroll-target="#storage"><span class="header-section-number">23.7.1</span> Storage</a></li>
-  <li><a href="#retrieval" id="toc-retrieval" class="nav-link" data-scroll-target="#retrieval"><span class="header-section-number">23.7.2</span> Retrieval</a></li>
-  <li><a href="#update" id="toc-update" class="nav-link" data-scroll-target="#update"><span class="header-section-number">23.7.3</span> Update</a></li>
-  </ul></li>
-  <li><a href="#retrieval-as-a-core-mechanism" id="toc-retrieval-as-a-core-mechanism" class="nav-link" data-scroll-target="#retrieval-as-a-core-mechanism"><span class="header-section-number">23.8</span> Retrieval as a Core Mechanism</a>
-  <ul class="collapse">
-  <li><a href="#retrieval-flow" id="toc-retrieval-flow" class="nav-link" data-scroll-target="#retrieval-flow"><span class="header-section-number">23.8.1</span> Retrieval Flow</a></li>
-  <li><a href="#key-properties" id="toc-key-properties" class="nav-link" data-scroll-target="#key-properties"><span class="header-section-number">23.8.2</span> Key Properties</a></li>
-  </ul></li>
-  <li><a href="#memory-in-multi-agent-systems" id="toc-memory-in-multi-agent-systems" class="nav-link" data-scroll-target="#memory-in-multi-agent-systems"><span class="header-section-number">23.9</span> Memory in Multi-Agent Systems</a>
-  <ul class="collapse">
-  <li><a href="#shared-memory" id="toc-shared-memory" class="nav-link" data-scroll-target="#shared-memory"><span class="header-section-number">23.9.1</span> Shared Memory</a></li>
-  <li><a href="#distributed-memory" id="toc-distributed-memory" class="nav-link" data-scroll-target="#distributed-memory"><span class="header-section-number">23.9.2</span> Distributed Memory</a></li>
-  <li><a href="#trade-offs" id="toc-trade-offs" class="nav-link" data-scroll-target="#trade-offs"><span class="header-section-number">23.9.3</span> Trade-offs</a></li>
-  </ul></li>
-  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">23.10</span> Common Mistakes</a>
-  <ul class="collapse">
-  <li><a href="#overloading-context" id="toc-overloading-context" class="nav-link" data-scroll-target="#overloading-context"><span class="header-section-number">23.10.1</span> 1. Overloading Context</a></li>
-  <li><a href="#ignoring-memory" id="toc-ignoring-memory" class="nav-link" data-scroll-target="#ignoring-memory"><span class="header-section-number">23.10.2</span> 2. Ignoring Memory</a></li>
-  <li><a href="#poor-retrieval" id="toc-poor-retrieval" class="nav-link" data-scroll-target="#poor-retrieval"><span class="header-section-number">23.10.3</span> 3. Poor Retrieval</a></li>
-  <li><a href="#mixing-context-and-memory" id="toc-mixing-context-and-memory" class="nav-link" data-scroll-target="#mixing-context-and-memory"><span class="header-section-number">23.10.4</span> 4. Mixing Context and Memory</a></li>
-  </ul></li>
-  <li><a href="#designing-memory-systems" id="toc-designing-memory-systems" class="nav-link" data-scroll-target="#designing-memory-systems"><span class="header-section-number">23.11</span> Designing Memory Systems</a>
-  <ul class="collapse">
-  <li><a href="#key-questions" id="toc-key-questions" class="nav-link" data-scroll-target="#key-questions"><span class="header-section-number">23.11.1</span> Key Questions</a></li>
-  <li><a href="#design-principles" id="toc-design-principles" class="nav-link" data-scroll-target="#design-principles"><span class="header-section-number">23.11.2</span> Design Principles</a></li>
-  </ul></li>
-  <li><a href="#memory-in-the-minimal-loop" id="toc-memory-in-the-minimal-loop" class="nav-link" data-scroll-target="#memory-in-the-minimal-loop"><span class="header-section-number">23.12</span> Memory in the Minimal Loop</a></li>
-  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">23.13</span> Final Insight</a></li>
-  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">23.14</span> Closing Statement</a></li>
-  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">23.15</span> Key Insight</a></li>
-  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">23.16</span> Action Hint</a></li>
+  <li><a href="#为什么记忆重要" id="toc-为什么记忆重要" class="nav-link active" data-scroll-target="#为什么记忆重要"><span class="header-section-number">23.1</span> 为什么记忆重要</a></li>
+  <li><a href="#什么是上下文what-is-context" id="toc-什么是上下文what-is-context" class="nav-link" data-scroll-target="#什么是上下文what-is-context"><span class="header-section-number">23.2</span> 什么是上下文？（What is Context?）</a></li>
+  <li><a href="#记忆的类型types-of-memory" id="toc-记忆的类型types-of-memory" class="nav-link" data-scroll-target="#记忆的类型types-of-memory"><span class="header-section-number">23.3</span> 记忆的类型（Types of Memory）</a></li>
+  <li><a href="#记忆管理memory-management" id="toc-记忆管理memory-management" class="nav-link" data-scroll-target="#记忆管理memory-management"><span class="header-section-number">23.4</span> 记忆管理（Memory Management）</a></li>
+  <li><a href="#上下文策略context-strategies" id="toc-上下文策略context-strategies" class="nav-link" data-scroll-target="#上下文策略context-strategies"><span class="header-section-number">23.5</span> 上下文策略（Context Strategies）</a></li>
   </ul>
 </nav>
     </div>
@@ -567,7 +514,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></h1>
+<h1 class="title"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></h1>
 </div>
 
 
@@ -584,445 +531,48 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="why-memory-matters" class="level2" data-number="23.1">
-<h2 data-number="23.1" class="anchored" data-anchor-id="why-memory-matters"><span class="header-section-number">23.1</span> Why Memory Matters</h2>
-<p>So far, we have described systems that:</p>
-<ul>
-<li>Receive input—accept user queries or data</li>
-<li>Produce output—generate responses or results</li>
-</ul>
-<p>These systems operate as if each interaction is isolated—each input is processed independently, with no memory of previous interactions.</p>
-<p>However, many real-world systems require continuity:</p>
-<ul>
-<li><strong>Conversations span multiple turns</strong>—users expect the system to remember what was said</li>
-<li><strong>Decisions depend on past interactions</strong>—context from previous turns informs current decisions</li>
-<li><strong>Systems must adapt over time</strong>—learning from experience and evolving behavior</li>
-</ul>
-<p>Without memory:</p>
-<ul>
-<li>Each interaction is isolated—no connection between turns</li>
-<li>Context is lost—previous information is unavailable</li>
-<li>Behavior becomes shallow—system cannot maintain coherent conversation</li>
-</ul>
-<hr>
+<section id="为什么记忆重要" class="level2" data-number="23.1">
+<h2 data-number="23.1" class="anchored" data-anchor-id="为什么记忆重要"><span class="header-section-number">23.1</span> 为什么记忆重要</h2>
+<p>到目前为止，我们描述的系统接收输入并产生输出。这些系统仿佛每次交互都是孤立的——每个输入被独立处理，没有先前交互的记忆。</p>
+<p>然而，许多现实系统需要连续性：对话跨越多个回合、决策依赖过去的交互、系统需要随时间适应。</p>
+<p>没有记忆，每次交互都是孤立的，上下文丢失，行为变得肤浅。</p>
 <blockquote class="blockquote">
-<p>Memory is what allows systems to persist beyond a single interaction, enabling continuity and depth.</p>
+<p>记忆使系统能够超越单次交互而持续存在，从而实现连续性和深度。</p>
 </blockquote>
 <hr>
 </section>
-<section id="what-is-context" class="level2" data-number="23.2">
-<h2 data-number="23.2" class="anchored" data-anchor-id="what-is-context"><span class="header-section-number">23.2</span> What is Context?</h2>
-<p>Context is the information available to the system at the moment of execution. It represents what the system “knows” right now.</p>
-<p>It includes:</p>
+<section id="什么是上下文what-is-context" class="level2" data-number="23.2">
+<h2 data-number="23.2" class="anchored" data-anchor-id="什么是上下文what-is-context"><span class="header-section-number">23.2</span> 什么是上下文？（What is Context?）</h2>
+<p>上下文是系统在执行时刻可用的信息。它代表系统当前”知道”的内容。</p>
+<p>它包括：当前输入、相关的过去交互、外部知识、系统状态。</p>
+<p><strong>示例：</strong> 在对话中，上下文包括当前消息”之前说的是什么来着”、先前的消息”我在讨论 AI 记忆系统”、用户偏好”喜欢简洁的回答”、会话数据”本次会话已交换 5 条消息”。</p>
+<hr>
+</section>
+<section id="记忆的类型types-of-memory" class="level2" data-number="23.3">
+<h2 data-number="23.3" class="anchored" data-anchor-id="记忆的类型types-of-memory"><span class="header-section-number">23.3</span> 记忆的类型（Types of Memory）</h2>
+<p><strong>短期记忆（会话上下文）：</strong> 在当前会话中可用。通常包含在上下文中。有限的时间范围。</p>
+<p><strong>长期记忆（持久存储）：</strong> 跨会话持久化。需要显式存储机制。用于用户偏好、已知事实、学习的行为。</p>
+<p><strong>工作记忆（当前焦点）：</strong> 当前正在处理的信息。临时性的。在处理复杂任务时保持。</p>
+<hr>
+</section>
+<section id="记忆管理memory-management" class="level2" data-number="23.4">
+<h2 data-number="23.4" class="anchored" data-anchor-id="记忆管理memory-management"><span class="header-section-number">23.4</span> 记忆管理（Memory Management）</h2>
+<p>有效的记忆需要管理：上下文窗口限制、压缩与检索、遗忘与更新。</p>
+<p><strong>上下文窗口限制：</strong> 系统只能处理有限的信息。当上下文窗口满时，你需要选择性保留什么——这需要优先级和压缩。</p>
+<p><strong>压缩与检索：</strong> 以压缩形式存储。按需检索。摘要（保留关键事实而非逐字文本）、向量搜索（语义检索）、结构化记录。</p>
+<p><strong>遗忘与更新：</strong> 并非所有信息都应该永久保留。记忆策略必须包括如何以及何时遗忘——避免过时信息的累积。</p>
+<hr>
+</section>
+<section id="上下文策略context-strategies" class="level2" data-number="23.5">
+<h2 data-number="23.5" class="anchored" data-anchor-id="上下文策略context-strategies"><span class="header-section-number">23.5</span> 上下文策略（Context Strategies）</h2>
 <ul>
-<li><strong>Current input</strong>—the immediate query or task</li>
-<li><strong>Relevant past interactions</strong>—history that informs current processing</li>
-<li><strong>External knowledge</strong>—information retrieved from databases or other sources</li>
-<li><strong>System state</strong>—current status, configuration, or mode</li>
-</ul>
-<hr>
-<section id="example" class="level3" data-number="23.2.1">
-<h3 data-number="23.2.1" class="anchored" data-anchor-id="example"><span class="header-section-number">23.2.1</span> Example</h3>
-<p>In a conversation:</p>
-<ul>
-<li><strong>Current message</strong>: “What was that about again?”</li>
-<li><strong>Previous messages</strong>: “I’m discussing AI memory systems.”</li>
-<li><strong>User preferences</strong>: “Prefers concise explanations”</li>
-<li><strong>Session data</strong>: “5 messages exchanged in this session”</li>
-</ul>
-<p>All of these form the context for understanding and responding to the current message.</p>
-<hr>
-<blockquote class="blockquote">
-<p>Context defines what the system “knows right now.” It determines how the system interprets and responds to input.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="context-as-a-working-set" class="level2" data-number="23.3">
-<h2 data-number="23.3" class="anchored" data-anchor-id="context-as-a-working-set"><span class="header-section-number">23.3</span> Context as a Working Set</h2>
-<p>Context can be understood as a <strong>working set of information</strong>—the subset of all available information that is active and relevant to the current task.</p>
-<p>It is:</p>
-<ul>
-<li><strong>Limited in size</strong>—only so much information can be considered at once</li>
-<li><strong>Relevant to the current task</strong>—focuses on what’s needed right now</li>
-<li><strong>Dynamically constructed</strong>—changes based on task requirements</li>
-</ul>
-<hr>
-<section id="characteristics" class="level3" data-number="23.3.1">
-<h3 data-number="23.3.1" class="anchored" data-anchor-id="characteristics"><span class="header-section-number">23.3.1</span> Characteristics</h3>
-<ul>
-<li><strong>Temporary</strong>—exists only during execution</li>
-<li><strong>Task-specific</strong>—tailored to current needs</li>
-<li><strong>Continuously updated</strong>—changes as processing progresses</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Context is not everything the system knows. It is what the system is using right now to perform the current task.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="what-is-memory" class="level2" data-number="23.4">
-<h2 data-number="23.4" class="anchored" data-anchor-id="what-is-memory"><span class="header-section-number">23.4</span> What is Memory?</h2>
-<p>Memory is the information stored beyond the current interaction. It represents:</p>
-<blockquote class="blockquote">
-<p><strong>What the system retains over time</strong></p>
-</blockquote>
-<p>Memory enables continuity—allowing the system to remember past interactions, learn from experience, and maintain coherence across sessions.</p>
-<hr>
-<section id="types-of-memory" class="level3" data-number="23.4.1">
-<h3 data-number="23.4.1" class="anchored" data-anchor-id="types-of-memory"><span class="header-section-number">23.4.1</span> Types of Memory</h3>
-<hr>
-<section id="short-term-memory" class="level4" data-number="23.4.1.1">
-<h4 data-number="23.4.1.1" class="anchored" data-anchor-id="short-term-memory"><span class="header-section-number">23.4.1.1</span> 1. Short-Term Memory</h4>
-<ul>
-<li><strong>Recent interactions</strong>—last few turns of conversation</li>
-<li><strong>Session-based</strong>—persists only during current session</li>
-<li><strong>Volatile</strong>—lost when session ends</li>
-</ul>
-<p><strong>Uses:</strong> - Maintaining conversation flow - Tracking immediate context - Handling multi-turn dialogues</p>
-<hr>
-</section>
-<section id="long-term-memory" class="level4" data-number="23.4.1.2">
-<h4 data-number="23.4.1.2" class="anchored" data-anchor-id="long-term-memory"><span class="header-section-number">23.4.1.2</span> 2. Long-Term Memory</h4>
-<ul>
-<li><strong>Persistent storage</strong>—information kept across sessions</li>
-<li><strong>User data</strong>—preferences, history, patterns</li>
-<li><strong>Knowledge base</strong>—facts, relationships, and information</li>
-</ul>
-<p><strong>Uses:</strong> - Personalization—remembering user preferences - Learning—improving over time - Context retention—carrying information across sessions</p>
-<hr>
-<blockquote class="blockquote">
-<p>Memory extends the system across time. Without memory, each interaction starts fresh, with no connection to the past.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-</section>
-<section id="context-vs-memory" class="level2" data-number="23.5">
-<h2 data-number="23.5" class="anchored" data-anchor-id="context-vs-memory"><span class="header-section-number">23.5</span> Context vs Memory</h2>
-<p>It is important to distinguish between these two concepts, as they play different roles in system behavior:</p>
-<hr>
-<section id="context" class="level3" data-number="23.5.1">
-<h3 data-number="23.5.1" class="anchored" data-anchor-id="context"><span class="header-section-number">23.5.1</span> Context</h3>
-<ul>
-<li><strong>Active</strong>—currently being used for processing</li>
-<li><strong>Limited</strong>—bounded by capacity constraints</li>
-<li><strong>Immediate</strong>—directly available for execution</li>
-</ul>
-<p><strong>Purpose:</strong> Drive current decision-making and response generation</p>
-<hr>
-</section>
-<section id="memory" class="level3" data-number="23.5.2">
-<h3 data-number="23.5.2" class="anchored" data-anchor-id="memory"><span class="header-section-number">23.5.2</span> Memory</h3>
-<ul>
-<li><strong>Stored</strong>—persisted for future use</li>
-<li><strong>Potentially large</strong>—can contain vast amounts of information</li>
-<li><strong>Persistent</strong>—survives across sessions and time</li>
-</ul>
-<p><strong>Purpose:</strong> Provide history, enable learning, support continuity</p>
-<hr>
-</section>
-<section id="relationship" class="level3" data-number="23.5.3">
-<h3 data-number="23.5.3" class="anchored" data-anchor-id="relationship"><span class="header-section-number">23.5.3</span> Relationship</h3>
-<pre><code>Memory → Retrieval → Context → Execution</code></pre>
-<p>Memory feeds context through retrieval. Context drives execution. Together, they enable systems to operate with awareness of both the immediate situation and accumulated history.</p>
-<hr>
-<blockquote class="blockquote">
-<p>Memory feeds context. Context drives execution. The relationship connects the past to the present.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="context-management" class="level2" data-number="23.6">
-<h2 data-number="23.6" class="anchored" data-anchor-id="context-management"><span class="header-section-number">23.6</span> Context Management</h2>
-<p>Context is limited by computational constraints—there’s only so much information that can be processed at once. Therefore, context must be managed carefully.</p>
-<hr>
-<section id="challenges" class="level3" data-number="23.6.1">
-<h3 data-number="23.6.1" class="anchored" data-anchor-id="challenges"><span class="header-section-number">23.6.1</span> Challenges</h3>
-<ul>
-<li><strong>Context window limits</strong>—models can only process a fixed amount of information</li>
-<li><strong>Irrelevant information</strong>—not all past interactions are useful now</li>
-<li><strong>Noise accumulation</strong>—too much information degrades performance</li>
-</ul>
-<hr>
-</section>
-<section id="strategies" class="level3" data-number="23.6.2">
-<h3 data-number="23.6.2" class="anchored" data-anchor-id="strategies"><span class="header-section-number">23.6.2</span> Strategies</h3>
-<hr>
-<section id="selection" class="level4" data-number="23.6.2.1">
-<h4 data-number="23.6.2.1" class="anchored" data-anchor-id="selection"><span class="header-section-number">23.6.2.1</span> 1. Selection</h4>
-<ul>
-<li>Include only relevant information—filter what’s important</li>
-<li>Prioritize recent interactions—newer information is often more relevant</li>
-<li>Focus on task needs—select information that supports current objectives</li>
-</ul>
-<hr>
-</section>
-<section id="compression" class="level4" data-number="23.6.2.2">
-<h4 data-number="23.6.2.2" class="anchored" data-anchor-id="compression"><span class="header-section-number">23.6.2.2</span> 2. Compression</h4>
-<ul>
-<li>Summarize past interactions—reduce long conversations to key points</li>
-<li>Extract essential information—preserve meaning while reducing size</li>
-<li>Create summaries—compress multiple turns into condensed representations</li>
-</ul>
-<hr>
-</section>
-<section id="prioritization" class="level4" data-number="23.6.2.3">
-<h4 data-number="23.6.2.3" class="anchored" data-anchor-id="prioritization"><span class="header-section-number">23.6.2.3</span> 3. Prioritization</h4>
-<ul>
-<li>Keep important data—prioritize information that’s critical</li>
-<li>Remove low-value data—discard information that’s not useful</li>
-<li>Maintain balance—mix of recent and historically important information</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Good context management improves system performance. It ensures the system focuses on what matters.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-</section>
-<section id="long-term-memory-systems" class="level2" data-number="23.7">
-<h2 data-number="23.7" class="anchored" data-anchor-id="long-term-memory-systems"><span class="header-section-number">23.7</span> Long-Term Memory Systems</h2>
-<p>Long-term memory requires infrastructure and mechanisms to:</p>
-<ul>
-<li><strong>Store</strong>—persist information for future use</li>
-<li><strong>Retrieve</strong>—access stored information when needed</li>
-<li><strong>Update</strong>—modify existing information as needed</li>
-</ul>
-<hr>
-<section id="storage" class="level3" data-number="23.7.1">
-<h3 data-number="23.7.1" class="anchored" data-anchor-id="storage"><span class="header-section-number">23.7.1</span> Storage</h3>
-<p>Long-term memory can be stored in various forms:</p>
-<ul>
-<li><strong>Databases</strong>—structured storage for organized data</li>
-<li><strong>Vector stores</strong>—semantic storage for similarity-based retrieval</li>
-<li><strong>Files</strong>—unstructured storage for documents and media</li>
-<li><strong>Graph databases</strong>—relationship-focused storage for connected information</li>
-</ul>
-<p><strong>Choice depends on:</strong> - Type of information - Access patterns - Query requirements</p>
-<hr>
-</section>
-<section id="retrieval" class="level3" data-number="23.7.2">
-<h3 data-number="23.7.2" class="anchored" data-anchor-id="retrieval"><span class="header-section-number">23.7.2</span> Retrieval</h3>
-<p>Retrieving information from long-term memory requires mechanisms to:</p>
-<ul>
-<li><strong>Search</strong>—find relevant information based on queries</li>
-<li><strong>Match</strong>—identify information that satisfies requirements</li>
-<li><strong>Rank</strong>—order results by relevance</li>
-</ul>
-<p><strong>Approaches:</strong> - <strong>Keyword search</strong>—match exact terms - <strong>Semantic search</strong>—match meaning and concepts - <strong>Hybrid</strong>—combine keyword and semantic approaches</p>
-<hr>
-</section>
-<section id="update" class="level3" data-number="23.7.3">
-<h3 data-number="23.7.3" class="anchored" data-anchor-id="update"><span class="header-section-number">23.7.3</span> Update</h3>
-<p>Memory systems must support:</p>
-<ul>
-<li><strong>Add new information</strong>—incorporate new data</li>
-<li><strong>Modify existing data</strong>—update or correct information</li>
-<li><strong>Remove outdated data</strong>—delete information that’s no longer relevant</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Memory is only useful if it can be retrieved effectively. Storage without retrieval is useless.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="retrieval-as-a-core-mechanism" class="level2" data-number="23.8">
-<h2 data-number="23.8" class="anchored" data-anchor-id="retrieval-as-a-core-mechanism"><span class="header-section-number">23.8</span> Retrieval as a Core Mechanism</h2>
-<p>To use memory effectively, systems must retrieve relevant information at the right time. Retrieval is the bridge between memory and context.</p>
-<hr>
-<section id="retrieval-flow" class="level3" data-number="23.8.1">
-<h3 data-number="23.8.1" class="anchored" data-anchor-id="retrieval-flow"><span class="header-section-number">23.8.1</span> Retrieval Flow</h3>
-<pre><code>Query → Retrieve → Context → Generate</code></pre>
-<ol type="1">
-<li><strong>Query</strong>—identify what information is needed</li>
-<li><strong>Retrieve</strong>—search memory and fetch relevant information</li>
-<li><strong>Context</strong>—incorporate retrieved information into current context</li>
-<li><strong>Generate</strong>—use enriched context to produce response</li>
-</ol>
-<hr>
-</section>
-<section id="key-properties" class="level3" data-number="23.8.2">
-<h3 data-number="23.8.2" class="anchored" data-anchor-id="key-properties"><span class="header-section-number">23.8.2</span> Key Properties</h3>
-<ul>
-<li><strong>Relevance</strong>—retrieved information must be related to current task</li>
-<li><strong>Efficiency</strong>—retrieval must be fast enough for real-time use</li>
-<li><strong>Accuracy</strong>—retrieved information must be correct and reliable</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Retrieval connects memory to execution. It’s the mechanism that brings the past into the present.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="memory-in-multi-agent-systems" class="level2" data-number="23.9">
-<h2 data-number="23.9" class="anchored" data-anchor-id="memory-in-multi-agent-systems"><span class="header-section-number">23.9</span> Memory in Multi-Agent Systems</h2>
-<p>In multi-agent systems, memory can be organized in different ways:</p>
-<hr>
-<section id="shared-memory" class="level3" data-number="23.9.1">
-<h3 data-number="23.9.1" class="anchored" data-anchor-id="shared-memory"><span class="header-section-number">23.9.1</span> Shared Memory</h3>
-<ul>
-<li>All agents access the same data</li>
-<li>Centralized storage</li>
-<li>Consistent across agents</li>
-</ul>
-<p><strong>Advantages:</strong> - Consistency—all agents have same information - Simplicity—single source of truth - - Coordination—easier to synchronize</p>
-<p><strong>Disadvantages:</strong> - Bottleneck—single point of access - - Scalability—may limit performance - - Complexity—harder to manage concurrent access</p>
-<hr>
-</section>
-<section id="distributed-memory" class="level3" data-number="23.9.2">
-<h3 data-number="23.9.2" class="anchored" data-anchor-id="distributed-memory"><span class="header-section-number">23.9.2</span> Distributed Memory</h3>
-<ul>
-<li>Each agent maintains its own memory</li>
-<li>Decentralized storage</li>
-<li>Independent management</li>
-</ul>
-<p><strong>Advantages:</strong> - Flexibility—agents can specialize - Scalability—no single bottleneck - - Performance—parallel access</p>
-<p><strong>Disadvantages:</strong> - Inconsistency—agents may have different information - - Complexity—harder to coordinate - - Redundancy—potential for duplication</p>
-<hr>
-</section>
-<section id="trade-offs" class="level3" data-number="23.9.3">
-<h3 data-number="23.9.3" class="anchored" data-anchor-id="trade-offs"><span class="header-section-number">23.9.3</span> Trade-offs</h3>
-<ul>
-<li><strong>Shared</strong> → consistency, but limits flexibility</li>
-<li><strong>Distributed</strong> → flexibility, but harder to coordinate</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="common-mistakes" class="level2" data-number="23.10">
-<h2 data-number="23.10" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">23.10</span> Common Mistakes</h2>
-<p>Several common mistakes undermine effective memory systems:</p>
-<hr>
-<section id="overloading-context" class="level3" data-number="23.10.1">
-<h3 data-number="23.10.1" class="anchored" data-anchor-id="overloading-context"><span class="header-section-number">23.10.1</span> 1. Overloading Context</h3>
-<ul>
-<li><strong>Too much information</strong>—exceeding capacity limits</li>
-<li><strong>Reduced performance</strong>—slower processing and degraded quality</li>
-<li><strong>Increased cost</strong>—more computation required</li>
-</ul>
-<p><strong>Solution:</strong> Select and compress. Include only what’s relevant.</p>
-<hr>
-</section>
-<section id="ignoring-memory" class="level3" data-number="23.10.2">
-<h3 data-number="23.10.2" class="anchored" data-anchor-id="ignoring-memory"><span class="header-section-number">23.10.2</span> 2. Ignoring Memory</h3>
-<ul>
-<li><strong>Systems forget important data</strong>—lose valuable information</li>
-<li><strong>No continuity</strong>—cannot maintain conversation</li>
-<li><strong>No learning</strong>—cannot improve over time</li>
-</ul>
-<p><strong>Solution:</strong> Design memory systems from the start. Make memory a first-class component.</p>
-<hr>
-</section>
-<section id="poor-retrieval" class="level3" data-number="23.10.3">
-<h3 data-number="23.10.3" class="anchored" data-anchor-id="poor-retrieval"><span class="header-section-number">23.10.3</span> 3. Poor Retrieval</h3>
-<ul>
-<li><strong>Irrelevant information</strong>—fetching data that’s not useful</li>
-<li><strong>Missed context</strong>—failing to retrieve important information</li>
-<li><strong>Slow performance</strong>—retrieval takes too long</li>
-</ul>
-<p><strong>Solution:</strong> Invest in retrieval mechanisms. Use semantic search, ranking, and relevance scoring.</p>
-<hr>
-</section>
-<section id="mixing-context-and-memory" class="level3" data-number="23.10.4">
-<h3 data-number="23.10.4" class="anchored" data-anchor-id="mixing-context-and-memory"><span class="header-section-number">23.10.4</span> 4. Mixing Context and Memory</h3>
-<ul>
-<li><strong>No clear separation</strong>—blurring the distinction</li>
-<li><strong>Hard to manage</strong>—difficult to optimize each component</li>
-<li><strong>Poor performance</strong>—both suffer from lack of focus</li>
-</ul>
-<p><strong>Solution:</strong> Maintain clear separation. Context is immediate working memory. Memory is persistent storage.</p>
-<hr>
-</section>
-</section>
-<section id="designing-memory-systems" class="level2" data-number="23.11">
-<h2 data-number="23.11" class="anchored" data-anchor-id="designing-memory-systems"><span class="header-section-number">23.11</span> Designing Memory Systems</h2>
-<p>Effective memory systems require careful design:</p>
-<hr>
-<section id="key-questions" class="level3" data-number="23.11.1">
-<h3 data-number="23.11.1" class="anchored" data-anchor-id="key-questions"><span class="header-section-number">23.11.1</span> Key Questions</h3>
-<ul>
-<li><strong>What should be stored?</strong>—identify valuable information</li>
-<li><strong>When should it be retrieved?</strong>—determine retrieval triggers</li>
-<li><strong>How should it be updated?</strong>—define update mechanisms</li>
-</ul>
-<hr>
-</section>
-<section id="design-principles" class="level3" data-number="23.11.2">
-<h3 data-number="23.11.2" class="anchored" data-anchor-id="design-principles"><span class="header-section-number">23.11.2</span> Design Principles</h3>
-<ul>
-<li><strong>Clear separation</strong>—distinguish context from memory</li>
-<li><strong>Efficient retrieval</strong>—optimize for speed and relevance</li>
-<li><strong>Controlled updates</strong>—manage how information changes over time</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="memory-in-the-minimal-loop" class="level2" data-number="23.12">
-<h2 data-number="23.12" class="anchored" data-anchor-id="memory-in-the-minimal-loop"><span class="header-section-number">23.12</span> Memory in the Minimal Loop</h2>
-<p>Memory influences the execution phase of the Minimal Loop:</p>
-<pre><code>Intent → Spec → Instruction → Execution (with Context) → Evaluation</code></pre>
-<hr>
-<p>Context is constructed using memory before execution:</p>
-<ol type="1">
-<li><strong>Retrieve</strong>—fetch relevant information from memory</li>
-<li><strong>Construct</strong>—build context from retrieved information and current input</li>
-<li><strong>Execute</strong>—use enriched context to generate response</li>
-</ol>
-<hr>
-</section>
-<section id="final-insight" class="level2" data-number="23.13">
-<h2 data-number="23.13" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">23.13</span> Final Insight</h2>
-<p>Memory and context determine how much of the past influences the present.</p>
-<p>Without them:</p>
-<ul>
-<li>Systems are reactive—responding only to immediate input</li>
-<li>Behavior is shallow—no depth or continuity</li>
-<li><ul>
-<li>Intelligence is limited—cannot build on experience</li>
-</ul></li>
-</ul>
-<p>With them:</p>
-<ul>
-<li>Systems become adaptive—learning and evolving</li>
-<li>Behavior becomes coherent—maintaining consistency over time</li>
-<li><ul>
-<li>Intelligence emerges—accumulating knowledge and wisdom</li>
-</ul></li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Intelligence emerges from the ability to use the past in the present. Memory and context enable this capability.</p>
-</blockquote>
-<hr>
-</section>
-<section id="closing-statement" class="level2" data-number="23.14">
-<h2 data-number="23.14" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">23.14</span> Closing Statement</h2>
-<p>In the LLM era, systems are no longer stateless processors. They are evolving entities that:</p>
-<ul>
-<li><strong>Remember</strong>—preserving information over time</li>
-<li><strong>Retrieve</strong>—accessing relevant information when needed</li>
-<li><strong>Adapt</strong>—learning and improving based on experience</li>
+<li><strong>滑动窗口</strong>：只保留最近的 N 次交互。简单且有效。</li>
+<li><strong>摘要压缩</strong>：定期摘要先前的上下文。保留本质，丢弃细节。</li>
+<li><strong>选择性检索</strong>：保留核心上下文。在需要时检索相关信息。</li>
+<li><strong>分层的上下文</strong>：全局上下文（用户偏好）+ 会话上下文 + 当前焦点。</li>
 </ul>
 <blockquote class="blockquote">
-<p>Memory gives systems continuity. Context gives them focus.</p>
-</blockquote>
-<hr>
-</section>
-<section id="key-insight" class="level2" data-number="23.15">
-<h2 data-number="23.15" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">23.15</span> Key Insight</h2>
-<blockquote class="blockquote">
-<p>Memory and context enable systems to maintain continuity across interactions. Key components include context as working set, short-term vs long-term memory, retrieval mechanisms, and memory in multi-agent systems (shared vs distributed).</p>
-</blockquote>
-</section>
-<section id="action-hint" class="level2" data-number="23.16">
-<h2 data-number="23.16" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">23.16</span> Action Hint</h2>
-<blockquote class="blockquote">
-<p>Design memory systems from the start. Define what to store, when to retrieve, and how to update. Implement efficient retrieval with relevance scoring. Manage context carefully—select, compress, and prioritize. Distinguish clearly between context (immediate) and memory (persistent).</p>
+<p>记忆和上下文管理将瞬时的 AI 交互转变为持续的智能行为。</p>
 </blockquote>
 
 
@@ -1444,13 +994,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-21.html" class="pagination-link" aria-label="Multi-Agent Systems">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span>
+      <a href="./chapter-21.html" class="pagination-link" aria-label="多智能体系统（Multi-Agent Systems）">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-23.html" class="pagination-link" aria-label="Building an Agent System">
-        <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-23.html" class="pagination-link" aria-label="构建智能体系统（Building an Agent System）">
+        <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">构建智能体系统（Building an Agent System）</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

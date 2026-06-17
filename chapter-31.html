@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>32&nbsp; Programming as System Design – AI Programming: From Intent to Execution</title>
+<title>32&nbsp; 编程即系统设计（Programming as System Design） – AI Programming: From Intent to Execution</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,19 +37,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="./chapter-30.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-aa873432a3c62897e6c2091c0d30a948.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -250,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-31.html"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-31.html"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">编程即系统设计（Programming as System Design）</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -263,9 +265,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AI Programming: From Intent to Execution</a> 
         <div class="sidebar-tools-main">
@@ -283,211 +283,211 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">前言（Preface）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">转变：从编码到定义（The Shift: From Coding to Defining）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">新的瓶颈：定义（The New Bottleneck: Definition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">编程现在是什么？（What is Programming Now?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">最小循环（The Minimal Loop）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">意图：定义要做什么（Intent: Defining What to Do）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">规格说明：消除歧义（Spec: Eliminating Ambiguity）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">指令：使其可执行（Instruction: Making It Executable）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">评估与迭代（Evaluation &amp; Iteration）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">可能性空间（Possibility Space）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">从 Spec 到指令（From Spec to Instruction）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">指令设计（Instruction Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">工具使用与 API（Tool Use &amp; APIs）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">构建智能体系统（Building an Agent System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">构建聊天系统（Building a Chat System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">从理想到产品（From Idea to Product）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-31.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">编程即系统设计（Programming as System Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">语言即操作系统（Language as an Operating System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">人类 + AI 认知（Human + AI Cognition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">构建者的未来（The Future of Builders）</span></span></a>
   </div>
 </li>
     </ul>
@@ -500,71 +500,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-final-reframe" id="toc-the-final-reframe" class="nav-link active" data-scroll-target="#the-final-reframe"><span class="header-section-number">32.1</span> The Final Reframe</a></li>
-  <li><a href="#what-is-system-design" id="toc-what-is-system-design" class="nav-link" data-scroll-target="#what-is-system-design"><span class="header-section-number">32.2</span> What is System Design?</a></li>
-  <li><a href="#programming-before-vs-now" id="toc-programming-before-vs-now" class="nav-link" data-scroll-target="#programming-before-vs-now"><span class="header-section-number">32.3</span> Programming Before vs Now</a>
-  <ul class="collapse">
-  <li><a href="#traditional-programming" id="toc-traditional-programming" class="nav-link" data-scroll-target="#traditional-programming"><span class="header-section-number">32.3.1</span> Traditional Programming</a></li>
-  <li><a href="#llm-era-programming" id="toc-llm-era-programming" class="nav-link" data-scroll-target="#llm-era-programming"><span class="header-section-number">32.3.2</span> LLM-Era Programming</a></li>
-  <li><a href="#shift" id="toc-shift" class="nav-link" data-scroll-target="#shift"><span class="header-section-number">32.3.3</span> Shift</a></li>
-  </ul></li>
-  <li><a href="#the-new-role-of-the-programmer" id="toc-the-new-role-of-the-programmer" class="nav-link" data-scroll-target="#the-new-role-of-the-programmer"><span class="header-section-number">32.4</span> The New Role of the Programmer</a>
-  <ul class="collapse">
-  <li><a href="#responsibilities" id="toc-responsibilities" class="nav-link" data-scroll-target="#responsibilities"><span class="header-section-number">32.4.1</span> Responsibilities</a></li>
-  </ul></li>
-  <li><a href="#system-as-the-unit-of-work" id="toc-system-as-the-unit-of-work" class="nav-link" data-scroll-target="#system-as-the-unit-of-work"><span class="header-section-number">32.5</span> System as the Unit of Work</a>
-  <ul class="collapse">
-  <li><a href="#before" id="toc-before" class="nav-link" data-scroll-target="#before"><span class="header-section-number">32.5.1</span> Before</a></li>
-  <li><a href="#now" id="toc-now" class="nav-link" data-scroll-target="#now"><span class="header-section-number">32.5.2</span> Now</a></li>
-  </ul></li>
-  <li><a href="#core-elements-of-system-design" id="toc-core-elements-of-system-design" class="nav-link" data-scroll-target="#core-elements-of-system-design"><span class="header-section-number">32.6</span> Core Elements of System Design</a>
-  <ul class="collapse">
-  <li><a href="#intent" id="toc-intent" class="nav-link" data-scroll-target="#intent"><span class="header-section-number">32.6.1</span> 1. Intent</a></li>
-  <li><a href="#spec" id="toc-spec" class="nav-link" data-scroll-target="#spec"><span class="header-section-number">32.6.2</span> 2. Spec</a></li>
-  <li><a href="#structure" id="toc-structure" class="nav-link" data-scroll-target="#structure"><span class="header-section-number">32.6.3</span> 3. Structure</a></li>
-  <li><a href="#instruction" id="toc-instruction" class="nav-link" data-scroll-target="#instruction"><span class="header-section-number">32.6.4</span> 4. Instruction</a></li>
-  <li><a href="#evaluation" id="toc-evaluation" class="nav-link" data-scroll-target="#evaluation"><span class="header-section-number">32.6.5</span> 5. Evaluation</a></li>
-  <li><a href="#iteration" id="toc-iteration" class="nav-link" data-scroll-target="#iteration"><span class="header-section-number">32.6.6</span> 6. Iteration</a></li>
-  </ul></li>
-  <li><a href="#composition-as-design" id="toc-composition-as-design" class="nav-link" data-scroll-target="#composition-as-design"><span class="header-section-number">32.7</span> Composition as Design</a>
-  <ul class="collapse">
-  <li><a href="#you-combine" id="toc-you-combine" class="nav-link" data-scroll-target="#you-combine"><span class="header-section-number">32.7.1</span> You combine:</a></li>
-  <li><a href="#to-produce" id="toc-to-produce" class="nav-link" data-scroll-target="#to-produce"><span class="header-section-number">32.7.2</span> To produce:</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">32.7.3</span> Example</a></li>
-  </ul></li>
-  <li><a href="#control-through-constraints" id="toc-control-through-constraints" class="nav-link" data-scroll-target="#control-through-constraints"><span class="header-section-number">32.8</span> Control Through Constraints</a>
-  <ul class="collapse">
-  <li><a href="#through" id="toc-through" class="nav-link" data-scroll-target="#through"><span class="header-section-number">32.8.1</span> Through:</a></li>
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">32.8.2</span> Example</a></li>
-  </ul></li>
-  <li><a href="#debugging-and-iteration-in-system-design" id="toc-debugging-and-iteration-in-system-design" class="nav-link" data-scroll-target="#debugging-and-iteration-in-system-design"><span class="header-section-number">32.9</span> Debugging and Iteration in System Design</a>
-  <ul class="collapse">
-  <li><a href="#loop" id="toc-loop" class="nav-link" data-scroll-target="#loop"><span class="header-section-number">32.9.1</span> Loop</a></li>
-  <li><a href="#focus" id="toc-focus" class="nav-link" data-scroll-target="#focus"><span class="header-section-number">32.9.2</span> Focus</a></li>
-  <li><a href="#debugging" id="toc-debugging" class="nav-link" data-scroll-target="#debugging"><span class="header-section-number">32.9.3</span> Debugging</a></li>
-  </ul></li>
-  <li><a href="#abstraction-levels" id="toc-abstraction-levels" class="nav-link" data-scroll-target="#abstraction-levels"><span class="header-section-number">32.10</span> Abstraction Levels</a>
-  <ul class="collapse">
-  <li><a href="#high-level" id="toc-high-level" class="nav-link" data-scroll-target="#high-level"><span class="header-section-number">32.10.1</span> High-Level</a></li>
-  <li><a href="#mid-level" id="toc-mid-level" class="nav-link" data-scroll-target="#mid-level"><span class="header-section-number">32.10.2</span> Mid-Level</a></li>
-  <li><a href="#low-level" id="toc-low-level" class="nav-link" data-scroll-target="#low-level"><span class="header-section-number">32.10.3</span> Low-Level</a></li>
-  </ul></li>
-  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">32.11</span> Common Mistakes</a>
-  <ul class="collapse">
-  <li><a href="#staying-at-code-level" id="toc-staying-at-code-level" class="nav-link" data-scroll-target="#staying-at-code-level"><span class="header-section-number">32.11.1</span> 1. Staying at Code Level</a></li>
-  <li><a href="#skipping-spec" id="toc-skipping-spec" class="nav-link" data-scroll-target="#skipping-spec"><span class="header-section-number">32.11.2</span> 2. Skipping Spec</a></li>
-  <li><a href="#overcomplicating-systems" id="toc-overcomplicating-systems" class="nav-link" data-scroll-target="#overcomplicating-systems"><span class="header-section-number">32.11.3</span> 3. Overcomplicating Systems</a></li>
-  <li><a href="#ignoring-evaluation" id="toc-ignoring-evaluation" class="nav-link" data-scroll-target="#ignoring-evaluation"><span class="header-section-number">32.11.4</span> 4. Ignoring Evaluation</a></li>
-  </ul></li>
-  <li><a href="#system-design-as-leverage" id="toc-system-design-as-leverage" class="nav-link" data-scroll-target="#system-design-as-leverage"><span class="header-section-number">32.12</span> System Design as Leverage</a>
-  <ul class="collapse">
-  <li><a href="#why" id="toc-why" class="nav-link" data-scroll-target="#why"><span class="header-section-number">32.12.1</span> Why?</a></li>
-  <li><a href="#result" id="toc-result" class="nav-link" data-scroll-target="#result"><span class="header-section-number">32.12.2</span> Result</a></li>
-  </ul></li>
-  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">32.13</span> Final Insight</a></li>
-  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">32.14</span> Closing Statement</a></li>
-  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">32.15</span> Key Insight</a></li>
-  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">32.16</span> Action Hint</a></li>
+  <li><a href="#从代码到系统" id="toc-从代码到系统" class="nav-link active" data-scroll-target="#从代码到系统"><span class="header-section-number">32.1</span> 从代码到系统</a></li>
+  <li><a href="#系统设计的元素elements-of-system-design" id="toc-系统设计的元素elements-of-system-design" class="nav-link" data-scroll-target="#系统设计的元素elements-of-system-design"><span class="header-section-number">32.2</span> 系统设计的元素（Elements of System Design）</a></li>
+  <li><a href="#从编码者到系统设计师from-coder-to-system-designer" id="toc-从编码者到系统设计师from-coder-to-system-designer" class="nav-link" data-scroll-target="#从编码者到系统设计师from-coder-to-system-designer"><span class="header-section-number">32.3</span> 从编码者到系统设计师（From Coder to System Designer）</a></li>
+  <li><a href="#最小循环作为系统设计工具the-minimal-loop-as-a-design-tool" id="toc-最小循环作为系统设计工具the-minimal-loop-as-a-design-tool" class="nav-link" data-scroll-target="#最小循环作为系统设计工具the-minimal-loop-as-a-design-tool"><span class="header-section-number">32.4</span> 最小循环作为系统设计工具（The Minimal Loop as a Design Tool）</a></li>
   </ul>
 </nav>
     </div>
@@ -574,7 +513,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></h1>
+<h1 class="title"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">编程即系统设计（Programming as System Design）</span></h1>
 </div>
 
 
@@ -591,441 +530,38 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="the-final-reframe" class="level2" data-number="32.1">
-<h2 data-number="32.1" class="anchored" data-anchor-id="the-final-reframe"><span class="header-section-number">32.1</span> The Final Reframe</h2>
-<p>We began this book with a simple but profound shift:</p>
-<ul>
-<li>From <strong>How to do</strong> → to <strong>What to do</strong></li>
-</ul>
-<p>Now we arrive at the deeper conclusion:</p>
+<section id="从代码到系统" class="level2" data-number="32.1">
+<h2 data-number="32.1" class="anchored" data-anchor-id="从代码到系统"><span class="header-section-number">32.1</span> 从代码到系统</h2>
+<p>在传统观念中，编程是关于写代码的。你的技能通过你写代码的能力来衡量——语法掌握、算法设计、框架知识。</p>
+<p>在 LLM 时代，编程是关于设计系统的。代码只是实现细节。</p>
 <blockquote class="blockquote">
-<p><strong>Programming is no longer primarily about writing code.<br>
-It is about designing systems.</strong></p>
-</blockquote>
-<hr>
-<p>This is not just a change in technique. It’s a fundamental redefinition of what programming means.</p>
-<hr>
-</section>
-<section id="what-is-system-design" class="level2" data-number="32.2">
-<h2 data-number="32.2" class="anchored" data-anchor-id="what-is-system-design"><span class="header-section-number">32.2</span> What is System Design?</h2>
-<p>System design is the process of:</p>
-<blockquote class="blockquote">
-<p><strong>Defining components, flows, constraints, and interactions that produce a desired outcome</strong></p>
-</blockquote>
-<hr>
-<p>It answers:</p>
-<ul>
-<li><strong>What are the parts?</strong>—what components are needed?</li>
-<li><strong>How do they connect?</strong>—how do parts interact?</li>
-<li><strong>How does data flow?</strong>—what information moves where?</li>
-<li><strong>How is correctness ensured?</strong>—how do we know it works?</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>A system is not a collection of code. It is a structure that produces behavior.</p>
+<p>编程不再是写代码的行为。它是设计系统的实践。</p>
 </blockquote>
 <hr>
 </section>
-<section id="programming-before-vs-now" class="level2" data-number="32.3">
-<h2 data-number="32.3" class="anchored" data-anchor-id="programming-before-vs-now"><span class="header-section-number">32.3</span> Programming Before vs Now</h2>
-<p>The transformation in programming is dramatic:</p>
-<hr>
-<section id="traditional-programming" class="level3" data-number="32.3.1">
-<h3 data-number="32.3.1" class="anchored" data-anchor-id="traditional-programming"><span class="header-section-number">32.3.1</span> Traditional Programming</h3>
-<ul>
-<li><strong>Focus on implementation</strong>—how to write the code</li>
-<li><strong>Code is the core artifact</strong>—the primary output</li>
-<li><strong>Logic is explicit</strong>—every step is coded manually</li>
-</ul>
-<p><strong>Skills:</strong> - Writing efficient code - Understanding algorithms - Managing complexity in code</p>
+<section id="系统设计的元素elements-of-system-design" class="level2" data-number="32.2">
+<h2 data-number="32.2" class="anchored" data-anchor-id="系统设计的元素elements-of-system-design"><span class="header-section-number">32.2</span> 系统设计的元素（Elements of System Design）</h2>
+<p>系统设计包括：</p>
+<p><strong>架构（Architecture）：</strong> 系统如何组织。组件、关系、边界和通信流。</p>
+<p><strong>交互（Interactions）：</strong> 系统如何与外部世界沟通。接口、协议和数据传输。</p>
+<p><strong>行为（Behavior）：</strong> 系统如何响应输入。逻辑、状态变化和输出生成。</p>
+<p><strong>演化（Evolution）：</strong> 系统如何随时间变化。版本管理、迁移路径和向后兼容性。</p>
+<p><strong>信任（Trust）：</strong> 为什么用户相信系统会做它应该做的事情。可靠性、安全性、透明度。</p>
 <hr>
 </section>
-<section id="llm-era-programming" class="level3" data-number="32.3.2">
-<h3 data-number="32.3.2" class="anchored" data-anchor-id="llm-era-programming"><span class="header-section-number">32.3.2</span> LLM-Era Programming</h3>
-<ul>
-<li><strong>Focus on definition</strong>—what should the system do?</li>
-<li><strong>Spec is the core artifact</strong>—the primary output</li>
-<li><strong>Behavior emerges from constraints</strong>—define boundaries, not steps</li>
-</ul>
-<p><strong>Skills:</strong> - Defining problems clearly - Designing specifications - Structuring systems</p>
+<section id="从编码者到系统设计师from-coder-to-system-designer" class="level2" data-number="32.3">
+<h2 data-number="32.3" class="anchored" data-anchor-id="从编码者到系统设计师from-coder-to-system-designer"><span class="header-section-number">32.3</span> 从编码者到系统设计师（From Coder to System Designer）</h2>
+<p><strong>编码者：</strong> 接收规格说明 → 编写实现 → 交付代码单元。专注于正确性和效率。</p>
+<p><strong>系统设计师：</strong> 定义意图 → 设计架构 → 指定行为 → 协调执行 → 评估结果。专注于一致性、可靠性和结果。</p>
+<p>这种转变不仅仅是技能的变化，还是身份的变化。</p>
 <hr>
 </section>
-<section id="shift" class="level3" data-number="32.3.3">
-<h3 data-number="32.3.3" class="anchored" data-anchor-id="shift"><span class="header-section-number">32.3.3</span> Shift</h3>
-<pre><code>Code-centric → Spec-centric → System-centric</code></pre>
-<hr>
+<section id="最小循环作为系统设计工具the-minimal-loop-as-a-design-tool" class="level2" data-number="32.4">
+<h2 data-number="32.4" class="anchored" data-anchor-id="最小循环作为系统设计工具the-minimal-loop-as-a-design-tool"><span class="header-section-number">32.4</span> 最小循环作为系统设计工具（The Minimal Loop as a Design Tool）</h2>
+<p>最小循环不仅仅是编码的框架。它是系统设计的框架。每个循环通过系统——从原始意图到评估结果——发展了对系统应该如何行为的理解。</p>
+<p>每个后续循环都通过精化以前的理解来改进设计。</p>
 <blockquote class="blockquote">
-<p>Code becomes one component of a larger system. The programmer’s role elevates.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="the-new-role-of-the-programmer" class="level2" data-number="32.4">
-<h2 data-number="32.4" class="anchored" data-anchor-id="the-new-role-of-the-programmer"><span class="header-section-number">32.4</span> The New Role of the Programmer</h2>
-<p>The programmer is no longer:</p>
-<ul>
-<li>Just an implementer—writing code step by step</li>
-<li>Just a debugger—fixing syntax and logic errors</li>
-<li>Just an optimizer—making code run faster</li>
-</ul>
-<p>The programmer becomes:</p>
-<ul>
-<li><strong>A system designer</strong>—architecting solutions</li>
-<li><strong>A spec engineer</strong>—defining requirements precisely</li>
-<li><strong>An orchestrator of capabilities</strong>—combining tools and systems</li>
-</ul>
-<hr>
-<section id="responsibilities" class="level3" data-number="32.4.1">
-<h3 data-number="32.4.1" class="anchored" data-anchor-id="responsibilities"><span class="header-section-number">32.4.1</span> Responsibilities</h3>
-<ul>
-<li><strong>Define intent clearly</strong>—what problem are we solving?</li>
-<li><strong>Design spec and structure</strong>—how should the system work?</li>
-<li><strong>Compose systems</strong>—what components do we need?</li>
-<li><strong>Ensure reliability</strong>—how do we know it works?</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>The role shifts from writing to designing. From doing to defining.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="system-as-the-unit-of-work" class="level2" data-number="32.5">
-<h2 data-number="32.5" class="anchored" data-anchor-id="system-as-the-unit-of-work"><span class="header-section-number">32.5</span> System as the Unit of Work</h2>
-<p>In this new paradigm, the unit of work changes dramatically:</p>
-<hr>
-<section id="before" class="level3" data-number="32.5.1">
-<h3 data-number="32.5.1" class="anchored" data-anchor-id="before"><span class="header-section-number">32.5.1</span> Before</h3>
-<ul>
-<li><strong>Functions</strong>—small units of functionality</li>
-<li><strong>Classes</strong>—organized collections of functions</li>
-<li><strong>Files</strong>—groupings of related code</li>
-<li><strong>Modules</strong>—collections of related functionality</li>
-</ul>
-<p><strong>Unit:</strong> Code constructs</p>
-<hr>
-</section>
-<section id="now" class="level3" data-number="32.5.2">
-<h3 data-number="32.5.2" class="anchored" data-anchor-id="now"><span class="header-section-number">32.5.2</span> Now</h3>
-<ul>
-<li><strong>Systems</strong>—complete, functional solutions</li>
-<li><strong>Pipelines</strong>—flows of data and operations</li>
-<li><strong>Agent networks</strong>—coordinated intelligent components</li>
-<li><strong>Tool suites</strong>—collections of related capabilities</li>
-</ul>
-<p><strong>Unit:</strong> Complete solutions</p>
-<hr>
-<blockquote class="blockquote">
-<p>You are no longer building functions. You are building systems.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="core-elements-of-system-design" class="level2" data-number="32.6">
-<h2 data-number="32.6" class="anchored" data-anchor-id="core-elements-of-system-design"><span class="header-section-number">32.6</span> Core Elements of System Design</h2>
-<p>A well-designed system includes several fundamental elements:</p>
-<hr>
-<section id="intent" class="level3" data-number="32.6.1">
-<h3 data-number="32.6.1" class="anchored" data-anchor-id="intent"><span class="header-section-number">32.6.1</span> 1. Intent</h3>
-<ul>
-<li><strong>What problem is solved</strong>—the user need or business requirement</li>
-<li><strong>Why it matters</strong>—the value and importance</li>
-<li><strong>Success criteria</strong>—how we know it works</li>
-</ul>
-<hr>
-</section>
-<section id="spec" class="level3" data-number="32.6.2">
-<h3 data-number="32.6.2" class="anchored" data-anchor-id="spec"><span class="header-section-number">32.6.2</span> 2. Spec</h3>
-<ul>
-<li><strong>What the system should do</strong>—detailed requirements</li>
-<li><strong>Inputs and outputs</strong>—data structures and formats</li>
-<li><strong>Constraints</strong>—boundaries and limitations</li>
-</ul>
-<hr>
-</section>
-<section id="structure" class="level3" data-number="32.6.3">
-<h3 data-number="32.6.3" class="anchored" data-anchor-id="structure"><span class="header-section-number">32.6.3</span> 3. Structure</h3>
-<ul>
-<li><strong>Components</strong>—what parts are needed</li>
-<li><strong>Flow</strong>—how data moves through the system</li>
-<li><strong>Architecture</strong>—how parts connect</li>
-</ul>
-<hr>
-</section>
-<section id="instruction" class="level3" data-number="32.6.4">
-<h3 data-number="32.6.4" class="anchored" data-anchor-id="instruction"><span class="header-section-number">32.6.4</span> 4. Instruction</h3>
-<ul>
-<li><strong>How it executes</strong>—protocols for operation</li>
-<li><strong>Task definitions</strong>—specific operations</li>
-<li><strong>Execution order</strong>—sequence of steps</li>
-</ul>
-<hr>
-</section>
-<section id="evaluation" class="level3" data-number="32.6.5">
-<h3 data-number="32.6.5" class="anchored" data-anchor-id="evaluation"><span class="header-section-number">32.6.5</span> 5. Evaluation</h3>
-<ul>
-<li><strong>How correctness is measured</strong>—quality metrics</li>
-<li><strong>Validation mechanisms</strong>—how we check results</li>
-<li><strong>Feedback loops</strong>—how we improve</li>
-</ul>
-<hr>
-</section>
-<section id="iteration" class="level3" data-number="32.6.6">
-<h3 data-number="32.6.6" class="anchored" data-anchor-id="iteration"><span class="header-section-number">32.6.6</span> 6. Iteration</h3>
-<ul>
-<li><strong>How it improves</strong>—learning and adaptation</li>
-<li><strong>Refinement process</strong>—how we make it better</li>
-<li><strong>Evolution path</strong>—how it grows over time</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>These elements define the system lifecycle—from definition to evolution.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="composition-as-design" class="level2" data-number="32.7">
-<h2 data-number="32.7" class="anchored" data-anchor-id="composition-as-design"><span class="header-section-number">32.7</span> Composition as Design</h2>
-<p>System design is fundamentally about composition—combining parts to create wholes:</p>
-<hr>
-<section id="you-combine" class="level3" data-number="32.7.1">
-<h3 data-number="32.7.1" class="anchored" data-anchor-id="you-combine"><span class="header-section-number">32.7.1</span> You combine:</h3>
-<ul>
-<li><strong>Capabilities</strong>—what the system can do</li>
-<li><strong>Modules</strong>—functional components</li>
-<li><strong>Agents</strong>—intelligent processors</li>
-<li><strong>Tools</strong>—external services and APIs</li>
-</ul>
-<hr>
-</section>
-<section id="to-produce" class="level3" data-number="32.7.2">
-<h3 data-number="32.7.2" class="anchored" data-anchor-id="to-produce"><span class="header-section-number">32.7.2</span> To produce:</h3>
-<ul>
-<li><strong>Emergent behavior</strong>—capabilities that no single component has</li>
-<li><strong>Complex functionality</strong>—solving sophisticated problems</li>
-<li><strong>Integrated solutions</strong>—coherent, unified systems</li>
-</ul>
-<hr>
-</section>
-<section id="example" class="level3" data-number="32.7.3">
-<h3 data-number="32.7.3" class="anchored" data-anchor-id="example"><span class="header-section-number">32.7.3</span> Example</h3>
-<p>Combining: - <strong>Retrieval</strong>—finding information - <strong>Generation</strong>—creating text - <strong>Memory</strong>—maintaining context</p>
-<p>Creates: - <strong>A knowledge assistant</strong>—system that can answer questions using retrieved information</p>
-<hr>
-<blockquote class="blockquote">
-<p>Design is the art of combining parts into a whole that is greater than the sum of its parts.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="control-through-constraints" class="level2" data-number="32.8">
-<h2 data-number="32.8" class="anchored" data-anchor-id="control-through-constraints"><span class="header-section-number">32.8</span> Control Through Constraints</h2>
-<p>In traditional systems, control is explicit:</p>
-<ul>
-<li><strong>Control is explicit</strong>—every step is coded</li>
-<li><strong>Deterministic</strong>—same input always produces same output</li>
-<li><strong>Precise</strong>—exact behavior is defined</li>
-</ul>
-<p>In LLM systems, control is indirect:</p>
-<hr>
-<section id="through" class="level3" data-number="32.8.1">
-<h3 data-number="32.8.1" class="anchored" data-anchor-id="through"><span class="header-section-number">32.8.1</span> Through:</h3>
-<ul>
-<li><strong>Spec</strong>—defining what the system should do</li>
-<li><strong>Instruction</strong>—specifying how it should execute</li>
-<li><strong>Evaluation</strong>—ensuring results meet requirements</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>You do not control every step. You control the space of possible outcomes.</p>
-</blockquote>
-<hr>
-</section>
-<section id="example-1" class="level3" data-number="32.8.2">
-<h3 data-number="32.8.2" class="anchored" data-anchor-id="example-1"><span class="header-section-number">32.8.2</span> Example</h3>
-<p>Instead of coding every step of text summarization:</p>
-<ul>
-<li><strong>Define spec</strong>—what should a summary include?</li>
-<li><strong>Create instruction</strong>—how should the system produce it?</li>
-<li><strong>Evaluate output</strong>—does it meet requirements?</li>
-</ul>
-<p>The system figures out the steps to produce the summary.</p>
-<hr>
-</section>
-</section>
-<section id="debugging-and-iteration-in-system-design" class="level2" data-number="32.9">
-<h2 data-number="32.9" class="anchored" data-anchor-id="debugging-and-iteration-in-system-design"><span class="header-section-number">32.9</span> Debugging and Iteration in System Design</h2>
-<p>System design is inherently iterative:</p>
-<hr>
-<section id="loop" class="level3" data-number="32.9.1">
-<h3 data-number="32.9.1" class="anchored" data-anchor-id="loop"><span class="header-section-number">32.9.1</span> Loop</h3>
-<pre><code>Define → Execute → Evaluate → Refine</code></pre>
-<hr>
-</section>
-<section id="focus" class="level3" data-number="32.9.2">
-<h3 data-number="32.9.2" class="anchored" data-anchor-id="focus"><span class="header-section-number">32.9.2</span> Focus</h3>
-<ul>
-<li><strong>Improve spec</strong>—clarify requirements and constraints</li>
-<li><strong>Adjust structure</strong>—optimize component organization</li>
-<li><strong>Optimize flow</strong>—improve data movement and processing</li>
-</ul>
-<hr>
-</section>
-<section id="debugging" class="level3" data-number="32.9.3">
-<h3 data-number="32.9.3" class="anchored" data-anchor-id="debugging"><span class="header-section-number">32.9.3</span> Debugging</h3>
-<ul>
-<li><strong>Debug definitions</strong>—clarify ambiguous specs</li>
-<li><strong>Debug instructions</strong>—improve execution protocols</li>
-<li><strong>Debug evaluation</strong>—enhance quality checks</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Systems evolve through refinement. The goal is not to get it right the first time, but to improve it systematically.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="abstraction-levels" class="level2" data-number="32.10">
-<h2 data-number="32.10" class="anchored" data-anchor-id="abstraction-levels"><span class="header-section-number">32.10</span> Abstraction Levels</h2>
-<p>System design operates across multiple levels of abstraction:</p>
-<hr>
-<section id="high-level" class="level3" data-number="32.10.1">
-<h3 data-number="32.10.1" class="anchored" data-anchor-id="high-level"><span class="header-section-number">32.10.1</span> High-Level</h3>
-<ul>
-<li><strong>Intent</strong>—goals and objectives</li>
-<li><strong>Product definition</strong>—what value is delivered</li>
-<li><strong>User experience</strong>—how people interact</li>
-</ul>
-<p><strong>Focus:</strong> What and why</p>
-<hr>
-</section>
-<section id="mid-level" class="level3" data-number="32.10.2">
-<h3 data-number="32.10.2" class="anchored" data-anchor-id="mid-level"><span class="header-section-number">32.10.2</span> Mid-Level</h3>
-<ul>
-<li><strong>Spec</strong>—detailed requirements</li>
-<li><strong>Structure</strong>—component organization</li>
-<li><strong>Flow</strong>—data movement</li>
-</ul>
-<p><strong>Focus:</strong> How</p>
-<hr>
-</section>
-<section id="low-level" class="level3" data-number="32.10.3">
-<h3 data-number="32.10.3" class="anchored" data-anchor-id="low-level"><span class="header-section-number">32.10.3</span> Low-Level</h3>
-<ul>
-<li><strong>Instructions</strong>—execution protocols</li>
-<li><strong>Tool calls</strong>—specific operations</li>
-<li><strong>Code</strong>—implementation details</li>
-</ul>
-<p><strong>Focus:</strong> Implementation</p>
-<hr>
-<blockquote class="blockquote">
-<p>Effective designers move across levels seamlessly. They can see the big picture and the details.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="common-mistakes" class="level2" data-number="32.11">
-<h2 data-number="32.11" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">32.11</span> Common Mistakes</h2>
-<p>Several common mistakes undermine effective system design:</p>
-<hr>
-<section id="staying-at-code-level" class="level3" data-number="32.11.1">
-<h3 data-number="32.11.1" class="anchored" data-anchor-id="staying-at-code-level"><span class="header-section-number">32.11.1</span> 1. Staying at Code Level</h3>
-<ul>
-<li><strong>Ignoring system structure</strong>—focusing only on implementation</li>
-<li><strong>Missing the big picture</strong>—not seeing how parts connect</li>
-<li><strong>Limited scope</strong>—can’t see beyond immediate code</li>
-</ul>
-<p><strong>Solution:</strong> Think at the system level. Focus on structure and composition.</p>
-<hr>
-</section>
-<section id="skipping-spec" class="level3" data-number="32.11.2">
-<h3 data-number="32.11.2" class="anchored" data-anchor-id="skipping-spec"><span class="header-section-number">32.11.2</span> 2. Skipping Spec</h3>
-<ul>
-<li><strong>Leads to unstable systems</strong>—unclear requirements</li>
-<li><strong>Difficult to maintain</strong>—no clear documentation</li>
-<li><strong>Hard to debug</strong>—don’t know what’s expected</li>
-</ul>
-<p><strong>Solution:</strong> Always define spec first. Make requirements explicit.</p>
-<hr>
-</section>
-<section id="overcomplicating-systems" class="level3" data-number="32.11.3">
-<h3 data-number="32.11.3" class="anchored" data-anchor-id="overcomplicating-systems"><span class="header-section-number">32.11.3</span> 3. Overcomplicating Systems</h3>
-<ul>
-<li><strong>Too many components</strong>—unnecessary complexity</li>
-<li><strong>Tight coupling</strong>—parts depend too much on each other</li>
-<li><strong>Brittle design</strong>—breaks easily</li>
-</ul>
-<p><strong>Solution:</strong> Keep it simple. Use minimal components. Ensure loose coupling.</p>
-<hr>
-</section>
-<section id="ignoring-evaluation" class="level3" data-number="32.11.4">
-<h3 data-number="32.11.4" class="anchored" data-anchor-id="ignoring-evaluation"><span class="header-section-number">32.11.4</span> 4. Ignoring Evaluation</h3>
-<ul>
-<li><strong>No feedback loop</strong>—can’t improve system</li>
-<li><strong>Unknown quality</strong>—don’t know if it works</li>
-<li><strong>Stagnation</strong>—system doesn’t evolve</li>
-</ul>
-<p><strong>Solution:</strong> Implement evaluation at every stage. Use feedback to improve.</p>
-<hr>
-</section>
-</section>
-<section id="system-design-as-leverage" class="level2" data-number="32.12">
-<h2 data-number="32.12" class="anchored" data-anchor-id="system-design-as-leverage"><span class="header-section-number">32.12</span> System Design as Leverage</h2>
-<p>System design provides powerful leverage:</p>
-<hr>
-<section id="why" class="level3" data-number="32.12.1">
-<h3 data-number="32.12.1" class="anchored" data-anchor-id="why"><span class="header-section-number">32.12.1</span> Why?</h3>
-<ul>
-<li><strong>Reusable structures</strong>—design patterns that apply across problems</li>
-<li><strong>Scalable systems</strong>—architectures that grow without breaking</li>
-<li><strong>Reduced manual work</strong>—systems that automate and optimize</li>
-</ul>
-<hr>
-</section>
-<section id="result" class="level3" data-number="32.12.2">
-<h3 data-number="32.12.2" class="anchored" data-anchor-id="result"><span class="header-section-number">32.12.2</span> Result</h3>
-<ul>
-<li><strong>More output with less effort</strong>—amplification of capability</li>
-<li><strong>Faster iteration</strong>—systems can evolve quickly</li>
-<li><strong>Greater impact</strong>—solutions that scale</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Leverage comes from structure, not effort. Good design multiplies capability.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="final-insight" class="level2" data-number="32.13">
-<h2 data-number="32.13" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">32.13</span> Final Insight</h2>
-<p>Programming has not disappeared. It has evolved.</p>
-<hr>
-<blockquote class="blockquote">
-<p>Programming is now the act of designing systems that define, execute, and refine behavior.</p>
-</blockquote>
-<hr>
-<p>The programmer’s role has elevated from writing code to architecting solutions. The focus has shifted from implementation to definition. The unit of work has changed from functions to systems.</p>
-<hr>
-</section>
-<section id="closing-statement" class="level2" data-number="32.14">
-<h2 data-number="32.14" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">32.14</span> Closing Statement</h2>
-<p>In the LLM era, the most powerful skill is not writing code.</p>
-<p>It is designing systems that produce results reliably.</p>
-<blockquote class="blockquote">
-<p>From code to systems, programming becomes design.</p>
-</blockquote>
-<hr>
-</section>
-<section id="key-insight" class="level2" data-number="32.15">
-<h2 data-number="32.15" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">32.15</span> Key Insight</h2>
-<blockquote class="blockquote">
-<p>Programming in the LLM era is about designing systems, not writing code. The programmer’s role shifts from implementer to system designer, spec engineer, and orchestrator of capabilities. The unit of work changes from functions to complete systems.</p>
-</blockquote>
-</section>
-<section id="action-hint" class="level2" data-number="32.16">
-<h2 data-number="32.16" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">32.16</span> Action Hint</h2>
-<blockquote class="blockquote">
-<p>Think at the system level, not the code level. Focus on structure and composition. Define spec before implementation. Design for iteration and improvement. Control through constraints, not explicit steps. Move across abstraction levels—see both big picture and details. Build reusable structures that provide leverage. Keep systems simple and modular.</p>
+<p>当你设计系统时，你不仅在定义代码，还在定义行为、交互和长期演化。</p>
 </blockquote>
 
 
@@ -1447,13 +983,13 @@ It is about designing systems.</strong></p>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-30.html" class="pagination-link" aria-label="From Idea to Product">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span>
+      <a href="./chapter-30.html" class="pagination-link" aria-label="从理想到产品（From Idea to Product）">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">从理想到产品（From Idea to Product）</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-32.html" class="pagination-link" aria-label="Language as an Operating System">
-        <span class="nav-page-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-32.html" class="pagination-link" aria-label="语言即操作系统（Language as an Operating System）">
+        <span class="nav-page-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">语言即操作系统（Language as an Operating System）</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

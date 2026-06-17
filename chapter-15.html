@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>16&nbsp; Template-based Spec – AI Programming: From Intent to Execution</title>
+<title>16&nbsp; 基于模板的 Spec（Template-based Spec） – AI Programming: From Intent to Execution</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,19 +37,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="./chapter-14.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-aa873432a3c62897e6c2091c0d30a948.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -250,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-15.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-15.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -263,9 +265,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AI Programming: From Intent to Execution</a> 
         <div class="sidebar-tools-main">
@@ -283,211 +283,211 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">前言（Preface）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">转变：从编码到定义（The Shift: From Coding to Defining）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">新的瓶颈：定义（The New Bottleneck: Definition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">编程现在是什么？（What is Programming Now?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">最小循环（The Minimal Loop）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">意图：定义要做什么（Intent: Defining What to Do）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">规格说明：消除歧义（Spec: Eliminating Ambiguity）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">指令：使其可执行（Instruction: Making It Executable）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">评估与迭代（Evaluation &amp; Iteration）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">可能性空间（Possibility Space）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-15.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">从 Spec 到指令（From Spec to Instruction）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">指令设计（Instruction Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">工具使用与 API（Tool Use &amp; APIs）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">构建智能体系统（Building an Agent System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">构建聊天系统（Building a Chat System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">从理想到产品（From Idea to Product）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-31.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">编程即系统设计（Programming as System Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">语言即操作系统（Language as an Operating System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">人类 + AI 认知（Human + AI Cognition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">构建者的未来（The Future of Builders）</span></span></a>
   </div>
 </li>
     </ul>
@@ -500,49 +500,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#why-templates-exist" id="toc-why-templates-exist" class="nav-link active" data-scroll-target="#why-templates-exist"><span class="header-section-number">16.1</span> Why Templates Exist</a></li>
-  <li><a href="#what-is-a-template-based-spec" id="toc-what-is-a-template-based-spec" class="nav-link" data-scroll-target="#what-is-a-template-based-spec"><span class="header-section-number">16.2</span> What is a Template-based Spec?</a>
-  <ul class="collapse">
-  <li><a href="#example-template-conceptual" id="toc-example-template-conceptual" class="nav-link" data-scroll-target="#example-template-conceptual"><span class="header-section-number">16.2.1</span> Example Template (Conceptual)</a></li>
-  </ul></li>
-  <li><a href="#the-role-of-templates" id="toc-the-role-of-templates" class="nav-link" data-scroll-target="#the-role-of-templates"><span class="header-section-number">16.3</span> The Role of Templates</a></li>
-  <li><a href="#designing-a-good-template" id="toc-designing-a-good-template" class="nav-link" data-scroll-target="#designing-a-good-template"><span class="header-section-number">16.4</span> Designing a Good Template</a>
-  <ul class="collapse">
-  <li><a href="#principles-of-template-design" id="toc-principles-of-template-design" class="nav-link" data-scroll-target="#principles-of-template-design"><span class="header-section-number">16.4.1</span> Principles of Template Design</a></li>
-  </ul></li>
-  <li><a href="#template-granularity" id="toc-template-granularity" class="nav-link" data-scroll-target="#template-granularity"><span class="header-section-number">16.5</span> Template Granularity</a>
-  <ul class="collapse">
-  <li><a href="#high-level-templates" id="toc-high-level-templates" class="nav-link" data-scroll-target="#high-level-templates"><span class="header-section-number">16.5.1</span> High-Level Templates</a></li>
-  <li><a href="#detailed-templates" id="toc-detailed-templates" class="nav-link" data-scroll-target="#detailed-templates"><span class="header-section-number">16.5.2</span> Detailed Templates</a></li>
-  </ul></li>
-  <li><a href="#advantages-of-template-based-spec" id="toc-advantages-of-template-based-spec" class="nav-link" data-scroll-target="#advantages-of-template-based-spec"><span class="header-section-number">16.6</span> Advantages of Template-based Spec</a>
-  <ul class="collapse">
-  <li><a href="#consistency" id="toc-consistency" class="nav-link" data-scroll-target="#consistency"><span class="header-section-number">16.6.1</span> 1. Consistency</a></li>
-  <li><a href="#efficiency" id="toc-efficiency" class="nav-link" data-scroll-target="#efficiency"><span class="header-section-number">16.6.2</span> 2. Efficiency</a></li>
-  <li><a href="#reusability" id="toc-reusability" class="nav-link" data-scroll-target="#reusability"><span class="header-section-number">16.6.3</span> 3. Reusability</a></li>
-  <li><a href="#accessibility" id="toc-accessibility" class="nav-link" data-scroll-target="#accessibility"><span class="header-section-number">16.6.4</span> 4. Accessibility</a></li>
-  </ul></li>
-  <li><a href="#limitations-of-templates" id="toc-limitations-of-templates" class="nav-link" data-scroll-target="#limitations-of-templates"><span class="header-section-number">16.7</span> Limitations of Templates</a>
-  <ul class="collapse">
-  <li><a href="#rigidity" id="toc-rigidity" class="nav-link" data-scroll-target="#rigidity"><span class="header-section-number">16.7.1</span> 1. Rigidity</a></li>
-  <li><a href="#over-reliance" id="toc-over-reliance" class="nav-link" data-scroll-target="#over-reliance"><span class="header-section-number">16.7.2</span> 2. Over-Reliance</a></li>
-  <li><a href="#incomplete-coverage" id="toc-incomplete-coverage" class="nav-link" data-scroll-target="#incomplete-coverage"><span class="header-section-number">16.7.3</span> 3. Incomplete Coverage</a></li>
-  <li><a href="#false-sense-of-quality" id="toc-false-sense-of-quality" class="nav-link" data-scroll-target="#false-sense-of-quality"><span class="header-section-number">16.7.4</span> 4. False Sense of Quality</a></li>
-  </ul></li>
-  <li><a href="#when-to-use-templates" id="toc-when-to-use-templates" class="nav-link" data-scroll-target="#when-to-use-templates"><span class="header-section-number">16.8</span> When to Use Templates</a>
-  <ul class="collapse">
-  <li><a href="#when-to-use-templates-1" id="toc-when-to-use-templates-1" class="nav-link" data-scroll-target="#when-to-use-templates-1"><span class="header-section-number">16.8.1</span> When to Use Templates</a></li>
-  <li><a href="#when-not-to-use-templates" id="toc-when-not-to-use-templates" class="nav-link" data-scroll-target="#when-not-to-use-templates"><span class="header-section-number">16.8.2</span> When Not to Use Templates</a></li>
-  </ul></li>
-  <li><a href="#templates-as-scaffolding" id="toc-templates-as-scaffolding" class="nav-link" data-scroll-target="#templates-as-scaffolding"><span class="header-section-number">16.9</span> Templates as Scaffolding</a></li>
-  <li><a href="#evolution-of-templates" id="toc-evolution-of-templates" class="nav-link" data-scroll-target="#evolution-of-templates"><span class="header-section-number">16.10</span> Evolution of Templates</a>
-  <ul class="collapse">
-  <li><a href="#example-evolution" id="toc-example-evolution" class="nav-link" data-scroll-target="#example-evolution"><span class="header-section-number">16.10.1</span> Example Evolution</a></li>
-  </ul></li>
-  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">16.11</span> Final Insight</a></li>
-  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">16.12</span> Closing Statement</a></li>
-  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">16.13</span> Key Insight</a></li>
-  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">16.14</span> Action Hint</a></li>
+  <li><a href="#模板为什么存在" id="toc-模板为什么存在" class="nav-link active" data-scroll-target="#模板为什么存在"><span class="header-section-number">16.1</span> 模板为什么存在</a></li>
+  <li><a href="#什么是基于模板的-specwhat-is-a-template-based-spec" id="toc-什么是基于模板的-specwhat-is-a-template-based-spec" class="nav-link" data-scroll-target="#什么是基于模板的-specwhat-is-a-template-based-spec"><span class="header-section-number">16.2</span> 什么是基于模板的 Spec？（What is a Template-based Spec?）</a></li>
+  <li><a href="#模板的作用the-role-of-templates" id="toc-模板的作用the-role-of-templates" class="nav-link" data-scroll-target="#模板的作用the-role-of-templates"><span class="header-section-number">16.3</span> 模板的作用（The Role of Templates）</a></li>
+  <li><a href="#通用-spec-模板general-spec-template" id="toc-通用-spec-模板general-spec-template" class="nav-link" data-scroll-target="#通用-spec-模板general-spec-template"><span class="header-section-number">16.4</span> 通用 Spec 模板（General Spec Template）</a></li>
+  <li><a href="#模板适配template-adaptation" id="toc-模板适配template-adaptation" class="nav-link" data-scroll-target="#模板适配template-adaptation"><span class="header-section-number">16.5</span> 模板适配（Template Adaptation）</a></li>
   </ul>
 </nav>
     </div>
@@ -552,7 +514,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></h1>
+<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></h1>
 </div>
 
 
@@ -569,394 +531,84 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="why-templates-exist" class="level2" data-number="16.1">
-<h2 data-number="16.1" class="anchored" data-anchor-id="why-templates-exist"><span class="header-section-number">16.1</span> Why Templates Exist</h2>
-<p>Once we understand what a good spec looks like—the core components, the need for structure, the importance of clarity—a practical question arises:</p>
+<section id="模板为什么存在" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="模板为什么存在"><span class="header-section-number">16.1</span> 模板为什么存在</h2>
+<p>一旦我们理解了好的 Spec 是什么样的——核心组件、对结构的需求、清晰度的重要性——一个实际问题出现了：</p>
 <blockquote class="blockquote">
-<p><strong>How do we produce specs consistently?</strong></p>
+<p><strong>我们如何一致地产出规格说明？</strong></p>
 </blockquote>
-<p>Without guidance and structure, spec creation becomes:</p>
-<ul>
-<li>Different people define specs differently—leading to inconsistency</li>
-<li>Important elements are missed—critical components are forgotten</li>
-<li>Quality varies widely—some specs are good, others are poor</li>
-</ul>
-<p>To address this systematic problem, we introduce:</p>
+<p>没有指导和结构，Spec 创建变成：不同的人以不同方式定义 Spec、重要的元素被遗漏、质量差异很大。</p>
+<p>为了解决这个系统性问题，我们引入：</p>
 <blockquote class="blockquote">
-<p><strong>Templates — structured guides for creating specs</strong></p>
+<p><strong>模板（Templates）——创建 Spec 的结构化指南</strong></p>
 </blockquote>
 <hr>
 </section>
-<section id="what-is-a-template-based-spec" class="level2" data-number="16.2">
-<h2 data-number="16.2" class="anchored" data-anchor-id="what-is-a-template-based-spec"><span class="header-section-number">16.2</span> What is a Template-based Spec?</h2>
-<p>A Template-based Spec is a specification created using a <strong>predefined structure</strong>. The template acts as a scaffold that guides the spec creation process.</p>
-<p>The template defines:</p>
-<ul>
-<li><strong>What fields must be filled</strong>—the required components of the spec</li>
-<li><strong>What information is required</strong>—the type of content needed for each field</li>
-<li><strong>How the spec is organized</strong>—the structure and order of the specification</li>
-</ul>
-<hr>
-<section id="example-template-conceptual" class="level3" data-number="16.2.1">
-<h3 data-number="16.2.1" class="anchored" data-anchor-id="example-template-conceptual"><span class="header-section-number">16.2.1</span> Example Template (Conceptual)</h3>
-<pre><code>Objective:
-Input:
-Output:
-Constraints:
-Success Criteria:</code></pre>
-<p>The user fills in the template instead of starting from scratch, ensuring that all essential elements are included.</p>
-<hr>
+<section id="什么是基于模板的-specwhat-is-a-template-based-spec" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="什么是基于模板的-specwhat-is-a-template-based-spec"><span class="header-section-number">16.2</span> 什么是基于模板的 Spec？（What is a Template-based Spec?）</h2>
+<p>基于模板的 Spec 是使用<strong>预定义结构</strong>创建的规格说明。模板充当指导 Spec 创建过程的脚手架。</p>
+<p>模板定义：必须填写什么字段、需要什么信息、Spec 如何组织。</p>
+<p><strong>概念性模板：</strong></p>
+<pre><code>目标:
+输入:
+输出:
+约束:
+成功标准:</code></pre>
+<p>用户填完模板而不是从零开始，确保所有基本元素都被包含。</p>
 <blockquote class="blockquote">
-<p>Templates standardize thinking. They make good spec creation a repeatable process.</p>
+<p>模板标准化思维。它们使好的 Spec 创建成为一种可重复的过程。</p>
 </blockquote>
 <hr>
 </section>
-</section>
-<section id="the-role-of-templates" class="level2" data-number="16.3">
-<h2 data-number="16.3" class="anchored" data-anchor-id="the-role-of-templates"><span class="header-section-number">16.3</span> The Role of Templates</h2>
-<p>Templates serve multiple important functions in the spec creation process:</p>
+<section id="模板的作用the-role-of-templates" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="模板的作用the-role-of-templates"><span class="header-section-number">16.3</span> 模板的作用（The Role of Templates）</h2>
+<p>模板在 Spec 创建过程中执行多个重要功能：</p>
 <ul>
-<li><strong>A checklist</strong>—ensuring no critical component is missed</li>
-<li><strong>A structure</strong>—organizing thinking in a systematic way</li>
-<li><strong>A constraint on thinking</strong>—forcing attention to what matters</li>
+<li><strong>清单</strong>——确保没有关键组件被漏掉</li>
+<li><strong>结构</strong>——以系统化的方式组织思考</li>
+<li><strong>对思维的约束</strong>——迫使注意力集中在重要的事情上</li>
 </ul>
-<p>Templates ensure that:</p>
-<ul>
-<li>No critical component is missing—all necessary elements are included</li>
-<li>Specs are consistent across tasks—different specs follow the same format</li>
-<li>Quality is more predictable—standardization leads to better outcomes</li>
-</ul>
+<p>模板确保：相同的组件总是被包含、一致的结构得到维护、关键信息不会被遗忘。</p>
 <hr>
 </section>
-<section id="designing-a-good-template" class="level2" data-number="16.4">
-<h2 data-number="16.4" class="anchored" data-anchor-id="designing-a-good-template"><span class="header-section-number">16.4</span> Designing a Good Template</h2>
-<p>A good template is not just a form with blank fields to fill. It is a <strong>thinking framework</strong>—a tool that guides and structures the thought process.</p>
-<hr>
-<section id="principles-of-template-design" class="level3" data-number="16.4.1">
-<h3 data-number="16.4.1" class="anchored" data-anchor-id="principles-of-template-design"><span class="header-section-number">16.4.1</span> Principles of Template Design</h3>
-<p>Effective templates follow key principles:</p>
-<hr>
-<section id="completeness" class="level4" data-number="16.4.1.1">
-<h4 data-number="16.4.1.1" class="anchored" data-anchor-id="completeness"><span class="header-section-number">16.4.1.1</span> 1. Completeness</h4>
-<p>The template should cover all essential elements:</p>
-<ul>
-<li>Input—what the system receives</li>
-<li>Output—what the system produces</li>
-<li>Constraints—what the system must respect</li>
-<li>Success criteria—how we know it works</li>
-</ul>
-<p>If a template omits essential components, it cannot ensure complete specs.</p>
-<hr>
-</section>
-<section id="clarity" class="level4" data-number="16.4.1.2">
-<h4 data-number="16.4.1.2" class="anchored" data-anchor-id="clarity"><span class="header-section-number">16.4.1.2</span> 2. Clarity</h4>
-<p>Each field in the template should:</p>
-<ul>
-<li>Have a clear purpose—its role in the spec is obvious</li>
-<li>Avoid ambiguity—what should be entered is clear</li>
-<li>Include guidance—if helpful, provide examples or prompts</li>
-</ul>
-<hr>
-</section>
-<section id="simplicity" class="level4" data-number="16.4.1.3">
-<h4 data-number="16.4.1.3" class="anchored" data-anchor-id="simplicity"><span class="header-section-number">16.4.1.3</span> 3. Simplicity</h4>
-<ul>
-<li>Avoid too many fields—don’t overwhelm the user</li>
-<li>Keep it usable—the template should be easy to fill out</li>
-<li>Focus on essentials—include only what’s necessary</li>
-</ul>
+<section id="通用-spec-模板general-spec-template" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="通用-spec-模板general-spec-template"><span class="header-section-number">16.4</span> 通用 Spec 模板（General Spec Template）</h2>
+<pre><code>Spec: [系统/功能名称]
+版本: [版本号]
+日期: [日期]
+
+## 目标
+[一句话描述系统应该做什么]
+
+## 输入
+输入_1: [描述, 类型, 约束]
+输入_2: [描述, 类型, 约束]
+
+## 输出
+输出_1: [描述, 类型, 格式]
+输出_2: [描述, 类型, 格式]
+
+## 约束
+- 约束_1: [描述]
+- 约束_2: [描述]
+
+## 成功标准
+- 标准_1: [可衡量的条件]
+- 标准_2: [可衡量的条件]
+
+## 边界情况
+- 情况_1: [描述及所需行为]
+- 情况_2: [描述及所需行为]</code></pre>
 <hr>
 </section>
-<section id="flexibility" class="level4" data-number="16.4.1.4">
-<h4 data-number="16.4.1.4" class="anchored" data-anchor-id="flexibility"><span class="header-section-number">16.4.1.4</span> 4. Flexibility</h4>
-<ul>
-<li>Allow variation—adapt to different contexts and needs</li>
-<li>Avoid over-constraining—don’t force unnecessary specificity</li>
-<li>Enable extension—allow for additional fields when needed</li>
-</ul>
-<hr>
+<section id="模板适配template-adaptation" class="level2" data-number="16.5">
+<h2 data-number="16.5" class="anchored" data-anchor-id="模板适配template-adaptation"><span class="header-section-number">16.5</span> 模板适配（Template Adaptation）</h2>
+<p>虽然通用模板提供了完整的结构，但并非所有 Spec 需要相同级别的细节。适配模板：</p>
+<p><strong>最小 Spec：</strong> 目标 + 输入 + 输出。适用于简单的、低风险的转换。</p>
+<p><strong>标准 Spec：</strong> 添加约束。适用于大多数系统交互。</p>
+<p><strong>完整 Spec：</strong> 添加成功标准和边界情况。适用于关键路径。</p>
 <blockquote class="blockquote">
-<p>A good template guides, but does not restrict. It provides structure without limiting creativity.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-</section>
-<section id="template-granularity" class="level2" data-number="16.5">
-<h2 data-number="16.5" class="anchored" data-anchor-id="template-granularity"><span class="header-section-number">16.5</span> Template Granularity</h2>
-<p>Templates can exist at different levels of detail, depending on the complexity of the task and the experience of the user.</p>
-<hr>
-<section id="high-level-templates" class="level3" data-number="16.5.1">
-<h3 data-number="16.5.1" class="anchored" data-anchor-id="high-level-templates"><span class="header-section-number">16.5.1</span> High-Level Templates</h3>
-<ul>
-<li>Fewer fields—only the most essential components</li>
-<li>More flexible—allows for interpretation and adaptation</li>
-<li>Less prescriptive—provides guidance without excessive detail</li>
-</ul>
-<p><strong>Used for:</strong> - Early-stage exploration—when requirements are still evolving - Simple tasks—when complexity is low - Rapid prototyping—when speed is more important than precision</p>
-<hr>
-</section>
-<section id="detailed-templates" class="level3" data-number="16.5.2">
-<h3 data-number="16.5.2" class="anchored" data-anchor-id="detailed-templates"><span class="header-section-number">16.5.2</span> Detailed Templates</h3>
-<ul>
-<li>More fields—comprehensive coverage of all aspects</li>
-<li>More constraints—specific guidance on what to include</li>
-<li>More prescriptive—detailed instructions for each field</li>
-</ul>
-<p><strong>Used for:</strong> - Complex systems—when many components must be specified - Production environments—when reliability and consistency are critical - Teams with varying experience—when standardization is essential</p>
-<hr>
-<blockquote class="blockquote">
-<p>The level of detail should match the complexity of the task and the needs of the context.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="advantages-of-template-based-spec" class="level2" data-number="16.6">
-<h2 data-number="16.6" class="anchored" data-anchor-id="advantages-of-template-based-spec"><span class="header-section-number">16.6</span> Advantages of Template-based Spec</h2>
-<p>Using templates for spec creation provides several significant benefits:</p>
-<hr>
-<section id="consistency" class="level3" data-number="16.6.1">
-<h3 data-number="16.6.1" class="anchored" data-anchor-id="consistency"><span class="header-section-number">16.6.1</span> 1. Consistency</h3>
-<ul>
-<li>All specs follow the same structure—making them easier to understand and review</li>
-<li>Standardized format—comparing specs across projects is straightforward</li>
-<li>Reduced cognitive load—don’t need to figure out how to organize each spec</li>
-</ul>
-<hr>
-</section>
-<section id="efficiency" class="level3" data-number="16.6.2">
-<h3 data-number="16.6.2" class="anchored" data-anchor-id="efficiency"><span class="header-section-number">16.6.2</span> 2. Efficiency</h3>
-<ul>
-<li>Faster to create specs—don’t start from scratch each time</li>
-<li>Reduced mental effort—structure is provided, just fill in the details</li>
-<li>Streamlined review process—reviewers know where to look for what information</li>
-</ul>
-<hr>
-</section>
-<section id="reusability" class="level3" data-number="16.6.3">
-<h3 data-number="16.6.3" class="anchored" data-anchor-id="reusability"><span class="header-section-number">16.6.3</span> 3. Reusability</h3>
-<ul>
-<li>Templates can be reused across tasks—applying the same structure to different problems</li>
-<li>Standardization enables scaling—consistent approach as the team grows</li>
-<li>Knowledge capture—best practices are encoded in the template</li>
-</ul>
-<hr>
-</section>
-<section id="accessibility" class="level3" data-number="16.6.4">
-<h3 data-number="16.6.4" class="anchored" data-anchor-id="accessibility"><span class="header-section-number">16.6.4</span> 4. Accessibility</h3>
-<ul>
-<li>Easier for beginners—provides guidance and structure</li>
-<li>Reduces learning curve—new team members can follow the template</li>
-<li>Helps build mental models—users learn what makes a good spec</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Templates lower the barrier to good specification. They make it easier for everyone to create high-quality specs.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="limitations-of-templates" class="level2" data-number="16.7">
-<h2 data-number="16.7" class="anchored" data-anchor-id="limitations-of-templates"><span class="header-section-number">16.7</span> Limitations of Templates</h2>
-<p>While templates are powerful tools, they have limitations that must be understood:</p>
-<hr>
-<section id="rigidity" class="level3" data-number="16.7.1">
-<h3 data-number="16.7.1" class="anchored" data-anchor-id="rigidity"><span class="header-section-number">16.7.1</span> 1. Rigidity</h3>
-<ul>
-<li>May not fit all scenarios—some problems don’t fit the template structure</li>
-<li>Can constrain creative solutions—forcing problems into a predefined format</li>
-<li>May miss unique aspects—template may not capture important domain-specific details</li>
-</ul>
-<hr>
-</section>
-<section id="over-reliance" class="level3" data-number="16.7.2">
-<h3 data-number="16.7.2" class="anchored" data-anchor-id="over-reliance"><span class="header-section-number">16.7.2</span> 2. Over-Reliance</h3>
-<ul>
-<li>Users may fill fields mechanically—without deep understanding</li>
-<li>Without understanding the system—just completing the form without thinking</li>
-<li>False sense of completeness—filling all fields doesn’t guarantee a good spec</li>
-</ul>
-<hr>
-</section>
-<section id="incomplete-coverage" class="level3" data-number="16.7.3">
-<h3 data-number="16.7.3" class="anchored" data-anchor-id="incomplete-coverage"><span class="header-section-number">16.7.3</span> 3. Incomplete Coverage</h3>
-<ul>
-<li>Templates cannot anticipate all edge cases—some situations require custom specifications</li>
-<li>May miss domain-specific requirements—general templates may not capture specialized needs</li>
-<li>Can become outdated—templates need to evolve as practices change</li>
-</ul>
-<hr>
-</section>
-<section id="false-sense-of-quality" class="level3" data-number="16.7.4">
-<h3 data-number="16.7.4" class="anchored" data-anchor-id="false-sense-of-quality"><span class="header-section-number">16.7.4</span> 4. False Sense of Quality</h3>
-<ul>
-<li>A filled template does not guarantee a good spec—content matters more than format</li>
-<li>Structure without substance—a well-structured spec can still be poor if the content is weak</li>
-<li>Complacency—relying on templates without critical thinking</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Templates guide structure, not thinking. They provide the form, but the substance comes from understanding.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="when-to-use-templates" class="level2" data-number="16.8">
-<h2 data-number="16.8" class="anchored" data-anchor-id="when-to-use-templates"><span class="header-section-number">16.8</span> When to Use Templates</h2>
-<p>Templates are most effective in specific contexts. Knowing when to use them—and when not to—is important.</p>
-<hr>
-<section id="when-to-use-templates-1" class="level3" data-number="16.8.1">
-<h3 data-number="16.8.1" class="anchored" data-anchor-id="when-to-use-templates-1"><span class="header-section-number">16.8.1</span> When to Use Templates</h3>
-<p>Templates are most effective when:</p>
-<hr>
-<section id="tasks-are-repetitive" class="level4" data-number="16.8.1.1">
-<h4 data-number="16.8.1.1" class="anchored" data-anchor-id="tasks-are-repetitive"><span class="header-section-number">16.8.1.1</span> 1. Tasks Are Repetitive</h4>
-<ul>
-<li>Similar structures across tasks—common patterns recur</li>
-<li>Predictable requirements—what’s needed is known in advance</li>
-</ul>
-<hr>
-</section>
-<section id="teams-need-consistency" class="level4" data-number="16.8.1.2">
-<h4 data-number="16.8.1.2" class="anchored" data-anchor-id="teams-need-consistency"><span class="header-section-number">16.8.1.2</span> 2. Teams Need Consistency</h4>
-<ul>
-<li>Multiple contributors—different people creating specs</li>
-<li>Shared standards—ensuring everyone follows the same approach</li>
-<li>Onboarding new team members—providing clear guidance</li>
-</ul>
-<hr>
-</section>
-<section id="systems-require-reliability" class="level4" data-number="16.8.1.3">
-<h4 data-number="16.8.1.3" class="anchored" data-anchor-id="systems-require-reliability"><span class="header-section-number">16.8.1.3</span> 3. Systems Require Reliability</h4>
-<ul>
-<li>Production environments—consistency and predictability are critical</li>
-<li>Stable outputs—reproducible behavior is essential</li>
-<li>Quality requirements—high standards must be met consistently</li>
-</ul>
-<hr>
-</section>
-<section id="users-are-learning" class="level4" data-number="16.8.1.4">
-<h4 data-number="16.8.1.4" class="anchored" data-anchor-id="users-are-learning"><span class="header-section-number">16.8.1.4</span> 4. Users Are Learning</h4>
-<ul>
-<li>Beginners need guidance—structure helps them learn</li>
-<li>Building mental models—templates teach good spec practices</li>
-<li>Training and development—providing scaffolding for skill development</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="when-not-to-use-templates" class="level3" data-number="16.8.2">
-<h3 data-number="16.8.2" class="anchored" data-anchor-id="when-not-to-use-templates"><span class="header-section-number">16.8.2</span> When Not to Use Templates</h3>
-<p>Templates are less suitable when:</p>
-<hr>
-<section id="problems-are-novel" class="level4" data-number="16.8.2.1">
-<h4 data-number="16.8.2.1" class="anchored" data-anchor-id="problems-are-novel"><span class="header-section-number">16.8.2.1</span> 1. Problems Are Novel</h4>
-<ul>
-<li>No established structure—the problem doesn’t fit known patterns</li>
-<li>High uncertainty—requirements are unclear or evolving</li>
-<li>Exploratory work—figuring out what’s needed as you go</li>
-</ul>
-<hr>
-</section>
-<section id="exploration-is-needed" class="level4" data-number="16.8.2.2">
-<h4 data-number="16.8.2.2" class="anchored" data-anchor-id="exploration-is-needed"><span class="header-section-number">16.8.2.2</span> 2. Exploration is Needed</h4>
-<ul>
-<li>Early-stage ideation—requirements are still being discovered</li>
-<li>Rapid iteration—changing direction frequently</li>
-<li>Research and experimentation—testing different approaches</li>
-</ul>
-<hr>
-</section>
-<section id="flexibility-is-critical" class="level4" data-number="16.8.2.3">
-<h4 data-number="16.8.2.3" class="anchored" data-anchor-id="flexibility-is-critical"><span class="header-section-number">16.8.2.3</span> 3. Flexibility is Critical</h4>
-<ul>
-<li>Unique constraints—standard templates don’t capture the needs</li>
-<li>Unusual system behavior—non-standard patterns are required</li>
-<li>Creative solutions—rigid structure would limit innovation</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Templates are tools, not rules. Use them when they help, avoid them when they hinder.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-</section>
-<section id="templates-as-scaffolding" class="level2" data-number="16.9">
-<h2 data-number="16.9" class="anchored" data-anchor-id="templates-as-scaffolding"><span class="header-section-number">16.9</span> Templates as Scaffolding</h2>
-<p>A useful way to think about templates:</p>
-<blockquote class="blockquote">
-<p>They are scaffolding for thinking.</p>
-</blockquote>
-<p>Like scaffolding in construction, templates provide temporary support that helps you build something solid. Once the structure is in place and you understand what you’re doing, you may no longer need the scaffolding.</p>
-<p>Templates help you:</p>
-<ul>
-<li><strong>Start with structure</strong>—you don’t have to figure out organization from scratch</li>
-<li><strong>Avoid missing key elements</strong>—the template reminds you what’s important</li>
-<li><strong>Develop consistency</strong>—following the same pattern builds good habits</li>
-</ul>
-<p>But over time:</p>
-<ul>
-<li><strong>Internalize the structure</strong>—you no longer need the external support</li>
-<li><strong>Adapt as needed</strong>—you modify the template to fit specific situations</li>
-<li><strong>Move beyond templates</strong>—you can create good specs without them</li>
-</ul>
-<hr>
-</section>
-<section id="evolution-of-templates" class="level2" data-number="16.10">
-<h2 data-number="16.10" class="anchored" data-anchor-id="evolution-of-templates"><span class="header-section-number">16.10</span> Evolution of Templates</h2>
-<p>Templates are not static. They should evolve based on experience and feedback:</p>
-<ul>
-<li><strong>Based on experience</strong>—what works well, what doesn’t</li>
-<li><strong>Based on failures</strong>—what’s missing, what causes problems</li>
-<li><strong>Based on system requirements</strong>—what the team and projects need</li>
-</ul>
-<hr>
-<section id="example-evolution" class="level3" data-number="16.10.1">
-<h3 data-number="16.10.1" class="anchored" data-anchor-id="example-evolution"><span class="header-section-number">16.10.1</span> Example Evolution</h3>
-<p>A template might evolve over time:</p>
-<ul>
-<li><strong>Add new fields</strong>—edge cases that were missed initially</li>
-<li><strong>Refine definitions</strong>—clarify what each field should contain</li>
-<li><strong>Remove unnecessary complexity</strong>—simplify based on actual usage</li>
-<li><strong>Add examples</strong>—provide guidance for each field</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Good templates evolve with practice. They improve as we learn what works and what doesn’t.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="final-insight" class="level2" data-number="16.11">
-<h2 data-number="16.11" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">16.11</span> Final Insight</h2>
-<p>Template-based specs provide a practical way to:</p>
-<ul>
-<li><strong>Standardize definition</strong>—consistent approach across projects</li>
-<li><strong>Improve consistency</strong>—predictable quality and format</li>
-<li><strong>Scale spec creation</strong>—efficient as teams and projects grow</li>
-</ul>
-<p>But they are only one approach within Spec Engineering. Templates are a tool, not the entire discipline.</p>
-<hr>
-</section>
-<section id="closing-statement" class="level2" data-number="16.12">
-<h2 data-number="16.12" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">16.12</span> Closing Statement</h2>
-<p>Templates do not replace thinking. They structure it.</p>
-<blockquote class="blockquote">
-<p>A good template does not tell you what to think. It ensures that you think about what matters.</p>
-</blockquote>
-<hr>
-</section>
-<section id="key-insight" class="level2" data-number="16.13">
-<h2 data-number="16.13" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">16.13</span> Key Insight</h2>
-<blockquote class="blockquote">
-<p>Templates are structured guides for creating specs. They provide consistency, efficiency, and accessibility but can become rigid if overused. Good templates evolve based on experience and feedback.</p>
-</blockquote>
-</section>
-<section id="action-hint" class="level2" data-number="16.14">
-<h2 data-number="16.14" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">16.14</span> Action Hint</h2>
-<blockquote class="blockquote">
-<p>Create a standard spec template for your team or projects. Include the four core components plus any domain-specific fields you need. Use it consistently, but be willing to adapt it as you learn what works best for your context.</p>
+<p>模板使规格化的质量一致，无论创建者的经验如何。</p>
 </blockquote>
 
 
@@ -1378,13 +1030,13 @@ Success Criteria:</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-14.html" class="pagination-link" aria-label="Spec Structure">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span>
+      <a href="./chapter-14.html" class="pagination-link" aria-label="Spec 结构（Spec Structure）">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-16.html" class="pagination-link" aria-label="Spec Agent">
-        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-16.html" class="pagination-link" aria-label="规格智能体（Spec Agent）">
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

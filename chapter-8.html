@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>9&nbsp; Evaluation &amp; Iteration – AI Programming: From Intent to Execution</title>
+<title>9&nbsp; 评估与迭代（Evaluation &amp; Iteration） – AI Programming: From Intent to Execution</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,19 +37,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="./chapter-7.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-aa873432a3c62897e6c2091c0d30a948.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -250,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-8.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-8.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">评估与迭代（Evaluation &amp; Iteration）</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -263,9 +265,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AI Programming: From Intent to Execution</a> 
         <div class="sidebar-tools-main">
@@ -283,211 +283,211 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">前言（Preface）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">转变：从编码到定义（The Shift: From Coding to Defining）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">新的瓶颈：定义（The New Bottleneck: Definition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">编程现在是什么？（What is Programming Now?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">最小循环（The Minimal Loop）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">意图：定义要做什么（Intent: Defining What to Do）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">规格说明：消除歧义（Spec: Eliminating Ambiguity）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">指令：使其可执行（Instruction: Making It Executable）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-8.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">评估与迭代（Evaluation &amp; Iteration）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">可能性空间（Possibility Space）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">从 Spec 到指令（From Spec to Instruction）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">指令设计（Instruction Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">工具使用与 API（Tool Use &amp; APIs）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">构建智能体系统（Building an Agent System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">构建聊天系统（Building a Chat System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">从理想到产品（From Idea to Product）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-31.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">编程即系统设计（Programming as System Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">语言即操作系统（Language as an Operating System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">人类 + AI 认知（Human + AI Cognition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">构建者的未来（The Future of Builders）</span></span></a>
   </div>
 </li>
     </ul>
@@ -500,52 +500,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#why-execution-is-not-the-end" id="toc-why-execution-is-not-the-end" class="nav-link active" data-scroll-target="#why-execution-is-not-the-end"><span class="header-section-number">9.1</span> Why Execution Is Not the End</a></li>
-  <li><a href="#what-is-evaluation" id="toc-what-is-evaluation" class="nav-link" data-scroll-target="#what-is-evaluation"><span class="header-section-number">9.2</span> What is Evaluation?</a></li>
-  <li><a href="#why-evaluation-is-necessary" id="toc-why-evaluation-is-necessary" class="nav-link" data-scroll-target="#why-evaluation-is-necessary"><span class="header-section-number">9.3</span> Why Evaluation Is Necessary</a>
+  <li><a href="#为什么执行不是终点" id="toc-为什么执行不是终点" class="nav-link active" data-scroll-target="#为什么执行不是终点"><span class="header-section-number">9.1</span> 为什么执行不是终点</a></li>
+  <li><a href="#什么是评估what-is-evaluation" id="toc-什么是评估what-is-evaluation" class="nav-link" data-scroll-target="#什么是评估what-is-evaluation"><span class="header-section-number">9.2</span> 什么是评估？（What is Evaluation?）</a></li>
+  <li><a href="#为什么评估是必要的why-evaluation-is-necessary" id="toc-为什么评估是必要的why-evaluation-is-necessary" class="nav-link" data-scroll-target="#为什么评估是必要的why-evaluation-is-necessary"><span class="header-section-number">9.3</span> 为什么评估是必要的（Why Evaluation Is Necessary）</a>
   <ul class="collapse">
-  <li><a href="#in-the-llm-era" id="toc-in-the-llm-era" class="nav-link" data-scroll-target="#in-the-llm-era"><span class="header-section-number">9.3.1</span> In the LLM Era</a></li>
+  <li><a href="#在-llm-时代" id="toc-在-llm-时代" class="nav-link" data-scroll-target="#在-llm-时代"><span class="header-section-number">9.3.1</span> 在 LLM 时代</a></li>
   </ul></li>
-  <li><a href="#types-of-evaluation" id="toc-types-of-evaluation" class="nav-link" data-scroll-target="#types-of-evaluation"><span class="header-section-number">9.4</span> Types of Evaluation</a>
+  <li><a href="#评估的类型types-of-evaluation" id="toc-评估的类型types-of-evaluation" class="nav-link" data-scroll-target="#评估的类型types-of-evaluation"><span class="header-section-number">9.4</span> 评估的类型（Types of Evaluation）</a>
   <ul class="collapse">
-  <li><a href="#rule-based-evaluation" id="toc-rule-based-evaluation" class="nav-link" data-scroll-target="#rule-based-evaluation"><span class="header-section-number">9.4.1</span> 1. Rule-Based Evaluation</a></li>
-  <li><a href="#human-evaluation" id="toc-human-evaluation" class="nav-link" data-scroll-target="#human-evaluation"><span class="header-section-number">9.4.2</span> 2. Human Evaluation</a></li>
-  <li><a href="#model-based-evaluation" id="toc-model-based-evaluation" class="nav-link" data-scroll-target="#model-based-evaluation"><span class="header-section-number">9.4.3</span> 3. Model-Based Evaluation</a></li>
-  <li><a href="#hybrid-evaluation" id="toc-hybrid-evaluation" class="nav-link" data-scroll-target="#hybrid-evaluation"><span class="header-section-number">9.4.4</span> 4. Hybrid Evaluation</a></li>
+  <li><a href="#基于规则的评估" id="toc-基于规则的评估" class="nav-link" data-scroll-target="#基于规则的评估"><span class="header-section-number">9.4.1</span> 1. 基于规则的评估</a></li>
+  <li><a href="#基于模型的评估" id="toc-基于模型的评估" class="nav-link" data-scroll-target="#基于模型的评估"><span class="header-section-number">9.4.2</span> 2. 基于模型的评估</a></li>
+  <li><a href="#人工评估" id="toc-人工评估" class="nav-link" data-scroll-target="#人工评估"><span class="header-section-number">9.4.3</span> 3. 人工评估</a></li>
   </ul></li>
-  <li><a href="#evaluation-defines-quality" id="toc-evaluation-defines-quality" class="nav-link" data-scroll-target="#evaluation-defines-quality"><span class="header-section-number">9.5</span> Evaluation Defines Quality</a>
-  <ul class="collapse">
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">9.5.1</span> Example</a></li>
-  </ul></li>
-  <li><a href="#the-role-of-iteration" id="toc-the-role-of-iteration" class="nav-link" data-scroll-target="#the-role-of-iteration"><span class="header-section-number">9.6</span> The Role of Iteration</a>
-  <ul class="collapse">
-  <li><a href="#iteration-loop" id="toc-iteration-loop" class="nav-link" data-scroll-target="#iteration-loop"><span class="header-section-number">9.6.1</span> Iteration Loop</a></li>
-  <li><a href="#refinement-typically-occurs-in" id="toc-refinement-typically-occurs-in" class="nav-link" data-scroll-target="#refinement-typically-occurs-in"><span class="header-section-number">9.6.2</span> Refinement typically occurs in:</a></li>
-  </ul></li>
-  <li><a href="#where-to-fix-problems" id="toc-where-to-fix-problems" class="nav-link" data-scroll-target="#where-to-fix-problems"><span class="header-section-number">9.7</span> Where to Fix Problems</a>
-  <ul class="collapse">
-  <li><a href="#if-output-is-wrong" id="toc-if-output-is-wrong" class="nav-link" data-scroll-target="#if-output-is-wrong"><span class="header-section-number">9.7.1</span> If output is wrong:</a></li>
-  </ul></li>
-  <li><a href="#programming-as-spec-iteration" id="toc-programming-as-spec-iteration" class="nav-link" data-scroll-target="#programming-as-spec-iteration"><span class="header-section-number">9.8</span> Programming as Spec Iteration</a>
-  <ul class="collapse">
-  <li><a href="#new-definition" id="toc-new-definition" class="nav-link" data-scroll-target="#new-definition"><span class="header-section-number">9.8.1</span> New Definition</a></li>
-  </ul></li>
-  <li><a href="#stability-through-iteration" id="toc-stability-through-iteration" class="nav-link" data-scroll-target="#stability-through-iteration"><span class="header-section-number">9.9</span> Stability Through Iteration</a>
-  <ul class="collapse">
-  <li><a href="#convergence-condition" id="toc-convergence-condition" class="nav-link" data-scroll-target="#convergence-condition"><span class="header-section-number">9.9.1</span> Convergence Condition</a></li>
-  </ul></li>
-  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">9.10</span> Common Mistakes</a>
-  <ul class="collapse">
-  <li><a href="#skipping-evaluation" id="toc-skipping-evaluation" class="nav-link" data-scroll-target="#skipping-evaluation"><span class="header-section-number">9.10.1</span> 1. Skipping Evaluation</a></li>
-  <li><a href="#evaluating-informally" id="toc-evaluating-informally" class="nav-link" data-scroll-target="#evaluating-informally"><span class="header-section-number">9.10.2</span> 2. Evaluating Informally</a></li>
-  <li><a href="#fixing-the-wrong-layer" id="toc-fixing-the-wrong-layer" class="nav-link" data-scroll-target="#fixing-the-wrong-layer"><span class="header-section-number">9.10.3</span> 3. Fixing the Wrong Layer</a></li>
-  <li><a href="#over-iterating-without-direction" id="toc-over-iterating-without-direction" class="nav-link" data-scroll-target="#over-iterating-without-direction"><span class="header-section-number">9.10.4</span> 4. Over-Iterating Without Direction</a></li>
-  </ul></li>
-  <li><a href="#evaluation-as-feedback-signal" id="toc-evaluation-as-feedback-signal" class="nav-link" data-scroll-target="#evaluation-as-feedback-signal"><span class="header-section-number">9.11</span> Evaluation as Feedback Signal</a></li>
-  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">9.12</span> Final Insight</a></li>
-  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">9.13</span> Closing Statement</a></li>
-  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">9.14</span> Key Insight</a></li>
-  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">9.15</span> Action Hint</a></li>
+  <li><a href="#闭环迭代的力量closing-the-loop-the-power-of-iteration" id="toc-闭环迭代的力量closing-the-loop-the-power-of-iteration" class="nav-link" data-scroll-target="#闭环迭代的力量closing-the-loop-the-power-of-iteration"><span class="header-section-number">9.5</span> 闭环：迭代的力量（Closing the Loop: The Power of Iteration）</a></li>
+  <li><a href="#在实践中迭代iteration-in-practice" id="toc-在实践中迭代iteration-in-practice" class="nav-link" data-scroll-target="#在实践中迭代iteration-in-practice"><span class="header-section-number">9.6</span> 在实践中迭代（Iteration in Practice）</a></li>
   </ul>
 </nav>
     </div>
@@ -555,7 +523,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">评估与迭代（Evaluation &amp; Iteration）</span></h1>
 </div>
 
 
@@ -572,315 +540,97 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="why-execution-is-not-the-end" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="why-execution-is-not-the-end"><span class="header-section-number">9.1</span> Why Execution Is Not the End</h2>
-<p>In traditional software development, execution often marks completion. When code runs successfully and produces output, the task is often considered done:</p>
+<section id="为什么执行不是终点" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="为什么执行不是终点"><span class="header-section-number">9.1</span> 为什么执行不是终点</h2>
+<p>在传统软件开发中，执行通常标志着完成。当代码成功运行并产生输出时，任务通常被认为已经完成：代码编译无错误，系统产生输出，任务被认为完成。</p>
+<p>当实现是主要挑战时，这个心智模型是有意义的。让代码正确运行已经足够困难，所以一旦它工作了，我们就倾向于继续前进。</p>
+<p>在 LLM 范式中，这个假设不再成立。执行产生的是<strong>一个结果</strong>，而不是正确性或质量的<strong>保证</strong>。</p>
+<p>因为：</p>
 <ul>
-<li>The code compiles without errors</li>
-<li>The system produces output</li>
-<li>The task is considered complete</li>
+<li><strong>输出是概率性的</strong>——相同的输入可能产生不同的输出</li>
+<li><strong>行为取决于输入变化</strong>——略微不同的输入可能导致非常不同的结果</li>
+<li><strong>系统解释而非严格遵循指令</strong>——LLM 使用语义理解，而非字面的规则遵循</li>
 </ul>
-<p>This mental model made sense when implementation was the primary challenge. Getting code to run correctly was difficult enough that once it worked, we tended to move on.</p>
-<p>In the LLM paradigm, this assumption no longer holds. Execution produces <strong>a result</strong>, not <strong>a guarantee</strong> of correctness or quality.</p>
-<p>Because:</p>
-<ul>
-<li><strong>Outputs are probabilistic</strong>—the same input can produce different outputs</li>
-<li><strong>Behavior depends on input variation</strong>—slightly different inputs can lead to very different results</li>
-<li><strong>Systems interpret rather than strictly follow instructions</strong>—LLMs use semantic understanding, not literal rule-following</li>
-</ul>
-<p>Therefore:</p>
+<p>因此：</p>
 <blockquote class="blockquote">
-<p>Execution is not the end of the process. It is the beginning of validation.</p>
+<p>执行不是过程的结束。它是验证的开始。</p>
 </blockquote>
 <hr>
 </section>
-<section id="what-is-evaluation" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="what-is-evaluation"><span class="header-section-number">9.2</span> What is Evaluation?</h2>
-<p>Evaluation is the process of determining whether the system’s output satisfies the original intent and specification. It is the mechanism that closes the loop and enables systematic improvement.</p>
-<p>Evaluation answers critical questions:</p>
+<section id="什么是评估what-is-evaluation" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="什么是评估what-is-evaluation"><span class="header-section-number">9.2</span> 什么是评估？（What is Evaluation?）</h2>
+<p>评估是确定系统输出是否满足原始意图和规格说明的过程。它是闭合循环并实现系统性改进的机制。</p>
+<p>评估回答关键问题：</p>
 <ul>
-<li><strong>Is the result correct?</strong>—does it achieve the intended goal?</li>
-<li><strong>Does it meet the constraints?</strong>—does it respect all specified boundaries?</li>
-<li><strong>Does it achieve the intended outcome?</strong>—does it solve the problem we set out to solve?</li>
+<li><strong>结果正确吗？</strong>——它是否实现了预期目标？</li>
+<li><strong>它满足约束吗？</strong>——它是否尊重所有指定的边界？</li>
+<li><strong>它实现了预期结果吗？</strong>——它解决了我们着手解决的问题吗？</li>
 </ul>
-<p>Evaluation connects output back to definition, creating the feedback loop necessary for systematic improvement.</p>
+<p>评估将输出连接回定义，创建了系统性改进所必需的反馈循环。</p>
 <hr>
 </section>
-<section id="why-evaluation-is-necessary" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="why-evaluation-is-necessary"><span class="header-section-number">9.3</span> Why Evaluation Is Necessary</h2>
-<p>Without evaluation, system development is fundamentally flawed:</p>
+<section id="为什么评估是必要的why-evaluation-is-necessary" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="为什么评估是必要的why-evaluation-is-necessary"><span class="header-section-number">9.3</span> 为什么评估是必要的（Why Evaluation Is Necessary）</h2>
+<p>没有评估，系统开发从根本上是有缺陷的：</p>
 <ul>
-<li>There is no notion of correctness—any output is acceptable</li>
-<li>There is no direction for improvement—changes are random rather than purposeful</li>
-<li>There is no system stability—behavior drifts without correction</li>
+<li>没有正确性的概念——任何输出都是可接受的</li>
+<li>没有改进的方向——变化是随机的而非有目的的</li>
+<li>没有系统稳定性——行为在没有纠正的情况下漂移</li>
 </ul>
-<hr>
-<section id="in-the-llm-era" class="level3" data-number="9.3.1">
-<h3 data-number="9.3.1" class="anchored" data-anchor-id="in-the-llm-era"><span class="header-section-number">9.3.1</span> In the LLM Era</h3>
-<p>The need for evaluation is even greater because execution is so easy:</p>
+<section id="在-llm-时代" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="在-llm-时代"><span class="header-section-number">9.3.1</span> 在 LLM 时代</h3>
+<p>对评估的需求甚至更大，因为执行是如此容易：</p>
 <ul>
-<li>Systems produce outputs quickly and cheaply</li>
-<li>Iterations happen rapidly and frequently</li>
-<li>It’s tempting to move quickly without measuring results</li>
+<li>系统快速且廉价地产生输出</li>
+<li>迭代发生得快速且频繁</li>
+<li>很容易在没有衡量结果的情况下快速推进</li>
 </ul>
-<p>But without evaluation:</p>
+<p>但没有评估：</p>
 <ul>
-<li>Iteration becomes random—you change things without knowing whether they help</li>
-<li>Improvements are accidental—you might get better results, but you don’t know why</li>
-<li>Quality cannot be controlled—you have no way to ensure consistency or reliability</li>
+<li>迭代变成随机的——你改变东西却不知道它们是否有帮助</li>
+<li>改进是偶然的——你可能得到更好的结果，但不知道为什么</li>
+<li>质量无法控制——你没有办法确保一致性或可靠性</li>
 </ul>
 <blockquote class="blockquote">
-<p>Speed without evaluation leads to chaos, not progress.</p>
+<p>没有评估的速度通向混乱，而非进步。</p>
 </blockquote>
 <hr>
 </section>
 </section>
-<section id="types-of-evaluation" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="types-of-evaluation"><span class="header-section-number">9.4</span> Types of Evaluation</h2>
-<p>Evaluation can take multiple forms depending on the system, the context, and the requirements. Different types of evaluation serve different purposes.</p>
-<hr>
-<section id="rule-based-evaluation" class="level3" data-number="9.4.1">
-<h3 data-number="9.4.1" class="anchored" data-anchor-id="rule-based-evaluation"><span class="header-section-number">9.4.1</span> 1. Rule-Based Evaluation</h3>
-<p>Rule-based evaluation uses explicit, deterministic rules to assess outputs. It is simple, fast, and unambiguous.</p>
-<p><strong>Examples:</strong> - Output must be valid JSON - Response time must be under 2 seconds - Output must contain all required fields</p>
-<p><strong>Characteristics:</strong> - Deterministic—the same evaluation always produces the same result - Fast—can be executed automatically at scale - Limited—cannot assess qualitative aspects like relevance or quality</p>
+<section id="评估的类型types-of-evaluation" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="评估的类型types-of-evaluation"><span class="header-section-number">9.4</span> 评估的类型（Types of Evaluation）</h2>
+<section id="基于规则的评估" class="level3" data-number="9.4.1">
+<h3 data-number="9.4.1" class="anchored" data-anchor-id="基于规则的评估"><span class="header-section-number">9.4.1</span> 1. 基于规则的评估</h3>
+<p>使用显式的、确定性的规则来评估输出。简单、快速、无歧义。</p>
+<p><strong>示例：</strong> 输出必须是有效的 JSON；数值必须在指定范围内；字符串不能超过某个长度。</p>
+</section>
+<section id="基于模型的评估" class="level3" data-number="9.4.2">
+<h3 data-number="9.4.2" class="anchored" data-anchor-id="基于模型的评估"><span class="header-section-number">9.4.2</span> 2. 基于模型的评估</h3>
+<p>使用 AI 模型评估 AI 系统的输出。更灵活，但也是概率性的。</p>
+<p><strong>示例：</strong> 让一个语言模型判断总结是否准确；使用嵌入相似度衡量语义对齐。</p>
+</section>
+<section id="人工评估" class="level3" data-number="9.4.3">
+<h3 data-number="9.4.3" class="anchored" data-anchor-id="人工评估"><span class="header-section-number">9.4.3</span> 3. 人工评估</h3>
+<p>人类判断仍然是黄金标准，特别是对于涉及创造力、细微差别或主观质量的任务。</p>
+<p><strong>示例：</strong> 领域专家审查输出；用户满意度调查；A/B 测试。</p>
 <hr>
 </section>
-<section id="human-evaluation" class="level3" data-number="9.4.2">
-<h3 data-number="9.4.2" class="anchored" data-anchor-id="human-evaluation"><span class="header-section-number">9.4.2</span> 2. Human Evaluation</h3>
-<p>Human evaluation relies on subjective judgment to assess outputs. It can capture nuanced aspects that automated methods cannot.</p>
-<p><strong>Examples:</strong> - Is the answer helpful? - Does it align with user expectations? - Is the tone appropriate?</p>
-<p><strong>Characteristics:</strong> - Subjective—different humans may evaluate differently - Context-aware—can understand subtle aspects of meaning and appropriateness - Expensive—requires human time and attention - Non-scalable—difficult to apply to large volumes of data</p>
+</section>
+<section id="闭环迭代的力量closing-the-loop-the-power-of-iteration" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="闭环迭代的力量closing-the-loop-the-power-of-iteration"><span class="header-section-number">9.5</span> 闭环：迭代的力量（Closing the Loop: The Power of Iteration）</h2>
+<p>最小循环的真正力量不在于单次通过。它在于你循环的能力——发现差距、精化定义、重新执行、重新评估。</p>
+<p><strong>基本迭代模式：</strong></p>
+<pre><code>执行 → 评估 → 识别差距 → 精化 Spec → 更新 Instruction → 重新执行 → 重新评估</code></pre>
+<p>每次迭代都使你更接近意图和结果之间的对齐。</p>
 <hr>
 </section>
-<section id="model-based-evaluation" class="level3" data-number="9.4.3">
-<h3 data-number="9.4.3" class="anchored" data-anchor-id="model-based-evaluation"><span class="header-section-number">9.4.3</span> 3. Model-Based Evaluation</h3>
-<p>Model-based evaluation uses another AI model to assess the output. This can provide automated evaluation of qualitative aspects.</p>
-<p><strong>Examples:</strong> - Score relevance on a scale of 1-10 - Detect hallucinations or factual errors - Assess writing quality or clarity</p>
-<p><strong>Characteristics:</strong> - Automated—can be applied at scale - Nuanced—can assess qualitative aspects - Imperfect—the evaluating model may have its own biases and limitations - Requires validation—the evaluating model itself must be validated</p>
-<hr>
-</section>
-<section id="hybrid-evaluation" class="level3" data-number="9.4.4">
-<h3 data-number="9.4.4" class="anchored" data-anchor-id="hybrid-evaluation"><span class="header-section-number">9.4.4</span> 4. Hybrid Evaluation</h3>
-<p>Hybrid evaluation combines multiple evaluation methods to get a more complete picture of output quality.</p>
-<p><strong>Examples:</strong> - Rule-based checks for structure + human review for quality - Model-based scoring for relevance + rule-based checks for format - Multiple evaluators (human and automated) with disagreement resolution</p>
-<p><strong>Characteristics:</strong> - Comprehensive—captures multiple dimensions of quality - Complex—requires integrating different types of feedback - More reliable—less likely to miss important issues</p>
-<hr>
+<section id="在实践中迭代iteration-in-practice" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="在实践中迭代iteration-in-practice"><span class="header-section-number">9.6</span> 在实践中迭代（Iteration in Practice）</h2>
+<p><strong>第一次尝试：</strong> 指令没有充分指定输出格式 → 评估显示结构差异 → 精化 Spec → 第二次尝试产生一致的输出。</p>
+<p><strong>第二次尝试：</strong> 输出格式正确但内容不完整 → 评估发现了缺失的部分 → 精化 Spec 以添加覆盖范围约束 → 第三次尝试产生完整的输出。</p>
+<p><strong>第三次尝试：</strong> 输出现在满足所有 Spec 约束 → 评估确认成功 → 循环完成。</p>
 <blockquote class="blockquote">
-<p>Strong systems rely on layered evaluation—combining multiple approaches to ensure comprehensive assessment.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="evaluation-defines-quality" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="evaluation-defines-quality"><span class="header-section-number">9.5</span> Evaluation Defines Quality</h2>
-<p>Quality is not an inherent property of output. It is defined by evaluation. Without evaluation criteria:</p>
-<ul>
-<li>“Good” becomes subjective and variable</li>
-<li>Systems drift over time without correction</li>
-<li>Results cannot be compared or measured</li>
-</ul>
-<hr>
-<section id="example" class="level3" data-number="9.5.1">
-<h3 data-number="9.5.1" class="anchored" data-anchor-id="example"><span class="header-section-number">9.5.1</span> Example</h3>
-<p>Consider an intent to “summarize a document.”</p>
-<p><strong>Without evaluation:</strong> - Any summary is acceptable - No way to determine if one summary is better than another - System may produce summaries that miss important information</p>
-<p><strong>With evaluation:</strong> - Must include key points from the original document - Must be concise (under 100 words) - Must avoid redundancy - Must preserve the original meaning</p>
-<p>Now quality is defined and measurable. The system can be improved systematically by refining its performance against these criteria.</p>
-<hr>
-<blockquote class="blockquote">
-<p>Evaluation makes quality measurable and therefore improvable.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="the-role-of-iteration" class="level2" data-number="9.6">
-<h2 data-number="9.6" class="anchored" data-anchor-id="the-role-of-iteration"><span class="header-section-number">9.6</span> The Role of Iteration</h2>
-<p>Evaluation alone is not enough. It must lead to iteration—systematic improvement based on evaluation feedback.</p>
-<hr>
-<section id="iteration-loop" class="level3" data-number="9.6.1">
-<h3 data-number="9.6.1" class="anchored" data-anchor-id="iteration-loop"><span class="header-section-number">9.6.1</span> Iteration Loop</h3>
-<pre><code>Define → Execute → Evaluate → Refine</code></pre>
-<p>This loop is the engine of progress. Each cycle should move the system closer to the desired behavior.</p>
-<hr>
-</section>
-<section id="refinement-typically-occurs-in" class="level3" data-number="9.6.2">
-<h3 data-number="9.6.2" class="anchored" data-anchor-id="refinement-typically-occurs-in"><span class="header-section-number">9.6.2</span> Refinement typically occurs in:</h3>
-<ul>
-<li><strong>Intent</strong>—clarifying or adjusting the goal if the original intent was wrong</li>
-<li><strong>Spec</strong>—adding missing constraints, clarifying ambiguous definitions</li>
-<li><strong>Instruction</strong>—improving the execution protocol for better results</li>
-</ul>
-<p>The key insight is that most improvements happen upstream—by improving definitions, not by tweaking execution parameters.</p>
-<hr>
-</section>
-</section>
-<section id="where-to-fix-problems" class="level2" data-number="9.7">
-<h2 data-number="9.7" class="anchored" data-anchor-id="where-to-fix-problems"><span class="header-section-number">9.7</span> Where to Fix Problems</h2>
-<p>A critical principle for effective iteration:</p>
-<blockquote class="blockquote">
-<p><strong>Most problems should not be fixed in execution. They should be fixed upstream.</strong></p>
-</blockquote>
-<hr>
-<section id="if-output-is-wrong" class="level3" data-number="9.7.1">
-<h3 data-number="9.7.1" class="anchored" data-anchor-id="if-output-is-wrong"><span class="header-section-number">9.7.1</span> If output is wrong:</h3>
-<p><strong>Do not immediately:</strong> - Change the model or model parameters - Add more prompts or instructions - Adjust temperature or other generation parameters</p>
-<p><strong>Instead, ask:</strong> - Is the intent clear? Are we solving the right problem? - Is the spec complete? Are we missing important constraints? - Is the instruction precise? Is the execution protocol clear?</p>
-<blockquote class="blockquote">
-<p>Better definition produces better results.</p>
-</blockquote>
-<hr>
-<p>This is a counterintuitive principle. When we see problems, our instinct is often to tweak the execution parameters. But most problems originate in definition, not execution.</p>
-<hr>
-</section>
-</section>
-<section id="programming-as-spec-iteration" class="level2" data-number="9.8">
-<h2 data-number="9.8" class="anchored" data-anchor-id="programming-as-spec-iteration"><span class="header-section-number">9.8</span> Programming as Spec Iteration</h2>
-<p>In traditional programming:</p>
-<ul>
-<li>You write code</li>
-<li>You debug code—find and fix errors</li>
-<li>You optimize code—improve performance</li>
-</ul>
-<p>The focus is on improving the implementation.</p>
-<p>In the LLM paradigm:</p>
-<ul>
-<li>You define spec</li>
-<li>You refine spec—improve the definition based on evaluation</li>
-<li>You iterate spec—systematically improve through evaluation</li>
-</ul>
-<p>The focus is on improving the definition.</p>
-<hr>
-<section id="new-definition" class="level3" data-number="9.8.1">
-<h3 data-number="9.8.1" class="anchored" data-anchor-id="new-definition"><span class="header-section-number">9.8.1</span> New Definition</h3>
-<blockquote class="blockquote">
-<p>Programming is the process of iteratively refining specifications until the system consistently produces correct results.</p>
-</blockquote>
-<hr>
-<p>This shifts the developer’s activity from:</p>
-<ul>
-<li><strong>Debugging implementation</strong>—finding and fixing code errors</li>
-</ul>
-<p>To:</p>
-<ul>
-<li><strong>Debugging definition</strong>—finding and fixing specification gaps</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="stability-through-iteration" class="level2" data-number="9.9">
-<h2 data-number="9.9" class="anchored" data-anchor-id="stability-through-iteration"><span class="header-section-number">9.9</span> Stability Through Iteration</h2>
-<p>A system becomes stable when:</p>
-<ul>
-<li>Outputs are consistent across multiple runs</li>
-<li>Behavior matches expectations reliably</li>
-<li>Evaluation passes consistently</li>
-</ul>
-<p>This stability is not achieved through:</p>
-<ul>
-<li>One-time design—getting it right the first time</li>
-</ul>
-<p>But through:</p>
-<ul>
-<li>Repeated refinement—systematic improvement through iteration</li>
-</ul>
-<hr>
-<section id="convergence-condition" class="level3" data-number="9.9.1">
-<h3 data-number="9.9.1" class="anchored" data-anchor-id="convergence-condition"><span class="header-section-number">9.9.1</span> Convergence Condition</h3>
-<p>A system is considered stable when:</p>
-<ul>
-<li>Outputs consistently meet success criteria</li>
-<li>Variations are within acceptable bounds</li>
-<li>Further iterations produce diminishing returns</li>
-</ul>
-<p>Stability is an emergent property that comes from good iteration practices.</p>
-<hr>
-</section>
-</section>
-<section id="common-mistakes" class="level2" data-number="9.10">
-<h2 data-number="9.10" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">9.10</span> Common Mistakes</h2>
-<hr>
-<section id="skipping-evaluation" class="level3" data-number="9.10.1">
-<h3 data-number="9.10.1" class="anchored" data-anchor-id="skipping-evaluation"><span class="header-section-number">9.10.1</span> 1. Skipping Evaluation</h3>
-<ul>
-<li>Leads to false confidence—you think the system works but it doesn’t</li>
-<li>Systems appear to work but fail in edge cases</li>
-<li>No basis for improvement</li>
-</ul>
-<p>Evaluation is not optional. It is essential.</p>
-<hr>
-</section>
-<section id="evaluating-informally" class="level3" data-number="9.10.2">
-<h3 data-number="9.10.2" class="anchored" data-anchor-id="evaluating-informally"><span class="header-section-number">9.10.2</span> 2. Evaluating Informally</h3>
-<ul>
-<li>No clear criteria—evaluation is subjective and variable</li>
-<li>Results cannot be compared—no baseline for improvement</li>
-<li>Feedback is vague—“it doesn’t feel right”</li>
-</ul>
-<p>Evaluation must be systematic and explicit.</p>
-<hr>
-</section>
-<section id="fixing-the-wrong-layer" class="level3" data-number="9.10.3">
-<h3 data-number="9.10.3" class="anchored" data-anchor-id="fixing-the-wrong-layer"><span class="header-section-number">9.10.3</span> 3. Fixing the Wrong Layer</h3>
-<ul>
-<li>Adjusting execution instead of improving spec</li>
-<li>Tweaking parameters instead of clarifying definitions</li>
-<li>Wasting effort on the wrong problems</li>
-</ul>
-<p>Most problems originate in definition, not execution.</p>
-<hr>
-</section>
-<section id="over-iterating-without-direction" class="level3" data-number="9.10.4">
-<h3 data-number="9.10.4" class="anchored" data-anchor-id="over-iterating-without-direction"><span class="header-section-number">9.10.4</span> 4. Over-Iterating Without Direction</h3>
-<ul>
-<li>Changing things randomly without evaluation</li>
-<li>No clear evaluation signal to guide improvements</li>
-<li>Iteration becomes noise rather than progress</li>
-</ul>
-<p>Iteration must be guided by evaluation.</p>
-<hr>
-</section>
-</section>
-<section id="evaluation-as-feedback-signal" class="level2" data-number="9.11">
-<h2 data-number="9.11" class="anchored" data-anchor-id="evaluation-as-feedback-signal"><span class="header-section-number">9.11</span> Evaluation as Feedback Signal</h2>
-<p>Evaluation provides the signal that drives improvement. Without evaluation, there is no learning, no convergence, no systematic progress.</p>
-<p><strong>Without evaluation:</strong> - There is no learning—system doesn’t know what’s working - There is no convergence—no way to approach optimal behavior - There is no improvement—changes are random rather than purposeful</p>
-<p><strong>With evaluation:</strong> - Systems can evolve—learning from feedback - Definitions become sharper—clarifying through iteration - Outputs improve over time—systematic progress toward goals</p>
-<hr>
-<blockquote class="blockquote">
-<p>Evaluation turns iteration into progress.</p>
-</blockquote>
-<p>Without evaluation, iteration is just change. With evaluation, iteration becomes improvement.</p>
-<hr>
-</section>
-<section id="final-insight" class="level2" data-number="9.12">
-<h2 data-number="9.12" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">9.12</span> Final Insight</h2>
-<p>Execution produces outputs. Evaluation determines value. Iteration produces improvement.</p>
-<p>Together, they form the dynamic part of the system—the mechanism that enables systems to get better over time.</p>
-<blockquote class="blockquote">
-<p>The quality of a system is not determined by how well it executes, but by how well it evaluates and iterates.</p>
-</blockquote>
-<hr>
-</section>
-<section id="closing-statement" class="level2" data-number="9.13">
-<h2 data-number="9.13" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">9.13</span> Closing Statement</h2>
-<p>In the LLM era, programming is no longer about writing correct code once. It is about refining imperfect definitions until they become reliable.</p>
-<blockquote class="blockquote">
-<p>You do not debug the system by changing what it does. You debug it by clarifying what it should do.</p>
-</blockquote>
-<p>The ability to design effective evaluation and iteration processes is now a core programming skill.</p>
-<hr>
-</section>
-<section id="key-insight" class="level2" data-number="9.14">
-<h2 data-number="9.14" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">9.14</span> Key Insight</h2>
-<blockquote class="blockquote">
-<p>Evaluation is the process of determining whether output meets intent and spec. It can be rule-based, human, model-based, or hybrid. Iteration guided by evaluation is essential for systematic improvement.</p>
-</blockquote>
-</section>
-<section id="action-hint" class="level2" data-number="9.15">
-<h2 data-number="9.15" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">9.15</span> Action Hint</h2>
-<blockquote class="blockquote">
-<p>For every system you build, define explicit evaluation criteria before execution. Ask: “How will I know if this works?” Make evaluation criteria measurable and testable. Don’t skip evaluation—it’s what separates systems that work from systems that appear to work.</p>
+<p>评估将迭代从随机尝试转变为定向改进。</p>
 </blockquote>
 
 
@@ -1302,13 +1052,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-7.html" class="pagination-link" aria-label="Instruction: Making It Executable">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span>
+      <a href="./chapter-7.html" class="pagination-link" aria-label="指令：使其可执行（Instruction: Making It Executable）">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">指令：使其可执行（Instruction: Making It Executable）</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-9.html" class="pagination-link" aria-label="Possibility Space">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-9.html" class="pagination-link" aria-label="可能性空间（Possibility Space）">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">可能性空间（Possibility Space）</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

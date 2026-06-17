@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>29&nbsp; Building a Data Pipeline – AI Programming: From Intent to Execution</title>
+<title>29&nbsp; 构建数据管道（Building a Data Pipeline） – AI Programming: From Intent to Execution</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -19,6 +22,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -34,19 +72,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="./chapter-27.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-aa873432a3c62897e6c2091c0d30a948.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -250,7 +287,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-28.html"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-28.html"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -263,9 +300,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AI Programming: From Intent to Execution</a> 
         <div class="sidebar-tools-main">
@@ -283,211 +318,211 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">前言（Preface）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">转变：从编码到定义（The Shift: From Coding to Defining）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">新的瓶颈：定义（The New Bottleneck: Definition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">编程现在是什么？（What is Programming Now?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">最小循环（The Minimal Loop）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">意图：定义要做什么（Intent: Defining What to Do）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">规格说明：消除歧义（Spec: Eliminating Ambiguity）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">指令：使其可执行（Instruction: Making It Executable）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">评估与迭代（Evaluation &amp; Iteration）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">可能性空间（Possibility Space）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">从 Spec 到指令（From Spec to Instruction）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">指令设计（Instruction Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">工具使用与 API（Tool Use &amp; APIs）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">构建智能体系统（Building an Agent System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">构建聊天系统（Building a Chat System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-28.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">从理想到产品（From Idea to Product）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-31.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">编程即系统设计（Programming as System Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">语言即操作系统（Language as an Operating System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">人类 + AI 认知（Human + AI Cognition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">构建者的未来（The Future of Builders）</span></span></a>
   </div>
 </li>
     </ul>
@@ -500,69 +535,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#from-interaction-to-flow" id="toc-from-interaction-to-flow" class="nav-link active" data-scroll-target="#from-interaction-to-flow"><span class="header-section-number">29.1</span> From Interaction to Flow</a></li>
-  <li><a href="#what-is-a-data-pipeline" id="toc-what-is-a-data-pipeline" class="nav-link" data-scroll-target="#what-is-a-data-pipeline"><span class="header-section-number">29.2</span> What is a Data Pipeline?</a>
+  <li><a href="#数据管道作为系统" id="toc-数据管道作为系统" class="nav-link active" data-scroll-target="#数据管道作为系统"><span class="header-section-number">29.1</span> 数据管道作为系统</a></li>
+  <li><a href="#定义意图define-intent" id="toc-定义意图define-intent" class="nav-link" data-scroll-target="#定义意图define-intent"><span class="header-section-number">29.2</span> 定义意图（Define Intent）</a></li>
+  <li><a href="#管道架构pipeline-architecture" id="toc-管道架构pipeline-architecture" class="nav-link" data-scroll-target="#管道架构pipeline-architecture"><span class="header-section-number">29.3</span> 管道架构（Pipeline Architecture）</a>
   <ul class="collapse">
-  <li><a href="#core-idea" id="toc-core-idea" class="nav-link" data-scroll-target="#core-idea"><span class="header-section-number">29.2.1</span> Core Idea</a></li>
+  <li><a href="#阶段-1输入input" id="toc-阶段-1输入input" class="nav-link" data-scroll-target="#阶段-1输入input"><span class="header-section-number">29.3.1</span> 阶段 1：输入（Input）</a></li>
+  <li><a href="#阶段-2解析parse" id="toc-阶段-2解析parse" class="nav-link" data-scroll-target="#阶段-2解析parse"><span class="header-section-number">29.3.2</span> 阶段 2：解析（Parse）</a></li>
+  <li><a href="#阶段-3处理process" id="toc-阶段-3处理process" class="nav-link" data-scroll-target="#阶段-3处理process"><span class="header-section-number">29.3.3</span> 阶段 3：处理（Process）</a></li>
+  <li><a href="#阶段-4聚合aggregate" id="toc-阶段-4聚合aggregate" class="nav-link" data-scroll-target="#阶段-4聚合aggregate"><span class="header-section-number">29.3.4</span> 阶段 4：聚合（Aggregate）</a></li>
+  <li><a href="#阶段-5输出output" id="toc-阶段-5输出output" class="nav-link" data-scroll-target="#阶段-5输出output"><span class="header-section-number">29.3.5</span> 阶段 5：输出（Output）</a></li>
   </ul></li>
-  <li><a href="#why-data-pipelines-matter-in-the-llm-era" id="toc-why-data-pipelines-matter-in-the-llm-era" class="nav-link" data-scroll-target="#why-data-pipelines-matter-in-the-llm-era"><span class="header-section-number">29.3</span> Why Data Pipelines Matter in the LLM Era</a></li>
-  <li><a href="#core-components-of-a-pipeline" id="toc-core-components-of-a-pipeline" class="nav-link" data-scroll-target="#core-components-of-a-pipeline"><span class="header-section-number">29.4</span> Core Components of a Pipeline</a>
-  <ul class="collapse">
-  <li><a href="#ingestion" id="toc-ingestion" class="nav-link" data-scroll-target="#ingestion"><span class="header-section-number">29.4.1</span> 1. Ingestion</a></li>
-  <li><a href="#processing" id="toc-processing" class="nav-link" data-scroll-target="#processing"><span class="header-section-number">29.4.2</span> 2. Processing</a></li>
-  <li><a href="#transformation" id="toc-transformation" class="nav-link" data-scroll-target="#transformation"><span class="header-section-number">29.4.3</span> 3. Transformation</a></li>
-  <li><a href="#storage" id="toc-storage" class="nav-link" data-scroll-target="#storage"><span class="header-section-number">29.4.4</span> 4. Storage</a></li>
-  <li><a href="#output" id="toc-output" class="nav-link" data-scroll-target="#output"><span class="header-section-number">29.4.5</span> 5. Output</a></li>
-  </ul></li>
-  <li><a href="#llms-in-data-pipelines" id="toc-llms-in-data-pipelines" class="nav-link" data-scroll-target="#llms-in-data-pipelines"><span class="header-section-number">29.5</span> LLMs in Data Pipelines</a>
-  <ul class="collapse">
-  <li><a href="#use-cases" id="toc-use-cases" class="nav-link" data-scroll-target="#use-cases"><span class="header-section-number">29.5.1</span> Use Cases</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">29.5.2</span> Example</a></li>
-  </ul></li>
-  <li><a href="#spec-driven-pipelines" id="toc-spec-driven-pipelines" class="nav-link" data-scroll-target="#spec-driven-pipelines"><span class="header-section-number">29.6</span> Spec-Driven Pipelines</a>
-  <ul class="collapse">
-  <li><a href="#example-spec" id="toc-example-spec" class="nav-link" data-scroll-target="#example-spec"><span class="header-section-number">29.6.1</span> Example Spec</a></li>
-  </ul></li>
-  <li><a href="#pipeline-architecture" id="toc-pipeline-architecture" class="nav-link" data-scroll-target="#pipeline-architecture"><span class="header-section-number">29.7</span> Pipeline Architecture</a>
-  <ul class="collapse">
-  <li><a href="#key-layers" id="toc-key-layers" class="nav-link" data-scroll-target="#key-layers"><span class="header-section-number">29.7.1</span> Key Layers</a></li>
-  </ul></li>
-  <li><a href="#multi-step-llm-pipelines" id="toc-multi-step-llm-pipelines" class="nav-link" data-scroll-target="#multi-step-llm-pipelines"><span class="header-section-number">29.8</span> Multi-Step LLM Pipelines</a>
-  <ul class="collapse">
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">29.8.1</span> Example</a></li>
-  </ul></li>
-  <li><a href="#evaluation-in-pipelines" id="toc-evaluation-in-pipelines" class="nav-link" data-scroll-target="#evaluation-in-pipelines"><span class="header-section-number">29.9</span> Evaluation in Pipelines</a>
-  <ul class="collapse">
-  <li><a href="#example-checks" id="toc-example-checks" class="nav-link" data-scroll-target="#example-checks"><span class="header-section-number">29.9.1</span> Example Checks</a></li>
-  <li><a href="#pipeline-evaluation-flow" id="toc-pipeline-evaluation-flow" class="nav-link" data-scroll-target="#pipeline-evaluation-flow"><span class="header-section-number">29.9.2</span> Pipeline Evaluation Flow</a></li>
-  </ul></li>
-  <li><a href="#handling-errors" id="toc-handling-errors" class="nav-link" data-scroll-target="#handling-errors"><span class="header-section-number">29.10</span> Handling Errors</a>
-  <ul class="collapse">
-  <li><a href="#strategies" id="toc-strategies" class="nav-link" data-scroll-target="#strategies"><span class="header-section-number">29.10.1</span> Strategies</a></li>
-  </ul></li>
-  <li><a href="#scaling-pipelines" id="toc-scaling-pipelines" class="nav-link" data-scroll-target="#scaling-pipelines"><span class="header-section-number">29.11</span> Scaling Pipelines</a>
-  <ul class="collapse">
-  <li><a href="#parallel-processing" id="toc-parallel-processing" class="nav-link" data-scroll-target="#parallel-processing"><span class="header-section-number">29.11.1</span> 1. Parallel Processing</a></li>
-  <li><a href="#modular-design" id="toc-modular-design" class="nav-link" data-scroll-target="#modular-design"><span class="header-section-number">29.11.2</span> 2. Modular Design</a></li>
-  <li><a href="#incremental-updates" id="toc-incremental-updates" class="nav-link" data-scroll-target="#incremental-updates"><span class="header-section-number">29.11.3</span> 3. Incremental Updates</a></li>
-  </ul></li>
-  <li><a href="#pipelines-vs-chat-systems" id="toc-pipelines-vs-chat-systems" class="nav-link" data-scroll-target="#pipelines-vs-chat-systems"><span class="header-section-number">29.12</span> Pipelines vs Chat Systems</a>
-  <ul class="collapse">
-  <li><a href="#chat-systems" id="toc-chat-systems" class="nav-link" data-scroll-target="#chat-systems"><span class="header-section-number">29.12.1</span> Chat Systems</a></li>
-  <li><a href="#data-pipelines" id="toc-data-pipelines" class="nav-link" data-scroll-target="#data-pipelines"><span class="header-section-number">29.12.2</span> Data Pipelines</a></li>
-  <li><a href="#common-ground" id="toc-common-ground" class="nav-link" data-scroll-target="#common-ground"><span class="header-section-number">29.12.3</span> Common Ground</a></li>
-  </ul></li>
-  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">29.13</span> Common Mistakes</a>
-  <ul class="collapse">
-  <li><a href="#skipping-cleaning" id="toc-skipping-cleaning" class="nav-link" data-scroll-target="#skipping-cleaning"><span class="header-section-number">29.13.1</span> 1. Skipping Cleaning</a></li>
-  <li><a href="#overloading-llm" id="toc-overloading-llm" class="nav-link" data-scroll-target="#overloading-llm"><span class="header-section-number">29.13.2</span> 2. Overloading LLM</a></li>
-  <li><a href="#no-evaluation" id="toc-no-evaluation" class="nav-link" data-scroll-target="#no-evaluation"><span class="header-section-number">29.13.3</span> 3. No Evaluation</a></li>
-  <li><a href="#tight-coupling" id="toc-tight-coupling" class="nav-link" data-scroll-target="#tight-coupling"><span class="header-section-number">29.13.4</span> 4. Tight Coupling</a></li>
-  </ul></li>
-  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">29.14</span> Final Insight</a></li>
-  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">29.15</span> Closing Statement</a></li>
-  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">29.16</span> Key Insight</a></li>
-  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">29.17</span> Action Hint</a></li>
+  <li><a href="#spec-示例阶段-3-分类spec-example-stage-3-classification" id="toc-spec-示例阶段-3-分类spec-example-stage-3-classification" class="nav-link" data-scroll-target="#spec-示例阶段-3-分类spec-example-stage-3-classification"><span class="header-section-number">29.4</span> Spec 示例：阶段 3 分类（Spec Example: Stage 3 Classification）</a></li>
+  <li><a href="#管道实现模式pipeline-implementation-patterns" id="toc-管道实现模式pipeline-implementation-patterns" class="nav-link" data-scroll-target="#管道实现模式pipeline-implementation-patterns"><span class="header-section-number">29.5</span> 管道实现模式（Pipeline Implementation Patterns）</a></li>
+  <li><a href="#评估管道质量evaluating-pipeline-quality" id="toc-评估管道质量evaluating-pipeline-quality" class="nav-link" data-scroll-target="#评估管道质量evaluating-pipeline-quality"><span class="header-section-number">29.6</span> 评估管道质量（Evaluating Pipeline Quality）</a></li>
+  <li><a href="#小结" id="toc-小结" class="nav-link" data-scroll-target="#小结"><span class="header-section-number">29.7</span> 小结</a></li>
   </ul>
 </nav>
     </div>
@@ -572,7 +558,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></h1>
+<h1 class="title"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></h1>
 </div>
 
 
@@ -589,479 +575,101 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="from-interaction-to-flow" class="level2" data-number="29.1">
-<h2 data-number="29.1" class="anchored" data-anchor-id="from-interaction-to-flow"><span class="header-section-number">29.1</span> From Interaction to Flow</h2>
-<p>A chat system handles interaction—one user, one response at a time.</p>
-<p>A data pipeline handles <strong>flow</strong>—continuous processing of data through multiple stages.</p>
-<p>Instead of:</p>
-<ul>
-<li>One user → one response</li>
-</ul>
-<p>A data pipeline processes:</p>
-<ul>
-<li>Continuous data streams</li>
-<li>Multi-step transformations</li>
-<li>Systematic outputs at scale</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>A data pipeline is a system that transforms data from raw input to usable output through a defined sequence of steps.</p>
-</blockquote>
+<section id="数据管道作为系统" class="level2" data-number="29.1">
+<h2 data-number="29.1" class="anchored" data-anchor-id="数据管道作为系统"><span class="header-section-number">29.1</span> 数据管道作为系统</h2>
+<p>数据管道（data pipeline）是处理数据流的系统。它们从多个源接收输入，转换数据，并将结果存储在目标系统中。在传统软件中，管道是批处理或流处理作业。在 LLM 时代，数据管道通常涉及 AI 驱动的转换——文本清洗、分类、提取、总结、翻译。</p>
+<p>数据管道的核心价值在于：它将原始、非结构化的数据转化为结构化、可操作的洞察。没有管道，AI 系统只能处理静态的、预定义的数据集。有了管道，AI 系统可以持续地从新数据中学习和适应。</p>
 <hr>
 </section>
-<section id="what-is-a-data-pipeline" class="level2" data-number="29.2">
-<h2 data-number="29.2" class="anchored" data-anchor-id="what-is-a-data-pipeline"><span class="header-section-number">29.2</span> What is a Data Pipeline?</h2>
-<p>A data pipeline is a system that:</p>
-<blockquote class="blockquote">
-<p><strong>Ingests, processes, transforms, and outputs data through a defined sequence of steps</strong></p>
-</blockquote>
+<section id="定义意图define-intent" class="level2" data-number="29.2">
+<h2 data-number="29.2" class="anchored" data-anchor-id="定义意图define-intent"><span class="header-section-number">29.2</span> 定义意图（Define Intent）</h2>
+<p><strong>意图：</strong> 构建一个管道，将来自多个渠道的原始客户反馈转化为结构化的可操作洞察。</p>
+<p><strong>精化后的目标：</strong> - <strong>目标</strong>：每周自动生成客户反馈分析报告 - <strong>对象</strong>：来自电子邮件、调查和聊天记录的原始反馈文本 - <strong>上下文</strong>：每周处理 1000-5000 条反馈记录 - <strong>约束</strong>：不存储个人身份信息（PII），分类准确率 &gt; 85%，处理时间 &lt; 2 小时/周 - <strong>成功标准</strong>：每项反馈被正确分类，趋势被正确识别，报告在周一早上 9 点前可用</p>
 <hr>
-<section id="core-idea" class="level3" data-number="29.2.1">
-<h3 data-number="29.2.1" class="anchored" data-anchor-id="core-idea"><span class="header-section-number">29.2.1</span> Core Idea</h3>
-<pre><code>Input Data → Processing → Transformation → Output Data</code></pre>
-<p>Data flows through the pipeline, being transformed at each stage until it reaches its final, usable form.</p>
-<hr>
-<p>Unlike chat systems, pipelines are:</p>
+</section>
+<section id="管道架构pipeline-architecture" class="level2" data-number="29.3">
+<h2 data-number="29.3" class="anchored" data-anchor-id="管道架构pipeline-architecture"><span class="header-section-number">29.3</span> 管道架构（Pipeline Architecture）</h2>
+<section id="阶段-1输入input" class="level3" data-number="29.3.1">
+<h3 data-number="29.3.1" class="anchored" data-anchor-id="阶段-1输入input"><span class="header-section-number">29.3.1</span> 阶段 1：输入（Input）</h3>
+<p>来自多个源的原始文本。每个源有不同的格式和结构。</p>
 <ul>
-<li><strong>Batch or stream-based</strong>—process large volumes of data</li>
-<li><strong>Often automated</strong>—run without human intervention</li>
-<li><strong>Less interactive</strong>—focused on throughput and efficiency</li>
+<li><strong>电子邮件</strong>：非结构化文本，可能包含签名和转发链（需清洗）</li>
+<li><strong>调查</strong>：结构化表格数据，字段名和类型</li>
+<li><strong>聊天记录</strong>：对话记录，多轮文本，包含元数据</li>
 </ul>
-<hr>
 </section>
-</section>
-<section id="why-data-pipelines-matter-in-the-llm-era" class="level2" data-number="29.3">
-<h2 data-number="29.3" class="anchored" data-anchor-id="why-data-pipelines-matter-in-the-llm-era"><span class="header-section-number">29.3</span> Why Data Pipelines Matter in the LLM Era</h2>
-<p>LLMs are powerful transformation engines, but they require careful preparation of data:</p>
-<p>LLMs need:</p>
+<section id="阶段-2解析parse" class="level3" data-number="29.3.2">
+<h3 data-number="29.3.2" class="anchored" data-anchor-id="阶段-2解析parse"><span class="header-section-number">29.3.2</span> 阶段 2：解析（Parse）</h3>
+<p>清理和标准化输入数据。</p>
 <ul>
-<li><strong>Structured inputs</strong>—clean, organized data to process</li>
-<li><strong>Clean data</strong>—information free of noise and errors</li>
-<li><strong>Relevant context</strong>—the right information for each task</li>
+<li><strong>文本清洗</strong>：移除签名、无关元数据、多余空白</li>
+<li><strong>格式化</strong>：将不同源的输入转换为统一格式</li>
+<li><strong>元数据提取</strong>：提取源、日期、类别标签</li>
 </ul>
-<p>Data pipelines provide:</p>
+</section>
+<section id="阶段-3处理process" class="level3" data-number="29.3.3">
+<h3 data-number="29.3.3" class="anchored" data-anchor-id="阶段-3处理process"><span class="header-section-number">29.3.3</span> 阶段 3：处理（Process）</h3>
+<p>AI 驱动的转换。</p>
 <ul>
-<li><strong>Data preparation</strong>—cleaning and formatting data</li>
-<li><strong>Data transformation</strong>—converting data into usable forms</li>
-<li><strong>Data enrichment</strong>—adding context and information</li>
+<li><strong>分类（Classification）</strong>：将反馈分类为预定义类别（产品问题、服务问题、建议、表扬）</li>
+<li><strong>情绪分析（Sentiment Analysis）</strong>：检测情绪倾向（正面、中性、负面）</li>
+<li><strong>提取（Extraction）</strong>：提取关键短语、行动项、产品提及</li>
+<li><strong>总结（Summarization）</strong>：对长反馈进行总结</li>
 </ul>
-<hr>
-<blockquote class="blockquote">
-<p>LLM systems are only as good as the data flowing into them. Pipelines ensure high-quality data.</p>
-</blockquote>
-<hr>
 </section>
-<section id="core-components-of-a-pipeline" class="level2" data-number="29.4">
-<h2 data-number="29.4" class="anchored" data-anchor-id="core-components-of-a-pipeline"><span class="header-section-number">29.4</span> Core Components of a Pipeline</h2>
-<p>A typical data pipeline includes several stages, each with specific responsibilities:</p>
-<hr>
-<section id="ingestion" class="level3" data-number="29.4.1">
-<h3 data-number="29.4.1" class="anchored" data-anchor-id="ingestion"><span class="header-section-number">29.4.1</span> 1. Ingestion</h3>
+<section id="阶段-4聚合aggregate" class="level3" data-number="29.3.4">
+<h3 data-number="29.3.4" class="anchored" data-anchor-id="阶段-4聚合aggregate"><span class="header-section-number">29.3.4</span> 阶段 4：聚合（Aggregate）</h3>
+<p>按期分组，计算统计信息，识别趋势。</p>
 <ul>
-<li><strong>Collect raw data</strong>—gather data from various sources</li>
-<li><strong>Examples:</strong>
-<ul>
-<li>Files (documents, images, audio)</li>
-<li>APIs (external services and databases)</li>
-<li>Databases (structured data storage)</li>
-<li>Streams (real-time data feeds)</li>
-</ul></li>
+<li><strong>按类别聚合</strong>：各类别反馈的数量和占比</li>
+<li><strong>趋势检测</strong>：关键指标随时间的变化</li>
+<li><strong>异常检测</strong>：与基线相比的显著变化</li>
 </ul>
-<p><strong>Purpose:</strong> Bring data into the system</p>
-<hr>
 </section>
-<section id="processing" class="level3" data-number="29.4.2">
-<h3 data-number="29.4.2" class="anchored" data-anchor-id="processing"><span class="header-section-number">29.4.2</span> 2. Processing</h3>
+<section id="阶段-5输出output" class="level3" data-number="29.3.5">
+<h3 data-number="29.3.5" class="anchored" data-anchor-id="阶段-5输出output"><span class="header-section-number">29.3.5</span> 阶段 5：输出（Output）</h3>
+<p>生成结构化报告。</p>
 <ul>
-<li><strong>Clean and filter data</strong>—remove noise and errors</li>
-<li><strong>Examples:</strong>
-<ul>
-<li>Remove duplicates</li>
-<li>Handle missing values</li>
-<li>Normalize formats</li>
-<li>Filter irrelevant data</li>
-</ul></li>
-</ul>
-<p><strong>Purpose:</strong> Ensure data quality</p>
-<hr>
-</section>
-<section id="transformation" class="level3" data-number="29.4.3">
-<h3 data-number="29.4.3" class="anchored" data-anchor-id="transformation"><span class="header-section-number">29.4.3</span> 3. Transformation</h3>
-<ul>
-<li><strong>Convert data into usable form</strong>—apply LLM transformations</li>
-<li><strong>Examples:</strong>
-<ul>
-<li>Text summarization</li>
-<li>Information extraction</li>
-<li>Classification</li>
-<li>Data enrichment</li>
-</ul></li>
-</ul>
-<p><strong>Purpose:</strong> Extract value from data</p>
-<hr>
-</section>
-<section id="storage" class="level3" data-number="29.4.4">
-<h3 data-number="29.4.4" class="anchored" data-anchor-id="storage"><span class="header-section-number">29.4.4</span> 4. Storage</h3>
-<ul>
-<li><strong>Save processed data</strong>—persist results for future use</li>
-<li><strong>Examples:</strong>
-<ul>
-<li>Databases (structured storage)</li>
-<li>Vector stores (semantic search)</li>
-<li>Files (document storage)</li>
-<li>Data warehouses (analytical storage)</li>
-</ul></li>
-</ul>
-<p><strong>Purpose:</strong> Make data available for downstream use</p>
-<hr>
-</section>
-<section id="output" class="level3" data-number="29.4.5">
-<h3 data-number="29.4.5" class="anchored" data-anchor-id="output"><span class="header-section-number">29.4.5</span> 5. Output</h3>
-<ul>
-<li><strong>Deliver results</strong>—provide transformed data to users or systems</li>
-<li><strong>Examples:</strong>
-<ul>
-<li>Reports (summary documents)</li>
-<li>APIs (data access interfaces)</li>
-<li>Dashboards (visual representations)</li>
-<li>Alerts (notifications)</li>
-</ul></li>
-</ul>
-<p><strong>Purpose:</strong> Deliver value from data</p>
-<hr>
-<blockquote class="blockquote">
-<p>Each stage must be clearly defined with specific inputs, outputs, and responsibilities.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="llms-in-data-pipelines" class="level2" data-number="29.5">
-<h2 data-number="29.5" class="anchored" data-anchor-id="llms-in-data-pipelines"><span class="header-section-number">29.5</span> LLMs in Data Pipelines</h2>
-<p>LLMs act as transformation engines in data pipelines, converting unstructured data into structured information:</p>
-<hr>
-<section id="use-cases" class="level3" data-number="29.5.1">
-<h3 data-number="29.5.1" class="anchored" data-anchor-id="use-cases"><span class="header-section-number">29.5.1</span> Use Cases</h3>
-<ul>
-<li><strong>Text summarization</strong>—condensing long documents</li>
-<li><strong>Information extraction</strong>—pulling structured data from text</li>
-<li><strong>Classification</strong>—categorizing documents or data points</li>
-<li><strong>Data enrichment</strong>—adding context or metadata</li>
-<li><strong>Translation</strong>—converting between languages</li>
+<li><strong>生成报告</strong>：格式化为标准报告模板（Markdown 或 HTML）</li>
+<li><strong>分发</strong>：通过邮件或系统发送给利益相关者</li>
+<li><strong>存档</strong>：持久化到数据库或文件系统供未来参考</li>
 </ul>
 <hr>
 </section>
-<section id="example" class="level3" data-number="29.5.2">
-<h3 data-number="29.5.2" class="anchored" data-anchor-id="example"><span class="header-section-number">29.5.2</span> Example</h3>
-<pre><code>Raw Text → LLM → Structured Data</code></pre>
-<p>Input: “The company reported revenue of $5.2 million in Q3, up 15% from last year.”</p>
-<p>Output: <code>{revenue: "$5.2 million", period: "Q3", growth: "15%"}</code></p>
-<hr>
-<blockquote class="blockquote">
-<p>LLMs convert unstructured data into structured information, making data usable for analysis and automation.</p>
-</blockquote>
+</section>
+<section id="spec-示例阶段-3-分类spec-example-stage-3-classification" class="level2" data-number="29.4">
+<h2 data-number="29.4" class="anchored" data-anchor-id="spec-示例阶段-3-分类spec-example-stage-3-classification"><span class="header-section-number">29.4</span> Spec 示例：阶段 3 分类（Spec Example: Stage 3 Classification）</h2>
+<p><strong>输入：</strong> 已解析的反馈文本（字符串，最多 2000 字符），元数据（源、日期、语言）。</p>
+<p><strong>输出：</strong> 分类标签列表，每类置信度分数（0-1）。</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"labels"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span><span class="dt">"category"</span><span class="fu">:</span> <span class="st">"产品问题"</span><span class="fu">,</span> <span class="dt">"confidence"</span><span class="fu">:</span> <span class="fl">0.92</span><span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span><span class="dt">"category"</span><span class="fu">:</span> <span class="st">"服务问题"</span><span class="fu">,</span> <span class="dt">"confidence"</span><span class="fu">:</span> <span class="fl">0.15</span><span class="fu">}</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>约束：</strong> 每项反馈可以有多个标签，置信度 &lt; 0.5 的标签被排除，使用预定义类别列表。</p>
+<p><strong>边界情况：</strong> 空文本返回空列表，多语言输入保持语言判断，非常规格式不崩溃。</p>
 <hr>
 </section>
-</section>
-<section id="spec-driven-pipelines" class="level2" data-number="29.6">
-<h2 data-number="29.6" class="anchored" data-anchor-id="spec-driven-pipelines"><span class="header-section-number">29.6</span> Spec-Driven Pipelines</h2>
-<p>Pipelines should be defined using spec to ensure consistency and reliability:</p>
-<hr>
-<section id="example-spec" class="level3" data-number="29.6.1">
-<h3 data-number="29.6.1" class="anchored" data-anchor-id="example-spec"><span class="header-section-number">29.6.1</span> Example Spec</h3>
-<ul>
-<li><strong>Input</strong>: raw documents (text files)</li>
-<li><strong>Output</strong>: structured summaries (JSON with key points)</li>
-<li><strong>Constraints</strong>: max 100 words, include 3-5 key points</li>
-<li><strong>Success</strong>: key information preserved, format consistent</li>
-</ul>
-<hr>
-<p>This ensures:</p>
-<ul>
-<li><strong>Consistency</strong>—same processing for all documents</li>
-<li><strong>Reliability</strong>—predictable output format</li>
-<li><strong>Reusability</strong>—pipeline can be applied to new data</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Pipelines should be defined, not improvised. Spec-driven pipelines are reliable and scalable.</p>
-</blockquote>
+<section id="管道实现模式pipeline-implementation-patterns" class="level2" data-number="29.5">
+<h2 data-number="29.5" class="anchored" data-anchor-id="管道实现模式pipeline-implementation-patterns"><span class="header-section-number">29.5</span> 管道实现模式（Pipeline Implementation Patterns）</h2>
+<p><strong>1. 每个阶段是独立的模块，具有自己的 Spec</strong>：每个阶段有明确的输入和输出 Schema。可以独立测试和优化。替换单个阶段不影响其他阶段。</p>
+<p><strong>2. 阶段通过定义良好的接口通信</strong>：输入 Schema、输出 Schema 被显式定义。数据格式在阶段之间传递时保持一致。</p>
+<p><strong>3. 错误处理在每个阶段本地进行</strong>：一个阶段的错误不影响其他阶段。错误被记录并传递，而非直接导致管道崩溃。</p>
+<p><strong>4. 可观察性（Observability）</strong>：每个阶段记录其输入、输出和处理时间。日志提供管道的完整追踪。</p>
 <hr>
 </section>
-</section>
-<section id="pipeline-architecture" class="level2" data-number="29.7">
-<h2 data-number="29.7" class="anchored" data-anchor-id="pipeline-architecture"><span class="header-section-number">29.7</span> Pipeline Architecture</h2>
-<p>A structured pipeline may look like:</p>
-<pre><code>Ingestion
-→ Cleaning
-→ Transformation (LLM)
-→ Validation
-→ Storage
-→ Output</code></pre>
-<hr>
-<section id="key-layers" class="level3" data-number="29.7.1">
-<h3 data-number="29.7.1" class="anchored" data-anchor-id="key-layers"><span class="header-section-number">29.7.1</span> Key Layers</h3>
-<ul>
-<li><strong>Data layer</strong>—ingestion and storage</li>
-<li><strong>Processing layer</strong>—cleaning and validation</li>
-<li><strong>LLM layer</strong>—transformation using language models</li>
-<li><strong>Evaluation layer</strong>—quality checking and monitoring</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Each layer has a specific responsibility. Clear boundaries ensure reliability and maintainability.</p>
-</blockquote>
+<section id="评估管道质量evaluating-pipeline-quality" class="level2" data-number="29.6">
+<h2 data-number="29.6" class="anchored" data-anchor-id="评估管道质量evaluating-pipeline-quality"><span class="header-section-number">29.6</span> 评估管道质量（Evaluating Pipeline Quality）</h2>
+<p><strong>逐阶段评估：</strong> 对每个阶段独立测试。输入样本 → 预期输出 → 实际输出 → 比较。</p>
+<p><strong>端到端评估：</strong> 使用完整的测试管道。从原始输入到最终输出。衡量整体准确率和延迟。</p>
+<p><strong>关键指标：</strong> - <strong>分类准确率</strong> &gt; 85% - <strong>情绪分析准确率</strong> &gt; 80% - <strong>处理延迟</strong> &lt; 5 秒/条 - <strong>管道成功率</strong> &gt; 99%</p>
 <hr>
 </section>
-</section>
-<section id="multi-step-llm-pipelines" class="level2" data-number="29.8">
-<h2 data-number="29.8" class="anchored" data-anchor-id="multi-step-llm-pipelines"><span class="header-section-number">29.8</span> Multi-Step LLM Pipelines</h2>
-<p>Complex transformations require multiple LLM steps, each building on previous results:</p>
-<hr>
-<section id="example-1" class="level3" data-number="29.8.1">
-<h3 data-number="29.8.1" class="anchored" data-anchor-id="example-1"><span class="header-section-number">29.8.1</span> Example</h3>
-<pre><code>Document
-→ Extract Key Points
-→ Summarize
-→ Classify
-→ Store</code></pre>
-<p>Each step:</p>
-<ul>
-<li><strong>Has its own spec</strong>—specific requirements for transformation</li>
-<li><strong>Produces structured output</strong>—results in defined format</li>
-<li><strong>Feeds into next step</strong>—output becomes input for subsequent stage</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Pipelines are compositions of transformations. Each step adds value and structure.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="evaluation-in-pipelines" class="level2" data-number="29.9">
-<h2 data-number="29.9" class="anchored" data-anchor-id="evaluation-in-pipelines"><span class="header-section-number">29.9</span> Evaluation in Pipelines</h2>
-<p>Each stage should be evaluated to ensure quality and catch errors early:</p>
-<hr>
-<section id="example-checks" class="level3" data-number="29.9.1">
-<h3 data-number="29.9.1" class="anchored" data-anchor-id="example-checks"><span class="header-section-number">29.9.1</span> Example Checks</h3>
-<ul>
-<li><strong>Is data clean?</strong>—no errors or missing values</li>
-<li><strong>Is output structured?</strong>—matches expected format</li>
-<li><strong>Is summary accurate?</strong>—preserves key information</li>
-<li><strong>Is classification correct?</strong>—matches expected categories</li>
-</ul>
-<hr>
-</section>
-<section id="pipeline-evaluation-flow" class="level3" data-number="29.9.2">
-<h3 data-number="29.9.2" class="anchored" data-anchor-id="pipeline-evaluation-flow"><span class="header-section-number">29.9.2</span> Pipeline Evaluation Flow</h3>
-<pre><code>Step Output → Validate → Accept / Reject</code></pre>
-<p>If validation fails: - Log error - Retry step - - Skip to next record (with flag)</p>
-<hr>
-<blockquote class="blockquote">
-<p>Errors should be caught early. Pipeline evaluation prevents bad data from propagating downstream.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="handling-errors" class="level2" data-number="29.10">
-<h2 data-number="29.10" class="anchored" data-anchor-id="handling-errors"><span class="header-section-number">29.10</span> Handling Errors</h2>
-<p>Robust pipelines must anticipate and handle failures gracefully:</p>
-<hr>
-<section id="strategies" class="level3" data-number="29.10.1">
-<h3 data-number="29.10.1" class="anchored" data-anchor-id="strategies"><span class="header-section-number">29.10.1</span> Strategies</h3>
-<hr>
-<section id="retry" class="level4" data-number="29.10.1.1">
-<h4 data-number="29.10.1.1" class="anchored" data-anchor-id="retry"><span class="header-section-number">29.10.1.1</span> 1. Retry</h4>
-<ul>
-<li><strong>Re-run failed step</strong>—attempt operation again</li>
-<li><strong>Use exponential backoff</strong>—wait longer between retries</li>
-<li><strong>Limit retry attempts</strong>—avoid infinite loops</li>
-</ul>
-<p><strong>Use when:</strong> Transient failures (network issues, temporary API errors)</p>
-<hr>
-</section>
-<section id="fallback" class="level4" data-number="29.10.1.2">
-<h4 data-number="29.10.1.2" class="anchored" data-anchor-id="fallback"><span class="header-section-number">29.10.1.2</span> 2. Fallback</h4>
-<ul>
-<li><strong>Use alternative method</strong>—try different approach</li>
-<li><strong>Apply default behavior</strong>—use predefined response</li>
-<li><strong>Skip operation</strong>—continue without transformation</li>
-</ul>
-<p><strong>Use when:</strong> Primary method unavailable or unreliable</p>
-<hr>
-</section>
-<section id="logging" class="level4" data-number="29.10.1.3">
-<h4 data-number="29.10.1.3" class="anchored" data-anchor-id="logging"><span class="header-section-number">29.10.1.3</span> 3. Logging</h4>
-<ul>
-<li><strong>Record errors</strong>—capture detailed error information</li>
-<li><strong>Track patterns</strong>—identify recurring issues</li>
-<li><strong>Enable debugging</strong>—provide information for troubleshooting</li>
-</ul>
-<p><strong>Use always:</strong> Essential for monitoring and improvement</p>
-<hr>
-<blockquote class="blockquote">
-<p>Robust pipelines anticipate failure. Graceful error handling prevents pipeline collapse.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-</section>
-<section id="scaling-pipelines" class="level2" data-number="29.11">
-<h2 data-number="29.11" class="anchored" data-anchor-id="scaling-pipelines"><span class="header-section-number">29.11</span> Scaling Pipelines</h2>
-<p>As data volumes grow, pipelines must scale efficiently:</p>
-<hr>
-<section id="parallel-processing" class="level3" data-number="29.11.1">
-<h3 data-number="29.11.1" class="anchored" data-anchor-id="parallel-processing"><span class="header-section-number">29.11.1</span> 1. Parallel Processing</h3>
-<ul>
-<li><strong>Process multiple inputs simultaneously</strong>—run multiple records at once</li>
-<li><strong>Distribute across workers</strong>—use multiple machines or cores</li>
-<li><strong>Coordinate results</strong>—combine parallel outputs</li>
-</ul>
-<p><strong>Benefit:</strong> Significantly increased throughput</p>
-<hr>
-</section>
-<section id="modular-design" class="level3" data-number="29.11.2">
-<h3 data-number="29.11.2" class="anchored" data-anchor-id="modular-design"><span class="header-section-number">29.11.2</span> 2. Modular Design</h3>
-<ul>
-<li><strong>Independent steps</strong>—each stage can run independently</li>
-<li><strong>Reusable components</strong>—same stage can be used in multiple pipelines</li>
-<li><strong>Easy to modify</strong>—changes to one stage don’t affect others</li>
-</ul>
-<p><strong>Benefit:</strong> Easier to maintain and extend</p>
-<hr>
-</section>
-<section id="incremental-updates" class="level3" data-number="29.11.3">
-<h3 data-number="29.11.3" class="anchored" data-anchor-id="incremental-updates"><span class="header-section-number">29.11.3</span> 3. Incremental Updates</h3>
-<ul>
-<li><strong>Process only new data</strong>—avoid reprocessing everything</li>
-<li><strong>Track processed records</strong>—maintain state of what’s been done</li>
-<li><strong>Update incrementally</strong>—add new data to existing results</li>
-</ul>
-<p><strong>Benefit:</strong> Reduced processing time and cost</p>
-<hr>
-<blockquote class="blockquote">
-<p>Scalability depends on structure. Well-designed pipelines scale gracefully with data volume.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="pipelines-vs-chat-systems" class="level2" data-number="29.12">
-<h2 data-number="29.12" class="anchored" data-anchor-id="pipelines-vs-chat-systems"><span class="header-section-number">29.12</span> Pipelines vs Chat Systems</h2>
-<p>Understanding the differences helps choose the right approach:</p>
-<hr>
-<section id="chat-systems" class="level3" data-number="29.12.1">
-<h3 data-number="29.12.1" class="anchored" data-anchor-id="chat-systems"><span class="header-section-number">29.12.1</span> Chat Systems</h3>
-<ul>
-<li><strong>Interactive</strong>—respond to user input</li>
-<li><strong>User-driven</strong>—initiated by human interaction</li>
-<li><strong>Turn-based</strong>—one response per input</li>
-<li><strong>Stateful</strong>—maintain conversation context</li>
-</ul>
-<p><strong>Use for:</strong> Conversational interfaces, Q&amp;A systems, personal assistants</p>
-<hr>
-</section>
-<section id="data-pipelines" class="level3" data-number="29.12.2">
-<h3 data-number="29.12.2" class="anchored" data-anchor-id="data-pipelines"><span class="header-section-number">29.12.2</span> Data Pipelines</h3>
-<ul>
-<li><strong>Automated</strong>—run without human intervention</li>
-<li><strong>Data-driven</strong>—triggered by data availability</li>
-<li><strong>Batch or streaming</strong>—process many records</li>
-<li><strong>Stateless or minimal state</strong>—focus on throughput</li>
-</ul>
-<p><strong>Use for:</strong> Data processing, content generation, batch analysis</p>
-<hr>
-</section>
-<section id="common-ground" class="level3" data-number="29.12.3">
-<h3 data-number="29.12.3" class="anchored" data-anchor-id="common-ground"><span class="header-section-number">29.12.3</span> Common Ground</h3>
-<ul>
-<li><strong>Both use spec</strong>—define requirements clearly</li>
-<li><strong>Both use instruction</strong>—execute transformations</li>
-<li><strong>Both rely on evaluation</strong>—ensure quality</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Pipelines and chat systems share the same foundation but serve different purposes.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="common-mistakes" class="level2" data-number="29.13">
-<h2 data-number="29.13" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">29.13</span> Common Mistakes</h2>
-<p>Several common mistakes undermine pipeline effectiveness:</p>
-<hr>
-<section id="skipping-cleaning" class="level3" data-number="29.13.1">
-<h3 data-number="29.13.1" class="anchored" data-anchor-id="skipping-cleaning"><span class="header-section-number">29.13.1</span> 1. Skipping Cleaning</h3>
-<ul>
-<li><strong>Garbage in → garbage out</strong>—poor input leads to poor output</li>
-<li><strong>Error propagation</strong>—bad data corrupts downstream results</li>
-<li><strong>Quality degradation</strong>—errors compound through pipeline</li>
-</ul>
-<p><strong>Solution:</strong> Never skip cleaning. Validate and clean data at the start.</p>
-<hr>
-</section>
-<section id="overloading-llm" class="level3" data-number="29.13.2">
-<h3 data-number="29.13.2" class="anchored" data-anchor-id="overloading-llm"><span class="header-section-number">29.13.2</span> 2. Overloading LLM</h3>
-<ul>
-<li><strong>Doing too much in one step</strong>—complex transformations fail</li>
-<li><strong>Reduced quality</strong>—overwhelmed model produces poor results</li>
-<li><strong>Higher cost</strong>—longer prompts increase expense</li>
-</ul>
-<p><strong>Solution:</strong> Break complex transformations into multiple steps.</p>
-<hr>
-</section>
-<section id="no-evaluation" class="level3" data-number="29.13.3">
-<h3 data-number="29.13.3" class="anchored" data-anchor-id="no-evaluation"><span class="header-section-number">29.13.3</span> 3. No Evaluation</h3>
-<ul>
-<li><strong>Errors propagate</strong>—bad data flows through entire pipeline</li>
-<li><strong>Unknown quality</strong>—don’t know if results are correct</li>
-<li><strong>No monitoring</strong>—can’t detect problems</li>
-</ul>
-<p><strong>Solution:</strong> Evaluate at every stage. Check quality and format.</p>
-<hr>
-</section>
-<section id="tight-coupling" class="level3" data-number="29.13.4">
-<h3 data-number="29.13.4" class="anchored" data-anchor-id="tight-coupling"><span class="header-section-number">29.13.4</span> 4. Tight Coupling</h3>
-<ul>
-<li><strong>Hard to modify</strong>—changes to one stage break others</li>
-<li><strong>Difficult to maintain</strong>—interdependent components</li>
-<li><strong>Limited reusability</strong>—can’t use stages in other pipelines</li>
-</ul>
-<p><strong>Solution:</strong> Design modular, independent stages with clear interfaces.</p>
-<hr>
-</section>
-</section>
-<section id="final-insight" class="level2" data-number="29.14">
-<h2 data-number="29.14" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">29.14</span> Final Insight</h2>
-<p>A data pipeline is a system for transforming data at scale.</p>
-<p>With LLMs:</p>
-<ul>
-<li><strong>Transformation becomes more powerful</strong>—can handle complex, nuanced tasks</li>
-<li><strong>But also more complex</strong>—requires careful design and management</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Structure is what makes pipelines reliable. Clear stages, defined interfaces, and robust error handling enable scalable data processing.</p>
-</blockquote>
-<hr>
-</section>
-<section id="closing-statement" class="level2" data-number="29.15">
-<h2 data-number="29.15" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">29.15</span> Closing Statement</h2>
-<p>In the LLM era, data pipelines are essential for turning raw information into usable knowledge.</p>
-<blockquote class="blockquote">
-<p>From data to insight, pipelines are the backbone of intelligent systems.</p>
-</blockquote>
-<hr>
-</section>
-<section id="key-insight" class="level2" data-number="29.16">
-<h2 data-number="29.16" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">29.16</span> Key Insight</h2>
-<blockquote class="blockquote">
-<p>Data pipelines transform data through ingestion, processing, transformation, storage, and output. LLMs act as transformation engines, converting unstructured data into structured information. Key components include ingestion, cleaning, transformation, validation, storage, and output stages.</p>
-</blockquote>
-</section>
-<section id="action-hint" class="level2" data-number="29.17">
-<h2 data-number="29.17" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">29.17</span> Action Hint</h2>
-<blockquote class="blockquote">
-<p>Design pipelines with clear stages and responsibilities. Always include cleaning and validation steps. Use spec to define transformations precisely. Break complex transformations into multiple steps. Implement robust error handling with retry, fallback, and logging. Design for scalability with parallel processing and modular components. Evaluate at every stage to catch errors early.</p>
-</blockquote>
+<section id="小结" class="level2" data-number="29.7">
+<h2 data-number="29.7" class="anchored" data-anchor-id="小结"><span class="header-section-number">29.7</span> 小结</h2>
+<p>数据管道是从原始数据到结构化洞察的桥梁。通过将管道分解为具有明确 Spec 的独立阶段，你构建了一个可测试、可维护、可演化的系统。</p>
+<p>管道的设计原则——模块化、独立 Spec、错误隔离、可观察性——适用于任何 AI 数据管道。掌握了它们，你可以系统地构建从数据到价值的自动化工作流。</p>
 
 
 </section>
@@ -1482,13 +1090,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-27.html" class="pagination-link" aria-label="Building a Chat System">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span>
+      <a href="./chapter-27.html" class="pagination-link" aria-label="构建聊天系统（Building a Chat System）">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">构建聊天系统（Building a Chat System）</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-29.html" class="pagination-link" aria-label="Building an AI Tool">
-        <span class="nav-page-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-29.html" class="pagination-link" aria-label="构建 AI 工具（Building an AI Tool）">
+        <span class="nav-page-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

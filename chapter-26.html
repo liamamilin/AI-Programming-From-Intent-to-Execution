@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>27&nbsp; Performance &amp; Cost – AI Programming: From Intent to Execution</title>
+<title>27&nbsp; 性能与成本（Performance &amp; Cost） – AI Programming: From Intent to Execution</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,19 +37,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="./chapter-25.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-aa873432a3c62897e6c2091c0d30a948.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -250,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-26.html"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-26.html"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -263,9 +265,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AI Programming: From Intent to Execution</a> 
         <div class="sidebar-tools-main">
@@ -283,211 +283,211 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">前言（Preface）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">转变：从编码到定义（The Shift: From Coding to Defining）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">新的瓶颈：定义（The New Bottleneck: Definition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">编程现在是什么？（What is Programming Now?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">最小循环（The Minimal Loop）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">意图：定义要做什么（Intent: Defining What to Do）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">规格说明：消除歧义（Spec: Eliminating Ambiguity）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">指令：使其可执行（Instruction: Making It Executable）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">评估与迭代（Evaluation &amp; Iteration）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">可能性空间（Possibility Space）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">从 Spec 到指令（From Spec to Instruction）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">指令设计（Instruction Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">工具使用与 API（Tool Use &amp; APIs）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">构建智能体系统（Building an Agent System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-26.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">构建聊天系统（Building a Chat System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">从理想到产品（From Idea to Product）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-31.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">编程即系统设计（Programming as System Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">语言即操作系统（Language as an Operating System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">人类 + AI 认知（Human + AI Cognition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">构建者的未来（The Future of Builders）</span></span></a>
   </div>
 </li>
     </ul>
@@ -500,67 +500,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#from-correctness-to-efficiency" id="toc-from-correctness-to-efficiency" class="nav-link active" data-scroll-target="#from-correctness-to-efficiency"><span class="header-section-number">27.1</span> From Correctness to Efficiency</a></li>
-  <li><a href="#the-three-core-metrics" id="toc-the-three-core-metrics" class="nav-link" data-scroll-target="#the-three-core-metrics"><span class="header-section-number">27.2</span> The Three Core Metrics</a>
+  <li><a href="#为什么性能和成本重要" id="toc-为什么性能和成本重要" class="nav-link active" data-scroll-target="#为什么性能和成本重要"><span class="header-section-number">27.1</span> 为什么性能和成本重要</a></li>
+  <li><a href="#成本模型cost-model" id="toc-成本模型cost-model" class="nav-link" data-scroll-target="#成本模型cost-model"><span class="header-section-number">27.2</span> 成本模型（Cost Model）</a></li>
+  <li><a href="#性能模型performance-model" id="toc-性能模型performance-model" class="nav-link" data-scroll-target="#性能模型performance-model"><span class="header-section-number">27.3</span> 性能模型（Performance Model）</a></li>
+  <li><a href="#优化策略optimization-strategies" id="toc-优化策略optimization-strategies" class="nav-link" data-scroll-target="#优化策略optimization-strategies"><span class="header-section-number">27.4</span> 优化策略（Optimization Strategies）</a>
   <ul class="collapse">
-  <li><a href="#key-relationship" id="toc-key-relationship" class="nav-link" data-scroll-target="#key-relationship"><span class="header-section-number">27.2.1</span> Key Relationship</a></li>
+  <li><a href="#减少令牌使用" id="toc-减少令牌使用" class="nav-link" data-scroll-target="#减少令牌使用"><span class="header-section-number">27.4.1</span> 减少令牌使用</a></li>
+  <li><a href="#减少-api-调用" id="toc-减少-api-调用" class="nav-link" data-scroll-target="#减少-api-调用"><span class="header-section-number">27.4.2</span> 减少 API 调用</a></li>
+  <li><a href="#优化模型选择" id="toc-优化模型选择" class="nav-link" data-scroll-target="#优化模型选择"><span class="header-section-number">27.4.3</span> 优化模型选择</a></li>
   </ul></li>
-  <li><a href="#what-are-tokens" id="toc-what-are-tokens" class="nav-link" data-scroll-target="#what-are-tokens"><span class="header-section-number">27.3</span> What Are Tokens?</a>
-  <ul class="collapse">
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">27.3.1</span> Example</a></li>
-  <li><a href="#why-tokens-matter" id="toc-why-tokens-matter" class="nav-link" data-scroll-target="#why-tokens-matter"><span class="header-section-number">27.3.2</span> Why Tokens Matter</a></li>
-  </ul></li>
-  <li><a href="#token-usage-and-system-design" id="toc-token-usage-and-system-design" class="nav-link" data-scroll-target="#token-usage-and-system-design"><span class="header-section-number">27.4</span> Token Usage and System Design</a>
-  <ul class="collapse">
-  <li><a href="#sources-of-token-growth" id="toc-sources-of-token-growth" class="nav-link" data-scroll-target="#sources-of-token-growth"><span class="header-section-number">27.4.1</span> Sources of Token Growth</a></li>
-  </ul></li>
-  <li><a href="#latency" id="toc-latency" class="nav-link" data-scroll-target="#latency"><span class="header-section-number">27.5</span> Latency</a>
-  <ul class="collapse">
-  <li><a href="#components-of-latency" id="toc-components-of-latency" class="nav-link" data-scroll-target="#components-of-latency"><span class="header-section-number">27.5.1</span> Components of Latency</a></li>
-  <li><a href="#why-latency-matters" id="toc-why-latency-matters" class="nav-link" data-scroll-target="#why-latency-matters"><span class="header-section-number">27.5.2</span> Why Latency Matters</a></li>
-  </ul></li>
-  <li><a href="#cost" id="toc-cost" class="nav-link" data-scroll-target="#cost"><span class="header-section-number">27.6</span> Cost</a>
-  <ul class="collapse">
-  <li><a href="#cost-drivers" id="toc-cost-drivers" class="nav-link" data-scroll-target="#cost-drivers"><span class="header-section-number">27.6.1</span> Cost Drivers</a></li>
-  <li><a href="#implication" id="toc-implication" class="nav-link" data-scroll-target="#implication"><span class="header-section-number">27.6.2</span> Implication</a></li>
-  </ul></li>
-  <li><a href="#trade-offs-between-metrics" id="toc-trade-offs-between-metrics" class="nav-link" data-scroll-target="#trade-offs-between-metrics"><span class="header-section-number">27.7</span> Trade-offs Between Metrics</a>
-  <ul class="collapse">
-  <li><a href="#token-vs-accuracy" id="toc-token-vs-accuracy" class="nav-link" data-scroll-target="#token-vs-accuracy"><span class="header-section-number">27.7.1</span> Token vs Accuracy</a></li>
-  <li><a href="#latency-vs-quality" id="toc-latency-vs-quality" class="nav-link" data-scroll-target="#latency-vs-quality"><span class="header-section-number">27.7.2</span> Latency vs Quality</a></li>
-  <li><a href="#cost-vs-reliability" id="toc-cost-vs-reliability" class="nav-link" data-scroll-target="#cost-vs-reliability"><span class="header-section-number">27.7.3</span> Cost vs Reliability</a></li>
-  </ul></li>
-  <li><a href="#optimization-strategies" id="toc-optimization-strategies" class="nav-link" data-scroll-target="#optimization-strategies"><span class="header-section-number">27.8</span> Optimization Strategies</a>
-  <ul class="collapse">
-  <li><a href="#reduce-token-usage" id="toc-reduce-token-usage" class="nav-link" data-scroll-target="#reduce-token-usage"><span class="header-section-number">27.8.1</span> 1. Reduce Token Usage</a></li>
-  <li><a href="#optimize-instructions" id="toc-optimize-instructions" class="nav-link" data-scroll-target="#optimize-instructions"><span class="header-section-number">27.8.2</span> 2. Optimize Instructions</a></li>
-  <li><a href="#control-output-length" id="toc-control-output-length" class="nav-link" data-scroll-target="#control-output-length"><span class="header-section-number">27.8.3</span> 3. Control Output Length</a></li>
-  <li><a href="#efficient-context-management" id="toc-efficient-context-management" class="nav-link" data-scroll-target="#efficient-context-management"><span class="header-section-number">27.8.4</span> 4. Efficient Context Management</a></li>
-  <li><a href="#cache-results" id="toc-cache-results" class="nav-link" data-scroll-target="#cache-results"><span class="header-section-number">27.8.5</span> 5. Cache Results</a></li>
-  </ul></li>
-  <li><a href="#architectural-optimization" id="toc-architectural-optimization" class="nav-link" data-scroll-target="#architectural-optimization"><span class="header-section-number">27.9</span> Architectural Optimization</a>
-  <ul class="collapse">
-  <li><a href="#pipeline-design" id="toc-pipeline-design" class="nav-link" data-scroll-target="#pipeline-design"><span class="header-section-number">27.9.1</span> 1. Pipeline Design</a></li>
-  <li><a href="#selective-execution" id="toc-selective-execution" class="nav-link" data-scroll-target="#selective-execution"><span class="header-section-number">27.9.2</span> 2. Selective Execution</a></li>
-  <li><a href="#model-selection" id="toc-model-selection" class="nav-link" data-scroll-target="#model-selection"><span class="header-section-number">27.9.3</span> 3. Model Selection</a></li>
-  </ul></li>
-  <li><a href="#measuring-performance" id="toc-measuring-performance" class="nav-link" data-scroll-target="#measuring-performance"><span class="header-section-number">27.10</span> Measuring Performance</a>
-  <ul class="collapse">
-  <li><a href="#key-metrics" id="toc-key-metrics" class="nav-link" data-scroll-target="#key-metrics"><span class="header-section-number">27.10.1</span> Key Metrics</a></li>
-  <li><a href="#approach" id="toc-approach" class="nav-link" data-scroll-target="#approach"><span class="header-section-number">27.10.2</span> Approach</a></li>
-  </ul></li>
-  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">27.11</span> Common Mistakes</a>
-  <ul class="collapse">
-  <li><a href="#ignoring-token-usage" id="toc-ignoring-token-usage" class="nav-link" data-scroll-target="#ignoring-token-usage"><span class="header-section-number">27.11.1</span> 1. Ignoring Token Usage</a></li>
-  <li><a href="#overloading-context" id="toc-overloading-context" class="nav-link" data-scroll-target="#overloading-context"><span class="header-section-number">27.11.2</span> 2. Overloading Context</a></li>
-  <li><a href="#over-engineering-pipelines" id="toc-over-engineering-pipelines" class="nav-link" data-scroll-target="#over-engineering-pipelines"><span class="header-section-number">27.11.3</span> 3. Over-Engineering Pipelines</a></li>
-  <li><a href="#optimizing-too-early" id="toc-optimizing-too-early" class="nav-link" data-scroll-target="#optimizing-too-early"><span class="header-section-number">27.11.4</span> 4. Optimizing Too Early</a></li>
-  </ul></li>
-  <li><a href="#performance-as-a-system-property" id="toc-performance-as-a-system-property" class="nav-link" data-scroll-target="#performance-as-a-system-property"><span class="header-section-number">27.12</span> Performance as a System Property</a></li>
-  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">27.13</span> Final Insight</a></li>
-  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">27.14</span> Closing Statement</a></li>
-  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">27.15</span> Key Insight</a></li>
-  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">27.16</span> Action Hint</a></li>
+  <li><a href="#成本-质量权衡cost-quality-tradeoffs" id="toc-成本-质量权衡cost-quality-tradeoffs" class="nav-link" data-scroll-target="#成本-质量权衡cost-quality-tradeoffs"><span class="header-section-number">27.5</span> 成本-质量权衡（Cost-Quality Tradeoffs）</a></li>
   </ul>
 </nav>
     </div>
@@ -570,7 +519,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></h1>
+<h1 class="title"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></h1>
 </div>
 
 
@@ -587,442 +536,69 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="from-correctness-to-efficiency" class="level2" data-number="27.1">
-<h2 data-number="27.1" class="anchored" data-anchor-id="from-correctness-to-efficiency"><span class="header-section-number">27.1</span> From Correctness to Efficiency</h2>
-<p>So far, we have focused on:</p>
-<ul>
-<li><strong>Defining systems</strong>—creating clear specifications</li>
-<li><strong>Achieving correctness</strong>—ensuring systems produce right outputs</li>
-<li><strong>Ensuring reliability</strong>—making systems consistently accurate</li>
-</ul>
-<p>However, a system that is correct but inefficient is not practical. A system that produces perfect results but is too slow or too expensive cannot be used in production.</p>
-<p>Real systems must also consider:</p>
+<section id="为什么性能和成本重要" class="level2" data-number="27.1">
+<h2 data-number="27.1" class="anchored" data-anchor-id="为什么性能和成本重要"><span class="header-section-number">27.1</span> 为什么性能和成本重要</h2>
+<p>在传统编程中，性能和成本是重要但通常是次要的关注点。代码必须正确，然后你才优化速度和资源。</p>
+<p>在 LLM 时代，性能和成本是系统设计中不可分割的部分。每次 API 调用都有直接的成本。每个额外的上下文标记都会增加延迟。每个不必要的步骤都会消耗时间和资源。</p>
 <blockquote class="blockquote">
-<p><strong>Performance and Cost</strong></p>
+<p>在 LLM 时代，性能和成本是架构决策，而非优化顾虑。</p>
 </blockquote>
 <hr>
 </section>
-<section id="the-three-core-metrics" class="level2" data-number="27.2">
-<h2 data-number="27.2" class="anchored" data-anchor-id="the-three-core-metrics"><span class="header-section-number">27.2</span> The Three Core Metrics</h2>
-<p>In LLM systems, performance is primarily determined by three interrelated factors:</p>
+<section id="成本模型cost-model" class="level2" data-number="27.2">
+<h2 data-number="27.2" class="anchored" data-anchor-id="成本模型cost-model"><span class="header-section-number">27.2</span> 成本模型（Cost Model）</h2>
+<p>LLM 系统的成本由几个因素驱动：</p>
+<p><strong>令牌使用量：</strong> 每次调用的输入和输出令牌。越长 = 越高成本。</p>
+<p><strong>API 调用次数：</strong> 每个步骤一次调用。更多步骤 = 更高成本。</p>
+<p><strong>模型选择：</strong> 大型模型更贵。小型模型可能适合某些任务。</p>
+<p><strong>上下文大小：</strong> 更大的上下文消耗更多令牌。记忆和上下文管理直接影响成本。</p>
+<hr>
+</section>
+<section id="性能模型performance-model" class="level2" data-number="27.3">
+<h2 data-number="27.3" class="anchored" data-anchor-id="性能模型performance-model"><span class="header-section-number">27.3</span> 性能模型（Performance Model）</h2>
+<p><strong>延迟：</strong> 单次调用的响应时间。受模型大小、输入长度、系统负载影响。</p>
+<p><strong>吞吐量：</strong> 每秒可处理的请求数。受 API 速率限制和并行度影响。</p>
+<hr>
+</section>
+<section id="优化策略optimization-strategies" class="level2" data-number="27.4">
+<h2 data-number="27.4" class="anchored" data-anchor-id="优化策略optimization-strategies"><span class="header-section-number">27.4</span> 优化策略（Optimization Strategies）</h2>
+<section id="减少令牌使用" class="level3" data-number="27.4.1">
+<h3 data-number="27.4.1" class="anchored" data-anchor-id="减少令牌使用"><span class="header-section-number">27.4.1</span> 减少令牌使用</h3>
 <ul>
-<li><strong>Token Usage</strong>—how much text the system processes and generates</li>
-<li><strong>Latency</strong>—how long the system takes to respond</li>
-<li><strong>Cost</strong>—how much money or resources the system consumes</li>
+<li>精简指令和提示词以去除冗余</li>
+<li>限制输出长度（精确指定最大长度）</li>
+<li>压缩上下文以避免重复传输相同信息</li>
+<li>使用摘要代替逐字的记忆存储</li>
 </ul>
-<p>These metrics are tightly coupled—they influence each other and must be balanced together.</p>
+</section>
+<section id="减少-api-调用" class="level3" data-number="27.4.2">
+<h3 data-number="27.4.2" class="anchored" data-anchor-id="减少-api-调用"><span class="header-section-number">27.4.2</span> 减少 API 调用</h3>
+<ul>
+<li>批处理独立的请求</li>
+<li>缓存重复的请求（相同的输入 → 相同的输出）</li>
+<li>组合步骤（将多个任务合并为一个指令）</li>
+</ul>
+</section>
+<section id="优化模型选择" class="level3" data-number="27.4.3">
+<h3 data-number="27.4.3" class="anchored" data-anchor-id="优化模型选择"><span class="header-section-number">27.4.3</span> 优化模型选择</h3>
+<ul>
+<li>对简单的任务使用更小、更快的模型</li>
+<li>使用大模型进行复杂推理，小模型进行简单处理</li>
+<li>级联模型：先尝试更便宜的模型，失败时升级</li>
+</ul>
 <hr>
-<section id="key-relationship" class="level3" data-number="27.2.1">
-<h3 data-number="27.2.1" class="anchored" data-anchor-id="key-relationship"><span class="header-section-number">27.2.1</span> Key Relationship</h3>
-<pre><code>More Tokens → Higher Latency → Higher Cost</code></pre>
-<p>Processing more text takes more time and costs more money. Optimizing one metric often affects the others.</p>
-<hr>
+</section>
+</section>
+<section id="成本-质量权衡cost-quality-tradeoffs" class="level2" data-number="27.5">
+<h2 data-number="27.5" class="anchored" data-anchor-id="成本-质量权衡cost-quality-tradeoffs"><span class="header-section-number">27.5</span> 成本-质量权衡（Cost-Quality Tradeoffs）</h2>
+<ul>
+<li><strong>更多令牌 → 更好指定 → 更可靠</strong>，但也更昂贵</li>
+<li><strong>更简单的模型 → 更快、更便宜</strong>，但可能处理复杂任务不够好</li>
+<li><strong>更多迭代 → 更好的结果</strong>，但也增加成本</li>
+</ul>
+<p>关键是在满足 Spec 的同时最小化成本。</p>
 <blockquote class="blockquote">
-<p>Efficiency is about controlling these three dimensions simultaneously. You cannot optimize one in isolation.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="what-are-tokens" class="level2" data-number="27.3">
-<h2 data-number="27.3" class="anchored" data-anchor-id="what-are-tokens"><span class="header-section-number">27.3</span> What Are Tokens?</h2>
-<p>Tokens are the basic unit of processing for language models. They represent the chunks of text that models read and generate.</p>
-<p>They can be:</p>
-<ul>
-<li><strong>Words</strong>—complete words in many cases</li>
-<li><strong>Parts of words</strong>—subword units for complex or rare words</li>
-<li><strong>Symbols</strong>—punctuation, numbers, special characters</li>
-</ul>
-<hr>
-<section id="example" class="level3" data-number="27.3.1">
-<h3 data-number="27.3.1" class="anchored" data-anchor-id="example"><span class="header-section-number">27.3.1</span> Example</h3>
-<p>Sentence: “This is a test”</p>
-<p>May be tokenized as: - “This” - “is” - “a” - “test”</p>
-<p>Or possibly as: - “This” - ” is” - ” a” - ” test”</p>
-<p>The exact tokenization depends on the model and its tokenizer.</p>
-<hr>
-</section>
-<section id="why-tokens-matter" class="level3" data-number="27.3.2">
-<h3 data-number="27.3.2" class="anchored" data-anchor-id="why-tokens-matter"><span class="header-section-number">27.3.2</span> Why Tokens Matter</h3>
-<ul>
-<li><strong>Models process tokens, not words</strong>—computational cost is per-token</li>
-<li><strong>Pricing is based on token usage</strong>—most LLM APIs charge per token</li>
-<li><strong>Latency increases with token count</strong>—more tokens mean more processing time</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Tokens are the currency of LLM systems. Every operation has a token cost.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="token-usage-and-system-design" class="level2" data-number="27.4">
-<h2 data-number="27.4" class="anchored" data-anchor-id="token-usage-and-system-design"><span class="header-section-number">27.4</span> Token Usage and System Design</h2>
-<p>Token usage comes from multiple sources in the system:</p>
-<ul>
-<li><strong>Input context</strong>—information provided to the system</li>
-<li><strong>Instructions</strong>—the protocol defining execution</li>
-<li><strong>Output generation</strong>—the text the system produces</li>
-</ul>
-<hr>
-<section id="sources-of-token-growth" class="level3" data-number="27.4.1">
-<h3 data-number="27.4.1" class="anchored" data-anchor-id="sources-of-token-growth"><span class="header-section-number">27.4.1</span> Sources of Token Growth</h3>
-<hr>
-<section id="long-context" class="level4" data-number="27.4.1.1">
-<h4 data-number="27.4.1.1" class="anchored" data-anchor-id="long-context"><span class="header-section-number">27.4.1.1</span> 1. Long Context</h4>
-<ul>
-<li><strong>Large prompts</strong>—extensive input provided to the system</li>
-<li><strong>Extensive memory</strong>—including too much conversation history</li>
-<li><strong>Verbose context</strong>—unnecessarily detailed information</li>
-</ul>
-<p><strong>Impact:</strong> Increases processing time and cost</p>
-<hr>
-</section>
-<section id="verbose-instructions" class="level4" data-number="27.4.1.2">
-<h4 data-number="27.4.1.2" class="anchored" data-anchor-id="verbose-instructions"><span class="header-section-number">27.4.1.2</span> 2. Verbose Instructions</h4>
-<ul>
-<li><strong>Unnecessary detail</strong>—overly specific or redundant instructions</li>
-<li><strong>Redundant text</strong>—saying the same thing multiple ways</li>
-<li><strong>Excessive examples</strong>—too many demonstration examples</li>
-</ul>
-<p><strong>Impact:</strong> Wastes tokens without improving results</p>
-<hr>
-</section>
-<section id="large-outputs" class="level4" data-number="27.4.1.3">
-<h4 data-number="27.4.1.3" class="anchored" data-anchor-id="large-outputs"><span class="header-section-number">27.4.1.3</span> 3. Large Outputs</h4>
-<ul>
-<li><strong>Long responses</strong>—generating more text than needed</li>
-<li><strong>Unstructured generation</strong>—allowing unrestricted output length</li>
-<li><strong>Verbose responses</strong>—wordy or repetitive outputs</li>
-</ul>
-<p><strong>Impact:</strong> Increases generation time and cost</p>
-<hr>
-<blockquote class="blockquote">
-<p>Poor design leads to token waste. Efficient design minimizes token usage while maintaining quality.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-</section>
-<section id="latency" class="level2" data-number="27.5">
-<h2 data-number="27.5" class="anchored" data-anchor-id="latency"><span class="header-section-number">27.5</span> Latency</h2>
-<p>Latency is the time it takes for the system to:</p>
-<ul>
-<li><strong>Receive input</strong>—accept user query or data</li>
-<li><strong>Process</strong>—run through the model and tools</li>
-<li><strong>Produce output</strong>—generate and return response</li>
-</ul>
-<hr>
-<section id="components-of-latency" class="level3" data-number="27.5.1">
-<h3 data-number="27.5.1" class="anchored" data-anchor-id="components-of-latency"><span class="header-section-number">27.5.1</span> Components of Latency</h3>
-<ul>
-<li><strong>Model processing time</strong>—time for LLM to generate response</li>
-<li><strong>Network delay</strong>—time for data to travel between systems</li>
-<li><strong>Tool execution time</strong>—time for external APIs and services</li>
-<li><strong>System overhead</strong>—time for routing, validation, and other operations</li>
-</ul>
-<hr>
-</section>
-<section id="why-latency-matters" class="level3" data-number="27.5.2">
-<h3 data-number="27.5.2" class="anchored" data-anchor-id="why-latency-matters"><span class="header-section-number">27.5.2</span> Why Latency Matters</h3>
-<ul>
-<li><strong>User experience</strong>—slow systems feel unresponsive</li>
-<li><strong>System responsiveness</strong>—real-time applications require fast responses</li>
-<li><strong>Throughput</strong>—slow latency limits how many requests can be handled</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Fast systems feel intelligent. Slow systems feel broken, regardless of output quality.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="cost" class="level2" data-number="27.6">
-<h2 data-number="27.6" class="anchored" data-anchor-id="cost"><span class="header-section-number">27.6</span> Cost</h2>
-<p>Cost is directly tied to token usage and system design:</p>
-<ul>
-<li><strong>Token usage</strong>—primary driver of API costs</li>
-<li><strong>Number of calls</strong>—frequency of API invocations</li>
-<li><strong>Model type</strong>—different models have different pricing</li>
-</ul>
-<hr>
-<section id="cost-drivers" class="level3" data-number="27.6.1">
-<h3 data-number="27.6.1" class="anchored" data-anchor-id="cost-drivers"><span class="header-section-number">27.6.1</span> Cost Drivers</h3>
-<ul>
-<li><strong>Large context windows</strong>—more tokens per request</li>
-<li><strong>Frequent API calls</strong>—more requests per unit time</li>
-<li><strong>Complex pipelines</strong>—multiple model calls per task</li>
-<li><strong>Large models</strong>—more expensive per token</li>
-</ul>
-<hr>
-</section>
-<section id="implication" class="level3" data-number="27.6.2">
-<h3 data-number="27.6.2" class="anchored" data-anchor-id="implication"><span class="header-section-number">27.6.2</span> Implication</h3>
-<p>Even small inefficiencies:</p>
-<ul>
-<li><strong>Scale significantly</strong>—small per-request costs multiply at scale</li>
-<li><strong>Increase operational cost</strong>—ongoing expenses accumulate</li>
-<li><strong>Limit feasibility</strong>—high costs make systems uneconomical</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Cost is a function of design, not just usage. Good design minimizes cost while maintaining quality.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="trade-offs-between-metrics" class="level2" data-number="27.7">
-<h2 data-number="27.7" class="anchored" data-anchor-id="trade-offs-between-metrics"><span class="header-section-number">27.7</span> Trade-offs Between Metrics</h2>
-<p>System design involves balancing competing requirements:</p>
-<hr>
-<section id="token-vs-accuracy" class="level3" data-number="27.7.1">
-<h3 data-number="27.7.1" class="anchored" data-anchor-id="token-vs-accuracy"><span class="header-section-number">27.7.1</span> Token vs Accuracy</h3>
-<ul>
-<li><strong>More tokens → more context → better accuracy</strong></li>
-<li><strong>But higher cost</strong>—increased expense</li>
-</ul>
-<p><strong>Trade-off:</strong> Determine how much context is needed for required accuracy</p>
-<hr>
-</section>
-<section id="latency-vs-quality" class="level3" data-number="27.7.2">
-<h3 data-number="27.7.2" class="anchored" data-anchor-id="latency-vs-quality"><span class="header-section-number">27.7.2</span> Latency vs Quality</h3>
-<ul>
-<li><strong>Faster responses → less processing</strong></li>
-<li><strong>But potentially lower quality</strong>—less time for reasoning</li>
-</ul>
-<p><strong>Trade-off:</strong> Balance response speed with output quality requirements</p>
-<hr>
-</section>
-<section id="cost-vs-reliability" class="level3" data-number="27.7.3">
-<h3 data-number="27.7.3" class="anchored" data-anchor-id="cost-vs-reliability"><span class="header-section-number">27.7.3</span> Cost vs Reliability</h3>
-<ul>
-<li><strong>More checks → higher cost</strong></li>
-<li><strong>But better stability</strong>—more validation and evaluation</li>
-</ul>
-<p><strong>Trade-off:</strong> Determine acceptable failure rate vs.&nbsp;cost of prevention</p>
-<hr>
-<blockquote class="blockquote">
-<p>System design requires balancing these factors based on specific requirements and constraints.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="optimization-strategies" class="level2" data-number="27.8">
-<h2 data-number="27.8" class="anchored" data-anchor-id="optimization-strategies"><span class="header-section-number">27.8</span> Optimization Strategies</h2>
-<p>Several strategies can improve performance and reduce cost:</p>
-<hr>
-<section id="reduce-token-usage" class="level3" data-number="27.8.1">
-<h3 data-number="27.8.1" class="anchored" data-anchor-id="reduce-token-usage"><span class="header-section-number">27.8.1</span> 1. Reduce Token Usage</h3>
-<ul>
-<li><strong>Compress context</strong>—summarize long histories</li>
-<li><strong>Remove redundancy</strong>—eliminate duplicate information</li>
-<li><strong>Use summaries</strong>—replace long text with concise summaries</li>
-</ul>
-<p><strong>Example:</strong> Instead of including full conversation history, include a summary of key points.</p>
-<hr>
-</section>
-<section id="optimize-instructions" class="level3" data-number="27.8.2">
-<h3 data-number="27.8.2" class="anchored" data-anchor-id="optimize-instructions"><span class="header-section-number">27.8.2</span> 2. Optimize Instructions</h3>
-<ul>
-<li><strong>Keep concise</strong>—use minimal text to convey requirements</li>
-<li><strong>Avoid unnecessary detail</strong>—focus on essential information</li>
-<li><strong>Remove redundancy</strong>—don’t repeat information</li>
-</ul>
-<p><strong>Example:</strong> Instead of detailed descriptions, use structured formats like JSON.</p>
-<hr>
-</section>
-<section id="control-output-length" class="level3" data-number="27.8.3">
-<h3 data-number="27.8.3" class="anchored" data-anchor-id="control-output-length"><span class="header-section-number">27.8.3</span> 3. Control Output Length</h3>
-<ul>
-<li><strong>Define limits</strong>—specify maximum output length</li>
-<li><strong>Use structured output</strong>—enforce format constraints</li>
-<li><strong>Request conciseness</strong>—ask for brief, focused responses</li>
-</ul>
-<p><strong>Example:</strong> Specify “under 100 words” or “3 bullet points” to limit output.</p>
-<hr>
-</section>
-<section id="efficient-context-management" class="level3" data-number="27.8.4">
-<h3 data-number="27.8.4" class="anchored" data-anchor-id="efficient-context-management"><span class="header-section-number">27.8.4</span> 4. Efficient Context Management</h3>
-<ul>
-<li><strong>Retrieve only relevant data</strong>—select specific information</li>
-<li><strong>Avoid full history</strong>—use summaries instead of full conversations</li>
-<li><strong>Prioritize recent information</strong>—focus on most relevant context</li>
-</ul>
-<p><strong>Example:</strong> Use retrieval to find only the most relevant documents, not all available.</p>
-<hr>
-</section>
-<section id="cache-results" class="level3" data-number="27.8.5">
-<h3 data-number="27.8.5" class="anchored" data-anchor-id="cache-results"><span class="header-section-number">27.8.5</span> 5. Cache Results</h3>
-<ul>
-<li><strong>Reuse previous outputs</strong>—avoid recomputing same inputs</li>
-<li><strong>Cache intermediate results</strong>—store results of expensive operations</li>
-<li><strong>Implement memoization</strong>—remember computation results</li>
-</ul>
-<p><strong>Example:</strong> Cache summary of a document so it’s not recomputed for subsequent queries.</p>
-<hr>
-<blockquote class="blockquote">
-<p>Efficiency comes from better design, not shortcuts. Optimize structure, not just parameters.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="architectural-optimization" class="level2" data-number="27.9">
-<h2 data-number="27.9" class="anchored" data-anchor-id="architectural-optimization"><span class="header-section-number">27.9</span> Architectural Optimization</h2>
-<p>System architecture significantly impacts performance:</p>
-<hr>
-<section id="pipeline-design" class="level3" data-number="27.9.1">
-<h3 data-number="27.9.1" class="anchored" data-anchor-id="pipeline-design"><span class="header-section-number">27.9.1</span> 1. Pipeline Design</h3>
-<ul>
-<li><strong>Break tasks into smaller steps</strong>—divide complex operations</li>
-<li><strong>Avoid overloading single calls</strong>—distribute work across multiple calls</li>
-<li><strong>Parallelize independent operations</strong>—run multiple steps simultaneously</li>
-</ul>
-<p><strong>Example:</strong> Instead of one complex instruction, use multiple simpler instructions in sequence.</p>
-<hr>
-</section>
-<section id="selective-execution" class="level3" data-number="27.9.2">
-<h3 data-number="27.9.2" class="anchored" data-anchor-id="selective-execution"><span class="header-section-number">27.9.2</span> 2. Selective Execution</h3>
-<ul>
-<li><strong>Only run necessary components</strong>—skip unneeded processing</li>
-<li><strong>Conditional execution</strong>—run components only when needed</li>
-<li><strong>Early termination</strong>—stop processing when result is clear</li>
-</ul>
-<p><strong>Example:</strong> Only run expensive retrieval if the query requires external information.</p>
-<hr>
-</section>
-<section id="model-selection" class="level3" data-number="27.9.3">
-<h3 data-number="27.9.3" class="anchored" data-anchor-id="model-selection"><span class="header-section-number">27.9.3</span> 3. Model Selection</h3>
-<ul>
-<li><strong>Use smaller models where possible</strong>—not all tasks need largest models</li>
-<li><strong>Reserve larger models for complex tasks</strong>—allocate resources appropriately</li>
-<li><strong>Cascade models</strong>—use smaller models for filtering, larger for final processing</li>
-</ul>
-<p><strong>Example:</strong> Use a small model to classify queries, then route to appropriate specialist models.</p>
-<hr>
-<blockquote class="blockquote">
-<p>Not all tasks require maximum capability. Match model size to task complexity.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="measuring-performance" class="level2" data-number="27.10">
-<h2 data-number="27.10" class="anchored" data-anchor-id="measuring-performance"><span class="header-section-number">27.10</span> Measuring Performance</h2>
-<p>To optimize, you must measure. Performance metrics provide the data needed for improvement.</p>
-<hr>
-<section id="key-metrics" class="level3" data-number="27.10.1">
-<h3 data-number="27.10.1" class="anchored" data-anchor-id="key-metrics"><span class="header-section-number">27.10.1</span> Key Metrics</h3>
-<ul>
-<li><strong>Tokens per request</strong>—measure input and output token usage</li>
-<li><strong>Latency per step</strong>—track time for each operation</li>
-<li><strong>Cost per task</strong>—calculate expense for each operation</li>
-</ul>
-<hr>
-</section>
-<section id="approach" class="level3" data-number="27.10.2">
-<h3 data-number="27.10.2" class="anchored" data-anchor-id="approach"><span class="header-section-number">27.10.2</span> Approach</h3>
-<ul>
-<li><strong>Log system behavior</strong>—record all operations and metrics</li>
-<li><strong>Analyze bottlenecks</strong>—identify slow or expensive components</li>
-<li><strong>Iterate design</strong>—make changes based on measurement data</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Measurement enables optimization. Without metrics, optimization is guesswork.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="common-mistakes" class="level2" data-number="27.11">
-<h2 data-number="27.11" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">27.11</span> Common Mistakes</h2>
-<p>Several common mistakes undermine performance:</p>
-<hr>
-<section id="ignoring-token-usage" class="level3" data-number="27.11.1">
-<h3 data-number="27.11.1" class="anchored" data-anchor-id="ignoring-token-usage"><span class="header-section-number">27.11.1</span> 1. Ignoring Token Usage</h3>
-<ul>
-<li><strong>Leads to unexpected costs</strong>—bills higher than expected</li>
-<li><strong>Limits scalability</strong>—cannot handle increased load</li>
-<li><strong>Reduces competitiveness</strong>—higher costs than alternatives</li>
-</ul>
-<p><strong>Solution:</strong> Monitor token usage. Set budgets and alerts.</p>
-<hr>
-</section>
-<section id="overloading-context" class="level3" data-number="27.11.2">
-<h3 data-number="27.11.2" class="anchored" data-anchor-id="overloading-context"><span class="header-section-number">27.11.2</span> 2. Overloading Context</h3>
-<ul>
-<li><strong>Reduces efficiency</strong>—more processing than needed</li>
-<li><strong>Increases latency</strong>—longer response times</li>
-<li><strong>Increases cost</strong>—more tokens processed</li>
-</ul>
-<p><strong>Solution:</strong> Be selective about context. Include only relevant information.</p>
-<hr>
-</section>
-<section id="over-engineering-pipelines" class="level3" data-number="27.11.3">
-<h3 data-number="27.11.3" class="anchored" data-anchor-id="over-engineering-pipelines"><span class="header-section-number">27.11.3</span> 3. Over-Engineering Pipelines</h3>
-<ul>
-<li><strong>Too many steps</strong>—unnecessary complexity</li>
-<li><strong>Increased cost</strong>—more operations than needed</li>
-<li><strong>Reduced maintainability</strong>—harder to understand and modify</li>
-</ul>
-<p><strong>Solution:</strong> Keep pipelines simple. Only add steps that add value.</p>
-<hr>
-</section>
-<section id="optimizing-too-early" class="level3" data-number="27.11.4">
-<h3 data-number="27.11.4" class="anchored" data-anchor-id="optimizing-too-early"><span class="header-section-number">27.11.4</span> 4. Optimizing Too Early</h3>
-<ul>
-<li><strong>Premature optimization</strong>—optimizing before understanding requirements</li>
-<li><strong>Reduced flexibility</strong>—over-optimized systems are hard to change</li>
-<li><strong>Wrong focus</strong>—optimizing non-critical components</li>
-</ul>
-<p><strong>Solution:</strong> Measure first, then optimize. Focus on bottlenecks.</p>
-<hr>
-</section>
-</section>
-<section id="performance-as-a-system-property" class="level2" data-number="27.12">
-<h2 data-number="27.12" class="anchored" data-anchor-id="performance-as-a-system-property"><span class="header-section-number">27.12</span> Performance as a System Property</h2>
-<p>Performance is not determined by a single component. It depends on:</p>
-<ul>
-<li><strong>Spec design</strong>—how requirements are defined</li>
-<li><strong>Instruction efficiency</strong>—how protocols are structured</li>
-<li><strong>Context management</strong>—how information is selected</li>
-<li><strong>System architecture</strong>—how components are organized</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Efficiency emerges from the entire system. Optimize the whole, not just parts.</p>
-</blockquote>
-<hr>
-</section>
-<section id="final-insight" class="level2" data-number="27.13">
-<h2 data-number="27.13" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">27.13</span> Final Insight</h2>
-<p>In the LLM era, performance is not just about speed. It is about:</p>
-<ul>
-<li><strong>Efficient use of tokens</strong>—minimizing waste</li>
-<li><strong>Balanced latency</strong>—responding quickly enough</li>
-<li><strong>Controlled cost</strong>—operating within budget</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>The best systems are not just correct. They are efficient.</p>
-</blockquote>
-<hr>
-</section>
-<section id="closing-statement" class="level2" data-number="27.14">
-<h2 data-number="27.14" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">27.14</span> Closing Statement</h2>
-<p>As systems scale, performance and cost become critical constraints.</p>
-<blockquote class="blockquote">
-<p>A well-designed system delivers value not just correctly, but efficiently.</p>
-</blockquote>
-<hr>
-</section>
-<section id="key-insight" class="level2" data-number="27.15">
-<h2 data-number="27.15" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">27.15</span> Key Insight</h2>
-<blockquote class="blockquote">
-<p>Performance in LLM systems is determined by three core metrics: token usage, latency, and cost. These metrics are tightly coupled—more tokens increase latency and cost. Optimization strategies include reducing token usage, optimizing instructions, controlling output length, efficient context management, and caching results.</p>
-</blockquote>
-</section>
-<section id="action-hint" class="level2" data-number="27.16">
-<h2 data-number="27.16" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">27.16</span> Action Hint</h2>
-<blockquote class="blockquote">
-<p>Monitor token usage, latency, and cost. Identify bottlenecks through measurement. Optimize context by including only relevant information. Use structured outputs to control token usage. Select appropriate model size for task complexity. Cache results to avoid recomputation. Balance trade-offs between accuracy, speed, and cost.</p>
+<p>在 LLM 时代，性能和成本管理是系统设计的核心部分，而非事后优化。</p>
 </blockquote>
 
 
@@ -1444,13 +1020,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-25.html" class="pagination-link" aria-label="Debugging in the LLM Era">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span>
+      <a href="./chapter-25.html" class="pagination-link" aria-label="LLM 时代的调试（Debugging in the LLM Era）">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-27.html" class="pagination-link" aria-label="Building a Chat System">
-        <span class="nav-page-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-27.html" class="pagination-link" aria-label="构建聊天系统（Building a Chat System）">
+        <span class="nav-page-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">构建聊天系统（Building a Chat System）</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

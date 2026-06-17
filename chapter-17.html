@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>18&nbsp; Iterative Spec Refinement – AI Programming: From Intent to Execution</title>
+<title>18&nbsp; 迭代式 Spec 精化（Iterative Spec Refinement） – AI Programming: From Intent to Execution</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,19 +37,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="./chapter-16.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-aa873432a3c62897e6c2091c0d30a948.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -250,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-17.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-17.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -263,9 +265,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AI Programming: From Intent to Execution</a> 
         <div class="sidebar-tools-main">
@@ -283,211 +283,211 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">前言（Preface）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">转变：从编码到定义（The Shift: From Coding to Defining）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">新的瓶颈：定义（The New Bottleneck: Definition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">编程现在是什么？（What is Programming Now?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">最小循环（The Minimal Loop）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">意图：定义要做什么（Intent: Defining What to Do）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">规格说明：消除歧义（Spec: Eliminating Ambiguity）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">指令：使其可执行（Instruction: Making It Executable）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">评估与迭代（Evaluation &amp; Iteration）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">可能性空间（Possibility Space）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-17.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">从 Spec 到指令（From Spec to Instruction）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">指令设计（Instruction Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">工具使用与 API（Tool Use &amp; APIs）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">构建智能体系统（Building an Agent System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">构建聊天系统（Building a Chat System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">从理想到产品（From Idea to Product）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-31.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">编程即系统设计（Programming as System Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">语言即操作系统（Language as an Operating System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">人类 + AI 认知（Human + AI Cognition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">构建者的未来（The Future of Builders）</span></span></a>
   </div>
 </li>
     </ul>
@@ -500,56 +500,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#specification-is-not-static" id="toc-specification-is-not-static" class="nav-link active" data-scroll-target="#specification-is-not-static"><span class="header-section-number">18.1</span> Specification Is Not Static</a></li>
-  <li><a href="#the-reality-of-imperfect-definitions" id="toc-the-reality-of-imperfect-definitions" class="nav-link" data-scroll-target="#the-reality-of-imperfect-definitions"><span class="header-section-number">18.2</span> The Reality of Imperfect Definitions</a></li>
-  <li><a href="#the-refinement-loop" id="toc-the-refinement-loop" class="nav-link" data-scroll-target="#the-refinement-loop"><span class="header-section-number">18.3</span> The Refinement Loop</a>
-  <ul class="collapse">
-  <li><a href="#step-1-spec" id="toc-step-1-spec" class="nav-link" data-scroll-target="#step-1-spec"><span class="header-section-number">18.3.1</span> Step 1: Spec</a></li>
-  <li><a href="#step-2-execution" id="toc-step-2-execution" class="nav-link" data-scroll-target="#step-2-execution"><span class="header-section-number">18.3.2</span> Step 2: Execution</a></li>
-  <li><a href="#step-3-deviation" id="toc-step-3-deviation" class="nav-link" data-scroll-target="#step-3-deviation"><span class="header-section-number">18.3.3</span> Step 3: Deviation</a></li>
-  <li><a href="#step-4-refinement" id="toc-step-4-refinement" class="nav-link" data-scroll-target="#step-4-refinement"><span class="header-section-number">18.3.4</span> Step 4: Refinement</a></li>
-  </ul></li>
-  <li><a href="#what-is-deviation" id="toc-what-is-deviation" class="nav-link" data-scroll-target="#what-is-deviation"><span class="header-section-number">18.4</span> What is Deviation?</a>
-  <ul class="collapse">
-  <li><a href="#types-of-deviation" id="toc-types-of-deviation" class="nav-link" data-scroll-target="#types-of-deviation"><span class="header-section-number">18.4.1</span> Types of Deviation</a></li>
-  </ul></li>
-  <li><a href="#where-to-apply-fixes" id="toc-where-to-apply-fixes" class="nav-link" data-scroll-target="#where-to-apply-fixes"><span class="header-section-number">18.5</span> Where to Apply Fixes</a>
-  <ul class="collapse">
-  <li><a href="#incorrect-approach" id="toc-incorrect-approach" class="nav-link" data-scroll-target="#incorrect-approach"><span class="header-section-number">18.5.1</span> Incorrect Approach</a></li>
-  <li><a href="#correct-approach" id="toc-correct-approach" class="nav-link" data-scroll-target="#correct-approach"><span class="header-section-number">18.5.2</span> Correct Approach</a></li>
-  </ul></li>
-  <li><a href="#refinement-strategies" id="toc-refinement-strategies" class="nav-link" data-scroll-target="#refinement-strategies"><span class="header-section-number">18.6</span> Refinement Strategies</a>
-  <ul class="collapse">
-  <li><a href="#add-constraints" id="toc-add-constraints" class="nav-link" data-scroll-target="#add-constraints"><span class="header-section-number">18.6.1</span> 1. Add Constraints</a></li>
-  <li><a href="#clarify-output-structure" id="toc-clarify-output-structure" class="nav-link" data-scroll-target="#clarify-output-structure"><span class="header-section-number">18.6.2</span> 2. Clarify Output Structure</a></li>
-  <li><a href="#define-edge-cases" id="toc-define-edge-cases" class="nav-link" data-scroll-target="#define-edge-cases"><span class="header-section-number">18.6.3</span> 3. Define Edge Cases</a></li>
-  <li><a href="#strengthen-success-criteria" id="toc-strengthen-success-criteria" class="nav-link" data-scroll-target="#strengthen-success-criteria"><span class="header-section-number">18.6.4</span> 4. Strengthen Success Criteria</a></li>
-  </ul></li>
-  <li><a href="#convergence-of-the-system" id="toc-convergence-of-the-system" class="nav-link" data-scroll-target="#convergence-of-the-system"><span class="header-section-number">18.7</span> Convergence of the System</a>
-  <ul class="collapse">
-  <li><a href="#convergence-condition" id="toc-convergence-condition" class="nav-link" data-scroll-target="#convergence-condition"><span class="header-section-number">18.7.1</span> Convergence Condition</a></li>
-  <li><a href="#signs-of-convergence" id="toc-signs-of-convergence" class="nav-link" data-scroll-target="#signs-of-convergence"><span class="header-section-number">18.7.2</span> Signs of Convergence</a></li>
-  </ul></li>
-  <li><a href="#from-debugging-code-to-debugging-spec" id="toc-from-debugging-code-to-debugging-spec" class="nav-link" data-scroll-target="#from-debugging-code-to-debugging-spec"><span class="header-section-number">18.8</span> From Debugging Code to Debugging Spec</a>
-  <ul class="collapse">
-  <li><a href="#in-traditional-programming" id="toc-in-traditional-programming" class="nav-link" data-scroll-target="#in-traditional-programming"><span class="header-section-number">18.8.1</span> In Traditional Programming</a></li>
-  <li><a href="#in-the-llm-paradigm" id="toc-in-the-llm-paradigm" class="nav-link" data-scroll-target="#in-the-llm-paradigm"><span class="header-section-number">18.8.2</span> In the LLM Paradigm</a></li>
-  <li><a href="#old-model" id="toc-old-model" class="nav-link" data-scroll-target="#old-model"><span class="header-section-number">18.8.3</span> Old Model</a></li>
-  <li><a href="#new-model" id="toc-new-model" class="nav-link" data-scroll-target="#new-model"><span class="header-section-number">18.8.4</span> New Model</a></li>
-  </ul></li>
-  <li><a href="#iteration-as-learning" id="toc-iteration-as-learning" class="nav-link" data-scroll-target="#iteration-as-learning"><span class="header-section-number">18.9</span> Iteration as Learning</a></li>
-  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">18.10</span> Common Mistakes</a>
-  <ul class="collapse">
-  <li><a href="#treating-first-output-as-final" id="toc-treating-first-output-as-final" class="nav-link" data-scroll-target="#treating-first-output-as-final"><span class="header-section-number">18.10.1</span> 1. Treating First Output as Final</a></li>
-  <li><a href="#fixing-symptoms-instead-of-causes" id="toc-fixing-symptoms-instead-of-causes" class="nav-link" data-scroll-target="#fixing-symptoms-instead-of-causes"><span class="header-section-number">18.10.2</span> 2. Fixing Symptoms Instead of Causes</a></li>
-  <li><a href="#lack-of-evaluation" id="toc-lack-of-evaluation" class="nav-link" data-scroll-target="#lack-of-evaluation"><span class="header-section-number">18.10.3</span> 3. Lack of Evaluation</a></li>
-  <li><a href="#overreacting-to-noise" id="toc-overreacting-to-noise" class="nav-link" data-scroll-target="#overreacting-to-noise"><span class="header-section-number">18.10.4</span> 4. Overreacting to Noise</a></li>
-  </ul></li>
-  <li><a href="#refinement-as-a-core-skill" id="toc-refinement-as-a-core-skill" class="nav-link" data-scroll-target="#refinement-as-a-core-skill"><span class="header-section-number">18.11</span> Refinement as a Core Skill</a></li>
-  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">18.12</span> Final Insight</a></li>
-  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">18.13</span> Closing Statement</a></li>
-  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">18.14</span> Key Insight</a></li>
-  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">18.15</span> Action Hint</a></li>
+  <li><a href="#规格说明不是静态的" id="toc-规格说明不是静态的" class="nav-link active" data-scroll-target="#规格说明不是静态的"><span class="header-section-number">18.1</span> 规格说明不是静态的</a></li>
+  <li><a href="#不完美定义的现实the-reality-of-imperfect-definitions" id="toc-不完美定义的现实the-reality-of-imperfect-definitions" class="nav-link" data-scroll-target="#不完美定义的现实the-reality-of-imperfect-definitions"><span class="header-section-number">18.2</span> 不完美定义的现实（The Reality of Imperfect Definitions）</a></li>
+  <li><a href="#精化循环the-refinement-loop" id="toc-精化循环the-refinement-loop" class="nav-link" data-scroll-target="#精化循环the-refinement-loop"><span class="header-section-number">18.3</span> 精化循环（The Refinement Loop）</a></li>
+  <li><a href="#精化的模式patterns-of-refinement" id="toc-精化的模式patterns-of-refinement" class="nav-link" data-scroll-target="#精化的模式patterns-of-refinement"><span class="header-section-number">18.4</span> 精化的模式（Patterns of Refinement）</a></li>
+  <li><a href="#精化策略refinement-strategies" id="toc-精化策略refinement-strategies" class="nav-link" data-scroll-target="#精化策略refinement-strategies"><span class="header-section-number">18.5</span> 精化策略（Refinement Strategies）</a></li>
   </ul>
 </nav>
     </div>
@@ -559,7 +514,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></h1>
+<h1 class="title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></h1>
 </div>
 
 
@@ -576,384 +531,58 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="specification-is-not-static" class="level2" data-number="18.1">
-<h2 data-number="18.1" class="anchored" data-anchor-id="specification-is-not-static"><span class="header-section-number">18.1</span> Specification Is Not Static</h2>
-<p>A common misconception in software development is that a specification can be written once and remain correct forever. This misconception has led to countless failed projects and wasted effort.</p>
-<p>In reality:</p>
+<section id="规格说明不是静态的" class="level2" data-number="18.1">
+<h2 data-number="18.1" class="anchored" data-anchor-id="规格说明不是静态的"><span class="header-section-number">18.1</span> 规格说明不是静态的</h2>
+<p>软件开发中的一个常见误解是，规格说明可以一次性写好并永远保持正确。这个误解导致了无数失败的项目和浪费的努力。</p>
+<p>实际上：</p>
 <ul>
-<li>Initial specs are incomplete—we never know everything upfront</li>
-<li>Assumptions are often hidden—we take things for granted without realizing it</li>
-<li>Edge cases are not fully known—we can’t anticipate every situation</li>
+<li>初始 Spec 是不完整的——我们不可能从一开始就知道一切</li>
+<li>假设常常是隐藏的——我们想当然地假设了一些事情，却没有意识到</li>
+<li>边界情况不能完全预知——我们无法预料到每一种情况</li>
 </ul>
-<p>Therefore:</p>
+<p>因此：</p>
 <blockquote class="blockquote">
-<p><strong>A spec is not a final artifact. It is a starting point.</strong></p>
+<p>Spec 不是最终的工件。它是起点。</p>
 </blockquote>
 <hr>
 </section>
-<section id="the-reality-of-imperfect-definitions" class="level2" data-number="18.2">
-<h2 data-number="18.2" class="anchored" data-anchor-id="the-reality-of-imperfect-definitions"><span class="header-section-number">18.2</span> The Reality of Imperfect Definitions</h2>
-<p>Even with careful design, deep domain knowledge, and extensive planning, the first version of a spec will likely have issues:</p>
-<ul>
-<li>Miss constraints—important limitations are not specified</li>
-<li>Leave ambiguity—terms or concepts are not clearly defined</li>
-<li>Fail under certain inputs—edge cases emerge during execution</li>
-</ul>
-<p>This is not a failure of the team or the process. It is a natural consequence of:</p>
-<ul>
-<li><strong>Complex problems</strong>—we cannot fully understand everything at the start</li>
-<li><strong>Limited initial understanding</strong>—we learn more as we build and test</li>
-<li><strong>Evolving requirements</strong>—what we need changes as we learn</li>
-</ul>
-<hr>
+<section id="不完美定义的现实the-reality-of-imperfect-definitions" class="level2" data-number="18.2">
+<h2 data-number="18.2" class="anchored" data-anchor-id="不完美定义的现实the-reality-of-imperfect-definitions"><span class="header-section-number">18.2</span> 不完美定义的现实（The Reality of Imperfect Definitions）</h2>
+<p>即使有精心设计、深入的领域知识和广泛的规划，Spec 的第一个版本也几乎肯定会有问题：遗漏约束、留下歧义、在特定输入下失败。</p>
+<p>这不是团队或过程的失败。这是复杂问题、有限的初始理解和演化需求的自然结果。</p>
 <blockquote class="blockquote">
-<p>You do not discover the correct spec before execution. You discover it through execution.</p>
+<p>你不在执行之前发现正确的 Spec。你通过执行发现它。</p>
 </blockquote>
 <hr>
 </section>
-<section id="the-refinement-loop" class="level2" data-number="18.3">
-<h2 data-number="18.3" class="anchored" data-anchor-id="the-refinement-loop"><span class="header-section-number">18.3</span> The Refinement Loop</h2>
-<p>Spec Engineering is inherently iterative. It is not a linear process of “write spec → implement → done.” It is a cyclical process of continuous improvement.</p>
-<p>The core loop is:</p>
-<pre><code>Spec → Execution → Deviation → Refinement → Spec</code></pre>
+<section id="精化循环the-refinement-loop" class="level2" data-number="18.3">
+<h2 data-number="18.3" class="anchored" data-anchor-id="精化循环the-refinement-loop"><span class="header-section-number">18.3</span> 精化循环（The Refinement Loop）</h2>
+<p>规格工程本质上是迭代的。它不是一个”写 Spec → 实现 → 完成”的线性过程。它是一个持续改进的循环过程。</p>
+<p>核心循环是：</p>
+<pre><code>Spec → 执行 → 偏差 → 精化 → Spec</code></pre>
+<p><strong>第一步：Spec：</strong> 定义初始结构，设置输入、输出、约束。</p>
+<p><strong>第二步：执行：</strong> 系统执行指令并产生结果。</p>
+<p><strong>第三步：识别偏差：</strong> 将输出与 Spec 比较。发现差距：输出是否匹配 Spec？如果匹配，成功。如果不匹配，进入了下一步。</p>
+<p><strong>第四步：分析偏差：</strong> 检查是什么出了问题：是 Spec 定义的边界情况未覆盖？是约束太少或太模糊？是假设在真实条件下不成立？</p>
+<p><strong>第五步：精化 Spec：</strong> 基于分析，相应地更新 Spec：添加缺失的约束、澄清模糊的术语、添加新的边界情况。</p>
+<p><strong>第六步：重复：</strong> 使用精化后的 Spec 进行新的执行。继续直到偏差为零或可接受。</p>
 <hr>
-<section id="step-1-spec" class="level3" data-number="18.3.1">
-<h3 data-number="18.3.1" class="anchored" data-anchor-id="step-1-spec"><span class="header-section-number">18.3.1</span> Step 1: Spec</h3>
+</section>
+<section id="精化的模式patterns-of-refinement" class="level2" data-number="18.4">
+<h2 data-number="18.4" class="anchored" data-anchor-id="精化的模式patterns-of-refinement"><span class="header-section-number">18.4</span> 精化的模式（Patterns of Refinement）</h2>
 <ul>
-<li>Define initial structure—create the first version of the specification</li>
-<li>Set inputs, outputs, constraints—establish the basic framework</li>
-<li>Make assumptions explicit—state what you’re taking for granted</li>
+<li><strong>收窄约束</strong>：当输出范围太广时，添加更多约束以减少变化</li>
+<li><strong>拓宽覆盖</strong>：当发现未覆盖的边界情况时，将它们添加到 Spec</li>
+<li><strong>提高精确度</strong>：当术语模糊时，用更精确的定义替换</li>
+<li><strong>重组结构</strong>：当 Spec 难以导航时，重组它以匹配系统的实际架构</li>
 </ul>
 <hr>
 </section>
-<section id="step-2-execution" class="level3" data-number="18.3.2">
-<h3 data-number="18.3.2" class="anchored" data-anchor-id="step-2-execution"><span class="header-section-number">18.3.2</span> Step 2: Execution</h3>
-<ul>
-<li>Run the system—use the spec to guide behavior</li>
-<li>Produce outputs—generate results based on the spec</li>
-<li>Observe behavior—see what actually happens</li>
-</ul>
-<hr>
-</section>
-<section id="step-3-deviation" class="level3" data-number="18.3.3">
-<h3 data-number="18.3.3" class="anchored" data-anchor-id="step-3-deviation"><span class="header-section-number">18.3.3</span> Step 3: Deviation</h3>
-<ul>
-<li>Compare output with expectations—did we get what we wanted?</li>
-<li>Identify mismatches—where does behavior differ from intent?</li>
-<li>Recognize patterns—are certain types of errors recurring?</li>
-</ul>
-<hr>
-</section>
-<section id="step-4-refinement" class="level3" data-number="18.3.4">
-<h3 data-number="18.3.4" class="anchored" data-anchor-id="step-4-refinement"><span class="header-section-number">18.3.4</span> Step 4: Refinement</h3>
-<ul>
-<li>Adjust spec—update the specification based on observations</li>
-<li>Add constraints—specify boundaries that were missing</li>
-<li>Clarify definitions—make ambiguous terms precise</li>
-</ul>
-<hr>
+<section id="精化策略refinement-strategies" class="level2" data-number="18.5">
+<h2 data-number="18.5" class="anchored" data-anchor-id="精化策略refinement-strategies"><span class="header-section-number">18.5</span> 精化策略（Refinement Strategies）</h2>
+<p><strong>不要完全重写。</strong> 保留有效部分，只改动出问题的部分。<strong>保留轨迹。</strong> 记录每次精化的内容和原因——这对理解演化很重要。<strong>一次改变一件事。</strong> 同时改变太多东西使你无法知道哪个改动解决了问题。</p>
 <blockquote class="blockquote">
-<p>Each iteration reduces ambiguity and moves the system closer to the desired behavior.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="what-is-deviation" class="level2" data-number="18.4">
-<h2 data-number="18.4" class="anchored" data-anchor-id="what-is-deviation"><span class="header-section-number">18.4</span> What is Deviation?</h2>
-<p>Deviation is the gap between what we expect and what we actually observe:</p>
-<pre><code>Expected Behavior ≠ Actual Output</code></pre>
-<p>Understanding the types of deviation helps diagnose where the spec needs improvement.</p>
-<hr>
-<section id="types-of-deviation" class="level3" data-number="18.4.1">
-<h3 data-number="18.4.1" class="anchored" data-anchor-id="types-of-deviation"><span class="header-section-number">18.4.1</span> Types of Deviation</h3>
-<hr>
-<section id="missing-information" class="level4" data-number="18.4.1.1">
-<h4 data-number="18.4.1.1" class="anchored" data-anchor-id="missing-information"><span class="header-section-number">18.4.1.1</span> 1. Missing Information</h4>
-<p>The output lacks required content or elements.</p>
-<p><strong>Example:</strong> - Expected: Summary includes all key points - Actual: Summary misses some important points - Diagnosis: Success criteria not specific enough</p>
-<hr>
-</section>
-<section id="incorrect-interpretation" class="level4" data-number="18.4.1.2">
-<h4 data-number="18.4.1.2" class="anchored" data-anchor-id="incorrect-interpretation"><span class="header-section-number">18.4.1.2</span> 2. Incorrect Interpretation</h4>
-<p>The system misunderstands the intent or requirements.</p>
-<p><strong>Example:</strong> - Expected: Formal tone in responses - Actual: Casual language used - Diagnosis: Constraint not clearly specified</p>
-<hr>
-</section>
-<section id="overgeneralization" class="level4" data-number="18.4.1.3">
-<h4 data-number="18.4.1.3" class="anchored" data-anchor-id="overgeneralization"><span class="header-section-number">18.4.1.3</span> 3. Overgeneralization</h4>
-<p>The output is too broad or includes unnecessary information.</p>
-<p><strong>Example:</strong> - Expected: Specific answer to a question - Actual: Long explanation with tangential information - Diagnosis: Output scope not constrained</p>
-<hr>
-</section>
-<section id="inconsistency" class="level4" data-number="18.4.1.4">
-<h4 data-number="18.4.1.4" class="anchored" data-anchor-id="inconsistency"><span class="header-section-number">18.4.1.4</span> 4. Inconsistency</h4>
-<p>Different runs produce different outputs for similar inputs.</p>
-<p><strong>Example:</strong> - Expected: Consistent formatting across all responses - Actual: Format varies between runs - Diagnosis: Output structure not specified precisely</p>
-<hr>
-<blockquote class="blockquote">
-<p>Deviation is not noise. It is a signal—a valuable indicator of where the spec needs improvement.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-</section>
-<section id="where-to-apply-fixes" class="level2" data-number="18.5">
-<h2 data-number="18.5" class="anchored" data-anchor-id="where-to-apply-fixes"><span class="header-section-number">18.5</span> Where to Apply Fixes</h2>
-<p>A critical principle for effective refinement:</p>
-<blockquote class="blockquote">
-<p><strong>Fix problems at the highest possible level</strong></p>
-</blockquote>
-<p>When you observe deviation, resist the urge to immediately tweak execution parameters. Instead, look upstream to find the root cause.</p>
-<hr>
-<section id="incorrect-approach" class="level3" data-number="18.5.1">
-<h3 data-number="18.5.1" class="anchored" data-anchor-id="incorrect-approach"><span class="header-section-number">18.5.1</span> Incorrect Approach</h3>
-<ul>
-<li>Change the model—switch to a different AI system</li>
-<li>Add more prompts—inject additional instructions</li>
-<li>Adjust parameters—modify temperature, top-k, or other settings</li>
-</ul>
-<p>These changes address symptoms, not causes. They may temporarily improve results but don’t solve the underlying problem.</p>
-<hr>
-</section>
-<section id="correct-approach" class="level3" data-number="18.5.2">
-<h3 data-number="18.5.2" class="anchored" data-anchor-id="correct-approach"><span class="header-section-number">18.5.2</span> Correct Approach</h3>
-<ul>
-<li>Improve spec—clarify the definition</li>
-<li>Add constraints—specify missing boundaries</li>
-<li>Define success criteria—make evaluation more precise</li>
-</ul>
-<p>These changes address the root cause. They improve the definition, which leads to better execution.</p>
-<hr>
-<blockquote class="blockquote">
-<p>Most issues originate in definition, not execution.</p>
-</blockquote>
-<p>The vast majority of problems with AI systems are not bugs in the implementation—they are gaps or ambiguities in the specification.</p>
-<hr>
-</section>
-</section>
-<section id="refinement-strategies" class="level2" data-number="18.6">
-<h2 data-number="18.6" class="anchored" data-anchor-id="refinement-strategies"><span class="header-section-number">18.6</span> Refinement Strategies</h2>
-<p>When you identify deviation, use these strategies to refine the spec effectively:</p>
-<hr>
-<section id="add-constraints" class="level3" data-number="18.6.1">
-<h3 data-number="18.6.1" class="anchored" data-anchor-id="add-constraints"><span class="header-section-number">18.6.1</span> 1. Add Constraints</h3>
-<p>If outputs are too broad or uncontrolled:</p>
-<ul>
-<li>Introduce limits—specify maximum length, number of items, etc.</li>
-<li>Define boundaries—what is included and what is excluded</li>
-<li>Specify format—exact structure of the output</li>
-</ul>
-<hr>
-</section>
-<section id="clarify-output-structure" class="level3" data-number="18.6.2">
-<h3 data-number="18.6.2" class="anchored" data-anchor-id="clarify-output-structure"><span class="header-section-number">18.6.2</span> 2. Clarify Output Structure</h3>
-<p>If outputs are inconsistent or unpredictable:</p>
-<ul>
-<li>Define format—specify exact structure (JSON, array, etc.)</li>
-<li>Specify required elements—what must always be included</li>
-<li>Provide examples—show what good output looks like</li>
-</ul>
-<hr>
-</section>
-<section id="define-edge-cases" class="level3" data-number="18.6.3">
-<h3 data-number="18.6.3" class="anchored" data-anchor-id="define-edge-cases"><span class="header-section-number">18.6.3</span> 3. Define Edge Cases</h3>
-<p>If the system fails under certain inputs:</p>
-<ul>
-<li>Add explicit rules—how to handle unusual situations</li>
-<li>Extend spec—cover more scenarios</li>
-<li>Provide fallback behavior—what to do when standard approach fails</li>
-</ul>
-<hr>
-</section>
-<section id="strengthen-success-criteria" class="level3" data-number="18.6.4">
-<h3 data-number="18.6.4" class="anchored" data-anchor-id="strengthen-success-criteria"><span class="header-section-number">18.6.4</span> 4. Strengthen Success Criteria</h3>
-<p>If evaluation is unclear or subjective:</p>
-<ul>
-<li>Make criteria measurable—use quantitative metrics where possible</li>
-<li>Reduce subjectivity—make evaluation more objective</li>
-<li>Provide evaluation examples—show what counts as success</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="convergence-of-the-system" class="level2" data-number="18.7">
-<h2 data-number="18.7" class="anchored" data-anchor-id="convergence-of-the-system"><span class="header-section-number">18.7</span> Convergence of the System</h2>
-<p>With each iteration, the system should move toward convergence—stable, predictable behavior that meets the requirements.</p>
-<hr>
-<section id="convergence-condition" class="level3" data-number="18.7.1">
-<h3 data-number="18.7.1" class="anchored" data-anchor-id="convergence-condition"><span class="header-section-number">18.7.1</span> Convergence Condition</h3>
-<p>A system is considered stable when:</p>
-<ul>
-<li>Outputs consistently meet success criteria—95%+ of runs pass evaluation</li>
-<li>Variations are within acceptable bounds—minor differences don’t matter</li>
-<li>Behavior is predictable—similar inputs produce similar outputs</li>
-</ul>
-<hr>
-</section>
-<section id="signs-of-convergence" class="level3" data-number="18.7.2">
-<h3 data-number="18.7.2" class="anchored" data-anchor-id="signs-of-convergence"><span class="header-section-number">18.7.2</span> Signs of Convergence</h3>
-<ul>
-<li>Deviations become less frequent—errors are rare</li>
-<li>Refinements become smaller—adjustments are minor tweaks</li>
-<li>Evaluation scores stabilize—quality metrics stop improving significantly</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Stability emerges through iteration. It is not achieved instantly but develops over time.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="from-debugging-code-to-debugging-spec" class="level2" data-number="18.8">
-<h2 data-number="18.8" class="anchored" data-anchor-id="from-debugging-code-to-debugging-spec"><span class="header-section-number">18.8</span> From Debugging Code to Debugging Spec</h2>
-<p>The shift to iterative refinement represents a fundamental change in how we think about debugging and improvement.</p>
-<hr>
-<section id="in-traditional-programming" class="level3" data-number="18.8.1">
-<h3 data-number="18.8.1" class="anchored" data-anchor-id="in-traditional-programming"><span class="header-section-number">18.8.1</span> In Traditional Programming</h3>
-<ul>
-<li><strong>You debug code</strong>—find and fix errors in the implementation</li>
-<li><strong>Trace execution paths</strong>—follow the code to find where things go wrong</li>
-<li><strong>Fix logic errors</strong>—correct mistakes in the algorithm or control flow</li>
-</ul>
-<hr>
-</section>
-<section id="in-the-llm-paradigm" class="level3" data-number="18.8.2">
-<h3 data-number="18.8.2" class="anchored" data-anchor-id="in-the-llm-paradigm"><span class="header-section-number">18.8.2</span> In the LLM Paradigm</h3>
-<ul>
-<li><strong>You debug definitions</strong>—find and fix gaps in the specification</li>
-<li><strong>Clarify intent</strong>—make sure the goal is understood correctly</li>
-<li><strong>Adjust constraints</strong>—specify boundaries more precisely</li>
-</ul>
-<hr>
-</section>
-<section id="old-model" class="level3" data-number="18.8.3">
-<h3 data-number="18.8.3" class="anchored" data-anchor-id="old-model"><span class="header-section-number">18.8.3</span> Old Model</h3>
-<ul>
-<li>Fix logic errors—correct the implementation</li>
-<li>Trace execution paths—find where code goes wrong</li>
-<li>Optimize performance—make code run faster</li>
-</ul>
-<hr>
-</section>
-<section id="new-model" class="level3" data-number="18.8.4">
-<h3 data-number="18.8.4" class="anchored" data-anchor-id="new-model"><span class="header-section-number">18.8.4</span> New Model</h3>
-<ul>
-<li>Fix ambiguity—clarify what is meant</li>
-<li>Clarify intent—make sure goals are understood</li>
-<li>Adjust constraints—specify boundaries more precisely</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>The object of debugging has changed from code to definition.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="iteration-as-learning" class="level2" data-number="18.9">
-<h2 data-number="18.9" class="anchored" data-anchor-id="iteration-as-learning"><span class="header-section-number">18.9</span> Iteration as Learning</h2>
-<p>Each refinement cycle improves more than just the spec—it improves understanding:</p>
-<ul>
-<li><strong>The spec</strong>—becomes clearer and more complete</li>
-<li><strong>Your understanding of the problem</strong>—deepens with each iteration</li>
-<li><strong>The system’s behavior</strong>—becomes more predictable and reliable</li>
-</ul>
-<hr>
-<p>This creates a virtuous feedback loop:</p>
-<ul>
-<li><strong>Better understanding → better spec</strong>—as you learn more, you can define better</li>
-<li><strong>Better spec → better output</strong>—clearer definitions lead to better results</li>
-<li><strong>Better output → better understanding</strong>—seeing what works teaches you more</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Iteration is not repetition. It is progressive clarification and improvement.</p>
-</blockquote>
-<hr>
-</section>
-<section id="common-mistakes" class="level2" data-number="18.10">
-<h2 data-number="18.10" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">18.10</span> Common Mistakes</h2>
-<hr>
-<section id="treating-first-output-as-final" class="level3" data-number="18.10.1">
-<h3 data-number="18.10.1" class="anchored" data-anchor-id="treating-first-output-as-final"><span class="header-section-number">18.10.1</span> 1. Treating First Output as Final</h3>
-<ul>
-<li>Accepting early results—assuming the first version is good enough</li>
-<li>Skipping refinement—moving on without improving</li>
-<li>Settling for “good enough”—not pushing for excellence</li>
-</ul>
-<p><strong>Solution:</strong> Always assume the first version will need refinement. Plan for iteration from the start.</p>
-<hr>
-</section>
-<section id="fixing-symptoms-instead-of-causes" class="level3" data-number="18.10.2">
-<h3 data-number="18.10.2" class="anchored" data-anchor-id="fixing-symptoms-instead-of-causes"><span class="header-section-number">18.10.2</span> 2. Fixing Symptoms Instead of Causes</h3>
-<ul>
-<li>Adjusting outputs instead of spec—tweaking results without addressing root cause</li>
-<li>Adding patches instead of fixing definitions—applying band-aid solutions</li>
-<li>Treating symptoms rather than disease—addressing what you see, not what causes it</li>
-</ul>
-<p><strong>Solution:</strong> Always look upstream. When you see a problem, ask “what in the spec caused this?”</p>
-<hr>
-</section>
-<section id="lack-of-evaluation" class="level3" data-number="18.10.3">
-<h3 data-number="18.10.3" class="anchored" data-anchor-id="lack-of-evaluation"><span class="header-section-number">18.10.3</span> 3. Lack of Evaluation</h3>
-<ul>
-<li>No clear signal for improvement—can’t tell if changes help</li>
-<li>Subjective assessment—relying on gut feeling rather than data</li>
-<li>No baseline for comparison—don’t know if you’re getting better</li>
-</ul>
-<p><strong>Solution:</strong> Define explicit success criteria and measure consistently. Use data to guide refinement.</p>
-<hr>
-</section>
-<section id="overreacting-to-noise" class="level3" data-number="18.10.4">
-<h3 data-number="18.10.4" class="anchored" data-anchor-id="overreacting-to-noise"><span class="header-section-number">18.10.4</span> 4. Overreacting to Noise</h3>
-<ul>
-<li>Changing spec based on single outputs—treating outliers as patterns</li>
-<li>Making large changes for small issues—overcorrecting for minor problems</li>
-<li>Chasing random variation—trying to fix things that aren’t really problems</li>
-</ul>
-<p><strong>Solution:</strong> Look for patterns across multiple runs. Don’t change the spec based on single observations.</p>
-<hr>
-</section>
-</section>
-<section id="refinement-as-a-core-skill" class="level2" data-number="18.11">
-<h2 data-number="18.11" class="anchored" data-anchor-id="refinement-as-a-core-skill"><span class="header-section-number">18.11</span> Refinement as a Core Skill</h2>
-<p>Iterative refinement is not optional. It is central to Spec Engineering and effective system development.</p>
-<p>It requires:</p>
-<ul>
-<li><strong>Observation</strong>—carefully watching what the system actually does</li>
-<li><strong>Diagnosis</strong>—understanding why deviations occur</li>
-<li><strong>Controlled adjustment</strong>—making targeted, thoughtful changes</li>
-</ul>
-<p>Developing this skill takes practice, but it is essential for success in the LLM era.</p>
-<hr>
-</section>
-<section id="final-insight" class="level2" data-number="18.12">
-<h2 data-number="18.12" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">18.12</span> Final Insight</h2>
-<p>A good spec is not written once. It is discovered through iteration.</p>
-<p>The process of refinement is not a sign of failure—it is the path to success. Each iteration brings you closer to a specification that produces reliable, predictable results.</p>
-<hr>
-<blockquote class="blockquote">
-<p>The path to correctness is not direct. It is iterative.</p>
-</blockquote>
-<hr>
-</section>
-<section id="closing-statement" class="level2" data-number="18.13">
-<h2 data-number="18.13" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">18.13</span> Closing Statement</h2>
-<p>In the LLM era, programming is no longer about writing perfect code once. It is about refining imperfect definitions until they become reliable.</p>
-<blockquote class="blockquote">
-<p>You do not get the spec right the first time. You make it right over time.</p>
-</blockquote>
-<hr>
-</section>
-<section id="key-insight" class="level2" data-number="18.14">
-<h2 data-number="18.14" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">18.14</span> Key Insight</h2>
-<blockquote class="blockquote">
-<p>Spec refinement is an iterative process: Spec → Execution → Deviation → Refinement → Spec. Most issues originate in definition, not execution. Fix problems at the highest possible level by improving the spec.</p>
-</blockquote>
-</section>
-<section id="action-hint" class="level2" data-number="18.15">
-<h2 data-number="18.15" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">18.15</span> Action Hint</h2>
-<blockquote class="blockquote">
-<p>Plan for iteration from the start. Don’t expect your first spec to be perfect. Set up a systematic refinement process: execute, evaluate, identify deviations, refine spec, repeat. Keep track of changes and their effects to build understanding over time.</p>
+<p>每次迭代都使 Spec 更接近真实需求。规范的精化过程将猜测转化为确定性。</p>
 </blockquote>
 
 
@@ -1375,13 +1004,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-16.html" class="pagination-link" aria-label="Spec Agent">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span>
+      <a href="./chapter-16.html" class="pagination-link" aria-label="规格智能体（Spec Agent）">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-18.html" class="pagination-link" aria-label="From Spec to Instruction">
-        <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-18.html" class="pagination-link" aria-label="从 Spec 到指令（From Spec to Instruction）">
+        <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">从 Spec 到指令（From Spec to Instruction）</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

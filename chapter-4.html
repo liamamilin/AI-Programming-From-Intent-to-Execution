@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; The Minimal Loop – AI Programming: From Intent to Execution</title>
+<title>5&nbsp; 最小循环（The Minimal Loop） – AI Programming: From Intent to Execution</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,19 +37,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="./chapter-3.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-aa873432a3c62897e6c2091c0d30a948.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -250,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-4.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-4.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">最小循环（The Minimal Loop）</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -263,9 +265,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AI Programming: From Intent to Execution</a> 
         <div class="sidebar-tools-main">
@@ -283,211 +283,211 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">前言（Preface）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">转变：从编码到定义（The Shift: From Coding to Defining）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">新的瓶颈：定义（The New Bottleneck: Definition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">编程现在是什么？（What is Programming Now?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-4.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">最小循环（The Minimal Loop）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">意图：定义要做什么（Intent: Defining What to Do）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">规格说明：消除歧义（Spec: Eliminating Ambiguity）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">指令：使其可执行（Instruction: Making It Executable）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">评估与迭代（Evaluation &amp; Iteration）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">可能性空间（Possibility Space）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">从 Spec 到指令（From Spec to Instruction）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">指令设计（Instruction Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">工具使用与 API（Tool Use &amp; APIs）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">构建智能体系统（Building an Agent System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">构建聊天系统（Building a Chat System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">从理想到产品（From Idea to Product）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-31.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">编程即系统设计（Programming as System Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">语言即操作系统（Language as an Operating System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">人类 + AI 认知（Human + AI Cognition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">构建者的未来（The Future of Builders）</span></span></a>
   </div>
 </li>
     </ul>
@@ -500,34 +500,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#why-a-new-loop" id="toc-why-a-new-loop" class="nav-link active" data-scroll-target="#why-a-new-loop"><span class="header-section-number">5.1</span> Why a New Loop?</a></li>
-  <li><a href="#the-minimal-loop" id="toc-the-minimal-loop" class="nav-link" data-scroll-target="#the-minimal-loop"><span class="header-section-number">5.2</span> The Minimal Loop</a></li>
-  <li><a href="#overview-of-the-components" id="toc-overview-of-the-components" class="nav-link" data-scroll-target="#overview-of-the-components"><span class="header-section-number">5.3</span> Overview of the Components</a>
+  <li><a href="#为什么需要一个新循环" id="toc-为什么需要一个新循环" class="nav-link active" data-scroll-target="#为什么需要一个新循环"><span class="header-section-number">5.1</span> 为什么需要一个新循环？</a></li>
+  <li><a href="#最小循环the-minimal-loop" id="toc-最小循环the-minimal-loop" class="nav-link" data-scroll-target="#最小循环the-minimal-loop"><span class="header-section-number">5.2</span> 最小循环（The Minimal Loop）</a></li>
+  <li><a href="#组件概览overview-of-the-components" id="toc-组件概览overview-of-the-components" class="nav-link" data-scroll-target="#组件概览overview-of-the-components"><span class="header-section-number">5.3</span> 组件概览（Overview of the Components）</a>
   <ul class="collapse">
-  <li><a href="#intent-what-do-you-want" id="toc-intent-what-do-you-want" class="nav-link" data-scroll-target="#intent-what-do-you-want"><span class="header-section-number">5.3.1</span> Intent — What do you want?</a></li>
-  <li><a href="#spec-what-exactly-does-that-mean" id="toc-spec-what-exactly-does-that-mean" class="nav-link" data-scroll-target="#spec-what-exactly-does-that-mean"><span class="header-section-number">5.3.2</span> Spec — What exactly does that mean?</a></li>
-  <li><a href="#instruction-how-should-the-system-execute" id="toc-instruction-how-should-the-system-execute" class="nav-link" data-scroll-target="#instruction-how-should-the-system-execute"><span class="header-section-number">5.3.3</span> Instruction — How should the system execute?</a></li>
-  <li><a href="#execution-let-the-system-run" id="toc-execution-let-the-system-run" class="nav-link" data-scroll-target="#execution-let-the-system-run"><span class="header-section-number">5.3.4</span> Execution — Let the system run</a></li>
-  <li><a href="#evaluation-is-the-result-correct" id="toc-evaluation-is-the-result-correct" class="nav-link" data-scroll-target="#evaluation-is-the-result-correct"><span class="header-section-number">5.3.5</span> Evaluation — Is the result correct?</a></li>
+  <li><a href="#意图intent你想要什么" id="toc-意图intent你想要什么" class="nav-link" data-scroll-target="#意图intent你想要什么"><span class="header-section-number">5.3.1</span> 意图（Intent）——你想要什么？</a></li>
+  <li><a href="#规格说明spec这到底是什么意思" id="toc-规格说明spec这到底是什么意思" class="nav-link" data-scroll-target="#规格说明spec这到底是什么意思"><span class="header-section-number">5.3.2</span> 规格说明（Spec）——这到底是什么意思？</a></li>
+  <li><a href="#指令instruction如何执行" id="toc-指令instruction如何执行" class="nav-link" data-scroll-target="#指令instruction如何执行"><span class="header-section-number">5.3.3</span> 指令（Instruction）——如何执行？</a></li>
+  <li><a href="#执行execution做它" id="toc-执行execution做它" class="nav-link" data-scroll-target="#执行execution做它"><span class="header-section-number">5.3.4</span> 执行（Execution）——做它</a></li>
+  <li><a href="#评估evaluation我们做对了吗" id="toc-评估evaluation我们做对了吗" class="nav-link" data-scroll-target="#评估evaluation我们做对了吗"><span class="header-section-number">5.3.5</span> 评估（Evaluation）——我们做对了吗？</a></li>
   </ul></li>
-  <li><a href="#the-loop-is-iterative" id="toc-the-loop-is-iterative" class="nav-link" data-scroll-target="#the-loop-is-iterative"><span class="header-section-number">5.4</span> The Loop is Iterative</a></li>
-  <li><a href="#where-errors-actually-come-from" id="toc-where-errors-actually-come-from" class="nav-link" data-scroll-target="#where-errors-actually-come-from"><span class="header-section-number">5.5</span> Where Errors Actually Come From</a>
-  <ul class="collapse">
-  <li><a href="#intent-errors" id="toc-intent-errors" class="nav-link" data-scroll-target="#intent-errors"><span class="header-section-number">5.5.1</span> 1. Intent Errors</a></li>
-  <li><a href="#spec-errors" id="toc-spec-errors" class="nav-link" data-scroll-target="#spec-errors"><span class="header-section-number">5.5.2</span> 2. Spec Errors</a></li>
-  <li><a href="#instruction-errors" id="toc-instruction-errors" class="nav-link" data-scroll-target="#instruction-errors"><span class="header-section-number">5.5.3</span> 3. Instruction Errors</a></li>
-  </ul></li>
-  <li><a href="#a-new-definition-of-programming" id="toc-a-new-definition-of-programming" class="nav-link" data-scroll-target="#a-new-definition-of-programming"><span class="header-section-number">5.6</span> A New Definition of Programming</a></li>
-  <li><a href="#implications" id="toc-implications" class="nav-link" data-scroll-target="#implications"><span class="header-section-number">5.7</span> Implications</a>
-  <ul class="collapse">
-  <li><a href="#the-core-skill-changes" id="toc-the-core-skill-changes" class="nav-link" data-scroll-target="#the-core-skill-changes"><span class="header-section-number">5.7.1</span> 1. The Core Skill Changes</a></li>
-  <li><a href="#the-role-of-code-changes" id="toc-the-role-of-code-changes" class="nav-link" data-scroll-target="#the-role-of-code-changes"><span class="header-section-number">5.7.2</span> 2. The Role of Code Changes</a></li>
-  <li><a href="#iteration-becomes-central" id="toc-iteration-becomes-central" class="nav-link" data-scroll-target="#iteration-becomes-central"><span class="header-section-number">5.7.3</span> 3. Iteration Becomes Central</a></li>
-  </ul></li>
-  <li><a href="#mental-model-upgrade" id="toc-mental-model-upgrade" class="nav-link" data-scroll-target="#mental-model-upgrade"><span class="header-section-number">5.8</span> Mental Model Upgrade</a></li>
-  <li><a href="#final-summary" id="toc-final-summary" class="nav-link" data-scroll-target="#final-summary"><span class="header-section-number">5.9</span> Final Summary</a></li>
-  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">5.10</span> Key Insight</a></li>
-  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">5.11</span> Action Hint</a></li>
+  <li><a href="#循环如何运作how-the-loop-works" id="toc-循环如何运作how-the-loop-works" class="nav-link" data-scroll-target="#循环如何运作how-the-loop-works"><span class="header-section-number">5.4</span> 循环如何运作（How the Loop Works）</a></li>
+  <li><a href="#为什么这个循环是最小的why-this-loop-is-minimal" id="toc-为什么这个循环是最小的why-this-loop-is-minimal" class="nav-link" data-scroll-target="#为什么这个循环是最小的why-this-loop-is-minimal"><span class="header-section-number">5.5</span> 为什么这个循环是”最小”的（Why This Loop is “Minimal”）</a></li>
+  <li><a href="#最小循环的实际应用the-minimal-loop-in-practice" id="toc-最小循环的实际应用the-minimal-loop-in-practice" class="nav-link" data-scroll-target="#最小循环的实际应用the-minimal-loop-in-practice"><span class="header-section-number">5.6</span> 最小循环的实际应用（The Minimal Loop in Practice）</a></li>
   </ul>
 </nav>
     </div>
@@ -537,7 +522,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">最小循环（The Minimal Loop）</span></h1>
 </div>
 
 
@@ -554,264 +539,106 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="why-a-new-loop" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="why-a-new-loop"><span class="header-section-number">5.1</span> Why a New Loop?</h2>
-<p>In traditional software development, the development process is often described through a familiar sequence:</p>
-<pre><code>Design → Implement → Debug → Deploy</code></pre>
-<p>This model served developers well for decades. The core difficulty in this model was <strong>implementation</strong>—the challenge of translating ideas and designs into working code that executed correctly. Most tools, methodologies, and best practices focused on alleviating this implementation burden.</p>
-<p>However, in the LLM era, this assumption no longer holds. Several fundamental changes have occurred:</p>
+<section id="为什么需要一个新循环" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="为什么需要一个新循环"><span class="header-section-number">5.1</span> 为什么需要一个新循环？</h2>
+<p>在传统软件开发中，开发过程通常通过一个熟悉的序列来描述：</p>
+<pre><code>设计 → 实现 → 调试 → 部署</code></pre>
+<p>这个模型为开发者服务了几十年。这个模型中的核心困难是<strong>实现</strong>——将想法和设计转化为正确执行的可运行代码的挑战。大多数工具、方法论和最佳实践都专注于减轻这种实现负担。</p>
+<p>但在 LLM 时代，这个假设不再成立。几个根本性的变化已经发生：</p>
 <ul>
-<li><strong>Code can be generated</strong>—AI systems can write code from natural language descriptions</li>
-<li><strong>Patterns can be reused automatically</strong>—systems can identify and apply established patterns</li>
-<li><strong>Execution can be delegated to AI</strong>—agents can handle multi-step workflows autonomously</li>
+<li>代码可以被生成——AI 系统可以从自然语言描述中编写代码</li>
+<li>模式可以自动复用——系统可以识别和应用已有的模式</li>
+<li>执行可以被委托给 AI——智能体可以自主处理多步骤工作流</li>
 </ul>
-<p>As a result, the bottleneck has shifted. The challenge is no longer <em>how to implement</em>, but <em>how to define clearly what should be implemented</em>. The implementation layer has been abstracted away, revealing a new layer of difficulty that was previously hidden.</p>
+<p>结果，瓶颈已经转移。挑战不再是<em>如何实现</em>，而是<em>如何清晰地定义应该实现什么</em>。实现层已经被抽象掉了，揭示了一个之前被隐藏的新难度层。</p>
 <blockquote class="blockquote">
-<p>This shift requires a new fundamental loop—a new mental model for programming.</p>
+<p>这种转变需要一个全新的基本循环——一个编程的新心智模型。</p>
 </blockquote>
 <hr>
 </section>
-<section id="the-minimal-loop" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="the-minimal-loop"><span class="header-section-number">5.2</span> The Minimal Loop</h2>
-<p>At its core, programming in the LLM era can be reduced to a simple, elegant loop:</p>
-<pre><code>Intent → Spec → Instruction → Execution → Evaluation</code></pre>
-<p>This loop is called “minimal” because:</p>
+<section id="最小循环the-minimal-loop" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="最小循环the-minimal-loop"><span class="header-section-number">5.2</span> 最小循环（The Minimal Loop）</h2>
+<p>核心上，LLM 时代的编程可以简化为一个简单、优雅的循环：</p>
+<pre><code>意图（Intent）→ 规格说明（Spec）→ 指令（Instruction）→ 执行（Execution）→ 评估（Evaluation）</code></pre>
+<p>这个循环被称为”最小”是因为：</p>
 <ul>
-<li><strong>Each component is necessary</strong>—you cannot remove any component without breaking the loop</li>
-<li><strong>No component can be reduced</strong>—each component plays an essential role</li>
-<li><strong>Together, they form a complete system</strong>—the loop is self-contained and sufficient</li>
+<li><strong>每个组件都是必要的</strong>——你不能移除任何组件而不破坏循环</li>
+<li><strong>没有组件可以被简化</strong>——每个组件都扮演着必不可少的角色</li>
+<li><strong>它们共同形成一个完整的系统</strong>——循环是自包含且足够的</li>
 </ul>
-<p>Despite its simplicity, this loop captures the essence of programming in the new paradigm. Let’s examine each component in detail.</p>
+<p>尽管它很简单，但这个循环捕捉了新范式中编程的本质。</p>
 <hr>
 </section>
-<section id="overview-of-the-components" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="overview-of-the-components"><span class="header-section-number">5.3</span> Overview of the Components</h2>
-<section id="intent-what-do-you-want" class="level3" data-number="5.3.1">
-<h3 data-number="5.3.1" class="anchored" data-anchor-id="intent-what-do-you-want"><span class="header-section-number">5.3.1</span> Intent — What do you want?</h3>
-<p>Intent is the <strong>human-level definition of a goal</strong>. It represents the starting point of any programming effort—the desire to create something or solve a problem.</p>
-<p>Intent answers fundamental questions:</p>
-<ul>
-<li>What are we trying to achieve?</li>
-<li>What change do we want to create in the world?</li>
-<li>What does success look like from a human perspective?</li>
-</ul>
-<p>Intent is inherently:</p>
-<ul>
-<li><strong>Semantic</strong>—it carries meaning and intention, not just structure</li>
-<li><strong>Contextual</strong>—it depends on the situation, environment, and stakeholders</li>
-<li><strong>Often ambiguous at first</strong>—it starts as a vague idea that needs clarification</li>
-</ul>
-<p><strong>Example (raw intent):</strong> “Build a system that allows users to chat with an AI assistant.”</p>
-<p>This intent captures the general idea but lacks specificity. It needs to be transformed into something more precise before it can guide execution.</p>
+<section id="组件概览overview-of-the-components" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="组件概览overview-of-the-components"><span class="header-section-number">5.3</span> 组件概览（Overview of the Components）</h2>
+<section id="意图intent你想要什么" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="意图intent你想要什么"><span class="header-section-number">5.3.1</span> 意图（Intent）——你想要什么？</h3>
+<p>意图是<strong>目标的人类级定义</strong>。它代表任何编程努力的起点——创造某物或解决问题的愿望。</p>
+<p>意图回答基本问题：我们试图达成什么？我们想在世界中创造什么改变？从人类的角度看，成功是什么样？</p>
+<p>意图本质上是语义的、上下文的、开始时通常是模糊的。</p>
+<p><strong>原始意图示例：</strong>”构建一个允许用户与 AI 助手聊天的系统。”</p>
+<p>这个意图捕捉了总体想法但缺乏具体性。它需要在指导执行之前被转化为更精确的东西。</p>
+</section>
+<section id="规格说明spec这到底是什么意思" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="规格说明spec这到底是什么意思"><span class="header-section-number">5.3.2</span> 规格说明（Spec）——这到底是什么意思？</h3>
+<p>规格说明将意图转化为一个<strong>结构化的、无歧义的定义</strong>。它是人类思维和机器执行之间的桥梁。</p>
+<p>一个 Spec 定义：<strong>输入</strong>、<strong>输出</strong>、<strong>约束</strong>、<strong>成功标准</strong>。</p>
+<p>Spec 通过使隐式假设显式化、模糊概念精确化来消除歧义。</p>
+<p><strong>Spec 示例：</strong> - 输入：用户文本消息，最大 2000 字符 - 输出：AI 回复，50-500 字符的连贯文本 - 约束：回复必须引用提供的信息；不能声称有个人意见；必须回复原始语言 - 成功标准：用户在 80% 的情况下评价回复为有用；回复时间 &lt; 2 秒</p>
+</section>
+<section id="指令instruction如何执行" class="level3" data-number="5.3.3">
+<h3 data-number="5.3.3" class="anchored" data-anchor-id="指令instruction如何执行"><span class="header-section-number">5.3.3</span> 指令（Instruction）——如何执行？</h3>
+<p>指令将 Spec 转化为系统可以遵循的<strong>可执行协议</strong>。它弥合了定义与执行之间的差距。</p>
+<p>虽然 Spec 定义”什么”，指令定义”如何”——以系统和工具可以处理的方式。</p>
+<p>指令的常见形式包括：提示词、API 调用、工作流定义、代码生成命令。</p>
+</section>
+<section id="执行execution做它" class="level3" data-number="5.3.4">
+<h3 data-number="5.3.4" class="anchored" data-anchor-id="执行execution做它"><span class="header-section-number">5.3.4</span> 执行（Execution）——做它</h3>
+<p>执行是系统实际执行工作的环节。</p>
+<p>这不再需要人类直接参与。它由 AI 模型、智能体系统和自动化工具链处理。</p>
+</section>
+<section id="评估evaluation我们做对了吗" class="level3" data-number="5.3.5">
+<h3 data-number="5.3.5" class="anchored" data-anchor-id="评估evaluation我们做对了吗"><span class="header-section-number">5.3.5</span> 评估（Evaluation）——我们做对了吗？</h3>
+<p>评估将执行结果与 Spec 中定义的成功标准进行比较。</p>
+<p>它回答：系统是否做了我们要求的？输出是否满足 Spec 中定义的约束？如果不是，需要改变什么——Spec？指令？还是我们对问题的理解？</p>
 <hr>
 </section>
-<section id="spec-what-exactly-does-that-mean" class="level3" data-number="5.3.2">
-<h3 data-number="5.3.2" class="anchored" data-anchor-id="spec-what-exactly-does-that-mean"><span class="header-section-number">5.3.2</span> Spec — What exactly does that mean?</h3>
-<p>Spec (Specification) transforms intent into a <strong>structured, unambiguous definition</strong>. It is the bridge between human thinking and machine execution.</p>
-<p>A spec defines:</p>
-<ul>
-<li><strong>Inputs</strong>—what information the system receives</li>
-<li><strong>Outputs</strong>—what the system produces</li>
-<li><strong>Constraints</strong>—what boundaries and limitations the system must respect</li>
-<li><strong>Success criteria</strong>—how we determine whether the system works correctly</li>
-</ul>
-<p>The spec removes ambiguity by making implicit assumptions explicit and vague concepts precise.</p>
-<p><strong>Example (partial spec):</strong> - Users can send messages through a web interface - The system returns responses within 2 seconds - Conversation history is preserved across sessions - Responses should be relevant to the conversation context - The system should handle at least 100 concurrent users</p>
+</section>
+<section id="循环如何运作how-the-loop-works" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="循环如何运作how-the-loop-works"><span class="header-section-number">5.4</span> 循环如何运作（How the Loop Works）</h2>
+<p>实际流程如下：</p>
+<ol type="1">
+<li>你从一个<strong>意图</strong>开始——一个你想要实现的愿望或想法</li>
+<li>你通过创建<strong>Spec</strong>使意图精确——指定输入、输出、约束和成功标准</li>
+<li>你将 Spec 转化为<strong>指令</strong>——系统可以执行的东西</li>
+<li>系统<strong>执行</strong>指令并产生结果</li>
+<li>你<strong>评估</strong>结果——它满足 Spec 吗？</li>
+</ol>
+<p>如果结果令人满意，循环就完成了。如果不满意，你回到前一个阶段——通常是 Spec 或意图——精化你的定义并重复。</p>
 <blockquote class="blockquote">
-<p>Spec is where thinking becomes precise. It is the translation layer between human intent and machine understanding.</p>
+<p>关键洞察：循环中的大多数工作在定义阶段完成（Intent、Spec），而不是执行阶段。</p>
 </blockquote>
 <hr>
 </section>
-<section id="instruction-how-should-the-system-execute" class="level3" data-number="5.3.3">
-<h3 data-number="5.3.3" class="anchored" data-anchor-id="instruction-how-should-the-system-execute"><span class="header-section-number">5.3.3</span> Instruction — How should the system execute?</h3>
-<p>Instruction converts the specification into a <strong>machine-executable form</strong>. It is the protocol that tells the system how to act.</p>
-<p>Instruction includes:</p>
+<section id="为什么这个循环是最小的why-this-loop-is-minimal" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="为什么这个循环是最小的why-this-loop-is-minimal"><span class="header-section-number">5.5</span> 为什么这个循环是”最小”的（Why This Loop is “Minimal”）</h2>
 <ul>
-<li><strong>Task definition</strong>—what specific operation should be performed</li>
-<li><strong>Input format</strong>—how inputs should be structured and provided</li>
-<li><strong>Output structure</strong>—what format outputs should take</li>
-<li><strong>Constraints for execution</strong>—what rules must be followed during execution</li>
+<li><strong>没有 Intent</strong>：你不知道你在努力实现什么——工作没有方向</li>
+<li><strong>没有 Spec</strong>：意图保持模糊——执行无法可靠地产生正确结果</li>
+<li><strong>没有 Instruction</strong>：Spec 无法转化为行动——系统不知道做什么</li>
+<li><strong>没有 Execution</strong>：定义仍然只是定义——什么都不会发生</li>
+<li><strong>没有 Evaluation</strong>：你永远不知道系统是否做对了——无法学习和改进</li>
 </ul>
-<p>This is not merely a prompt or a natural language description. It is an <strong>execution protocol</strong>—a precise set of instructions that a system can follow deterministically.</p>
-<p><strong>Example:</strong> - Task: Generate a response based on user input and conversation history - Input: <code>{message: string, history: Array&lt;{role, content}&gt;}</code> - Output: <code>{response: string, confidence: number}</code> - Constraints: - Response length: 50-200 words - Response must reference relevant context from history - Confidence score must be between 0 and 1 - Response should be polite and helpful</p>
+<p>每个组件都是不可或缺的。移除任何一个，循环就会断裂。</p>
 <hr>
 </section>
-<section id="execution-let-the-system-run" class="level3" data-number="5.3.4">
-<h3 data-number="5.3.4" class="anchored" data-anchor-id="execution-let-the-system-run"><span class="header-section-number">5.3.4</span> Execution — Let the system run</h3>
-<p>Execution is where the system actually does work. It is performed by:</p>
-<ul>
-<li><strong>LLMs</strong>—language models that generate text based on instructions</li>
-<li><strong>Agents</strong>—autonomous systems that can reason and act</li>
-<li><strong>Toolchains</strong>—orchestrated systems that combine multiple capabilities</li>
-</ul>
-<p>At this stage, the human is no longer implementing. The system is producing results based on the definitions provided.</p>
-<p>The key insight is that execution is now a <strong>derived activity</strong>—it follows from the definitions provided in the earlier stages. The better those definitions, the better the execution.</p>
-<hr>
-</section>
-<section id="evaluation-is-the-result-correct" class="level3" data-number="5.3.5">
-<h3 data-number="5.3.5" class="anchored" data-anchor-id="evaluation-is-the-result-correct"><span class="header-section-number">5.3.5</span> Evaluation — Is the result correct?</h3>
-<p>Evaluation determines whether the output satisfies the original intent and specification. It is the mechanism that closes the loop.</p>
-<p>Evaluation answers critical questions:</p>
-<ul>
-<li>Did we achieve the goal we set out to achieve?</li>
-<li>Does the result meet all the constraints we specified?</li>
-<li>Is the output acceptable for the intended use case?</li>
-</ul>
-<p>Evaluation can take multiple forms:</p>
-<ul>
-<li><strong>Human judgment</strong>—manual review by a person</li>
-<li><strong>Rule-based checks</strong>—automated validation against explicit criteria</li>
-<li><strong>Automated metrics</strong>—quantitative measures of quality</li>
-<li><strong>Model-based evaluation</strong>—using another AI to assess the output</li>
-</ul>
-<p>Without evaluation, there is no way to know whether the system is working correctly, and no basis for improvement.</p>
-<hr>
-</section>
-</section>
-<section id="the-loop-is-iterative" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="the-loop-is-iterative"><span class="header-section-number">5.4</span> The Loop is Iterative</h2>
-<p>This process is not linear. It is a loop—a cycle that repeats until the system produces satisfactory results.</p>
-<p>If the result is not satisfactory, the issue is rarely in execution. AI systems are generally good at following instructions. The issue is usually in:</p>
-<ul>
-<li><strong>Unclear intent</strong>—the goal was not properly defined</li>
-<li><strong>Incomplete spec</strong>—important constraints or requirements were missing</li>
-<li><strong>Weak instruction</strong>—the execution protocol was not precise enough</li>
-</ul>
-<p>Therefore:</p>
+<section id="最小循环的实际应用the-minimal-loop-in-practice" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="最小循环的实际应用the-minimal-loop-in-practice"><span class="header-section-number">5.6</span> 最小循环的实际应用（The Minimal Loop in Practice）</h2>
+<p><strong>传统方法：</strong> 1. 在舒适区写代码 2. 测试时发现与需求不符 3. 重写代码 4. 重复直到看起来正确</p>
+<p><strong>最小循环方法：</strong> 1. 写下你想实现的目标（Intent） 2. 精化为结构化定义（Spec） 3. 定义执行协议（Instruction） 4. 让 AI 执行并产生结果 5. 对照 Spec 评估结果 6. 如果不匹配，精化定义并重复</p>
+<p>区别是根本性的。传统方法将精力集中在实现上。最小循环方法将精力集中在定义上。</p>
 <blockquote class="blockquote">
-<p>Programming becomes the process of refining definitions.</p>
-</blockquote>
-<p>The loop evolves as follows:</p>
-<pre><code>Intent → Spec → Instruction → Execution → Evaluation
-                      ↓
-                  Refinement</code></pre>
-<p>Each iteration sharpens the definitions, moving the system closer to producing the desired outcome.</p>
-<hr>
-</section>
-<section id="where-errors-actually-come-from" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="where-errors-actually-come-from"><span class="header-section-number">5.5</span> Where Errors Actually Come From</h2>
-<p>In traditional programming, errors were primarily in the code—in the implementation. In the LLM era, errors shift to earlier stages:</p>
-<section id="intent-errors" class="level3" data-number="5.5.1">
-<h3 data-number="5.5.1" class="anchored" data-anchor-id="intent-errors"><span class="header-section-number">5.5.1</span> 1. Intent Errors</h3>
-<ul>
-<li><strong>The goal is unclear</strong>—the problem is not well understood</li>
-<li><strong>The problem is misunderstood</strong>—the intent doesn’t match the real need</li>
-<li><strong>Stakeholder needs are misaligned</strong>—different people want different things</li>
-</ul>
-<p>Intent errors are the most fundamental and hardest to detect. If you’re solving the wrong problem, even perfect execution won’t help.</p>
-</section>
-<section id="spec-errors" class="level3" data-number="5.5.2">
-<h3 data-number="5.5.2" class="anchored" data-anchor-id="spec-errors"><span class="header-section-number">5.5.2</span> 2. Spec Errors</h3>
-<ul>
-<li><strong>Missing constraints</strong>—important boundaries were not specified</li>
-<li><strong>Ambiguous definitions</strong>—terms were used without clear meaning</li>
-<li><strong>Incomplete structure</strong>—required components were left out</li>
-</ul>
-<p>Spec errors are common because it’s hard to anticipate every requirement and constraint.</p>
-</section>
-<section id="instruction-errors" class="level3" data-number="5.5.3">
-<h3 data-number="5.5.3" class="anchored" data-anchor-id="instruction-errors"><span class="header-section-number">5.5.3</span> 3. Instruction Errors</h3>
-<ul>
-<li><strong>Poorly defined inputs/outputs</strong>—the data structures are not clear</li>
-<li><strong>Weak constraints</strong>—the boundaries are too loose or too tight</li>
-<li><strong>Inconsistent formatting</strong>—the instruction is not structured properly</li>
-</ul>
-<p>Instruction errors are often easier to fix than spec or intent errors, but they can still cause significant problems.</p>
-<blockquote class="blockquote">
-<p>Most failures are not execution failures.<br>
-They are definition failures.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="a-new-definition-of-programming" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="a-new-definition-of-programming"><span class="header-section-number">5.6</span> A New Definition of Programming</h2>
-<p>From this perspective, we can redefine programming:</p>
-<blockquote class="blockquote">
-<p>The process of transforming an intent into a structured specification, and then into executable instructions that produce verifiable results.</p>
-</blockquote>
-<p>Or more concisely:</p>
-<blockquote class="blockquote">
-<p>Programming is the act of defining systems.</p>
-</blockquote>
-<p>This definition emphasizes:</p>
-<ul>
-<li><strong>Definition</strong> as the primary activity</li>
-<li><strong>Transformation</strong> as the core process</li>
-<li><strong>Verification</strong> as the essential outcome</li>
-</ul>
-<p>It moves away from code as the central artifact and toward specification as the central artifact.</p>
-<hr>
-</section>
-<section id="implications" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="implications"><span class="header-section-number">5.7</span> Implications</h2>
-<p>This shift has several important implications for how we approach programming:</p>
-<section id="the-core-skill-changes" class="level3" data-number="5.7.1">
-<h3 data-number="5.7.1" class="anchored" data-anchor-id="the-core-skill-changes"><span class="header-section-number">5.7.1</span> 1. The Core Skill Changes</h3>
-<p><strong>From:</strong> - Writing code efficiently - Debugging implementation errors - Optimizing performance</p>
-<p><strong>To:</strong> - Defining problems clearly - Structuring specifications precisely - Designing evaluation criteria thoughtfully</p>
-<p>The skills that differentiate programmers are no longer primarily technical implementation skills. They are conceptual and analytical skills related to definition and design.</p>
-<hr>
-</section>
-<section id="the-role-of-code-changes" class="level3" data-number="5.7.2">
-<h3 data-number="5.7.2" class="anchored" data-anchor-id="the-role-of-code-changes"><span class="header-section-number">5.7.2</span> 2. The Role of Code Changes</h3>
-<p>Code becomes:</p>
-<ul>
-<li>An implementation detail—a concern that can often be automated</li>
-<li>A byproduct of specification—something that emerges from good definition</li>
-<li>Less visible and less important in the daily work of programmers</li>
-</ul>
-<p>Programmers spend less time writing code and more time writing specifications.</p>
-<hr>
-</section>
-<section id="iteration-becomes-central" class="level3" data-number="5.7.3">
-<h3 data-number="5.7.3" class="anchored" data-anchor-id="iteration-becomes-central"><span class="header-section-number">5.7.3</span> 3. Iteration Becomes Central</h3>
-<p><strong>Instead of:</strong> - Writing once, debugging later—a linear process</p>
-<p><strong>We now have:</strong> - Define → Execute → Evaluate → Refine—a cyclical process</p>
-<p>The focus shifts from getting it right the first time to converging on the right definition through iteration.</p>
-<hr>
-</section>
-</section>
-<section id="mental-model-upgrade" class="level2" data-number="5.8">
-<h2 data-number="5.8" class="anchored" data-anchor-id="mental-model-upgrade"><span class="header-section-number">5.8</span> Mental Model Upgrade</h2>
-<p>To work effectively in this paradigm, you must adopt a new mental model:</p>
-<ul>
-<li><strong>Think in terms of systems</strong>, not scripts</li>
-<li><strong>Think in terms of definitions</strong>, not implementations</li>
-<li><strong>Think in terms of loops</strong>, not linear pipelines</li>
-</ul>
-<p>This mental model shift is not optional—it is necessary for effective work in the LLM era. Programmers who cling to the old model will find themselves increasingly ineffective.</p>
-<hr>
-</section>
-<section id="final-summary" class="level2" data-number="5.9">
-<h2 data-number="5.9" class="anchored" data-anchor-id="final-summary"><span class="header-section-number">5.9</span> Final Summary</h2>
-<p>The Minimal Loop is the foundation of programming in the LLM era:</p>
-<pre><code>Intent → Spec → Instruction → Execution → Evaluation</code></pre>
-<p>Each stage transforms the problem into a more structured and executable form:</p>
-<ul>
-<li><strong>Intent</strong> captures the human goal</li>
-<li><strong>Spec</strong> makes it precise and structured</li>
-<li><strong>Instruction</strong> makes it executable</li>
-<li><strong>Execution</strong> produces the result</li>
-<li><strong>Evaluation</strong> verifies correctness and drives improvement</li>
-</ul>
-<p>The key insight is simple but profound:</p>
-<blockquote class="blockquote">
-<p>The quality of the output is determined by the clarity of the definition.</p>
-</blockquote>
-<p>Once this is understood, programming is no longer about controlling machines through precise instructions. It becomes about <strong>precisely defining reality so that machines can act on it</strong>.</p>
-<hr>
-</section>
-<section id="key-insight" class="level2" data-number="5.10">
-<h2 data-number="5.10" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">5.10</span> Key Insight</h2>
-<blockquote class="blockquote">
-<p>Programming in the LLM era follows a minimal loop: Intent → Spec → Instruction → Execution → Evaluation. Each stage transforms the problem into a more executable form, with quality determined by definition clarity.</p>
-</blockquote>
-</section>
-<section id="action-hint" class="level2" data-number="5.11">
-<h2 data-number="5.11" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">5.11</span> Action Hint</h2>
-<blockquote class="blockquote">
-<p>For your next project, explicitly work through each stage of the loop. Write down your intent, create a detailed spec, design the instruction, execute it, and evaluate the results. Don’t skip stages—each is essential for quality.</p>
+<p>在 LLM 时代，编程的每一次努力都应该遵循这个循环。它是引导所有其他活动的元模式。</p>
 </blockquote>
 
 
@@ -1233,13 +1060,13 @@ They are definition failures.</p>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-3.html" class="pagination-link" aria-label="What is Programming Now?">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span>
+      <a href="./chapter-3.html" class="pagination-link" aria-label="编程现在是什么？（What is Programming Now?）">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">编程现在是什么？（What is Programming Now?）</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-5.html" class="pagination-link" aria-label="Intent: Defining What to Do">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-5.html" class="pagination-link" aria-label="意图：定义要做什么（Intent: Defining What to Do）">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">意图：定义要做什么（Intent: Defining What to Do）</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

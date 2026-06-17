@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>12&nbsp; Composition – AI Programming: From Intent to Execution</title>
+<title>12&nbsp; 组合（Composition） – AI Programming: From Intent to Execution</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,19 +37,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="./chapter-10.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-aa873432a3c62897e6c2091c0d30a948.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -250,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-11.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-11.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -263,9 +265,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AI Programming: From Intent to Execution</a> 
         <div class="sidebar-tools-main">
@@ -283,211 +283,211 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">前言（Preface）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">转变：从编码到定义（The Shift: From Coding to Defining）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">新的瓶颈：定义（The New Bottleneck: Definition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">编程现在是什么？（What is Programming Now?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">最小循环（The Minimal Loop）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">意图：定义要做什么（Intent: Defining What to Do）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">规格说明：消除歧义（Spec: Eliminating Ambiguity）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">指令：使其可执行（Instruction: Making It Executable）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">评估与迭代（Evaluation &amp; Iteration）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">可能性空间（Possibility Space）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-11.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">从 Spec 到指令（From Spec to Instruction）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">指令设计（Instruction Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">工具使用与 API（Tool Use &amp; APIs）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">构建智能体系统（Building an Agent System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">构建聊天系统（Building a Chat System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">从理想到产品（From Idea to Product）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-31.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">编程即系统设计（Programming as System Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">语言即操作系统（Language as an Operating System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">人类 + AI 认知（Human + AI Cognition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">构建者的未来（The Future of Builders）</span></span></a>
   </div>
 </li>
     </ul>
@@ -500,57 +500,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#from-structure-to-system" id="toc-from-structure-to-system" class="nav-link active" data-scroll-target="#from-structure-to-system"><span class="header-section-number">12.1</span> From Structure to System</a></li>
-  <li><a href="#what-is-composition" id="toc-what-is-composition" class="nav-link" data-scroll-target="#what-is-composition"><span class="header-section-number">12.2</span> What is Composition?</a></li>
-  <li><a href="#capability-as-a-unit" id="toc-capability-as-a-unit" class="nav-link" data-scroll-target="#capability-as-a-unit"><span class="header-section-number">12.3</span> Capability as a Unit</a>
+  <li><a href="#从结构到系统" id="toc-从结构到系统" class="nav-link active" data-scroll-target="#从结构到系统"><span class="header-section-number">12.1</span> 从结构到系统</a></li>
+  <li><a href="#什么是组合what-is-composition" id="toc-什么是组合what-is-composition" class="nav-link" data-scroll-target="#什么是组合what-is-composition"><span class="header-section-number">12.2</span> 什么是组合？（What is Composition?）</a></li>
+  <li><a href="#能力作为单元capability-as-a-unit" id="toc-能力作为单元capability-as-a-unit" class="nav-link" data-scroll-target="#能力作为单元capability-as-a-unit"><span class="header-section-number">12.3</span> 能力作为单元（Capability as a Unit）</a></li>
+  <li><a href="#组合模式composition-patterns" id="toc-组合模式composition-patterns" class="nav-link" data-scroll-target="#组合模式composition-patterns"><span class="header-section-number">12.4</span> 组合模式（Composition Patterns）</a>
   <ul class="collapse">
-  <li><a href="#what-is-a-capability" id="toc-what-is-a-capability" class="nav-link" data-scroll-target="#what-is-a-capability"><span class="header-section-number">12.3.1</span> What is a Capability?</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">12.3.2</span> Example</a></li>
+  <li><a href="#顺序组合" id="toc-顺序组合" class="nav-link" data-scroll-target="#顺序组合"><span class="header-section-number">12.4.1</span> 顺序组合</a></li>
+  <li><a href="#并行组合" id="toc-并行组合" class="nav-link" data-scroll-target="#并行组合"><span class="header-section-number">12.4.2</span> 并行组合</a></li>
+  <li><a href="#条件组合" id="toc-条件组合" class="nav-link" data-scroll-target="#条件组合"><span class="header-section-number">12.4.3</span> 条件组合</a></li>
+  <li><a href="#层级组合" id="toc-层级组合" class="nav-link" data-scroll-target="#层级组合"><span class="header-section-number">12.4.4</span> 层级组合</a></li>
   </ul></li>
-  <li><a href="#from-components-to-systems" id="toc-from-components-to-systems" class="nav-link" data-scroll-target="#from-components-to-systems"><span class="header-section-number">12.4</span> From Components to Systems</a>
-  <ul class="collapse">
-  <li><a href="#example-chat-system" id="toc-example-chat-system" class="nav-link" data-scroll-target="#example-chat-system"><span class="header-section-number">12.4.1</span> Example: Chat System</a></li>
-  <li><a href="#composition" id="toc-composition" class="nav-link" data-scroll-target="#composition"><span class="header-section-number">12.4.2</span> Composition</a></li>
-  </ul></li>
-  <li><a href="#types-of-composition" id="toc-types-of-composition" class="nav-link" data-scroll-target="#types-of-composition"><span class="header-section-number">12.5</span> Types of Composition</a>
-  <ul class="collapse">
-  <li><a href="#sequential-composition" id="toc-sequential-composition" class="nav-link" data-scroll-target="#sequential-composition"><span class="header-section-number">12.5.1</span> 1. Sequential Composition</a></li>
-  <li><a href="#parallel-composition" id="toc-parallel-composition" class="nav-link" data-scroll-target="#parallel-composition"><span class="header-section-number">12.5.2</span> 2. Parallel Composition</a></li>
-  <li><a href="#conditional-composition" id="toc-conditional-composition" class="nav-link" data-scroll-target="#conditional-composition"><span class="header-section-number">12.5.3</span> 3. Conditional Composition</a></li>
-  <li><a href="#iterative-composition" id="toc-iterative-composition" class="nav-link" data-scroll-target="#iterative-composition"><span class="header-section-number">12.5.4</span> 4. Iterative Composition</a></li>
-  </ul></li>
-  <li><a href="#composition-in-the-llm-era" id="toc-composition-in-the-llm-era" class="nav-link" data-scroll-target="#composition-in-the-llm-era"><span class="header-section-number">12.6</span> Composition in the LLM Era</a>
-  <ul class="collapse">
-  <li><a href="#agent-based-composition" id="toc-agent-based-composition" class="nav-link" data-scroll-target="#agent-based-composition"><span class="header-section-number">12.6.1</span> Agent-Based Composition</a></li>
-  <li><a href="#tool-augmented-composition" id="toc-tool-augmented-composition" class="nav-link" data-scroll-target="#tool-augmented-composition"><span class="header-section-number">12.6.2</span> Tool-Augmented Composition</a></li>
-  <li><a href="#human-in-the-loop-composition" id="toc-human-in-the-loop-composition" class="nav-link" data-scroll-target="#human-in-the-loop-composition"><span class="header-section-number">12.6.3</span> Human-in-the-Loop Composition</a></li>
-  </ul></li>
-  <li><a href="#interfaces-between-components" id="toc-interfaces-between-components" class="nav-link" data-scroll-target="#interfaces-between-components"><span class="header-section-number">12.7</span> Interfaces Between Components</a>
-  <ul class="collapse">
-  <li><a href="#what-is-an-interface" id="toc-what-is-an-interface" class="nav-link" data-scroll-target="#what-is-an-interface"><span class="header-section-number">12.7.1</span> What is an Interface?</a></li>
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">12.7.2</span> Example</a></li>
-  </ul></li>
-  <li><a href="#loose-vs-tight-coupling" id="toc-loose-vs-tight-coupling" class="nav-link" data-scroll-target="#loose-vs-tight-coupling"><span class="header-section-number">12.8</span> Loose vs Tight Coupling</a>
-  <ul class="collapse">
-  <li><a href="#tight-coupling" id="toc-tight-coupling" class="nav-link" data-scroll-target="#tight-coupling"><span class="header-section-number">12.8.1</span> Tight Coupling</a></li>
-  <li><a href="#loose-coupling" id="toc-loose-coupling" class="nav-link" data-scroll-target="#loose-coupling"><span class="header-section-number">12.8.2</span> Loose Coupling</a></li>
-  </ul></li>
-  <li><a href="#emergence-of-systems" id="toc-emergence-of-systems" class="nav-link" data-scroll-target="#emergence-of-systems"><span class="header-section-number">12.9</span> Emergence of Systems</a>
-  <ul class="collapse">
-  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2"><span class="header-section-number">12.9.1</span> Example</a></li>
-  </ul></li>
-  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">12.10</span> Common Mistakes</a>
-  <ul class="collapse">
-  <li><a href="#overloading-components" id="toc-overloading-components" class="nav-link" data-scroll-target="#overloading-components"><span class="header-section-number">12.10.1</span> 1. Overloading Components</a></li>
-  <li><a href="#ignoring-interfaces" id="toc-ignoring-interfaces" class="nav-link" data-scroll-target="#ignoring-interfaces"><span class="header-section-number">12.10.2</span> 2. Ignoring Interfaces</a></li>
-  <li><a href="#overcomplicating-composition" id="toc-overcomplicating-composition" class="nav-link" data-scroll-target="#overcomplicating-composition"><span class="header-section-number">12.10.3</span> 3. Overcomplicating Composition</a></li>
-  <li><a href="#lack-of-clear-flow" id="toc-lack-of-clear-flow" class="nav-link" data-scroll-target="#lack-of-clear-flow"><span class="header-section-number">12.10.4</span> 4. Lack of Clear Flow</a></li>
-  </ul></li>
-  <li><a href="#composition-as-a-skill" id="toc-composition-as-a-skill" class="nav-link" data-scroll-target="#composition-as-a-skill"><span class="header-section-number">12.11</span> Composition as a Skill</a></li>
-  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">12.12</span> Final Insight</a></li>
-  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">12.13</span> Closing Statement</a></li>
-  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">12.14</span> Key Insight</a></li>
-  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">12.15</span> Action Hint</a></li>
+  <li><a href="#通过组合推理reasoning-through-composition" id="toc-通过组合推理reasoning-through-composition" class="nav-link" data-scroll-target="#通过组合推理reasoning-through-composition"><span class="header-section-number">12.5</span> 通过组合推理（Reasoning Through Composition）</a></li>
   </ul>
 </nav>
     </div>
@@ -560,7 +520,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></h1>
 </div>
 
 
@@ -577,373 +537,67 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="from-structure-to-system" class="level2" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="from-structure-to-system"><span class="header-section-number">12.1</span> From Structure to System</h2>
-<p>After defining structure—main flow, modules, and data flow—we have a blueprint for how a system should be organized. But a blueprint is not a building. A specification is not a system.</p>
-<p>Recall from our exploration of Possibility Space that the Option Space represents “what choices exist at each step.” When we navigate the possibility graph, we face countless decision points. Composition is the art of making those choices effectively.</p>
-<p>The next step is:</p>
+<section id="从结构到系统" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="从结构到系统"><span class="header-section-number">12.1</span> 从结构到系统</h2>
+<p>定义了结构——主流程、模块和数据流之后，我们对系统应该如何组织有了一个蓝图。但蓝图不是建筑。规格说明不是系统。</p>
+<p>回想我们在可能性空间中的探索，选项空间代表”每一步有什么选择”。当我们导航可能性图时，我们面临无数的决策点。组合是在那些交叉路口做出有效选择的艺术。</p>
+<p>下一步是：</p>
 <blockquote class="blockquote">
-<p><strong>Composition — combining components into a working system</strong></p>
+<p><strong>组合（Composition）——将组件组合成一个工作的系统</strong></p>
 </blockquote>
-<p>Structure tells us what exists and how parts relate. Composition determines how those parts actually work together to produce behavior. It is how we navigate the Option Space and make the right choices at each intersection.</p>
-<p>Without composition:</p>
-<ul>
-<li>Modules remain isolated—they exist but don’t interact</li>
-<li>Capabilities remain unused—potential is unrealized</li>
-<li>Systems never emerge—we have parts but no whole</li>
-<li>Possibilities remain unrealized—the Option Space is explored but not actualized</li>
-</ul>
+<p>结构告诉我们存在什么以及各部分如何关联。组合决定了这些部分如何实际协同工作以产生行为。它是我们导航选项空间并在每个交叉路口做出正确选择的方式。</p>
+<p>没有组合，模块保持孤立，能力保持未使用，系统永远不会出现。</p>
 <hr>
 </section>
-<section id="what-is-composition" class="level2" data-number="12.2">
-<h2 data-number="12.2" class="anchored" data-anchor-id="what-is-composition"><span class="header-section-number">12.2</span> What is Composition?</h2>
-<p>Composition is the process of:</p>
+<section id="什么是组合what-is-composition" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="什么是组合what-is-composition"><span class="header-section-number">12.2</span> 什么是组合？（What is Composition?）</h2>
+<p>组合是以下过程：</p>
 <blockquote class="blockquote">
-<p><strong>Combining smaller units of capability into a larger, functional system</strong></p>
+<p><strong>将较小的能力单元组合成更大的、功能性的系统</strong></p>
 </blockquote>
-<p>These units can take many forms:</p>
-<ul>
-<li><strong>Modules</strong>—independent components with defined interfaces</li>
-<li><strong>Functions</strong>—reusable pieces of logic</li>
-<li><strong>Agents</strong>—autonomous systems that can reason and act</li>
-<li><strong>Services</strong>—external capabilities accessed through APIs</li>
-<li><strong>Patterns</strong>—repeated structures and approaches</li>
-</ul>
-<p>Composition answers fundamental questions:</p>
-<ul>
-<li>Which components are needed to achieve the goal?</li>
-<li>How do they connect and communicate?</li>
-<li>In what order do they operate?</li>
-</ul>
+<p>这些单元可以有许多形式：模块、函数、智能体、服务、模式。</p>
+<p>组合回答基本问题：需要哪些组件来实现目标？它们如何连接和通信？它们以什么顺序运行？</p>
 <hr>
 </section>
-<section id="capability-as-a-unit" class="level2" data-number="12.3">
-<h2 data-number="12.3" class="anchored" data-anchor-id="capability-as-a-unit"><span class="header-section-number">12.3</span> Capability as a Unit</h2>
-<p>To understand composition, we must first define a key concept: <strong>capability</strong>.</p>
-<hr>
-<section id="what-is-a-capability" class="level3" data-number="12.3.1">
-<h3 data-number="12.3.1" class="anchored" data-anchor-id="what-is-a-capability"><span class="header-section-number">12.3.1</span> What is a Capability?</h3>
-<p>A capability is something a system can do—a unit of functionality that produces a specific result.</p>
-<p><strong>Examples:</strong> - Generate text—create written content - Retrieve information—find and fetch data - Store data—save information for later use - Classify input—categorize or label data</p>
-<p>Each module, agent, or service provides one or more capabilities.</p>
+<section id="能力作为单元capability-as-a-unit" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="能力作为单元capability-as-a-unit"><span class="header-section-number">12.3</span> 能力作为单元（Capability as a Unit）</h2>
+<p>要理解组合，我们必须首先定义一个关键概念：<strong>能力（capability）</strong>。</p>
+<p>能力是系统可以做的事情——产生特定结果的功能单元。</p>
+<p><strong>示例：</strong> 生成文本、检索信息、存储数据、分类输入、转换格式。</p>
+<p>每个能力代表系统可以执行的离散功能。系统通过对这些能力进行排序和组合来构建复杂行为。</p>
 <hr>
 </section>
-<section id="example" class="level3" data-number="12.3.2">
-<h3 data-number="12.3.2" class="anchored" data-anchor-id="example"><span class="header-section-number">12.3.2</span> Example</h3>
-<p>A language model provides several capabilities:</p>
-<ul>
-<li><strong>Text generation</strong>—create written content</li>
-<li><strong>Summarization</strong>—condense longer texts</li>
-<li><strong>Reasoning</strong>—draw inferences and conclusions</li>
-</ul>
-<p>A database provides different capabilities:</p>
-<ul>
-<li><strong>Storage</strong>—save and persist data</li>
-<li><strong>Retrieval</strong>—find and fetch stored data</li>
-<li><strong>Querying</strong>—search and filter data</li>
-</ul>
+<section id="组合模式composition-patterns" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="组合模式composition-patterns"><span class="header-section-number">12.4</span> 组合模式（Composition Patterns）</h2>
+<section id="顺序组合" class="level3" data-number="12.4.1">
+<h3 data-number="12.4.1" class="anchored" data-anchor-id="顺序组合"><span class="header-section-number">12.4.1</span> 顺序组合</h3>
+<p>能力按顺序链接。一个的输出成为下一个的输入。</p>
+<pre><code>输入 → A → B → C → 输出</code></pre>
+</section>
+<section id="并行组合" class="level3" data-number="12.4.2">
+<h3 data-number="12.4.2" class="anchored" data-anchor-id="并行组合"><span class="header-section-number">12.4.2</span> 并行组合</h3>
+<p>能力并发运行。结果在稍后组合。</p>
+<pre><code>输入 → A → 组合 → 输出
+     → B →</code></pre>
+</section>
+<section id="条件组合" class="level3" data-number="12.4.3">
+<h3 data-number="12.4.3" class="anchored" data-anchor-id="条件组合"><span class="header-section-number">12.4.3</span> 条件组合</h3>
+<p>根据条件选择能力。系统基于某些标准选择不同的路径。</p>
+<pre><code>输入 → 条件 → (A 或 B) → 输出</code></pre>
+</section>
+<section id="层级组合" class="level3" data-number="12.4.4">
+<h3 data-number="12.4.4" class="anchored" data-anchor-id="层级组合"><span class="header-section-number">12.4.4</span> 层级组合</h3>
+<p>能力被嵌套。一个能力可能由更小的子能力组成。</p>
+<pre><code>A 由 B、C、D 组成，其中 B 可能进一步由 E、F 组成</code></pre>
 <hr>
+</section>
+</section>
+<section id="通过组合推理reasoning-through-composition" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="通过组合推理reasoning-through-composition"><span class="header-section-number">12.5</span> 通过组合推理（Reasoning Through Composition）</h2>
+<p>组合的能力使推理系统行为成为可能。你可以分析每个组件的贡献，跟踪信息如何在能力之间流动，预测系统行为，并隔离问题。</p>
+<p>组合将系统设计从一次性的创造转变为可重复的方法。一旦你知道如何组合能力，你可以将它们应用于新问题。</p>
 <blockquote class="blockquote">
-<p>Systems are built by combining capabilities, not by writing everything from scratch.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="from-components-to-systems" class="level2" data-number="12.4">
-<h2 data-number="12.4" class="anchored" data-anchor-id="from-components-to-systems"><span class="header-section-number">12.4</span> From Components to Systems</h2>
-<p>A system is not a single capability. It is a <strong>composition of capabilities</strong>—multiple units working together to achieve a goal that no single capability could accomplish alone.</p>
-<hr>
-<section id="example-chat-system" class="level3" data-number="12.4.1">
-<h3 data-number="12.4.1" class="anchored" data-anchor-id="example-chat-system"><span class="header-section-number">12.4.1</span> Example: Chat System</h3>
-<p>Consider building a chat system. No single capability can provide all the required functionality. We need to combine multiple capabilities:</p>
-<p><strong>Capabilities involved:</strong> - Input handling—receive and validate user messages - Context storage—maintain conversation history - Response generation—create relevant replies - Output rendering—format and display responses</p>
-<hr>
-</section>
-<section id="composition" class="level3" data-number="12.4.2">
-<h3 data-number="12.4.2" class="anchored" data-anchor-id="composition"><span class="header-section-number">12.4.2</span> Composition</h3>
-<pre><code>User Input
-→ Input Handler (capability: input handling)
-→ Context Manager (capability: context storage)
-→ Response Generator (capability: response generation)
-→ Output Renderer (capability: output rendering)</code></pre>
-<hr>
-<p>Each component contributes a capability. Together, they form a complete system. None of the components alone could provide the full functionality—the system emerges from their composition.</p>
-<hr>
-</section>
-</section>
-<section id="types-of-composition" class="level2" data-number="12.5">
-<h2 data-number="12.5" class="anchored" data-anchor-id="types-of-composition"><span class="header-section-number">12.5</span> Types of Composition</h2>
-<p>There are several common patterns for combining components into systems. Different patterns create different system behaviors.</p>
-<p>Remember that in the Possibility Space, we navigate a graph where each node represents a decision point. These composition patterns represent the different ways we can traverse that graph—the different paths we can choose from the Option Space.</p>
-<hr>
-<section id="sequential-composition" class="level3" data-number="12.5.1">
-<h3 data-number="12.5.1" class="anchored" data-anchor-id="sequential-composition"><span class="header-section-number">12.5.1</span> 1. Sequential Composition</h3>
-<p>Components operate in sequence, with each component’s output feeding into the next.</p>
-<p><strong>Structure:</strong></p>
-<pre><code>A → B → C</code></pre>
-<p><strong>Used for:</strong> - Pipelines—data processing workflows - ETL—extract, transform, load operations - Step-by-step processing</p>
-<p><strong>Example:</strong></p>
-<pre><code>Raw Text → Cleaner → Processor → Analyzer → Results</code></pre>
-<hr>
-</section>
-<section id="parallel-composition" class="level3" data-number="12.5.2">
-<h3 data-number="12.5.2" class="anchored" data-anchor-id="parallel-composition"><span class="header-section-number">12.5.2</span> 2. Parallel Composition</h3>
-<p>Components operate simultaneously on different aspects of the problem.</p>
-<p><strong>Structure:</strong></p>
-<pre><code>A
-↘
-  → Merge → Output
-↗
-B</code></pre>
-<p><strong>Used for:</strong> - Multi-source processing—handling multiple inputs - Aggregation—combining results from different sources - Distributed computing—parallel execution</p>
-<p><strong>Example:</strong></p>
-<pre><code>Input → [Analyzer A, Analyzer B, Analyzer C] → Aggregate → Result</code></pre>
-<hr>
-</section>
-<section id="conditional-composition" class="level3" data-number="12.5.3">
-<h3 data-number="12.5.3" class="anchored" data-anchor-id="conditional-composition"><span class="header-section-number">12.5.3</span> 3. Conditional Composition</h3>
-<p>Different paths are taken based on conditions or decisions.</p>
-<p><strong>Structure:</strong></p>
-<pre><code>Input → Decision → A or B</code></pre>
-<p><strong>Used for:</strong> - Routing—directing inputs to appropriate handlers - Decision systems—choosing between alternatives - Branching logic—if-then-else flows</p>
-<p><strong>Example:</strong></p>
-<pre><code>Input → Classify → [Text Handler OR Image Handler] → Output</code></pre>
-<hr>
-</section>
-<section id="iterative-composition" class="level3" data-number="12.5.4">
-<h3 data-number="12.5.4" class="anchored" data-anchor-id="iterative-composition"><span class="header-section-number">12.5.4</span> 4. Iterative Composition</h3>
-<p>Components repeat until a condition is met or convergence is achieved.</p>
-<p><strong>Structure:</strong></p>
-<pre><code>Process → Evaluate → [Repeat if needed]</code></pre>
-<p><strong>Used for:</strong> - Optimization—iteratively improving results - Refinement loops—progressively clarifying outputs - Convergence algorithms—repeating until stable</p>
-<p><strong>Example:</strong></p>
-<pre><code>Draft → Evaluate → Refine → [Repeat until quality threshold met]</code></pre>
-<hr>
-<blockquote class="blockquote">
-<p>Different compositions create different system behaviors. The choice of composition pattern is a key design decision.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="composition-in-the-llm-era" class="level2" data-number="12.6">
-<h2 data-number="12.6" class="anchored" data-anchor-id="composition-in-the-llm-era"><span class="header-section-number">12.6</span> Composition in the LLM Era</h2>
-<p>LLMs introduce new forms of composition that go beyond traditional code-based approaches.</p>
-<hr>
-<section id="agent-based-composition" class="level3" data-number="12.6.1">
-<h3 data-number="12.6.1" class="anchored" data-anchor-id="agent-based-composition"><span class="header-section-number">12.6.1</span> Agent-Based Composition</h3>
-<p>Multiple agents work together, each with a specialized role and responsibility.</p>
-<ul>
-<li>Multiple agents with different capabilities</li>
-<li>Each agent has a defined role</li>
-<li>Coordinated interaction toward a shared goal</li>
-</ul>
-<p><strong>Example:</strong></p>
-<pre><code>User Query → Planner Agent → Researcher Agent → Writer Agent → Synthesizer Agent → Output</code></pre>
-<hr>
-</section>
-<section id="tool-augmented-composition" class="level3" data-number="12.6.2">
-<h3 data-number="12.6.2" class="anchored" data-anchor-id="tool-augmented-composition"><span class="header-section-number">12.6.2</span> Tool-Augmented Composition</h3>
-<p>LLMs are combined with external tools and services to extend their capabilities.</p>
-<ul>
-<li>LLM + external tools</li>
-<li>Retrieval systems, APIs, databases</li>
-<li>Enhanced capabilities through integration</li>
-</ul>
-<p><strong>Example:</strong></p>
-<pre><code>Query → LLM → [Search Tool, Database API, Calculator] → LLM → Output</code></pre>
-<hr>
-</section>
-<section id="human-in-the-loop-composition" class="level3" data-number="12.6.3">
-<h3 data-number="12.6.3" class="anchored" data-anchor-id="human-in-the-loop-composition"><span class="header-section-number">12.6.3</span> Human-in-the-Loop Composition</h3>
-<p>AI and humans work together in an iterative workflow.</p>
-<ul>
-<li>AI generates initial output</li>
-<li>Human evaluates or corrects</li>
-<li>System refines based on feedback</li>
-</ul>
-<p><strong>Example:</strong></p>
-<pre><code>AI → Human Review → Corrections → AI Refinement → Final Output</code></pre>
-<hr>
-<blockquote class="blockquote">
-<p>Composition is no longer limited to code. It includes models, tools, and humans working together.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="interfaces-between-components" class="level2" data-number="12.7">
-<h2 data-number="12.7" class="anchored" data-anchor-id="interfaces-between-components"><span class="header-section-number">12.7</span> Interfaces Between Components</h2>
-<p>For composition to work effectively, components must connect properly. This requires <strong>interfaces</strong>—well-defined contracts that specify how components interact.</p>
-<hr>
-<section id="what-is-an-interface" class="level3" data-number="12.7.1">
-<h3 data-number="12.7.1" class="anchored" data-anchor-id="what-is-an-interface"><span class="header-section-number">12.7.1</span> What is an Interface?</h3>
-<p>An interface defines:</p>
-<ul>
-<li><strong>Input format</strong>—what data a component accepts</li>
-<li><strong>Output format</strong>—what data a component produces</li>
-<li><strong>Expected behavior</strong>—how the component should respond</li>
-</ul>
-<hr>
-</section>
-<section id="example-1" class="level3" data-number="12.7.2">
-<h3 data-number="12.7.2" class="anchored" data-anchor-id="example-1"><span class="header-section-number">12.7.2</span> Example</h3>
-<p>If one module outputs:</p>
-<pre><code>{summary: "Text summary...", key_points: ["Point 1", "Point 2"]}</code></pre>
-<p>The next module must accept that exact format as input:</p>
-<pre><code>input: {summary: string, key_points: Array&lt;string&gt;}</code></pre>
-<hr>
-<blockquote class="blockquote">
-<p>Composition fails when interfaces are unclear or mismatched.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="loose-vs-tight-coupling" class="level2" data-number="12.8">
-<h2 data-number="12.8" class="anchored" data-anchor-id="loose-vs-tight-coupling"><span class="header-section-number">12.8</span> Loose vs Tight Coupling</h2>
-<p>A critical design decision in composition is how tightly components are coupled to each other.</p>
-<hr>
-<section id="tight-coupling" class="level3" data-number="12.8.1">
-<h3 data-number="12.8.1" class="anchored" data-anchor-id="tight-coupling"><span class="header-section-number">12.8.1</span> Tight Coupling</h3>
-<p>Components depend heavily on each other’s internal details.</p>
-<ul>
-<li>Components are interdependent</li>
-<li>Hard to modify or replace</li>
-<li>Changes ripple through the system</li>
-<li>Difficult to test independently</li>
-</ul>
-<hr>
-</section>
-<section id="loose-coupling" class="level3" data-number="12.8.2">
-<h3 data-number="12.8.2" class="anchored" data-anchor-id="loose-coupling"><span class="header-section-number">12.8.2</span> Loose Coupling</h3>
-<p>Components interact through well-defined interfaces but remain independent.</p>
-<ul>
-<li>Clear interfaces define interactions</li>
-<li>Components are independent</li>
-<li>Easy to replace or extend</li>
-<li>Can be tested independently</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Good composition favors loose coupling. It makes systems more flexible and maintainable.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="emergence-of-systems" class="level2" data-number="12.9">
-<h2 data-number="12.9" class="anchored" data-anchor-id="emergence-of-systems"><span class="header-section-number">12.9</span> Emergence of Systems</h2>
-<p>A key insight about composition:</p>
-<blockquote class="blockquote">
-<p>Systems are not explicitly written—they emerge from composition.</p>
-</blockquote>
-<p>When components are properly combined:</p>
-<ul>
-<li>New behavior appears that no single component possesses</li>
-<li>Capabilities amplify each other</li>
-<li>Complexity becomes manageable through structure</li>
-</ul>
-<hr>
-<section id="example-2" class="level3" data-number="12.9.1">
-<h3 data-number="12.9.1" class="anchored" data-anchor-id="example-2"><span class="header-section-number">12.9.1</span> Example</h3>
-<p>Combining three simple capabilities:</p>
-<ul>
-<li><strong>Retrieval</strong>—find relevant information</li>
-<li><strong>Generation</strong>—create written content</li>
-<li><strong>Memory</strong>—store and retrieve past interactions</li>
-</ul>
-<p>Creates:</p>
-<ul>
-<li>A <strong>knowledge assistant</strong>—can answer questions using retrieved knowledge, remember previous conversations, and generate coherent responses</li>
-</ul>
-<p>None of the individual capabilities could do this alone. The knowledge assistant emerges from their composition.</p>
-<hr>
-</section>
-</section>
-<section id="common-mistakes" class="level2" data-number="12.10">
-<h2 data-number="12.10" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">12.10</span> Common Mistakes</h2>
-<hr>
-<section id="overloading-components" class="level3" data-number="12.10.1">
-<h3 data-number="12.10.1" class="anchored" data-anchor-id="overloading-components"><span class="header-section-number">12.10.1</span> 1. Overloading Components</h3>
-<ul>
-<li>One module does too much—violates single responsibility</li>
-<li>Hard to reuse—tangled capabilities are difficult to extract</li>
-<li>Hard to maintain—changes affect multiple concerns</li>
-</ul>
-<p><strong>Solution:</strong> Break large components into smaller, focused ones.</p>
-<hr>
-</section>
-<section id="ignoring-interfaces" class="level3" data-number="12.10.2">
-<h3 data-number="12.10.2" class="anchored" data-anchor-id="ignoring-interfaces"><span class="header-section-number">12.10.2</span> 2. Ignoring Interfaces</h3>
-<ul>
-<li>Data mismatch between components</li>
-<li>Integration failures and errors</li>
-<li>Systems that don’t work together</li>
-</ul>
-<p><strong>Solution:</strong> Explicitly define and document all interfaces.</p>
-<hr>
-</section>
-<section id="overcomplicating-composition" class="level3" data-number="12.10.3">
-<h3 data-number="12.10.3" class="anchored" data-anchor-id="overcomplicating-composition"><span class="header-section-number">12.10.3</span> 3. Overcomplicating Composition</h3>
-<ul>
-<li>Too many components—unnecessary complexity</li>
-<li>Unnecessary indirection—components that don’t add value</li>
-<li>Hard to understand and debug</li>
-</ul>
-<p><strong>Solution:</strong> Use the simplest composition that achieves the goal.</p>
-<hr>
-</section>
-<section id="lack-of-clear-flow" class="level3" data-number="12.10.4">
-<h3 data-number="12.10.4" class="anchored" data-anchor-id="lack-of-clear-flow"><span class="header-section-number">12.10.4</span> 4. Lack of Clear Flow</h3>
-<ul>
-<li>No defined order of operations</li>
-<li>Unpredictable behavior</li>
-<li>Components don’t coordinate properly</li>
-</ul>
-<p><strong>Solution:</strong> Explicitly define the flow and ensure components follow it.</p>
-<hr>
-</section>
-</section>
-<section id="composition-as-a-skill" class="level2" data-number="12.11">
-<h2 data-number="12.11" class="anchored" data-anchor-id="composition-as-a-skill"><span class="header-section-number">12.11</span> Composition as a Skill</h2>
-<p>Composition is a higher-level skill than implementation. It requires:</p>
-<ul>
-<li><strong>Understanding capabilities</strong>—knowing what each component can do</li>
-<li><strong>Designing connections</strong>—creating effective interfaces</li>
-<li><strong>Managing interactions</strong>—ensuring components work together properly</li>
-</ul>
-<p>The better your composition skills:</p>
-<ul>
-<li>The more powerful your systems—complex behaviors emerge from simple parts</li>
-<li>The less code you need to write—you reuse and compose existing capabilities</li>
-<li>The faster you can build—you assemble systems rather than building from scratch</li>
-</ul>
-<hr>
-</section>
-<section id="final-insight" class="level2" data-number="12.12">
-<h2 data-number="12.12" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">12.12</span> Final Insight</h2>
-<p>You do not build systems by writing everything from scratch. You build systems by combining the right parts in the right way.</p>
-<blockquote class="blockquote">
-<p>The power of a system lies not in its components, but in how they are composed.</p>
-</blockquote>
-<p>A master composer can create remarkable systems from simple parts, while a novice might struggle even with sophisticated components. The difference is composition.</p>
-<hr>
-</section>
-<section id="closing-statement" class="level2" data-number="12.13">
-<h2 data-number="12.13" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">12.13</span> Closing Statement</h2>
-<p>In the LLM era, programming is increasingly about assembling capabilities into coherent systems.</p>
-<blockquote class="blockquote">
-<p>From components to systems, composition is the bridge.</p>
-</blockquote>
-<hr>
-</section>
-<section id="key-insight" class="level2" data-number="12.14">
-<h2 data-number="12.14" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">12.14</span> Key Insight</h2>
-<blockquote class="blockquote">
-<p>Composition combines smaller units of capability into larger systems. Key patterns include sequential, parallel, conditional, and iterative composition. Good composition requires clear interfaces and loose coupling.</p>
-</blockquote>
-</section>
-<section id="action-hint" class="level2" data-number="12.15">
-<h2 data-number="12.15" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">12.15</span> Action Hint</h2>
-<blockquote class="blockquote">
-<p>Practice composition by building systems from existing capabilities. Before writing new code, ask: “What capabilities do I already have that I can combine?” Map out the composition pattern and define interfaces clearly.</p>
+<p>组合是将能力转化为系统的方法。</p>
 </blockquote>
 
 
@@ -1365,13 +1019,13 @@ B</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-10.html" class="pagination-link" aria-label="Structural Thinking">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span>
+      <a href="./chapter-10.html" class="pagination-link" aria-label="结构性思维（Structural Thinking）">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-12.html" class="pagination-link" aria-label="Goal Compression">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-12.html" class="pagination-link" aria-label="目标压缩（Goal Compression）">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

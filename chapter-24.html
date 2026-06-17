@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>25&nbsp; Reliability &amp; Evaluation – AI Programming: From Intent to Execution</title>
+<title>25&nbsp; 可靠性与评估（Reliability &amp; Evaluation） – AI Programming: From Intent to Execution</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,19 +37,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="./chapter-23.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-aa873432a3c62897e6c2091c0d30a948.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -250,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-24.html"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-24.html"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -263,9 +265,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AI Programming: From Intent to Execution</a> 
         <div class="sidebar-tools-main">
@@ -283,211 +283,211 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">前言（Preface）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">转变：从编码到定义（The Shift: From Coding to Defining）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">新的瓶颈：定义（The New Bottleneck: Definition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">编程现在是什么？（What is Programming Now?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">最小循环（The Minimal Loop）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">意图：定义要做什么（Intent: Defining What to Do）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">规格说明：消除歧义（Spec: Eliminating Ambiguity）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">指令：使其可执行（Instruction: Making It Executable）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">评估与迭代（Evaluation &amp; Iteration）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">可能性空间（Possibility Space）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">从 Spec 到指令（From Spec to Instruction）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">指令设计（Instruction Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">工具使用与 API（Tool Use &amp; APIs）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">构建智能体系统（Building an Agent System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-24.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">构建聊天系统（Building a Chat System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">从理想到产品（From Idea to Product）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-31.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">编程即系统设计（Programming as System Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">语言即操作系统（Language as an Operating System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">人类 + AI 认知（Human + AI Cognition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">构建者的未来（The Future of Builders）</span></span></a>
   </div>
 </li>
     </ul>
@@ -500,77 +500,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#from-capability-to-reliability" id="toc-from-capability-to-reliability" class="nav-link active" data-scroll-target="#from-capability-to-reliability"><span class="header-section-number">25.1</span> From Capability to Reliability</a></li>
-  <li><a href="#what-is-reliability" id="toc-what-is-reliability" class="nav-link" data-scroll-target="#what-is-reliability"><span class="header-section-number">25.2</span> What is Reliability?</a>
+  <li><a href="#可靠性为什么重要" id="toc-可靠性为什么重要" class="nav-link active" data-scroll-target="#可靠性为什么重要"><span class="header-section-number">25.1</span> 可靠性为什么重要</a></li>
+  <li><a href="#什么是可靠性what-is-reliability" id="toc-什么是可靠性what-is-reliability" class="nav-link" data-scroll-target="#什么是可靠性what-is-reliability"><span class="header-section-number">25.2</span> 什么是可靠性？（What is Reliability?）</a></li>
+  <li><a href="#可靠性策略reliability-strategies" id="toc-可靠性策略reliability-strategies" class="nav-link" data-scroll-target="#可靠性策略reliability-strategies"><span class="header-section-number">25.3</span> 可靠性策略（Reliability Strategies）</a>
   <ul class="collapse">
-  <li><a href="#key-dimensions" id="toc-key-dimensions" class="nav-link" data-scroll-target="#key-dimensions"><span class="header-section-number">25.2.1</span> Key Dimensions</a></li>
+  <li><a href="#spec-增强" id="toc-spec-增强" class="nav-link" data-scroll-target="#spec-增强"><span class="header-section-number">25.3.1</span> 1. Spec 增强</a></li>
+  <li><a href="#验证与确认" id="toc-验证与确认" class="nav-link" data-scroll-target="#验证与确认"><span class="header-section-number">25.3.2</span> 2. 验证与确认</a></li>
+  <li><a href="#回退策略" id="toc-回退策略" class="nav-link" data-scroll-target="#回退策略"><span class="header-section-number">25.3.3</span> 3. 回退策略</a></li>
   </ul></li>
-  <li><a href="#why-reliability-is-hard-in-llm-systems" id="toc-why-reliability-is-hard-in-llm-systems" class="nav-link" data-scroll-target="#why-reliability-is-hard-in-llm-systems"><span class="header-section-number">25.3</span> Why Reliability is Hard in LLM Systems</a></li>
-  <li><a href="#sources-of-instability" id="toc-sources-of-instability" class="nav-link" data-scroll-target="#sources-of-instability"><span class="header-section-number">25.4</span> Sources of Instability</a>
-  <ul class="collapse">
-  <li><a href="#weak-spec" id="toc-weak-spec" class="nav-link" data-scroll-target="#weak-spec"><span class="header-section-number">25.4.1</span> 1. Weak Spec</a></li>
-  <li><a href="#poor-instruction-design" id="toc-poor-instruction-design" class="nav-link" data-scroll-target="#poor-instruction-design"><span class="header-section-number">25.4.2</span> 2. Poor Instruction Design</a></li>
-  <li><a href="#context-variability" id="toc-context-variability" class="nav-link" data-scroll-target="#context-variability"><span class="header-section-number">25.4.3</span> 3. Context Variability</a></li>
-  <li><a href="#tool-errors" id="toc-tool-errors" class="nav-link" data-scroll-target="#tool-errors"><span class="header-section-number">25.4.4</span> 4. Tool Errors</a></li>
-  <li><a href="#lack-of-evaluation" id="toc-lack-of-evaluation" class="nav-link" data-scroll-target="#lack-of-evaluation"><span class="header-section-number">25.4.5</span> 5. Lack of Evaluation</a></li>
-  </ul></li>
-  <li><a href="#principles-for-stability" id="toc-principles-for-stability" class="nav-link" data-scroll-target="#principles-for-stability"><span class="header-section-number">25.5</span> Principles for Stability</a>
-  <ul class="collapse">
-  <li><a href="#strengthen-spec" id="toc-strengthen-spec" class="nav-link" data-scroll-target="#strengthen-spec"><span class="header-section-number">25.5.1</span> 1. Strengthen Spec</a></li>
-  <li><a href="#enforce-structure" id="toc-enforce-structure" class="nav-link" data-scroll-target="#enforce-structure"><span class="header-section-number">25.5.2</span> 2. Enforce Structure</a></li>
-  <li><a href="#control-context" id="toc-control-context" class="nav-link" data-scroll-target="#control-context"><span class="header-section-number">25.5.3</span> 3. Control Context</a></li>
-  <li><a href="#add-redundancy" id="toc-add-redundancy" class="nav-link" data-scroll-target="#add-redundancy"><span class="header-section-number">25.5.4</span> 4. Add Redundancy</a></li>
-  <li><a href="#introduce-evaluation" id="toc-introduce-evaluation" class="nav-link" data-scroll-target="#introduce-evaluation"><span class="header-section-number">25.5.5</span> 5. Introduce Evaluation</a></li>
-  </ul></li>
-  <li><a href="#what-is-evaluation-in-this-context" id="toc-what-is-evaluation-in-this-context" class="nav-link" data-scroll-target="#what-is-evaluation-in-this-context"><span class="header-section-number">25.6</span> What is Evaluation in This Context?</a>
-  <ul class="collapse">
-  <li><a href="#why-evaluation-matters" id="toc-why-evaluation-matters" class="nav-link" data-scroll-target="#why-evaluation-matters"><span class="header-section-number">25.6.1</span> Why Evaluation Matters</a></li>
-  </ul></li>
-  <li><a href="#automatic-evaluation" id="toc-automatic-evaluation" class="nav-link" data-scroll-target="#automatic-evaluation"><span class="header-section-number">25.7</span> Automatic Evaluation</a>
-  <ul class="collapse">
-  <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition"><span class="header-section-number">25.7.1</span> Definition</a></li>
-  </ul></li>
-  <li><a href="#types-of-automatic-evaluation" id="toc-types-of-automatic-evaluation" class="nav-link" data-scroll-target="#types-of-automatic-evaluation"><span class="header-section-number">25.8</span> Types of Automatic Evaluation</a>
-  <ul class="collapse">
-  <li><a href="#rule-based-evaluation" id="toc-rule-based-evaluation" class="nav-link" data-scroll-target="#rule-based-evaluation"><span class="header-section-number">25.8.1</span> 1. Rule-Based Evaluation</a></li>
-  <li><a href="#model-based-evaluation" id="toc-model-based-evaluation" class="nav-link" data-scroll-target="#model-based-evaluation"><span class="header-section-number">25.8.2</span> 2. Model-Based Evaluation</a></li>
-  <li><a href="#metric-based-evaluation" id="toc-metric-based-evaluation" class="nav-link" data-scroll-target="#metric-based-evaluation"><span class="header-section-number">25.8.3</span> 3. Metric-Based Evaluation</a></li>
-  <li><a href="#hybrid-evaluation" id="toc-hybrid-evaluation" class="nav-link" data-scroll-target="#hybrid-evaluation"><span class="header-section-number">25.8.4</span> 4. Hybrid Evaluation</a></li>
-  </ul></li>
-  <li><a href="#evaluation-pipeline" id="toc-evaluation-pipeline" class="nav-link" data-scroll-target="#evaluation-pipeline"><span class="header-section-number">25.9</span> Evaluation Pipeline</a>
-  <ul class="collapse">
-  <li><a href="#steps" id="toc-steps" class="nav-link" data-scroll-target="#steps"><span class="header-section-number">25.9.1</span> Steps</a></li>
-  </ul></li>
-  <li><a href="#feedback-loops" id="toc-feedback-loops" class="nav-link" data-scroll-target="#feedback-loops"><span class="header-section-number">25.10</span> Feedback Loops</a>
-  <ul class="collapse">
-  <li><a href="#immediate-feedback" id="toc-immediate-feedback" class="nav-link" data-scroll-target="#immediate-feedback"><span class="header-section-number">25.10.1</span> Immediate Feedback</a></li>
-  <li><a href="#long-term-feedback" id="toc-long-term-feedback" class="nav-link" data-scroll-target="#long-term-feedback"><span class="header-section-number">25.10.2</span> Long-Term Feedback</a></li>
-  </ul></li>
-  <li><a href="#techniques-for-improving-reliability" id="toc-techniques-for-improving-reliability" class="nav-link" data-scroll-target="#techniques-for-improving-reliability"><span class="header-section-number">25.11</span> Techniques for Improving Reliability</a>
-  <ul class="collapse">
-  <li><a href="#multiple-runs-sampling" id="toc-multiple-runs-sampling" class="nav-link" data-scroll-target="#multiple-runs-sampling"><span class="header-section-number">25.11.1</span> 1. Multiple Runs (Sampling)</a></li>
-  <li><a href="#self-consistency" id="toc-self-consistency" class="nav-link" data-scroll-target="#self-consistency"><span class="header-section-number">25.11.2</span> 2. Self-Consistency</a></li>
-  <li><a href="#verification-steps" id="toc-verification-steps" class="nav-link" data-scroll-target="#verification-steps"><span class="header-section-number">25.11.3</span> 3. Verification Steps</a></li>
-  <li><a href="#guardrails" id="toc-guardrails" class="nav-link" data-scroll-target="#guardrails"><span class="header-section-number">25.11.4</span> 4. Guardrails</a></li>
-  </ul></li>
-  <li><a href="#trade-offs" id="toc-trade-offs" class="nav-link" data-scroll-target="#trade-offs"><span class="header-section-number">25.12</span> Trade-offs</a>
-  <ul class="collapse">
-  <li><a href="#reliability-vs-cost" id="toc-reliability-vs-cost" class="nav-link" data-scroll-target="#reliability-vs-cost"><span class="header-section-number">25.12.1</span> Reliability vs Cost</a></li>
-  <li><a href="#reliability-vs-speed" id="toc-reliability-vs-speed" class="nav-link" data-scroll-target="#reliability-vs-speed"><span class="header-section-number">25.12.2</span> Reliability vs Speed</a></li>
-  <li><a href="#reliability-vs-flexibility" id="toc-reliability-vs-flexibility" class="nav-link" data-scroll-target="#reliability-vs-flexibility"><span class="header-section-number">25.12.3</span> Reliability vs Flexibility</a></li>
-  </ul></li>
-  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">25.13</span> Common Mistakes</a>
-  <ul class="collapse">
-  <li><a href="#relying-on-single-output" id="toc-relying-on-single-output" class="nav-link" data-scroll-target="#relying-on-single-output"><span class="header-section-number">25.13.1</span> 1. Relying on Single Output</a></li>
-  <li><a href="#no-clear-metrics" id="toc-no-clear-metrics" class="nav-link" data-scroll-target="#no-clear-metrics"><span class="header-section-number">25.13.2</span> 2. No Clear Metrics</a></li>
-  <li><a href="#over-reliance-on-human-evaluation" id="toc-over-reliance-on-human-evaluation" class="nav-link" data-scroll-target="#over-reliance-on-human-evaluation"><span class="header-section-number">25.13.3</span> 3. Over-Reliance on Human Evaluation</a></li>
-  <li><a href="#ignoring-edge-cases" id="toc-ignoring-edge-cases" class="nav-link" data-scroll-target="#ignoring-edge-cases"><span class="header-section-number">25.13.4</span> 4. Ignoring Edge Cases</a></li>
-  </ul></li>
-  <li><a href="#reliability-in-the-full-system" id="toc-reliability-in-the-full-system" class="nav-link" data-scroll-target="#reliability-in-the-full-system"><span class="header-section-number">25.14</span> Reliability in the Full System</a></li>
-  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">25.15</span> Final Insight</a></li>
-  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">25.16</span> Closing Statement</a></li>
-  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">25.17</span> Key Insight</a></li>
-  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">25.18</span> Action Hint</a></li>
+  <li><a href="#评估框架evaluation-framework" id="toc-评估框架evaluation-framework" class="nav-link" data-scroll-target="#评估框架evaluation-framework"><span class="header-section-number">25.4</span> 评估框架（Evaluation Framework）</a></li>
+  <li><a href="#持续监控continuous-monitoring" id="toc-持续监控continuous-monitoring" class="nav-link" data-scroll-target="#持续监控continuous-monitoring"><span class="header-section-number">25.5</span> 持续监控（Continuous Monitoring）</a></li>
   </ul>
 </nav>
     </div>
@@ -580,7 +519,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></h1>
+<h1 class="title"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></h1>
 </div>
 
 
@@ -597,581 +536,55 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="from-capability-to-reliability" class="level2" data-number="25.1">
-<h2 data-number="25.1" class="anchored" data-anchor-id="from-capability-to-reliability"><span class="header-section-number">25.1</span> From Capability to Reliability</h2>
-<p>A system that <em>works once</em> is not enough. A prototype that produces a correct output in controlled conditions is not a production system.</p>
-<p>Real systems must be:</p>
-<ul>
-<li><strong>Consistent</strong>—producing similar results for similar inputs</li>
-<li><strong>Predictable</strong>—behaving as expected across many executions</li>
-<li><strong>Measurable</strong>—performance can be quantified and tracked</li>
-</ul>
-<p>This introduces a new requirement:</p>
+<section id="可靠性为什么重要" class="level2" data-number="25.1">
+<h2 data-number="25.1" class="anchored" data-anchor-id="可靠性为什么重要"><span class="header-section-number">25.1</span> 可靠性为什么重要</h2>
+<p>在 LLM 时代，系统输出是概率性的。相同的输入可能产生不同的输出。行为可能随时间漂移。系统可能出乎意料地失败。</p>
+<p>这使得可靠性成为一个关键关注点。</p>
 <blockquote class="blockquote">
-<p><strong>Reliability — the ability to produce correct results consistently</strong></p>
+<p>可靠性不是可选项。它是系统在生产中可用的先决条件。</p>
 </blockquote>
 <hr>
 </section>
-<section id="what-is-reliability" class="level2" data-number="25.2">
-<h2 data-number="25.2" class="anchored" data-anchor-id="what-is-reliability"><span class="header-section-number">25.2</span> What is Reliability?</h2>
-<p>Reliability is the property that:</p>
+<section id="什么是可靠性what-is-reliability" class="level2" data-number="25.2">
+<h2 data-number="25.2" class="anchored" data-anchor-id="什么是可靠性what-is-reliability"><span class="header-section-number">25.2</span> 什么是可靠性？（What is Reliability?）</h2>
+<p>可靠性是系统在其生命周期内持续满足其 Spec 的能力。</p>
+<p>一个可靠的系统：</p>
+<ul>
+<li><strong>总是做正确的事</strong>——输出符合 Spec</li>
+<li><strong>一致地产生结果</strong>——相同的输入产生相同的输出</li>
+<li><strong>可预测地失败</strong>——当失败发生时，失败是清晰和可理解的</li>
+</ul>
+<p>不可靠的系统会产生不一致的结果、产生不正确但看似合理的输出、以不可预测的方式失败。</p>
+<hr>
+</section>
+<section id="可靠性策略reliability-strategies" class="level2" data-number="25.3">
+<h2 data-number="25.3" class="anchored" data-anchor-id="可靠性策略reliability-strategies"><span class="header-section-number">25.3</span> 可靠性策略（Reliability Strategies）</h2>
+<section id="spec-增强" class="level3" data-number="25.3.1">
+<h3 data-number="25.3.1" class="anchored" data-anchor-id="spec-增强"><span class="header-section-number">25.3.1</span> 1. Spec 增强</h3>
+<p>更严格的约束减少输出的变化空间。多个约束共同限制输出的可能空间。解决歧义减少错误解释的机会。</p>
+</section>
+<section id="验证与确认" class="level3" data-number="25.3.2">
+<h3 data-number="25.3.2" class="anchored" data-anchor-id="验证与确认"><span class="header-section-number">25.3.2</span> 2. 验证与确认</h3>
+<p><strong>规则验证：</strong> 对照确定性规则检查输出（格式、类型、范围）。<strong>语义验证：</strong> 检查输出是否满足 Spec 的意图。使用模型评估或人工审查。<strong>冗余验证：</strong> 多个系统产生输出并进行比较。需要额外的计算但可以提高信心。</p>
+</section>
+<section id="回退策略" class="level3" data-number="25.3.3">
+<h3 data-number="25.3.3" class="anchored" data-anchor-id="回退策略"><span class="header-section-number">25.3.3</span> 3. 回退策略</h3>
+<p>当系统失败时，有一个预先计划的响应。降级回退（使用更简单的方法）或人工回退（在必要时升级到人工处理）。</p>
+<hr>
+</section>
+</section>
+<section id="评估框架evaluation-framework" class="level2" data-number="25.4">
+<h2 data-number="25.4" class="anchored" data-anchor-id="评估框架evaluation-framework"><span class="header-section-number">25.4</span> 评估框架（Evaluation Framework）</h2>
+<p><strong>单元评估：</strong> 测试单个组件。每个模块对照其 Spec 独立测试。隔离和修复问题。</p>
+<p><strong>集成评估：</strong> 测试组件交互。组件如何协同工作。在组合系统中发现问题。</p>
+<p><strong>系统评估：</strong> 测试整体系统行为。端到端的用户场景。在现实条件下验证系统。</p>
+<hr>
+</section>
+<section id="持续监控continuous-monitoring" class="level2" data-number="25.5">
+<h2 data-number="25.5" class="anchored" data-anchor-id="持续监控continuous-monitoring"><span class="header-section-number">25.5</span> 持续监控（Continuous Monitoring）</h2>
+<p>可靠性不是一次性实现。它需要持续监控：跟踪成功率和失败模式、检测行为漂移、在性能下降时发出警报。</p>
 <blockquote class="blockquote">
-<p><strong>Given similar inputs, the system produces outputs that consistently meet defined success criteria</strong></p>
-</blockquote>
-<p>Reliability is not about being perfect or never making mistakes. It is about:</p>
-<ul>
-<li><strong>Consistency</strong>—similar inputs produce similar outputs</li>
-<li><strong>Correctness</strong>—outputs meet requirements and expectations</li>
-<li><strong>Stability</strong>—behavior does not degrade over time</li>
-</ul>
-<hr>
-<section id="key-dimensions" class="level3" data-number="25.2.1">
-<h3 data-number="25.2.1" class="anchored" data-anchor-id="key-dimensions"><span class="header-section-number">25.2.1</span> Key Dimensions</h3>
-<ul>
-<li><strong>Consistency</strong>—similar inputs → similar outputs</li>
-<li><strong>Correctness</strong>—outputs meet requirements</li>
-<li><strong>Stability</strong>—behavior does not degrade over time</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Reliability is not about perfection. It is about consistency within defined bounds.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="why-reliability-is-hard-in-llm-systems" class="level2" data-number="25.3">
-<h2 data-number="25.3" class="anchored" data-anchor-id="why-reliability-is-hard-in-llm-systems"><span class="header-section-number">25.3</span> Why Reliability is Hard in LLM Systems</h2>
-<p>LLM-based systems face unique reliability challenges that make achieving consistency difficult:</p>
-<p>LLMs are inherently:</p>
-<ul>
-<li><strong>Probabilistic</strong>—outputs are sampled from a distribution, not deterministic</li>
-<li><strong>Context-dependent</strong>—results vary based on input context and history</li>
-<li><strong>Sensitive to input variation</strong>—small changes can produce large differences</li>
-</ul>
-<p>This leads to:</p>
-<ul>
-<li><strong>Output variability</strong>—same prompt can produce different answers</li>
-<li><strong>Edge case failures</strong>—unusual inputs break the system</li>
-<li><strong>Hidden instability</strong>—problems appear only under specific conditions</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Reliability must be engineered. It does not emerge automatically in probabilistic systems.</p>
-</blockquote>
-<hr>
-</section>
-<section id="sources-of-instability" class="level2" data-number="25.4">
-<h2 data-number="25.4" class="anchored" data-anchor-id="sources-of-instability"><span class="header-section-number">25.4</span> Sources of Instability</h2>
-<p>Understanding why systems become unreliable helps design better solutions:</p>
-<hr>
-<section id="weak-spec" class="level3" data-number="25.4.1">
-<h3 data-number="25.4.1" class="anchored" data-anchor-id="weak-spec"><span class="header-section-number">25.4.1</span> 1. Weak Spec</h3>
-<ul>
-<li><strong>Ambiguous definitions</strong>—requirements are unclear or incomplete</li>
-<li><strong>Missing constraints</strong>—no boundaries on acceptable behavior</li>
-<li><strong>Weak success criteria</strong>—no clear measure of correctness</li>
-</ul>
-<p><strong>Result:</strong> System interprets requirements inconsistently</p>
-<hr>
-</section>
-<section id="poor-instruction-design" class="level3" data-number="25.4.2">
-<h3 data-number="25.4.2" class="anchored" data-anchor-id="poor-instruction-design"><span class="header-section-number">25.4.2</span> 2. Poor Instruction Design</h3>
-<ul>
-<li><strong>Inconsistent formats</strong>—output structure varies</li>
-<li><strong>Unclear task definition</strong>—system doesn’t understand what to do</li>
-<li><strong>Missing structure</strong>—no framework for execution</li>
-</ul>
-<p><strong>Result:</strong> Behavior varies between executions</p>
-<hr>
-</section>
-<section id="context-variability" class="level3" data-number="25.4.3">
-<h3 data-number="25.4.3" class="anchored" data-anchor-id="context-variability"><span class="header-section-number">25.4.3</span> 3. Context Variability</h3>
-<ul>
-<li><strong>Different context → different results</strong>—context affects interpretation</li>
-<li><strong>Context window limits</strong>—can’t include all relevant information</li>
-<li><strong>Context contamination</strong>—irrelevant information included</li>
-</ul>
-<p><strong>Result:</strong> Inconsistent behavior across sessions</p>
-<hr>
-</section>
-<section id="tool-errors" class="level3" data-number="25.4.4">
-<h3 data-number="25.4.4" class="anchored" data-anchor-id="tool-errors"><span class="header-section-number">25.4.4</span> 4. Tool Errors</h3>
-<ul>
-<li><strong>External API failures</strong>—services unavailable or malfunctioning</li>
-<li><strong>Incorrect data</strong>—tools return wrong information</li>
-<li><strong>Tool misuse</strong>—wrong tool used or used incorrectly</li>
-</ul>
-<p><strong>Result:</strong> Unreliable external operations</p>
-<hr>
-</section>
-<section id="lack-of-evaluation" class="level3" data-number="25.4.5">
-<h3 data-number="25.4.5" class="anchored" data-anchor-id="lack-of-evaluation"><span class="header-section-number">25.4.5</span> 5. Lack of Evaluation</h3>
-<ul>
-<li><strong>No feedback loop</strong>—can’t detect or correct errors</li>
-<li><strong>Unknown quality</strong>—don’t know if results are correct</li>
-<li><strong>Uncaught failures</strong>—errors propagate silently</li>
-</ul>
-<p><strong>Result:</strong> Problems accumulate and compound</p>
-<hr>
-<blockquote class="blockquote">
-<p>Most instability originates upstream—in definition and design, not execution.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="principles-for-stability" class="level2" data-number="25.5">
-<h2 data-number="25.5" class="anchored" data-anchor-id="principles-for-stability"><span class="header-section-number">25.5</span> Principles for Stability</h2>
-<p>Achieving reliability requires applying specific principles throughout system design:</p>
-<hr>
-<section id="strengthen-spec" class="level3" data-number="25.5.1">
-<h3 data-number="25.5.1" class="anchored" data-anchor-id="strengthen-spec"><span class="header-section-number">25.5.1</span> 1. Strengthen Spec</h3>
-<ul>
-<li><strong>Define clear constraints</strong>—explicit boundaries on behavior</li>
-<li><strong>Reduce ambiguity</strong>—eliminate multiple interpretations</li>
-<li><strong>Specify edge cases</strong>—handle unusual inputs explicitly</li>
-</ul>
-<p><strong>Result:</strong> System has clear, unambiguous requirements</p>
-<hr>
-</section>
-<section id="enforce-structure" class="level3" data-number="25.5.2">
-<h3 data-number="25.5.2" class="anchored" data-anchor-id="enforce-structure"><span class="header-section-number">25.5.2</span> 2. Enforce Structure</h3>
-<ul>
-<li><strong>Use structured outputs</strong>—exact format requirements</li>
-<li><strong>Standardize formats</strong>—consistent data structures</li>
-<li><strong>Validate structure</strong>—check format at every stage</li>
-</ul>
-<p><strong>Result:</strong> Predictable, parseable outputs</p>
-<hr>
-</section>
-<section id="control-context" class="level3" data-number="25.5.3">
-<h3 data-number="25.5.3" class="anchored" data-anchor-id="control-context"><span class="header-section-number">25.5.3</span> 3. Control Context</h3>
-<ul>
-<li><strong>Manage inputs carefully</strong>—validate and clean input data</li>
-<li><strong>Reduce noise</strong>—remove irrelevant information</li>
-<li><strong>Standardize context</strong>—consistent context construction</li>
-</ul>
-<p><strong>Result:</strong> Consistent processing environment</p>
-<hr>
-</section>
-<section id="add-redundancy" class="level3" data-number="25.5.4">
-<h3 data-number="25.5.4" class="anchored" data-anchor-id="add-redundancy"><span class="header-section-number">25.5.4</span> 4. Add Redundancy</h3>
-<ul>
-<li><strong>Multiple checks</strong>—verify results at multiple stages</li>
-<li><strong>Fallback mechanisms</strong>—alternative approaches when primary fails</li>
-<li><strong>Redundant processing</strong>—compare multiple outputs</li>
-</ul>
-<p><strong>Result:</strong> Errors caught before they affect users</p>
-<hr>
-</section>
-<section id="introduce-evaluation" class="level3" data-number="25.5.5">
-<h3 data-number="25.5.5" class="anchored" data-anchor-id="introduce-evaluation"><span class="header-section-number">25.5.5</span> 5. Introduce Evaluation</h3>
-<ul>
-<li><strong>Continuous validation</strong>—check every output</li>
-<li><strong>Feedback loops</strong>—use results to improve system</li>
-<li><strong>Quality metrics</strong>—track performance over time</li>
-</ul>
-<p><strong>Result:</strong> System learns and improves</p>
-<hr>
-<blockquote class="blockquote">
-<p>Stability is achieved through layered control. Multiple mechanisms work together to ensure reliability.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="what-is-evaluation-in-this-context" class="level2" data-number="25.6">
-<h2 data-number="25.6" class="anchored" data-anchor-id="what-is-evaluation-in-this-context"><span class="header-section-number">25.6</span> What is Evaluation in This Context?</h2>
-<p>Evaluation is the process of:</p>
-<blockquote class="blockquote">
-<p><strong>Measuring whether system outputs meet defined success criteria</strong></p>
-</blockquote>
-<hr>
-<p>It provides:</p>
-<ul>
-<li><strong>A signal of correctness</strong>—knowing whether results are acceptable</li>
-<li><strong>A basis for iteration</strong>—information for improving the system</li>
-<li><strong>A mechanism for control</strong>—triggering corrections or retries</li>
-</ul>
-<hr>
-<section id="why-evaluation-matters" class="level3" data-number="25.6.1">
-<h3 data-number="25.6.1" class="anchored" data-anchor-id="why-evaluation-matters"><span class="header-section-number">25.6.1</span> Why Evaluation Matters</h3>
-<p>Without evaluation:</p>
-<ul>
-<li><strong>No notion of correctness</strong>—can’t distinguish good from bad results</li>
-<li><strong>No direction for improvement</strong>—don’t know what to fix</li>
-<li><strong>No system stability</strong>—behavior can drift without detection</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="automatic-evaluation" class="level2" data-number="25.7">
-<h2 data-number="25.7" class="anchored" data-anchor-id="automatic-evaluation"><span class="header-section-number">25.7</span> Automatic Evaluation</h2>
-<p>Manual evaluation does not scale for production systems. Therefore, we introduce:</p>
-<blockquote class="blockquote">
-<p><strong>Automatic Evaluation</strong></p>
-</blockquote>
-<hr>
-<section id="definition" class="level3" data-number="25.7.1">
-<h3 data-number="25.7.1" class="anchored" data-anchor-id="definition"><span class="header-section-number">25.7.1</span> Definition</h3>
-<p>Automatic evaluation is:</p>
-<blockquote class="blockquote">
-<p><strong>The use of rules, models, or metrics to assess outputs without human intervention</strong></p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="types-of-automatic-evaluation" class="level2" data-number="25.8">
-<h2 data-number="25.8" class="anchored" data-anchor-id="types-of-automatic-evaluation"><span class="header-section-number">25.8</span> Types of Automatic Evaluation</h2>
-<p>Different approaches suit different evaluation needs:</p>
-<hr>
-<section id="rule-based-evaluation" class="level3" data-number="25.8.1">
-<h3 data-number="25.8.1" class="anchored" data-anchor-id="rule-based-evaluation"><span class="header-section-number">25.8.1</span> 1. Rule-Based Evaluation</h3>
-<ul>
-<li><strong>Deterministic checks</strong>—yes/no questions about output</li>
-<li><strong>Examples:</strong>
-<ul>
-<li>JSON validity—output is valid JSON</li>
-<li>Length constraints—output under specified length</li>
-<li>Required fields—all mandatory fields present</li>
-</ul></li>
-<li><strong>Advantages:</strong>
-<ul>
-<li>Fast and precise</li>
-<li>No false positives</li>
-<li>Easy to implement</li>
-</ul></li>
-<li><strong>Disadvantages:</strong>
-<ul>
-<li>Limited scope</li>
-<li>Can’t assess quality</li>
-<li>Rigid</li>
-</ul></li>
-</ul>
-<hr>
-</section>
-<section id="model-based-evaluation" class="level3" data-number="25.8.2">
-<h3 data-number="25.8.2" class="anchored" data-anchor-id="model-based-evaluation"><span class="header-section-number">25.8.2</span> 2. Model-Based Evaluation</h3>
-<ul>
-<li><strong>Use another model to evaluate</strong>—judge output quality</li>
-<li><strong>Examples:</strong>
-<ul>
-<li>Relevance scoring—how relevant is output to input?</li>
-<li>Hallucination detection—is output grounded in facts?</li>
-<li>Sentiment analysis—is tone appropriate?</li>
-</ul></li>
-<li><strong>Advantages:</strong>
-<ul>
-<li>Can assess complex criteria</li>
-<li>Flexible and adaptable</li>
-<li>Can evaluate nuance</li>
-</ul></li>
-<li><strong>Disadvantages:</strong>
-<ul>
-<li>Can be expensive</li>
-<li>May have biases</li>
-<li>Slower than rules</li>
-</ul></li>
-</ul>
-<hr>
-</section>
-<section id="metric-based-evaluation" class="level3" data-number="25.8.3">
-<h3 data-number="25.8.3" class="anchored" data-anchor-id="metric-based-evaluation"><span class="header-section-number">25.8.3</span> 3. Metric-Based Evaluation</h3>
-<ul>
-<li><strong>Quantitative measures</strong>—numerical scores for quality</li>
-<li><strong>Examples:</strong>
-<ul>
-<li>Accuracy—percentage of correct outputs</li>
-<li>Precision/recall—performance on classification tasks</li>
-<li>Latency—response time</li>
-</ul></li>
-<li><strong>Advantages:</strong>
-<ul>
-<li>Objective and comparable</li>
-<li>Trackable over time</li>
-<li>Industry standards exist</li>
-</ul></li>
-<li><strong>Disadvantages:</strong>
-<ul>
-<li>May not capture all aspects of quality</li>
-<li>Can be gamed</li>
-<li>Need ground truth</li>
-</ul></li>
-</ul>
-<hr>
-</section>
-<section id="hybrid-evaluation" class="level3" data-number="25.8.4">
-<h3 data-number="25.8.4" class="anchored" data-anchor-id="hybrid-evaluation"><span class="header-section-number">25.8.4</span> 4. Hybrid Evaluation</h3>
-<ul>
-<li><strong>Combine multiple methods</strong>—use rules, models, and metrics together</li>
-<li><strong>Example:</strong>
-<ul>
-<li>Rule: Output must be JSON</li>
-<li>Model: JSON must contain relevant information</li>
-<li>Metric: Response time under 2 seconds</li>
-</ul></li>
-<li><strong>Advantages:</strong>
-<ul>
-<li>Comprehensive</li>
-<li>Leverages strengths of each approach</li>
-<li>More robust</li>
-</ul></li>
-<li><strong>Disadvantages:</strong>
-<ul>
-<li>More complex to implement</li>
-<li>Higher cost</li>
-<li>Requires coordination</li>
-</ul></li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Strong systems use layered evaluation—multiple methods working together to ensure quality.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="evaluation-pipeline" class="level2" data-number="25.9">
-<h2 data-number="25.9" class="anchored" data-anchor-id="evaluation-pipeline"><span class="header-section-number">25.9</span> Evaluation Pipeline</h2>
-<p>A robust system includes an evaluation pipeline that checks quality at every stage:</p>
-<pre><code>Output → Validation → Scoring → Decision</code></pre>
-<hr>
-<section id="steps" class="level3" data-number="25.9.1">
-<h3 data-number="25.9.1" class="anchored" data-anchor-id="steps"><span class="header-section-number">25.9.1</span> Steps</h3>
-<hr>
-<section id="validation" class="level4" data-number="25.9.1.1">
-<h4 data-number="25.9.1.1" class="anchored" data-anchor-id="validation"><span class="header-section-number">25.9.1.1</span> 1. Validation</h4>
-<ul>
-<li>Check format—ensure output meets structural requirements</li>
-<li>Ensure constraints—verify output respects defined boundaries</li>
-<li>Validate completeness—check that all required elements are present</li>
-</ul>
-<hr>
-</section>
-<section id="scoring" class="level4" data-number="25.9.1.2">
-<h4 data-number="25.9.1.2" class="anchored" data-anchor-id="scoring"><span class="header-section-number">25.9.1.2</span> 2. Scoring</h4>
-<ul>
-<li>Assess quality—assign score based on evaluation criteria</li>
-<li>Measure performance—calculate metrics like accuracy or relevance</li>
-<li><ul>
-<li>Rate results—determine how well output meets requirements</li>
-</ul></li>
-</ul>
-<hr>
-</section>
-<section id="decision" class="level4" data-number="25.9.1.3">
-<h4 data-number="25.9.1.3" class="anchored" data-anchor-id="decision"><span class="header-section-number">25.9.1.3</span> 3. Decision</h4>
-<ul>
-<li><strong>Accept</strong>—output meets requirements, proceed to user</li>
-<li><strong>Reject</strong>—output fails validation, trigger retry or correction</li>
-<li><strong>Flag</strong>—output is marginal, requires human review</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Evaluation is not passive. It drives system behavior and ensures quality.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-</section>
-<section id="feedback-loops" class="level2" data-number="25.10">
-<h2 data-number="25.10" class="anchored" data-anchor-id="feedback-loops"><span class="header-section-number">25.10</span> Feedback Loops</h2>
-<p>Evaluation enables feedback—using results to improve the system:</p>
-<hr>
-<section id="immediate-feedback" class="level3" data-number="25.10.1">
-<h3 data-number="25.10.1" class="anchored" data-anchor-id="immediate-feedback"><span class="header-section-number">25.10.1</span> Immediate Feedback</h3>
-<ul>
-<li><strong>Reject invalid outputs</strong>—don’t present to user</li>
-<li><strong>Trigger retries</strong>—attempt to produce better result</li>
-<li><strong>Apply corrections</strong>—automatically fix simple errors</li>
-</ul>
-<p><strong>Purpose:</strong> Ensure user receives only high-quality results</p>
-<hr>
-</section>
-<section id="long-term-feedback" class="level3" data-number="25.10.2">
-<h3 data-number="25.10.2" class="anchored" data-anchor-id="long-term-feedback"><span class="header-section-number">25.10.2</span> Long-Term Feedback</h3>
-<ul>
-<li><strong>Improve spec</strong>—refine definitions based on evaluation results</li>
-<li><strong>Refine instructions</strong>—adjust protocols based on what works</li>
-<li><strong>Optimize parameters</strong>—tune system settings for better performance</li>
-</ul>
-<p><strong>Purpose:</strong> Continuous improvement over time</p>
-<hr>
-<blockquote class="blockquote">
-<p>Feedback transforms systems from static to adaptive. Systems that learn from evaluation become more reliable.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="techniques-for-improving-reliability" class="level2" data-number="25.11">
-<h2 data-number="25.11" class="anchored" data-anchor-id="techniques-for-improving-reliability"><span class="header-section-number">25.11</span> Techniques for Improving Reliability</h2>
-<p>Several techniques can enhance system reliability:</p>
-<hr>
-<section id="multiple-runs-sampling" class="level3" data-number="25.11.1">
-<h3 data-number="25.11.1" class="anchored" data-anchor-id="multiple-runs-sampling"><span class="header-section-number">25.11.1</span> 1. Multiple Runs (Sampling)</h3>
-<ul>
-<li><strong>Generate multiple outputs</strong>—run instruction several times</li>
-<li><strong>Select best</strong>—choose highest quality output</li>
-<li><strong>Average or aggregate</strong>—combine multiple outputs</li>
-</ul>
-<p><strong>Purpose:</strong> Increase chance of good result</p>
-<hr>
-</section>
-<section id="self-consistency" class="level3" data-number="25.11.2">
-<h3 data-number="25.11.2" class="anchored" data-anchor-id="self-consistency"><span class="header-section-number">25.11.2</span> 2. Self-Consistency</h3>
-<ul>
-<li><strong>Compare multiple answers</strong>—run same instruction multiple times</li>
-<li><strong>Choose consistent result</strong>—select output that appears most frequently</li>
-<li><strong>Identify outliers</strong>—flag unusual outputs for review</li>
-</ul>
-<p><strong>Purpose:</strong> Reduce randomness and improve stability</p>
-<hr>
-</section>
-<section id="verification-steps" class="level3" data-number="25.11.3">
-<h3 data-number="25.11.3" class="anchored" data-anchor-id="verification-steps"><span class="header-section-number">25.11.3</span> 3. Verification Steps</h3>
-<ul>
-<li><strong>Add validation stages</strong>—check output at multiple points</li>
-<li><strong>Verify correctness</strong>—confirm output meets requirements</li>
-<li><ul>
-<li><strong>Cross-check</strong>—compare against expected patterns</li>
-</ul></li>
-</ul>
-<p><strong>Purpose:</strong> Catch errors before they propagate</p>
-<hr>
-</section>
-<section id="guardrails" class="level3" data-number="25.11.4">
-<h3 data-number="25.11.4" class="anchored" data-anchor-id="guardrails"><span class="header-section-number">25.11.4</span> 4. Guardrails</h3>
-<ul>
-<li><strong>Enforce constraints</strong>—prevent outputs that violate rules</li>
-<li><strong>Filter inappropriate content</strong>—block harmful or incorrect outputs</li>
-<li><strong>Limit behavior</strong>—keep system within defined boundaries</li>
-</ul>
-<p><strong>Purpose:</strong> Prevent unacceptable outputs</p>
-<hr>
-<blockquote class="blockquote">
-<p>Reliability is built through layers of verification. Multiple checks ensure quality.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="trade-offs" class="level2" data-number="25.12">
-<h2 data-number="25.12" class="anchored" data-anchor-id="trade-offs"><span class="header-section-number">25.12</span> Trade-offs</h2>
-<p>System design involves balancing competing requirements:</p>
-<hr>
-<section id="reliability-vs-cost" class="level3" data-number="25.12.1">
-<h3 data-number="25.12.1" class="anchored" data-anchor-id="reliability-vs-cost"><span class="header-section-number">25.12.1</span> Reliability vs Cost</h3>
-<ul>
-<li><strong>More checks → higher cost</strong>—additional evaluation increases computational expense</li>
-<li><strong>Fewer checks → lower cost</strong>—reduced verification saves resources</li>
-<li><strong>Balance:</strong> Choose evaluation depth based on cost constraints</li>
-</ul>
-<hr>
-</section>
-<section id="reliability-vs-speed" class="level3" data-number="25.12.2">
-<h3 data-number="25.12.2" class="anchored" data-anchor-id="reliability-vs-speed"><span class="header-section-number">25.12.2</span> Reliability vs Speed</h3>
-<ul>
-<li><strong>More evaluation → slower execution</strong>—verification takes time</li>
-<li><strong>Less evaluation → faster response</strong>—reduced checks improve speed</li>
-<li><strong>Balance:</strong> Optimize for required latency while maintaining acceptable reliability</li>
-</ul>
-<hr>
-</section>
-<section id="reliability-vs-flexibility" class="level3" data-number="25.12.3">
-<h3 data-number="25.12.3" class="anchored" data-anchor-id="reliability-vs-flexibility"><span class="header-section-number">25.12.3</span> Reliability vs Flexibility</h3>
-<ul>
-<li><strong>More constraints → less flexibility</strong>—strict rules limit options</li>
-<li><strong>Fewer constraints → more flexibility</strong>—loose rules allow more variation</li>
-<li><strong>Balance:</strong> Define constraints that ensure reliability without limiting necessary flexibility</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>System design requires balancing these factors based on specific requirements and constraints.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="common-mistakes" class="level2" data-number="25.13">
-<h2 data-number="25.13" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">25.13</span> Common Mistakes</h2>
-<p>Several common mistakes undermine reliability:</p>
-<hr>
-<section id="relying-on-single-output" class="level3" data-number="25.13.1">
-<h3 data-number="25.13.1" class="anchored" data-anchor-id="relying-on-single-output"><span class="header-section-number">25.13.1</span> 1. Relying on Single Output</h3>
-<ul>
-<li><strong>No validation</strong>—accept first output without checking</li>
-<li><strong>High risk</strong>—errors propagate to users</li>
-<li><strong>Unpredictable quality</strong>—no guarantee of correctness</li>
-</ul>
-<p><strong>Solution:</strong> Always validate outputs. Implement evaluation pipelines.</p>
-<hr>
-</section>
-<section id="no-clear-metrics" class="level3" data-number="25.13.2">
-<h3 data-number="25.13.2" class="anchored" data-anchor-id="no-clear-metrics"><span class="header-section-number">25.13.2</span> 2. No Clear Metrics</h3>
-<ul>
-<li><strong>Cannot measure improvement</strong>—don’t know if system is getting better</li>
-<li><strong>No baseline</strong>—can’t assess performance</li>
-<li><strong>Blind optimization</strong>—changing things without knowing if they help</li>
-</ul>
-<p><strong>Solution:</strong> Define clear metrics. Track performance over time.</p>
-<hr>
-</section>
-<section id="over-reliance-on-human-evaluation" class="level3" data-number="25.13.3">
-<h3 data-number="25.13.3" class="anchored" data-anchor-id="over-reliance-on-human-evaluation"><span class="header-section-number">25.13.3</span> 3. Over-Reliance on Human Evaluation</h3>
-<ul>
-<li><strong>Does not scale</strong>—can’t evaluate every output manually</li>
-<li><strong>Inconsistent</strong>—human judgment varies</li>
-<li><strong>Slow</strong>—manual evaluation is time-consuming</li>
-</ul>
-<p><strong>Solution:</strong> Implement automatic evaluation. Use human evaluation for special cases.</p>
-<hr>
-</section>
-<section id="ignoring-edge-cases" class="level3" data-number="25.13.4">
-<h3 data-number="25.13.4" class="anchored" data-anchor-id="ignoring-edge-cases"><span class="header-section-number">25.13.4</span> 4. Ignoring Edge Cases</h3>
-<ul>
-<li><strong>System fails under variation</strong>—unusual inputs break the system</li>
-<li><strong>Hidden failures</strong>—problems only appear in rare cases</li>
-<li><strong>False confidence</strong>—system works on test data but fails in production</li>
-</ul>
-<p><strong>Solution:</strong> Test diverse inputs. Identify and handle edge cases explicitly.</p>
-<hr>
-</section>
-</section>
-<section id="reliability-in-the-full-system" class="level2" data-number="25.14">
-<h2 data-number="25.14" class="anchored" data-anchor-id="reliability-in-the-full-system"><span class="header-section-number">25.14</span> Reliability in the Full System</h2>
-<p>Reliability integrates into the full Minimal Loop pipeline:</p>
-<pre><code>Intent → Spec → Instruction → Execution → Evaluation → Feedback</code></pre>
-<hr>
-<p>It ensures that:</p>
-<ul>
-<li><strong>Each stage is validated</strong>—quality checked at every point</li>
-<li><strong>Errors are detected</strong>—problems identified early</li>
-<li><strong>Systems improve over time</strong>—feedback drives refinement</li>
-</ul>
-<hr>
-</section>
-<section id="final-insight" class="level2" data-number="25.15">
-<h2 data-number="25.15" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">25.15</span> Final Insight</h2>
-<p>Reliability is not a feature added at the end. It is a property of the entire system.</p>
-<hr>
-<blockquote class="blockquote">
-<p>A system is only as reliable as its weakest definition. Every layer—from intent to evaluation—must be designed for reliability.</p>
-</blockquote>
-<hr>
-</section>
-<section id="closing-statement" class="level2" data-number="25.16">
-<h2 data-number="25.16" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">25.16</span> Closing Statement</h2>
-<p>In the LLM era, building systems is not just about making them work. It is about making them work <strong>consistently</strong>.</p>
-<blockquote class="blockquote">
-<p>Reliability is what turns capability into trust.</p>
-</blockquote>
-<hr>
-</section>
-<section id="key-insight" class="level2" data-number="25.17">
-<h2 data-number="25.17" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">25.17</span> Key Insight</h2>
-<blockquote class="blockquote">
-<p>Reliability enables systems to produce correct results consistently. Key principles include strengthening spec, enforcing structure, controlling context, adding redundancy, and introducing evaluation. Automatic evaluation methods include rule-based, model-based, metric-based, and hybrid approaches.</p>
-</blockquote>
-</section>
-<section id="action-hint" class="level2" data-number="25.18">
-<h2 data-number="25.18" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">25.18</span> Action Hint</h2>
-<blockquote class="blockquote">
-<p>Implement evaluation at every stage. Use rule-based checks for format and constraints. Use model-based evaluation for quality assessment. Track metrics over time. Build feedback loops for continuous improvement. Balance reliability with cost, speed, and flexibility. Test diverse inputs to catch edge cases.</p>
+<p>可靠性不是一种状态，而是一种实践。它需要持续关注、系统测试和迭代改进。</p>
 </blockquote>
 
 
@@ -1593,13 +1006,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-23.html" class="pagination-link" aria-label="Building an Agent System">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span>
+      <a href="./chapter-23.html" class="pagination-link" aria-label="构建智能体系统（Building an Agent System）">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">构建智能体系统（Building an Agent System）</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-25.html" class="pagination-link" aria-label="Debugging in the LLM Era">
-        <span class="nav-page-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-25.html" class="pagination-link" aria-label="LLM 时代的调试（Debugging in the LLM Era）">
+        <span class="nav-page-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

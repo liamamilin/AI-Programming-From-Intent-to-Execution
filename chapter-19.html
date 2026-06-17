@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>20&nbsp; Instruction Design – AI Programming: From Intent to Execution</title>
+<title>20&nbsp; 指令设计（Instruction Design） – AI Programming: From Intent to Execution</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,19 +37,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="./chapter-18.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-aa873432a3c62897e6c2091c0d30a948.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -250,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-19.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-19.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">指令设计（Instruction Design）</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -263,9 +265,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AI Programming: From Intent to Execution</a> 
         <div class="sidebar-tools-main">
@@ -283,211 +283,211 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">前言（Preface）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">转变：从编码到定义（The Shift: From Coding to Defining）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">新的瓶颈：定义（The New Bottleneck: Definition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">编程现在是什么？（What is Programming Now?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">最小循环（The Minimal Loop）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">意图：定义要做什么（Intent: Defining What to Do）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">规格说明：消除歧义（Spec: Eliminating Ambiguity）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">指令：使其可执行（Instruction: Making It Executable）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">评估与迭代（Evaluation &amp; Iteration）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">可能性空间（Possibility Space）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">从 Spec 到指令（From Spec to Instruction）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-19.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">指令设计（Instruction Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">工具使用与 API（Tool Use &amp; APIs）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">构建智能体系统（Building an Agent System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">构建聊天系统（Building a Chat System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">从理想到产品（From Idea to Product）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-31.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">编程即系统设计（Programming as System Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">语言即操作系统（Language as an Operating System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">人类 + AI 认知（Human + AI Cognition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">构建者的未来（The Future of Builders）</span></span></a>
   </div>
 </li>
     </ul>
@@ -500,59 +500,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#from-execution-to-design" id="toc-from-execution-to-design" class="nav-link active" data-scroll-target="#from-execution-to-design"><span class="header-section-number">20.1</span> From Execution to Design</a></li>
-  <li><a href="#what-makes-a-good-instruction" id="toc-what-makes-a-good-instruction" class="nav-link" data-scroll-target="#what-makes-a-good-instruction"><span class="header-section-number">20.2</span> What Makes a Good Instruction?</a>
+  <li><a href="#从执行到设计" id="toc-从执行到设计" class="nav-link active" data-scroll-target="#从执行到设计"><span class="header-section-number">20.1</span> 从执行到设计</a></li>
+  <li><a href="#好的指令的构成what-makes-a-good-instruction" id="toc-好的指令的构成what-makes-a-good-instruction" class="nav-link" data-scroll-target="#好的指令的构成what-makes-a-good-instruction"><span class="header-section-number">20.2</span> 好的指令的构成（What Makes a Good Instruction?）</a>
   <ul class="collapse">
-  <li><a href="#core-properties" id="toc-core-properties" class="nav-link" data-scroll-target="#core-properties"><span class="header-section-number">20.2.1</span> Core Properties</a></li>
+  <li><a href="#核心属性" id="toc-核心属性" class="nav-link" data-scroll-target="#核心属性"><span class="header-section-number">20.2.1</span> 核心属性</a></li>
   </ul></li>
-  <li><a href="#instruction-as-a-design-artifact" id="toc-instruction-as-a-design-artifact" class="nav-link" data-scroll-target="#instruction-as-a-design-artifact"><span class="header-section-number">20.3</span> Instruction as a Design Artifact</a>
-  <ul class="collapse">
-  <li><a href="#example-analogy" id="toc-example-analogy" class="nav-link" data-scroll-target="#example-analogy"><span class="header-section-number">20.3.1</span> Example Analogy</a></li>
-  </ul></li>
-  <li><a href="#the-importance-of-structured-output" id="toc-the-importance-of-structured-output" class="nav-link" data-scroll-target="#the-importance-of-structured-output"><span class="header-section-number">20.4</span> The Importance of Structured Output</a>
-  <ul class="collapse">
-  <li><a href="#why-structure-matters" id="toc-why-structure-matters" class="nav-link" data-scroll-target="#why-structure-matters"><span class="header-section-number">20.4.1</span> Why Structure Matters</a></li>
-  </ul></li>
-  <li><a href="#types-of-output-structure" id="toc-types-of-output-structure" class="nav-link" data-scroll-target="#types-of-output-structure"><span class="header-section-number">20.5</span> Types of Output Structure</a>
-  <ul class="collapse">
-  <li><a href="#free-text-least-structured" id="toc-free-text-least-structured" class="nav-link" data-scroll-target="#free-text-least-structured"><span class="header-section-number">20.5.1</span> 1. Free Text (Least Structured)</a></li>
-  <li><a href="#semi-structured" id="toc-semi-structured" class="nav-link" data-scroll-target="#semi-structured"><span class="header-section-number">20.5.2</span> 2. Semi-Structured</a></li>
-  <li><a href="#fully-structured" id="toc-fully-structured" class="nav-link" data-scroll-target="#fully-structured"><span class="header-section-number">20.5.3</span> 3. Fully Structured</a></li>
-  </ul></li>
-  <li><a href="#designing-output-first" id="toc-designing-output-first" class="nav-link" data-scroll-target="#designing-output-first"><span class="header-section-number">20.6</span> Designing Output First</a>
-  <ul class="collapse">
-  <li><a href="#why" id="toc-why" class="nav-link" data-scroll-target="#why"><span class="header-section-number">20.6.1</span> Why?</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">20.6.2</span> Example</a></li>
-  </ul></li>
-  <li><a href="#balancing-structure-and-flexibility" id="toc-balancing-structure-and-flexibility" class="nav-link" data-scroll-target="#balancing-structure-and-flexibility"><span class="header-section-number">20.7</span> Balancing Structure and Flexibility</a>
-  <ul class="collapse">
-  <li><a href="#too-little-structure" id="toc-too-little-structure" class="nav-link" data-scroll-target="#too-little-structure"><span class="header-section-number">20.7.1</span> Too Little Structure</a></li>
-  <li><a href="#too-much-structure" id="toc-too-much-structure" class="nav-link" data-scroll-target="#too-much-structure"><span class="header-section-number">20.7.2</span> Too Much Structure</a></li>
-  <li><a href="#good-balance" id="toc-good-balance" class="nav-link" data-scroll-target="#good-balance"><span class="header-section-number">20.7.3</span> Good Balance</a></li>
-  </ul></li>
-  <li><a href="#instruction-granularity" id="toc-instruction-granularity" class="nav-link" data-scroll-target="#instruction-granularity"><span class="header-section-number">20.8</span> Instruction Granularity</a>
-  <ul class="collapse">
-  <li><a href="#high-level-instruction" id="toc-high-level-instruction" class="nav-link" data-scroll-target="#high-level-instruction"><span class="header-section-number">20.8.1</span> High-Level Instruction</a></li>
-  <li><a href="#low-level-instruction" id="toc-low-level-instruction" class="nav-link" data-scroll-target="#low-level-instruction"><span class="header-section-number">20.8.2</span> Low-Level Instruction</a></li>
-  <li><a href="#trade-off" id="toc-trade-off" class="nav-link" data-scroll-target="#trade-off"><span class="header-section-number">20.8.3</span> Trade-off</a></li>
-  </ul></li>
-  <li><a href="#reusability-of-instructions" id="toc-reusability-of-instructions" class="nav-link" data-scroll-target="#reusability-of-instructions"><span class="header-section-number">20.9</span> Reusability of Instructions</a>
-  <ul class="collapse">
-  <li><a href="#characteristics-of-reusable-instructions" id="toc-characteristics-of-reusable-instructions" class="nav-link" data-scroll-target="#characteristics-of-reusable-instructions"><span class="header-section-number">20.9.1</span> Characteristics of Reusable Instructions</a></li>
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">20.9.2</span> Example</a></li>
-  </ul></li>
-  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">20.10</span> Common Mistakes</a>
-  <ul class="collapse">
-  <li><a href="#treating-instructions-as-prompts" id="toc-treating-instructions-as-prompts" class="nav-link" data-scroll-target="#treating-instructions-as-prompts"><span class="header-section-number">20.10.1</span> 1. Treating Instructions as Prompts</a></li>
-  <li><a href="#ignoring-output-design" id="toc-ignoring-output-design" class="nav-link" data-scroll-target="#ignoring-output-design"><span class="header-section-number">20.10.2</span> 2. Ignoring Output Design</a></li>
-  <li><a href="#missing-constraints" id="toc-missing-constraints" class="nav-link" data-scroll-target="#missing-constraints"><span class="header-section-number">20.10.3</span> 3. Missing Constraints</a></li>
-  <li><a href="#overloading-instructions" id="toc-overloading-instructions" class="nav-link" data-scroll-target="#overloading-instructions"><span class="header-section-number">20.10.4</span> 4. Overloading Instructions</a></li>
-  </ul></li>
-  <li><a href="#instruction-and-system-stability" id="toc-instruction-and-system-stability" class="nav-link" data-scroll-target="#instruction-and-system-stability"><span class="header-section-number">20.11</span> Instruction and System Stability</a></li>
-  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">20.12</span> Final Insight</a></li>
-  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">20.13</span> Closing Statement</a></li>
-  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">20.14</span> Key Insight</a></li>
-  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">20.15</span> Action Hint</a></li>
+  <li><a href="#指令设计原则instruction-design-principles" id="toc-指令设计原则instruction-design-principles" class="nav-link" data-scroll-target="#指令设计原则instruction-design-principles"><span class="header-section-number">20.3</span> 指令设计原则（Instruction Design Principles）</a></li>
+  <li><a href="#指令模板instruction-template" id="toc-指令模板instruction-template" class="nav-link" data-scroll-target="#指令模板instruction-template"><span class="header-section-number">20.4</span> 指令模板（Instruction Template）</a></li>
   </ul>
 </nav>
     </div>
@@ -562,7 +516,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></h1>
+<h1 class="title"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">指令设计（Instruction Design）</span></h1>
 </div>
 
 
@@ -579,407 +533,65 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="from-execution-to-design" class="level2" data-number="20.1">
-<h2 data-number="20.1" class="anchored" data-anchor-id="from-execution-to-design"><span class="header-section-number">20.1</span> From Execution to Design</h2>
-<p>Instruction is not just a simple translation from spec to execution. It is not merely a mechanical process of converting requirements into prompts.</p>
-<p>Instruction is a <strong>design problem</strong>—a creative and analytical challenge that determines how well a system will perform.</p>
-<p>A poorly designed instruction leads to:</p>
-<ul>
-<li>Inconsistent outputs—results vary unpredictably</li>
-<li>Unstable behavior—different runs produce different outcomes</li>
-<li>Difficult debugging—problems are hard to diagnose and fix</li>
-</ul>
-<p>A well-designed instruction leads to:</p>
-<ul>
-<li>Predictable results—consistent, reliable outputs</li>
-<li>Reusable components—can be applied across different contexts</li>
-<li>Scalable systems—can grow and evolve without breaking</li>
-</ul>
-<hr>
+<section id="从执行到设计" class="level2" data-number="20.1">
+<h2 data-number="20.1" class="anchored" data-anchor-id="从执行到设计"><span class="header-section-number">20.1</span> 从执行到设计</h2>
+<p>指令不仅仅是 Spec 到执行的简单翻译。它不仅仅是机械地将需求转换为提示词的过程。</p>
+<p>指令是一个<strong>设计问题</strong>——决定系统表现如何的创造性和分析性挑战。</p>
+<p>设计不良的指令导致：输出不一致、行为不稳定、调试困难。</p>
+<p>设计良好的指令导致：结果可预测、组件可复用、系统可扩展。</p>
 <blockquote class="blockquote">
-<p>Instruction is not something you write once and forget. It is something you design carefully, test systematically, and refine continuously.</p>
+<p>指令不是你一次性写好就忘记的东西。它是你精心设计、系统测试、持续精化的东西。</p>
 </blockquote>
 <hr>
 </section>
-<section id="what-makes-a-good-instruction" class="level2" data-number="20.2">
-<h2 data-number="20.2" class="anchored" data-anchor-id="what-makes-a-good-instruction"><span class="header-section-number">20.2</span> What Makes a Good Instruction?</h2>
-<p>A good instruction is one that enables a system to operate effectively and reliably. It should empower the system to:</p>
-<ul>
-<li><strong>Produce correct outputs</strong>—results that meet requirements and expectations</li>
-<li><strong>Maintain consistency</strong>—similar inputs produce similar outputs</li>
-<li><strong>Be reusable across contexts</strong>—can be applied to different problems or domains</li>
-</ul>
-<hr>
-<section id="core-properties" class="level3" data-number="20.2.1">
-<h3 data-number="20.2.1" class="anchored" data-anchor-id="core-properties"><span class="header-section-number">20.2.1</span> Core Properties</h3>
-<p>Effective instructions share several fundamental properties:</p>
-<hr>
-<section id="clarity" class="level4" data-number="20.2.1.1">
-<h4 data-number="20.2.1.1" class="anchored" data-anchor-id="clarity"><span class="header-section-number">20.2.1.1</span> 1. Clarity</h4>
-<ul>
-<li>No ambiguity in task—the purpose is crystal clear</li>
-<li>Clear expectations—what should happen is obvious</li>
-<li>No room for interpretation—multiple meanings are eliminated</li>
-</ul>
+<section id="好的指令的构成what-makes-a-good-instruction" class="level2" data-number="20.2">
+<h2 data-number="20.2" class="anchored" data-anchor-id="好的指令的构成what-makes-a-good-instruction"><span class="header-section-number">20.2</span> 好的指令的构成（What Makes a Good Instruction?）</h2>
+<p>一个好的指令使系统能够有效且可靠地运行。它应该使系统能够产生正确的输出、保持一致性、跨上下文可复用。</p>
+<section id="核心属性" class="level3" data-number="20.2.1">
+<h3 data-number="20.2.1" class="anchored" data-anchor-id="核心属性"><span class="header-section-number">20.2.1</span> 核心属性</h3>
+<p><strong>1. 清晰度（Clarity）</strong>：任务无歧义、期望明确、没有多种解释的余地。</p>
+<p><strong>2. 完整性（Completeness）</strong>：指令包含执行所需的所有上下文。没有缺失的信息或需要系统推测的东西。</p>
+<p><strong>3. 可重复性（Repeatability）</strong>：相同的输入总是产生可预测的输出。指令足够精确，可以产生一致的结果。</p>
+<p><strong>4. 可测试性（Testability）</strong>：指令的成功可以客观验证。</p>
 <hr>
 </section>
-<section id="structure" class="level4" data-number="20.2.1.2">
-<h4 data-number="20.2.1.2" class="anchored" data-anchor-id="structure"><span class="header-section-number">20.2.1.2</span> 2. Structure</h4>
-<ul>
-<li>Defined input and output—exact formats are specified</li>
-<li>Explicit format—structure is predictable and consistent</li>
-<li>Organized logically—information flows naturally</li>
-</ul>
+</section>
+<section id="指令设计原则instruction-design-principles" class="level2" data-number="20.3">
+<h2 data-number="20.3" class="anchored" data-anchor-id="指令设计原则instruction-design-principles"><span class="header-section-number">20.3</span> 指令设计原则（Instruction Design Principles）</h2>
+<p><strong>原则 1：一件事，做好它。</strong> 每个指令应该关注一个任务。将复杂任务分解为多个指令。</p>
+<p><strong>原则 2：明确指定，而非暗示。</strong> 不要假设系统知道你想要什么。明确指定约束、偏好和边界情况。</p>
+<p><strong>原则 3：提供结构，而非模糊性。</strong> 使用格式（项目符号、编号、结构化文本），使期望更清晰。</p>
+<p><strong>原则 4：包含边界情况。</strong> 指定当输入超出预期范围时系统应如何反应。</p>
+<p><strong>原则 5：定义输出结构。</strong> 精确指定输出应该是什么样子。包括格式、结构和可选性。</p>
 <hr>
 </section>
-<section id="constraint" class="level4" data-number="20.2.1.3">
-<h4 data-number="20.2.1.3" class="anchored" data-anchor-id="constraint"><span class="header-section-number">20.2.1.3</span> 3. Constraint</h4>
-<ul>
-<li>Boundaries are enforced—what can and cannot happen is clear</li>
-<li>Degrees of freedom are controlled—system operates within defined limits</li>
-<li>Rules are explicit—constraints are stated unambiguously</li>
-</ul>
-<hr>
-</section>
-<section id="executability" class="level4" data-number="20.2.1.4">
-<h4 data-number="20.2.1.4" class="anchored" data-anchor-id="executability"><span class="header-section-number">20.2.1.4</span> 4. Executability</h4>
-<ul>
-<li>The system can act without guessing—no implicit assumptions required</li>
-<li>No missing information—everything needed is provided</li>
-<li>Ready for automation—can be executed without human intervention</li>
-</ul>
-<hr>
+<section id="指令模板instruction-template" class="level2" data-number="20.4">
+<h2 data-number="20.4" class="anchored" data-anchor-id="指令模板instruction-template"><span class="header-section-number">20.4</span> 指令模板（Instruction Template）</h2>
+<pre><code>## 角色
+[系统扮演什么角色]
+
+## 任务
+[一句话描述任务]
+
+## 输入
+[输入描述]
+
+## 输出要求
+[精确指定输出应该是什么样子]
+
+## 约束
+- 约束_1
+- 约束_2
+
+## 边界情况
+- 情况_1: [如何处理]
+- 情况_2: [如何处理]
+
+## 示例
+输入: [示例输入]
+输出: [示例输出]</code></pre>
 <blockquote class="blockquote">
-<p>A good instruction removes the need for interpretation. The system knows exactly what to do.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-</section>
-<section id="instruction-as-a-design-artifact" class="level2" data-number="20.3">
-<h2 data-number="20.3" class="anchored" data-anchor-id="instruction-as-a-design-artifact"><span class="header-section-number">20.3</span> Instruction as a Design Artifact</h2>
-<p>Instruction should be treated with the same care and attention as other design artifacts in software development:</p>
-<ul>
-<li><strong>An API</strong>—defining how components interact</li>
-<li><strong>A function interface</strong>—specifying inputs, outputs, and behavior</li>
-<li><strong>A contract</strong>—establishing clear expectations and obligations</li>
-</ul>
-<hr>
-<p>It defines:</p>
-<ul>
-<li><strong>What goes in</strong>—the input the system receives</li>
-<li><strong>What comes out</strong>—the output the system produces</li>
-<li><strong>How the system behaves</strong>—the transformation it performs</li>
-</ul>
-<hr>
-<section id="example-analogy" class="level3" data-number="20.3.1">
-<h3 data-number="20.3.1" class="anchored" data-anchor-id="example-analogy"><span class="header-section-number">20.3.1</span> Example Analogy</h3>
-<p>Think of instruction like a function signature in programming:</p>
-<pre><code>f(input) → output</code></pre>
-<p>The instruction specifies:</p>
-<ul>
-<li><strong>Input schema</strong>—what data the function accepts</li>
-<li><strong>Output schema</strong>—what data the function returns</li>
-<li><strong>Constraints</strong>—rules the function must follow</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Good instructions are predictable like functions. Given the same input, they always produce the same output.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="the-importance-of-structured-output" class="level2" data-number="20.4">
-<h2 data-number="20.4" class="anchored" data-anchor-id="the-importance-of-structured-output"><span class="header-section-number">20.4</span> The Importance of Structured Output</h2>
-<p>One of the most critical aspects of instruction design is <strong>output structure</strong>. This is often overlooked but has profound implications for system reliability and usability.</p>
-<hr>
-<section id="why-structure-matters" class="level3" data-number="20.4.1">
-<h3 data-number="20.4.1" class="anchored" data-anchor-id="why-structure-matters"><span class="header-section-number">20.4.1</span> Why Structure Matters</h3>
-<p>Without structured output:</p>
-<ul>
-<li><strong>Outputs are inconsistent</strong>—different runs produce different formats</li>
-<li><strong>Hard to parse</strong>—downstream systems cannot reliably process results</li>
-<li><strong>Difficult to reuse</strong>—results cannot be easily integrated into other systems</li>
-</ul>
-<p>With structured output:</p>
-<ul>
-<li><strong>Outputs are predictable</strong>—format is consistent and reliable</li>
-<li><strong>Easy to process</strong>—downstream systems can parse results automatically</li>
-<li><strong>Compatible with systems</strong>—results can be integrated seamlessly</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="types-of-output-structure" class="level2" data-number="20.5">
-<h2 data-number="20.5" class="anchored" data-anchor-id="types-of-output-structure"><span class="header-section-number">20.5</span> Types of Output Structure</h2>
-<p>Output structure exists on a spectrum from completely free-form to highly structured:</p>
-<hr>
-<section id="free-text-least-structured" class="level3" data-number="20.5.1">
-<h3 data-number="20.5.1" class="anchored" data-anchor-id="free-text-least-structured"><span class="header-section-number">20.5.1</span> 1. Free Text (Least Structured)</h3>
-<ul>
-<li>Flexible—system has maximum freedom</li>
-<li>Hard to control—results vary widely</li>
-<li>Difficult to parse—format is unpredictable</li>
-</ul>
-<p><strong>Example:</strong> &gt; “Write a summary of this text.”</p>
-<p>The summary could be any length, format, or style.</p>
-<hr>
-</section>
-<section id="semi-structured" class="level3" data-number="20.5.2">
-<h3 data-number="20.5.2" class="anchored" data-anchor-id="semi-structured"><span class="header-section-number">20.5.2</span> 2. Semi-Structured</h3>
-<ul>
-<li>Some constraints apply—guidelines exist but not strict rules</li>
-<li>More predictable than free text—format is somewhat consistent</li>
-<li>Easier to parse—structure is recognizable</li>
-</ul>
-<p><strong>Example:</strong> &gt; “Write a summary as 3-5 bullet points.”</p>
-<p>The format is constrained but bullet points can vary in length and content.</p>
-<hr>
-</section>
-<section id="fully-structured" class="level3" data-number="20.5.3">
-<h3 data-number="20.5.3" class="anchored" data-anchor-id="fully-structured"><span class="header-section-number">20.5.3</span> 3. Fully Structured</h3>
-<ul>
-<li>Strict format rules—exact structure is specified</li>
-<li>Highly predictable—format is consistent</li>
-<li>Easy to parse—structure is machine-readable</li>
-</ul>
-<p><strong>Example:</strong> &gt; “Output JSON: {summary: string, key_points: Array<string>, word_count: number}”</string></p>
-<p>The format is completely specified and machine-readable.</p>
-<hr>
-<blockquote class="blockquote">
-<p>The more structured the output, the more controllable the system. Structure enables reliability.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="designing-output-first" class="level2" data-number="20.6">
-<h2 data-number="20.6" class="anchored" data-anchor-id="designing-output-first"><span class="header-section-number">20.6</span> Designing Output First</h2>
-<p>A useful principle for effective instruction design:</p>
-<blockquote class="blockquote">
-<p><strong>Design the output before designing the instruction</strong></p>
-</blockquote>
-<hr>
-<section id="why" class="level3" data-number="20.6.1">
-<h3 data-number="20.6.1" class="anchored" data-anchor-id="why"><span class="header-section-number">20.6.1</span> Why?</h3>
-<ul>
-<li><strong>Output defines what success looks like</strong>—knowing the end state guides the process</li>
-<li><strong>Output determines system usability</strong>—downstream systems depend on output format</li>
-<li><strong>Output simplifies instruction</strong>—knowing the target makes the path clearer</li>
-</ul>
-<hr>
-</section>
-<section id="example" class="level3" data-number="20.6.2">
-<h3 data-number="20.6.2" class="anchored" data-anchor-id="example"><span class="header-section-number">20.6.2</span> Example</h3>
-<p><strong>Instead of starting with:</strong> &gt; “Summarize this text”</p>
-<p><strong>Start with:</strong> - <strong>Output format:</strong> - Summary: 50-100 words - Key points: 3-5 bullet points - Each bullet: under 20 words</p>
-<p>Then design the instruction to achieve this output.</p>
-<hr>
-<blockquote class="blockquote">
-<p>Output design drives instruction clarity. Know where you’re going before you start.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="balancing-structure-and-flexibility" class="level2" data-number="20.7">
-<h2 data-number="20.7" class="anchored" data-anchor-id="balancing-structure-and-flexibility"><span class="header-section-number">20.7</span> Balancing Structure and Flexibility</h2>
-<p>Effective instruction design requires finding the right balance between structure and flexibility.</p>
-<hr>
-<section id="too-little-structure" class="level3" data-number="20.7.1">
-<h3 data-number="20.7.1" class="anchored" data-anchor-id="too-little-structure"><span class="header-section-number">20.7.1</span> Too Little Structure</h3>
-<ul>
-<li><strong>Outputs vary widely</strong>—results are unpredictable</li>
-<li><strong>Hard to control</strong>—system may produce unexpected results</li>
-<li><strong>Difficult to integrate</strong>—downstream systems cannot use results</li>
-</ul>
-<hr>
-</section>
-<section id="too-much-structure" class="level3" data-number="20.7.2">
-<h3 data-number="20.7.2" class="anchored" data-anchor-id="too-much-structure"><span class="header-section-number">20.7.2</span> Too Much Structure</h3>
-<ul>
-<li><strong>Restricts model capabilities</strong>—limits what the system can do</li>
-<li><strong>Reduces natural generation</strong>—results feel artificial or constrained</li>
-<li><strong>Creates brittleness</strong>—small changes break the system</li>
-</ul>
-<hr>
-</section>
-<section id="good-balance" class="level3" data-number="20.7.3">
-<h3 data-number="20.7.3" class="anchored" data-anchor-id="good-balance"><span class="header-section-number">20.7.3</span> Good Balance</h3>
-<ul>
-<li><strong>Structure where necessary</strong>—constrain format and key requirements</li>
-<li><strong>Flexibility where beneficial</strong>—allow freedom in content and style</li>
-<li><strong>Focus on what matters</strong>—constrain critical aspects, allow freedom elsewhere</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Constrain format, not creativity. Structure the container, not the content.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="instruction-granularity" class="level2" data-number="20.8">
-<h2 data-number="20.8" class="anchored" data-anchor-id="instruction-granularity"><span class="header-section-number">20.8</span> Instruction Granularity</h2>
-<p>Instructions can operate at different levels of detail and specificity. Choosing the right granularity is a key design decision.</p>
-<hr>
-<section id="high-level-instruction" class="level3" data-number="20.8.1">
-<h3 data-number="20.8.1" class="anchored" data-anchor-id="high-level-instruction"><span class="header-section-number">20.8.1</span> High-Level Instruction</h3>
-<ul>
-<li><strong>Broad tasks</strong>—large, complex objectives</li>
-<li><strong>More flexibility</strong>—system has freedom in approach</li>
-<li><strong>Less control</strong>—results may vary</li>
-</ul>
-<p><strong>Example:</strong> &gt; “Analyze this document and provide insights.”</p>
-<hr>
-</section>
-<section id="low-level-instruction" class="level3" data-number="20.8.2">
-<h3 data-number="20.8.2" class="anchored" data-anchor-id="low-level-instruction"><span class="header-section-number">20.8.2</span> Low-Level Instruction</h3>
-<ul>
-<li><strong>Specific tasks</strong>—narrow, well-defined objectives</li>
-<li><strong>More control</strong>—results are predictable</li>
-<li><strong>Less adaptable</strong>—may not handle variations well</li>
-</ul>
-<p><strong>Example:</strong> &gt; “Extract all dates from the document and format them as YYYY-MM-DD.”</p>
-<hr>
-</section>
-<section id="trade-off" class="level3" data-number="20.8.3">
-<h3 data-number="20.8.3" class="anchored" data-anchor-id="trade-off"><span class="header-section-number">20.8.3</span> Trade-off</h3>
-<ul>
-<li><strong>High-level</strong> → flexible but less predictable</li>
-<li><strong>Low-level</strong> → predictable but less adaptable</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Choose granularity based on system needs. Consider how much control you need versus how much flexibility you want.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="reusability-of-instructions" class="level2" data-number="20.9">
-<h2 data-number="20.9" class="anchored" data-anchor-id="reusability-of-instructions"><span class="header-section-number">20.9</span> Reusability of Instructions</h2>
-<p>Well-designed instructions can be reused across different contexts, amplifying their value and reducing development effort.</p>
-<hr>
-<section id="characteristics-of-reusable-instructions" class="level3" data-number="20.9.1">
-<h3 data-number="20.9.1" class="anchored" data-anchor-id="characteristics-of-reusable-instructions"><span class="header-section-number">20.9.1</span> Characteristics of Reusable Instructions</h3>
-<p>Reusable instructions are:</p>
-<ul>
-<li><strong>Clear input/output</strong>—interfaces are well-defined</li>
-<li><strong>Minimal assumptions</strong>—don’t depend on specific contexts</li>
-<li><strong>Modular design</strong>—can be combined with other instructions</li>
-</ul>
-<hr>
-</section>
-<section id="example-1" class="level3" data-number="20.9.2">
-<h3 data-number="20.9.2" class="anchored" data-anchor-id="example-1"><span class="header-section-number">20.9.2</span> Example</h3>
-<p>A reusable instruction for text classification:</p>
-<ul>
-<li><strong>Input</strong>: <code>{text: string, categories: Array&lt;string&gt;}</code></li>
-<li><strong>Output</strong>: <code>{classification: string, confidence: number}</code></li>
-<li><strong>Task</strong>: Classify text into one of the provided categories</li>
-</ul>
-<p>This can be reused for any classification task by changing the categories.</p>
-<hr>
-<blockquote class="blockquote">
-<p>Reusability increases leverage. Design instructions that can be applied across multiple problems.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="common-mistakes" class="level2" data-number="20.10">
-<h2 data-number="20.10" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">20.10</span> Common Mistakes</h2>
-<p>Several common mistakes can undermine instruction effectiveness:</p>
-<hr>
-<section id="treating-instructions-as-prompts" class="level3" data-number="20.10.1">
-<h3 data-number="20.10.1" class="anchored" data-anchor-id="treating-instructions-as-prompts"><span class="header-section-number">20.10.1</span> 1. Treating Instructions as Prompts</h3>
-<ul>
-<li><strong>Informal</strong>—lacking structure and precision</li>
-<li><strong>Inconsistent</strong>—varying between executions</li>
-<li><strong>Unreliable</strong>—producing unpredictable results</li>
-</ul>
-<p><strong>Solution:</strong> Design instructions as structured protocols, not conversational prompts.</p>
-<hr>
-</section>
-<section id="ignoring-output-design" class="level3" data-number="20.10.2">
-<h3 data-number="20.10.2" class="anchored" data-anchor-id="ignoring-output-design"><span class="header-section-number">20.10.2</span> 2. Ignoring Output Design</h3>
-<ul>
-<li><strong>Leads to unusable results</strong>—downstream systems cannot process output</li>
-<li><strong>Makes integration difficult</strong>—results cannot be reliably used</li>
-<li><strong>Reduces system value</strong>—good execution produces bad output</li>
-</ul>
-<p><strong>Solution:</strong> Always design output first. Know exactly what format you need.</p>
-<hr>
-</section>
-<section id="missing-constraints" class="level3" data-number="20.10.3">
-<h3 data-number="20.10.3" class="anchored" data-anchor-id="missing-constraints"><span class="header-section-number">20.10.3</span> 3. Missing Constraints</h3>
-<ul>
-<li><strong>Outputs drift</strong>—behavior deviates from requirements over time</li>
-<li><strong>Quality degrades</strong>—results become less accurate or relevant</li>
-<li><strong>System becomes unreliable</strong>—predictability decreases</li>
-</ul>
-<p><strong>Solution:</strong> Explicitly define all constraints. What must the system do? What must it not do?</p>
-<hr>
-</section>
-<section id="overloading-instructions" class="level3" data-number="20.10.4">
-<h3 data-number="20.10.4" class="anchored" data-anchor-id="overloading-instructions"><span class="header-section-number">20.10.4</span> 4. Overloading Instructions</h3>
-<ul>
-<li><strong>Too many tasks in one step</strong>—instruction tries to do too much</li>
-<li><strong>Reduces clarity</strong>—main purpose becomes obscured</li>
-<li><strong>Makes maintenance difficult</strong>—hard to understand and modify</li>
-</ul>
-<p><strong>Solution:</strong> Keep instructions focused. One clear task per instruction. Use composition for complex workflows.</p>
-<hr>
-</section>
-</section>
-<section id="instruction-and-system-stability" class="level2" data-number="20.11">
-<h2 data-number="20.11" class="anchored" data-anchor-id="instruction-and-system-stability"><span class="header-section-number">20.11</span> Instruction and System Stability</h2>
-<p>Stable systems depend on stable instructions. If instructions are:</p>
-<ul>
-<li><strong>Clear</strong>—unambiguous and precise</li>
-<li><strong>Structured</strong>—organized and predictable</li>
-<li><strong>Consistent</strong>—same format every time</li>
-</ul>
-<p>Then:</p>
-<ul>
-<li><strong>Outputs become predictable</strong>—results meet expectations</li>
-<li><strong>Behavior stabilizes</strong>—system performs reliably</li>
-<li><strong>Quality improves</strong>—consistency enables optimization</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Stability is a property of design, not execution. Good instructions produce stable systems.</p>
-</blockquote>
-<hr>
-</section>
-<section id="final-insight" class="level2" data-number="20.12">
-<h2 data-number="20.12" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">20.12</span> Final Insight</h2>
-<p>Instruction design is the point where:</p>
-<ul>
-<li><strong>Specification becomes executable</strong>—abstract definitions become concrete operations</li>
-<li><strong>Systems become controllable</strong>—behavior becomes predictable and reliable</li>
-</ul>
-<p>It is a critical design discipline that determines system effectiveness.</p>
-<hr>
-<blockquote class="blockquote">
-<p>The quality of execution depends on the quality of instruction design.</p>
-</blockquote>
-<hr>
-</section>
-<section id="closing-statement" class="level2" data-number="20.13">
-<h2 data-number="20.13" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">20.13</span> Closing Statement</h2>
-<p>In the LLM era, writing instructions is not about phrasing or crafting clever prompts. It is about structure.</p>
-<blockquote class="blockquote">
-<p>A well-designed instruction does not guide the system. It defines how the system behaves.</p>
-</blockquote>
-<hr>
-</section>
-<section id="key-insight" class="level2" data-number="20.14">
-<h2 data-number="20.14" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">20.14</span> Key Insight</h2>
-<blockquote class="blockquote">
-<p>Instruction design is a design problem, not a translation task. Key principles include clarity, structure, constraint, and executability. Design output first, balance structure with flexibility, and focus on reusability.</p>
-</blockquote>
-</section>
-<section id="action-hint" class="level2" data-number="20.15">
-<h2 data-number="20.15" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">20.15</span> Action Hint</h2>
-<blockquote class="blockquote">
-<p>Always design your output format before writing instructions. Ask: “What exactly do I want the output to look like?” Define the structure precisely. Then design the instruction to achieve that output. Test with multiple inputs to ensure consistency.</p>
+<p>设计良好的指令是可靠系统的基础。它们将 Spec 从声明性定义转化为可操作的执行协议。</p>
 </blockquote>
 
 
@@ -1401,13 +1013,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-18.html" class="pagination-link" aria-label="From Spec to Instruction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span>
+      <a href="./chapter-18.html" class="pagination-link" aria-label="从 Spec 到指令（From Spec to Instruction）">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">从 Spec 到指令（From Spec to Instruction）</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-20.html" class="pagination-link" aria-label="Tool Use &amp; APIs">
-        <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-20.html" class="pagination-link" aria-label="工具使用与 API（Tool Use &amp; APIs）">
+        <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">工具使用与 API（Tool Use &amp; APIs）</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

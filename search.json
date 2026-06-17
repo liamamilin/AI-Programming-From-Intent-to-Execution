@@ -4,9 +4,9 @@
     "href": "index.html",
     "title": "AI Programming: From Intent to Execution",
     "section": "",
-    "text": "1 Preface",
+    "text": "1 前言（Preface）",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Preface</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>前言（Preface）</span>"
     ]
   },
   {
@@ -72,11 +72,11 @@
   {
     "objectID": "chapter-1.html",
     "href": "chapter-1.html",
-    "title": "2  The Shift: From Coding to Defining",
+    "title": "2  转变：从编码到定义（The Shift: From Coding to Defining）",
     "section": "",
-    "text": "2.1 Programming Has Always Evolved\nProgramming has never been static. Throughout the history of computing, it has continuously evolved through layers of abstraction, each transformation moving developers further from the raw machinery and closer to the problem domain itself.\nThis evolution is not about replacing previous skills—it is about shifting the boundary of responsibility. Each new layer of abstraction does not eliminate the need for understanding lower levels; rather, it allows developers to focus their cognitive energy on higher-level concerns while delegating lower-level details to automated systems.",
+    "text": "2.1 编程从未停止演化\n编程从来不是静止的。在计算的整个历史中，它通过抽象（abstraction）层不断演化，每一次变革都将开发者从原始机器推向问题领域本身。\n这种演化不是取代以前的技能——而是移动责任的边界。每一层新的抽象都没有消除理解底层需求；相反，它允许开发者将认知能量聚焦在高层关注点上，同时将底层细节委托给自动化系统。",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>The Shift: From Coding to Defining</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>转变：从编码到定义（The Shift: From Coding to Defining）</span>"
     ]
   },
   {
@@ -182,11 +182,11 @@
   {
     "objectID": "chapter-2.html",
     "href": "chapter-2.html",
-    "title": "3  Where Does Difficulty Come From?",
+    "title": "3  新的瓶颈：定义（The New Bottleneck: Definition）",
     "section": "",
-    "text": "3.1 Execution Has Been Outsourced\nIn any system of production, there is always a limiting factor—the bottleneck. This is the point in the system that constrains overall performance, the place where additional investment yields the greatest return. Understanding where the bottleneck lies is essential for effective system design and optimization.\nIn traditional software development, the bottleneck was clear and universally recognized:\nIn other words:\nThe primary limitation on what could be built was not the clarity of the idea, but the ability to implement it correctly and efficiently. Better tools, faster computers, and improved methodologies all focused on alleviating this execution bottleneck.\nWith the rise of Large Language Models and AI systems, execution is no longer the primary constraint in software development. This represents a fundamental shift in the economics of programming.\nToday, a developer equipped with modern AI tools can:\nWhat once required hours or days of manual effort can now be accomplished in seconds or minutes. The barrier to execution has dropped dramatically.",
+    "text": "3.1 难度从何而来？\n在任何生产系统中，总有一个限制因素——瓶颈。这是系统中约束整体绩效的点，是额外投入产生最大回报的地方。理解瓶颈在哪里对于有效的系统设计和优化至关重要。\n在传统软件开发中，瓶颈是清晰且普遍被认可的：\n换句话说：\n能构建什么的限制因素不是想法的清晰度，而是正确高效地实现它的能力。更好的工具、更快的计算机和改进的方法论都聚焦于缓解这个执行瓶颈。",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Where Does Difficulty Come From?</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>新的瓶颈：定义（The New Bottleneck: Definition）</span>"
     ]
   },
   {
@@ -302,11 +302,11 @@
   {
     "objectID": "chapter-3.html",
     "href": "chapter-3.html",
-    "title": "4  What is Programming Now?",
+    "title": "4  编程现在是什么？（What is Programming Now?）",
     "section": "",
-    "text": "4.1 The Question Must Be Reasked\nIf the core process of programming has changed so fundamentally—if execution has been outsourced and definition has become the bottleneck—then a more fundamental question must be reconsidered:\nFor decades, this question had a clear, implicit answer. Programmers, computer scientists, and software engineers all operated with a shared understanding that rarely needed to be articulated. That understanding was:\nThis definition was sufficient when execution was the primary constraint. When the challenge was making the computer do what you wanted, programming naturally meant the act of providing those instructions in a form the machine could execute.\nBut in the LLM era, this definition becomes incomplete and potentially misleading. If execution is handled by AI systems, and if the primary challenge is definition rather than implementation, then what does “programming” actually mean?",
+    "text": "4.1 必须重新追问的问题\n如果编程的核心过程已经发生了根本性的变化——如果执行被外包了，定义成了瓶颈——那么一个更基本的问题必须被重新审视：\n几十年来，这个问题有一个清晰、隐含的答案。程序员、计算机科学家和软件工程师都持有一个很少需要阐述的共同理解。这个理解是：写代码、实现逻辑、通过精确指令构建软件。\n当执行是主要约束时，这个定义是足够的。当挑战是让计算机做你想做的事时，编程自然意味着以机器可执行的形式提供那些指令。\n但在 LLM 时代，这个定义变得不完整且有潜在的误导性。如果执行由 AI 系统处理，如果主要挑战是定义而非实现，那么”编程”到底意味着什么？",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>What is Programming Now?</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>编程现在是什么？（What is Programming Now?）</span>"
     ]
   },
   {
@@ -452,11 +452,11 @@
   {
     "objectID": "chapter-4.html",
     "href": "chapter-4.html",
-    "title": "5  The Minimal Loop",
+    "title": "5  最小循环（The Minimal Loop）",
     "section": "",
-    "text": "5.1 Why a New Loop?\nIn traditional software development, the development process is often described through a familiar sequence:\nThis model served developers well for decades. The core difficulty in this model was implementation—the challenge of translating ideas and designs into working code that executed correctly. Most tools, methodologies, and best practices focused on alleviating this implementation burden.\nHowever, in the LLM era, this assumption no longer holds. Several fundamental changes have occurred:\nAs a result, the bottleneck has shifted. The challenge is no longer how to implement, but how to define clearly what should be implemented. The implementation layer has been abstracted away, revealing a new layer of difficulty that was previously hidden.",
+    "text": "5.1 为什么需要一个新循环？\n在传统软件开发中，开发过程通常通过一个熟悉的序列来描述：\n这个模型为开发者服务了几十年。这个模型中的核心困难是实现——将想法和设计转化为正确执行的可运行代码的挑战。大多数工具、方法论和最佳实践都专注于减轻这种实现负担。\n但在 LLM 时代，这个假设不再成立。几个根本性的变化已经发生：\n结果，瓶颈已经转移。挑战不再是如何实现，而是如何清晰地定义应该实现什么。实现层已经被抽象掉了，揭示了一个之前被隐藏的新难度层。",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>The Minimal Loop</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>最小循环（The Minimal Loop）</span>"
     ]
   },
   {
@@ -552,11 +552,11 @@
   {
     "objectID": "chapter-5.html",
     "href": "chapter-5.html",
-    "title": "6  Intent: Defining What to Do",
+    "title": "6  意图：定义要做什么（Intent: Defining What to Do）",
     "section": "",
-    "text": "6.1 The Starting Point of All Systems\nEvery system begins with an intention—a desire to create something, solve a problem, or achieve an outcome. Before any specification is written, before any instruction is executed, before any code is generated, there is a fundamental question:\nThis question seems simple, almost trivial. Yet it is often the most difficult to answer effectively. In the LLM era, where execution has become easy and automated, the quality of the outcome depends almost entirely on the clarity and precision of this initial definition.",
+    "text": "6.1 所有系统的起点\n每个系统都始于一个意图——创造某物、解决问题或达成结果的愿望。在任何规格说明被编写之前、在任何指令被执行之前、在任何代码被生成之前，有一个基本问题：\n这个问题看似简单，几乎微不足道。但它常常是最难有效回答的。在 LLM 时代，执行变得容易和自动化，结果的质量几乎完全取决于这个初始定义的清晰度和精确度。",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Intent: Defining What to Do</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>意图：定义要做什么（Intent: Defining What to Do）</span>"
     ]
   },
   {
@@ -682,11 +682,11 @@
   {
     "objectID": "chapter-6.html",
     "href": "chapter-6.html",
-    "title": "7  Spec: Eliminating Ambiguity",
+    "title": "7  规格说明：消除歧义（Spec: Eliminating Ambiguity）",
     "section": "",
-    "text": "7.1 From Intent to Precision\nIntent defines what we want—it captures the human goal and aspiration. But intent alone is not enough to guide system development effectively.\nIntent, by its nature, is:\nTo make a system work reliably, intent must be transformed into something more precise and actionable. This transformation is the role of Spec (Specification).",
+    "text": "7.1 从意图到精确性\n意图定义了我们想要什么——它捕捉了人类的目标和愿望。但仅有意图不足以有效指导系统开发。\n意图本质上是不完整的、上下文依赖的、常常是歧义的。\n要让系统可靠地工作，意图必须被转化为更精确和可操作的东西。这种转化就是Spec（规格说明）的角色。",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Spec: Eliminating Ambiguity</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>规格说明：消除歧义（Spec: Eliminating Ambiguity）</span>"
     ]
   },
   {
@@ -822,11 +822,11 @@
   {
     "objectID": "chapter-7.html",
     "href": "chapter-7.html",
-    "title": "8  Instruction: Making It Executable",
+    "title": "8  指令：使其可执行（Instruction: Making It Executable）",
     "section": "",
-    "text": "8.1 From Definition to Action\nIntent defines what we want—the human goal and aspiration.\nSpec defines what it means—the structured, precise specification of behavior.\nBut neither of these produces results. A perfectly clear intent and a perfectly precise spec, by themselves, do nothing. They are static descriptions of what should exist, not dynamic processes that create results.\nTo make a system act, to transform definitions into outcomes, we need one more step:\nInstruction is where a defined system becomes operational. It is the bridge between static definition and dynamic execution.",
+    "text": "8.1 从定义到行动\n意图定义了我们想要什么——人类的目标和愿望。\nSpec 定义了这意味着什么——结构化、精确的行为规格说明。\n但这两者都不产生结果。一个完全清晰的意图和一个完全精确的 Spec，本身什么都不做。它们是对应该存在什么的静态描述，而不是创造结果的动态过程。\n要让系统行动，将定义转化为结果，我们需要再多一步：\n指令是定义的系统变得可操作的地方。它是静态定义和动态执行之间的桥梁。",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Instruction: Making It Executable</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>指令：使其可执行（Instruction: Making It Executable）</span>"
     ]
   },
   {
@@ -962,11 +962,11 @@
   {
     "objectID": "chapter-8.html",
     "href": "chapter-8.html",
-    "title": "9  Evaluation & Iteration",
+    "title": "9  评估与迭代（Evaluation & Iteration）",
     "section": "",
-    "text": "9.1 Why Execution Is Not the End\nIn traditional software development, execution often marks completion. When code runs successfully and produces output, the task is often considered done:\nThis mental model made sense when implementation was the primary challenge. Getting code to run correctly was difficult enough that once it worked, we tended to move on.\nIn the LLM paradigm, this assumption no longer holds. Execution produces a result, not a guarantee of correctness or quality.\nBecause:\nTherefore:",
+    "text": "9.1 为什么执行不是终点\n在传统软件开发中，执行通常标志着完成。当代码成功运行并产生输出时，任务通常被认为已经完成：代码编译无错误，系统产生输出，任务被认为完成。\n当实现是主要挑战时，这个心智模型是有意义的。让代码正确运行已经足够困难，所以一旦它工作了，我们就倾向于继续前进。\n在 LLM 范式中，这个假设不再成立。执行产生的是一个结果，而不是正确性或质量的保证。\n因为：\n因此：",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Evaluation & Iteration</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>评估与迭代（Evaluation & Iteration）</span>"
     ]
   },
   {
@@ -1102,11 +1102,11 @@
   {
     "objectID": "chapter-9.html",
     "href": "chapter-9.html",
-    "title": "10  Possibility Space",
+    "title": "10  可能性空间（Possibility Space）",
     "section": "",
-    "text": "10.1 Why Possibility Comes First\nBefore defining what to build, one must first understand a fundamental question:\nThis seems obvious, yet it’s the most common barrier to progress.\nMost people struggle with “not knowing what to do” not because they lack intelligence, creativity, or technical ability. They struggle because they lack exposure to the space of possibilities.\nIf you cannot see an option, you cannot choose it.\nIf you cannot imagine a structure, you cannot construct it.\nIf you don’t know what’s possible, your intent will always be constrained by your limited vision.\nYou cannot define what you do not know exists. You cannot build what you cannot imagine.\nThis is why understanding possibility space is foundational to everything that follows.",
+    "text": "10.1 为什么可能性优先\n在定义构建什么之前，必须首先理解一个基本问题：\n这看似明显，然而它是进展中最常见的障碍。\n大多数人挣扎于”不知道做什么”，不是因为他们缺乏智力、创造力或技术能力。他们挣扎是因为他们缺乏对可能性空间（Possibility Space）的接触。\n如果你看不到一个选项，你就不能选择它。 如果你无法想象一个结构，你就不能构建它。 如果你不知道什么是可能的，你的意图将永远被你有限的视野所约束。",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Possibility Space</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>可能性空间（Possibility Space）</span>"
     ]
   },
   {
@@ -1282,11 +1282,11 @@
   {
     "objectID": "chapter-10.html",
     "href": "chapter-10.html",
-    "title": "11  Structural Thinking",
+    "title": "11  结构性思维（Structural Thinking）",
     "section": "",
-    "text": "11.1 From Ideas to Structures\nHaving explored the Possibility Space and discovered what can be built, the next step is not to generate more ideas or expand the space further. The next step is to organize what we have discovered.\nIn the previous chapter, we introduced the three-layer model of possibility: Goal Space (what outcomes are possible), Path Space (what structures connect start to goal), and Option Space (what choices exist at each step). We saw that possibilities exist as a graph, not a linear path.\nNow we must navigate that graph effectively. To do this, we need to transform the raw possibilities we’ve discovered into organized, workable structures.\nIdeas alone are insufficient for building systems. They are:\nTo build effective systems, ideas must be transformed into structures. This transformation is the essence of structural thinking.",
+    "text": "11.1 从想法到结构\n在探索了可能性空间并发现了什么是可构建的之后，下一步不是产生更多想法或进一步扩展空间。下一步是组织我们已经发现的东西。\n在上一章中，我们引入了可能性的三层模型：目标空间（什么结果是可能的）、路径空间（什么结构连接起点和目标）和选项空间（每一步有什么选择）。我们看到可能性作为一个图存在，而不是一条线性路径。\n现在我们必须有效地导航那个图。为此，我们需要将我们已经发现的原始可能性组织成可工作的结构。\n仅有想法不足以构建系统。它们是碎片化的、无界的、难以执行的。\n要构建有效的系统，想法必须转化为结构。这种转化是结构性思维的本质。",
     "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Structural Thinking</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>结构性思维（Structural Thinking）</span>"
     ]
   },
   {
@@ -1422,11 +1422,11 @@
   {
     "objectID": "chapter-11.html",
     "href": "chapter-11.html",
-    "title": "12  Composition",
+    "title": "12  组合（Composition）",
     "section": "",
-    "text": "12.1 From Structure to System\nAfter defining structure—main flow, modules, and data flow—we have a blueprint for how a system should be organized. But a blueprint is not a building. A specification is not a system.\nRecall from our exploration of Possibility Space that the Option Space represents “what choices exist at each step.” When we navigate the possibility graph, we face countless decision points. Composition is the art of making those choices effectively.\nThe next step is:\nStructure tells us what exists and how parts relate. Composition determines how those parts actually work together to produce behavior. It is how we navigate the Option Space and make the right choices at each intersection.\nWithout composition:",
+    "text": "12.1 从结构到系统\n定义了结构——主流程、模块和数据流之后，我们对系统应该如何组织有了一个蓝图。但蓝图不是建筑。规格说明不是系统。\n回想我们在可能性空间中的探索，选项空间代表”每一步有什么选择”。当我们导航可能性图时，我们面临无数的决策点。组合是在那些交叉路口做出有效选择的艺术。\n下一步是：\n结构告诉我们存在什么以及各部分如何关联。组合决定了这些部分如何实际协同工作以产生行为。它是我们导航选项空间并在每个交叉路口做出正确选择的方式。\n没有组合，模块保持孤立，能力保持未使用，系统永远不会出现。",
     "crumbs": [
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Composition</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>组合（Composition）</span>"
     ]
   },
   {
@@ -1562,11 +1562,11 @@
   {
     "objectID": "chapter-12.html",
     "href": "chapter-12.html",
-    "title": "13  Goal Compression",
+    "title": "13  目标压缩（Goal Compression）",
     "section": "",
-    "text": "13.1 From Complexity to Clarity\nIn our exploration of Possibility Space, we identified Goal Space as the first layer—the set of all possible outcomes (Z) we might aim for. We discovered that many people struggle with “I don’t know what to build” precisely because they cannot see the Goal Space clearly.\nBut even when we can see the Goal Space, we face another challenge: the goals we discover are often vague, complex, and unstructured. They capture an intuition or aspiration but lack the precision necessary for system development.\nConsider these common initial goals:\nThese statements feel meaningful and inspiring. They communicate a general direction and aspiration. But they are not actionable. They cannot guide system development effectively.\nTo build systems, we must do more than identify possible goals from the Goal Space. We must transform them. They must move from vague aspirations to precise, testable definitions.",
+    "text": "13.1 从复杂到清晰\n在我们对可能性空间的探索中，我们将目标空间确定为第一层——我们可能瞄准的所有可能结果（Z）的集合。我们发现许多人挣扎于”不知道构建什么”，正是因为他们无法清晰地看到目标空间。\n但即使我们能看到目标空间，我们也面临另一个挑战：我们发现的目标常常是模糊的、复杂的、非结构化的。它们捕捉了一种直觉或愿望，但缺乏系统开发所需的精确性。\n考虑这些常见的初始目标：\n这些陈述感觉有意义且鼓舞人心。它们传达了一个通用的方向和愿望。但它们不是可操作的。它们不能有效指导系统开发。\n要构建系统，我们必须做更多的事情，而不仅仅从目标空间中识别可能的目标。我们必须转化它们。它们必须从模糊的愿望变为精确的、可测试的定义。",
     "crumbs": [
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Goal Compression</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>目标压缩（Goal Compression）</span>"
     ]
   },
   {
@@ -1692,11 +1692,11 @@
   {
     "objectID": "chapter-13.html",
     "href": "chapter-13.html",
-    "title": "14  What is Spec Engineering?",
+    "title": "14  什么是规格工程？（What is Spec Engineering?）",
     "section": "",
-    "text": "14.1 From Concept to Discipline\nIn the previous chapters, we established the foundational elements of programming in the LLM era:\nWe also explored the three-layer model of Possibility Space: Goal Space (what outcomes are possible), Path Space (what structures connect start to goal), and Option Space (what choices exist at each step). We saw that navigating this space requires structure and precision.\nThis raises a critical question:\nThe answer is not ad hoc thinking or relying on intuition. It is not simply “being careful” or “thinking harder.” The answer is a disciplined approach:",
+    "text": "14.1 从概念到学科\n在之前的章节中，我们建立了 LLM 时代编程的基础元素：\n我们还探索了可能性空间的三层模型：目标空间（什么结果是可能的）、路径空间（什么结构连接起点和目标）和选项空间（每一步有什么选择）。\n这引发了一个关键问题：\n答案不是临时的思考或依赖直觉。答案是一套纪律严明的方法：",
     "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>What is Spec Engineering?</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>什么是规格工程？（What is Spec Engineering?）</span>"
     ]
   },
   {
@@ -1832,11 +1832,11 @@
   {
     "objectID": "chapter-14.html",
     "href": "chapter-14.html",
-    "title": "15  Spec Structure",
+    "title": "15  Spec 结构（Spec Structure）",
     "section": "",
-    "text": "15.1 Why Structure Matters\nA spec without structure is just text—a collection of words and ideas that may contain useful information but cannot reliably guide system execution.\nA spec without structure:\nTo be effective, a spec must be:\nThis requires structure.",
+    "text": "15.1 为什么结构重要\n没有结构的 Spec 只是文本——可能包含有用信息但无法可靠指导系统执行的文字和思想的集合。\n没有结构的 Spec 可能包含有用的思想，可能准确地描述系统，但无法可靠地指导执行。\n要有效，Spec 必须是可解释的、一致的、可复用的。这需要结构。",
     "crumbs": [
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Spec Structure</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Spec 结构（Spec Structure）</span>"
     ]
   },
   {
@@ -1982,11 +1982,11 @@
   {
     "objectID": "chapter-15.html",
     "href": "chapter-15.html",
-    "title": "16  Template-based Spec",
+    "title": "16  基于模板的 Spec（Template-based Spec）",
     "section": "",
-    "text": "16.1 Why Templates Exist\nOnce we understand what a good spec looks like—the core components, the need for structure, the importance of clarity—a practical question arises:\nWithout guidance and structure, spec creation becomes:\nTo address this systematic problem, we introduce:",
+    "text": "16.1 模板为什么存在\n一旦我们理解了好的 Spec 是什么样的——核心组件、对结构的需求、清晰度的重要性——一个实际问题出现了：\n没有指导和结构，Spec 创建变成：不同的人以不同方式定义 Spec、重要的元素被遗漏、质量差异很大。\n为了解决这个系统性问题，我们引入：",
     "crumbs": [
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Template-based Spec</span>"
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>基于模板的 Spec（Template-based Spec）</span>"
     ]
   },
   {
@@ -2122,11 +2122,11 @@
   {
     "objectID": "chapter-16.html",
     "href": "chapter-16.html",
-    "title": "17  Spec Agent",
+    "title": "17  规格智能体（Spec Agent）",
     "section": "",
-    "text": "17.1 From Manual Definition to Assisted Definition\nIn Template-based Spec, humans define specifications directly, using templates to guide their thinking. This approach works well when:\nHowever, in many real-world scenarios, these conditions are not met:\nThis creates a challenge: how do we create good specs when human expertise is limited or the problem is poorly understood?\nThis leads to a new approach:",
+    "text": "17.1 从手动定义到辅助定义\n在基于模板的 Spec 中，人类直接定义规格说明，使用模板指导思维。这种方法在问题熟悉、结构清晰、用户理解系统时工作良好。\n但在许多现实场景中，这些条件不满足：意图模糊、结构不清晰、用户不能轻松地将想法转化为 Spec。\n这带来了一个挑战：当人类专业知识有限或问题被理解得较差时，我们如何创建好的 Spec？\n这引领了一种新方法：",
     "crumbs": [
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Spec Agent</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>规格智能体（Spec Agent）</span>"
     ]
   },
   {
@@ -2272,11 +2272,11 @@
   {
     "objectID": "chapter-17.html",
     "href": "chapter-17.html",
-    "title": "18  Iterative Spec Refinement",
+    "title": "18  迭代式 Spec 精化（Iterative Spec Refinement）",
     "section": "",
-    "text": "18.1 Specification Is Not Static\nA common misconception in software development is that a specification can be written once and remain correct forever. This misconception has led to countless failed projects and wasted effort.\nIn reality:\nTherefore:",
+    "text": "18.1 规格说明不是静态的\n软件开发中的一个常见误解是，规格说明可以一次性写好并永远保持正确。这个误解导致了无数失败的项目和浪费的努力。\n实际上：\n因此：",
     "crumbs": [
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Iterative Spec Refinement</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>迭代式 Spec 精化（Iterative Spec Refinement）</span>"
     ]
   },
   {
@@ -2412,11 +2412,11 @@
   {
     "objectID": "chapter-18.html",
     "href": "chapter-18.html",
-    "title": "19  From Spec to Instruction",
+    "title": "19  从 Spec 到指令（From Spec to Instruction）",
     "section": "",
-    "text": "19.1 The Missing Link\nBy now, we have defined two critical elements of programming in the LLM era:\nBut systems do not execute specs directly. A spec, no matter how well-written, cannot be fed directly into an LLM or agent system and expected to produce results.\nThere is a necessary transformation that must occur:\nThis translation is the bridge between definition and execution—a critical step that enables systems to actually do work.",
+    "text": "19.1 缺失的环节\n到现在，我们已经定义了 LLM 时代编程的两个关键元素：\n但系统不直接执行 Spec。无论写得多好的 Spec，都不能直接输入 LLM 或智能体系统并期望产生结果。\n有一个必要的转换必须发生：\n这个翻译是定义和执行之间的桥梁——一个使系统能够实际工作的关键步骤。",
     "crumbs": [
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>From Spec to Instruction</span>"
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>从 Spec 到指令（From Spec to Instruction）</span>"
     ]
   },
   {
@@ -2552,11 +2552,11 @@
   {
     "objectID": "chapter-19.html",
     "href": "chapter-19.html",
-    "title": "20  Instruction Design",
+    "title": "20  指令设计（Instruction Design）",
     "section": "",
-    "text": "20.1 From Execution to Design\nInstruction is not just a simple translation from spec to execution. It is not merely a mechanical process of converting requirements into prompts.\nInstruction is a design problem—a creative and analytical challenge that determines how well a system will perform.\nA poorly designed instruction leads to:\nA well-designed instruction leads to:",
+    "text": "20.1 从执行到设计\n指令不仅仅是 Spec 到执行的简单翻译。它不仅仅是机械地将需求转换为提示词的过程。\n指令是一个设计问题——决定系统表现如何的创造性和分析性挑战。\n设计不良的指令导致：输出不一致、行为不稳定、调试困难。\n设计良好的指令导致：结果可预测、组件可复用、系统可扩展。",
     "crumbs": [
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Instruction Design</span>"
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>指令设计（Instruction Design）</span>"
     ]
   },
   {
@@ -2692,11 +2692,11 @@
   {
     "objectID": "chapter-20.html",
     "href": "chapter-20.html",
-    "title": "21  Tool Use & APIs",
+    "title": "21  工具使用与 API（Tool Use & APIs）",
     "section": "",
-    "text": "21.1 From Generation to Action\nSo far, we have focused on systems that:\nThese systems are powerful but limited. They operate entirely within the realm of language and knowledge, without the ability to interact with the external world.\nHowever, many real-world tasks require more than generation. They require:\nThis introduces a new capability:",
+    "text": "21.1 从生成到行动\n到目前为止，我们关注的是处理输入和生成输出的系统。这些系统很强大但也有限——它们完全在语言和知识的领域内运行，没有与外部世界交互的能力。\n然而，许多现实任务需要的不仅仅是生成。它们需要：\n这引入了一个新的能力：",
     "crumbs": [
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Tool Use & APIs</span>"
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>工具使用与 API（Tool Use & APIs）</span>"
     ]
   },
   {
@@ -2832,11 +2832,11 @@
   {
     "objectID": "chapter-21.html",
     "href": "chapter-21.html",
-    "title": "22  Multi-Agent Systems",
+    "title": "22  多智能体系统（Multi-Agent Systems）",
     "section": "",
-    "text": "22.1 From Single Agent to Systems of Agents\nSo far, we have considered systems where:\nThis architecture works well for:\nHowever, as systems grow in complexity and scope, a single agent becomes insufficient. Tasks become:\nA single agent lacks the:\nThis leads to a new paradigm:",
+    "text": "22.1 从单智能体到智能体系统\n到目前为止，我们考虑的是单个智能体接收输入、处理和产生输出的系统。\n这种架构对简单任务、中等复杂度的问题和孤立系统工作良好。\n但随着系统在复杂度和范围上增长，单个智能体变得不足。任务变成多步骤的、知识密集的、涉及权衡和选择的。\n单个智能体缺乏专门化、可扩展性和协调机制。\n这引出了一种新范式：",
     "crumbs": [
-      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Multi-Agent Systems</span>"
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>多智能体系统（Multi-Agent Systems）</span>"
     ]
   },
   {
@@ -2982,11 +2982,11 @@
   {
     "objectID": "chapter-22.html",
     "href": "chapter-22.html",
-    "title": "23  Memory & Context",
+    "title": "23  记忆与上下文（Memory & Context）",
     "section": "",
-    "text": "23.1 Why Memory Matters\nSo far, we have described systems that:\nThese systems operate as if each interaction is isolated—each input is processed independently, with no memory of previous interactions.\nHowever, many real-world systems require continuity:\nWithout memory:",
+    "text": "23.1 为什么记忆重要\n到目前为止，我们描述的系统接收输入并产生输出。这些系统仿佛每次交互都是孤立的——每个输入被独立处理，没有先前交互的记忆。\n然而，许多现实系统需要连续性：对话跨越多个回合、决策依赖过去的交互、系统需要随时间适应。\n没有记忆，每次交互都是孤立的，上下文丢失，行为变得肤浅。",
     "crumbs": [
-      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Memory & Context</span>"
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>记忆与上下文（Memory & Context）</span>"
     ]
   },
   {
@@ -3132,11 +3132,11 @@
   {
     "objectID": "chapter-23.html",
     "href": "chapter-23.html",
-    "title": "24  Building an Agent System",
+    "title": "24  构建智能体系统（Building an Agent System）",
     "section": "",
-    "text": "24.1 From Task to System\nUp to this point, we have focused on:\nThis approach is useful for:\nBut real-world applications are not single tasks. They are:\nThis requires a fundamental shift:",
+    "text": "24.1 从概念到系统\n在本节的前几章中，我们探讨了使 LLM 时代的系统构建成为可能的构成要素：工具使用、多智能体架构、记忆与上下文。现在是将它们组合在一起的时候了。\n本章提供了一个结构化的过程，用于从概念到工作系统构建一个完整的智能体系统。",
     "crumbs": [
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Building an Agent System</span>"
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>构建智能体系统（Building an Agent System）</span>"
     ]
   },
   {
@@ -3272,11 +3272,11 @@
   {
     "objectID": "chapter-24.html",
     "href": "chapter-24.html",
-    "title": "25  Reliability & Evaluation",
+    "title": "25  可靠性与评估（Reliability & Evaluation）",
     "section": "",
-    "text": "25.1 From Capability to Reliability\nA system that works once is not enough. A prototype that produces a correct output in controlled conditions is not a production system.\nReal systems must be:\nThis introduces a new requirement:",
+    "text": "25.1 可靠性为什么重要\n在 LLM 时代，系统输出是概率性的。相同的输入可能产生不同的输出。行为可能随时间漂移。系统可能出乎意料地失败。\n这使得可靠性成为一个关键关注点。",
     "crumbs": [
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Reliability & Evaluation</span>"
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>可靠性与评估（Reliability & Evaluation）</span>"
     ]
   },
   {
@@ -3442,11 +3442,11 @@
   {
     "objectID": "chapter-25.html",
     "href": "chapter-25.html",
-    "title": "26  Debugging in the LLM Era",
+    "title": "26  LLM 时代的调试（Debugging in the LLM Era）",
     "section": "",
-    "text": "26.1 The Shift in Debugging\nIn traditional programming, debugging has a clear, well-defined meaning:\nThe object of debugging is clear and specific:\nIn the LLM era, this changes fundamentally. Systems are no longer defined primarily by code. They are defined by:",
+    "text": "26.1 调试已经改变\n在传统编程中，调试是查找和修复代码中的错误。错误是确定性的、可重现的和可追踪的。你可以逐行跟踪执行，观察状态变化，并确定问题发生的确切位置。\n在 LLM 时代，调试从根本上不同。错误是概率性的、上下文相关的，并且通常不是由代码中的错误引起，而是由定义中的差距引起。",
     "crumbs": [
-      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Debugging in the LLM Era</span>"
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>LLM 时代的调试（Debugging in the LLM Era）</span>"
     ]
   },
   {
@@ -3592,11 +3592,11 @@
   {
     "objectID": "chapter-26.html",
     "href": "chapter-26.html",
-    "title": "27  Performance & Cost",
+    "title": "27  性能与成本（Performance & Cost）",
     "section": "",
-    "text": "27.1 From Correctness to Efficiency\nSo far, we have focused on:\nHowever, a system that is correct but inefficient is not practical. A system that produces perfect results but is too slow or too expensive cannot be used in production.\nReal systems must also consider:",
+    "text": "27.1 为什么性能和成本重要\n在传统编程中，性能和成本是重要但通常是次要的关注点。代码必须正确，然后你才优化速度和资源。\n在 LLM 时代，性能和成本是系统设计中不可分割的部分。每次 API 调用都有直接的成本。每个额外的上下文标记都会增加延迟。每个不必要的步骤都会消耗时间和资源。",
     "crumbs": [
-      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Performance & Cost</span>"
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>性能与成本（Performance & Cost）</span>"
     ]
   },
   {
@@ -3742,11 +3742,11 @@
   {
     "objectID": "chapter-27.html",
     "href": "chapter-27.html",
-    "title": "28  Building a Chat System",
+    "title": "28  构建聊天系统（Building a Chat System）",
     "section": "",
-    "text": "28.1 From Theory to System\nWe have explored fundamental concepts:\nNow we integrate everything into a concrete, practical system:",
+    "text": "28.1 聊天系统作为基础架构\n聊天系统（chat system）是最常见的 AI 系统形式之一。它们出现在客户服务、教育、个人助理和内部工具中。但构建一个好的、可靠的聊天系统需要的不仅仅是 API 调用。\n聊天系统的核心挑战在于：它们是概率性的、上下文依赖的、需要处理各种边界情况（edge cases）。一个简单的 API 包装不足以提供一个生产级的聊天体验。\n本章使用最小循环（Minimal Loop）框架逐步构建一个生产质量的聊天系统。",
     "crumbs": [
-      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Building a Chat System</span>"
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>构建聊天系统（Building a Chat System）</span>"
     ]
   },
   {
@@ -3912,11 +3912,11 @@
   {
     "objectID": "chapter-28.html",
     "href": "chapter-28.html",
-    "title": "29  Building a Data Pipeline",
+    "title": "29  构建数据管道（Building a Data Pipeline）",
     "section": "",
-    "text": "29.1 From Interaction to Flow\nA chat system handles interaction—one user, one response at a time.\nA data pipeline handles flow—continuous processing of data through multiple stages.\nInstead of:\nA data pipeline processes:",
+    "text": "29.1 数据管道作为系统\n数据管道（data pipeline）是处理数据流的系统。它们从多个源接收输入，转换数据，并将结果存储在目标系统中。在传统软件中，管道是批处理或流处理作业。在 LLM 时代，数据管道通常涉及 AI 驱动的转换——文本清洗、分类、提取、总结、翻译。\n数据管道的核心价值在于：它将原始、非结构化的数据转化为结构化、可操作的洞察。没有管道，AI 系统只能处理静态的、预定义的数据集。有了管道，AI 系统可以持续地从新数据中学习和适应。",
     "crumbs": [
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Building a Data Pipeline</span>"
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>构建数据管道（Building a Data Pipeline）</span>"
     ]
   },
   {
@@ -4072,11 +4072,11 @@
   {
     "objectID": "chapter-29.html",
     "href": "chapter-29.html",
-    "title": "30  Building an AI Tool",
+    "title": "30  构建 AI 工具（Building an AI Tool）",
     "section": "",
-    "text": "30.1 From System to Product\nSo far, we have built:\nThese are all systems—functional collections of components that perform tasks.\nBut users do not interact with systems directly. They don’t see the spec, instruction, or execution layers.\nThey interact with:",
+    "text": "30.1 工具作为产品\nAI 工具（tool）封装特定能力，以便其他系统可以调用。工具是 AI 系统构建中的构建块——独立的、可复用的功能单元。\n与传统软件工具不同，AI 工具通常涉及概率性处理。它们的输出不是确定性的，而是基于模型推理的结果。这给工具设计带来了独特的挑战：你需要定义清晰的接口（interface），同时接受内部行为的不确定性。\n本章使用最小循环（Minimal Loop）方法构建一个 AI 驱动的代码评论工具（code review tool）。",
     "crumbs": [
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Building an AI Tool</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>构建 AI 工具（Building an AI Tool）</span>"
     ]
   },
   {
@@ -4222,11 +4222,11 @@
   {
     "objectID": "chapter-30.html",
     "href": "chapter-30.html",
-    "title": "31  From Idea to Product",
+    "title": "31  从理想到产品（From Idea to Product）",
     "section": "",
-    "text": "31.1 The Final Transition\nWe began this journey with fundamental concepts:\nNow we arrive at the final, most important transformation:\nAn idea is:\nA product is:",
+    "text": "31.1 差距\n拥有一个想法（idea）和构建一个产品（product）之间存在巨大的差距。想法是开始，但产品是不同的东西。\n想法是免费的。产品需要设计、构建、测试、迭代、部署和维护。\n在 LLM 时代，这个差距既缩小了也扩大了。缩小了，因为 AI 降低了执行成本——你可以在更短的时间内将想法转化为工作原型。扩大了，因为定义成本成为新的瓶颈——你需要更精确地知道你想要什么。\n本章探索如何使用最小循环（Minimal Loop）框架将想法转化为产品。",
     "crumbs": [
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>From Idea to Product</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>从理想到产品（From Idea to Product）</span>"
     ]
   },
   {
@@ -4372,11 +4372,11 @@
   {
     "objectID": "chapter-31.html",
     "href": "chapter-31.html",
-    "title": "32  Programming as System Design",
+    "title": "32  编程即系统设计（Programming as System Design）",
     "section": "",
-    "text": "32.1 The Final Reframe\nWe began this book with a simple but profound shift:\nNow we arrive at the deeper conclusion:\nThis is not just a change in technique. It’s a fundamental redefinition of what programming means.",
+    "text": "32.1 从代码到系统\n在传统观念中，编程是关于写代码的。你的技能通过你写代码的能力来衡量——语法掌握、算法设计、框架知识。\n在 LLM 时代，编程是关于设计系统的。代码只是实现细节。",
     "crumbs": [
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Programming as System Design</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>编程即系统设计（Programming as System Design）</span>"
     ]
   },
   {
@@ -4522,11 +4522,11 @@
   {
     "objectID": "chapter-32.html",
     "href": "chapter-32.html",
-    "title": "33  Language as an Operating System",
+    "title": "33  语言即操作系统（Language as an Operating System）",
     "section": "",
-    "text": "33.1 The Final Abstraction\nWe began this journey with:\nNow we arrive at the deepest layer of abstraction:\nThis is not a metaphor. It is a structural shift in how computation works.",
+    "text": "33.1 新的通用接口\n在传统计算中，操作系统（OS）管理硬件资源并提供应用程序可以使用的服务。文件系统、网络栈、进程管理——这些都是操作系统的一部分。\n在 LLM 时代，语言正在成为一个新的操作系统。",
     "crumbs": [
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Language as an Operating System</span>"
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>语言即操作系统（Language as an Operating System）</span>"
     ]
   },
   {
@@ -4682,11 +4682,11 @@
   {
     "objectID": "chapter-33.html",
     "href": "chapter-33.html",
-    "title": "34  Human + AI Cognition",
+    "title": "34  人类 + AI 认知（Human + AI Cognition）",
     "section": "",
-    "text": "34.1 Beyond Systems: Cognition as a Joint Process\nWe have built:\nNow we move to the deepest layer of this transformation:\nThis is not about tools assisting humans—augmenting human capability.\nIt is about:",
+    "text": "34.1 超越工具\n到目前为止，我们讨论了 AI 作为工具——增强人类能力的系统。但正在出现的是一种更深层的东西：人类和 AI 认知的融合。\n这不是关于人类使用 AI 工具。不仅仅是关于 AI 生成代码。这是关于人类和 AI 共同思考——两种不同类型的认知，各自做自己擅长的事。",
     "crumbs": [
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Human + AI Cognition</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>人类 + AI 认知（Human + AI Cognition）</span>"
     ]
   },
   {
@@ -4832,11 +4832,11 @@
   {
     "objectID": "chapter-34.html",
     "href": "chapter-34.html",
-    "title": "35  The Future of Builders",
+    "title": "35  构建者的未来（The Future of Builders）",
     "section": "",
-    "text": "35.1 From Developers to Builders\nThroughout this book, we have followed a profound transformation:\nThis leads to the deepest identity shift of all:\nA developer:\nA builder:",
+    "text": "35.1 更大的图景\n在这本书中，我们探讨了编程的深刻转变。我们追踪了几十年的抽象——从机器码到高级语言、从框架到云服务、从手动的逐步执行到 AI 驱动的实现。\n每一次转变都将开发者提升到更高的抽象层次上运作。每一次转变都扩大了能构建什么的范围。\nLLM 时代不是这种演化的终点。它是新阶段的开始。",
     "crumbs": [
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>The Future of Builders</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>构建者的未来（The Future of Builders）</span>"
     ]
   },
   {
@@ -5747,6 +5747,1886 @@
     "text": "35.15 Action Hint\n\nThink like a builder, not a developer. Focus on outcomes, not activity. Define clearly what you want to build. Design systems before coding. Use AI as leverage, not replacement. Iterate rapidly based on feedback. Think in systems, not tasks. Embrace continuous improvement. Take responsibility for what you build. Judge by value delivered, not code written.\n\n\n\nYou have completed the journey from intent to execution.\nYou are now equipped to build the future.\nThe question is not whether you can build.\nThe question is: What will you build?",
     "crumbs": [
       "<span class='chapter-number'>35</span>  <span class='chapter-title'>The Future of Builders</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#编程的新时代a-new-era-of-programming",
+    "href": "index.html#编程的新时代a-new-era-of-programming",
+    "title": "AI Programming: From Intent to Execution",
+    "section": "1.1 编程的新时代（A New Era of Programming）",
+    "text": "1.1 编程的新时代（A New Era of Programming）\n我们正在经历软件构建方式的根本性变革。\n大语言模型（LLM）已将瓶颈从执行（execution）转移到了定义（definition）。问题不再是：\n\n“我们能构建这个吗？”\n\n而是：\n\n“我们到底应该构建什么？”\n\n这本书是关于驾驭这个转变的——理解它的含义、如何适应、以及在这个新时代中需要哪些技能才能蓬勃发展。",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>前言（Preface）</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#编程简史a-brief-history-of-programming",
+    "href": "index.html#编程简史a-brief-history-of-programming",
+    "title": "AI Programming: From Intent to Execution",
+    "section": "1.2 编程简史（A Brief History of Programming）",
+    "text": "1.2 编程简史（A Brief History of Programming）\n编程一直是关于抽象（abstraction）的——从底层细节到高层概念。\n开始时，程序员编写机器码——直接给硬件的指令。然后是汇编语言，接着是高级语言，再然后是框架和库。每一层抽象都减少了对”如何做”的关注，增加了对”做什么”的关注。\nLLM 代表了下一个、也是最戏剧性的抽象层。它们不只是抽象实现细节——它们抽象了实现本身的行为。\n这不仅仅是编程演化的又一步。这是一个根本性的不连续。一种与过去的决裂。",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>前言（Preface）</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#核心转变the-core-shift",
+    "href": "index.html#核心转变the-core-shift",
+    "title": "AI Programming: From Intent to Execution",
+    "section": "1.3 核心转变（The Core Shift）",
+    "text": "1.3 核心转变（The Core Shift）\n几十年来，编程主要是关于执行：\n\n写代码\n实现逻辑\n调试错误\n优化性能\n\n核心技能是知道如何构建。瓶颈是执行——将想法转化为可工作的代码。\n现在，有了 LLM，执行变得越来越自动化。代码可以被生成。模式可以被复用。任务可以被委托给智能体（agents）。\n瓶颈已经转移了。它不再是关于如何实现。而是关于什么需要被实现。关于清晰地定义应该存在什么。\n这个转变改变了一切。它改变了编程是什么、我们如何做、以及哪些技能最重要。",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>前言（Preface）</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#这本书是关于什么的what-this-book-is-about",
+    "href": "index.html#这本书是关于什么的what-this-book-is-about",
+    "title": "AI Programming: From Intent to Execution",
+    "section": "1.4 这本书是关于什么的（What This Book Is About）",
+    "text": "1.4 这本书是关于什么的（What This Book Is About）\n这本书不是关于使用 AI 工具。不是关于提示工程技巧或如何写出更好的提示。\n它是关于当 AI 能够执行时，重新思考编程意味着什么。\n它提供了一个在瓶颈的新位置——定义层面——操作的框架。这个框架由五个核心概念组成：\n\n意图（Intent） — 定义我们想要实现什么\n规格说明（Spec） — 用精确、无歧义的术语说明这意味着什么\n指令（Instruction） — 将规格转化为可执行的协议\n执行（Execution） — 让 AI 系统执行工作\n评估（Evaluation） — 确定结果是否满足要求\n\n这些共同构成了我们所说的最小循环（Minimal Loop）——在 LLM 时代编程的基本单元。",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>前言（Preface）</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#这本书的读者who-this-book-is-for",
+    "href": "index.html#这本书的读者who-this-book-is-for",
+    "title": "AI Programming: From Intent to Execution",
+    "section": "1.5 这本书的读者（Who This Book Is For）",
+    "text": "1.5 这本书的读者（Who This Book Is For）\n\n程序员希望理解他们的角色在 AI 时代如何演化\n系统设计师寻找用 AI 系统构建的新框架\n产品构建者希望利用 AI 更快地创造更好的产品\n任何对软件开发未来感兴趣的人\n\n不需要 AI 经验——只需要愿意以不同的方式思考编程。",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>前言（Preface）</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#书籍结构how-this-book-is-organized",
+    "href": "index.html#书籍结构how-this-book-is-organized",
+    "title": "AI Programming: From Intent to Execution",
+    "section": "1.6 书籍结构（How This Book Is Organized）",
+    "text": "1.6 书籍结构（How This Book Is Organized）\n本书分为四个阶段，从基本原理到实践应用，共 34 章。\n\n1.6.1 第一阶段：基础（Chapters 1–8）\n建立从执行到定义的根本性转变： - 第1章：介绍编程的历史演化与 LLM 引入的不连续性 - 第2章：解释为什么定义而非执行已成为新瓶颈 - 第3章：将编程重新定义为定义系统的行为 - 第4-8章：介绍核心框架：Intent → Spec → Instruction → Execution → Evaluation，即最小循环\n\n\n1.6.2 第二阶段：定义技能（Chapters 9–17）\n发展在定义层面操作所需的技能： - 第9-10章：探索可能性空间（Possibility Space）和结构性思维（Structural Thinking） - 第11-15章：组合（Composition）、目标压缩（Goal Compression）、规格工程（Spec Engineering）、规格结构、模板 - 第16-17章：规格智能体（Spec Agents）与精化（Refinement）\n\n\n1.6.3 第三阶段：系统构建（Chapters 18–29）\n从定义单个组件到构建完整的 AI 驱动系统： - 第18-19章：从规格到指令的转变与指令设计 - 第20-22章：工具使用、多智能体系统、记忆系统 - 第23-29章：智能体系统、聊天系统、数据管道、AI 工具、可靠性\n\n\n1.6.4 第四阶段：从系统到现实（Chapters 30–34）\n弥合系统与现实世界影响之间的差距： - 第30-31章：从理想到产品、系统设计作为新核心学科 - 第32-33章：语言作为操作系统、人 + AI 认知 - 第34章：总结从开发者到构建者的转变",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>前言（Preface）</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#核心原则core-principles",
+    "href": "index.html#核心原则core-principles",
+    "title": "AI Programming: From Intent to Execution",
+    "section": "1.7 核心原则（Core Principles）",
+    "text": "1.7 核心原则（Core Principles）\n\n定义先于执行 — 主要技能是定义应该存在什么，而不是编写如何实现\n系统优于代码 — 工作单元已从函数转移到整个系统\n规格是一等工件 — 规格说明不再是文档，而是可执行的工件\n通过约束实现控制 — 在 AI 强大的时代，控制来自清晰地定义边界\n构建者心态 — 未来属于那些能编排系统的人，而不只是写代码的人",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>前言（Preface）</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#旅程前路the-journey-ahead",
+    "href": "index.html#旅程前路the-journey-ahead",
+    "title": "AI Programming: From Intent to Execution",
+    "section": "1.8 旅程前路（The Journey Ahead）",
+    "text": "1.8 旅程前路（The Journey Ahead）\n这本书不是关于使用 AI 工具。它是关于当 AI 能够执行时，重新思考编程意味着什么。\n旅程从一个简单的问题开始：你想做什么？\n到结束时，你将拥有一个完整的框架来清晰地回答这个问题——并构建能够交付该定义的系统。\n欢迎来到 AI 编程的时代。\nLin Mi 2026 年 2 月",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>前言（Preface）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-1.html#编程从未停止演化",
+    "href": "chapter-1.html#编程从未停止演化",
+    "title": "2  转变：从编码到定义（The Shift: From Coding to Defining）",
+    "section": "",
+    "text": "2.1.1 第一阶段：机器级编程（Phase 1 — Machine-Level Programming）\n在编程的最早期，开发者通过汇编语言和机器码直接与硬件工作。每条指令都必须被显式指定，每比特内存都必须被手动管理。\n\n直接操作硬件寄存器和内存地址\n编写与机器操作一一映射的汇编指令\n手动管理每个计算资源\n\n这个时代的核心挑战直接而苛刻：\n\n精确控制机器\n\n程序员需要深入了解底层架构——寄存器配置、内存布局、指令时序。一个错误可能使系统崩溃或产生不可预测的结果。\n\n\n\n2.1.2 第二阶段：高级语言（Phase 2 — High-Level Languages）\nC、Java、Python 等高级编程语言的引入代表了巨大的飞跃。这些语言抽象了许多硬件细节，允许开发者用更接近人类思维而非机器架构的方式表达逻辑。\n\n变量和数据类型代替内存地址\n循环和条件等控制结构代替跳转指令\n函数和过程代替原始指令序列\n\n核心挑战从机器控制转向了更智力性的东西：\n\n清晰地表达逻辑\n\n开发者不再需要担心寄存器分配或内存对齐。他们专注于设计高效解决问题的算法、组织清晰的控制流、将数据组织到适当的结构中、编写其他人能够理解和维护的代码。\n\n\n\n2.1.3 第三阶段：框架和库（Phase 3 — Frameworks and Libraries）\n随着软件系统变得更加复杂，开发者意识到他们在重复解决类似的问题。这导致了框架和库的兴起——封装了常见模式和功能的预制组件。\n\nWeb 框架处理路由、认证和数据库连接\nORM 抽象数据库交互\nSDK 提供外部服务的标准化接口\n\n核心挑战再次演化：\n\n组合现有组件\n\n开发者不再从头构建一切，而是成为集成者和组合者：复用既有模式、集成多个库和框架、关注独特的应用逻辑而非基础设施问题、做出关于使用哪些组件以及如何连接它们的架构决策。\n\n\n\n2.1.4 第四阶段：云和 API（Phase 4 — Cloud and APIs）\n云革命进一步抽象了基础设施问题。开发者无需管理物理服务器即可部署和扩展应用，并通过定义良好的 API 访问强大的能力。\n\n基础设施即服务提供按需计算资源\n平台即服务提供完整的应用托管环境\nAPI 生态系统连接跨组织边界的系统\n\n核心挑战转向了一个新维度：\n\n编排分布式系统\n\n开发者成为系统协调者而非实现者：通过 API 调用服务而非内部构建一切、管理跨多个分布式组件的数据流、设计能够处理部分失败的韧性架构、以系统级行为而非程序级逻辑的方式思考。\n\n\n\n2.1.5 贯穿历史的模式（A Pattern Across History）\n回顾所有演化阶段，一个清晰一致的模式浮现出来：\n\n每次演化都减少了对”事情如何完成”的关注，增加了对”应该做什么”的定义的重要性。\n\n抽象不断向上移动，将开发者带到离问题领域更近、离实现细节更远的地方。每次转变，责任的边界都在移动：\n\n从低层执行 → 到高层定义\n从指定步骤 → 到描述结果\n从管理细节 → 到编排系统\n\n\n\n\n2.1.6 LLM 断点（The LLM Breakpoint）\n大语言模型引入了一种根本不同的抽象——不只向栈中添加另一层，而是从根本上重构了人类意图与机器执行之间的关系。\n先前的抽象——汇编语言、高级语言、框架、云服务——都要求开发者指定任务如何完成，尽管抽象层级在不断提高。算法仍然需要设计，控制流仍然需要指定，组件仍然需要组装。\nLLM 抽象了更基础的东西：实现本身的行为。\n\n\n\n2.1.7 什么变了？\n要理解这一转变，考虑开发工作流中发生的变化：\n以前： 你定义解决问题的逻辑 → 将逻辑分解为可实现的步骤 → 编写实现每个步骤的代码 → 调试和优化实现\n现在： 你用自然语言描述期望的行为 → 指定约束和要求 → 系统自动生成实现 → 你评估和优化定义\n关键区别是：实现成为派生活动而非主要活动。焦点从编写代码转向编写定义。\n\n\n\n2.1.8 这不是另一层抽象\nLLM 不代表对现有抽象层次的延续。它们引入了一个不连续性——一个与渐进式抽象模式的决裂。\n\n框架抽象代码结构，但你仍然写逻辑\n库提供功能，但你仍然手动组合\n云服务抽象基础设施，但你仍然编排系统\n\nLLM 抽象了代码创建本身。 当你用足够细节描述想要什么时，系统可以在不直接参与编码过程的情况下生成实现。\n\n这是一个不连续性，而非延续性。它改变的不仅是我们做什么，还有我们对编程本质的思考方式。\n\n\n\n\n2.1.9 从写代码到描述系统（From Writing Code to Describing Systems）\n用一个实际例子来说明：构建一个 Web 爬虫。\n传统方式： 编写 HTTP 请求处理代码 → 实现 HTML 解析逻辑 → 设计数据提取模式 → 处理边界情况和错误 → 管理并发请求 → 将结果存储在数据库中\nLLM 增强方式： 描述目标：“从电商页面提取产品信息” → 指定约束：“处理分页、提取价格和标题、避免重复” → 定义输出格式：“JSON，包含 product_id、title、price、url” → 系统生成并执行爬取逻辑\n开发者的活动已从编写代码转移到描述系统。他们定义：意图、约束、结果、上下文。\n\n\n\n2.1.10 核心洞见（The Core Insight）\n编程的演化一直是关于抽象——远离实现细节，走向问题域。但 LLM 时代引入了一种质的新抽象层次：\n\n对实现本身的抽象。\n\n这不是漫长进程中的又一步——它是对编程含义的转变。我们正在从一个程序员指定如何完成任务的时代，走向一个他们定义什么应该存在的时代。\n\n未来的程序员不是能实现一切的人，而是能精确定义应该存在什么的人。\n\n这种转变不是对程序员的威胁——而是对角色的提升。最有价值的开发者将是那些掌握定义艺术的人，那些能清晰思考应该存在什么并以系统可执行的形式表达清晰性的人。",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>转变：从编码到定义（The Shift: From Coding to Defining）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-2.html#难度从何而来",
+    "href": "chapter-2.html#难度从何而来",
+    "title": "3  新的瓶颈：定义（The New Bottleneck: Definition）",
+    "section": "",
+    "text": "编写正确的代码来实现所需的逻辑\n管理日益增长的代码库的复杂性\n全面处理边界情况（edge cases）和错误条件\n调试失败并追踪复杂系统中的执行路径\n\n\n\n执行（execution）是瓶颈。",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>新的瓶颈：定义（The New Bottleneck: Definition）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-2.html#执行已被外包execution-has-been-outsourced",
+    "href": "chapter-2.html#执行已被外包execution-has-been-outsourced",
+    "title": "3  新的瓶颈：定义（The New Bottleneck: Definition）",
+    "section": "3.2 执行已被外包（Execution Has Been Outsourced）",
+    "text": "3.2 执行已被外包（Execution Has Been Outsourced）\n随着大语言模型的崛起，执行不再是软件开发中的首要约束。这代表了编程经济学的根本性转变。\n今天，配备了现代 AI 工具的开发者可以：\n\n从自然语言描述中在几秒内生成可运行的代码\n在几分钟内搭建完整的应用结构（原来需要数小时）\n在项目间自动复用模式和最佳实践\n将常规任务委托给专门智能体可靠地处理\n\n曾经需要数小时或数天的手动工作，现在可以在数秒或数分钟内完成。执行的障碍已经大幅下降。\n\n3.2.1 “外包执行”到底意味着什么\n执行不再由人类直接执行。而是由语言模型、智能体系统、工具链和 API 来处理。\n开发者不再一步步”做工作”——逐行写代码、手动处理每个边界情况。相反，他们以更高层面定义工作，系统执行具体细节。\n这类似于从手工制作家具到管理自动化工厂的转变。曾经亲自锯木板、钉钉子的木匠，现在设计产品并管理生产它的机器。执行已被外包，但对设计和质量保证的需求仍然存在。",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>新的瓶颈：定义（The New Bottleneck: Definition）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-2.html#生产力的幻觉the-illusion-of-productivity",
+    "href": "chapter-2.html#生产力的幻觉the-illusion-of-productivity",
+    "title": "3  新的瓶颈：定义（The New Bottleneck: Definition）",
+    "section": "3.3 生产力的幻觉（The Illusion of Productivity）",
+    "text": "3.3 生产力的幻觉（The Illusion of Productivity）\n乍看之下，这种转变似乎是纯粹的生产力提升——一种让一切更快更简单的直接改进。开发者可以更快地生成代码、更快速地迭代、更广泛地原型设计。\n然而，一个新问题迅速浮现，不太明显但同样重要：\n\n系统精确地产生你所要求的——不多也不少。\n\n这看似直白的陈述有着深远的影响。如果系统的输入是模糊的、不完整的、不一致的或歧义的，那么输出将忠实地反映这些品质。错误将从执行失败上游转移到定义失败。失败的诊断变得更困难，因为它们不是代码中的 bug，而是理解中的缺陷。\n生产力幻觉来自于假设更快的执行自动产生更好的结果。实际上，对定义不良的任务的更快执行，只是更快地产生定义不良的结果。",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>新的瓶颈：定义（The New Bottleneck: Definition）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-2.html#新的瓶颈定义the-new-bottleneck-definition",
+    "href": "chapter-2.html#新的瓶颈定义the-new-bottleneck-definition",
+    "title": "3  新的瓶颈：定义（The New Bottleneck: Definition）",
+    "section": "3.4 新的瓶颈：定义（The New Bottleneck: Definition）",
+    "text": "3.4 新的瓶颈：定义（The New Bottleneck: Definition）\n随着执行变得更容易和更自动化，另一个约束变得可见——它之前被实现的工作量所隐藏。\n我们现在面临的问题一直存在但很少被审视：\n\n我们究竟在构建什么？\n完整的需求是什么？\n在这个上下文中，“正确”意味着什么？\n系统必须遵守什么约束？\n我们怎么知道我们成功了？\n\n这些问题一直很重要，但它们常常通过迭代实现的过程被隐式地处理。随着开发者编写代码并遇到问题，他们优化了对构建内容的理解。实现的反馈循环充当了一个发现机制。\n现在执行被外包了，这种隐式的发现过程被打乱了。我们不能再依赖编码行为来澄清我们的思考。我们必须在执行之前就保持清晰。\n\n定义成为瓶颈。\n\n\n3.4.1 定义瓶颈的症状\n\n提示不稳定：你不断重写提示或规格，但结果仍然不一致\n“差不多”问题：系统”差不多能工作”但从未完全满足目标\n输出不一致：类似输入在不同运行中产生显著不同的输出\n无法阐述成功：你不能清晰解释成功是什么样或如何衡量\n无尽调整：你发现自己无休止地做小调整而没有有意义的改进\n\n这些不是传统意义上的执行失败。系统没有”坏掉”或”有 bug”——它忠实地遵循了你的定义。它们是定义失败——系统精确地做了你所要求的，但你所要求的并不是你真正想要的。",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>新的瓶颈：定义（The New Bottleneck: Definition）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-2.html#从代码错误到定义错误from-code-errors-to-definition-errors",
+    "href": "chapter-2.html#从代码错误到定义错误from-code-errors-to-definition-errors",
+    "title": "3  新的瓶颈：定义（The New Bottleneck: Definition）",
+    "section": "3.5 从代码错误到定义错误（From Code Errors to Definition Errors）",
+    "text": "3.5 从代码错误到定义错误（From Code Errors to Definition Errors）\n软件开发中错误的本质已经彻底改变。\n\n3.5.1 以前（执行错误）\n在传统编程中，错误主要是技术性的和局部的：语法错误、运行时异常、逻辑 bug、性能问题。这些错误共有的特征是局部化、确定性、可通过代码检查调试。\n\n\n3.5.2 现在（定义错误）\n在基于 LLM 的系统中，错误具有不同的性质：模糊的目标、缺失的约束、未定义的边界情况、薄弱的评估标准。这些新类型的错误是全局的、上下文相关的、难以追踪的。\n\n系统不是”错”了——它是在遵循一个不完整的定义。\n\n区别微妙但关键。在传统调试中，你问”代码哪里错了？“在新范式中，你问”定义哪里不完整？”",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>新的瓶颈：定义（The New Bottleneck: Definition）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-2.html#生产力被重新定义productivity-reframed",
+    "href": "chapter-2.html#生产力被重新定义productivity-reframed",
+    "title": "3  新的瓶颈：定义（The New Bottleneck: Definition）",
+    "section": "3.6 生产力被重新定义（Productivity Reframed）",
+    "text": "3.6 生产力被重新定义（Productivity Reframed）\n\n3.6.1 传统模型\n生产力 = 实现技能 × 时间。改进来自写更快、调试更好、优化执行。\n\n\n3.6.2 LLM 时代模型\n生产力 = 定义质量 × 执行能力。执行能力由 AI 提供且日益商品化，定义质量成为区分结果的主要变量。\n\nAI 放大的是你的清晰度，而不是你的意图。\n\n这是 LLM 时代也许最重要的洞见。你带来的价值不是有好的想法——每个人都有好的想法。价值在于能够以足够的精确度定义这些想法，使系统可靠地执行它们。",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>新的瓶颈：定义（The New Bottleneck: Definition）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-2.html#杠杆的不对称性the-asymmetry-of-leverage",
+    "href": "chapter-2.html#杠杆的不对称性the-asymmetry-of-leverage",
+    "title": "3  新的瓶颈：定义（The New Bottleneck: Definition）",
+    "section": "3.7 杠杆的不对称性（The Asymmetry of Leverage）",
+    "text": "3.7 杠杆的不对称性（The Asymmetry of Leverage）\n这个新模型引入了一个重要的不对称性：\n\n定义的小改进可以产生输出质量和一致性的大幅提升\n一个小的歧义可能导致大的失败和不可预测的行为\n\n这使得定义成为一个高杠杆活动——清晰度的小额投资在结果质量上产生大额回报。",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>新的瓶颈：定义（The New Bottleneck: Definition）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-2.html#隐形工作the-hidden-work",
+    "href": "chapter-2.html#隐形工作the-hidden-work",
+    "title": "3  新的瓶颈：定义（The New Bottleneck: Definition）",
+    "section": "3.8 隐形工作（The Hidden Work）",
+    "text": "3.8 隐形工作（The Hidden Work）\n在传统编程中，大部分工作可见且可衡量：写代码、运行测试、修复 bug。\n在 LLM 范式中，关键工作变得不可见：澄清意图、结构化需求、定义约束、设计评估。这项工作通常不产生即时可见的输出。它发生在思考、对话、文档和规划中。\n然而，这种隐形工作现在是决定成功的主要因素。没有它，可见工作——快速的代码生成、快速的原型、轻松的迭代——产生的是噪音而不是信号。",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>新的瓶颈：定义（The New Bottleneck: Definition）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-2.html#思维方式的转变a-change-in-mindset",
+    "href": "chapter-2.html#思维方式的转变a-change-in-mindset",
+    "title": "3  新的瓶颈：定义（The New Bottleneck: Definition）",
+    "section": "3.9 思维方式的转变（A Change in Mindset）",
+    "text": "3.9 思维方式的转变（A Change in Mindset）\n从： “我如何实现这个？” 到： “我是否已经定义得足够清晰，让系统可以执行？”\n在开始任何工作之前，有效的开发者在 LLM 时代会问：\n\n我到底想要它做什么？\n这个问题的边界是什么？\n成功是什么样子的？\n我怎么知道我已经成功了？\n我没有说出来的、需要明确的是什么？\n\n只有这些问题可以清晰回答时，才应该继续执行。\n\n执行已被外包。定义已成为约束。",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>新的瓶颈：定义（The New Bottleneck: Definition）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-3.html#必须重新追问的问题",
+    "href": "chapter-3.html#必须重新追问的问题",
+    "title": "4  编程现在是什么？（What is Programming Now?）",
+    "section": "",
+    "text": "编程是什么？",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>编程现在是什么？（What is Programming Now?）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-3.html#传统定义the-traditional-definition",
+    "href": "chapter-3.html#传统定义the-traditional-definition",
+    "title": "4  编程现在是什么？（What is Programming Now?）",
+    "section": "4.2 传统定义（The Traditional Definition）",
+    "text": "4.2 传统定义（The Traditional Definition）\n传统上，编程可以相当准确地描述为：\n\n将人类意图通过代码翻译成机器可执行的指令。\n\n这个描述包含几个关键活动：设计算法、编写函数、管理控制流、处理数据结构。\n在这个模型中，开发者同时充当翻译者和执行者。他们理解人类意图，弄清楚如何用算法实现，然后编写实现它的代码。认知负荷在理解问题和实现解决方案之间平均分配。\n这个模型已经很好地服务了我们几十年。它与编程语言的工作方式、软件的开发方式以及程序员的培训方式相一致。但它始终是当时技术约束的产物。",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>编程现在是什么？（What is Programming Now?）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-3.html#为什么这个定义失效了why-this-definition-breaks-down",
+    "href": "chapter-3.html#为什么这个定义失效了why-this-definition-breaks-down",
+    "title": "4  编程现在是什么？（What is Programming Now?）",
+    "section": "4.3 为什么这个定义失效了（Why This Definition Breaks Down）",
+    "text": "4.3 为什么这个定义失效了（Why This Definition Breaks Down）\n有了 LLM 和 AI 系统，传统模型的几个基本假设不再成立：\n\n代码可以自动生成——AI 系统可以从描述中编写代码\n逻辑可以从描述中推断——系统可以弄清楚实现细节\n执行可以被委托——智能体可以处理多步骤工作流\n\n这在我们对编程的理解与程序员实际所做的之间创造了一个脱节：\n\n开发者不再需要手动将每个意图细节翻译成代码\n系统可以自动填充大部分实现\n程序员的作用从做转向定义\n\n结果，写代码的行为不再是编程的核心活动。它变成了一个次要的、通常是自动化的活动。主要活动是完全不同的东西。",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>编程现在是什么？（What is Programming Now?）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-3.html#编程即定义programming-as-definition",
+    "href": "chapter-3.html#编程即定义programming-as-definition",
+    "title": "4  编程现在是什么？（What is Programming Now?）",
+    "section": "4.4 编程即定义（Programming as Definition）",
+    "text": "4.4 编程即定义（Programming as Definition）\n我们现在可以更精确地重新定义编程，以反映新的现实：\n\n编程是定义产生期望结果的系统的过程。\n\n这个定义代表了关注点的根本转变：\n\n从实现到定义\n从代码到结构\n从步骤到结果\n\n\n4.4.1 从实现到定义\n在传统模型中，编程主要是关于实现——如何让计算机做某事。程序员的心智模型聚焦于执行：写什么代码、用什么算法、用什么数据结构。\n在新模型中，编程主要是关于定义——应该存在什么。程序员的心智模型聚焦于结果：期望什么行为、必须遵守什么约束、成功是什么样。\n实现成为一个派生的关注点。一旦系统被足够清晰地定义，实现可以自动生成。程序员的价值不在于写代码，而在于编写可以从其生成代码的定义。\n\n\n4.4.2 从代码到结构\n传统上，代码是编程的主要输出。你通过编写功能来评估进展，通过行数来衡量质量，通过语法来衡量技能。\n在新模型中，结构取代代码成为主要关注点。重要的是概念的组织方式——组件之间的关系、约束的层级、行为如何组合。\n代码成为一种结构化的定义格式，而不是最终目标。结构和定义之间的界限变得模糊。\n\n\n4.4.3 从步骤到结果\n传统编程要求你指定一系列步骤——算法、控制流、指令顺序。系统逐步执行，每个步骤都定义了你想要发生的事情。\n新范式允许你更直接地指定结果。你描述期望的最终状态，系统找出如何达到它。关注的焦点从路径转移到目的地。",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>编程现在是什么？（What is Programming Now?）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-3.html#一个定义的新框架a-new-framework-for-definition",
+    "href": "chapter-3.html#一个定义的新框架a-new-framework-for-definition",
+    "title": "4  编程现在是什么？（What is Programming Now?）",
+    "section": "4.5 一个定义的新框架（A New Framework for Definition）",
+    "text": "4.5 一个定义的新框架（A New Framework for Definition）\n为了在这个新现实中有效操作，我们需要一个新的心智模型。这个模型基于五个核心概念：\n意图（Intent） → 规格说明（Spec） → 指令（Instruction） → 执行（Execution） → 评估（Evaluation）\n这是最小循环（Minimal Loop）。它是 LLM 时代编程的基本单元。\n在本书的下一部分中，我们将详细探索这个循环的每一部分。但现在，关键点是认识到编程已经有了根本性的转变。它不再仅仅是写代码。它是定义系统——使它们能够被可靠地实现的行为。\n\n编程不再是将想法翻译成代码。它是将需求翻译成定义，然后将定义翻译成结果。",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>编程现在是什么？（What is Programming Now?）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-4.html#为什么需要一个新循环",
+    "href": "chapter-4.html#为什么需要一个新循环",
+    "title": "5  最小循环（The Minimal Loop）",
+    "section": "",
+    "text": "设计 → 实现 → 调试 → 部署\n\n\n\n代码可以被生成——AI 系统可以从自然语言描述中编写代码\n模式可以自动复用——系统可以识别和应用已有的模式\n执行可以被委托给 AI——智能体可以自主处理多步骤工作流\n\n\n\n这种转变需要一个全新的基本循环——一个编程的新心智模型。",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>最小循环（The Minimal Loop）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-4.html#最小循环the-minimal-loop",
+    "href": "chapter-4.html#最小循环the-minimal-loop",
+    "title": "5  最小循环（The Minimal Loop）",
+    "section": "5.2 最小循环（The Minimal Loop）",
+    "text": "5.2 最小循环（The Minimal Loop）\n核心上，LLM 时代的编程可以简化为一个简单、优雅的循环：\n意图（Intent）→ 规格说明（Spec）→ 指令（Instruction）→ 执行（Execution）→ 评估（Evaluation）\n这个循环被称为”最小”是因为：\n\n每个组件都是必要的——你不能移除任何组件而不破坏循环\n没有组件可以被简化——每个组件都扮演着必不可少的角色\n它们共同形成一个完整的系统——循环是自包含且足够的\n\n尽管它很简单，但这个循环捕捉了新范式中编程的本质。",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>最小循环（The Minimal Loop）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-4.html#组件概览overview-of-the-components",
+    "href": "chapter-4.html#组件概览overview-of-the-components",
+    "title": "5  最小循环（The Minimal Loop）",
+    "section": "5.3 组件概览（Overview of the Components）",
+    "text": "5.3 组件概览（Overview of the Components）\n\n5.3.1 意图（Intent）——你想要什么？\n意图是目标的人类级定义。它代表任何编程努力的起点——创造某物或解决问题的愿望。\n意图回答基本问题：我们试图达成什么？我们想在世界中创造什么改变？从人类的角度看，成功是什么样？\n意图本质上是语义的、上下文的、开始时通常是模糊的。\n原始意图示例：”构建一个允许用户与 AI 助手聊天的系统。”\n这个意图捕捉了总体想法但缺乏具体性。它需要在指导执行之前被转化为更精确的东西。\n\n\n5.3.2 规格说明（Spec）——这到底是什么意思？\n规格说明将意图转化为一个结构化的、无歧义的定义。它是人类思维和机器执行之间的桥梁。\n一个 Spec 定义：输入、输出、约束、成功标准。\nSpec 通过使隐式假设显式化、模糊概念精确化来消除歧义。\nSpec 示例： - 输入：用户文本消息，最大 2000 字符 - 输出：AI 回复，50-500 字符的连贯文本 - 约束：回复必须引用提供的信息；不能声称有个人意见；必须回复原始语言 - 成功标准：用户在 80% 的情况下评价回复为有用；回复时间 &lt; 2 秒\n\n\n5.3.3 指令（Instruction）——如何执行？\n指令将 Spec 转化为系统可以遵循的可执行协议。它弥合了定义与执行之间的差距。\n虽然 Spec 定义”什么”，指令定义”如何”——以系统和工具可以处理的方式。\n指令的常见形式包括：提示词、API 调用、工作流定义、代码生成命令。\n\n\n5.3.4 执行（Execution）——做它\n执行是系统实际执行工作的环节。\n这不再需要人类直接参与。它由 AI 模型、智能体系统和自动化工具链处理。\n\n\n5.3.5 评估（Evaluation）——我们做对了吗？\n评估将执行结果与 Spec 中定义的成功标准进行比较。\n它回答：系统是否做了我们要求的？输出是否满足 Spec 中定义的约束？如果不是，需要改变什么——Spec？指令？还是我们对问题的理解？",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>最小循环（The Minimal Loop）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-4.html#循环如何运作how-the-loop-works",
+    "href": "chapter-4.html#循环如何运作how-the-loop-works",
+    "title": "5  最小循环（The Minimal Loop）",
+    "section": "5.4 循环如何运作（How the Loop Works）",
+    "text": "5.4 循环如何运作（How the Loop Works）\n实际流程如下：\n\n你从一个意图开始——一个你想要实现的愿望或想法\n你通过创建Spec使意图精确——指定输入、输出、约束和成功标准\n你将 Spec 转化为指令——系统可以执行的东西\n系统执行指令并产生结果\n你评估结果——它满足 Spec 吗？\n\n如果结果令人满意，循环就完成了。如果不满意，你回到前一个阶段——通常是 Spec 或意图——精化你的定义并重复。\n\n关键洞察：循环中的大多数工作在定义阶段完成（Intent、Spec），而不是执行阶段。",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>最小循环（The Minimal Loop）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-4.html#为什么这个循环是最小的why-this-loop-is-minimal",
+    "href": "chapter-4.html#为什么这个循环是最小的why-this-loop-is-minimal",
+    "title": "5  最小循环（The Minimal Loop）",
+    "section": "5.5 为什么这个循环是”最小”的（Why This Loop is “Minimal”）",
+    "text": "5.5 为什么这个循环是”最小”的（Why This Loop is “Minimal”）\n\n没有 Intent：你不知道你在努力实现什么——工作没有方向\n没有 Spec：意图保持模糊——执行无法可靠地产生正确结果\n没有 Instruction：Spec 无法转化为行动——系统不知道做什么\n没有 Execution：定义仍然只是定义——什么都不会发生\n没有 Evaluation：你永远不知道系统是否做对了——无法学习和改进\n\n每个组件都是不可或缺的。移除任何一个，循环就会断裂。",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>最小循环（The Minimal Loop）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-4.html#最小循环的实际应用the-minimal-loop-in-practice",
+    "href": "chapter-4.html#最小循环的实际应用the-minimal-loop-in-practice",
+    "title": "5  最小循环（The Minimal Loop）",
+    "section": "5.6 最小循环的实际应用（The Minimal Loop in Practice）",
+    "text": "5.6 最小循环的实际应用（The Minimal Loop in Practice）\n传统方法： 1. 在舒适区写代码 2. 测试时发现与需求不符 3. 重写代码 4. 重复直到看起来正确\n最小循环方法： 1. 写下你想实现的目标（Intent） 2. 精化为结构化定义（Spec） 3. 定义执行协议（Instruction） 4. 让 AI 执行并产生结果 5. 对照 Spec 评估结果 6. 如果不匹配，精化定义并重复\n区别是根本性的。传统方法将精力集中在实现上。最小循环方法将精力集中在定义上。\n\n在 LLM 时代，编程的每一次努力都应该遵循这个循环。它是引导所有其他活动的元模式。",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>最小循环（The Minimal Loop）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-5.html#所有系统的起点",
+    "href": "chapter-5.html#所有系统的起点",
+    "title": "6  意图：定义要做什么（Intent: Defining What to Do）",
+    "section": "",
+    "text": "我们想要做什么？\n\n\n\n意图是后续一切的基础。",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>意图：定义要做什么（Intent: Defining What to Do）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-5.html#什么是意图what-is-intent",
+    "href": "chapter-5.html#什么是意图what-is-intent",
+    "title": "6  意图：定义要做什么（Intent: Defining What to Do）",
+    "section": "6.2 什么是意图？（What is Intent?）",
+    "text": "6.2 什么是意图？（What is Intent?）\n意图是期望结果的人类级定义。它代表任何系统构建努力的起点——一切由此生长。\n意图描述：我们想创造什么改变、我们想解决什么问题、我们期望观察到什么结果。\n意图不是代码，也不是规格说明。它是：\n\n概念性的——存在于思想和理解的领域\n上下文依赖的——从情境和环境中获得意义\n开始时往往不完整——始为一个需要精化的模糊想法\n\n意图存在于人类认知中，而非机器逻辑中。它是人类欲望和系统能力之间的桥梁。",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>意图：定义要做什么（Intent: Defining What to Do）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-5.html#意图即一种转换intent-as-a-transformation",
+    "href": "chapter-5.html#意图即一种转换intent-as-a-transformation",
+    "title": "6  意图：定义要做什么（Intent: Defining What to Do）",
+    "section": "6.3 意图即一种转换（Intent as a Transformation）",
+    "text": "6.3 意图即一种转换（Intent as a Transformation）\n将意图理解为一种转换很有用——从一种状态到另一种状态的移动：\n当前状态 → 期望状态\n这个框架使意图变得具体和可操作。意图回答两个基本问题：\n\n我们现在在哪里？——当前的情况、问题或限制\n我们想去哪里？——期望的结果、解决方案或能力\n\n例如，考虑构建一个客户服务聊天机器人的意图：\n\n当前状态：客户必须等待数小时才能通过电子邮件获得简单问题的回答\n期望状态：客户每周 7 天、每天 24 小时即时获得常见问题的准确答案\n\n这个转换框架使意图变得具体且可操作。它为系统构建努力提供了清晰的方向。",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>意图：定义要做什么（Intent: Defining What to Do）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-5.html#意图的最小结构the-minimum-structure-of-intent",
+    "href": "chapter-5.html#意图的最小结构the-minimum-structure-of-intent",
+    "title": "6  意图：定义要做什么（Intent: Defining What to Do）",
+    "section": "6.4 意图的最小结构（The Minimum Structure of Intent）",
+    "text": "6.4 意图的最小结构（The Minimum Structure of Intent）\n虽然意图通常始于一个模糊的想法，但它最终必须被结构化才能有效指导系统开发。一个良好形成的意图应该澄清几个基本元素：\n\n6.4.1 1. 目标（Objective）\n期望什么结果？主要目标是什么？这是意图的”什么”——系统应该实现的核心目标。\n\n\n6.4.2 2. 对象（Object）\n动作应用于什么？影响什么实体或领域？这定义了努力的焦点和范围。\n\n\n6.4.3 3. 上下文（Context）\n意图在什么条件下适用？环境或情况是什么？上下文提供了系统必须在其内运行的边界。\n\n\n6.4.4 4. 约束（Constraints）\n在追求目标时我们必须遵守什么限制？约束包括预算、时间、技术或组织限制。\n\n\n6.4.5 5. 成功标准（Success Criteria）\n我们怎么知道我们已经实现了目标？哪些可观察的、可衡量的指标表明成功？\n这些元素共同形成了一个意图的最小结构。它们不要求详尽，但它们确保意图有足够的结构来指导接下来的规格说明阶段。",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>意图：定义要做什么（Intent: Defining What to Do）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-5.html#从模糊到精确from-vague-to-precise",
+    "href": "chapter-5.html#从模糊到精确from-vague-to-precise",
+    "title": "6  意图：定义要做什么（Intent: Defining What to Do）",
+    "section": "6.5 从模糊到精确（From Vague to Precise）",
+    "text": "6.5 从模糊到精确（From Vague to Precise）\n意图往往始于模糊的愿望。精化的过程是逐步增加精确度，直到意图可以指导系统开发。\n模糊： “让用户更容易找到信息。” 更清晰： “构建一个搜索功能，让用户可以在不到 3 秒内从知识库中找到相关文档。” 精确： “实现一个搜索系统，接受自然语言查询，检索前 5 个最相关的文档，在 95% 的情况下在 2 秒内返回结果。”\n每次精化都会增加清晰度，减少歧义，并使意图更接近可执行的东西。",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>意图：定义要做什么（Intent: Defining What to Do）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-5.html#意图与执行之间的张力the-tension-between-intent-and-execution",
+    "href": "chapter-5.html#意图与执行之间的张力the-tension-between-intent-and-execution",
+    "title": "6  意图：定义要做什么（Intent: Defining What to Do）",
+    "section": "6.6 意图与执行之间的张力（The Tension Between Intent and Execution）",
+    "text": "6.6 意图与执行之间的张力（The Tension Between Intent and Execution）\n一个重要但常被忽视的方面是意图与执行之间存在的张力。\n意图本质上是野心勃勃的——它想要更多、更好、更快。执行本质上是有限制的——它受到时间、资源和技术能力的约束。\n有效的意图设定在这种张力中运作。意图应该足够高远以激发行动，但又要足够脚踏实地以保持可实现。意图设定得太低会导致目标过低；意图设定得太高会导致失望。\n好的意图是受约束的野心——在承认现实世界限制的同时努力追求有意义目标的愿望。",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>意图：定义要做什么（Intent: Defining What to Do）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-5.html#意图作为持续对话intent-as-a-continuing-conversation",
+    "href": "chapter-5.html#意图作为持续对话intent-as-a-continuing-conversation",
+    "title": "6  意图：定义要做什么（Intent: Defining What to Do）",
+    "section": "6.7 意图作为持续对话（Intent as a Continuing Conversation）",
+    "text": "6.7 意图作为持续对话（Intent as a Continuing Conversation）\n意图不是一次性定义的。它是一个随着对系统的理解加深而演化的持续对话。\n\n初始意图通常来自一个利益相关者或用户需求\n精化后的意图随着系统开发和反馈而发展\n操作化的意图被转化为 Spec 和指令\n\n在整个最小循环中，意图保持为检查点——一个你可以返回并重新校准指南针的地方。\n\n好的意图设定了方向但不指定路径。它在系统构建努力的最终目标和灵活性之间保持平衡，以适应沿途学到的东西。\n\n关键洞察： 你在定义意图上投入的时间和精力越好，你在后续每个阶段浪费的时间就越少。",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>意图：定义要做什么（Intent: Defining What to Do）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-6.html#从意图到精确性",
+    "href": "chapter-6.html#从意图到精确性",
+    "title": "7  规格说明：消除歧义（Spec: Eliminating Ambiguity）",
+    "section": "",
+    "text": "Spec 是将模糊的意图变成结构化定义的地方。",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>规格说明：消除歧义（Spec: Eliminating Ambiguity）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-6.html#什么是-specwhat-is-a-spec",
+    "href": "chapter-6.html#什么是-specwhat-is-a-spec",
+    "title": "7  规格说明：消除歧义（Spec: Eliminating Ambiguity）",
+    "section": "7.2 什么是 Spec？（What is a Spec?）",
+    "text": "7.2 什么是 Spec？（What is a Spec?）\nSpec 是一个结构化的、无歧义的系统行为描述。它是人类意图和机器执行之间的桥梁。\n一个 Spec 定义：\n\n系统接收什么输入——系统使用的数据和信息\n产生什么输出——系统生成的结果和响应\n必须遵循什么约束——系统必须尊重的边界和限制\n什么条件决定成功——评估系统是否正常工作的标准\n\n与意图不同——意图是人类导向的，可以用自然语言表达——Spec 是：\n\n系统导向的——设计用于机器解释和执行\n显式的——不留下任何隐式或假设的东西\n可验证的——可以对照客观标准进行测试",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>规格说明：消除歧义（Spec: Eliminating Ambiguity）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-6.html#spec-即约束而非描述spec-as-constraint-not-description",
+    "href": "chapter-6.html#spec-即约束而非描述spec-as-constraint-not-description",
+    "title": "7  规格说明：消除歧义（Spec: Eliminating Ambiguity）",
+    "section": "7.3 Spec 即约束，而非描述（Spec as Constraint, Not Description）",
+    "text": "7.3 Spec 即约束，而非描述（Spec as Constraint, Not Description）\n一个常见且根本性的误解是将 Spec 视为系统的”详细描述”。这并不正确，而且会导致糟糕的规格说明。\nSpec 不是以穷尽的细节描述系统做的一切。它是关于定义边界——指定系统必须做什么、不得做什么以及它必须如何行为。\n\n7.3.1 描述 vs 规格说明\n描述： “系统应快速、准确地响应用户问题。”\n这个描述感觉有帮助，但对系统开发基本无用。“快速”和”准确”是主观术语，无法衡量或测试。\n规格说明： “95% 的查询响应时间必须在 2 秒以下。答案在可用时必须引用检索到的文档。当未找到相关文档时，系统必须明确说明这一限制。”\n这个规格说明是可操作的。它定义了一组具体、可衡量的约束，可以被实现和测试。\n\n描述解释。规格说明约束。\n\nSpec 的目的不是告诉系统它可能做的一切。而是告诉系统它必须做什么和必须不做什么。",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>规格说明：消除歧义（Spec: Eliminating Ambiguity）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-6.html#spec-的功能the-function-of-spec",
+    "href": "chapter-6.html#spec-的功能the-function-of-spec",
+    "title": "7  规格说明：消除歧义（Spec: Eliminating Ambiguity）",
+    "section": "7.4 Spec 的功能（The Function of Spec）",
+    "text": "7.4 Spec 的功能（The Function of Spec）\nSpec 在系统开发中执行三个关键功能：\n\n7.4.1 1. 消除歧义\n自然语言允许多种解释。一个陈述可以对不同的人或系统意味着不同的事情。\nSpec 通过以下方式减少这种情况：\n\n定义显式的输入和输出——精确指定什么数据进入和离开\n设定具体、可衡量的标准——可测试的标准代替主观术语\n使假设显式化——澄清未陈述的期望\n\n\n\n7.4.2 2. 启用执行\n一旦 Spec 被定义，它可以被转化为系统可以遵循的指令。没有 Spec，指令就没有基础——你不知道系统应该实现什么。\nSpec 的可执行性使其与普通文档区分开来。\n\n\n7.4.3 3. 促进评估\nSpec 提供了评估的基础。对照 Spec 定义的标准，你可以判断系统是否工作正常。\n没有 Spec，评估是主观和武断的。",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>规格说明：消除歧义（Spec: Eliminating Ambiguity）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-6.html#良好-spec-的特征characteristics-of-a-good-spec",
+    "href": "chapter-6.html#良好-spec-的特征characteristics-of-a-good-spec",
+    "title": "7  规格说明：消除歧义（Spec: Eliminating Ambiguity）",
+    "section": "7.5 良好 Spec 的特征（Characteristics of a Good Spec）",
+    "text": "7.5 良好 Spec 的特征（Characteristics of a Good Spec）\n一个好的 Spec 有几个关键特征：\n\n具体的——避免模糊术语如”快速”或”用户友好”。使用可衡量的定义\n可测试的——每个陈述都应该可以被验证为真或假\n完整的——涵盖相关的输入、输出、约束和成功标准\n一致的——各部分之间没有内部矛盾\n最小化的——包含必要的内容，但不再多\n\n一个有用的测试：如果你给两个不同的人（或两个 AI 系统）这个 Spec，他们应该对什么是正确的输出达成一致。",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>规格说明：消除歧义（Spec: Eliminating Ambiguity）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-6.html#spec-不是什么what-spec-is-not",
+    "href": "chapter-6.html#spec-不是什么what-spec-is-not",
+    "title": "7  规格说明：消除歧义（Spec: Eliminating Ambiguity）",
+    "section": "7.6 Spec 不是什么（What Spec is Not）",
+    "text": "7.6 Spec 不是什么（What Spec is Not）\n\n不是需求文档——需求文档描述问题。Spec 描述解法的结构\n不是设计文档——设计文档描述系统如何实现。Spec 描述系统必须做什么\n不是代码——Spec 比代码更抽象，但也更结构化\n\nSpec 有自己的类别——一个在人类意图和机器执行之间运行的结构化工件。",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>规格说明：消除歧义（Spec: Eliminating Ambiguity）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-6.html#实践编写一个-specpractice-writing-a-spec",
+    "href": "chapter-6.html#实践编写一个-specpractice-writing-a-spec",
+    "title": "7  规格说明：消除歧义（Spec: Eliminating Ambiguity）",
+    "section": "7.7 实践：编写一个 Spec（Practice: Writing a Spec）",
+    "text": "7.7 实践：编写一个 Spec（Practice: Writing a Spec）\n第一步：从意图开始\n意图：“构建一个客户服务聊天机器人”。\n第二步：定义输入\n用户通过 Web 界面提交自然语言问题。输入长度最多 2000 字符。系统可以使用可选的用户上下文。\n第三步：定义输出\n系统返回 50-500 字符的自然语言回复。回复可以是答案、澄清问题或承认无法回答。系统在有数据时提供来源引用。\n第四步：定义约束\n回复时间 &lt; 2 秒（95%）。系统不得编造信息。系统在无法回答时必须明确说明。系统必须使用与用户相同的语言回复。\n第五步：定义成功标准\n用户反馈满意度 &gt; 80%。首次回复解决率 &gt; 60%。每周 7 天、每天 24 小时可用。",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>规格说明：消除歧义（Spec: Eliminating Ambiguity）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-6.html#spec-作为桥梁spec-as-bridge",
+    "href": "chapter-6.html#spec-作为桥梁spec-as-bridge",
+    "title": "7  规格说明：消除歧义（Spec: Eliminating Ambiguity）",
+    "section": "7.8 Spec 作为桥梁（Spec as Bridge）",
+    "text": "7.8 Spec 作为桥梁（Spec as Bridge）\n\nSpec 是意图和指令之间的桥梁。它将人类的”想要”转化为系统的”做”。\n\n没有 Spec，指令就没有基础，评估就没有标准。Spec 是将编程从模糊想法转变为精确结果的核心工件。",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>规格说明：消除歧义（Spec: Eliminating Ambiguity）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-7.html#从定义到行动",
+    "href": "chapter-7.html#从定义到行动",
+    "title": "8  指令：使其可执行（Instruction: Making It Executable）",
+    "section": "",
+    "text": "指令（Instruction）——定义的可执行形式",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>指令：使其可执行（Instruction: Making It Executable）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-7.html#什么是指令what-is-an-instruction",
+    "href": "chapter-7.html#什么是指令what-is-an-instruction",
+    "title": "8  指令：使其可执行（Instruction: Making It Executable）",
+    "section": "8.2 什么是指令？（What is an Instruction?）",
+    "text": "8.2 什么是指令？（What is an Instruction?）\n指令是一个机器可执行的任务定义。它将规格说明转化为系统可以直接且可靠执行的形式。\n一个指令定义：\n\n要执行什么任务——系统应执行的具体操作\n使用什么输入——系统应使用的数据和参数\n产生什么输出——结果的格式和结构\n遵循什么约束——执行期间系统必须遵守的规则和边界\n\n指令不是抽象的或描述性的。它是操作性的。它是告诉系统精确如何行为的协议。\n\n如果 Spec 定义了系统，指令运行系统。",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>指令：使其可执行（Instruction: Making It Executable）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-7.html#指令-vs-提示词instruction-vs-prompt",
+    "href": "chapter-7.html#指令-vs-提示词instruction-vs-prompt",
+    "title": "8  指令：使其可执行（Instruction: Making It Executable）",
+    "section": "8.3 指令 vs 提示词（Instruction vs Prompt）",
+    "text": "8.3 指令 vs 提示词（Instruction vs Prompt）\n一个常见且持久的误区是将指令等同于提示词。虽然相关，但它们是根本不同的概念，服务于不同的目的。\n\n8.3.1 提示词（Prompt）\n提示词是非正式的、灵活的、通常包含歧义、为一次性交互设计的。\n示例：”用几句话总结这段文字。”\n这个提示词在随意交互中可行，但缺乏可靠系统执行所需的精确性。\n\n\n8.3.2 指令（Instruction）\n指令是结构化的、显式的、可重复的、为系统执行设计的。\n示例： - 任务：总结输入文本 - 输入：{text: string} - 输出：{summary: string, key_points: Array&lt;string&gt;} - 约束：最多 5 个关键点，每个关键点 20 字以内，总结必须包含所有关键点\n这个指令是精确、结构化且可执行的。",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>指令：使其可执行（Instruction: Making It Executable）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-7.html#良好指令的特征characteristics-of-a-good-instruction",
+    "href": "chapter-7.html#良好指令的特征characteristics-of-a-good-instruction",
+    "title": "8  指令：使其可执行（Instruction: Making It Executable）",
+    "section": "8.4 良好指令的特征（Characteristics of a Good Instruction）",
+    "text": "8.4 良好指令的特征（Characteristics of a Good Instruction）\n一个好的指令是：\n\n原子性的——一个任务，而不是一系列任务\n精确的——无歧义且明确\n结构化的——遵循一致、可解析的格式\n自包含的——包含执行所需的所有上下文\n可测试的——可以验证是否成功",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>指令：使其可执行（Instruction: Making It Executable）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-7.html#从-prompt-到-instructionfrom-prompt-to-instruction",
+    "href": "chapter-7.html#从-prompt-到-instructionfrom-prompt-to-instruction",
+    "title": "8  指令：使其可执行（Instruction: Making It Executable）",
+    "section": "8.5 从 Prompt 到 Instruction（From Prompt to Instruction）",
+    "text": "8.5 从 Prompt 到 Instruction（From Prompt to Instruction）\n将提示词转化为指令需要结构化你的定义：\n\n将”总结这个” → 任务：文本摘要，输出格式：包含 summary 和 key_points 的 JSON\n将”让它更好看” → 约束：使用响应式设计，字体大小 16px 基础\n将”检查错误” → 评估标准：验证 JSON 结构，检查必填字段\n\n这种转化是将临时提示词提升为可靠系统指令的过程。",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>指令：使其可执行（Instruction: Making It Executable）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-7.html#指令作为协议instruction-as-protocol",
+    "href": "chapter-7.html#指令作为协议instruction-as-protocol",
+    "title": "8  指令：使其可执行（Instruction: Making It Executable）",
+    "section": "8.6 指令作为协议（Instruction as Protocol）",
+    "text": "8.6 指令作为协议（Instruction as Protocol）\n在最小循环的上下文中，指令是执行者和评估者之间的协议。\n它告诉系统：这是你必须做的，这些是输入，这是输出必须看起来的样子。它在规格说明的世界和行动的世界之间架起了桥梁。\n\n指令将”应该”转化为”做”。",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>指令：使其可执行（Instruction: Making It Executable）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-8.html#为什么执行不是终点",
+    "href": "chapter-8.html#为什么执行不是终点",
+    "title": "9  评估与迭代（Evaluation & Iteration）",
+    "section": "",
+    "text": "输出是概率性的——相同的输入可能产生不同的输出\n行为取决于输入变化——略微不同的输入可能导致非常不同的结果\n系统解释而非严格遵循指令——LLM 使用语义理解，而非字面的规则遵循\n\n\n\n执行不是过程的结束。它是验证的开始。",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>评估与迭代（Evaluation & Iteration）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-8.html#什么是评估what-is-evaluation",
+    "href": "chapter-8.html#什么是评估what-is-evaluation",
+    "title": "9  评估与迭代（Evaluation & Iteration）",
+    "section": "9.2 什么是评估？（What is Evaluation?）",
+    "text": "9.2 什么是评估？（What is Evaluation?）\n评估是确定系统输出是否满足原始意图和规格说明的过程。它是闭合循环并实现系统性改进的机制。\n评估回答关键问题：\n\n结果正确吗？——它是否实现了预期目标？\n它满足约束吗？——它是否尊重所有指定的边界？\n它实现了预期结果吗？——它解决了我们着手解决的问题吗？\n\n评估将输出连接回定义，创建了系统性改进所必需的反馈循环。",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>评估与迭代（Evaluation & Iteration）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-8.html#为什么评估是必要的why-evaluation-is-necessary",
+    "href": "chapter-8.html#为什么评估是必要的why-evaluation-is-necessary",
+    "title": "9  评估与迭代（Evaluation & Iteration）",
+    "section": "9.3 为什么评估是必要的（Why Evaluation Is Necessary）",
+    "text": "9.3 为什么评估是必要的（Why Evaluation Is Necessary）\n没有评估，系统开发从根本上是有缺陷的：\n\n没有正确性的概念——任何输出都是可接受的\n没有改进的方向——变化是随机的而非有目的的\n没有系统稳定性——行为在没有纠正的情况下漂移\n\n\n9.3.1 在 LLM 时代\n对评估的需求甚至更大，因为执行是如此容易：\n\n系统快速且廉价地产生输出\n迭代发生得快速且频繁\n很容易在没有衡量结果的情况下快速推进\n\n但没有评估：\n\n迭代变成随机的——你改变东西却不知道它们是否有帮助\n改进是偶然的——你可能得到更好的结果，但不知道为什么\n质量无法控制——你没有办法确保一致性或可靠性\n\n\n没有评估的速度通向混乱，而非进步。",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>评估与迭代（Evaluation & Iteration）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-8.html#评估的类型types-of-evaluation",
+    "href": "chapter-8.html#评估的类型types-of-evaluation",
+    "title": "9  评估与迭代（Evaluation & Iteration）",
+    "section": "9.4 评估的类型（Types of Evaluation）",
+    "text": "9.4 评估的类型（Types of Evaluation）\n\n9.4.1 1. 基于规则的评估\n使用显式的、确定性的规则来评估输出。简单、快速、无歧义。\n示例： 输出必须是有效的 JSON；数值必须在指定范围内；字符串不能超过某个长度。\n\n\n9.4.2 2. 基于模型的评估\n使用 AI 模型评估 AI 系统的输出。更灵活，但也是概率性的。\n示例： 让一个语言模型判断总结是否准确；使用嵌入相似度衡量语义对齐。\n\n\n9.4.3 3. 人工评估\n人类判断仍然是黄金标准，特别是对于涉及创造力、细微差别或主观质量的任务。\n示例： 领域专家审查输出；用户满意度调查；A/B 测试。",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>评估与迭代（Evaluation & Iteration）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-8.html#闭环迭代的力量closing-the-loop-the-power-of-iteration",
+    "href": "chapter-8.html#闭环迭代的力量closing-the-loop-the-power-of-iteration",
+    "title": "9  评估与迭代（Evaluation & Iteration）",
+    "section": "9.5 闭环：迭代的力量（Closing the Loop: The Power of Iteration）",
+    "text": "9.5 闭环：迭代的力量（Closing the Loop: The Power of Iteration）\n最小循环的真正力量不在于单次通过。它在于你循环的能力——发现差距、精化定义、重新执行、重新评估。\n基本迭代模式：\n执行 → 评估 → 识别差距 → 精化 Spec → 更新 Instruction → 重新执行 → 重新评估\n每次迭代都使你更接近意图和结果之间的对齐。",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>评估与迭代（Evaluation & Iteration）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-8.html#在实践中迭代iteration-in-practice",
+    "href": "chapter-8.html#在实践中迭代iteration-in-practice",
+    "title": "9  评估与迭代（Evaluation & Iteration）",
+    "section": "9.6 在实践中迭代（Iteration in Practice）",
+    "text": "9.6 在实践中迭代（Iteration in Practice）\n第一次尝试： 指令没有充分指定输出格式 → 评估显示结构差异 → 精化 Spec → 第二次尝试产生一致的输出。\n第二次尝试： 输出格式正确但内容不完整 → 评估发现了缺失的部分 → 精化 Spec 以添加覆盖范围约束 → 第三次尝试产生完整的输出。\n第三次尝试： 输出现在满足所有 Spec 约束 → 评估确认成功 → 循环完成。\n\n评估将迭代从随机尝试转变为定向改进。",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>评估与迭代（Evaluation & Iteration）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-9.html#为什么可能性优先",
+    "href": "chapter-9.html#为什么可能性优先",
+    "title": "10  可能性空间（Possibility Space）",
+    "section": "",
+    "text": "我们能构建什么？\n\n\n\n\n\n意图形成的第一步不是创造力。而是认知。",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>可能性空间（Possibility Space）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-9.html#什么是可能性空间what-is-a-possibility-space",
+    "href": "chapter-9.html#什么是可能性空间what-is-a-possibility-space",
+    "title": "10  可能性空间（Possibility Space）",
+    "section": "10.2 什么是可能性空间？（What is a Possibility Space?）",
+    "text": "10.2 什么是可能性空间？（What is a Possibility Space?）\n可能性空间是：\n\n一个领域内所有可构建的目标、路径和选项的结构化空间。\n\n它不是一个扁平的想法的列表。它是一个可导航的结构，回答三个基本问题：\n\n什么结果（Z）是可能的？——我们能达成什么？\n什么路径（A → Z）存在？——我们如何到达那里？\n每一步有什么选项？——我们有什么选择？\n\n把它想象成一张地图。地图不只是列出目的地——它展示路线、交叉路口和替代方案。它使导航成为可能。\n可能性空间是领域内可构建之物的地图。",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>可能性空间（Possibility Space）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-9.html#可能性的三层the-three-layers-of-possibility",
+    "href": "chapter-9.html#可能性的三层the-three-layers-of-possibility",
+    "title": "10  可能性空间（Possibility Space）",
+    "section": "10.3 可能性的三层（The Three Layers of Possibility）",
+    "text": "10.3 可能性的三层（The Three Layers of Possibility）\n大多数人不缺乏能力。他们缺乏可见性。\n这种缺乏存在于三个不同的层面：\n\n10.3.1 第一层：目标空间（Goal Space / Z）\n什么结果是可能的？\n这是目的地层——我们导航中的 Z。\n目标空间不可见的症状： - “我不知道构建什么” - “我不知道什么是有价值的” - “一切似乎都已经有人做过了”\n没有可见的目标空间，意图无法有效形成，你无法决定去哪里，因为你不知道你能去哪里，你被限制在熟悉的、已知的目标上。\n\n\n10.3.2 第二层：路径空间（Path Space / A → Z）\n什么路径存在？\n这是路线层——从 A 到 Z 的方式。\n路径空间不可见的症状： - “我知道我想构建什么，但不知道如何开始” - “我卡住了” - “我尝试了东西但毫无进展”\n即使目标可见，如果到达目标的路径不可见，进展也会停滞。\n\n\n10.3.3 第三层：选项空间（Option Space）\n每一步有什么选项？\n当目标和路径都可见时，你仍然可能需要做出关于具体选择的决定：使用什么工具，采取什么方法，选择什么技术。\n选项空间不可见的症状： - “有太多选择，我不知道选哪个” - “分析瘫痪” - “害怕做出错误决定”",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>可能性空间（Possibility Space）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-9.html#扩展你的可能性空间expanding-your-possibility-space",
+    "href": "chapter-9.html#扩展你的可能性空间expanding-your-possibility-space",
+    "title": "10  可能性空间（Possibility Space）",
+    "section": "10.4 扩展你的可能性空间（Expanding Your Possibility Space）",
+    "text": "10.4 扩展你的可能性空间（Expanding Your Possibility Space）\n认识到可能性空间存在且可以被扩展，是系统性意图形成的第一步。\n扩展可能性空间的方法：\n\n横向探索——看看其他领域如何解决类似问题\n逆向思考——从期望的结果向后推导\n约束移除——识别并暂时放松限制性假设\n类比思维——从其他领域借用来解决方案结构\n\n\n你的可能性空间的边界不是你能力的边界，而是你视野的边界。",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>可能性空间（Possibility Space）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-10.html#从想法到结构",
+    "href": "chapter-10.html#从想法到结构",
+    "title": "11  结构性思维（Structural Thinking）",
+    "section": "",
+    "text": "结构性思维是将组件组织成连贯系统的能力。它是在可能性空间中导航路径空间的艺术。",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>结构性思维（Structural Thinking）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-10.html#什么是结构性思维what-is-structural-thinking",
+    "href": "chapter-10.html#什么是结构性思维what-is-structural-thinking",
+    "title": "11  结构性思维（Structural Thinking）",
+    "section": "11.2 什么是结构性思维？（What is Structural Thinking?）",
+    "text": "11.2 什么是结构性思维？（What is Structural Thinking?）\n结构性思维是定义系统如何组织以及各部分如何协同工作的过程。它是在拥有想法和构建系统之间的桥梁。\n结构性思维涉及：\n\n系统如何组织——存在什么组件以及它们如何关联\n各部分如何交互——组件如何通信和协调\n信息如何流过系统——数据如何移动和转换\n\n结构性思维回答基本问题： - 过程中的主要步骤是什么？ - 涉及什么组件？ - 系统如何随时间变化？ - 各部分之间的关键关系是什么？\n没有结构性思维，我们只有想法但没有实现它们的方式。有了结构性思维，我们有了构建的蓝图。",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>结构性思维（Structural Thinking）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-10.html#三个核心元素the-three-core-elements",
+    "href": "chapter-10.html#三个核心元素the-three-core-elements",
+    "title": "11  结构性思维（Structural Thinking）",
+    "section": "11.3 三个核心元素（The Three Core Elements）",
+    "text": "11.3 三个核心元素（The Three Core Elements）\n任何系统，无论其复杂度如何，都可以使用三个基本元素来描述和理解：\n\n主流程（Main Flow）——定义系统行为的动作的主要序列\n模块（Modules）——在系统内执行特定功能的组件\n状态与数据流（State & Data Flow）——信息如何在系统中移动以及系统记住什么\n\n这三个元素构成了结构性思维的支柱。掌握它们允许你理解和设计任何系统。",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>结构性思维（Structural Thinking）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-10.html#主流程系统的骨干main-flow-the-backbone-of-the-system",
+    "href": "chapter-10.html#主流程系统的骨干main-flow-the-backbone-of-the-system",
+    "title": "11  结构性思维（Structural Thinking）",
+    "section": "11.4 主流程：系统的骨干（Main Flow: The Backbone of the System）",
+    "text": "11.4 主流程：系统的骨干（Main Flow: The Backbone of the System）\n主流程定义了通过系统的主要路径——将输入转化为输出的动作序列。\n主流程是系统核心叙事——输入如何变成输出的故事。\n示例： 一个简单的聊天系统。它的主流程可能是：\n用户输入 → 处理输入 → 生成响应 → 显示输出\n这个流程描述了从头到尾的主要动作序列。",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>结构性思维（Structural Thinking）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-10.html#模块功能组件modules-functional-components",
+    "href": "chapter-10.html#模块功能组件modules-functional-components",
+    "title": "11  结构性思维（Structural Thinking）",
+    "section": "11.5 模块：功能组件（Modules: Functional Components）",
+    "text": "11.5 模块：功能组件（Modules: Functional Components）\n一旦主流程被定义，下一步是识别系统的构建块——执行每个步骤中所需工作的模块。\n一个模块是系统内一个明确定义的部分，具有特定的责任。好的模块有一个单一的目标，可以独立理解。\n示例： 在聊天系统中，可能的模块包括： - 输入模块——接收和处理用户消息 - 处理模块——理解意图并生成响应 - 输出模块——格式化并呈现响应\n每个模块执行一个清晰定义的功能。",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>结构性思维（Structural Thinking）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-10.html#状态与数据流操作记忆state-data-flow-operational-memory",
+    "href": "chapter-10.html#状态与数据流操作记忆state-data-flow-operational-memory",
+    "title": "11  结构性思维（Structural Thinking）",
+    "section": "11.6 状态与数据流：操作记忆（State & Data Flow: Operational Memory）",
+    "text": "11.6 状态与数据流：操作记忆（State & Data Flow: Operational Memory）\n状态是系统在任何给定时刻记住并且知道的信息。数据流是信息如何在模块之间移动。\n理解状态和数据流对设计系统至关重要：什么数据进入？什么数据保留？什么数据在模块之间传递？系统记住之前交互的什么信息？",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>结构性思维（Structural Thinking）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-10.html#结构性思维的应用applying-structural-thinking",
+    "href": "chapter-10.html#结构性思维的应用applying-structural-thinking",
+    "title": "11  结构性思维（Structural Thinking）",
+    "section": "11.7 结构性思维的应用（Applying Structural Thinking）",
+    "text": "11.7 结构性思维的应用（Applying Structural Thinking）\n给定一个新问题，应用结构性思维的系统过程：\n\n定义主流程：画出步骤的序列。输入如何变为输出？\n识别模块：哪些组件执行这些步骤？每个组件负责什么？\n映射数据流：信息如何在模块之间移动？什么状态需要被维护？\n\n这种结构化方法将模糊的想法转化为清晰的架构。它使得决定什么去构建、如何组织它以及如何推理其行为成为可能。\n\n结构性思维将模糊的想法转化为清晰的架构。",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>结构性思维（Structural Thinking）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-11.html#从结构到系统",
+    "href": "chapter-11.html#从结构到系统",
+    "title": "12  组合（Composition）",
+    "section": "",
+    "text": "组合（Composition）——将组件组合成一个工作的系统",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>组合（Composition）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-11.html#什么是组合what-is-composition",
+    "href": "chapter-11.html#什么是组合what-is-composition",
+    "title": "12  组合（Composition）",
+    "section": "12.2 什么是组合？（What is Composition?）",
+    "text": "12.2 什么是组合？（What is Composition?）\n组合是以下过程：\n\n将较小的能力单元组合成更大的、功能性的系统\n\n这些单元可以有许多形式：模块、函数、智能体、服务、模式。\n组合回答基本问题：需要哪些组件来实现目标？它们如何连接和通信？它们以什么顺序运行？",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>组合（Composition）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-11.html#能力作为单元capability-as-a-unit",
+    "href": "chapter-11.html#能力作为单元capability-as-a-unit",
+    "title": "12  组合（Composition）",
+    "section": "12.3 能力作为单元（Capability as a Unit）",
+    "text": "12.3 能力作为单元（Capability as a Unit）\n要理解组合，我们必须首先定义一个关键概念：能力（capability）。\n能力是系统可以做的事情——产生特定结果的功能单元。\n示例： 生成文本、检索信息、存储数据、分类输入、转换格式。\n每个能力代表系统可以执行的离散功能。系统通过对这些能力进行排序和组合来构建复杂行为。",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>组合（Composition）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-11.html#组合模式composition-patterns",
+    "href": "chapter-11.html#组合模式composition-patterns",
+    "title": "12  组合（Composition）",
+    "section": "12.4 组合模式（Composition Patterns）",
+    "text": "12.4 组合模式（Composition Patterns）\n\n12.4.1 顺序组合\n能力按顺序链接。一个的输出成为下一个的输入。\n输入 → A → B → C → 输出\n\n\n12.4.2 并行组合\n能力并发运行。结果在稍后组合。\n输入 → A → 组合 → 输出\n     → B →\n\n\n12.4.3 条件组合\n根据条件选择能力。系统基于某些标准选择不同的路径。\n输入 → 条件 → (A 或 B) → 输出\n\n\n12.4.4 层级组合\n能力被嵌套。一个能力可能由更小的子能力组成。\nA 由 B、C、D 组成，其中 B 可能进一步由 E、F 组成",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>组合（Composition）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-11.html#通过组合推理reasoning-through-composition",
+    "href": "chapter-11.html#通过组合推理reasoning-through-composition",
+    "title": "12  组合（Composition）",
+    "section": "12.5 通过组合推理（Reasoning Through Composition）",
+    "text": "12.5 通过组合推理（Reasoning Through Composition）\n组合的能力使推理系统行为成为可能。你可以分析每个组件的贡献，跟踪信息如何在能力之间流动，预测系统行为，并隔离问题。\n组合将系统设计从一次性的创造转变为可重复的方法。一旦你知道如何组合能力，你可以将它们应用于新问题。\n\n组合是将能力转化为系统的方法。",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>组合（Composition）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-12.html#从复杂到清晰",
+    "href": "chapter-12.html#从复杂到清晰",
+    "title": "13  目标压缩（Goal Compression）",
+    "section": "",
+    "text": "“构建一些有用的东西”\n“改善用户体验”\n“让它更智能”\n“提高生产力”\n\n\n\n\n目标压缩（Goal Compression）是将模糊意图转化为精确、可测试定义的过程。",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>目标压缩（Goal Compression）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-12.html#什么是目标压缩what-is-goal-compression",
+    "href": "chapter-12.html#什么是目标压缩what-is-goal-compression",
+    "title": "13  目标压缩（Goal Compression）",
+    "section": "13.2 什么是目标压缩？（What is Goal Compression?）",
+    "text": "13.2 什么是目标压缩？（What is Goal Compression?）\n目标压缩是以下行为：\n\n在保持意图的同时减少歧义\n\n它不通过移除意义或价值来简化目标。它通过以下方式简化：\n\n消除模糊性——使隐式假设显式化\n定义边界——指定包含和排除什么\n使结果可观察——定义如何衡量成功\n\n一个压缩后的目标是：\n\n清晰的——无歧义且具体\n有界的——有定义的Scope和限制\n可验证的——可以对照客观标准进行测试",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>目标压缩（Goal Compression）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-12.html#为什么压缩是必要的why-compression-is-necessary",
+    "href": "chapter-12.html#为什么压缩是必要的why-compression-is-necessary",
+    "title": "13  目标压缩（Goal Compression）",
+    "section": "13.3 为什么压缩是必要的（Why Compression is Necessary）",
+    "text": "13.3 为什么压缩是必要的（Why Compression is Necessary）\n没有目标压缩，整个系统开发过程都会受损：意图保持不清晰、Spec 变得不一致、指令变得不稳定、评估变得主观。\n整个系统变得不可靠且难以管理。",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>目标压缩（Goal Compression）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-12.html#压缩框架the-compression-framework",
+    "href": "chapter-12.html#压缩框架the-compression-framework",
+    "title": "13  目标压缩（Goal Compression）",
+    "section": "13.4 压缩框架（The Compression Framework）",
+    "text": "13.4 压缩框架（The Compression Framework）\n一个实用的压缩使用五个维度的框架：\n1. 目标（Objective）：这个努力的主要目标是什么？“改善用户体验”→“将首次使用时的任务完成时间减少 30%”\n2. 对象（Object）：受影响的实体或领域是什么？“所有用户”→“过去 30 天内注册的新用户”\n3. 上下文（Context）：目标适用的环境或情况是什么？“在系统中”→“在桌面 Web 应用中，标准网络条件下”\n4. 约束（Constraints）：必须遵守什么限制？“保持现有功能”→“不改变现有 API，不增加加载时间超过 200ms”\n5. 成功标准（Success Criteria）：我们如何知道我们已经实现了目标？“用户更开心”→“任务完成率 &gt; 85%，NPS &gt; 50”",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>目标压缩（Goal Compression）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-12.html#压缩实践compression-in-practice",
+    "href": "chapter-12.html#压缩实践compression-in-practice",
+    "title": "13  目标压缩（Goal Compression）",
+    "section": "13.5 压缩实践（Compression in Practice）",
+    "text": "13.5 压缩实践（Compression in Practice）\n模糊的意图： “改善搜索”。\n压缩后的目标： - 目标：减少找到相关结果所需的时间 - 对象：文档搜索功能 - 上下文：包含超过 1000 个文档的知识库 - 约束：不改变 UI，不引入外部搜索服务，维护 99.9% 的正常运行时间 - 成功标准：前三个结果的相关性评级 &gt; 80%，搜索时间 &lt; 500ms\n压缩将”改善搜索”从一个模糊的愿望变成了可执行的定义。\n\n一个良好的压缩目标具有三要素：清晰（无歧义）、有界（范围明确）、可验证（可测试）。",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>目标压缩（Goal Compression）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-13.html#从概念到学科",
+    "href": "chapter-13.html#从概念到学科",
+    "title": "14  什么是规格工程？（What is Spec Engineering?）",
+    "section": "",
+    "text": "意图（Intent）定义了我们想要什么\n规格说明（Spec）定义了这意味什么\n指令（Instruction）使其可执行\n\n\n\n\n我们如何系统地创建好的规格说明，使其有效捕捉和导航可能性空间？\n\n\n\n规格工程（Spec Engineering）",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>什么是规格工程？（What is Spec Engineering?）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-13.html#什么是规格工程what-is-spec-engineering",
+    "href": "chapter-13.html#什么是规格工程what-is-spec-engineering",
+    "title": "14  什么是规格工程？（What is Spec Engineering?）",
+    "section": "14.2 什么是规格工程？（What is Spec Engineering?）",
+    "text": "14.2 什么是规格工程？（What is Spec Engineering?）\n规格工程是以下实践：\n\n设计、结构化并精化规格说明，使系统能够可靠地产生期望的结果。\n\n它是一种系统化的规格创建方法，包括：\n\n将意图转化为 Spec\n定义结构和约束\n消除歧义\n基于评估和反馈迭代改进定义\n\n关键区别：规格工程不是编写提示词，也不是编写代码。它是以一种结构化、可执行的方式定义系统。",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>什么是规格工程？（What is Spec Engineering?）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-13.html#spec-在最小循环中的角色the-role-of-spec-in-the-minimal-loop",
+    "href": "chapter-13.html#spec-在最小循环中的角色the-role-of-spec-in-the-minimal-loop",
+    "title": "14  什么是规格工程？（What is Spec Engineering?）",
+    "section": "14.3 Spec 在最小循环中的角色（The Role of Spec in the Minimal Loop）",
+    "text": "14.3 Spec 在最小循环中的角色（The Role of Spec in the Minimal Loop）\n在最小循环中，Spec 是中央层。它位于意图和指令之间，连接人类愿望与机器执行。\n在最小循环中，Spec 做了什么：\n\n精化意图——将模糊的人类愿望转化为精确的定义\n启用指令——提供生成可执行指令所需的结构\n促进评估——提供评估输出正确性的标准\n\n没有 Spec，意图太模糊无法执行。没有 Spec，指令没有基础。没有 Spec，评估没有标准。",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>什么是规格工程？（What is Spec Engineering?）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-13.html#规格工程的模式patterns-of-spec-engineering",
+    "href": "chapter-13.html#规格工程的模式patterns-of-spec-engineering",
+    "title": "14  什么是规格工程？（What is Spec Engineering?）",
+    "section": "14.4 规格工程的模式（Patterns of Spec Engineering）",
+    "text": "14.4 规格工程的模式（Patterns of Spec Engineering）\n文档式 Spec： 系统行为的结构化文档。适用于简单的、不经常变化的系统。\n交互式 Spec： 通过对话逐步构建。适用于需求不明确时。\n模板式 Spec： 使用预定义模板填写。适用于常见模式。\n智能体辅助 Spec： 使用 AI 帮助构建 Spec。适用于复杂或陌生的领域。",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>什么是规格工程？（What is Spec Engineering?）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-13.html#spec-的质量标准spec-quality-criteria",
+    "href": "chapter-13.html#spec-的质量标准spec-quality-criteria",
+    "title": "14  什么是规格工程？（What is Spec Engineering?）",
+    "section": "14.5 Spec 的质量标准（Spec Quality Criteria）",
+    "text": "14.5 Spec 的质量标准（Spec Quality Criteria）\n一个好的 Spec：完整的（覆盖输入/输出/约束/成功标准）、一致的（无内部矛盾）、可执行的（可转化为指令）、可测试的（每个陈述都可验证）。\n\nSpec 工程是 LLM 时代编程的核心学科。它将定义从偶然产物提升为受控的工程过程。",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>什么是规格工程？（What is Spec Engineering?）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-14.html#为什么结构重要",
+    "href": "chapter-14.html#为什么结构重要",
+    "title": "15  Spec 结构（Spec Structure）",
+    "section": "",
+    "text": "结构将规格说明转化为可操作的工件。",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Spec 结构（Spec Structure）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-14.html#没有僵化的结构structure-without-rigidity",
+    "href": "chapter-14.html#没有僵化的结构structure-without-rigidity",
+    "title": "15  Spec 结构（Spec Structure）",
+    "section": "15.2 没有僵化的结构（Structure Without Rigidity）",
+    "text": "15.2 没有僵化的结构（Structure Without Rigidity）\n一个常见的错误是假设 Spec 必须遵循固定、僵化的格式。这不是必要的——甚至可能适得其反。\n不同的系统可能需要不同的细节层次、不同的表现形式、不同的格式。但所有有效的 Spec 共享一个共同的底层结构。格式可能不同，但核心元素是相同的。\n\n目标不是固定的模板，而是一组一致的元素。",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Spec 结构（Spec Structure）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-14.html#spec-的核心组件the-core-components-of-a-spec",
+    "href": "chapter-14.html#spec-的核心组件the-core-components-of-a-spec",
+    "title": "15  Spec 结构（Spec Structure）",
+    "section": "15.3 Spec 的核心组件（The Core Components of a Spec）",
+    "text": "15.3 Spec 的核心组件（The Core Components of a Spec）\n任何有效的 Spec 必须定义四个核心组件：\n\n15.3.1 输入（Input）——系统接收什么\n输入定义系统接收的信息。好的输入定义包括数据类型、格式要求、有效值范围和边界条件。\n\n\n15.3.2 输出（Output）——系统产生什么\n输出定义系统产生的结果。好的输出定义包括数据结构、格式规范、响应时间要求和结果编码。\n\n\n15.3.3 约束（Constraints）——系统必须尊重什么\n约束定义系统在操作时必须遵守的规则。包括行为约束（系统必须与不能做什么）、性能约束（响应时间、吞吐量）、安全约束（认证、授权）和集成约束（与外部系统的兼容性）。\n\n\n15.3.4 成功标准（Success Criteria）——什么算正确\n成功标准定义如何判断系统是否正确工作。包括正确性标准（输出满足要求的条件）、性能标准（在指定时间内）、鲁棒性标准（在变化条件下的一致性）。\n这些元素不是可选的。没有全部四个，Spec 就不完整，无法可靠地指导执行。",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Spec 结构（Spec Structure）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-14.html#spec-结构模板spec-structure-template",
+    "href": "chapter-14.html#spec-结构模板spec-structure-template",
+    "title": "15  Spec 结构（Spec Structure）",
+    "section": "15.4 Spec 结构模板（Spec Structure Template）",
+    "text": "15.4 Spec 结构模板（Spec Structure Template）\nSpec: [名称]\n\n输入:\n  - 数据 1: [类型, 格式, 范围]\n  - 数据 2: [类型, 格式, 范围]\n\n输出:\n  - 结果 1: [类型, 格式, 结构]\n  - 结果 2: [类型, 格式, 结构]\n\n约束:\n  - 行为约束: [规则列表]\n  - 性能约束: [时间/资源限制]\n  - 安全约束: [认证/授权要求]\n  - 集成约束: [兼容性要求]\n\n成功标准:\n  - 正确性: [条件]\n  - 性能: [指标]\n  - 鲁棒性: [条件]\n\n结构将规格从思想转化为可执行的工件。",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Spec 结构（Spec Structure）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-15.html#模板为什么存在",
+    "href": "chapter-15.html#模板为什么存在",
+    "title": "16  基于模板的 Spec（Template-based Spec）",
+    "section": "",
+    "text": "我们如何一致地产出规格说明？\n\n\n\n\n模板（Templates）——创建 Spec 的结构化指南",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>基于模板的 Spec（Template-based Spec）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-15.html#什么是基于模板的-specwhat-is-a-template-based-spec",
+    "href": "chapter-15.html#什么是基于模板的-specwhat-is-a-template-based-spec",
+    "title": "16  基于模板的 Spec（Template-based Spec）",
+    "section": "16.2 什么是基于模板的 Spec？（What is a Template-based Spec?）",
+    "text": "16.2 什么是基于模板的 Spec？（What is a Template-based Spec?）\n基于模板的 Spec 是使用预定义结构创建的规格说明。模板充当指导 Spec 创建过程的脚手架。\n模板定义：必须填写什么字段、需要什么信息、Spec 如何组织。\n概念性模板：\n目标:\n输入:\n输出:\n约束:\n成功标准:\n用户填完模板而不是从零开始，确保所有基本元素都被包含。\n\n模板标准化思维。它们使好的 Spec 创建成为一种可重复的过程。",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>基于模板的 Spec（Template-based Spec）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-15.html#模板的作用the-role-of-templates",
+    "href": "chapter-15.html#模板的作用the-role-of-templates",
+    "title": "16  基于模板的 Spec（Template-based Spec）",
+    "section": "16.3 模板的作用（The Role of Templates）",
+    "text": "16.3 模板的作用（The Role of Templates）\n模板在 Spec 创建过程中执行多个重要功能：\n\n清单——确保没有关键组件被漏掉\n结构——以系统化的方式组织思考\n对思维的约束——迫使注意力集中在重要的事情上\n\n模板确保：相同的组件总是被包含、一致的结构得到维护、关键信息不会被遗忘。",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>基于模板的 Spec（Template-based Spec）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-15.html#通用-spec-模板general-spec-template",
+    "href": "chapter-15.html#通用-spec-模板general-spec-template",
+    "title": "16  基于模板的 Spec（Template-based Spec）",
+    "section": "16.4 通用 Spec 模板（General Spec Template）",
+    "text": "16.4 通用 Spec 模板（General Spec Template）\nSpec: [系统/功能名称]\n版本: [版本号]\n日期: [日期]\n\n## 目标\n[一句话描述系统应该做什么]\n\n## 输入\n输入_1: [描述, 类型, 约束]\n输入_2: [描述, 类型, 约束]\n\n## 输出\n输出_1: [描述, 类型, 格式]\n输出_2: [描述, 类型, 格式]\n\n## 约束\n- 约束_1: [描述]\n- 约束_2: [描述]\n\n## 成功标准\n- 标准_1: [可衡量的条件]\n- 标准_2: [可衡量的条件]\n\n## 边界情况\n- 情况_1: [描述及所需行为]\n- 情况_2: [描述及所需行为]",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>基于模板的 Spec（Template-based Spec）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-15.html#模板适配template-adaptation",
+    "href": "chapter-15.html#模板适配template-adaptation",
+    "title": "16  基于模板的 Spec（Template-based Spec）",
+    "section": "16.5 模板适配（Template Adaptation）",
+    "text": "16.5 模板适配（Template Adaptation）\n虽然通用模板提供了完整的结构，但并非所有 Spec 需要相同级别的细节。适配模板：\n最小 Spec： 目标 + 输入 + 输出。适用于简单的、低风险的转换。\n标准 Spec： 添加约束。适用于大多数系统交互。\n完整 Spec： 添加成功标准和边界情况。适用于关键路径。\n\n模板使规格化的质量一致，无论创建者的经验如何。",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>基于模板的 Spec（Template-based Spec）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-16.html#从手动定义到辅助定义",
+    "href": "chapter-16.html#从手动定义到辅助定义",
+    "title": "17  规格智能体（Spec Agent）",
+    "section": "",
+    "text": "使用 AI 智能体生成规格说明",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>规格智能体（Spec Agent）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-16.html#什么是规格智能体what-is-a-spec-agent",
+    "href": "chapter-16.html#什么是规格智能体what-is-a-spec-agent",
+    "title": "17  规格智能体（Spec Agent）",
+    "section": "17.2 什么是规格智能体？（What is a Spec Agent?）",
+    "text": "17.2 什么是规格智能体？（What is a Spec Agent?）\n规格智能体（Spec Agent）是一个：\n\n将人类意图转化为结构化规格说明的系统\n\n它充当智能助手，帮助弥合模糊的人类想法与精确的机器可执行规格说明之间的差距。\n规格智能体以自然语言描述、部分想法或片段、需要精化的不完整目标为输入，并产生一个结构化的 Spec，包含定义的输入、输出、约束和成功标准。\n意图（非正式）→ 规格智能体 → Spec（结构化）\n\n智能体不执行系统。它定义系统。\n\n这是一个关键区别。规格智能体不是实现工具——它是定义工具。它帮助你在尝试构建之前澄清你想要什么。",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>规格智能体（Spec Agent）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-16.html#为什么需要规格智能体why-spec-agents-are-needed",
+    "href": "chapter-16.html#为什么需要规格智能体why-spec-agents-are-needed",
+    "title": "17  规格智能体（Spec Agent）",
+    "section": "17.3 为什么需要规格智能体（Why Spec Agents Are Needed）",
+    "text": "17.3 为什么需要规格智能体（Why Spec Agents Are Needed）\n规格智能体解决了几个关键挑战：\n填补专业知识差距： 不是每个人都善于定义系统。规格智能体使没有经验的人能够创建高质量的 Spec。\n加速定义过程： 手动创建 Spec 可能很慢。智能体可以在几秒钟内从粗略的想法生成结构化的 Spec。\n减少遗忘错误： 人类经常忘记指定约束、边界情况或成功标准。规格智能体一致地包含所有必需的元素。",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>规格智能体（Spec Agent）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-16.html#规格智能体的工作流spec-agent-workflow",
+    "href": "chapter-16.html#规格智能体的工作流spec-agent-workflow",
+    "title": "17  规格智能体（Spec Agent）",
+    "section": "17.4 规格智能体的工作流（Spec Agent Workflow）",
+    "text": "17.4 规格智能体的工作流（Spec Agent Workflow）\n1. 接收意图： 智能体接收用户的自然语言描述。“我需要一个从文档中提取关键信息的系统。”\n2. 交互式澄清： 如果意图不明确，智能体提出问题以澄清。关键信息涉及哪些文档？提取什么样的关键信息？输出格式是什么？\n3. 生成 Spec： 智能体生成包含输入、输出、约束和成功标准的结构化 Spec。\n4. 迭代精化： 用户可以审查 Spec 并提出修改要求，直到它满足需求。",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>规格智能体（Spec Agent）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-16.html#人与智能体的合作human-agent-collaboration",
+    "href": "chapter-16.html#人与智能体的合作human-agent-collaboration",
+    "title": "17  规格智能体（Spec Agent）",
+    "section": "17.5 人与智能体的合作（Human-Agent Collaboration）",
+    "text": "17.5 人与智能体的合作（Human-Agent Collaboration）\n规格智能体的目的不是取代人类判断。它是增强它。智能体处理结构化工作，人类做出关于什么是正确的最终决定。\n有效的合作关系：智能体起草，人类审查和批准。智能体建议，人类决定。智能体提供完整的覆盖，人类提供上下文和理解。\n\n规格智能体使规格创建更快、更一致，同时让人类保持最终的控制。",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>规格智能体（Spec Agent）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-17.html#规格说明不是静态的",
+    "href": "chapter-17.html#规格说明不是静态的",
+    "title": "18  迭代式 Spec 精化（Iterative Spec Refinement）",
+    "section": "",
+    "text": "初始 Spec 是不完整的——我们不可能从一开始就知道一切\n假设常常是隐藏的——我们想当然地假设了一些事情，却没有意识到\n边界情况不能完全预知——我们无法预料到每一种情况\n\n\n\nSpec 不是最终的工件。它是起点。",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>迭代式 Spec 精化（Iterative Spec Refinement）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-17.html#不完美定义的现实the-reality-of-imperfect-definitions",
+    "href": "chapter-17.html#不完美定义的现实the-reality-of-imperfect-definitions",
+    "title": "18  迭代式 Spec 精化（Iterative Spec Refinement）",
+    "section": "18.2 不完美定义的现实（The Reality of Imperfect Definitions）",
+    "text": "18.2 不完美定义的现实（The Reality of Imperfect Definitions）\n即使有精心设计、深入的领域知识和广泛的规划，Spec 的第一个版本也几乎肯定会有问题：遗漏约束、留下歧义、在特定输入下失败。\n这不是团队或过程的失败。这是复杂问题、有限的初始理解和演化需求的自然结果。\n\n你不在执行之前发现正确的 Spec。你通过执行发现它。",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>迭代式 Spec 精化（Iterative Spec Refinement）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-17.html#精化循环the-refinement-loop",
+    "href": "chapter-17.html#精化循环the-refinement-loop",
+    "title": "18  迭代式 Spec 精化（Iterative Spec Refinement）",
+    "section": "18.3 精化循环（The Refinement Loop）",
+    "text": "18.3 精化循环（The Refinement Loop）\n规格工程本质上是迭代的。它不是一个”写 Spec → 实现 → 完成”的线性过程。它是一个持续改进的循环过程。\n核心循环是：\nSpec → 执行 → 偏差 → 精化 → Spec\n第一步：Spec： 定义初始结构，设置输入、输出、约束。\n第二步：执行： 系统执行指令并产生结果。\n第三步：识别偏差： 将输出与 Spec 比较。发现差距：输出是否匹配 Spec？如果匹配，成功。如果不匹配，进入了下一步。\n第四步：分析偏差： 检查是什么出了问题：是 Spec 定义的边界情况未覆盖？是约束太少或太模糊？是假设在真实条件下不成立？\n第五步：精化 Spec： 基于分析，相应地更新 Spec：添加缺失的约束、澄清模糊的术语、添加新的边界情况。\n第六步：重复： 使用精化后的 Spec 进行新的执行。继续直到偏差为零或可接受。",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>迭代式 Spec 精化（Iterative Spec Refinement）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-17.html#精化的模式patterns-of-refinement",
+    "href": "chapter-17.html#精化的模式patterns-of-refinement",
+    "title": "18  迭代式 Spec 精化（Iterative Spec Refinement）",
+    "section": "18.4 精化的模式（Patterns of Refinement）",
+    "text": "18.4 精化的模式（Patterns of Refinement）\n\n收窄约束：当输出范围太广时，添加更多约束以减少变化\n拓宽覆盖：当发现未覆盖的边界情况时，将它们添加到 Spec\n提高精确度：当术语模糊时，用更精确的定义替换\n重组结构：当 Spec 难以导航时，重组它以匹配系统的实际架构",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>迭代式 Spec 精化（Iterative Spec Refinement）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-17.html#精化策略refinement-strategies",
+    "href": "chapter-17.html#精化策略refinement-strategies",
+    "title": "18  迭代式 Spec 精化（Iterative Spec Refinement）",
+    "section": "18.5 精化策略（Refinement Strategies）",
+    "text": "18.5 精化策略（Refinement Strategies）\n不要完全重写。 保留有效部分，只改动出问题的部分。保留轨迹。 记录每次精化的内容和原因——这对理解演化很重要。一次改变一件事。 同时改变太多东西使你无法知道哪个改动解决了问题。\n\n每次迭代都使 Spec 更接近真实需求。规范的精化过程将猜测转化为确定性。",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>迭代式 Spec 精化（Iterative Spec Refinement）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-18.html#缺失的环节",
+    "href": "chapter-18.html#缺失的环节",
+    "title": "19  从 Spec 到指令（From Spec to Instruction）",
+    "section": "",
+    "text": "意图（Intent）定义了我们想要什么\n规格说明（Spec）定义了这意味着什么\n\n\n\n\nSpec 必须被翻译成指令（Instruction）",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>从 Spec 到指令（From Spec to Instruction）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-18.html#为什么-spec-不能直接执行why-spec-cannot-be-executed-directly",
+    "href": "chapter-18.html#为什么-spec-不能直接执行why-spec-cannot-be-executed-directly",
+    "title": "19  从 Spec 到指令（From Spec to Instruction）",
+    "section": "19.2 为什么 Spec 不能直接执行（Why Spec Cannot Be Executed Directly）",
+    "text": "19.2 为什么 Spec 不能直接执行（Why Spec Cannot Be Executed Directly）\nSpec 定义了系统应该做什么，但它没有定义如何调用系统或执行应采取什么确切形式。\nSpec 是声明性的（declarative）——它描述应该存在什么。指令是操作性的（operational）——它指定如何使其存在。\nSpec 定义结构、约束和成功条件。但它不定义如何调用系统、传递什么确切输入、或执行时强制什么输出格式。\n\nSpec 定义系统。指令运行系统。",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>从 Spec 到指令（From Spec to Instruction）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-18.html#编译的概念what-does-compilation-mean",
+    "href": "chapter-18.html#编译的概念what-does-compilation-mean",
+    "title": "19  从 Spec 到指令（From Spec to Instruction）",
+    "section": "19.3 “编译”的概念（What Does “Compilation” Mean?）",
+    "text": "19.3 “编译”的概念（What Does “Compilation” Mean?）\n从 Spec 到指令的转换可以通过编译（compilation）的概念来理解。\n就像传统编程中高级语言被编译成机器码一样，Spec 被编译成指令。人类编写高级定义，系统处理它，输出是可执行的指令。",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>从 Spec 到指令（From Spec to Instruction）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-18.html#编译过程the-compilation-process",
+    "href": "chapter-18.html#编译过程the-compilation-process",
+    "title": "19  从 Spec 到指令（From Spec to Instruction）",
+    "section": "19.4 编译过程（The Compilation Process）",
+    "text": "19.4 编译过程（The Compilation Process）\nSpec → 解析 → 结构分析 → 指令生成 → 优化 → 指令\n这个过程将抽象的定义转化为具体的、可执行的任务。\n一个简单的例子：\nSpec： 系统接受产品描述并返回一个 3-5 句话的摘要，保留关键细节。\n编译后的指令： “分析以下产品描述。生成一个 3-5 句话的摘要。保留所有提到的规格和价格。以与输入语言相同的语言输出。以 JSON 格式返回摘要。”\n指令包含了 Spec 的所有元素，但格式化为系统可以直接执行的形式。",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>从 Spec 到指令（From Spec to Instruction）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-18.html#好的指令的特征characteristics-of-a-good-instruction",
+    "href": "chapter-18.html#好的指令的特征characteristics-of-a-good-instruction",
+    "title": "19  从 Spec 到指令（From Spec to Instruction）",
+    "section": "19.5 好的指令的特征（Characteristics of a Good Instruction）",
+    "text": "19.5 好的指令的特征（Characteristics of a Good Instruction）\n一个好的指令是：\n\n完整的——包含执行所需的所有上下文\n精确的——无歧义且具体\n结构化的——遵循一致、可解析的格式\n与系统对齐的——使用目标系统理解的格式和概念",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>从 Spec 到指令（From Spec to Instruction）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-18.html#从-spec-到指令的实践practice-spec-to-instruction",
+    "href": "chapter-18.html#从-spec-到指令的实践practice-spec-to-instruction",
+    "title": "19  从 Spec 到指令（From Spec to Instruction）",
+    "section": "19.6 从 Spec 到指令的实践（Practice: Spec to Instruction）",
+    "text": "19.6 从 Spec 到指令的实践（Practice: Spec to Instruction）\nSpec 片段： 输入是用户提问。输出是回答。约束：回答必须基于提供的信息，必须使用与提问相同的语言。\n编译后的指令： “你是一个 AI 助手。用户会向你提出关于提供信息的问题。使用以下规则回答：仅基于提供的信息回答。如果信息不足，清楚说明你不知道。使用与用户问题相同的语言。保持回答简洁（最多 3 段）。”\n注意指令如何比 Spec 更具体和可操作：它定义了一个角色、指定了如何响应不足的信息、添加了长度的具体限制。\n\n好的指令让系统能够可靠地产生 Spec 中定义的结果。",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>从 Spec 到指令（From Spec to Instruction）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-19.html#从执行到设计",
+    "href": "chapter-19.html#从执行到设计",
+    "title": "20  指令设计（Instruction Design）",
+    "section": "",
+    "text": "指令不是你一次性写好就忘记的东西。它是你精心设计、系统测试、持续精化的东西。",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>指令设计（Instruction Design）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-19.html#好的指令的构成what-makes-a-good-instruction",
+    "href": "chapter-19.html#好的指令的构成what-makes-a-good-instruction",
+    "title": "20  指令设计（Instruction Design）",
+    "section": "20.2 好的指令的构成（What Makes a Good Instruction?）",
+    "text": "20.2 好的指令的构成（What Makes a Good Instruction?）\n一个好的指令使系统能够有效且可靠地运行。它应该使系统能够产生正确的输出、保持一致性、跨上下文可复用。\n\n20.2.1 核心属性\n1. 清晰度（Clarity）：任务无歧义、期望明确、没有多种解释的余地。\n2. 完整性（Completeness）：指令包含执行所需的所有上下文。没有缺失的信息或需要系统推测的东西。\n3. 可重复性（Repeatability）：相同的输入总是产生可预测的输出。指令足够精确，可以产生一致的结果。\n4. 可测试性（Testability）：指令的成功可以客观验证。",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>指令设计（Instruction Design）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-19.html#指令设计原则instruction-design-principles",
+    "href": "chapter-19.html#指令设计原则instruction-design-principles",
+    "title": "20  指令设计（Instruction Design）",
+    "section": "20.3 指令设计原则（Instruction Design Principles）",
+    "text": "20.3 指令设计原则（Instruction Design Principles）\n原则 1：一件事，做好它。 每个指令应该关注一个任务。将复杂任务分解为多个指令。\n原则 2：明确指定，而非暗示。 不要假设系统知道你想要什么。明确指定约束、偏好和边界情况。\n原则 3：提供结构，而非模糊性。 使用格式（项目符号、编号、结构化文本），使期望更清晰。\n原则 4：包含边界情况。 指定当输入超出预期范围时系统应如何反应。\n原则 5：定义输出结构。 精确指定输出应该是什么样子。包括格式、结构和可选性。",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>指令设计（Instruction Design）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-19.html#指令模板instruction-template",
+    "href": "chapter-19.html#指令模板instruction-template",
+    "title": "20  指令设计（Instruction Design）",
+    "section": "20.4 指令模板（Instruction Template）",
+    "text": "20.4 指令模板（Instruction Template）\n## 角色\n[系统扮演什么角色]\n\n## 任务\n[一句话描述任务]\n\n## 输入\n[输入描述]\n\n## 输出要求\n[精确指定输出应该是什么样子]\n\n## 约束\n- 约束_1\n- 约束_2\n\n## 边界情况\n- 情况_1: [如何处理]\n- 情况_2: [如何处理]\n\n## 示例\n输入: [示例输入]\n输出: [示例输出]\n\n设计良好的指令是可靠系统的基础。它们将 Spec 从声明性定义转化为可操作的执行协议。",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>指令设计（Instruction Design）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-20.html#从生成到行动",
+    "href": "chapter-20.html#从生成到行动",
+    "title": "21  工具使用与 API（Tool Use & APIs）",
+    "section": "",
+    "text": "访问外部数据——从数据库、API 或网络检索信息\n与系统交互——调用服务、执行命令、控制硬件\n执行操作——进行计算、访问文件、发送消息\n\n\n\n工具使用（Tool Use）",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>工具使用与 API（Tool Use & APIs）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-20.html#什么是工具使用what-is-tool-use",
+    "href": "chapter-20.html#什么是工具使用what-is-tool-use",
+    "title": "21  工具使用与 API（Tool Use & APIs）",
+    "section": "21.2 什么是工具使用？（What is Tool Use?）",
+    "text": "21.2 什么是工具使用？（What is Tool Use?）\n工具使用是智能体调用外部函数或系统以扩展其能力的能力。\n它将系统从语言处理器转变为可以与世界交互的可操作智能体。\n工具示例： API（天气、搜索、数据库）、计算器、文件系统、外部服务（发送邮件、支付）。\n没有工具，智能体局限于内部知识、生成能力和理解能力。有了工具，智能体可以：检索实时信息、执行精确计算、对外部系统采取行动、访问超出其训练范围的知识。",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>工具使用与 API（Tool Use & APIs）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-20.html#工具定义tool-definition",
+    "href": "chapter-20.html#工具定义tool-definition",
+    "title": "21  工具使用与 API（Tool Use & APIs）",
+    "section": "21.3 工具定义（Tool Definition）",
+    "text": "21.3 工具定义（Tool Definition）\n每个工具需要被结构化定义以便智能体使用：\n工具: search_database\n描述: 从知识库搜索信息\n输入:\n  query: string (搜索查询)\n  max_results: int (1-20, 默认 5)\n输出:\n  results: Array&lt;{title, snippet, url}&gt;",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>工具使用与 API（Tool Use & APIs）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-20.html#工具集成模式tool-integration-patterns",
+    "href": "chapter-20.html#工具集成模式tool-integration-patterns",
+    "title": "21  工具使用与 API（Tool Use & APIs）",
+    "section": "21.4 工具集成模式（Tool Integration Patterns）",
+    "text": "21.4 工具集成模式（Tool Integration Patterns）\n显式调用： 智能体决定调用工具并传递参数。工具执行并返回结果。智能体将结果整合到输出中。\n自动路由： 系统自动判断哪个工具适合当前任务。智能体专注于推理。\n链式调用： 多个工具被依次调用。一个工具的输出成为下一个工具的输入。",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>工具使用与 API（Tool Use & APIs）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-20.html#从工具到系统from-tools-to-systems",
+    "href": "chapter-20.html#从工具到系统from-tools-to-systems",
+    "title": "21  工具使用与 API（Tool Use & APIs）",
+    "section": "21.5 从工具到系统（From Tools to Systems）",
+    "text": "21.5 从工具到系统（From Tools to Systems）\n单个工具增加了能力。组合的工具创建了完整的系统。一个可以搜索、计算、存储和通知的系统，比任何单个工具的总和都更强大。\n\n工具将 AI 系统从被动的知识处理器转变为主动的操作执行者。",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>工具使用与 API（Tool Use & APIs）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-21.html#从单智能体到智能体系统",
+    "href": "chapter-21.html#从单智能体到智能体系统",
+    "title": "22  多智能体系统（Multi-Agent Systems）",
+    "section": "",
+    "text": "多智能体系统（Multi-Agent Systems）",
+    "crumbs": [
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>多智能体系统（Multi-Agent Systems）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-21.html#什么是多智能体系统what-is-a-multi-agent-system",
+    "href": "chapter-21.html#什么是多智能体系统what-is-a-multi-agent-system",
+    "title": "22  多智能体系统（Multi-Agent Systems）",
+    "section": "22.2 什么是多智能体系统？（What is a Multi-Agent System?）",
+    "text": "22.2 什么是多智能体系统？（What is a Multi-Agent System?）\n多智能体系统是多个智能体协作以实现共享目标的系统。\n系统中的每个智能体都有一个定义的角色、执行特定任务、与其他智能体交互以协调和沟通，实现共享目标。\n\n多智能体设计是关于有效分配工作。",
+    "crumbs": [
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>多智能体系统（Multi-Agent Systems）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-21.html#核心概念core-concepts",
+    "href": "chapter-21.html#核心概念core-concepts",
+    "title": "22  多智能体系统（Multi-Agent Systems）",
+    "section": "22.3 核心概念（Core Concepts）",
+    "text": "22.3 核心概念（Core Concepts）\n角色（Role）： 每个智能体有一个明确的职责——如研究、撰写、审核或协调。角色定义了智能体做什么以及如何与其他智能体交互。\n通信（Communication）： 智能体需要相互发送信息和指令。通信可以是直接的或通过中央协调器。\n协调（Coordination）： 智能体的工作需要同步。任务可能需要按特定顺序执行，并行运行，或基于条件分派。",
+    "crumbs": [
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>多智能体系统（Multi-Agent Systems）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-21.html#架构模式architecture-patterns",
+    "href": "chapter-21.html#架构模式architecture-patterns",
+    "title": "22  多智能体系统（Multi-Agent Systems）",
+    "section": "22.4 架构模式（Architecture Patterns）",
+    "text": "22.4 架构模式（Architecture Patterns）\n中央协调（Central Coordinator）： 一个协调智能体管理工作流并将任务分派给专门智能体。\n去中心化协作（Decentralized Collaboration）： 智能体直接相互通信，无中央控制点。适用于对等交互。\n管道（Pipeline）： 智能体按顺序排列，每个智能体执行一个阶段。适用于定义良好的处理流。",
+    "crumbs": [
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>多智能体系统（Multi-Agent Systems）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-21.html#设计多智能体系统designing-multi-agent-systems",
+    "href": "chapter-21.html#设计多智能体系统designing-multi-agent-systems",
+    "title": "22  多智能体系统（Multi-Agent Systems）",
+    "section": "22.5 设计多智能体系统（Designing Multi-Agent Systems）",
+    "text": "22.5 设计多智能体系统（Designing Multi-Agent Systems）\n\n将任务分解为角色： 确定达成目标需要哪些不同的能力\n定义通信协议： 指定智能体如何共享信息和协调\n建立协调机制： 确定谁决定什么以及如何处理冲突\n边界与范围： 为每个智能体划定明确的职责边界\n\n\n多智能体系统使 AI 系统能够处理单个智能体无法单独处理的任务。通过将能力分散到专门的智能体中，系统获得了灵活性、可扩展性和韧性。",
+    "crumbs": [
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>多智能体系统（Multi-Agent Systems）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-22.html#为什么记忆重要",
+    "href": "chapter-22.html#为什么记忆重要",
+    "title": "23  记忆与上下文（Memory & Context）",
+    "section": "",
+    "text": "记忆使系统能够超越单次交互而持续存在，从而实现连续性和深度。",
+    "crumbs": [
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>记忆与上下文（Memory & Context）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-22.html#什么是上下文what-is-context",
+    "href": "chapter-22.html#什么是上下文what-is-context",
+    "title": "23  记忆与上下文（Memory & Context）",
+    "section": "23.2 什么是上下文？（What is Context?）",
+    "text": "23.2 什么是上下文？（What is Context?）\n上下文是系统在执行时刻可用的信息。它代表系统当前”知道”的内容。\n它包括：当前输入、相关的过去交互、外部知识、系统状态。\n示例： 在对话中，上下文包括当前消息”之前说的是什么来着”、先前的消息”我在讨论 AI 记忆系统”、用户偏好”喜欢简洁的回答”、会话数据”本次会话已交换 5 条消息”。",
+    "crumbs": [
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>记忆与上下文（Memory & Context）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-22.html#记忆的类型types-of-memory",
+    "href": "chapter-22.html#记忆的类型types-of-memory",
+    "title": "23  记忆与上下文（Memory & Context）",
+    "section": "23.3 记忆的类型（Types of Memory）",
+    "text": "23.3 记忆的类型（Types of Memory）\n短期记忆（会话上下文）： 在当前会话中可用。通常包含在上下文中。有限的时间范围。\n长期记忆（持久存储）： 跨会话持久化。需要显式存储机制。用于用户偏好、已知事实、学习的行为。\n工作记忆（当前焦点）： 当前正在处理的信息。临时性的。在处理复杂任务时保持。",
+    "crumbs": [
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>记忆与上下文（Memory & Context）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-22.html#记忆管理memory-management",
+    "href": "chapter-22.html#记忆管理memory-management",
+    "title": "23  记忆与上下文（Memory & Context）",
+    "section": "23.4 记忆管理（Memory Management）",
+    "text": "23.4 记忆管理（Memory Management）\n有效的记忆需要管理：上下文窗口限制、压缩与检索、遗忘与更新。\n上下文窗口限制： 系统只能处理有限的信息。当上下文窗口满时，你需要选择性保留什么——这需要优先级和压缩。\n压缩与检索： 以压缩形式存储。按需检索。摘要（保留关键事实而非逐字文本）、向量搜索（语义检索）、结构化记录。\n遗忘与更新： 并非所有信息都应该永久保留。记忆策略必须包括如何以及何时遗忘——避免过时信息的累积。",
+    "crumbs": [
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>记忆与上下文（Memory & Context）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-22.html#上下文策略context-strategies",
+    "href": "chapter-22.html#上下文策略context-strategies",
+    "title": "23  记忆与上下文（Memory & Context）",
+    "section": "23.5 上下文策略（Context Strategies）",
+    "text": "23.5 上下文策略（Context Strategies）\n\n滑动窗口：只保留最近的 N 次交互。简单且有效。\n摘要压缩：定期摘要先前的上下文。保留本质，丢弃细节。\n选择性检索：保留核心上下文。在需要时检索相关信息。\n分层的上下文：全局上下文（用户偏好）+ 会话上下文 + 当前焦点。\n\n\n记忆和上下文管理将瞬时的 AI 交互转变为持续的智能行为。",
+    "crumbs": [
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>记忆与上下文（Memory & Context）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-23.html#构建过程概览build-process-overview",
+    "href": "chapter-23.html#构建过程概览build-process-overview",
+    "title": "24  构建智能体系统（Building an Agent System）",
+    "section": "24.2 构建过程概览（Build Process Overview）",
+    "text": "24.2 构建过程概览（Build Process Overview）\n第 1 步：定义意图和 Spec 第 2 步：设计架构 第 3 步：实现核心组件 第 4 步：集成工具和记忆 第 5 步：测试和精化",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>构建智能体系统（Building an Agent System）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-23.html#第-1-步定义意图和-specdefine-intent-and-spec",
+    "href": "chapter-23.html#第-1-步定义意图和-specdefine-intent-and-spec",
+    "title": "24  构建智能体系统（Building an Agent System）",
+    "section": "24.3 第 1 步：定义意图和 Spec（Define Intent and Spec）",
+    "text": "24.3 第 1 步：定义意图和 Spec（Define Intent and Spec）\n从清晰的意图开始。你想解决什么问题？\n示例意图： “构建一个智能体，帮助开发者从错误消息中调试。”\n精化后的 Spec： - 输入：错误消息、代码上下文（可选） - 输出：错误原因 + 解决方案建议 + 代码示例 - 约束：仅基于已知知识回答；在不确定时明确说明；支持常见编程语言 - 成功标准：针对已知错误，推荐的解决方案准确率 &gt; 80%",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>构建智能体系统（Building an Agent System）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-23.html#第-2-步设计架构design-architecture",
+    "href": "chapter-23.html#第-2-步设计架构design-architecture",
+    "title": "24  构建智能体系统（Building an Agent System）",
+    "section": "24.4 第 2 步：设计架构（Design Architecture）",
+    "text": "24.4 第 2 步：设计架构（Design Architecture）\n基于 Spec，设计系统架构：\n主流程： 用户输入 → 解析错误 → 搜索知识库 → 匹配解决方案 → 格式化输出\n模块： - 解析器：提取错误类型和消息 - 搜索器：在知识库中搜索匹配 - 求解器：生成解决方案建议 - 格式化器：格式化输出\n数据流： 原始错误 → 结构化错误 → 匹配记录 → 解决方案 → 格式化响应",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>构建智能体系统（Building an Agent System）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-23.html#第-3-步实现核心组件implement-core-components",
+    "href": "chapter-23.html#第-3-步实现核心组件implement-core-components",
+    "title": "24  构建智能体系统（Building an Agent System）",
+    "section": "24.5 第 3 步：实现核心组件（Implement Core Components）",
+    "text": "24.5 第 3 步：实现核心组件（Implement Core Components）\n每个模块需要自己的 Spec 和指令。例如，解析器智能体：\n解析器 Spec： - 输入：原始错误文本（字符串） - 输出：结构化错误（类型、消息、行号、语言） - 约束：识别常见错误模式；提取相关行号；确定编程语言\n编译后的指令： “你是一个错误解析器。分析以下错误文本。提取错误类型（如 SyntaxError、TypeError）、错误消息、行号和编程语言。”",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>构建智能体系统（Building an Agent System）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-23.html#第-4-步集成工具和记忆integrate-tools-and-memory",
+    "href": "chapter-23.html#第-4-步集成工具和记忆integrate-tools-and-memory",
+    "title": "24  构建智能体系统（Building an Agent System）",
+    "section": "24.6 第 4 步：集成工具和记忆（Integrate Tools and Memory）",
+    "text": "24.6 第 4 步：集成工具和记忆（Integrate Tools and Memory）\n为系统增加能力：搜索数据库工具、代码执行沙箱、文档检索 API。\n为系统增加记忆：记住常见的错误模式、缓存解决方案结果、从用户反馈中学习。",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>构建智能体系统（Building an Agent System）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-23.html#第-5-步测试和精化test-and-refine",
+    "href": "chapter-23.html#第-5-步测试和精化test-and-refine",
+    "title": "24  构建智能体系统（Building an Agent System）",
+    "section": "24.7 第 5 步：测试和精化（Test and Refine）",
+    "text": "24.7 第 5 步：测试和精化（Test and Refine）\n对照 Spec 进行系统测试：不同的错误类型、边界情况（不完整的错误消息、未知错误）、性能测试。\n根据测试结果精化 Spec 和指令。\n\n构建智能体系统是关于将 Spec 转化为工作系统——不是一次性完成，而是通过迭代精化。",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>构建智能体系统（Building an Agent System）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-24.html#可靠性为什么重要",
+    "href": "chapter-24.html#可靠性为什么重要",
+    "title": "25  可靠性与评估（Reliability & Evaluation）",
+    "section": "",
+    "text": "可靠性不是可选项。它是系统在生产中可用的先决条件。",
+    "crumbs": [
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>可靠性与评估（Reliability & Evaluation）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-24.html#什么是可靠性what-is-reliability",
+    "href": "chapter-24.html#什么是可靠性what-is-reliability",
+    "title": "25  可靠性与评估（Reliability & Evaluation）",
+    "section": "25.2 什么是可靠性？（What is Reliability?）",
+    "text": "25.2 什么是可靠性？（What is Reliability?）\n可靠性是系统在其生命周期内持续满足其 Spec 的能力。\n一个可靠的系统：\n\n总是做正确的事——输出符合 Spec\n一致地产生结果——相同的输入产生相同的输出\n可预测地失败——当失败发生时，失败是清晰和可理解的\n\n不可靠的系统会产生不一致的结果、产生不正确但看似合理的输出、以不可预测的方式失败。",
+    "crumbs": [
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>可靠性与评估（Reliability & Evaluation）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-24.html#可靠性策略reliability-strategies",
+    "href": "chapter-24.html#可靠性策略reliability-strategies",
+    "title": "25  可靠性与评估（Reliability & Evaluation）",
+    "section": "25.3 可靠性策略（Reliability Strategies）",
+    "text": "25.3 可靠性策略（Reliability Strategies）\n\n25.3.1 1. Spec 增强\n更严格的约束减少输出的变化空间。多个约束共同限制输出的可能空间。解决歧义减少错误解释的机会。\n\n\n25.3.2 2. 验证与确认\n规则验证： 对照确定性规则检查输出（格式、类型、范围）。语义验证： 检查输出是否满足 Spec 的意图。使用模型评估或人工审查。冗余验证： 多个系统产生输出并进行比较。需要额外的计算但可以提高信心。\n\n\n25.3.3 3. 回退策略\n当系统失败时，有一个预先计划的响应。降级回退（使用更简单的方法）或人工回退（在必要时升级到人工处理）。",
+    "crumbs": [
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>可靠性与评估（Reliability & Evaluation）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-24.html#评估框架evaluation-framework",
+    "href": "chapter-24.html#评估框架evaluation-framework",
+    "title": "25  可靠性与评估（Reliability & Evaluation）",
+    "section": "25.4 评估框架（Evaluation Framework）",
+    "text": "25.4 评估框架（Evaluation Framework）\n单元评估： 测试单个组件。每个模块对照其 Spec 独立测试。隔离和修复问题。\n集成评估： 测试组件交互。组件如何协同工作。在组合系统中发现问题。\n系统评估： 测试整体系统行为。端到端的用户场景。在现实条件下验证系统。",
+    "crumbs": [
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>可靠性与评估（Reliability & Evaluation）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-24.html#持续监控continuous-monitoring",
+    "href": "chapter-24.html#持续监控continuous-monitoring",
+    "title": "25  可靠性与评估（Reliability & Evaluation）",
+    "section": "25.5 持续监控（Continuous Monitoring）",
+    "text": "25.5 持续监控（Continuous Monitoring）\n可靠性不是一次性实现。它需要持续监控：跟踪成功率和失败模式、检测行为漂移、在性能下降时发出警报。\n\n可靠性不是一种状态，而是一种实践。它需要持续关注、系统测试和迭代改进。",
+    "crumbs": [
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>可靠性与评估（Reliability & Evaluation）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-25.html#调试已经改变",
+    "href": "chapter-25.html#调试已经改变",
+    "title": "26  LLM 时代的调试（Debugging in the LLM Era）",
+    "section": "",
+    "text": "调试从代码缺陷转向定义差距。",
+    "crumbs": [
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>LLM 时代的调试（Debugging in the LLM Era）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-25.html#错误类型types-of-errors",
+    "href": "chapter-25.html#错误类型types-of-errors",
+    "title": "26  LLM 时代的调试（Debugging in the LLM Era）",
+    "section": "26.2 错误类型（Types of Errors）",
+    "text": "26.2 错误类型（Types of Errors）\n\n26.2.1 定义错误\nSpec 不完整、约束缺失、边界情况未覆盖、歧义。\n症状： 不一致的输出；系统”几乎”正确；在边界情况下意外失败。\n解决方案： 精化定义。添加约束。覆盖更多的边界情况。\n\n\n26.2.2 执行错误\n指令未正确编译、上下文窗口溢出、工具调用失败。\n症状： 运行时错误、意外的工具行为、截断的输出。\n解决方案： 修复指令。管理上下文窗口。改进错误处理。\n\n\n26.2.3 模型错误\n模型能力限制、知识边界、理解不足。\n症状： 输出质量低、不正确的事实、无法处理复杂逻辑。\n解决方案： 简化任务。提供更多上下文。使用不同的模型。",
+    "crumbs": [
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>LLM 时代的调试（Debugging in the LLM Era）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-25.html#调试过程the-debugging-process",
+    "href": "chapter-25.html#调试过程the-debugging-process",
+    "title": "26  LLM 时代的调试（Debugging in the LLM Era）",
+    "section": "26.3 调试过程（The Debugging Process）",
+    "text": "26.3 调试过程（The Debugging Process）\n第 1 步：观察失败。 发生了什么？输出有什么问题？是正确性、格式还是性能问题？\n第 2 步：分类错误。 它是定义错误、执行错误还是模型错误？这决定了你的调试方法。\n第 3 步：追溯到源头。 定义错误追溯到 Spec。执行错误追溯到指令。模型错误可能需要对任务或上下文进行调整。\n第 4 步：修复和测试。 修复根本原因而不是表象。测试。观察变化。",
+    "crumbs": [
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>LLM 时代的调试（Debugging in the LLM Era）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-25.html#定义错误的调试技术debugging-definition-errors",
+    "href": "chapter-25.html#定义错误的调试技术debugging-definition-errors",
+    "title": "26  LLM 时代的调试（Debugging in the LLM Era）",
+    "section": "26.4 定义错误的调试技术（Debugging Definition Errors）",
+    "text": "26.4 定义错误的调试技术（Debugging Definition Errors）\n定义错误是最难调试的，因为它们不是代码中的错误。它们是理解中的错误。\n技术 1：暴露假设。 写下你关于系统的所有假设。然后问：这些中哪些可能是错误的？\n技术 2：检查边界。 系统失败的地方通常是边界——你的定义结束和未知开始的地方。\n技术 3：添加约束。 定义失败通常是因为约束过少。添加约束减少了输出空间，缩小了可能的行为。\n技术 4：简化测试用例。 创建一个最小、最简版本的输入。逐步增加复杂性，直到系统失败。这会显示失败发生在哪里。\n\nLLM 调试最有用的问题是：“我定义中哪里不完整或歧义？”",
+    "crumbs": [
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>LLM 时代的调试（Debugging in the LLM Era）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-26.html#为什么性能和成本重要",
+    "href": "chapter-26.html#为什么性能和成本重要",
+    "title": "27  性能与成本（Performance & Cost）",
+    "section": "",
+    "text": "在 LLM 时代，性能和成本是架构决策，而非优化顾虑。",
+    "crumbs": [
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>性能与成本（Performance & Cost）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-26.html#成本模型cost-model",
+    "href": "chapter-26.html#成本模型cost-model",
+    "title": "27  性能与成本（Performance & Cost）",
+    "section": "27.2 成本模型（Cost Model）",
+    "text": "27.2 成本模型（Cost Model）\nLLM 系统的成本由几个因素驱动：\n令牌使用量： 每次调用的输入和输出令牌。越长 = 越高成本。\nAPI 调用次数： 每个步骤一次调用。更多步骤 = 更高成本。\n模型选择： 大型模型更贵。小型模型可能适合某些任务。\n上下文大小： 更大的上下文消耗更多令牌。记忆和上下文管理直接影响成本。",
+    "crumbs": [
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>性能与成本（Performance & Cost）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-26.html#性能模型performance-model",
+    "href": "chapter-26.html#性能模型performance-model",
+    "title": "27  性能与成本（Performance & Cost）",
+    "section": "27.3 性能模型（Performance Model）",
+    "text": "27.3 性能模型（Performance Model）\n延迟： 单次调用的响应时间。受模型大小、输入长度、系统负载影响。\n吞吐量： 每秒可处理的请求数。受 API 速率限制和并行度影响。",
+    "crumbs": [
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>性能与成本（Performance & Cost）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-26.html#优化策略optimization-strategies",
+    "href": "chapter-26.html#优化策略optimization-strategies",
+    "title": "27  性能与成本（Performance & Cost）",
+    "section": "27.4 优化策略（Optimization Strategies）",
+    "text": "27.4 优化策略（Optimization Strategies）\n\n27.4.1 减少令牌使用\n\n精简指令和提示词以去除冗余\n限制输出长度（精确指定最大长度）\n压缩上下文以避免重复传输相同信息\n使用摘要代替逐字的记忆存储\n\n\n\n27.4.2 减少 API 调用\n\n批处理独立的请求\n缓存重复的请求（相同的输入 → 相同的输出）\n组合步骤（将多个任务合并为一个指令）\n\n\n\n27.4.3 优化模型选择\n\n对简单的任务使用更小、更快的模型\n使用大模型进行复杂推理，小模型进行简单处理\n级联模型：先尝试更便宜的模型，失败时升级",
+    "crumbs": [
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>性能与成本（Performance & Cost）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-26.html#成本-质量权衡cost-quality-tradeoffs",
+    "href": "chapter-26.html#成本-质量权衡cost-quality-tradeoffs",
+    "title": "27  性能与成本（Performance & Cost）",
+    "section": "27.5 成本-质量权衡（Cost-Quality Tradeoffs）",
+    "text": "27.5 成本-质量权衡（Cost-Quality Tradeoffs）\n\n更多令牌 → 更好指定 → 更可靠，但也更昂贵\n更简单的模型 → 更快、更便宜，但可能处理复杂任务不够好\n更多迭代 → 更好的结果，但也增加成本\n\n关键是在满足 Spec 的同时最小化成本。\n\n在 LLM 时代，性能和成本管理是系统设计的核心部分，而非事后优化。",
+    "crumbs": [
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>性能与成本（Performance & Cost）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-27.html#第-1-步定义意图define-intent",
+    "href": "chapter-27.html#第-1-步定义意图define-intent",
+    "title": "28  构建聊天系统（Building a Chat System）",
+    "section": "28.2 第 1 步：定义意图（Define Intent）",
+    "text": "28.2 第 1 步：定义意图（Define Intent）\n意图： 构建一个聊天系统，准确回答用户关于文档集的问题。\n精化后的目标（Goal Compression）： - 目标：在超过 80% 的情况下提供相关、准确的答案 - 对象：用户关于文档知识库的问题 - 上下文：Web 界面，单个用户会话，文档集最多 1000 个文档 - 约束：答案必须基于提供的文档，在不确定时说明不知道，支持中文和英文 - 成功标准：准确率 &gt; 80%，响应时间 &lt; 3 秒，用户满意度 &gt; 4/5",
+    "crumbs": [
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>构建聊天系统（Building a Chat System）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-27.html#第-2-步创建-spec",
+    "href": "chapter-27.html#第-2-步创建-spec",
+    "title": "28  构建聊天系统（Building a Chat System）",
+    "section": "28.3 第 2 步：创建 Spec",
+    "text": "28.3 第 2 步：创建 Spec\n输入（Input）： 用户问题（字符串，最多 500 字符），会话 ID（用于上下文），可选的用户偏好。\n输出（Output）： 回答（字符串，最多 1000 字符），来源引用（文档 ID 列表），置信度（高/中/低），后续建议问题（可选）。\n约束（Constraints）： - 仅基于提供的内容回答。如果信息不足，明确说明限制 - 回答必须与问题保持相同语言 - 不存储个人数据。不产生幻觉（hallucination） - 引用必须精确匹配信息源\n边界情况（Edge Cases）： - 无相关文档：返回”未找到相关信息”并建议其他查询 - 模糊问题：请求澄清而非猜测 - 多语言混合输入：检测主要语言并回复",
+    "crumbs": [
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>构建聊天系统（Building a Chat System）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-27.html#第-3-步编写指令write-instruction",
+    "href": "chapter-27.html#第-3-步编写指令write-instruction",
+    "title": "28  构建聊天系统（Building a Chat System）",
+    "section": "28.4 第 3 步：编写指令（Write Instruction）",
+    "text": "28.4 第 3 步：编写指令（Write Instruction）\n角色：你是一个知识库助手。你根据提供的文档回答用户问题。\n\n任务：回答用户关于知识库的问题。保持简洁和准确。\n\n输入：用户的问题 + 相关文档片段（最多 5 个）\n\n输出要求：\n- 基于文档的准确回答\n- 每句话引用来源（用 [1][2] 格式）\n- 如果信息不足，说明限制\n\n约束：\n- 不要编造信息。不要添加文档中不存在的内容\n- 保持回答简洁（最多 3 段）\n- 与用户使用相同语言回复\n\n边界情况：\n- 无相关文档：说\"未找到相关信息\"\n- 模糊问题：请求用户进一步说明",
+    "crumbs": [
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>构建聊天系统（Building a Chat System）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-27.html#第-4-步架构设计architecture-design",
+    "href": "chapter-27.html#第-4-步架构设计architecture-design",
+    "title": "28  构建聊天系统（Building a Chat System）",
+    "section": "28.5 第 4 步：架构设计（Architecture Design）",
+    "text": "28.5 第 4 步：架构设计（Architecture Design）\n主流程（Main Flow）：\n用户输入 → 检索相关文档 → 构建上下文 → 生成回答 → 格式化输出 → 返回结果\n模块（Modules）： - 检索器（Retriever）：从知识库查找相关文档。支持语义搜索（semantic search）和关键词搜索（keyword search）。混合检索策略以提高召回率。 - 上下文构建器（Context Builder）：将检索到的文档格式化为提示词上下文。管理上下文窗口限制（context window）。优先级排序——最相关的文档优先。 - 生成器（Generator）：基于检索到的文档生成回答。使用定义的指令和约束。生成结构化输出。 - 格式化器（Formatter）：格式化输出为统一结构。添加来源引用。后处理以确保一致性。\n记忆（Memory）： - 短期记忆（Short-term）：会话上下文（保留最近 5 轮对话） - 长期记忆（Long-term）：用户偏好（如果可用）",
+    "crumbs": [
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>构建聊天系统（Building a Chat System）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-27.html#第-5-步评估与精化evaluate-and-refine",
+    "href": "chapter-27.html#第-5-步评估与精化evaluate-and-refine",
+    "title": "28  构建聊天系统（Building a Chat System）",
+    "section": "28.6 第 5 步：评估与精化（Evaluate and Refine）",
+    "text": "28.6 第 5 步：评估与精化（Evaluate and Refine）\n测试用例类型： - 简单问题（事实查询） - 复杂多步骤问题（需要综合多个文档） - 边界情况（无答案的问题、歧义问题、大型上下文、多语言）\n评估指标（Evaluation Metrics）： - 准确率（Accuracy）：回答是否正确 - 引用正确性（Citation Accuracy）：引用是否匹配实际文档 - 响应时间（Latency）：从接收到返回的时间 - 用户满意度（User Satisfaction）：通过反馈机制收集\n迭代策略（Iteration Strategy）： 1. 运行评估数据集 2. 识别失败模式（定义错误、检索错误、生成错误、边界情况未覆盖） 3. 精化 Spec 和指令 4. 重新评估 5. 重复直到满足质量标准",
+    "crumbs": [
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>构建聊天系统（Building a Chat System）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-27.html#部署注意事项deployment-considerations",
+    "href": "chapter-27.html#部署注意事项deployment-considerations",
+    "title": "28  构建聊天系统（Building a Chat System）",
+    "section": "28.7 部署注意事项（Deployment Considerations）",
+    "text": "28.7 部署注意事项（Deployment Considerations）\n\nAPI 封装：将系统封装为 REST API 端点\n监控（Monitoring）：追踪令牌使用、延迟、错误率\n日志（Logging）：记录每次交互的输入和输出用于调试\n成本管理：缓存重复查询、控制输出长度、批处理优化\n持续改进：收集用户反馈 → 分析模式 → 精化系统",
+    "crumbs": [
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>构建聊天系统（Building a Chat System）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-27.html#小结",
+    "href": "chapter-27.html#小结",
+    "title": "28  构建聊天系统（Building a Chat System）",
+    "section": "28.8 小结",
+    "text": "28.8 小结\n构建生产级聊天系统需要的不仅仅是模型调用。它需要一个系统化的方法：从意图（Intent）开始，通过 Spec 和指令（Instruction）精化定义，设计清晰的架构，系统化地评估和迭代。\n聊天系统是许多 AI 应用的基础模式。掌握了它的构建方法，你就掌握了构建更复杂 AI 系统的基础。",
+    "crumbs": [
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>构建聊天系统（Building a Chat System）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-28.html#定义意图define-intent",
+    "href": "chapter-28.html#定义意图define-intent",
+    "title": "29  构建数据管道（Building a Data Pipeline）",
+    "section": "29.2 定义意图（Define Intent）",
+    "text": "29.2 定义意图（Define Intent）\n意图： 构建一个管道，将来自多个渠道的原始客户反馈转化为结构化的可操作洞察。\n精化后的目标： - 目标：每周自动生成客户反馈分析报告 - 对象：来自电子邮件、调查和聊天记录的原始反馈文本 - 上下文：每周处理 1000-5000 条反馈记录 - 约束：不存储个人身份信息（PII），分类准确率 &gt; 85%，处理时间 &lt; 2 小时/周 - 成功标准：每项反馈被正确分类，趋势被正确识别，报告在周一早上 9 点前可用",
+    "crumbs": [
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>构建数据管道（Building a Data Pipeline）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-28.html#管道架构pipeline-architecture",
+    "href": "chapter-28.html#管道架构pipeline-architecture",
+    "title": "29  构建数据管道（Building a Data Pipeline）",
+    "section": "29.3 管道架构（Pipeline Architecture）",
+    "text": "29.3 管道架构（Pipeline Architecture）\n\n29.3.1 阶段 1：输入（Input）\n来自多个源的原始文本。每个源有不同的格式和结构。\n\n电子邮件：非结构化文本，可能包含签名和转发链（需清洗）\n调查：结构化表格数据，字段名和类型\n聊天记录：对话记录，多轮文本，包含元数据\n\n\n\n29.3.2 阶段 2：解析（Parse）\n清理和标准化输入数据。\n\n文本清洗：移除签名、无关元数据、多余空白\n格式化：将不同源的输入转换为统一格式\n元数据提取：提取源、日期、类别标签\n\n\n\n29.3.3 阶段 3：处理（Process）\nAI 驱动的转换。\n\n分类（Classification）：将反馈分类为预定义类别（产品问题、服务问题、建议、表扬）\n情绪分析（Sentiment Analysis）：检测情绪倾向（正面、中性、负面）\n提取（Extraction）：提取关键短语、行动项、产品提及\n总结（Summarization）：对长反馈进行总结\n\n\n\n29.3.4 阶段 4：聚合（Aggregate）\n按期分组，计算统计信息，识别趋势。\n\n按类别聚合：各类别反馈的数量和占比\n趋势检测：关键指标随时间的变化\n异常检测：与基线相比的显著变化\n\n\n\n29.3.5 阶段 5：输出（Output）\n生成结构化报告。\n\n生成报告：格式化为标准报告模板（Markdown 或 HTML）\n分发：通过邮件或系统发送给利益相关者\n存档：持久化到数据库或文件系统供未来参考",
+    "crumbs": [
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>构建数据管道（Building a Data Pipeline）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-28.html#spec-示例阶段-3-分类spec-example-stage-3-classification",
+    "href": "chapter-28.html#spec-示例阶段-3-分类spec-example-stage-3-classification",
+    "title": "29  构建数据管道（Building a Data Pipeline）",
+    "section": "29.4 Spec 示例：阶段 3 分类（Spec Example: Stage 3 Classification）",
+    "text": "29.4 Spec 示例：阶段 3 分类（Spec Example: Stage 3 Classification）\n输入： 已解析的反馈文本（字符串，最多 2000 字符），元数据（源、日期、语言）。\n输出： 分类标签列表，每类置信度分数（0-1）。\n{\n  \"labels\": [\n    {\"category\": \"产品问题\", \"confidence\": 0.92},\n    {\"category\": \"服务问题\", \"confidence\": 0.15}\n  ]\n}\n约束： 每项反馈可以有多个标签，置信度 &lt; 0.5 的标签被排除，使用预定义类别列表。\n边界情况： 空文本返回空列表，多语言输入保持语言判断，非常规格式不崩溃。",
+    "crumbs": [
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>构建数据管道（Building a Data Pipeline）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-28.html#管道实现模式pipeline-implementation-patterns",
+    "href": "chapter-28.html#管道实现模式pipeline-implementation-patterns",
+    "title": "29  构建数据管道（Building a Data Pipeline）",
+    "section": "29.5 管道实现模式（Pipeline Implementation Patterns）",
+    "text": "29.5 管道实现模式（Pipeline Implementation Patterns）\n1. 每个阶段是独立的模块，具有自己的 Spec：每个阶段有明确的输入和输出 Schema。可以独立测试和优化。替换单个阶段不影响其他阶段。\n2. 阶段通过定义良好的接口通信：输入 Schema、输出 Schema 被显式定义。数据格式在阶段之间传递时保持一致。\n3. 错误处理在每个阶段本地进行：一个阶段的错误不影响其他阶段。错误被记录并传递，而非直接导致管道崩溃。\n4. 可观察性（Observability）：每个阶段记录其输入、输出和处理时间。日志提供管道的完整追踪。",
+    "crumbs": [
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>构建数据管道（Building a Data Pipeline）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-28.html#评估管道质量evaluating-pipeline-quality",
+    "href": "chapter-28.html#评估管道质量evaluating-pipeline-quality",
+    "title": "29  构建数据管道（Building a Data Pipeline）",
+    "section": "29.6 评估管道质量（Evaluating Pipeline Quality）",
+    "text": "29.6 评估管道质量（Evaluating Pipeline Quality）\n逐阶段评估： 对每个阶段独立测试。输入样本 → 预期输出 → 实际输出 → 比较。\n端到端评估： 使用完整的测试管道。从原始输入到最终输出。衡量整体准确率和延迟。\n关键指标： - 分类准确率 &gt; 85% - 情绪分析准确率 &gt; 80% - 处理延迟 &lt; 5 秒/条 - 管道成功率 &gt; 99%",
+    "crumbs": [
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>构建数据管道（Building a Data Pipeline）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-28.html#小结",
+    "href": "chapter-28.html#小结",
+    "title": "29  构建数据管道（Building a Data Pipeline）",
+    "section": "29.7 小结",
+    "text": "29.7 小结\n数据管道是从原始数据到结构化洞察的桥梁。通过将管道分解为具有明确 Spec 的独立阶段，你构建了一个可测试、可维护、可演化的系统。\n管道的设计原则——模块化、独立 Spec、错误隔离、可观察性——适用于任何 AI 数据管道。掌握了它们，你可以系统地构建从数据到价值的自动化工作流。",
+    "crumbs": [
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>构建数据管道（Building a Data Pipeline）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-29.html#定义工具意图define-tool-intent",
+    "href": "chapter-29.html#定义工具意图define-tool-intent",
+    "title": "30  构建 AI 工具（Building an AI Tool）",
+    "section": "30.2 定义工具意图（Define Tool Intent）",
+    "text": "30.2 定义工具意图（Define Tool Intent）\n意图： 构建一个代码评论工具——给定代码片段，提供关于风格、潜在 bug 和优化建议的反馈。\n精化后的目标： - 目标：在代码审查过程中提供即时的、有针对性的反馈 - 对象：Python 和 JavaScript 代码片段（其他语言逐步增加） - 上下文：开发者提交代码时的即时反馈场景 - 约束：不执行代码（仅静态分析），每条评论必须引用具体行号，不提供虚假的安全警报 - 成功标准：建议被开发者采纳率 &gt; 60%，误报率 &lt; 10%",
+    "crumbs": [
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>构建 AI 工具（Building an AI Tool）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-29.html#工具-spec",
+    "href": "chapter-29.html#工具-spec",
+    "title": "30  构建 AI 工具（Building an AI Tool）",
+    "section": "30.3 工具 Spec",
+    "text": "30.3 工具 Spec\n输入： 代码字符串（最多 2000 字符），编程语言，可选的编码风格指南（style guide）。\n输出： 结构化评论列表，每条包含：行号、严重性、消息、改进建议。\n[\n  {\n    \"line\": 15,\n    \"severity\": \"warning\",\n    \"message\": \"使用 == 而非 === 可能造成类型转换问题\",\n    \"suggestion\": \"用 === 替代 ==\"\n  }\n]\n严重性等级（Severity Levels）： - error：确定会出错的代码（安全漏洞、语法错误） - warning：可能出问题的代码（类型转换、未定义变量） - suggestion：改进建议（性能优化、代码风格）\n约束： 不执行代码，仅基于静态分析（static analysis），尊重语言特定的最佳实践，保持每条评论简洁。\n边界情况： 空代码（返回空列表），无法识别语言（使用通用规则），代码包含注释（跳过注释）。",
+    "crumbs": [
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>构建 AI 工具（Building an AI Tool）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-29.html#工具架构tool-architecture",
+    "href": "chapter-29.html#工具架构tool-architecture",
+    "title": "30  构建 AI 工具（Building an AI Tool）",
+    "section": "30.4 工具架构（Tool Architecture）",
+    "text": "30.4 工具架构（Tool Architecture）\n主流程：\n代码输入 → 语言检测 → 解析结构 → 分析模式 → 生成评论 → 格式化输出\n模块： - 语言检测器（Language Detector）：识别输入代码的编程语言。基于文件扩展名、代码特征和魔数（shebang 等）。 - 结构分析器（Structure Analyzer）：解析代码结构，提取函数、类、变量声明。构建抽象语法树（AST）概览。 - 模式分析器（Pattern Analyzer）：对照最佳实践检查代码。识别常见反模式（antipatterns）和潜在漏洞。 - 评论生成器（Comment Generator）：将分析结果转化为结构化评论。添加行号引用和严重性评级。 - 格式化器（Formatter）：将评论格式化为统一输出。支持 JSON 和格式化文本输出。",
+    "crumbs": [
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>构建 AI 工具（Building an AI Tool）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-29.html#指令示例instruction-example",
+    "href": "chapter-29.html#指令示例instruction-example",
+    "title": "30  构建 AI 工具（Building an AI Tool）",
+    "section": "30.5 指令示例（Instruction Example）",
+    "text": "30.5 指令示例（Instruction Example）\n角色：你是一个代码评审专家。你有 15 年的软件开发经验，精通多种编程语言的最佳实践。\n\n任务：审查提供的代码片段，识别潜在问题、反模式和改进机会。\n\n输入：代码字符串 + 编程语言名称\n\n输出要求：\n以 JSON 数组格式输出每条评论，包含：\n- \"line\": 行号（整数，必须精确）\n- \"severity\": \"error\" | \"warning\" | \"suggestion\"\n- \"message\": 简洁的问题描述（&lt; 100 字符）\n- \"suggestion\": 改进后的代码示例（可选）\n\n约束：\n- 只进行静态分析，不执行代码\n- 优先报告错误和潜在安全问题\n- 每条评论要有具体的行号引用\n- 不报告虚假问题（宁可漏报不可误报）\n\n示例：\n输入：var x = \"hello\";\n输出：[{\"line\":1, \"severity\":\"suggestion\", \"message\":\"使用 const 替代 var\", \"suggestion\":\"const x = 'hello';\"}]",
+    "crumbs": [
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>构建 AI 工具（Building an AI Tool）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-29.html#评估与精化evaluate-and-refine",
+    "href": "chapter-29.html#评估与精化evaluate-and-refine",
+    "title": "30  构建 AI 工具（Building an AI Tool）",
+    "section": "30.6 评估与精化（Evaluate and Refine）",
+    "text": "30.6 评估与精化（Evaluate and Refine）\n测试数据集： 20 个代码样本，包含已知问题（错误、警告、建议各 5+ 个），5 个干净代码（测试误报率）。\n评估指标： - 问题检出率 &gt; 80%（已知问题的检测比例） - 误报率 &lt; 10%（标记为问题但不正确的比例） - 采纳率 &gt; 60%（开发者在实际使用中采纳建议的比例）\n迭代策略： 基于误报分析精化指令，添加更多特定模式的边界条件，扩展支持语言列表。",
+    "crumbs": [
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>构建 AI 工具（Building an AI Tool）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-29.html#集成与部署",
+    "href": "chapter-29.html#集成与部署",
+    "title": "30  构建 AI 工具（Building an AI Tool）",
+    "section": "30.7 集成与部署",
+    "text": "30.7 集成与部署\n打包： 将工具封装为 API 端点、CLI 命令或 IDE 插件。\n\nAPI：REST 端点，接受 POST 请求返回 JSON 评论\nCLI：review-tool file.py 或 review-tool --stdin\nIDE 集成：通过语言服务器协议（LSP）集成到编辑器\n\n文档： 清晰的输入/输出规范，可直接运行的示例代码，错误码和解释。\n版本管理： 语义化版本，变更日志，发布说明。",
+    "crumbs": [
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>构建 AI 工具（Building an AI Tool）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-29.html#小结",
+    "href": "chapter-29.html#小结",
+    "title": "30  构建 AI 工具（Building an AI Tool）",
+    "section": "30.8 小结",
+    "text": "30.8 小结\nAI 工具是 AI 系统的基本构建块。通过将能力封装为具有清晰 Spec 的工具，你可以构建可复用、可测试、可组合的功能单元。\n构建良好 AI 工具的关键是：清晰的接口定义、精确的指令、系统化的评估和迭代。掌握了工具构建，你就为构建更复杂的 AI 系统奠定了坚实的基础。",
+    "crumbs": [
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>构建 AI 工具（Building an AI Tool）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-30.html#从想法到意图from-idea-to-intent",
+    "href": "chapter-30.html#从想法到意图from-idea-to-intent",
+    "title": "31  从理想到产品（From Idea to Product）",
+    "section": "31.2 从想法到意图（From Idea to Intent）",
+    "text": "31.2 从想法到意图（From Idea to Intent）\n大多数想法开始时是模糊的。“一个帮助人们学习新语言的工具。”\n要将这个想法转化为产品，你必须先精化意图。精化意图的过程就是目标压缩（Goal Compression）——将模糊的愿望转化为可执行的、可衡量的目标。\n\n31.2.1 压缩框架应用\n原始想法： “构建一个帮助人们学习新语言的 AI 工具。”\n精化后的意图： - 目标：帮助中文母语者在 3 个月内达到英语基础会话能力 - 对象：英语初学者（中文母语） - 上下文：移动应用，每天 15 分钟使用时间，低带宽环境可用 - 约束：免费增值模式（freemium），不需要人工教师，自动适应学习进度 - 成功标准：用户 30 日留存率 &gt; 40%，课程完成率 &gt; 60%，用户 NPS &gt; 30",
+    "crumbs": [
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>从理想到产品（From Idea to Product）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-30.html#从意图到产品-specfrom-intent-to-product-spec",
+    "href": "chapter-30.html#从意图到产品-specfrom-intent-to-product-spec",
+    "title": "31  从理想到产品（From Idea to Product）",
+    "section": "31.3 从意图到产品 Spec（From Intent to Product Spec）",
+    "text": "31.3 从意图到产品 Spec（From Intent to Product Spec）\n一旦意图被精化，创建一个产品级 Spec。产品级 Spec 定义的是产品本身的结构——用户、场景和核心功能。\n用户画像（User Personas）： - 自学用户：有明确学习目标，每天固定时间学习 - 碎片用户：利用通勤等碎片时间学习\n场景（Scenarios）： - 日常学习：每天 15 分钟课程，包含单词、对话和语法练习 - 专项练习：周末 30 分钟专项强化（发音、写作）\n核心功能（Core Features）： 1. 词汇学习：每日新词 + 间隔复习 2. 对话练习：AI 角色扮演场景 3. 发音评测：语音识别 + 反馈 4. 进度追踪：学习统计和成就系统\n体验标准（Experience Criteria）： - 每次打开不超过 15 分钟 - 反馈即时（&lt; 2 秒） - 进度可视化（图表和统计数据）",
+    "crumbs": [
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>从理想到产品（From Idea to Product）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-30.html#从产品-spec-到系统-specfrom-product-spec-to-system-spec",
+    "href": "chapter-30.html#从产品-spec-到系统-specfrom-product-spec-to-system-spec",
+    "title": "31  从理想到产品（From Idea to Product）",
+    "section": "31.4 从产品 Spec 到系统 Spec（From Product Spec to System Spec）",
+    "text": "31.4 从产品 Spec 到系统 Spec（From Product Spec to System Spec）\n每个功能需要一个系统级 Spec。这是从”产品要做什么”到”系统要做什么”的翻译。\n\n31.4.1 对话练习 Spec 示例\n输入： 用户说的话（语音或文本），当前会话上下文（场景、难度、主题）。\n输出： 反馈（正确性评分、流利度建议、发音反馈），AI 角色的回复，下一个建议提示。\n约束： 反馈在 2 秒内返回，基于真实会话场景设计，不得给出错误语法示范。\n成功标准： 用户报告”感觉像真实对话”，发音反馈有改进效果 &gt; 70% 用户。",
+    "crumbs": [
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>从理想到产品（From Idea to Product）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-30.html#从最小可用产品到迭代from-mvp-to-iteration",
+    "href": "chapter-30.html#从最小可用产品到迭代from-mvp-to-iteration",
+    "title": "31  从理想到产品（From Idea to Product）",
+    "section": "31.5 从最小可用产品到迭代（From MVP to Iteration）",
+    "text": "31.5 从最小可用产品到迭代（From MVP to Iteration）\n产品的第一个版本不应该是最终的。它应该是最小可用产品（MVP）——足以验证核心假设的最简版本。\nMVP 策略： 1. 只实现一个核心功能（对话练习） 2. 在 10-20 个真实用户中测试 3. 收集反馈，评估留存和满意度 4. 基于数据决定下一步\n迭代路径： 1. V1：仅文本对话练习（验证学习意愿） 2. V2：添加语音输入（验证技术可行性） 3. V3：添加间隔复习（验证长期留存） 4. V4：添加完整课程系统（验证付费转化）",
+    "crumbs": [
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>从理想到产品（From Idea to Product）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-30.html#产品化的常见陷阱common-productization-pitfalls",
+    "href": "chapter-30.html#产品化的常见陷阱common-productization-pitfalls",
+    "title": "31  从理想到产品（From Idea to Product）",
+    "section": "31.6 产品化的常见陷阱（Common Productization Pitfalls）",
+    "text": "31.6 产品化的常见陷阱（Common Productization Pitfalls）\n陷阱 1：过早优化。 在验证核心假设前就开始打磨细节。首先要回答的问题是”这个产品值得构建吗？“，而不是”这个按钮应该是什么颜色？”\n陷阱 2：功能膨胀。 在核心功能工作之前添加太多功能。每个新功能都增加了复杂度和维护成本。\n陷阱 3：忽视非功能需求。 仅关注功能而忽视可靠性、性能和用户体验。在 AI 产品中尤其重要——一个不稳定的聊天机器人比没有更糟。\n陷阱 4：跳过评估。 构建功能但不衡量其效果。没有评估就没有改进。每个功能都应该有明确的成功指标。",
+    "crumbs": [
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>从理想到产品（From Idea to Product）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-30.html#小结",
+    "href": "chapter-30.html#小结",
+    "title": "31  从理想到产品（From Idea to Product）",
+    "section": "31.7 小结",
+    "text": "31.7 小结\n从想法到产品的转变不是线性的。它是循环的、迭代的、不断演化的。\n最小循环（Intent → Spec → Instruction → Execution → Evaluation）不仅适用于代码生成，也适用于产品开发。每个循环发展你的理解。每个循环使产品更接近市场契合。\n关键洞见：想法并不值钱。定义和执行才值钱。AI 使执行变得容易，但定义仍然是人的工作。\n\n从想法到产品：不是一次性跳跃，而是通过最小循环的持续转化。",
+    "crumbs": [
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>从理想到产品（From Idea to Product）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-31.html#从代码到系统",
+    "href": "chapter-31.html#从代码到系统",
+    "title": "32  编程即系统设计（Programming as System Design）",
+    "section": "",
+    "text": "编程不再是写代码的行为。它是设计系统的实践。",
+    "crumbs": [
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>编程即系统设计（Programming as System Design）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-31.html#系统设计的元素elements-of-system-design",
+    "href": "chapter-31.html#系统设计的元素elements-of-system-design",
+    "title": "32  编程即系统设计（Programming as System Design）",
+    "section": "32.2 系统设计的元素（Elements of System Design）",
+    "text": "32.2 系统设计的元素（Elements of System Design）\n系统设计包括：\n架构（Architecture）： 系统如何组织。组件、关系、边界和通信流。\n交互（Interactions）： 系统如何与外部世界沟通。接口、协议和数据传输。\n行为（Behavior）： 系统如何响应输入。逻辑、状态变化和输出生成。\n演化（Evolution）： 系统如何随时间变化。版本管理、迁移路径和向后兼容性。\n信任（Trust）： 为什么用户相信系统会做它应该做的事情。可靠性、安全性、透明度。",
+    "crumbs": [
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>编程即系统设计（Programming as System Design）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-31.html#从编码者到系统设计师from-coder-to-system-designer",
+    "href": "chapter-31.html#从编码者到系统设计师from-coder-to-system-designer",
+    "title": "32  编程即系统设计（Programming as System Design）",
+    "section": "32.3 从编码者到系统设计师（From Coder to System Designer）",
+    "text": "32.3 从编码者到系统设计师（From Coder to System Designer）\n编码者： 接收规格说明 → 编写实现 → 交付代码单元。专注于正确性和效率。\n系统设计师： 定义意图 → 设计架构 → 指定行为 → 协调执行 → 评估结果。专注于一致性、可靠性和结果。\n这种转变不仅仅是技能的变化，还是身份的变化。",
+    "crumbs": [
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>编程即系统设计（Programming as System Design）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-31.html#最小循环作为系统设计工具the-minimal-loop-as-a-design-tool",
+    "href": "chapter-31.html#最小循环作为系统设计工具the-minimal-loop-as-a-design-tool",
+    "title": "32  编程即系统设计（Programming as System Design）",
+    "section": "32.4 最小循环作为系统设计工具（The Minimal Loop as a Design Tool）",
+    "text": "32.4 最小循环作为系统设计工具（The Minimal Loop as a Design Tool）\n最小循环不仅仅是编码的框架。它是系统设计的框架。每个循环通过系统——从原始意图到评估结果——发展了对系统应该如何行为的理解。\n每个后续循环都通过精化以前的理解来改进设计。\n\n当你设计系统时，你不仅在定义代码，还在定义行为、交互和长期演化。",
+    "crumbs": [
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>编程即系统设计（Programming as System Design）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-32.html#新的通用接口",
+    "href": "chapter-32.html#新的通用接口",
+    "title": "33  语言即操作系统（Language as an Operating System）",
+    "section": "",
+    "text": "语言不再是通信媒介。它是执行环境。",
+    "crumbs": [
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>语言即操作系统（Language as an Operating System）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-32.html#语言作为操作系统的含义implications-of-language-as-os",
+    "href": "chapter-32.html#语言作为操作系统的含义implications-of-language-as-os",
+    "title": "33  语言即操作系统（Language as an Operating System）",
+    "section": "33.2 语言作为操作系统的含义（Implications of Language as OS）",
+    "text": "33.2 语言作为操作系统的含义（Implications of Language as OS）\n通用接口： 所有系统都可以通过自然语言访问。无需学习不同的 API、SDK 或 UI 范式。用户通过描述他们想要什么来与系统交互。\n高级抽象： 正如操作系统管理内存和进程一样，语言 OS 管理执行细节。用户指定意图，语言 OS 处理实现。\n可扩展性： 新能力通过扩展语言来添加。就像操作系统上的新应用一样，新能力被安装并可以通过语言命令访问。",
+    "crumbs": [
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>语言即操作系统（Language as an Operating System）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-32.html#语言-os-的层layers-of-the-language-os",
+    "href": "chapter-32.html#语言-os-的层layers-of-the-language-os",
+    "title": "33  语言即操作系统（Language as an Operating System）",
+    "section": "33.3 语言 OS 的层（Layers of the Language OS）",
+    "text": "33.3 语言 OS 的层（Layers of the Language OS）\n硬件层： 基础模型（LLM）。它们提供原始计算——理解、推理和生成。\n内核层： 指令框架和工具。Spec 工程、指令设计、工具定义。这些是语言 OS 的核心系统调用。\n应用层： 专门系统。聊天机器人、数据分析工具、代码生成器。这些是语言 OS 上的”应用程序”。\n用户层： 人们用来与系统交互的界面。自然语言、语音、可视化界面。",
+    "crumbs": [
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>语言即操作系统（Language as an Operating System）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-32.html#编程作为语言-os-上的开发programming-as-development-on-the-language-os",
+    "href": "chapter-32.html#编程作为语言-os-上的开发programming-as-development-on-the-language-os",
+    "title": "33  语言即操作系统（Language as an Operating System）",
+    "section": "33.4 编程作为语言 OS 上的开发（Programming as Development on the Language OS）",
+    "text": "33.4 编程作为语言 OS 上的开发（Programming as Development on the Language OS）\n正如开发者为传统操作系统编写应用一样，LLM 时代的开发者构建在语言 OS 之上运行的系统。\nIntent → Spec → Instruction 链是语言 OS 上的”编译”过程。它将用户级意图转化为系统级指令。\n\n当语言成为操作系统时，定义能力成为最重要的开发技能。",
+    "crumbs": [
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>语言即操作系统（Language as an Operating System）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-33.html#认知分工cognitive-division-of-labor",
+    "href": "chapter-33.html#认知分工cognitive-division-of-labor",
+    "title": "34  人类 + AI 认知（Human + AI Cognition）",
+    "section": "34.2 认知分工（Cognitive Division of Labor）",
+    "text": "34.2 认知分工（Cognitive Division of Labor）\n人类擅长：定义目标、评估质量、提供上下文、做出价值判断、创造性思维、理解细微差别。\nAI 擅长：处理大量信息、模式识别、一致性执行、生成变体、非判断性处理。\n有效的系统设计认识到这些优势并相应地分配工作。人类定义”什么”，AI 处理”如何”。",
+    "crumbs": [
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>人类 + AI 认知（Human + AI Cognition）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-33.html#增强循环the-augmentation-loop",
+    "href": "chapter-33.html#增强循环the-augmentation-loop",
+    "title": "34  人类 + AI 认知（Human + AI Cognition）",
+    "section": "34.3 增强循环（The Augmentation Loop）",
+    "text": "34.3 增强循环（The Augmentation Loop）\n输入（人类）：意图 + 上下文 + 约束。处理（AI）：生成 Spec → 生成指令 → 执行 → 产生输出。输出（AI）：草稿、选项、分析。反馈（人类）：评估、精化、重定向。这个循环放大了双方的能力。\n\n人类 + AI 系统可以比任何一方单独取得的成就更大。",
+    "crumbs": [
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>人类 + AI 认知（Human + AI Cognition）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-33.html#设计人类-ai-系统designing-human-ai-systems",
+    "href": "chapter-33.html#设计人类-ai-系统designing-human-ai-systems",
+    "title": "34  人类 + AI 认知（Human + AI Cognition）",
+    "section": "34.4 设计人类 + AI 系统（Designing Human + AI Systems）",
+    "text": "34.4 设计人类 + AI 系统（Designing Human + AI Systems）\n设计人类 + AI 交互：\n1. 清晰的分工： 每个任务，明确谁是决策者——人类还是 AI。决策者拥有对结果的最终权限。\n2. 有效的接口： 人类 → AI 接口必须是结构化且精确的（Spec 思维）。AI → 人类接口必须清晰且可解释（呈现 + 解释）。\n3. 信任构建： 人类通过观察可靠的行为来学习信任 AI。AI 通过在约束内一致地产生结果来学习理解人类。\n4. 迭代精化： 人类 + AI 系统通过持续的反馈循环来改进。每次交互都使双方更接近共享的理解。",
+    "crumbs": [
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>人类 + AI 认知（Human + AI Cognition）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-33.html#新技能new-skills",
+    "href": "chapter-33.html#新技能new-skills",
+    "title": "34  人类 + AI 认知（Human + AI Cognition）",
+    "section": "34.5 新技能（New Skills）",
+    "text": "34.5 新技能（New Skills）\n人类需要发展新技能：结构化思考、精确指定、系统评估、与 AI 系统有效协作。\n这些不是传统的”编程”技能。它们是定义和协作技能——比语法或算法知识更基础，因为它们使与 AI 的有效合作成为可能。\n\n未来不属于人类或 AI。它属于能有效协作的人 + AI 系统。",
+    "crumbs": [
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>人类 + AI 认知（Human + AI Cognition）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-34.html#已经发生了根本性的改变",
+    "href": "chapter-34.html#已经发生了根本性的改变",
+    "title": "35  构建者的未来（The Future of Builders）",
+    "section": "35.2 已经发生了根本性的改变",
+    "text": "35.2 已经发生了根本性的改变\n编程不再仅仅是写代码。它是定义系统。瓶颈从执行转移到定义。最有价值的技能不再是对语法的掌握，而是清晰地思考能力——指定意图、结构化系统和设计评估。\n这不仅仅是工具或技术的变化。它是角色的根本转变：从实现者到定义者，从编码者到系统设计师，从独立的从业者到 AI 系统的协调者。",
+    "crumbs": [
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>构建者的未来（The Future of Builders）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-34.html#新角色的核心能力core-competencies-of-the-new-role",
+    "href": "chapter-34.html#新角色的核心能力core-competencies-of-the-new-role",
+    "title": "35  构建者的未来（The Future of Builders）",
+    "section": "35.3 新角色的核心能力（Core Competencies of the New Role）",
+    "text": "35.3 新角色的核心能力（Core Competencies of the New Role）\n1. 定义能力： 将模糊的意图转化为精确的、可执行的 Spec 的能力。这是新角色中最基本的技能。\n2. 架构思维： 设计系统结构——模块、交互、数据流和边界——而不陷入实现细节的能力。\n3. 评估能力： 判断系统是否按预期工作的能力。设计评估标准并解释结果。\n4. 迭代纪律： 在最小循环中持续实践的纪律——定义、执行、评估、精化。",
+    "crumbs": [
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>构建者的未来（The Future of Builders）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-34.html#对构建者的影响implications-for-builders",
+    "href": "chapter-34.html#对构建者的影响implications-for-builders",
+    "title": "35  构建者的未来（The Future of Builders）",
+    "section": "35.4 对构建者的影响（Implications for Builders）",
+    "text": "35.4 对构建者的影响（Implications for Builders）\n\n代码不再是核心输出。 定义是。Spec、指令和评估框架是比生成代码更持久的工件\n编程技能扩展了。 它现在包括需求工程、系统设计、人机交互和实验设计\n构建者的角色被提升了。 不再是翻译者，而是系统的设计者和架构师",
+    "crumbs": [
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>构建者的未来（The Future of Builders）</span>"
+    ]
+  },
+  {
+    "objectID": "chapter-34.html#最终的洞见the-final-insight",
+    "href": "chapter-34.html#最终的洞见the-final-insight",
+    "title": "35  构建者的未来（The Future of Builders）",
+    "section": "35.5 最终的洞见（The Final Insight）",
+    "text": "35.5 最终的洞见（The Final Insight）\n编程的演化是关于抽象——远离实现细节，走向人类意图。LLM 时代是这个过程的加速。\n随着执行变得商品化，定义成为新瓶颈。随着实现变得自动化，系统设计成为新核心。\n\n编程的未来不是写更多代码。是定义更好的系统。\n\n你已经拥有了在新范式中运作的框架：Intent → Spec → Instruction → Execution → Evaluation。最小循环。你拥有的技能是定义能力——精确思考和清晰沟通的能力。\n未来属于那些能定义系统的人。不是那些能写最多代码的人。\n欢迎成为构建者。\nLin Mi",
+    "crumbs": [
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>构建者的未来（The Future of Builders）</span>"
     ]
   }
 ]

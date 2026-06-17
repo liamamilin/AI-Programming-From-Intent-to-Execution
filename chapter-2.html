@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Where Does Difficulty Come From? – AI Programming: From Intent to Execution</title>
+<title>3&nbsp; 新的瓶颈：定义（The New Bottleneck: Definition） – AI Programming: From Intent to Execution</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,19 +37,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="./chapter-1.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-aa873432a3c62897e6c2091c0d30a948.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -250,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-2.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-2.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">新的瓶颈：定义（The New Bottleneck: Definition）</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -263,9 +265,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AI Programming: From Intent to Execution</a> 
         <div class="sidebar-tools-main">
@@ -283,211 +283,211 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">前言（Preface）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">转变：从编码到定义（The Shift: From Coding to Defining）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">新的瓶颈：定义（The New Bottleneck: Definition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">编程现在是什么？（What is Programming Now?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">最小循环（The Minimal Loop）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">意图：定义要做什么（Intent: Defining What to Do）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">规格说明：消除歧义（Spec: Eliminating Ambiguity）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">指令：使其可执行（Instruction: Making It Executable）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">评估与迭代（Evaluation &amp; Iteration）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">可能性空间（Possibility Space）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">从 Spec 到指令（From Spec to Instruction）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">指令设计（Instruction Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">工具使用与 API（Tool Use &amp; APIs）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">构建智能体系统（Building an Agent System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">构建聊天系统（Building a Chat System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">从理想到产品（From Idea to Product）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-31.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">编程即系统设计（Programming as System Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">语言即操作系统（Language as an Operating System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">人类 + AI 认知（Human + AI Cognition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">构建者的未来（The Future of Builders）</span></span></a>
   </div>
 </li>
     </ul>
@@ -500,36 +500,29 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#execution-has-been-outsourced" id="toc-execution-has-been-outsourced" class="nav-link active" data-scroll-target="#execution-has-been-outsourced"><span class="header-section-number">3.1</span> Execution Has Been Outsourced</a>
+  <li><a href="#难度从何而来" id="toc-难度从何而来" class="nav-link active" data-scroll-target="#难度从何而来"><span class="header-section-number">3.1</span> 难度从何而来？</a></li>
+  <li><a href="#执行已被外包execution-has-been-outsourced" id="toc-执行已被外包execution-has-been-outsourced" class="nav-link" data-scroll-target="#执行已被外包execution-has-been-outsourced"><span class="header-section-number">3.2</span> 执行已被外包（Execution Has Been Outsourced）</a>
   <ul class="collapse">
-  <li><a href="#what-outsourcing-execution-really-means" id="toc-what-outsourcing-execution-really-means" class="nav-link" data-scroll-target="#what-outsourcing-execution-really-means"><span class="header-section-number">3.1.1</span> What “outsourcing execution” really means</a></li>
+  <li><a href="#外包执行到底意味着什么" id="toc-外包执行到底意味着什么" class="nav-link" data-scroll-target="#外包执行到底意味着什么"><span class="header-section-number">3.2.1</span> “外包执行”到底意味着什么</a></li>
   </ul></li>
-  <li><a href="#the-illusion-of-productivity" id="toc-the-illusion-of-productivity" class="nav-link" data-scroll-target="#the-illusion-of-productivity"><span class="header-section-number">3.2</span> The Illusion of Productivity</a></li>
-  <li><a href="#the-new-bottleneck-definition" id="toc-the-new-bottleneck-definition" class="nav-link" data-scroll-target="#the-new-bottleneck-definition"><span class="header-section-number">3.3</span> The New Bottleneck: Definition</a>
+  <li><a href="#生产力的幻觉the-illusion-of-productivity" id="toc-生产力的幻觉the-illusion-of-productivity" class="nav-link" data-scroll-target="#生产力的幻觉the-illusion-of-productivity"><span class="header-section-number">3.3</span> 生产力的幻觉（The Illusion of Productivity）</a></li>
+  <li><a href="#新的瓶颈定义the-new-bottleneck-definition" id="toc-新的瓶颈定义the-new-bottleneck-definition" class="nav-link" data-scroll-target="#新的瓶颈定义the-new-bottleneck-definition"><span class="header-section-number">3.4</span> 新的瓶颈：定义（The New Bottleneck: Definition）</a>
   <ul class="collapse">
-  <li><a href="#symptoms-of-a-definition-bottleneck" id="toc-symptoms-of-a-definition-bottleneck" class="nav-link" data-scroll-target="#symptoms-of-a-definition-bottleneck"><span class="header-section-number">3.3.1</span> Symptoms of a Definition Bottleneck</a></li>
+  <li><a href="#定义瓶颈的症状" id="toc-定义瓶颈的症状" class="nav-link" data-scroll-target="#定义瓶颈的症状"><span class="header-section-number">3.4.1</span> 定义瓶颈的症状</a></li>
   </ul></li>
-  <li><a href="#from-code-errors-to-definition-errors" id="toc-from-code-errors-to-definition-errors" class="nav-link" data-scroll-target="#from-code-errors-to-definition-errors"><span class="header-section-number">3.4</span> From Code Errors to Definition Errors</a>
+  <li><a href="#从代码错误到定义错误from-code-errors-to-definition-errors" id="toc-从代码错误到定义错误from-code-errors-to-definition-errors" class="nav-link" data-scroll-target="#从代码错误到定义错误from-code-errors-to-definition-errors"><span class="header-section-number">3.5</span> 从代码错误到定义错误（From Code Errors to Definition Errors）</a>
   <ul class="collapse">
-  <li><a href="#before-execution-errors" id="toc-before-execution-errors" class="nav-link" data-scroll-target="#before-execution-errors"><span class="header-section-number">3.4.1</span> Before (Execution Errors)</a></li>
-  <li><a href="#now-definition-errors" id="toc-now-definition-errors" class="nav-link" data-scroll-target="#now-definition-errors"><span class="header-section-number">3.4.2</span> Now (Definition Errors)</a></li>
+  <li><a href="#以前执行错误" id="toc-以前执行错误" class="nav-link" data-scroll-target="#以前执行错误"><span class="header-section-number">3.5.1</span> 以前（执行错误）</a></li>
+  <li><a href="#现在定义错误" id="toc-现在定义错误" class="nav-link" data-scroll-target="#现在定义错误"><span class="header-section-number">3.5.2</span> 现在（定义错误）</a></li>
   </ul></li>
-  <li><a href="#productivity-reframed" id="toc-productivity-reframed" class="nav-link" data-scroll-target="#productivity-reframed"><span class="header-section-number">3.5</span> Productivity Reframed</a>
+  <li><a href="#生产力被重新定义productivity-reframed" id="toc-生产力被重新定义productivity-reframed" class="nav-link" data-scroll-target="#生产力被重新定义productivity-reframed"><span class="header-section-number">3.6</span> 生产力被重新定义（Productivity Reframed）</a>
   <ul class="collapse">
-  <li><a href="#traditional-model" id="toc-traditional-model" class="nav-link" data-scroll-target="#traditional-model"><span class="header-section-number">3.5.1</span> Traditional Model</a></li>
-  <li><a href="#llm-era-model" id="toc-llm-era-model" class="nav-link" data-scroll-target="#llm-era-model"><span class="header-section-number">3.5.2</span> LLM Era Model</a></li>
-  <li><a href="#implication" id="toc-implication" class="nav-link" data-scroll-target="#implication"><span class="header-section-number">3.5.3</span> Implication</a></li>
+  <li><a href="#传统模型" id="toc-传统模型" class="nav-link" data-scroll-target="#传统模型"><span class="header-section-number">3.6.1</span> 传统模型</a></li>
+  <li><a href="#llm-时代模型" id="toc-llm-时代模型" class="nav-link" data-scroll-target="#llm-时代模型"><span class="header-section-number">3.6.2</span> LLM 时代模型</a></li>
   </ul></li>
-  <li><a href="#the-asymmetry-of-leverage" id="toc-the-asymmetry-of-leverage" class="nav-link" data-scroll-target="#the-asymmetry-of-leverage"><span class="header-section-number">3.6</span> The Asymmetry of Leverage</a>
-  <ul class="collapse">
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">3.6.1</span> Example</a></li>
-  </ul></li>
-  <li><a href="#the-hidden-work" id="toc-the-hidden-work" class="nav-link" data-scroll-target="#the-hidden-work"><span class="header-section-number">3.7</span> The Hidden Work</a></li>
-  <li><a href="#a-change-in-mindset" id="toc-a-change-in-mindset" class="nav-link" data-scroll-target="#a-change-in-mindset"><span class="header-section-number">3.8</span> A Change in Mindset</a></li>
-  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">3.9</span> Final Insight</a></li>
-  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">3.10</span> Closing Statement</a></li>
-  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">3.11</span> Key Insight</a></li>
-  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">3.12</span> Action Hint</a></li>
+  <li><a href="#杠杆的不对称性the-asymmetry-of-leverage" id="toc-杠杆的不对称性the-asymmetry-of-leverage" class="nav-link" data-scroll-target="#杠杆的不对称性the-asymmetry-of-leverage"><span class="header-section-number">3.7</span> 杠杆的不对称性（The Asymmetry of Leverage）</a></li>
+  <li><a href="#隐形工作the-hidden-work" id="toc-隐形工作the-hidden-work" class="nav-link" data-scroll-target="#隐形工作the-hidden-work"><span class="header-section-number">3.8</span> 隐形工作（The Hidden Work）</a></li>
+  <li><a href="#思维方式的转变a-change-in-mindset" id="toc-思维方式的转变a-change-in-mindset" class="nav-link" data-scroll-target="#思维方式的转变a-change-in-mindset"><span class="header-section-number">3.9</span> 思维方式的转变（A Change in Mindset）</a></li>
   </ul>
 </nav>
     </div>
@@ -539,7 +532,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">新的瓶颈：定义（The New Bottleneck: Definition）</span></h1>
 </div>
 
 
@@ -556,293 +549,146 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In any system of production, there is always a limiting factor—the bottleneck. This is the point in the system that constrains overall performance, the place where additional investment yields the greatest return. Understanding where the bottleneck lies is essential for effective system design and optimization.</p>
-<p>In traditional software development, the bottleneck was clear and universally recognized:</p>
+<section id="难度从何而来" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="难度从何而来"><span class="header-section-number">3.1</span> 难度从何而来？</h2>
+<p>在任何生产系统中，总有一个限制因素——瓶颈。这是系统中约束整体绩效的点，是额外投入产生最大回报的地方。理解瓶颈在哪里对于有效的系统设计和优化至关重要。</p>
+<p>在传统软件开发中，瓶颈是清晰且普遍被认可的：</p>
 <ul>
-<li>Writing correct code that implements the required logic</li>
-<li>Managing the complexity of increasingly large codebases</li>
-<li>Handling edge cases and error conditions comprehensively</li>
-<li>Debugging failures and tracing execution paths through complex systems</li>
+<li>编写正确的代码来实现所需的逻辑</li>
+<li>管理日益增长的代码库的复杂性</li>
+<li>全面处理边界情况（edge cases）和错误条件</li>
+<li>调试失败并追踪复杂系统中的执行路径</li>
 </ul>
-<p>In other words:</p>
+<p>换句话说：</p>
 <blockquote class="blockquote">
-<p><strong>Execution was the bottleneck.</strong></p>
+<p><strong>执行（execution）是瓶颈。</strong></p>
 </blockquote>
-<p>The primary limitation on what could be built was not the clarity of the idea, but the ability to implement it correctly and efficiently. Better tools, faster computers, and improved methodologies all focused on alleviating this execution bottleneck.</p>
+<p>能构建什么的限制因素不是想法的清晰度，而是正确高效地实现它的能力。更好的工具、更快的计算机和改进的方法论都聚焦于缓解这个执行瓶颈。</p>
 <hr>
-<section id="execution-has-been-outsourced" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="execution-has-been-outsourced"><span class="header-section-number">3.1</span> Execution Has Been Outsourced</h2>
-<p>With the rise of Large Language Models and AI systems, execution is no longer the primary constraint in software development. This represents a fundamental shift in the economics of programming.</p>
-<p>Today, a developer equipped with modern AI tools can:</p>
+</section>
+<section id="执行已被外包execution-has-been-outsourced" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="执行已被外包execution-has-been-outsourced"><span class="header-section-number">3.2</span> 执行已被外包（Execution Has Been Outsourced）</h2>
+<p>随着大语言模型的崛起，执行不再是软件开发中的首要约束。这代表了编程经济学的根本性转变。</p>
+<p>今天，配备了现代 AI 工具的开发者可以：</p>
 <ul>
-<li>Generate working code from natural language descriptions in seconds</li>
-<li>Scaffold entire application structures in minutes that would have taken hours</li>
-<li>Reuse patterns and best practices automatically across projects</li>
-<li>Delegate routine tasks to specialized agents that handle them reliably</li>
+<li>从自然语言描述中在几秒内生成可运行的代码</li>
+<li>在几分钟内搭建完整的应用结构（原来需要数小时）</li>
+<li>在项目间自动复用模式和最佳实践</li>
+<li>将常规任务委托给专门智能体可靠地处理</li>
 </ul>
-<p>What once required hours or days of manual effort can now be accomplished in seconds or minutes. The barrier to execution has dropped dramatically.</p>
+<p>曾经需要数小时或数天的手动工作，现在可以在数秒或数分钟内完成。执行的障碍已经大幅下降。</p>
+<section id="外包执行到底意味着什么" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="外包执行到底意味着什么"><span class="header-section-number">3.2.1</span> “外包执行”到底意味着什么</h3>
+<p>执行不再由人类直接执行。而是由语言模型、智能体系统、工具链和 API 来处理。</p>
+<p>开发者不再一步步”做工作”——逐行写代码、手动处理每个边界情况。相反，他们以更高层面<strong>定义工作</strong>，系统执行具体细节。</p>
+<p>这类似于从手工制作家具到管理自动化工厂的转变。曾经亲自锯木板、钉钉子的木匠，现在设计产品并管理生产它的机器。执行已被外包，但对设计和质量保证的需求仍然存在。</p>
 <hr>
-<section id="what-outsourcing-execution-really-means" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="what-outsourcing-execution-really-means"><span class="header-section-number">3.1.1</span> What “outsourcing execution” really means</h3>
-<p>It is important to be precise about what this means. We are not saying that execution has disappeared or become unimportant. Systems still need to execute logic, code still needs to run, and implementation details still matter.</p>
-<p>What has changed is <strong>who performs the execution</strong>:</p>
+</section>
+</section>
+<section id="生产力的幻觉the-illusion-of-productivity" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="生产力的幻觉the-illusion-of-productivity"><span class="header-section-number">3.3</span> 生产力的幻觉（The Illusion of Productivity）</h2>
+<p>乍看之下，这种转变似乎是纯粹的生产力提升——一种让一切更快更简单的直接改进。开发者可以更快地生成代码、更快速地迭代、更广泛地原型设计。</p>
+<p>然而，一个新问题迅速浮现，不太明显但同样重要：</p>
 <blockquote class="blockquote">
-<p><strong>Execution is no longer performed directly by humans.</strong></p>
+<p><strong>系统精确地产生你所要求的——不多也不少。</strong></p>
 </blockquote>
-<p>Instead, it is handled by:</p>
-<ul>
-<li><strong>Language models</strong> that generate code from specifications</li>
-<li><strong>Agent systems</strong> that coordinate multi-step workflows</li>
-<li><strong>Toolchains and APIs</strong> that encapsulate complex functionality</li>
-</ul>
-<p>The developer no longer “does the work” step by step, writing each line of code and handling each edge case manually. Instead, they <strong>define the work</strong> at a higher level, and the system performs the detailed execution.</p>
-<p>This is analogous to the shift from hand-crafting furniture to managing an automated factory. The carpenter who once cut each board and drove each nail now designs the product and manages the machinery that produces it. The execution has been outsourced, but the need for design and quality assurance remains.</p>
+<p>这看似直白的陈述有着深远的影响。如果系统的输入是模糊的、不完整的、不一致的或歧义的，那么输出将忠实地反映这些品质。错误将从执行失败上游转移到定义失败。失败的诊断变得更困难，因为它们不是代码中的 bug，而是理解中的缺陷。</p>
+<p>生产力幻觉来自于假设更快的执行自动产生更好的结果。实际上，对定义不良的任务的更快执行，只是更快地产生定义不良的结果。</p>
 <hr>
 </section>
-</section>
-<section id="the-illusion-of-productivity" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="the-illusion-of-productivity"><span class="header-section-number">3.2</span> The Illusion of Productivity</h2>
-<p>At first glance, this shift seems like a pure productivity gain—a straightforward improvement that makes everything faster and easier. Developers can generate code more quickly, iterate more rapidly, and prototype more extensively.</p>
+<section id="新的瓶颈定义the-new-bottleneck-definition" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="新的瓶颈定义the-new-bottleneck-definition"><span class="header-section-number">3.4</span> 新的瓶颈：定义（The New Bottleneck: Definition）</h2>
+<p>随着执行变得更容易和更自动化，另一个约束变得可见——它之前被实现的工作量所隐藏。</p>
+<p>我们现在面临的问题一直存在但很少被审视：</p>
 <ul>
-<li>Faster development cycles as code generation accelerates</li>
-<li>Less manual effort spent on routine implementation tasks</li>
-<li>More output in less time, seemingly unlimited productivity</li>
+<li>我们究竟在构建什么？</li>
+<li>完整的需求是什么？</li>
+<li>在这个上下文中，“正确”意味着什么？</li>
+<li>系统必须遵守什么约束？</li>
+<li>我们怎么知道我们成功了？</li>
 </ul>
-<p>However, a new problem quickly emerges that is less immediately apparent but equally significant:</p>
+<p>这些问题一直很重要，但它们常常通过迭代实现的过程被隐式地处理。随着开发者编写代码并遇到问题，他们优化了对构建内容的理解。实现的反馈循环充当了一个发现机制。</p>
+<p>现在执行被外包了，这种隐式的发现过程被打乱了。我们不能再依赖编码行为来澄清我们的思考。我们必须在执行之前就保持清晰。</p>
 <blockquote class="blockquote">
-<p><strong>The system produces exactly what you ask for—no more, no less.</strong></p>
+<p><strong>定义成为瓶颈。</strong></p>
 </blockquote>
-<p>This seemingly straightforward statement has profound implications. If the input to the system is vague, incomplete, inconsistent, or ambiguous, then:</p>
+<section id="定义瓶颈的症状" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="定义瓶颈的症状"><span class="header-section-number">3.4.1</span> 定义瓶颈的症状</h3>
 <ul>
-<li>The output will faithfully reflect those qualities</li>
-<li>Errors will shift from implementation failures upstream to definition failures</li>
-<li>Failures become harder to diagnose because they are not bugs in code but bugs in understanding</li>
+<li><strong>提示不稳定</strong>：你不断重写提示或规格，但结果仍然不一致</li>
+<li><strong>“差不多”问题</strong>：系统”差不多能工作”但从未完全满足目标</li>
+<li><strong>输出不一致</strong>：类似输入在不同运行中产生显著不同的输出</li>
+<li><strong>无法阐述成功</strong>：你不能清晰解释成功是什么样或如何衡量</li>
+<li><strong>无尽调整</strong>：你发现自己无休止地做小调整而没有有意义的改进</li>
 </ul>
-<p>The illusion of productivity comes from assuming that faster execution automatically produces better results. In reality, faster execution of poorly defined tasks produces poorly defined results more quickly.</p>
+<p>这些不是传统意义上的执行失败。系统没有”坏掉”或”有 bug”——它忠实地遵循了你的定义。它们是<strong>定义失败</strong>——系统精确地做了你所要求的，但你所要求的并不是你真正想要的。</p>
 <hr>
 </section>
-<section id="the-new-bottleneck-definition" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="the-new-bottleneck-definition"><span class="header-section-number">3.3</span> The New Bottleneck: Definition</h2>
-<p>As execution becomes easier and more automated, another constraint becomes visible that was previously hidden by the effort of implementation. This constraint emerges precisely because execution is no longer the limiting factor.</p>
-<p>We now face questions that were always present but rarely examined:</p>
-<ul>
-<li>What exactly are we building?</li>
-<li>What are the complete requirements?</li>
-<li>What does “correct” mean in this context?</li>
-<li>What constraints must the system respect?</li>
-<li>How will we know when we have succeeded?</li>
-</ul>
-<p>These questions were always important, but they were often addressed implicitly through the iterative process of implementation. As developers wrote code and encountered problems, they refined their understanding of what they were building. The feedback loop of implementation served as a discovery mechanism.</p>
-<p>Now that execution is outsourced, this implicit discovery process is disrupted. We can no longer rely on the act of coding to clarify our thinking. We must be clear before we execute.</p>
+</section>
+<section id="从代码错误到定义错误from-code-errors-to-definition-errors" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="从代码错误到定义错误from-code-errors-to-definition-errors"><span class="header-section-number">3.5</span> 从代码错误到定义错误（From Code Errors to Definition Errors）</h2>
+<p>软件开发中错误的本质已经彻底改变。</p>
+<section id="以前执行错误" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="以前执行错误"><span class="header-section-number">3.5.1</span> 以前（执行错误）</h3>
+<p>在传统编程中，错误主要是技术性的和局部的：语法错误、运行时异常、逻辑 bug、性能问题。这些错误共有的特征是局部化、确定性、可通过代码检查调试。</p>
+</section>
+<section id="现在定义错误" class="level3" data-number="3.5.2">
+<h3 data-number="3.5.2" class="anchored" data-anchor-id="现在定义错误"><span class="header-section-number">3.5.2</span> 现在（定义错误）</h3>
+<p>在基于 LLM 的系统中，错误具有不同的性质：模糊的目标、缺失的约束、未定义的边界情况、薄弱的评估标准。这些新类型的错误是全局的、上下文相关的、难以追踪的。</p>
 <blockquote class="blockquote">
-<p><strong>Definition becomes the bottleneck.</strong></p>
+<p>系统不是”错”了——它是在遵循一个不完整的定义。</p>
 </blockquote>
-<hr>
-<section id="symptoms-of-a-definition-bottleneck" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="symptoms-of-a-definition-bottleneck"><span class="header-section-number">3.3.1</span> Symptoms of a Definition Bottleneck</h3>
-<p>How can you tell if you are facing a definition problem rather than an execution problem? Look for these common symptoms:</p>
-<ul>
-<li><strong>Prompt instability</strong>: You keep rewriting prompts or specifications, but results remain inconsistent and unpredictable</li>
-<li><strong>The “almost” problem</strong>: The system “almost works” but never fully satisfies the intended goal—there’s always something slightly off</li>
-<li><strong>Output inconsistency</strong>: Different runs with similar inputs produce significantly different outputs</li>
-<li><strong>Inability to articulate success</strong>: You cannot clearly explain what success looks like or how to measure it</li>
-<li><strong>Endless tweaking</strong>: You find yourself making endless small adjustments without meaningful improvement</li>
-</ul>
-<p>These are not execution failures in the traditional sense. The system is not “broken” or “buggy”—it is following your definition faithfully.</p>
-<p>They are <strong>definition failures</strong>—the system is doing exactly what you asked for, but what you asked for was not what you actually wanted.</p>
+<p>区别微妙但关键。在传统调试中，你问”代码哪里错了？“在新范式中，你问”定义哪里不完整？”</p>
 <hr>
 </section>
 </section>
-<section id="from-code-errors-to-definition-errors" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="from-code-errors-to-definition-errors"><span class="header-section-number">3.4</span> From Code Errors to Definition Errors</h2>
-<p>The nature of errors in software development has fundamentally changed. Understanding this change is crucial for effective debugging and improvement in the LLM era.</p>
-<hr>
-<section id="before-execution-errors" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="before-execution-errors"><span class="header-section-number">3.4.1</span> Before (Execution Errors)</h3>
-<p>In traditional programming, errors were primarily technical and localized:</p>
-<ul>
-<li><strong>Syntax errors</strong>—mistakes in the grammar of the programming language</li>
-<li><strong>Runtime exceptions</strong>—errors that occur during execution, such as null pointer exceptions</li>
-<li><strong>Logical bugs</strong>—incorrect implementations of intended logic</li>
-<li><strong>Performance issues</strong>—inefficient code that doesn’t meet performance requirements</li>
-</ul>
-<p>These errors shared important characteristics:</p>
-<ul>
-<li>They were <strong>localized</strong>—you could often trace them to specific lines of code or functions</li>
-<li>They were <strong>deterministic</strong>—the same input consistently produced the same error</li>
-<li>They were <strong>debuggable through code inspection</strong>—you could understand the problem by examining the code</li>
-</ul>
-<hr>
+<section id="生产力被重新定义productivity-reframed" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="生产力被重新定义productivity-reframed"><span class="header-section-number">3.6</span> 生产力被重新定义（Productivity Reframed）</h2>
+<section id="传统模型" class="level3" data-number="3.6.1">
+<h3 data-number="3.6.1" class="anchored" data-anchor-id="传统模型"><span class="header-section-number">3.6.1</span> 传统模型</h3>
+<p>生产力 = 实现技能 × 时间。改进来自写更快、调试更好、优化执行。</p>
 </section>
-<section id="now-definition-errors" class="level3" data-number="3.4.2">
-<h3 data-number="3.4.2" class="anchored" data-anchor-id="now-definition-errors"><span class="header-section-number">3.4.2</span> Now (Definition Errors)</h3>
-<p>In LLM-based systems, errors have a different character:</p>
-<ul>
-<li><strong>Ambiguous goals</strong>—the specification doesn’t clearly define what should be achieved</li>
-<li><strong>Missing constraints</strong>—important boundaries or limitations are not specified</li>
-<li><strong>Undefined edge cases</strong>—the system doesn’t know how to handle unusual inputs</li>
-<li><strong>Weak evaluation criteria</strong>—there’s no clear way to measure success</li>
-</ul>
-<p>These new types of errors are fundamentally different:</p>
-<ul>
-<li>They are <strong>global</strong>—problems often stem from the overall definition rather than specific implementation details</li>
-<li>They are <strong>context-dependent</strong>—the same definition may work in some contexts but fail in others</li>
-<li>They are <strong>difficult to trace</strong>—the error is not in the code but in the thinking that produced the specification</li>
-</ul>
+<section id="llm-时代模型" class="level3" data-number="3.6.2">
+<h3 data-number="3.6.2" class="anchored" data-anchor-id="llm-时代模型"><span class="header-section-number">3.6.2</span> LLM 时代模型</h3>
+<p>生产力 = 定义质量 × 执行能力。执行能力由 AI 提供且日益商品化，定义质量成为区分结果的主要变量。</p>
 <blockquote class="blockquote">
-<p>The system is not “wrong”—it is following an incomplete definition.</p>
+<p>AI 放大的是你的清晰度，而不是你的意图。</p>
 </blockquote>
-<p>The difference is subtle but crucial. In traditional debugging, you ask “Where is the code wrong?” In the new paradigm, you ask “Where is the definition incomplete?”</p>
+<p>这是 LLM 时代也许最重要的洞见。你带来的价值不是有好的想法——每个人都有好的想法。价值在于能够以足够的精确度定义这些想法，使系统可靠地执行它们。</p>
 <hr>
 </section>
 </section>
-<section id="productivity-reframed" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="productivity-reframed"><span class="header-section-number">3.5</span> Productivity Reframed</h2>
-<p>The shift from execution bottleneck to definition bottleneck requires us to reframe our understanding of productivity in programming. The formula for productivity has changed.</p>
-<hr>
-<section id="traditional-model" class="level3" data-number="3.5.1">
-<h3 data-number="3.5.1" class="anchored" data-anchor-id="traditional-model"><span class="header-section-number">3.5.1</span> Traditional Model</h3>
-<p>In the traditional model, productivity could be expressed as:</p>
-<pre><code>Productivity = Implementation Skill × Time</code></pre>
-<p>Improvement came from:</p>
+<section id="杠杆的不对称性the-asymmetry-of-leverage" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="杠杆的不对称性the-asymmetry-of-leverage"><span class="header-section-number">3.7</span> 杠杆的不对称性（The Asymmetry of Leverage）</h2>
+<p>这个新模型引入了一个重要的不对称性：</p>
 <ul>
-<li>Writing faster—increasing typing speed and code fluency</li>
-<li>Debugging better—finding and fixing errors more efficiently</li>
-<li>Optimizing execution—making code run faster and use fewer resources</li>
+<li><strong>定义的小改进</strong>可以产生输出质量和一致性的大幅提升</li>
+<li><strong>一个小的歧义</strong>可能导致大的失败和不可预测的行为</li>
 </ul>
-<p>The focus was on <strong>doing more in less time</strong> through technical skill and efficiency.</p>
+<p>这使得定义成为一个<strong>高杠杆活动</strong>——清晰度的小额投资在结果质量上产生大额回报。</p>
 <hr>
 </section>
-<section id="llm-era-model" class="level3" data-number="3.5.2">
-<h3 data-number="3.5.2" class="anchored" data-anchor-id="llm-era-model"><span class="header-section-number">3.5.2</span> LLM Era Model</h3>
-<p>In the new model, productivity looks different:</p>
-<pre><code>Productivity = Definition Quality × Execution Capability</code></pre>
-<p>Where:</p>
-<ul>
-<li><strong>Execution Capability</strong> is largely provided by AI systems and is increasingly commoditized</li>
-<li><strong>Definition Quality</strong> becomes the primary variable that differentiates outcomes</li>
-</ul>
-<p>This is a profound shift. It means that:</p>
-<ul>
-<li>Two developers using identical AI tools can produce vastly different results</li>
-<li>The difference is not in technical implementation skill but in clarity of thinking</li>
-<li>Improving productivity requires improving definition, not learning more syntax</li>
-</ul>
+<section id="隐形工作the-hidden-work" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="隐形工作the-hidden-work"><span class="header-section-number">3.8</span> 隐形工作（The Hidden Work）</h2>
+<p>在传统编程中，大部分工作可见且可衡量：写代码、运行测试、修复 bug。</p>
+<p>在 LLM 范式中，关键工作变得不可见：澄清意图、结构化需求、定义约束、设计评估。这项工作通常不产生即时可见的输出。它发生在思考、对话、文档和规划中。</p>
+<p>然而，这种隐形工作现在是决定成功的主要因素。没有它，可见工作——快速的代码生成、快速的原型、轻松的迭代——产生的是噪音而不是信号。</p>
 <hr>
 </section>
-<section id="implication" class="level3" data-number="3.5.3">
-<h3 data-number="3.5.3" class="anchored" data-anchor-id="implication"><span class="header-section-number">3.5.3</span> Implication</h3>
-<p>Even with the most powerful AI systems available:</p>
+<section id="思维方式的转变a-change-in-mindset" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="思维方式的转变a-change-in-mindset"><span class="header-section-number">3.9</span> 思维方式的转变（A Change in Mindset）</h2>
+<p><strong>从：</strong> “我如何实现这个？” <strong>到：</strong> “我是否已经定义得足够清晰，让系统可以执行？”</p>
+<p>在开始任何工作之前，有效的开发者在 LLM 时代会问：</p>
 <ul>
-<li><strong>Poor definition → poor results</strong>: No amount of computational power can compensate for unclear requirements</li>
-<li><strong>Clear definition → high leverage</strong>: A well-defined problem enables exponential amplification through AI execution</li>
+<li>我到底想要它做什么？</li>
+<li>这个问题的边界是什么？</li>
+<li>成功是什么样子的？</li>
+<li>我怎么知道我已经成功了？</li>
+<li>我没有说出来的、需要明确的是什么？</li>
 </ul>
+<p>只有这些问题可以清晰回答时，才应该继续执行。</p>
 <blockquote class="blockquote">
-<p>AI amplifies your clarity, not your intent.</p>
-</blockquote>
-<p>This is perhaps the most important insight of the LLM era. The value you bring is not in having good ideas—everyone has good ideas. The value is in the ability to define those ideas with sufficient precision that a system can execute them reliably.</p>
-<hr>
-</section>
-</section>
-<section id="the-asymmetry-of-leverage" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="the-asymmetry-of-leverage"><span class="header-section-number">3.6</span> The Asymmetry of Leverage</h2>
-<p>This new model introduces an important asymmetry that has significant implications for how we approach work:</p>
-<ul>
-<li>A <strong>small improvement in definition</strong> can produce large gains in output quality and consistency</li>
-<li>A <strong>small ambiguity</strong> can cause large failures and unpredictable behavior</li>
-</ul>
-<p>This makes definition a <strong>high-leverage activity</strong>—small investments in clarity yield large returns in outcome quality.</p>
-<hr>
-<section id="example" class="level3" data-number="3.6.1">
-<h3 data-number="3.6.1" class="anchored" data-anchor-id="example"><span class="header-section-number">3.6.1</span> Example</h3>
-<p>Consider two developers using the same AI system to build a document summarization tool:</p>
-<ul>
-<li><strong>Developer A</strong> provides vague instructions: “Summarize this document”
-<ul>
-<li>Results vary widely between runs</li>
-<li>Sometimes summaries are too long, sometimes too brief</li>
-<li>Key information is sometimes missed</li>
-<li>The tool is unreliable and frustrating to use</li>
-</ul></li>
-<li><strong>Developer B</strong> provides structured definitions:
-<ul>
-<li>“Extract the 3-5 most important points”</li>
-<li>“Each point should be 10-15 words”</li>
-<li>“Prioritize actionable insights”</li>
-<li>“Exclude introductory and concluding material”</li>
-<li>Results are consistent and predictable</li>
-<li>The tool reliably produces useful summaries</li>
-</ul></li>
-</ul>
-<p>The difference is not in the tools used—both have access to the same AI capabilities. The difference is in <strong>definition quality</strong>.</p>
-<hr>
-</section>
-</section>
-<section id="the-hidden-work" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="the-hidden-work"><span class="header-section-number">3.7</span> The Hidden Work</h2>
-<p>In traditional programming, most of the effort involved in creating software was visible and measurable:</p>
-<ul>
-<li>Writing code—the physical act of creating the implementation</li>
-<li>Running tests—verifying that code works as intended</li>
-<li>Fixing bugs—tracing and correcting errors</li>
-</ul>
-<p>These activities produce tangible outputs that can be counted, measured, and tracked. They fit easily into project management frameworks and productivity metrics.</p>
-<p>In the LLM paradigm, much of the critical work becomes invisible:</p>
-<ul>
-<li><strong>Clarifying intent</strong>—making vague ideas precise and actionable</li>
-<li><strong>Structuring requirements</strong>—organizing chaotic thoughts into coherent specifications</li>
-<li><strong>Defining constraints</strong>—articulating boundaries and limitations explicitly</li>
-<li><strong>Designing evaluation</strong>—creating criteria for measuring success</li>
-</ul>
-<p>This work often produces no immediate visible output. It happens in thinking, in conversations, in documentation, and in planning. It feels like “thinking” rather than “building,” and as a result, it is often underestimated and under-resourced.</p>
-<p>Yet this invisible work is now the dominant factor in determining success. Without it, the visible work—the rapid code generation, the quick prototyping, the easy iteration—produces noise rather than signal.</p>
-<hr>
-</section>
-<section id="a-change-in-mindset" class="level2" data-number="3.8">
-<h2 data-number="3.8" class="anchored" data-anchor-id="a-change-in-mindset"><span class="header-section-number">3.8</span> A Change in Mindset</h2>
-<p>To operate effectively in this new paradigm, one must fundamentally shift mindset. The default mode of thinking for experienced developers must be updated.</p>
-<p><strong>From:</strong> - “How do I implement this?”</p>
-<p><strong>To:</strong> - “Have I defined this clearly enough for a system to execute?”</p>
-<p>This seems like a small shift, but it represents a fundamental change in approach. The first question focuses on implementation technique. The second question focuses on definition quality.</p>
-<p>Before starting any work, the effective developer in the LLM era asks:</p>
-<ul>
-<li>What exactly do I want this to do?</li>
-<li>What are the boundaries of this problem?</li>
-<li>What does success look like?</li>
-<li>How will I know when I’ve achieved it?</li>
-<li>What am I not saying that needs to be explicit?</li>
-</ul>
-<p>Only when these questions can be answered clearly should the developer proceed to execution.</p>
-<hr>
-</section>
-<section id="final-insight" class="level2" data-number="3.9">
-<h2 data-number="3.9" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">3.9</span> Final Insight</h2>
-<p>The bottleneck in programming has moved. Not from one tool to another, and not from one technique to another, but from one layer of thinking to another.</p>
-<blockquote class="blockquote">
-<p>Execution has been outsourced.<br>
-Definition has become the constraint.</p>
-</blockquote>
-<p>This shift represents both a challenge and an opportunity. The challenge is that we must develop new skills and new ways of thinking. The opportunity is that by mastering definition, we can achieve levels of productivity and capability that were previously impossible.</p>
-<hr>
-</section>
-<section id="closing-statement" class="level2" data-number="3.10">
-<h2 data-number="3.10" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">3.10</span> Closing Statement</h2>
-<p>In the LLM era, the quality of what you build is no longer limited by your ability to execute code. It is limited by your ability to define problems, structures, and outcomes with clarity and precision.</p>
-<blockquote class="blockquote">
-<p>The better you define, the more powerful the system becomes.</p>
-</blockquote>
-<hr>
-</section>
-<section id="key-insight" class="level2" data-number="3.11">
-<h2 data-number="3.11" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">3.11</span> Key Insight</h2>
-<blockquote class="blockquote">
-<p>The bottleneck has shifted from execution to definition. AI provides unlimited execution capability; the limiting factor is your ability to define clearly what should be built.</p>
-</blockquote>
-</section>
-<section id="action-hint" class="level2" data-number="3.12">
-<h2 data-number="3.12" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">3.12</span> Action Hint</h2>
-<blockquote class="blockquote">
-<p>Before your next AI-assisted coding session, write down the definition first. Use a structured format: goal, inputs, outputs, constraints, and success criteria. Only after you can explain what you want clearly should you let the AI execute.</p>
+<p>执行已被外包。定义已成为约束。</p>
 </blockquote>
 
 
@@ -1264,13 +1110,13 @@ Definition has become the constraint.</p>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-1.html" class="pagination-link" aria-label="The Shift: From Coding to Defining">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span>
+      <a href="./chapter-1.html" class="pagination-link" aria-label="转变：从编码到定义（The Shift: From Coding to Defining）">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">转变：从编码到定义（The Shift: From Coding to Defining）</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-3.html" class="pagination-link" aria-label="What is Programming Now?">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-3.html" class="pagination-link" aria-label="编程现在是什么？（What is Programming Now?）">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">编程现在是什么？（What is Programming Now?）</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>17&nbsp; Spec Agent – AI Programming: From Intent to Execution</title>
+<title>17&nbsp; 规格智能体（Spec Agent） – AI Programming: From Intent to Execution</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,19 +37,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="./chapter-15.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-aa873432a3c62897e6c2091c0d30a948.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -250,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-16.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-16.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -263,9 +265,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AI Programming: From Intent to Execution</a> 
         <div class="sidebar-tools-main">
@@ -283,211 +283,211 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">前言（Preface）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">转变：从编码到定义（The Shift: From Coding to Defining）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">新的瓶颈：定义（The New Bottleneck: Definition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">编程现在是什么？（What is Programming Now?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">最小循环（The Minimal Loop）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">意图：定义要做什么（Intent: Defining What to Do）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">规格说明：消除歧义（Spec: Eliminating Ambiguity）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">指令：使其可执行（Instruction: Making It Executable）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">评估与迭代（Evaluation &amp; Iteration）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">可能性空间（Possibility Space）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-16.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">从 Spec 到指令（From Spec to Instruction）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">指令设计（Instruction Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">工具使用与 API（Tool Use &amp; APIs）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">构建智能体系统（Building an Agent System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">构建聊天系统（Building a Chat System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">从理想到产品（From Idea to Product）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-31.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">编程即系统设计（Programming as System Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">语言即操作系统（Language as an Operating System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">人类 + AI 认知（Human + AI Cognition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">构建者的未来（The Future of Builders）</span></span></a>
   </div>
 </li>
     </ul>
@@ -500,52 +500,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#from-manual-definition-to-assisted-definition" id="toc-from-manual-definition-to-assisted-definition" class="nav-link active" data-scroll-target="#from-manual-definition-to-assisted-definition"><span class="header-section-number">17.1</span> From Manual Definition to Assisted Definition</a></li>
-  <li><a href="#what-is-a-spec-agent" id="toc-what-is-a-spec-agent" class="nav-link" data-scroll-target="#what-is-a-spec-agent"><span class="header-section-number">17.2</span> What is a Spec Agent?</a>
-  <ul class="collapse">
-  <li><a href="#core-function" id="toc-core-function" class="nav-link" data-scroll-target="#core-function"><span class="header-section-number">17.2.1</span> Core Function</a></li>
-  </ul></li>
-  <li><a href="#why-spec-agents-are-needed" id="toc-why-spec-agents-are-needed" class="nav-link" data-scroll-target="#why-spec-agents-are-needed"><span class="header-section-number">17.3</span> Why Spec Agents Are Needed</a></li>
-  <li><a href="#the-shift-ai-writes-the-spec" id="toc-the-shift-ai-writes-the-spec" class="nav-link" data-scroll-target="#the-shift-ai-writes-the-spec"><span class="header-section-number">17.4</span> The Shift: AI Writes the Spec</a>
-  <ul class="collapse">
-  <li><a href="#this-is-a-critical-shift" id="toc-this-is-a-critical-shift" class="nav-link" data-scroll-target="#this-is-a-critical-shift"><span class="header-section-number">17.4.1</span> This is a critical shift</a></li>
-  </ul></li>
-  <li><a href="#the-spec-generation-process" id="toc-the-spec-generation-process" class="nav-link" data-scroll-target="#the-spec-generation-process"><span class="header-section-number">17.5</span> The Spec Generation Process</a>
-  <ul class="collapse">
-  <li><a href="#step-1-input-intent" id="toc-step-1-input-intent" class="nav-link" data-scroll-target="#step-1-input-intent"><span class="header-section-number">17.5.1</span> Step 1: Input Intent</a></li>
-  <li><a href="#step-2-spec-generation" id="toc-step-2-spec-generation" class="nav-link" data-scroll-target="#step-2-spec-generation"><span class="header-section-number">17.5.2</span> Step 2: Spec Generation</a></li>
-  <li><a href="#step-3-human-review" id="toc-step-3-human-review" class="nav-link" data-scroll-target="#step-3-human-review"><span class="header-section-number">17.5.3</span> Step 3: Human Review</a></li>
-  <li><a href="#step-4-final-spec" id="toc-step-4-final-spec" class="nav-link" data-scroll-target="#step-4-final-spec"><span class="header-section-number">17.5.4</span> Step 4: Final Spec</a></li>
-  </ul></li>
-  <li><a href="#humanai-collaboration-model" id="toc-humanai-collaboration-model" class="nav-link" data-scroll-target="#humanai-collaboration-model"><span class="header-section-number">17.6</span> Human–AI Collaboration Model</a>
-  <ul class="collapse">
-  <li><a href="#roles" id="toc-roles" class="nav-link" data-scroll-target="#roles"><span class="header-section-number">17.6.1</span> Roles</a></li>
-  </ul></li>
-  <li><a href="#benefits-of-spec-agents" id="toc-benefits-of-spec-agents" class="nav-link" data-scroll-target="#benefits-of-spec-agents"><span class="header-section-number">17.7</span> Benefits of Spec Agents</a>
-  <ul class="collapse">
-  <li><a href="#speed" id="toc-speed" class="nav-link" data-scroll-target="#speed"><span class="header-section-number">17.7.1</span> 1. Speed</a></li>
-  <li><a href="#coverage" id="toc-coverage" class="nav-link" data-scroll-target="#coverage"><span class="header-section-number">17.7.2</span> 2. Coverage</a></li>
-  <li><a href="#consistency" id="toc-consistency" class="nav-link" data-scroll-target="#consistency"><span class="header-section-number">17.7.3</span> 3. Consistency</a></li>
-  <li><a href="#accessibility" id="toc-accessibility" class="nav-link" data-scroll-target="#accessibility"><span class="header-section-number">17.7.4</span> 4. Accessibility</a></li>
-  </ul></li>
-  <li><a href="#limitations-of-spec-agents" id="toc-limitations-of-spec-agents" class="nav-link" data-scroll-target="#limitations-of-spec-agents"><span class="header-section-number">17.8</span> Limitations of Spec Agents</a>
-  <ul class="collapse">
-  <li><a href="#dependence-on-input-quality" id="toc-dependence-on-input-quality" class="nav-link" data-scroll-target="#dependence-on-input-quality"><span class="header-section-number">17.8.1</span> 1. Dependence on Input Quality</a></li>
-  <li><a href="#over-trust" id="toc-over-trust" class="nav-link" data-scroll-target="#over-trust"><span class="header-section-number">17.8.2</span> 2. Over-Trust</a></li>
-  <li><a href="#lack-of-context" id="toc-lack-of-context" class="nav-link" data-scroll-target="#lack-of-context"><span class="header-section-number">17.8.3</span> 3. Lack of Context</a></li>
-  <li><a href="#generic-outputs" id="toc-generic-outputs" class="nav-link" data-scroll-target="#generic-outputs"><span class="header-section-number">17.8.4</span> 4. Generic Outputs</a></li>
-  </ul></li>
-  <li><a href="#when-to-use-spec-agents" id="toc-when-to-use-spec-agents" class="nav-link" data-scroll-target="#when-to-use-spec-agents"><span class="header-section-number">17.9</span> When to Use Spec Agents</a>
-  <ul class="collapse">
-  <li><a href="#when-to-use-spec-agents-1" id="toc-when-to-use-spec-agents-1" class="nav-link" data-scroll-target="#when-to-use-spec-agents-1"><span class="header-section-number">17.9.1</span> When to Use Spec Agents</a></li>
-  <li><a href="#when-not-to-rely-on-them-fully" id="toc-when-not-to-rely-on-them-fully" class="nav-link" data-scroll-target="#when-not-to-rely-on-them-fully"><span class="header-section-number">17.9.2</span> When Not to Rely on Them Fully</a></li>
-  </ul></li>
-  <li><a href="#spec-agents-as-a-layer-in-the-system" id="toc-spec-agents-as-a-layer-in-the-system" class="nav-link" data-scroll-target="#spec-agents-as-a-layer-in-the-system"><span class="header-section-number">17.10</span> Spec Agents as a Layer in the System</a></li>
-  <li><a href="#evolution-of-spec-agents" id="toc-evolution-of-spec-agents" class="nav-link" data-scroll-target="#evolution-of-spec-agents"><span class="header-section-number">17.11</span> Evolution of Spec Agents</a></li>
-  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">17.12</span> Final Insight</a></li>
-  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">17.13</span> Closing Statement</a></li>
-  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">17.14</span> Key Insight</a></li>
-  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">17.15</span> Action Hint</a></li>
+  <li><a href="#从手动定义到辅助定义" id="toc-从手动定义到辅助定义" class="nav-link active" data-scroll-target="#从手动定义到辅助定义"><span class="header-section-number">17.1</span> 从手动定义到辅助定义</a></li>
+  <li><a href="#什么是规格智能体what-is-a-spec-agent" id="toc-什么是规格智能体what-is-a-spec-agent" class="nav-link" data-scroll-target="#什么是规格智能体what-is-a-spec-agent"><span class="header-section-number">17.2</span> 什么是规格智能体？（What is a Spec Agent?）</a></li>
+  <li><a href="#为什么需要规格智能体why-spec-agents-are-needed" id="toc-为什么需要规格智能体why-spec-agents-are-needed" class="nav-link" data-scroll-target="#为什么需要规格智能体why-spec-agents-are-needed"><span class="header-section-number">17.3</span> 为什么需要规格智能体（Why Spec Agents Are Needed）</a></li>
+  <li><a href="#规格智能体的工作流spec-agent-workflow" id="toc-规格智能体的工作流spec-agent-workflow" class="nav-link" data-scroll-target="#规格智能体的工作流spec-agent-workflow"><span class="header-section-number">17.4</span> 规格智能体的工作流（Spec Agent Workflow）</a></li>
+  <li><a href="#人与智能体的合作human-agent-collaboration" id="toc-人与智能体的合作human-agent-collaboration" class="nav-link" data-scroll-target="#人与智能体的合作human-agent-collaboration"><span class="header-section-number">17.5</span> 人与智能体的合作（Human-Agent Collaboration）</a></li>
   </ul>
 </nav>
     </div>
@@ -555,7 +514,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></h1>
+<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></h1>
 </div>
 
 
@@ -572,415 +531,54 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="from-manual-definition-to-assisted-definition" class="level2" data-number="17.1">
-<h2 data-number="17.1" class="anchored" data-anchor-id="from-manual-definition-to-assisted-definition"><span class="header-section-number">17.1</span> From Manual Definition to Assisted Definition</h2>
-<p>In Template-based Spec, humans define specifications directly, using templates to guide their thinking. This approach works well when:</p>
-<ul>
-<li>The problem is familiar—you understand the domain and requirements</li>
-<li>The structure is clear—you know what components are needed</li>
-<li>The user understands the system—you have the expertise to create good specs</li>
-</ul>
-<p>However, in many real-world scenarios, these conditions are not met:</p>
-<ul>
-<li>The intent is vague—the goal is not yet clear or precise</li>
-<li>The structure is unclear—you don’t know what components are needed</li>
-<li>The user cannot easily translate ideas into specs—lacking expertise or experience</li>
-</ul>
-<p>This creates a challenge: how do we create good specs when human expertise is limited or the problem is poorly understood?</p>
-<p>This leads to a new approach:</p>
+<section id="从手动定义到辅助定义" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="从手动定义到辅助定义"><span class="header-section-number">17.1</span> 从手动定义到辅助定义</h2>
+<p>在基于模板的 Spec 中，人类直接定义规格说明，使用模板指导思维。这种方法在问题熟悉、结构清晰、用户理解系统时工作良好。</p>
+<p>但在许多现实场景中，这些条件不满足：意图模糊、结构不清晰、用户不能轻松地将想法转化为 Spec。</p>
+<p>这带来了一个挑战：当人类专业知识有限或问题被理解得较差时，我们如何创建好的 Spec？</p>
+<p>这引领了一种新方法：</p>
 <blockquote class="blockquote">
-<p><strong>Using agents to generate specifications</strong></p>
+<p><strong>使用 AI 智能体生成规格说明</strong></p>
 </blockquote>
 <hr>
 </section>
-<section id="what-is-a-spec-agent" class="level2" data-number="17.2">
-<h2 data-number="17.2" class="anchored" data-anchor-id="what-is-a-spec-agent"><span class="header-section-number">17.2</span> What is a Spec Agent?</h2>
-<p>A Spec Agent is a system that:</p>
+<section id="什么是规格智能体what-is-a-spec-agent" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="什么是规格智能体what-is-a-spec-agent"><span class="header-section-number">17.2</span> 什么是规格智能体？（What is a Spec Agent?）</h2>
+<p>规格智能体（Spec Agent）是一个：</p>
 <blockquote class="blockquote">
-<p><strong>Transforms human intent into a structured specification</strong></p>
+<p><strong>将人类意图转化为结构化规格说明的系统</strong></p>
 </blockquote>
-<p>It acts as an intelligent assistant that helps bridge the gap between vague human ideas and precise machine-executable specifications.</p>
-<p>A Spec Agent takes as input:</p>
-<ul>
-<li>Natural language descriptions of what you want</li>
-<li>Partial ideas or fragments of requirements</li>
-<li>Incomplete goals that need refinement</li>
-</ul>
-<p>And produces:</p>
-<ul>
-<li>A structured spec with defined inputs, outputs, constraints, and success criteria</li>
-</ul>
-<hr>
-<section id="core-function" class="level3" data-number="17.2.1">
-<h3 data-number="17.2.1" class="anchored" data-anchor-id="core-function"><span class="header-section-number">17.2.1</span> Core Function</h3>
-<pre><code>Intent (informal) → Spec Agent → Spec (structured)</code></pre>
-<hr>
+<p>它充当智能助手，帮助弥合模糊的人类想法与精确的机器可执行规格说明之间的差距。</p>
+<p>规格智能体以自然语言描述、部分想法或片段、需要精化的不完整目标为输入，并产生一个结构化的 Spec，包含定义的输入、输出、约束和成功标准。</p>
+<pre><code>意图（非正式）→ 规格智能体 → Spec（结构化）</code></pre>
 <blockquote class="blockquote">
-<p>The agent does not execute the system. It defines it.</p>
+<p>智能体不执行系统。它定义系统。</p>
 </blockquote>
-<p>This is a crucial distinction. A Spec Agent is not an implementation tool—it’s a definition tool. It helps you clarify what you want before you try to build it.</p>
+<p>这是一个关键区别。规格智能体不是实现工具——它是定义工具。它帮助你在尝试构建之前澄清你想要什么。</p>
 <hr>
 </section>
-</section>
-<section id="why-spec-agents-are-needed" class="level2" data-number="17.3">
-<h2 data-number="17.3" class="anchored" data-anchor-id="why-spec-agents-are-needed"><span class="header-section-number">17.3</span> Why Spec Agents Are Needed</h2>
-<p>Spec Engineering is cognitively demanding. It requires:</p>
-<ul>
-<li><strong>Precision</strong>—choosing words carefully to avoid ambiguity</li>
-<li><strong>Structure</strong>—organizing complex requirements into coherent form</li>
-<li><strong>Awareness of system behavior</strong>—understanding how systems interpret specifications</li>
-</ul>
-<p>Many users struggle with these demands:</p>
-<ul>
-<li><strong>Missing constraints</strong>—forgetting important limitations or requirements</li>
-<li><strong>Unclear outputs</strong>—not specifying what results should look like</li>
-<li><strong>Weak evaluation criteria</strong>—not defining how to measure success</li>
-</ul>
-<p>Spec Agents help by:</p>
-<ul>
-<li><strong>Filling gaps</strong>—identifying and adding missing components</li>
-<li><strong>Suggesting structure</strong>—proposing ways to organize the specification</li>
-<li><strong>Making implicit assumptions explicit</strong>—revealing hidden assumptions that should be stated</li>
-</ul>
+<section id="为什么需要规格智能体why-spec-agents-are-needed" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="为什么需要规格智能体why-spec-agents-are-needed"><span class="header-section-number">17.3</span> 为什么需要规格智能体（Why Spec Agents Are Needed）</h2>
+<p>规格智能体解决了几个关键挑战：</p>
+<p><strong>填补专业知识差距：</strong> 不是每个人都善于定义系统。规格智能体使没有经验的人能够创建高质量的 Spec。</p>
+<p><strong>加速定义过程：</strong> 手动创建 Spec 可能很慢。智能体可以在几秒钟内从粗略的想法生成结构化的 Spec。</p>
+<p><strong>减少遗忘错误：</strong> 人类经常忘记指定约束、边界情况或成功标准。规格智能体一致地包含所有必需的元素。</p>
 <hr>
+</section>
+<section id="规格智能体的工作流spec-agent-workflow" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="规格智能体的工作流spec-agent-workflow"><span class="header-section-number">17.4</span> 规格智能体的工作流（Spec Agent Workflow）</h2>
+<p><strong>1. 接收意图：</strong> 智能体接收用户的自然语言描述。“我需要一个从文档中提取关键信息的系统。”</p>
+<p><strong>2. 交互式澄清：</strong> 如果意图不明确，智能体提出问题以澄清。关键信息涉及哪些文档？提取什么样的关键信息？输出格式是什么？</p>
+<p><strong>3. 生成 Spec：</strong> 智能体生成包含输入、输出、约束和成功标准的结构化 Spec。</p>
+<p><strong>4. 迭代精化：</strong> 用户可以审查 Spec 并提出修改要求，直到它满足需求。</p>
+<hr>
+</section>
+<section id="人与智能体的合作human-agent-collaboration" class="level2" data-number="17.5">
+<h2 data-number="17.5" class="anchored" data-anchor-id="人与智能体的合作human-agent-collaboration"><span class="header-section-number">17.5</span> 人与智能体的合作（Human-Agent Collaboration）</h2>
+<p>规格智能体的目的不是取代人类判断。它是增强它。智能体处理结构化工作，人类做出关于什么是正确的最终决定。</p>
+<p>有效的合作关系：智能体起草，人类审查和批准。智能体建议，人类决定。智能体提供完整的覆盖，人类提供上下文和理解。</p>
 <blockquote class="blockquote">
-<p>They reduce the cognitive load of definition, making good specs accessible to more people.</p>
-</blockquote>
-<hr>
-</section>
-<section id="the-shift-ai-writes-the-spec" class="level2" data-number="17.4">
-<h2 data-number="17.4" class="anchored" data-anchor-id="the-shift-ai-writes-the-spec"><span class="header-section-number">17.4</span> The Shift: AI Writes the Spec</h2>
-<p>The evolution of AI in programming has followed a clear trajectory:</p>
-<p><strong>Traditionally:</strong> - Humans write code—manually implementing logic and behavior</p>
-<p><strong>Then:</strong> - Humans write prompts—crafting natural language requests for AI systems</p>
-<p><strong>Now:</strong> - AI can write specifications—generating structured definitions from intent</p>
-<hr>
-<section id="this-is-a-critical-shift" class="level3" data-number="17.4.1">
-<h3 data-number="17.4.1" class="anchored" data-anchor-id="this-is-a-critical-shift"><span class="header-section-number">17.4.1</span> This is a critical shift</h3>
-<p>Instead of:</p>
-<ul>
-<li>Using AI to generate output—code, text, or other results</li>
-</ul>
-<p>We use AI to:</p>
-<blockquote class="blockquote">
-<p><strong>Define the system that generates output</strong></p>
-</blockquote>
-<p>This represents a move up the abstraction ladder. AI is no longer just doing the work—it’s helping us define what work should be done.</p>
-<hr>
-</section>
-</section>
-<section id="the-spec-generation-process" class="level2" data-number="17.5">
-<h2 data-number="17.5" class="anchored" data-anchor-id="the-spec-generation-process"><span class="header-section-number">17.5</span> The Spec Generation Process</h2>
-<p>A typical Spec Agent workflow follows a clear sequence of steps, with human oversight and refinement at key points.</p>
-<hr>
-<section id="step-1-input-intent" class="level3" data-number="17.5.1">
-<h3 data-number="17.5.1" class="anchored" data-anchor-id="step-1-input-intent"><span class="header-section-number">17.5.1</span> Step 1: Input Intent</h3>
-<p>The user provides their intent in natural language, often as a rough or incomplete description.</p>
-<p><strong>Example:</strong> &gt; “Build a system that summarizes articles.”</p>
-<p>This is vague and incomplete, but it captures the general idea.</p>
-<hr>
-</section>
-<section id="step-2-spec-generation" class="level3" data-number="17.5.2">
-<h3 data-number="17.5.2" class="anchored" data-anchor-id="step-2-spec-generation"><span class="header-section-number">17.5.2</span> Step 2: Spec Generation</h3>
-<p>The agent analyzes the intent and produces a structured specification, including suggested components.</p>
-<p><strong>Generated Spec:</strong> - Input: Text article (string, max 5000 words) - Output: Summary (string, 100-200 words), Key points (array, 3-5 items) - Constraints: Must preserve main ideas, must not add new information - Success Criteria: Human evaluation score &gt;= 4/5 for relevance and accuracy</p>
-<p>The agent fills in gaps and proposes structure.</p>
-<hr>
-</section>
-<section id="step-3-human-review" class="level3" data-number="17.5.3">
-<h3 data-number="17.5.3" class="anchored" data-anchor-id="step-3-human-review"><span class="header-section-number">17.5.3</span> Step 3: Human Review</h3>
-<p>The user reviews the generated spec, making corrections and additions:</p>
-<ul>
-<li>Editing the spec to better match their intent</li>
-<li>Adding missing details or constraints</li>
-<li>Refining the success criteria</li>
-</ul>
-<p>This ensures the spec reflects human understanding and priorities.</p>
-<hr>
-</section>
-<section id="step-4-final-spec" class="level3" data-number="17.5.4">
-<h3 data-number="17.5.4" class="anchored" data-anchor-id="step-4-final-spec"><span class="header-section-number">17.5.4</span> Step 4: Final Spec</h3>
-<p>The refined spec is used for:</p>
-<ul>
-<li>Instruction generation—creating executable protocols</li>
-<li>System execution—guiding AI behavior</li>
-<li>Evaluation—measuring success</li>
-</ul>
-<hr>
-<pre><code>Human Intent → Agent → Draft Spec → Human Refinement → Final Spec</code></pre>
-<hr>
-</section>
-</section>
-<section id="humanai-collaboration-model" class="level2" data-number="17.6">
-<h2 data-number="17.6" class="anchored" data-anchor-id="humanai-collaboration-model"><span class="header-section-number">17.6</span> Human–AI Collaboration Model</h2>
-<p>Spec Agents introduce a new interaction pattern between humans and AI:</p>
-<blockquote class="blockquote">
-<p><strong>Human + AI co-create the definition</strong></p>
-</blockquote>
-<p>This is not AI replacing human thinking, nor is it humans doing all the work alone. It’s a collaborative process that leverages the strengths of both.</p>
-<hr>
-<section id="roles" class="level3" data-number="17.6.1">
-<h3 data-number="17.6.1" class="anchored" data-anchor-id="roles"><span class="header-section-number">17.6.1</span> Roles</h3>
-<hr>
-<section id="human" class="level4" data-number="17.6.1.1">
-<h4 data-number="17.6.1.1" class="anchored" data-anchor-id="human"><span class="header-section-number">17.6.1.1</span> Human</h4>
-<ul>
-<li><strong>Defines high-level intent</strong>—provides the overall goal and direction</li>
-<li><strong>Provides context</strong>—shares domain knowledge and requirements</li>
-<li><strong>Makes final decisions</strong>—approves, modifies, or rejects the spec</li>
-</ul>
-<hr>
-</section>
-<section id="agent" class="level4" data-number="17.6.1.2">
-<h4 data-number="17.6.1.2" class="anchored" data-anchor-id="agent"><span class="header-section-number">17.6.1.2</span> Agent</h4>
-<ul>
-<li><strong>Structures information</strong>—organizes vague ideas into coherent form</li>
-<li><strong>Suggests constraints</strong>—proposes boundaries and limitations</li>
-<li><strong>Identifies missing elements</strong>—finds gaps that need to be filled</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>The human defines meaning. The agent defines structure.</p>
-</blockquote>
-<p>Together, they create specifications that neither could produce alone as effectively.</p>
-<hr>
-</section>
-</section>
-</section>
-<section id="benefits-of-spec-agents" class="level2" data-number="17.7">
-<h2 data-number="17.7" class="anchored" data-anchor-id="benefits-of-spec-agents"><span class="header-section-number">17.7</span> Benefits of Spec Agents</h2>
-<p>Using Spec Agents provides several significant advantages:</p>
-<hr>
-<section id="speed" class="level3" data-number="17.7.1">
-<h3 data-number="17.7.1" class="anchored" data-anchor-id="speed"><span class="header-section-number">17.7.1</span> 1. Speed</h3>
-<ul>
-<li>Faster spec creation—generates initial structure in seconds</li>
-<li>Reduced manual effort—less time spent organizing and structuring</li>
-<li>Rapid iteration—quickly explore different specifications</li>
-</ul>
-<hr>
-</section>
-<section id="coverage" class="level3" data-number="17.7.2">
-<h3 data-number="17.7.2" class="anchored" data-anchor-id="coverage"><span class="header-section-number">17.7.2</span> 2. Coverage</h3>
-<ul>
-<li>Fewer missing components—agent identifies required elements</li>
-<li>More complete definitions—comprehensive coverage of requirements</li>
-<li>Better structure—organized and coherent specifications</li>
-</ul>
-<hr>
-</section>
-<section id="consistency" class="level3" data-number="17.7.3">
-<h3 data-number="17.7.3" class="anchored" data-anchor-id="consistency"><span class="header-section-number">17.7.3</span> 3. Consistency</h3>
-<ul>
-<li>Standardized structure—specs follow consistent patterns</li>
-<li>Reduced variability—similar problems get similar specs</li>
-<li>Improved quality—systematic approach reduces errors</li>
-</ul>
-<hr>
-</section>
-<section id="accessibility" class="level3" data-number="17.7.4">
-<h3 data-number="17.7.4" class="anchored" data-anchor-id="accessibility"><span class="header-section-number">17.7.4</span> 4. Accessibility</h3>
-<ul>
-<li>Lower barrier for beginners—people new to spec creation can produce good specs</li>
-<li>Enables non-experts—domain experts without technical training can define systems</li>
-<li>Democratizes specification—more people can participate in system definition</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Spec Agents democratize specification, making it accessible to a broader range of people.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="limitations-of-spec-agents" class="level2" data-number="17.8">
-<h2 data-number="17.8" class="anchored" data-anchor-id="limitations-of-spec-agents"><span class="header-section-number">17.8</span> Limitations of Spec Agents</h2>
-<p>Despite their benefits, Spec Agents have important limitations that must be understood:</p>
-<hr>
-<section id="dependence-on-input-quality" class="level3" data-number="17.8.1">
-<h3 data-number="17.8.1" class="anchored" data-anchor-id="dependence-on-input-quality"><span class="header-section-number">17.8.1</span> 1. Dependence on Input Quality</h3>
-<ul>
-<li>Poor intent leads to poor spec—garbage in, garbage out</li>
-<li>Vague input produces vague output—clarity begets clarity</li>
-<li>Incomplete requirements create incomplete specs</li>
-</ul>
-<p><strong>Solution:</strong> Invest time in clarifying intent before using the agent.</p>
-<hr>
-</section>
-<section id="over-trust" class="level3" data-number="17.8.2">
-<h3 data-number="17.8.2" class="anchored" data-anchor-id="over-trust"><span class="header-section-number">17.8.2</span> 2. Over-Trust</h3>
-<ul>
-<li>Users may accept generated specs without review—blind trust is dangerous</li>
-<li>Hidden errors remain—spec may contain mistakes that aren’t caught</li>
-<li>Loss of critical thinking—relying too much on the agent</li>
-</ul>
-<p><strong>Solution:</strong> Always review and refine generated specs—never accept them blindly.</p>
-<hr>
-</section>
-<section id="lack-of-context" class="level3" data-number="17.8.3">
-<h3 data-number="17.8.3" class="anchored" data-anchor-id="lack-of-context"><span class="header-section-number">17.8.3</span> 3. Lack of Context</h3>
-<ul>
-<li>Agents may miss domain-specific constraints—general knowledge has limits</li>
-<li>Cannot fully replace human judgment—context and nuance matter</li>
-<li>May misunderstand specialized requirements</li>
-</ul>
-<p><strong>Solution:</strong> Provide detailed context and review carefully for domain-specific issues.</p>
-<hr>
-</section>
-<section id="generic-outputs" class="level3" data-number="17.8.4">
-<h3 data-number="17.8.4" class="anchored" data-anchor-id="generic-outputs"><span class="header-section-number">17.8.4</span> 4. Generic Outputs</h3>
-<ul>
-<li>Specs may be too general—lacking specificity for unique situations</li>
-<li>Lack depth—may not capture subtle but important requirements</li>
-<li>Miss edge cases—unusual scenarios may be overlooked</li>
-</ul>
-<p><strong>Solution:</strong> Add domain-specific details and edge case handling manually.</p>
-<hr>
-<blockquote class="blockquote">
-<p>Spec Agents assist, but do not replace thinking. Human oversight remains essential.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="when-to-use-spec-agents" class="level2" data-number="17.9">
-<h2 data-number="17.9" class="anchored" data-anchor-id="when-to-use-spec-agents"><span class="header-section-number">17.9</span> When to Use Spec Agents</h2>
-<p>Spec Agents are most useful in specific contexts. Understanding when to use them—and when to rely on human expertise—is important.</p>
-<hr>
-<section id="when-to-use-spec-agents-1" class="level3" data-number="17.9.1">
-<h3 data-number="17.9.1" class="anchored" data-anchor-id="when-to-use-spec-agents-1"><span class="header-section-number">17.9.1</span> When to Use Spec Agents</h3>
-<p>Spec Agents are most effective when:</p>
-<hr>
-<section id="intent-is-vague" class="level4" data-number="17.9.1.1">
-<h4 data-number="17.9.1.1" class="anchored" data-anchor-id="intent-is-vague"><span class="header-section-number">17.9.1.1</span> 1. Intent is Vague</h4>
-<ul>
-<li>Early-stage ideas—requirements are not yet clear</li>
-<li>Unstructured problems—you don’t know where to start</li>
-<li>Exploratory work—figuring out what’s needed</li>
-</ul>
-<hr>
-</section>
-<section id="users-lack-experience" class="level4" data-number="17.9.1.2">
-<h4 data-number="17.9.1.2" class="anchored" data-anchor-id="users-lack-experience"><span class="header-section-number">17.9.1.2</span> 2. Users Lack Experience</h4>
-<ul>
-<li>Beginners—people new to spec creation</li>
-<li>Non-technical users—domain experts without technical training</li>
-<li>Learning phase—building skills and understanding</li>
-</ul>
-<hr>
-</section>
-<section id="speed-is-important" class="level4" data-number="17.9.1.3">
-<h4 data-number="17.9.1.3" class="anchored" data-anchor-id="speed-is-important"><span class="header-section-number">17.9.1.3</span> 3. Speed is Important</h4>
-<ul>
-<li>Rapid prototyping—quick iteration and experimentation</li>
-<li>Iterative development—frequent refinement and adjustment</li>
-<li>Time-constrained projects—deadlines are tight</li>
-</ul>
-<hr>
-</section>
-<section id="complexity-is-moderate" class="level4" data-number="17.9.1.4">
-<h4 data-number="17.9.1.4" class="anchored" data-anchor-id="complexity-is-moderate"><span class="header-section-number">17.9.1.4</span> 4. Complexity is Moderate</h4>
-<ul>
-<li>Enough structure to guide—the problem is not completely undefined</li>
-<li>Not too domain-specific—general knowledge applies</li>
-<li>Manageable scope—spec can be reasonably comprehensive</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="when-not-to-rely-on-them-fully" class="level3" data-number="17.9.2">
-<h3 data-number="17.9.2" class="anchored" data-anchor-id="when-not-to-rely-on-them-fully"><span class="header-section-number">17.9.2</span> When Not to Rely on Them Fully</h3>
-<p>Spec Agents are less effective when:</p>
-<hr>
-<section id="requirements-are-highly-specific" class="level4" data-number="17.9.2.1">
-<h4 data-number="17.9.2.1" class="anchored" data-anchor-id="requirements-are-highly-specific"><span class="header-section-number">17.9.2.1</span> 1. Requirements Are Highly Specific</h4>
-<ul>
-<li>Domain expertise required—specialized knowledge is essential</li>
-<li>Precise constraints needed—generic specs won’t suffice</li>
-<li>Industry-specific standards—regulations or best practices apply</li>
-</ul>
-<hr>
-</section>
-<section id="systems-are-critical" class="level4" data-number="17.9.2.2">
-<h4 data-number="17.9.2.2" class="anchored" data-anchor-id="systems-are-critical"><span class="header-section-number">17.9.2.2</span> 2. Systems Are Critical</h4>
-<ul>
-<li>High reliability required—failure has serious consequences</li>
-<li>Strict validation needed—spec must be perfect</li>
-<li>Safety-critical applications—errors are unacceptable</li>
-</ul>
-<hr>
-</section>
-<section id="deep-understanding-is-needed" class="level4" data-number="17.9.2.3">
-<h4 data-number="17.9.2.3" class="anchored" data-anchor-id="deep-understanding-is-needed"><span class="header-section-number">17.9.2.3</span> 3. Deep Understanding is Needed</h4>
-<ul>
-<li>Complex interactions—subtle relationships between components</li>
-<li>Subtle edge cases—unusual but important scenarios</li>
-<li>Deep domain knowledge—expertise beyond general understanding</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>In these cases, human refinement becomes essential. Agents provide scaffolding, but experts must complete the work.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-</section>
-<section id="spec-agents-as-a-layer-in-the-system" class="level2" data-number="17.10">
-<h2 data-number="17.10" class="anchored" data-anchor-id="spec-agents-as-a-layer-in-the-system"><span class="header-section-number">17.10</span> Spec Agents as a Layer in the System</h2>
-<p>Spec Agents are not standalone tools or isolated activities. They are part of a larger pipeline:</p>
-<pre><code>Intent → Spec Agent → Spec → Instruction → Execution → Evaluation</code></pre>
-<hr>
-<p>They occupy the transition between:</p>
-<ul>
-<li><strong>Human thinking</strong>—intent, goals, and aspirations</li>
-<li><strong>System definition</strong>—structured, executable specifications</li>
-</ul>
-<hr>
-<p>As part of this pipeline, Spec Agents enable faster and more reliable movement from ideas to working systems.</p>
-<hr>
-</section>
-<section id="evolution-of-spec-agents" class="level2" data-number="17.11">
-<h2 data-number="17.11" class="anchored" data-anchor-id="evolution-of-spec-agents"><span class="header-section-number">17.11</span> Evolution of Spec Agents</h2>
-<p>As systems improve and we learn more about effective spec creation, Spec Agents may evolve:</p>
-<ul>
-<li><strong>Learn from past specs</strong>—improve based on successful specifications</li>
-<li><strong>Adapt to user preferences</strong>—customize approach for different users</li>
-<li><strong>Incorporate domain knowledge</strong>—specialize for different industries or problems</li>
-</ul>
-<p>This leads to:</p>
-<ul>
-<li><strong>Personalized specification systems</strong>—tailored to individual needs</li>
-<li><strong>Adaptive definition workflows</strong>—improving over time</li>
-<li><strong>More effective human-AI collaboration</strong>—better integration of strengths</li>
-</ul>
-<hr>
-</section>
-<section id="final-insight" class="level2" data-number="17.12">
-<h2 data-number="17.12" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">17.12</span> Final Insight</h2>
-<p>Spec Agents represent a shift in how we use AI. They are not just tools for execution or generation. They are tools for <strong>definition</strong>.</p>
-<hr>
-<blockquote class="blockquote">
-<p>The most powerful use of AI is not to do the work, but to help define the work.</p>
-</blockquote>
-<p>This shift has profound implications for how we approach system development and what it means to be a programmer.</p>
-<hr>
-</section>
-<section id="closing-statement" class="level2" data-number="17.13">
-<h2 data-number="17.13" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">17.13</span> Closing Statement</h2>
-<p>In the LLM era, the boundary between human thinking and system definition becomes collaborative.</p>
-<blockquote class="blockquote">
-<p>Spec Agents turn vague intent into structured possibility, but only humans can decide what truly matters.</p>
-</blockquote>
-<hr>
-</section>
-<section id="key-insight" class="level2" data-number="17.14">
-<h2 data-number="17.14" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">17.14</span> Key Insight</h2>
-<blockquote class="blockquote">
-<p>Spec Agents transform human intent into structured specifications. They enable human-AI collaboration in definition, increasing speed and accessibility. However, human oversight remains essential for quality and correctness.</p>
-</blockquote>
-</section>
-<section id="action-hint" class="level2" data-number="17.15">
-<h2 data-number="17.15" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">17.15</span> Action Hint</h2>
-<blockquote class="blockquote">
-<p>When starting a new project, try using a Spec Agent to generate an initial spec from your intent. Then carefully review and refine it. Treat the agent as a collaborative partner that provides structure, not as an authority that replaces your judgment.</p>
+<p>规格智能体使规格创建更快、更一致，同时让人类保持最终的控制。</p>
 </blockquote>
 
 
@@ -1402,13 +1000,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-15.html" class="pagination-link" aria-label="Template-based Spec">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span>
+      <a href="./chapter-15.html" class="pagination-link" aria-label="基于模板的 Spec（Template-based Spec）">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-17.html" class="pagination-link" aria-label="Iterative Spec Refinement">
-        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-17.html" class="pagination-link" aria-label="迭代式 Spec 精化（Iterative Spec Refinement）">
+        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

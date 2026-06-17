@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>15&nbsp; Spec Structure – AI Programming: From Intent to Execution</title>
+<title>15&nbsp; Spec 结构（Spec Structure） – AI Programming: From Intent to Execution</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,19 +37,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="./chapter-13.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-aa873432a3c62897e6c2091c0d30a948.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -250,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-14.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-14.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -263,9 +265,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AI Programming: From Intent to Execution</a> 
         <div class="sidebar-tools-main">
@@ -283,211 +283,211 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">前言（Preface）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">转变：从编码到定义（The Shift: From Coding to Defining）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">新的瓶颈：定义（The New Bottleneck: Definition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">编程现在是什么？（What is Programming Now?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">最小循环（The Minimal Loop）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">意图：定义要做什么（Intent: Defining What to Do）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">规格说明：消除歧义（Spec: Eliminating Ambiguity）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">指令：使其可执行（Instruction: Making It Executable）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">评估与迭代（Evaluation &amp; Iteration）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">可能性空间（Possibility Space）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-14.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">从 Spec 到指令（From Spec to Instruction）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">指令设计（Instruction Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">工具使用与 API（Tool Use &amp; APIs）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">构建智能体系统（Building an Agent System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">构建聊天系统（Building a Chat System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">从理想到产品（From Idea to Product）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-31.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">编程即系统设计（Programming as System Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">语言即操作系统（Language as an Operating System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">人类 + AI 认知（Human + AI Cognition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">构建者的未来（The Future of Builders）</span></span></a>
   </div>
 </li>
     </ul>
@@ -500,58 +500,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#why-structure-matters" id="toc-why-structure-matters" class="nav-link active" data-scroll-target="#why-structure-matters"><span class="header-section-number">15.1</span> Why Structure Matters</a></li>
-  <li><a href="#structure-without-rigidity" id="toc-structure-without-rigidity" class="nav-link" data-scroll-target="#structure-without-rigidity"><span class="header-section-number">15.2</span> Structure Without Rigidity</a></li>
-  <li><a href="#the-core-components-of-a-spec" id="toc-the-core-components-of-a-spec" class="nav-link" data-scroll-target="#the-core-components-of-a-spec"><span class="header-section-number">15.3</span> The Core Components of a Spec</a></li>
-  <li><a href="#input-what-goes-in" id="toc-input-what-goes-in" class="nav-link" data-scroll-target="#input-what-goes-in"><span class="header-section-number">15.4</span> Input — What Goes In</a>
+  <li><a href="#为什么结构重要" id="toc-为什么结构重要" class="nav-link active" data-scroll-target="#为什么结构重要"><span class="header-section-number">15.1</span> 为什么结构重要</a></li>
+  <li><a href="#没有僵化的结构structure-without-rigidity" id="toc-没有僵化的结构structure-without-rigidity" class="nav-link" data-scroll-target="#没有僵化的结构structure-without-rigidity"><span class="header-section-number">15.2</span> 没有僵化的结构（Structure Without Rigidity）</a></li>
+  <li><a href="#spec-的核心组件the-core-components-of-a-spec" id="toc-spec-的核心组件the-core-components-of-a-spec" class="nav-link" data-scroll-target="#spec-的核心组件the-core-components-of-a-spec"><span class="header-section-number">15.3</span> Spec 的核心组件（The Core Components of a Spec）</a>
   <ul class="collapse">
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">15.4.1</span> Examples</a></li>
-  <li><a href="#why-input-matters" id="toc-why-input-matters" class="nav-link" data-scroll-target="#why-input-matters"><span class="header-section-number">15.4.2</span> Why Input Matters</a></li>
-  <li><a href="#good-input-definition" id="toc-good-input-definition" class="nav-link" data-scroll-target="#good-input-definition"><span class="header-section-number">15.4.3</span> Good Input Definition</a></li>
+  <li><a href="#输入input系统接收什么" id="toc-输入input系统接收什么" class="nav-link" data-scroll-target="#输入input系统接收什么"><span class="header-section-number">15.3.1</span> 输入（Input）——系统接收什么</a></li>
+  <li><a href="#输出output系统产生什么" id="toc-输出output系统产生什么" class="nav-link" data-scroll-target="#输出output系统产生什么"><span class="header-section-number">15.3.2</span> 输出（Output）——系统产生什么</a></li>
+  <li><a href="#约束constraints系统必须尊重什么" id="toc-约束constraints系统必须尊重什么" class="nav-link" data-scroll-target="#约束constraints系统必须尊重什么"><span class="header-section-number">15.3.3</span> 约束（Constraints）——系统必须尊重什么</a></li>
+  <li><a href="#成功标准success-criteria什么算正确" id="toc-成功标准success-criteria什么算正确" class="nav-link" data-scroll-target="#成功标准success-criteria什么算正确"><span class="header-section-number">15.3.4</span> 成功标准（Success Criteria）——什么算正确</a></li>
   </ul></li>
-  <li><a href="#output-what-comes-out" id="toc-output-what-comes-out" class="nav-link" data-scroll-target="#output-what-comes-out"><span class="header-section-number">15.5</span> Output — What Comes Out</a>
-  <ul class="collapse">
-  <li><a href="#examples-1" id="toc-examples-1" class="nav-link" data-scroll-target="#examples-1"><span class="header-section-number">15.5.1</span> Examples</a></li>
-  <li><a href="#why-output-matters" id="toc-why-output-matters" class="nav-link" data-scroll-target="#why-output-matters"><span class="header-section-number">15.5.2</span> Why Output Matters</a></li>
-  <li><a href="#good-output-definition" id="toc-good-output-definition" class="nav-link" data-scroll-target="#good-output-definition"><span class="header-section-number">15.5.3</span> Good Output Definition</a></li>
-  </ul></li>
-  <li><a href="#constraints-what-must-be-respected" id="toc-constraints-what-must-be-respected" class="nav-link" data-scroll-target="#constraints-what-must-be-respected"><span class="header-section-number">15.6</span> Constraints — What Must Be Respected</a>
-  <ul class="collapse">
-  <li><a href="#examples-2" id="toc-examples-2" class="nav-link" data-scroll-target="#examples-2"><span class="header-section-number">15.6.1</span> Examples</a></li>
-  <li><a href="#why-constraints-matter" id="toc-why-constraints-matter" class="nav-link" data-scroll-target="#why-constraints-matter"><span class="header-section-number">15.6.2</span> Why Constraints Matter</a></li>
-  <li><a href="#types-of-constraints" id="toc-types-of-constraints" class="nav-link" data-scroll-target="#types-of-constraints"><span class="header-section-number">15.6.3</span> Types of Constraints</a></li>
-  </ul></li>
-  <li><a href="#success-criteria-what-counts-as-correct" id="toc-success-criteria-what-counts-as-correct" class="nav-link" data-scroll-target="#success-criteria-what-counts-as-correct"><span class="header-section-number">15.7</span> Success Criteria — What Counts as Correct</a>
-  <ul class="collapse">
-  <li><a href="#examples-3" id="toc-examples-3" class="nav-link" data-scroll-target="#examples-3"><span class="header-section-number">15.7.1</span> Examples</a></li>
-  <li><a href="#why-success-criteria-matter" id="toc-why-success-criteria-matter" class="nav-link" data-scroll-target="#why-success-criteria-matter"><span class="header-section-number">15.7.2</span> Why Success Criteria Matter</a></li>
-  <li><a href="#good-success-criteria" id="toc-good-success-criteria" class="nav-link" data-scroll-target="#good-success-criteria"><span class="header-section-number">15.7.3</span> Good Success Criteria</a></li>
-  </ul></li>
-  <li><a href="#putting-it-together" id="toc-putting-it-together" class="nav-link" data-scroll-target="#putting-it-together"><span class="header-section-number">15.8</span> Putting It Together</a>
-  <ul class="collapse">
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">15.8.1</span> Example</a></li>
-  </ul></li>
-  <li><a href="#optional-extensions" id="toc-optional-extensions" class="nav-link" data-scroll-target="#optional-extensions"><span class="header-section-number">15.9</span> Optional Extensions</a></li>
-  <li><a href="#spec-as-a-contract" id="toc-spec-as-a-contract" class="nav-link" data-scroll-target="#spec-as-a-contract"><span class="header-section-number">15.10</span> Spec as a Contract</a>
-  <ul class="collapse">
-  <li><a href="#implication" id="toc-implication" class="nav-link" data-scroll-target="#implication"><span class="header-section-number">15.10.1</span> Implication</a></li>
-  </ul></li>
-  <li><a href="#balancing-completeness-and-simplicity" id="toc-balancing-completeness-and-simplicity" class="nav-link" data-scroll-target="#balancing-completeness-and-simplicity"><span class="header-section-number">15.11</span> Balancing Completeness and Simplicity</a>
-  <ul class="collapse">
-  <li><a href="#too-simple" id="toc-too-simple" class="nav-link" data-scroll-target="#too-simple"><span class="header-section-number">15.11.1</span> Too Simple</a></li>
-  <li><a href="#too-complex" id="toc-too-complex" class="nav-link" data-scroll-target="#too-complex"><span class="header-section-number">15.11.2</span> Too Complex</a></li>
-  </ul></li>
-  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes"><span class="header-section-number">15.12</span> Common Mistakes</a>
-  <ul class="collapse">
-  <li><a href="#missing-components" id="toc-missing-components" class="nav-link" data-scroll-target="#missing-components"><span class="header-section-number">15.12.1</span> 1. Missing Components</a></li>
-  <li><a href="#implicit-assumptions" id="toc-implicit-assumptions" class="nav-link" data-scroll-target="#implicit-assumptions"><span class="header-section-number">15.12.2</span> 2. Implicit Assumptions</a></li>
-  <li><a href="#mixing-levels" id="toc-mixing-levels" class="nav-link" data-scroll-target="#mixing-levels"><span class="header-section-number">15.12.3</span> 3. Mixing Levels</a></li>
-  <li><a href="#over-specification" id="toc-over-specification" class="nav-link" data-scroll-target="#over-specification"><span class="header-section-number">15.12.4</span> 4. Over-Specification</a></li>
-  </ul></li>
-  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">15.13</span> Final Insight</a></li>
-  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">15.14</span> Closing Statement</a></li>
-  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">15.15</span> Key Insight</a></li>
-  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">15.16</span> Action Hint</a></li>
+  <li><a href="#spec-结构模板spec-structure-template" id="toc-spec-结构模板spec-structure-template" class="nav-link" data-scroll-target="#spec-结构模板spec-structure-template"><span class="header-section-number">15.4</span> Spec 结构模板（Spec Structure Template）</a></li>
   </ul>
 </nav>
     </div>
@@ -561,7 +519,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></h1>
+<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></h1>
 </div>
 
 
@@ -578,382 +536,71 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="why-structure-matters" class="level2" data-number="15.1">
-<h2 data-number="15.1" class="anchored" data-anchor-id="why-structure-matters"><span class="header-section-number">15.1</span> Why Structure Matters</h2>
-<p>A spec without structure is just text—a collection of words and ideas that may contain useful information but cannot reliably guide system execution.</p>
-<p>A spec without structure:</p>
-<ul>
-<li>May contain useful ideas—the concepts might be sound</li>
-<li>May describe a system accurately—the understanding might be correct</li>
-<li>But cannot reliably guide execution—the system cannot interpret it consistently</li>
-</ul>
-<p>To be effective, a spec must be:</p>
-<ul>
-<li><strong>Interpretable</strong>—the system can understand it unambiguously</li>
-<li><strong>Consistent</strong>—different parts of the spec don’t conflict</li>
-<li><strong>Reusable</strong>—the spec can be applied across different contexts</li>
-</ul>
-<p>This requires structure.</p>
+<section id="为什么结构重要" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="为什么结构重要"><span class="header-section-number">15.1</span> 为什么结构重要</h2>
+<p>没有结构的 Spec 只是文本——可能包含有用信息但无法可靠指导系统执行的文字和思想的集合。</p>
+<p>没有结构的 Spec 可能包含有用的思想，可能准确地描述系统，但无法可靠地指导执行。</p>
+<p>要有效，Spec 必须是可解释的、一致的、可复用的。这需要结构。</p>
 <blockquote class="blockquote">
-<p>Structure turns specification into an operational artifact.</p>
+<p>结构将规格说明转化为可操作的工件。</p>
 </blockquote>
 <hr>
 </section>
-<section id="structure-without-rigidity" class="level2" data-number="15.2">
-<h2 data-number="15.2" class="anchored" data-anchor-id="structure-without-rigidity"><span class="header-section-number">15.2</span> Structure Without Rigidity</h2>
-<p>A common mistake is to assume that a spec must follow a fixed, rigid format. This is not necessary—and can even be counterproductive.</p>
-<p>Different systems may require:</p>
-<ul>
-<li><strong>Different levels of detail</strong>—some specs need more granularity than others</li>
-<li><strong>Different representations</strong>—some systems benefit from visual formats, others from text</li>
-<li><strong>Different formats</strong>—JSON, YAML, natural language, or hybrid approaches</li>
-</ul>
-<p>However, all effective specs share a <strong>common underlying structure</strong>. The format may vary, but the essential elements are the same.</p>
+<section id="没有僵化的结构structure-without-rigidity" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="没有僵化的结构structure-without-rigidity"><span class="header-section-number">15.2</span> 没有僵化的结构（Structure Without Rigidity）</h2>
+<p>一个常见的错误是假设 Spec 必须遵循固定、僵化的格式。这不是必要的——甚至可能适得其反。</p>
+<p>不同的系统可能需要不同的细节层次、不同的表现形式、不同的格式。但所有有效的 Spec 共享一个<strong>共同的底层结构</strong>。格式可能不同，但核心元素是相同的。</p>
 <blockquote class="blockquote">
-<p>The goal is not a fixed template, but a consistent set of elements.</p>
+<p>目标不是固定的模板，而是一组一致的元素。</p>
 </blockquote>
 <hr>
 </section>
-<section id="the-core-components-of-a-spec" class="level2" data-number="15.3">
-<h2 data-number="15.3" class="anchored" data-anchor-id="the-core-components-of-a-spec"><span class="header-section-number">15.3</span> The Core Components of a Spec</h2>
-<p>At a minimum, any effective spec must define four essential components. These components form the foundation of any executable definition.</p>
-<ul>
-<li><strong>Input</strong>—what the system receives</li>
-<li><strong>Output</strong>—what the system produces</li>
-<li><strong>Constraints</strong>—what the system must respect</li>
-<li><strong>Success Criteria</strong>—what counts as correct</li>
-</ul>
-<p>These elements are not optional. Without all four, the spec is incomplete and cannot reliably guide execution.</p>
+<section id="spec-的核心组件the-core-components-of-a-spec" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="spec-的核心组件the-core-components-of-a-spec"><span class="header-section-number">15.3</span> Spec 的核心组件（The Core Components of a Spec）</h2>
+<p>任何有效的 Spec 必须定义四个核心组件：</p>
+<section id="输入input系统接收什么" class="level3" data-number="15.3.1">
+<h3 data-number="15.3.1" class="anchored" data-anchor-id="输入input系统接收什么"><span class="header-section-number">15.3.1</span> 输入（Input）——系统接收什么</h3>
+<p>输入定义系统接收的信息。好的输入定义包括数据类型、格式要求、有效值范围和边界条件。</p>
+</section>
+<section id="输出output系统产生什么" class="level3" data-number="15.3.2">
+<h3 data-number="15.3.2" class="anchored" data-anchor-id="输出output系统产生什么"><span class="header-section-number">15.3.2</span> 输出（Output）——系统产生什么</h3>
+<p>输出定义系统产生的结果。好的输出定义包括数据结构、格式规范、响应时间要求和结果编码。</p>
+</section>
+<section id="约束constraints系统必须尊重什么" class="level3" data-number="15.3.3">
+<h3 data-number="15.3.3" class="anchored" data-anchor-id="约束constraints系统必须尊重什么"><span class="header-section-number">15.3.3</span> 约束（Constraints）——系统必须尊重什么</h3>
+<p>约束定义系统在操作时必须遵守的规则。包括行为约束（系统必须与不能做什么）、性能约束（响应时间、吞吐量）、安全约束（认证、授权）和集成约束（与外部系统的兼容性）。</p>
+</section>
+<section id="成功标准success-criteria什么算正确" class="level3" data-number="15.3.4">
+<h3 data-number="15.3.4" class="anchored" data-anchor-id="成功标准success-criteria什么算正确"><span class="header-section-number">15.3.4</span> 成功标准（Success Criteria）——什么算正确</h3>
+<p>成功标准定义如何判断系统是否正确工作。包括正确性标准（输出满足要求的条件）、性能标准（在指定时间内）、鲁棒性标准（在变化条件下的一致性）。</p>
+<p>这些元素不是可选的。没有全部四个，Spec 就不完整，无法可靠地指导执行。</p>
 <hr>
 </section>
-<section id="input-what-goes-in" class="level2" data-number="15.4">
-<h2 data-number="15.4" class="anchored" data-anchor-id="input-what-goes-in"><span class="header-section-number">15.4</span> Input — What Goes In</h2>
-<p>Input defines:</p>
+</section>
+<section id="spec-结构模板spec-structure-template" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="spec-结构模板spec-structure-template"><span class="header-section-number">15.4</span> Spec 结构模板（Spec Structure Template）</h2>
+<pre><code>Spec: [名称]
+
+输入:
+  - 数据 1: [类型, 格式, 范围]
+  - 数据 2: [类型, 格式, 范围]
+
+输出:
+  - 结果 1: [类型, 格式, 结构]
+  - 结果 2: [类型, 格式, 结构]
+
+约束:
+  - 行为约束: [规则列表]
+  - 性能约束: [时间/资源限制]
+  - 安全约束: [认证/授权要求]
+  - 集成约束: [兼容性要求]
+
+成功标准:
+  - 正确性: [条件]
+  - 性能: [指标]
+  - 鲁棒性: [条件]</code></pre>
 <blockquote class="blockquote">
-<p><strong>What information the system receives</strong></p>
-</blockquote>
-<hr>
-<section id="examples" class="level3" data-number="15.4.1">
-<h3 data-number="15.4.1" class="anchored" data-anchor-id="examples"><span class="header-section-number">15.4.1</span> Examples</h3>
-<ul>
-<li>User query—a natural language question</li>
-<li>Text document—the content to be processed</li>
-<li>Structured data—JSON objects, arrays, or other formatted data</li>
-<li>Configuration settings—parameters that control behavior</li>
-</ul>
-<hr>
-</section>
-<section id="why-input-matters" class="level3" data-number="15.4.2">
-<h3 data-number="15.4.2" class="anchored" data-anchor-id="why-input-matters"><span class="header-section-number">15.4.2</span> Why Input Matters</h3>
-<p>If input is unclear or undefined:</p>
-<ul>
-<li>The system does not know what to operate on—leading to errors or unexpected behavior</li>
-<li>Behavior becomes inconsistent—different interpretations lead to different results</li>
-<li>Integration becomes difficult—other systems don’t know how to provide input</li>
-</ul>
-<hr>
-</section>
-<section id="good-input-definition" class="level3" data-number="15.4.3">
-<h3 data-number="15.4.3" class="anchored" data-anchor-id="good-input-definition"><span class="header-section-number">15.4.3</span> Good Input Definition</h3>
-<p>A well-defined input specification is:</p>
-<ul>
-<li><strong>Explicit</strong>—clearly states what data is required</li>
-<li><strong>Typed or structured when possible</strong>—specifies data types and formats</li>
-<li><strong>Clearly scoped</strong>—defines what is included and what is excluded</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Clear input reduces ambiguity at the source—the system knows exactly what to work with.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="output-what-comes-out" class="level2" data-number="15.5">
-<h2 data-number="15.5" class="anchored" data-anchor-id="output-what-comes-out"><span class="header-section-number">15.5</span> Output — What Comes Out</h2>
-<p>Output defines:</p>
-<blockquote class="blockquote">
-<p><strong>What the system produces</strong></p>
-</blockquote>
-<hr>
-<section id="examples-1" class="level3" data-number="15.5.1">
-<h3 data-number="15.5.1" class="anchored" data-anchor-id="examples-1"><span class="header-section-number">15.5.1</span> Examples</h3>
-<ul>
-<li>Generated text—the system’s written response</li>
-<li>Classification label—a category or decision</li>
-<li>Structured JSON—formatted data with specific fields</li>
-<li>File output—a document or other file</li>
-</ul>
-<hr>
-</section>
-<section id="why-output-matters" class="level3" data-number="15.5.2">
-<h3 data-number="15.5.2" class="anchored" data-anchor-id="why-output-matters"><span class="header-section-number">15.5.2</span> Why Output Matters</h3>
-<p>If output is undefined or vague:</p>
-<ul>
-<li>Results become unpredictable—the system may produce anything</li>
-<li>Downstream systems break—other components can’t process the output</li>
-<li>Evaluation becomes impossible—there’s no way to assess quality</li>
-</ul>
-<hr>
-</section>
-<section id="good-output-definition" class="level3" data-number="15.5.3">
-<h3 data-number="15.5.3" class="anchored" data-anchor-id="good-output-definition"><span class="header-section-number">15.5.3</span> Good Output Definition</h3>
-<p>A well-defined output specification is:</p>
-<ul>
-<li><strong>Structured</strong>—specifies the format and organization</li>
-<li><strong>Consistent</strong>—the same type of output every time</li>
-<li><strong>Aligned with use case</strong>—matches the needs of downstream systems</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Output is the interface to the rest of the system—downstream components depend on it.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="constraints-what-must-be-respected" class="level2" data-number="15.6">
-<h2 data-number="15.6" class="anchored" data-anchor-id="constraints-what-must-be-respected"><span class="header-section-number">15.6</span> Constraints — What Must Be Respected</h2>
-<p>Constraints define:</p>
-<blockquote class="blockquote">
-<p><strong>The boundaries within which the system operates</strong></p>
-</blockquote>
-<hr>
-<section id="examples-2" class="level3" data-number="15.6.1">
-<h3 data-number="15.6.1" class="anchored" data-anchor-id="examples-2"><span class="header-section-number">15.6.1</span> Examples</h3>
-<ul>
-<li><strong>Performance constraints</strong>—“Response time &lt; 2 seconds”</li>
-<li><strong>Length constraints</strong>—“Maximum output of 100 words”</li>
-<li><strong>Content constraints</strong>—“Must use retrieved documents when available”</li>
-<li><strong>Behavioral constraints</strong>—“No external knowledge beyond provided context”</li>
-</ul>
-<hr>
-</section>
-<section id="why-constraints-matter" class="level3" data-number="15.6.2">
-<h3 data-number="15.6.2" class="anchored" data-anchor-id="why-constraints-matter"><span class="header-section-number">15.6.2</span> Why Constraints Matter</h3>
-<p>Without constraints:</p>
-<ul>
-<li>The system has too many degrees of freedom—outputs vary widely</li>
-<li>Outputs drift away from intended behavior—quality degrades over time</li>
-<li>The system may violate requirements—producing unacceptable results</li>
-</ul>
-<hr>
-</section>
-<section id="types-of-constraints" class="level3" data-number="15.6.3">
-<h3 data-number="15.6.3" class="anchored" data-anchor-id="types-of-constraints"><span class="header-section-number">15.6.3</span> Types of Constraints</h3>
-<ul>
-<li><strong>Functional constraints</strong>—what must be included or achieved</li>
-<li><strong>Non-functional constraints</strong>—performance, format, resource limits</li>
-<li><strong>Behavioral constraints</strong>—tone, style, limits on behavior</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Constraints shape behavior—they define the space within which the system must operate.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="success-criteria-what-counts-as-correct" class="level2" data-number="15.7">
-<h2 data-number="15.7" class="anchored" data-anchor-id="success-criteria-what-counts-as-correct"><span class="header-section-number">15.7</span> Success Criteria — What Counts as Correct</h2>
-<p>Success criteria define:</p>
-<blockquote class="blockquote">
-<p><strong>How we evaluate whether the system works</strong></p>
-</blockquote>
-<hr>
-<section id="examples-3" class="level3" data-number="15.7.1">
-<h3 data-number="15.7.1" class="anchored" data-anchor-id="examples-3"><span class="header-section-number">15.7.1</span> Examples</h3>
-<ul>
-<li><strong>Content criteria</strong>—“Output must contain key points from the input”</li>
-<li><strong>Accuracy criteria</strong>—“Classification must be at least 90% accurate”</li>
-<li><strong>Relevance criteria</strong>—“Answer must be relevant to the user’s question”</li>
-<li><strong>Grounding criteria</strong>—“Claims must be supported by provided sources”</li>
-</ul>
-<hr>
-</section>
-<section id="why-success-criteria-matter" class="level3" data-number="15.7.2">
-<h3 data-number="15.7.2" class="anchored" data-anchor-id="why-success-criteria-matter"><span class="header-section-number">15.7.2</span> Why Success Criteria Matter</h3>
-<p>Without success criteria:</p>
-<ul>
-<li>There is no definition of correctness—any output could be considered acceptable</li>
-<li>Evaluation becomes subjective—different people have different opinions</li>
-<li>Improvement is impossible—there’s no way to measure progress</li>
-</ul>
-<hr>
-</section>
-<section id="good-success-criteria" class="level3" data-number="15.7.3">
-<h3 data-number="15.7.3" class="anchored" data-anchor-id="good-success-criteria"><span class="header-section-number">15.7.3</span> Good Success Criteria</h3>
-<p>Effective success criteria are:</p>
-<ul>
-<li><strong>Observable</strong>—can be seen or measured</li>
-<li><strong>Measurable when possible</strong>—quantifiable and objective</li>
-<li><strong>Aligned with intent</strong>—directly connected to the original goal</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Success criteria make quality testable—they provide the basis for evaluation and improvement.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="putting-it-together" class="level2" data-number="15.8">
-<h2 data-number="15.8" class="anchored" data-anchor-id="putting-it-together"><span class="header-section-number">15.8</span> Putting It Together</h2>
-<p>A minimal spec can be expressed simply as:</p>
-<pre><code>Input → Output
-+ Constraints
-+ Success Criteria</code></pre>
-<hr>
-<section id="example" class="level3" data-number="15.8.1">
-<h3 data-number="15.8.1" class="anchored" data-anchor-id="example"><span class="header-section-number">15.8.1</span> Example</h3>
-<p>Consider a document summarization system:</p>
-<p><strong>Input:</strong> - Text document (string, max 10,000 words)</p>
-<p><strong>Output:</strong> - Summary (string) - Key points (array of strings, 3-5 items)</p>
-<p><strong>Constraints:</strong> - Summary must be under 150 words - Key points must be under 20 words each - Must preserve original meaning and tone - Must not introduce new information</p>
-<p><strong>Success Criteria:</strong> - Summary captures main ideas - Key points are accurate and relevant - Human evaluators rate quality &gt;= 4/5</p>
-<hr>
-<p>This structure is simple but sufficient for many systems. It provides everything needed for reliable execution and evaluation.</p>
-<hr>
-</section>
-</section>
-<section id="optional-extensions" class="level2" data-number="15.9">
-<h2 data-number="15.9" class="anchored" data-anchor-id="optional-extensions"><span class="header-section-number">15.9</span> Optional Extensions</h2>
-<p>Depending on complexity, a spec may include additional elements beyond the core four:</p>
-<ul>
-<li><strong>Context</strong>—the environment or scenario in which the system operates</li>
-<li><strong>Assumptions</strong>—what is being taken for granted</li>
-<li><strong>Edge cases</strong>—how the system should handle unusual inputs</li>
-<li><strong>Error handling</strong>—what happens when things go wrong</li>
-</ul>
-<p>These extend the core structure but do not replace it. The core four components are always necessary.</p>
-<hr>
-</section>
-<section id="spec-as-a-contract" class="level2" data-number="15.10">
-<h2 data-number="15.10" class="anchored" data-anchor-id="spec-as-a-contract"><span class="header-section-number">15.10</span> Spec as a Contract</h2>
-<p>A useful way to think about spec:</p>
-<blockquote class="blockquote">
-<p>It is a contract between definition and execution.</p>
-</blockquote>
-<p>The spec defines:</p>
-<ul>
-<li><strong>What is expected</strong>—the requirements and goals</li>
-<li><strong>What is allowed</strong>—the boundaries and constraints</li>
-<li><strong>What is considered correct</strong>—the success criteria</li>
-</ul>
-<hr>
-<section id="implication" class="level3" data-number="15.10.1">
-<h3 data-number="15.10.1" class="anchored" data-anchor-id="implication"><span class="header-section-number">15.10.1</span> Implication</h3>
-<p>If execution fails:</p>
-<ul>
-<li>Either the system is wrong—the implementation doesn’t meet the spec</li>
-<li>Or the spec is incomplete—the spec doesn’t capture all requirements</li>
-</ul>
-<p>Either way, the spec provides the basis for diagnosis and improvement.</p>
-<hr>
-</section>
-</section>
-<section id="balancing-completeness-and-simplicity" class="level2" data-number="15.11">
-<h2 data-number="15.11" class="anchored" data-anchor-id="balancing-completeness-and-simplicity"><span class="header-section-number">15.11</span> Balancing Completeness and Simplicity</h2>
-<p>A good spec balances two competing objectives:</p>
-<ul>
-<li><strong>Completeness</strong>—enough detail to guide execution effectively</li>
-<li><strong>Simplicity</strong>—not overloaded with unnecessary constraints</li>
-</ul>
-<hr>
-<section id="too-simple" class="level3" data-number="15.11.1">
-<h3 data-number="15.11.1" class="anchored" data-anchor-id="too-simple"><span class="header-section-number">15.11.1</span> Too Simple</h3>
-<ul>
-<li>Leaves ambiguity—the system must guess at missing details</li>
-<li>Leads to inconsistent results—different interpretations produce different outputs</li>
-<li>Makes evaluation difficult—no clear basis for assessment</li>
-</ul>
-<hr>
-</section>
-<section id="too-complex" class="level3" data-number="15.11.2">
-<h3 data-number="15.11.2" class="anchored" data-anchor-id="too-complex"><span class="header-section-number">15.11.2</span> Too Complex</h3>
-<ul>
-<li>Hard to maintain—difficult to understand and update</li>
-<li>Limits flexibility—unnecessarily constrains the system</li>
-<li>Creates overhead—more information than needed for effective execution</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>The goal is sufficient clarity, not maximum detail.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="common-mistakes" class="level2" data-number="15.12">
-<h2 data-number="15.12" class="anchored" data-anchor-id="common-mistakes"><span class="header-section-number">15.12</span> Common Mistakes</h2>
-<hr>
-<section id="missing-components" class="level3" data-number="15.12.1">
-<h3 data-number="15.12.1" class="anchored" data-anchor-id="missing-components"><span class="header-section-number">15.12.1</span> 1. Missing Components</h3>
-<ul>
-<li>No clear output specification—results are unpredictable</li>
-<li>No defined constraints—behavior drifts over time</li>
-<li>No success criteria—evaluation is subjective or impossible</li>
-</ul>
-<p><strong>Solution:</strong> Ensure all four core components are present and well-defined.</p>
-<hr>
-</section>
-<section id="implicit-assumptions" class="level3" data-number="15.12.2">
-<h3 data-number="15.12.2" class="anchored" data-anchor-id="implicit-assumptions"><span class="header-section-number">15.12.2</span> 2. Implicit Assumptions</h3>
-<ul>
-<li>Relying on unstated expectations—the system makes wrong assumptions</li>
-<li>Hidden requirements—critical aspects are not documented</li>
-<li>Unclear context—the system doesn’t understand the environment</li>
-</ul>
-<p><strong>Solution:</strong> Make all assumptions explicit and visible.</p>
-<hr>
-</section>
-<section id="mixing-levels" class="level3" data-number="15.12.3">
-<h3 data-number="15.12.3" class="anchored" data-anchor-id="mixing-levels"><span class="header-section-number">15.12.3</span> 3. Mixing Levels</h3>
-<ul>
-<li>Combining intent, spec, and instruction in one layer—creating confusion</li>
-<li>Mixing high-level goals with low-level details—losing clarity</li>
-<li>Failing to separate concerns—making the spec hard to use</li>
-</ul>
-<p><strong>Solution:</strong> Maintain clear separation between intent, spec, and instruction.</p>
-<hr>
-</section>
-<section id="over-specification" class="level3" data-number="15.12.4">
-<h3 data-number="15.12.4" class="anchored" data-anchor-id="over-specification"><span class="header-section-number">15.12.4</span> 4. Over-Specification</h3>
-<ul>
-<li>Defining unnecessary details—cluttering the spec with irrelevant information</li>
-<li>Fixing implementation choices—constraining the system unnecessarily</li>
-<li>Reducing flexibility—making the spec brittle and hard to adapt</li>
-</ul>
-<p><strong>Solution:</strong> Include only what is necessary for reliable execution.</p>
-<hr>
-</section>
-</section>
-<section id="final-insight" class="level2" data-number="15.13">
-<h2 data-number="15.13" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">15.13</span> Final Insight</h2>
-<p>Spec structure is not about format—whether you use JSON, YAML, or natural language. It is about completeness and clarity.</p>
-<p>If a spec clearly defines:</p>
-<ul>
-<li>Input—what the system receives</li>
-<li>Output—what the system produces</li>
-<li>Constraints—what the system must respect</li>
-<li>Success—how we know it works</li>
-</ul>
-<p>Then it is usable, regardless of the specific format.</p>
-<hr>
-</section>
-<section id="closing-statement" class="level2" data-number="15.14">
-<h2 data-number="15.14" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">15.14</span> Closing Statement</h2>
-<p>A well-structured spec turns ideas into executable definitions.</p>
-<blockquote class="blockquote">
-<p>Structure is what makes specification reliable.</p>
-</blockquote>
-<hr>
-</section>
-<section id="key-insight" class="level2" data-number="15.15">
-<h2 data-number="15.15" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">15.15</span> Key Insight</h2>
-<blockquote class="blockquote">
-<p>A spec must include four core components: Input, Output, Constraints, and Success Criteria. Good specs balance completeness with simplicity—enough detail for execution, not so much that they become unwieldy.</p>
-</blockquote>
-</section>
-<section id="action-hint" class="level2" data-number="15.16">
-<h2 data-number="15.16" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">15.16</span> Action Hint</h2>
-<blockquote class="blockquote">
-<p>Use a standard spec template for all your projects. Before writing code, fill out: Input, Output, Constraints, Success Criteria. Review each section for completeness and clarity. If any section is vague, refine it until it’s precise.</p>
+<p>结构将规格从思想转化为可执行的工件。</p>
 </blockquote>
 
 
@@ -1375,13 +1022,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-13.html" class="pagination-link" aria-label="What is Spec Engineering?">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span>
+      <a href="./chapter-13.html" class="pagination-link" aria-label="什么是规格工程？（What is Spec Engineering?）">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-15.html" class="pagination-link" aria-label="Template-based Spec">
-        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-15.html" class="pagination-link" aria-label="基于模板的 Spec（Template-based Spec）">
+        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

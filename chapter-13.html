@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>14&nbsp; What is Spec Engineering? – AI Programming: From Intent to Execution</title>
+<title>14&nbsp; 什么是规格工程？（What is Spec Engineering?） – AI Programming: From Intent to Execution</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,19 +37,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="./chapter-12.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-aa873432a3c62897e6c2091c0d30a948.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -250,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-13.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-13.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -263,9 +265,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AI Programming: From Intent to Execution</a> 
         <div class="sidebar-tools-main">
@@ -283,211 +283,211 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">前言（Preface）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">转变：从编码到定义（The Shift: From Coding to Defining）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">新的瓶颈：定义（The New Bottleneck: Definition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">编程现在是什么？（What is Programming Now?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">最小循环（The Minimal Loop）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">意图：定义要做什么（Intent: Defining What to Do）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">规格说明：消除歧义（Spec: Eliminating Ambiguity）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">指令：使其可执行（Instruction: Making It Executable）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">评估与迭代（Evaluation &amp; Iteration）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">可能性空间（Possibility Space）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-13.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">从 Spec 到指令（From Spec to Instruction）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">指令设计（Instruction Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">工具使用与 API（Tool Use &amp; APIs）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-21.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">构建智能体系统（Building an Agent System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">构建聊天系统（Building a Chat System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">从理想到产品（From Idea to Product）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-31.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">编程即系统设计（Programming as System Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">语言即操作系统（Language as an Operating System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">人类 + AI 认知（Human + AI Cognition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">构建者的未来（The Future of Builders）</span></span></a>
   </div>
 </li>
     </ul>
@@ -500,59 +500,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#from-concept-to-discipline" id="toc-from-concept-to-discipline" class="nav-link active" data-scroll-target="#from-concept-to-discipline"><span class="header-section-number">14.1</span> From Concept to Discipline</a></li>
-  <li><a href="#what-is-spec-engineering" id="toc-what-is-spec-engineering" class="nav-link" data-scroll-target="#what-is-spec-engineering"><span class="header-section-number">14.2</span> What is Spec Engineering?</a>
-  <ul class="collapse">
-  <li><a href="#key-distinction" id="toc-key-distinction" class="nav-link" data-scroll-target="#key-distinction"><span class="header-section-number">14.2.1</span> Key Distinction</a></li>
-  </ul></li>
-  <li><a href="#the-role-of-spec" id="toc-the-role-of-spec" class="nav-link" data-scroll-target="#the-role-of-spec"><span class="header-section-number">14.3</span> The Role of Spec</a>
-  <ul class="collapse">
-  <li><a href="#spec-as-the-central-layer" id="toc-spec-as-the-central-layer" class="nav-link" data-scroll-target="#spec-as-the-central-layer"><span class="header-section-number">14.3.1</span> Spec as the Central Layer</a></li>
-  <li><a href="#it-connects-both-sides" id="toc-it-connects-both-sides" class="nav-link" data-scroll-target="#it-connects-both-sides"><span class="header-section-number">14.3.2</span> It connects both sides</a></li>
-  <li><a href="#it-transforms-meaning" id="toc-it-transforms-meaning" class="nav-link" data-scroll-target="#it-transforms-meaning"><span class="header-section-number">14.3.3</span> It transforms meaning</a></li>
-  <li><a href="#spec-as-control-mechanism" id="toc-spec-as-control-mechanism" class="nav-link" data-scroll-target="#spec-as-control-mechanism"><span class="header-section-number">14.3.4</span> Spec as Control Mechanism</a></li>
-  </ul></li>
-  <li><a href="#why-spec-engineering-is-necessary" id="toc-why-spec-engineering-is-necessary" class="nav-link" data-scroll-target="#why-spec-engineering-is-necessary"><span class="header-section-number">14.4</span> Why Spec Engineering is Necessary</a>
-  <ul class="collapse">
-  <li><a href="#the-problem-without-spec-engineering" id="toc-the-problem-without-spec-engineering" class="nav-link" data-scroll-target="#the-problem-without-spec-engineering"><span class="header-section-number">14.4.1</span> The Problem Without Spec Engineering</a></li>
-  <li><a href="#the-benefit-with-spec-engineering" id="toc-the-benefit-with-spec-engineering" class="nav-link" data-scroll-target="#the-benefit-with-spec-engineering"><span class="header-section-number">14.4.2</span> The Benefit With Spec Engineering</a></li>
-  </ul></li>
-  <li><a href="#the-shift-in-core-skills" id="toc-the-shift-in-core-skills" class="nav-link" data-scroll-target="#the-shift-in-core-skills"><span class="header-section-number">14.5</span> The Shift in Core Skills</a>
-  <ul class="collapse">
-  <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link" data-scroll-target="#why-this-matters"><span class="header-section-number">14.5.1</span> Why This Matters</a></li>
-  </ul></li>
-  <li><a href="#spec-engineering-as-a-new-bottleneck-skill" id="toc-spec-engineering-as-a-new-bottleneck-skill" class="nav-link" data-scroll-target="#spec-engineering-as-a-new-bottleneck-skill"><span class="header-section-number">14.6</span> Spec Engineering as a New Bottleneck Skill</a>
-  <ul class="collapse">
-  <li><a href="#implication" id="toc-implication" class="nav-link" data-scroll-target="#implication"><span class="header-section-number">14.6.1</span> Implication</a></li>
-  </ul></li>
-  <li><a href="#spec-as-a-first-class-artifact" id="toc-spec-as-a-first-class-artifact" class="nav-link" data-scroll-target="#spec-as-a-first-class-artifact"><span class="header-section-number">14.7</span> Spec as a First-Class Artifact</a>
-  <ul class="collapse">
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">14.7.1</span> Example</a></li>
-  <li><a href="#why-this-matters-1" id="toc-why-this-matters-1" class="nav-link" data-scroll-target="#why-this-matters-1"><span class="header-section-number">14.7.2</span> Why This Matters</a></li>
-  </ul></li>
-  <li><a href="#the-lifecycle-of-a-spec" id="toc-the-lifecycle-of-a-spec" class="nav-link" data-scroll-target="#the-lifecycle-of-a-spec"><span class="header-section-number">14.8</span> The Lifecycle of a Spec</a>
-  <ul class="collapse">
-  <li><a href="#creation" id="toc-creation" class="nav-link" data-scroll-target="#creation"><span class="header-section-number">14.8.1</span> 1. Creation</a></li>
-  <li><a href="#execution" id="toc-execution" class="nav-link" data-scroll-target="#execution"><span class="header-section-number">14.8.2</span> 2. Execution</a></li>
-  <li><a href="#evaluation" id="toc-evaluation" class="nav-link" data-scroll-target="#evaluation"><span class="header-section-number">14.8.3</span> 3. Evaluation</a></li>
-  <li><a href="#refinement" id="toc-refinement" class="nav-link" data-scroll-target="#refinement"><span class="header-section-number">14.8.4</span> 4. Refinement</a></li>
-  </ul></li>
-  <li><a href="#spec-engineering-vs-traditional-engineering" id="toc-spec-engineering-vs-traditional-engineering" class="nav-link" data-scroll-target="#spec-engineering-vs-traditional-engineering"><span class="header-section-number">14.9</span> Spec Engineering vs Traditional Engineering</a>
-  <ul class="collapse">
-  <li><a href="#traditional-software-engineering" id="toc-traditional-software-engineering" class="nav-link" data-scroll-target="#traditional-software-engineering"><span class="header-section-number">14.9.1</span> Traditional Software Engineering</a></li>
-  <li><a href="#spec-engineering" id="toc-spec-engineering" class="nav-link" data-scroll-target="#spec-engineering"><span class="header-section-number">14.9.2</span> Spec Engineering</a></li>
-  </ul></li>
-  <li><a href="#common-misconceptions" id="toc-common-misconceptions" class="nav-link" data-scroll-target="#common-misconceptions"><span class="header-section-number">14.10</span> Common Misconceptions</a>
-  <ul class="collapse">
-  <li><a href="#spec-is-just-documentation" id="toc-spec-is-just-documentation" class="nav-link" data-scroll-target="#spec-is-just-documentation"><span class="header-section-number">14.10.1</span> 1. “Spec is just documentation”</a></li>
-  <li><a href="#spec-is-optional" id="toc-spec-is-optional" class="nav-link" data-scroll-target="#spec-is-optional"><span class="header-section-number">14.10.2</span> 2. “Spec is optional”</a></li>
-  <li><a href="#spec-is-static" id="toc-spec-is-static" class="nav-link" data-scroll-target="#spec-is-static"><span class="header-section-number">14.10.3</span> 3. “Spec is static”</a></li>
-  </ul></li>
-  <li><a href="#spec-engineering-as-a-system-design-discipline" id="toc-spec-engineering-as-a-system-design-discipline" class="nav-link" data-scroll-target="#spec-engineering-as-a-system-design-discipline"><span class="header-section-number">14.11</span> Spec Engineering as a System Design Discipline</a></li>
-  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">14.12</span> Final Insight</a></li>
-  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">14.13</span> Closing Statement</a></li>
-  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">14.14</span> Key Insight</a></li>
-  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">14.15</span> Action Hint</a></li>
+  <li><a href="#从概念到学科" id="toc-从概念到学科" class="nav-link active" data-scroll-target="#从概念到学科"><span class="header-section-number">14.1</span> 从概念到学科</a></li>
+  <li><a href="#什么是规格工程what-is-spec-engineering" id="toc-什么是规格工程what-is-spec-engineering" class="nav-link" data-scroll-target="#什么是规格工程what-is-spec-engineering"><span class="header-section-number">14.2</span> 什么是规格工程？（What is Spec Engineering?）</a></li>
+  <li><a href="#spec-在最小循环中的角色the-role-of-spec-in-the-minimal-loop" id="toc-spec-在最小循环中的角色the-role-of-spec-in-the-minimal-loop" class="nav-link" data-scroll-target="#spec-在最小循环中的角色the-role-of-spec-in-the-minimal-loop"><span class="header-section-number">14.3</span> Spec 在最小循环中的角色（The Role of Spec in the Minimal Loop）</a></li>
+  <li><a href="#规格工程的模式patterns-of-spec-engineering" id="toc-规格工程的模式patterns-of-spec-engineering" class="nav-link" data-scroll-target="#规格工程的模式patterns-of-spec-engineering"><span class="header-section-number">14.4</span> 规格工程的模式（Patterns of Spec Engineering）</a></li>
+  <li><a href="#spec-的质量标准spec-quality-criteria" id="toc-spec-的质量标准spec-quality-criteria" class="nav-link" data-scroll-target="#spec-的质量标准spec-quality-criteria"><span class="header-section-number">14.5</span> Spec 的质量标准（Spec Quality Criteria）</a></li>
   </ul>
 </nav>
     </div>
@@ -562,7 +514,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></h1>
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></h1>
 </div>
 
 
@@ -579,374 +531,66 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="from-concept-to-discipline" class="level2" data-number="14.1">
-<h2 data-number="14.1" class="anchored" data-anchor-id="from-concept-to-discipline"><span class="header-section-number">14.1</span> From Concept to Discipline</h2>
-<p>In the previous chapters, we established the foundational elements of programming in the LLM era:</p>
+<section id="从概念到学科" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="从概念到学科"><span class="header-section-number">14.1</span> 从概念到学科</h2>
+<p>在之前的章节中，我们建立了 LLM 时代编程的基础元素：</p>
 <ul>
-<li><strong>Intent</strong> defines what we want—the human goal and aspiration</li>
-<li><strong>Spec</strong> defines what it means—the structured, precise specification of behavior</li>
-<li><strong>Instruction</strong> makes it executable—the protocol for system execution</li>
+<li><strong>意图（Intent）</strong>定义了我们想要什么</li>
+<li><strong>规格说明（Spec）</strong>定义了这意味什么</li>
+<li><strong>指令（Instruction）</strong>使其可执行</li>
 </ul>
-<p>We also explored the three-layer model of Possibility Space: Goal Space (what outcomes are possible), Path Space (what structures connect start to goal), and Option Space (what choices exist at each step). We saw that navigating this space requires structure and precision.</p>
-<p>This raises a critical question:</p>
+<p>我们还探索了可能性空间的三层模型：目标空间（什么结果是可能的）、路径空间（什么结构连接起点和目标）和选项空间（每一步有什么选择）。</p>
+<p>这引发了一个关键问题：</p>
 <blockquote class="blockquote">
-<p><strong>How do we systematically create good specifications that effectively capture and navigate the Possibility Space?</strong></p>
+<p><strong>我们如何系统地创建好的规格说明，使其有效捕捉和导航可能性空间？</strong></p>
 </blockquote>
-<p>The answer is not ad hoc thinking or relying on intuition. It is not simply “being careful” or “thinking harder.” The answer is a disciplined approach:</p>
+<p>答案不是临时的思考或依赖直觉。答案是一套纪律严明的方法：</p>
 <blockquote class="blockquote">
-<p><strong>Spec Engineering</strong></p>
-</blockquote>
-<hr>
-</section>
-<section id="what-is-spec-engineering" class="level2" data-number="14.2">
-<h2 data-number="14.2" class="anchored" data-anchor-id="what-is-spec-engineering"><span class="header-section-number">14.2</span> What is Spec Engineering?</h2>
-<p>Spec Engineering is the practice of:</p>
-<blockquote class="blockquote">
-<p><strong>Designing, structuring, and refining specifications so that systems can reliably produce desired outcomes.</strong></p>
-</blockquote>
-<p>It is a systematic approach to creating specs that includes:</p>
-<ul>
-<li><strong>Translating intent into spec</strong>—converting human goals into structured definitions</li>
-<li><strong>Defining structure and constraints</strong>—specifying what the system must do and must not do</li>
-<li><strong>Eliminating ambiguity</strong>—making implicit assumptions explicit</li>
-<li><strong>Iteratively improving definitions</strong>—refining specs based on evaluation and feedback</li>
-</ul>
-<hr>
-<section id="key-distinction" class="level3" data-number="14.2.1">
-<h3 data-number="14.2.1" class="anchored" data-anchor-id="key-distinction"><span class="header-section-number">14.2.1</span> Key Distinction</h3>
-<p>Spec Engineering is not:</p>
-<ul>
-<li>Writing prompts—crafting natural language requests for AI systems</li>
-<li>Writing code—implementing logic in programming languages</li>
-</ul>
-<p>It is:</p>
-<ul>
-<li>Defining systems in a structured, executable way—creating precise, testable specifications</li>
-<li>Operating at the level of definition rather than implementation—focusing on what should exist</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="the-role-of-spec" class="level2" data-number="14.3">
-<h2 data-number="14.3" class="anchored" data-anchor-id="the-role-of-spec"><span class="header-section-number">14.3</span> The Role of Spec</h2>
-<p>To understand Spec Engineering, we must first clarify the role of spec within the system and why it deserves focused attention.</p>
-<hr>
-<section id="spec-as-the-central-layer" class="level3" data-number="14.3.1">
-<h3 data-number="14.3.1" class="anchored" data-anchor-id="spec-as-the-central-layer"><span class="header-section-number">14.3.1</span> Spec as the Central Layer</h3>
-<p>In the minimal loop:</p>
-<pre><code>Intent → Spec → Instruction → Execution → Evaluation</code></pre>
-<p>Spec sits at the center of the loop, playing a critical bridging role.</p>
-<hr>
-</section>
-<section id="it-connects-both-sides" class="level3" data-number="14.3.2">
-<h3 data-number="14.3.2" class="anchored" data-anchor-id="it-connects-both-sides"><span class="header-section-number">14.3.2</span> It connects both sides</h3>
-<ul>
-<li><strong>Upstream</strong>: human intent and understanding</li>
-<li><strong>Downstream</strong>: machine execution and behavior</li>
-</ul>
-<p>Spec is the translation layer that converts human thinking into machine-executable form.</p>
-<hr>
-</section>
-<section id="it-transforms-meaning" class="level3" data-number="14.3.3">
-<h3 data-number="14.3.3" class="anchored" data-anchor-id="it-transforms-meaning"><span class="header-section-number">14.3.3</span> It transforms meaning</h3>
-<ul>
-<li><strong>From semantic → structural</strong>: converting meaning into formal structure</li>
-<li><strong>From vague → explicit</strong>: making implicit assumptions clear and concrete</li>
-<li><strong>From idea → system</strong>: transforming abstract concepts into concrete definitions</li>
-</ul>
-<hr>
-</section>
-<section id="spec-as-control-mechanism" class="level3" data-number="14.3.4">
-<h3 data-number="14.3.4" class="anchored" data-anchor-id="spec-as-control-mechanism"><span class="header-section-number">14.3.4</span> Spec as Control Mechanism</h3>
-<p>In traditional programming:</p>
-<ul>
-<li>Control is achieved through code—explicit instructions that define behavior</li>
-<li>Developers write the logic that controls execution</li>
-</ul>
-<p>In the LLM paradigm:</p>
-<ul>
-<li>Control is achieved through specification—defining boundaries and constraints</li>
-<li>Developers define the space within which the system operates</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Spec defines the boundaries within which the system operates.</p>
+<p><strong>规格工程（Spec Engineering）</strong></p>
 </blockquote>
 <hr>
 </section>
-</section>
-<section id="why-spec-engineering-is-necessary" class="level2" data-number="14.4">
-<h2 data-number="14.4" class="anchored" data-anchor-id="why-spec-engineering-is-necessary"><span class="header-section-number">14.4</span> Why Spec Engineering is Necessary</h2>
-<p>Without a systematic approach to spec creation, several problems emerge that undermine system development:</p>
-<ul>
-<li><strong>Definitions are inconsistent</strong>—different parts of the system have conflicting requirements</li>
-<li><strong>Systems behave unpredictably</strong>—outputs vary widely between runs</li>
-<li><strong>Iteration becomes inefficient</strong>—improvements are not cumulative</li>
-</ul>
-<p>Spec Engineering introduces structure and discipline to address these problems:</p>
-<ul>
-<li><strong>Structure</strong>—standardized formats and approaches for creating specs</li>
-<li><strong>Repeatability</strong>—consistent quality across different projects and teams</li>
-<li><strong>Reliability</strong>—predictable system behavior based on clear definitions</li>
-</ul>
-<hr>
-<section id="the-problem-without-spec-engineering" class="level3" data-number="14.4.1">
-<h3 data-number="14.4.1" class="anchored" data-anchor-id="the-problem-without-spec-engineering"><span class="header-section-number">14.4.1</span> The Problem Without Spec Engineering</h3>
-<p>When spec creation is ad hoc and unstructured:</p>
-<ul>
-<li>Each task is handled differently—no consistent approach</li>
-<li>No standard format—specs vary wildly in structure and detail</li>
-<li>Hard to debug or improve—problems are difficult to isolate and fix</li>
-</ul>
-<hr>
-</section>
-<section id="the-benefit-with-spec-engineering" class="level3" data-number="14.4.2">
-<h3 data-number="14.4.2" class="anchored" data-anchor-id="the-benefit-with-spec-engineering"><span class="header-section-number">14.4.2</span> The Benefit With Spec Engineering</h3>
-<p>When spec creation is systematic and disciplined:</p>
-<ul>
-<li>Reusable patterns—approaches that work across different contexts</li>
-<li>Clear definitions—specs that are precise and unambiguous</li>
-<li>Scalable systems—approaches that work as complexity grows</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="the-shift-in-core-skills" class="level2" data-number="14.5">
-<h2 data-number="14.5" class="anchored" data-anchor-id="the-shift-in-core-skills"><span class="header-section-number">14.5</span> The Shift in Core Skills</h2>
-<p>In traditional programming, the core skill was:</p>
-<ul>
-<li><strong>Implementation</strong>—writing code that executes correctly</li>
-</ul>
-<p>In the LLM era, the core skill shifts to:</p>
-<ul>
-<li><strong>Definition</strong>—creating precise, unambiguous specifications</li>
-</ul>
-<p>More specifically:</p>
+<section id="什么是规格工程what-is-spec-engineering" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="什么是规格工程what-is-spec-engineering"><span class="header-section-number">14.2</span> 什么是规格工程？（What is Spec Engineering?）</h2>
+<p>规格工程是以下实践：</p>
 <blockquote class="blockquote">
-<p><strong>The ability to engineer specifications</strong></p>
+<p><strong>设计、结构化并精化规格说明，使系统能够可靠地产生期望的结果。</strong></p>
 </blockquote>
-<hr>
-<section id="why-this-matters" class="level3" data-number="14.5.1">
-<h3 data-number="14.5.1" class="anchored" data-anchor-id="why-this-matters"><span class="header-section-number">14.5.1</span> Why This Matters</h3>
-<p>Because:</p>
+<p>它是一种系统化的规格创建方法，包括：</p>
 <ul>
-<li><strong>Execution is increasingly automated</strong>—AI systems handle implementation</li>
-<li><strong>Systems depend on clear definitions</strong>—behavior emerges from specification</li>
-<li><strong>Quality is determined upstream</strong>—good specs lead to good systems</li>
+<li>将意图转化为 Spec</li>
+<li>定义结构和约束</li>
+<li>消除歧义</li>
+<li>基于评估和反馈迭代改进定义</li>
 </ul>
-<p>The limiting factor is no longer how well you can implement—it’s how well you can define.</p>
+<p>关键区别：规格工程不是编写提示词，也不是编写代码。它是以一种结构化、可执行的方式定义系统。</p>
 <hr>
 </section>
+<section id="spec-在最小循环中的角色the-role-of-spec-in-the-minimal-loop" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="spec-在最小循环中的角色the-role-of-spec-in-the-minimal-loop"><span class="header-section-number">14.3</span> Spec 在最小循环中的角色（The Role of Spec in the Minimal Loop）</h2>
+<p>在最小循环中，Spec 是中央层。它位于意图和指令之间，连接人类愿望与机器执行。</p>
+<p>在最小循环中，Spec 做了什么：</p>
+<ul>
+<li><strong>精化意图</strong>——将模糊的人类愿望转化为精确的定义</li>
+<li><strong>启用指令</strong>——提供生成可执行指令所需的结构</li>
+<li><strong>促进评估</strong>——提供评估输出正确性的标准</li>
+</ul>
+<p>没有 Spec，意图太模糊无法执行。没有 Spec，指令没有基础。没有 Spec，评估没有标准。</p>
+<hr>
 </section>
-<section id="spec-engineering-as-a-new-bottleneck-skill" class="level2" data-number="14.6">
-<h2 data-number="14.6" class="anchored" data-anchor-id="spec-engineering-as-a-new-bottleneck-skill"><span class="header-section-number">14.6</span> Spec Engineering as a New Bottleneck Skill</h2>
-<p>As discussed earlier in the book:</p>
-<ul>
-<li><strong>Execution has been outsourced</strong>—AI systems handle implementation</li>
-<li><strong>Definition has become the bottleneck</strong>—creating good specs is now the primary challenge</li>
-</ul>
-<p>Spec Engineering is the discipline that addresses this bottleneck. It provides the systematic approach needed to overcome the new primary constraint.</p>
+<section id="规格工程的模式patterns-of-spec-engineering" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="规格工程的模式patterns-of-spec-engineering"><span class="header-section-number">14.4</span> 规格工程的模式（Patterns of Spec Engineering）</h2>
+<p><strong>文档式 Spec：</strong> 系统行为的结构化文档。适用于简单的、不经常变化的系统。</p>
+<p><strong>交互式 Spec：</strong> 通过对话逐步构建。适用于需求不明确时。</p>
+<p><strong>模板式 Spec：</strong> 使用预定义模板填写。适用于常见模式。</p>
+<p><strong>智能体辅助 Spec：</strong> 使用 AI 帮助构建 Spec。适用于复杂或陌生的领域。</p>
 <hr>
-<section id="implication" class="level3" data-number="14.6.1">
-<h3 data-number="14.6.1" class="anchored" data-anchor-id="implication"><span class="header-section-number">14.6.1</span> Implication</h3>
-<p>The most valuable developers are those who can:</p>
-<ul>
-<li>Define systems clearly—creating precise, unambiguous specifications</li>
-<li>Structure specifications effectively—organizing complex requirements</li>
-<li>Refine definitions iteratively—improving specs based on evaluation</li>
-</ul>
-<p>The competitive advantage has shifted from implementation skill to definition skill.</p>
-<hr>
+</section>
+<section id="spec-的质量标准spec-quality-criteria" class="level2" data-number="14.5">
+<h2 data-number="14.5" class="anchored" data-anchor-id="spec-的质量标准spec-quality-criteria"><span class="header-section-number">14.5</span> Spec 的质量标准（Spec Quality Criteria）</h2>
+<p>一个好的 Spec：完整的（覆盖输入/输出/约束/成功标准）、一致的（无内部矛盾）、可执行的（可转化为指令）、可测试的（每个陈述都可验证）。</p>
 <blockquote class="blockquote">
-<p>The limiting factor is no longer how well you code, but how well you define.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="spec-as-a-first-class-artifact" class="level2" data-number="14.7">
-<h2 data-number="14.7" class="anchored" data-anchor-id="spec-as-a-first-class-artifact"><span class="header-section-number">14.7</span> Spec as a First-Class Artifact</h2>
-<p>In this paradigm, spec is not a temporary step or a preliminary document. It becomes a central artifact of the development process.</p>
-<p>It becomes:</p>
-<ul>
-<li><strong>A core artifact</strong>—as important as code, perhaps more so</li>
-<li><strong>A reusable asset</strong>—can be shared, improved, and applied across projects</li>
-<li><strong>A unit of iteration</strong>—the thing we refine to improve systems</li>
-</ul>
-<hr>
-<section id="example" class="level3" data-number="14.7.1">
-<h3 data-number="14.7.1" class="anchored" data-anchor-id="example"><span class="header-section-number">14.7.1</span> Example</h3>
-<p>Instead of focusing on:</p>
-<ul>
-<li><strong>Code reuse</strong>—sharing and reusing code libraries</li>
-</ul>
-<p>We begin to focus on:</p>
-<ul>
-<li><strong>Spec reuse</strong>—sharing and reusing specification patterns</li>
-</ul>
-<hr>
-</section>
-<section id="why-this-matters-1" class="level3" data-number="14.7.2">
-<h3 data-number="14.7.2" class="anchored" data-anchor-id="why-this-matters-1"><span class="header-section-number">14.7.2</span> Why This Matters</h3>
-<ul>
-<li><strong>Specs can be shared</strong>—across teams, projects, and organizations</li>
-<li><strong>Specs can be improved</strong>—systematically refined based on experience</li>
-<li><strong>Specs can be applied across systems</strong>—similar specifications guide similar implementations</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="the-lifecycle-of-a-spec" class="level2" data-number="14.8">
-<h2 data-number="14.8" class="anchored" data-anchor-id="the-lifecycle-of-a-spec"><span class="header-section-number">14.8</span> The Lifecycle of a Spec</h2>
-<p>Spec Engineering is not a one-time activity. It is an ongoing lifecycle that continues throughout the system’s existence.</p>
-<hr>
-<section id="creation" class="level3" data-number="14.8.1">
-<h3 data-number="14.8.1" class="anchored" data-anchor-id="creation"><span class="header-section-number">14.8.1</span> 1. Creation</h3>
-<ul>
-<li><strong>From intent to initial spec</strong>—converting the human goal into a first draft specification</li>
-</ul>
-<hr>
-</section>
-<section id="execution" class="level3" data-number="14.8.2">
-<h3 data-number="14.8.2" class="anchored" data-anchor-id="execution"><span class="header-section-number">14.8.2</span> 2. Execution</h3>
-<ul>
-<li><strong>System produces output</strong>—the spec is used to guide system behavior</li>
-</ul>
-<hr>
-</section>
-<section id="evaluation" class="level3" data-number="14.8.3">
-<h3 data-number="14.8.3" class="anchored" data-anchor-id="evaluation"><span class="header-section-number">14.8.3</span> 3. Evaluation</h3>
-<ul>
-<li><strong>Compare output with expectations</strong>—assess whether the spec achieved the intended outcome</li>
-</ul>
-<hr>
-</section>
-<section id="refinement" class="level3" data-number="14.8.4">
-<h3 data-number="14.8.4" class="anchored" data-anchor-id="refinement"><span class="header-section-number">14.8.4</span> 4. Refinement</h3>
-<ul>
-<li><strong>Improve spec based on feedback</strong>—adjust and update the specification</li>
-</ul>
-<hr>
-<pre><code>Spec → Execution → Evaluation → Refine → Spec</code></pre>
-<hr>
-<blockquote class="blockquote">
-<p>Specs evolve through iteration. They are not static but living documents.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="spec-engineering-vs-traditional-engineering" class="level2" data-number="14.9">
-<h2 data-number="14.9" class="anchored" data-anchor-id="spec-engineering-vs-traditional-engineering"><span class="header-section-number">14.9</span> Spec Engineering vs Traditional Engineering</h2>
-<p>The shift to Spec Engineering represents a fundamental change in how we approach software engineering.</p>
-<hr>
-<section id="traditional-software-engineering" class="level3" data-number="14.9.1">
-<h3 data-number="14.9.1" class="anchored" data-anchor-id="traditional-software-engineering"><span class="header-section-number">14.9.1</span> Traditional Software Engineering</h3>
-<ul>
-<li><strong>Focus on code structure</strong>—organizing code for maintainability</li>
-<li><strong>Optimize performance</strong>—making code run faster and more efficiently</li>
-<li><strong>Ensure correctness through implementation</strong>—testing and debugging code</li>
-</ul>
-<hr>
-</section>
-<section id="spec-engineering" class="level3" data-number="14.9.2">
-<h3 data-number="14.9.2" class="anchored" data-anchor-id="spec-engineering"><span class="header-section-number">14.9.2</span> Spec Engineering</h3>
-<ul>
-<li><strong>Focus on definition structure</strong>—organizing specifications for clarity</li>
-<li><strong>Optimize clarity</strong>—making specs as unambiguous as possible</li>
-<li><strong>Ensure correctness through specification</strong>—defining behavior precisely</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>The focus shifts from building systems to defining them.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="common-misconceptions" class="level2" data-number="14.10">
-<h2 data-number="14.10" class="anchored" data-anchor-id="common-misconceptions"><span class="header-section-number">14.10</span> Common Misconceptions</h2>
-<p>Several misconceptions about spec and Spec Engineering can hinder effective practice:</p>
-<hr>
-<section id="spec-is-just-documentation" class="level3" data-number="14.10.1">
-<h3 data-number="14.10.1" class="anchored" data-anchor-id="spec-is-just-documentation"><span class="header-section-number">14.10.1</span> 1. “Spec is just documentation”</h3>
-<p>Incorrect.</p>
-<ul>
-<li><strong>Documentation describes</strong>—it explains what exists</li>
-<li><strong>Spec defines and constrains</strong>—it specifies what should exist and how it should behave</li>
-</ul>
-<p>Spec is not a description of what was built—it is a prescription for what should be built.</p>
-<hr>
-</section>
-<section id="spec-is-optional" class="level3" data-number="14.10.2">
-<h3 data-number="14.10.2" class="anchored" data-anchor-id="spec-is-optional"><span class="header-section-number">14.10.2</span> 2. “Spec is optional”</h3>
-<p>Incorrect.</p>
-<ul>
-<li>Without spec, systems are unstable—behavior varies unpredictably</li>
-<li>Without spec, systems are unreliable—outputs don’t meet requirements</li>
-<li>Without spec, systems are unimprovable—there’s no basis for iteration</li>
-</ul>
-<p>Spec is essential, not optional.</p>
-<hr>
-</section>
-<section id="spec-is-static" class="level3" data-number="14.10.3">
-<h3 data-number="14.10.3" class="anchored" data-anchor-id="spec-is-static"><span class="header-section-number">14.10.3</span> 3. “Spec is static”</h3>
-<p>Incorrect.</p>
-<ul>
-<li>Spec evolves through iteration—based on evaluation and feedback</li>
-<li>Spec adapts to changing requirements—responding to new information</li>
-<li>Spec improves over time—becoming clearer and more precise</li>
-</ul>
-<p>Spec is dynamic, not static.</p>
-<hr>
-</section>
-</section>
-<section id="spec-engineering-as-a-system-design-discipline" class="level2" data-number="14.11">
-<h2 data-number="14.11" class="anchored" data-anchor-id="spec-engineering-as-a-system-design-discipline"><span class="header-section-number">14.11</span> Spec Engineering as a System Design Discipline</h2>
-<p>Spec Engineering sits at the intersection of several disciplines:</p>
-<ul>
-<li><strong>System design</strong>—understanding how components work together</li>
-<li><strong>Language</strong>—using natural and formal language precisely</li>
-<li><strong>AI interaction</strong>—understanding how AI systems interpret and execute definitions</li>
-</ul>
-<p>It requires a combination of skills:</p>
-<ul>
-<li><strong>Structural thinking</strong>—organizing complex requirements</li>
-<li><strong>Precision in language</strong>—choosing words carefully</li>
-<li><strong>Understanding of system behavior</strong>—knowing how systems will interpret specs</li>
-</ul>
-<hr>
-</section>
-<section id="final-insight" class="level2" data-number="14.12">
-<h2 data-number="14.12" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">14.12</span> Final Insight</h2>
-<p>Spec Engineering is the discipline that enables reliable systems in the LLM era. It is the bridge between human intent and machine execution.</p>
-<p>It is where:</p>
-<ul>
-<li>Intent becomes usable—ideas can guide implementation</li>
-<li>Systems become controllable—behavior is predictable and reliable</li>
-<li>Iteration becomes meaningful—improvements are systematic and cumulative</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>If programming is defining systems, Spec Engineering is the craft of doing it well.</p>
-</blockquote>
-<hr>
-</section>
-<section id="closing-statement" class="level2" data-number="14.13">
-<h2 data-number="14.13" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">14.13</span> Closing Statement</h2>
-<p>As execution becomes commoditized, definition becomes the source of leverage. Spec Engineering is not an optional skill—it is the new core of programming.</p>
-<blockquote class="blockquote">
-<p>The future belongs to those who can define with precision.</p>
-</blockquote>
-<hr>
-</section>
-<section id="key-insight" class="level2" data-number="14.14">
-<h2 data-number="14.14" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">14.14</span> Key Insight</h2>
-<blockquote class="blockquote">
-<p>Spec Engineering is the systematic practice of designing, structuring, and refining specifications. It transforms intent into executable definitions and is the new core skill in the LLM era.</p>
-</blockquote>
-</section>
-<section id="action-hint" class="level2" data-number="14.15">
-<h2 data-number="14.15" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">14.15</span> Action Hint</h2>
-<blockquote class="blockquote">
-<p>Treat spec creation as a formal engineering discipline, not an informal activity. Use standard templates, follow defined processes, and iterate systematically. Don’t rush spec creation—invest time upfront, save time later.</p>
+<p>Spec 工程是 LLM 时代编程的核心学科。它将定义从偶然产物提升为受控的工程过程。</p>
 </blockquote>
 
 
@@ -1368,13 +1012,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-12.html" class="pagination-link" aria-label="Goal Compression">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span>
+      <a href="./chapter-12.html" class="pagination-link" aria-label="目标压缩（Goal Compression）">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-14.html" class="pagination-link" aria-label="Spec Structure">
-        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-14.html" class="pagination-link" aria-label="Spec 结构（Spec Structure）">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

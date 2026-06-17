@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>22&nbsp; Multi-Agent Systems – AI Programming: From Intent to Execution</title>
+<title>22&nbsp; 多智能体系统（Multi-Agent Systems） – AI Programming: From Intent to Execution</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,19 +37,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="./chapter-20.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-22e83d4e5eff2a99ccc45532742ac980.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-aa873432a3c62897e6c2091c0d30a948.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b9eaee60a963b5d74e9d33cc267de6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -250,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-21.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-21.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -263,9 +265,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AI Programming: From Intent to Execution</a> 
         <div class="sidebar-tools-main">
@@ -283,211 +283,211 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">前言（Preface）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Shift: From Coding to Defining</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">转变：从编码到定义（The Shift: From Coding to Defining）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Where Does Difficulty Come From?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">新的瓶颈：定义（The New Bottleneck: Definition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">What is Programming Now?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">编程现在是什么？（What is Programming Now?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Minimal Loop</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">最小循环（The Minimal Loop）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intent: Defining What to Do</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">意图：定义要做什么（Intent: Defining What to Do）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spec: Eliminating Ambiguity</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">规格说明：消除歧义（Spec: Eliminating Ambiguity）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instruction: Making It Executable</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">指令：使其可执行（Instruction: Making It Executable）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Evaluation &amp; Iteration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">评估与迭代（Evaluation &amp; Iteration）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Possibility Space</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">可能性空间（Possibility Space）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Structural Thinking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">结构性思维（Structural Thinking）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Composition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">组合（Composition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Goal Compression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">目标压缩（Goal Compression）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">What is Spec Engineering?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">什么是规格工程？（What is Spec Engineering?）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Spec 结构（Spec Structure）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Template-based Spec</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">基于模板的 Spec（Template-based Spec）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Spec Agent</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">规格智能体（Spec Agent）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Iterative Spec Refinement</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">迭代式 Spec 精化（Iterative Spec Refinement）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">From Spec to Instruction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">从 Spec 到指令（From Spec to Instruction）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Instruction Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">指令设计（Instruction Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">工具使用与 API（Tool Use &amp; APIs）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-21.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-22.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-23.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Building an Agent System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">构建智能体系统（Building an Agent System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-24.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Reliability &amp; Evaluation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">可靠性与评估（Reliability &amp; Evaluation）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-25.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Debugging in the LLM Era</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">LLM 时代的调试（Debugging in the LLM Era）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-26.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Performance &amp; Cost</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">性能与成本（Performance &amp; Cost）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-27.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Building a Chat System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">构建聊天系统（Building a Chat System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-28.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Building a Data Pipeline</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">构建数据管道（Building a Data Pipeline）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-29.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Building an AI Tool</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">构建 AI 工具（Building an AI Tool）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-30.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">From Idea to Product</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">从理想到产品（From Idea to Product）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-31.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Programming as System Design</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">编程即系统设计（Programming as System Design）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-32.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Language as an Operating System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">语言即操作系统（Language as an Operating System）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-33.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Human + AI Cognition</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">人类 + AI 认知（Human + AI Cognition）</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-34.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Future of Builders</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">构建者的未来（The Future of Builders）</span></span></a>
   </div>
 </li>
     </ul>
@@ -500,71 +500,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#from-single-agent-to-systems-of-agents" id="toc-from-single-agent-to-systems-of-agents" class="nav-link active" data-scroll-target="#from-single-agent-to-systems-of-agents"><span class="header-section-number">22.1</span> From Single Agent to Systems of Agents</a></li>
-  <li><a href="#what-is-a-multi-agent-system" id="toc-what-is-a-multi-agent-system" class="nav-link" data-scroll-target="#what-is-a-multi-agent-system"><span class="header-section-number">22.2</span> What is a Multi-Agent System?</a>
-  <ul class="collapse">
-  <li><a href="#key-idea" id="toc-key-idea" class="nav-link" data-scroll-target="#key-idea"><span class="header-section-number">22.2.1</span> Key Idea</a></li>
-  </ul></li>
-  <li><a href="#why-multiple-agents" id="toc-why-multiple-agents" class="nav-link" data-scroll-target="#why-multiple-agents"><span class="header-section-number">22.3</span> Why Multiple Agents?</a>
-  <ul class="collapse">
-  <li><a href="#specialization" id="toc-specialization" class="nav-link" data-scroll-target="#specialization"><span class="header-section-number">22.3.1</span> 1. Specialization</a></li>
-  <li><a href="#complexity-management" id="toc-complexity-management" class="nav-link" data-scroll-target="#complexity-management"><span class="header-section-number">22.3.2</span> 2. Complexity Management</a></li>
-  <li><a href="#modularity" id="toc-modularity" class="nav-link" data-scroll-target="#modularity"><span class="header-section-number">22.3.3</span> 3. Modularity</a></li>
-  <li><a href="#scalability" id="toc-scalability" class="nav-link" data-scroll-target="#scalability"><span class="header-section-number">22.3.4</span> 4. Scalability</a></li>
-  </ul></li>
-  <li><a href="#roles-and-responsibilities" id="toc-roles-and-responsibilities" class="nav-link" data-scroll-target="#roles-and-responsibilities"><span class="header-section-number">22.4</span> Roles and Responsibilities</a>
-  <ul class="collapse">
-  <li><a href="#example-roles" id="toc-example-roles" class="nav-link" data-scroll-target="#example-roles"><span class="header-section-number">22.4.1</span> Example Roles</a></li>
-  </ul></li>
-  <li><a href="#division-of-labor" id="toc-division-of-labor" class="nav-link" data-scroll-target="#division-of-labor"><span class="header-section-number">22.5</span> Division of Labor</a>
-  <ul class="collapse">
-  <li><a href="#principles" id="toc-principles" class="nav-link" data-scroll-target="#principles"><span class="header-section-number">22.5.1</span> Principles</a></li>
-  <li><a href="#separation-of-concerns" id="toc-separation-of-concerns" class="nav-link" data-scroll-target="#separation-of-concerns"><span class="header-section-number">22.5.2</span> 1. Separation of Concerns</a></li>
-  <li><a href="#clear-boundaries" id="toc-clear-boundaries" class="nav-link" data-scroll-target="#clear-boundaries"><span class="header-section-number">22.5.3</span> 2. Clear Boundaries</a></li>
-  <li><a href="#minimal-overlap" id="toc-minimal-overlap" class="nav-link" data-scroll-target="#minimal-overlap"><span class="header-section-number">22.5.4</span> 3. Minimal Overlap</a></li>
-  <li><a href="#example-flow" id="toc-example-flow" class="nav-link" data-scroll-target="#example-flow"><span class="header-section-number">22.5.5</span> Example Flow</a></li>
-  </ul></li>
-  <li><a href="#communication-between-agents" id="toc-communication-between-agents" class="nav-link" data-scroll-target="#communication-between-agents"><span class="header-section-number">22.6</span> Communication Between Agents</a>
-  <ul class="collapse">
-  <li><a href="#what-is-communicated" id="toc-what-is-communicated" class="nav-link" data-scroll-target="#what-is-communicated"><span class="header-section-number">22.6.1</span> What is Communicated?</a></li>
-  <li><a href="#forms-of-communication" id="toc-forms-of-communication" class="nav-link" data-scroll-target="#forms-of-communication"><span class="header-section-number">22.6.2</span> Forms of Communication</a></li>
-  </ul></li>
-  <li><a href="#communication-patterns" id="toc-communication-patterns" class="nav-link" data-scroll-target="#communication-patterns"><span class="header-section-number">22.7</span> Communication Patterns</a>
-  <ul class="collapse">
-  <li><a href="#sequential-communication" id="toc-sequential-communication" class="nav-link" data-scroll-target="#sequential-communication"><span class="header-section-number">22.7.1</span> 1. Sequential Communication</a></li>
-  <li><a href="#central-coordinator" id="toc-central-coordinator" class="nav-link" data-scroll-target="#central-coordinator"><span class="header-section-number">22.7.2</span> 2. Central Coordinator</a></li>
-  <li><a href="#peer-to-peer" id="toc-peer-to-peer" class="nav-link" data-scroll-target="#peer-to-peer"><span class="header-section-number">22.7.3</span> 3. Peer-to-Peer</a></li>
-  </ul></li>
-  <li><a href="#coordination-strategies" id="toc-coordination-strategies" class="nav-link" data-scroll-target="#coordination-strategies"><span class="header-section-number">22.8</span> Coordination Strategies</a>
-  <ul class="collapse">
-  <li><a href="#centralized-control" id="toc-centralized-control" class="nav-link" data-scroll-target="#centralized-control"><span class="header-section-number">22.8.1</span> 1. Centralized Control</a></li>
-  <li><a href="#decentralized-control" id="toc-decentralized-control" class="nav-link" data-scroll-target="#decentralized-control"><span class="header-section-number">22.8.2</span> 2. Decentralized Control</a></li>
-  <li><a href="#trade-off" id="toc-trade-off" class="nav-link" data-scroll-target="#trade-off"><span class="header-section-number">22.8.3</span> Trade-off</a></li>
-  </ul></li>
-  <li><a href="#challenges-in-multi-agent-systems" id="toc-challenges-in-multi-agent-systems" class="nav-link" data-scroll-target="#challenges-in-multi-agent-systems"><span class="header-section-number">22.9</span> Challenges in Multi-Agent Systems</a>
-  <ul class="collapse">
-  <li><a href="#coordination-complexity" id="toc-coordination-complexity" class="nav-link" data-scroll-target="#coordination-complexity"><span class="header-section-number">22.9.1</span> 1. Coordination Complexity</a></li>
-  <li><a href="#communication-overhead" id="toc-communication-overhead" class="nav-link" data-scroll-target="#communication-overhead"><span class="header-section-number">22.9.2</span> 2. Communication Overhead</a></li>
-  <li><a href="#error-propagation" id="toc-error-propagation" class="nav-link" data-scroll-target="#error-propagation"><span class="header-section-number">22.9.3</span> 3. Error Propagation</a></li>
-  <li><a href="#debugging-difficulty" id="toc-debugging-difficulty" class="nav-link" data-scroll-target="#debugging-difficulty"><span class="header-section-number">22.9.4</span> 4. Debugging Difficulty</a></li>
-  </ul></li>
-  <li><a href="#designing-multi-agent-systems" id="toc-designing-multi-agent-systems" class="nav-link" data-scroll-target="#designing-multi-agent-systems"><span class="header-section-number">22.10</span> Designing Multi-Agent Systems</a>
-  <ul class="collapse">
-  <li><a href="#define-roles-clearly" id="toc-define-roles-clearly" class="nav-link" data-scroll-target="#define-roles-clearly"><span class="header-section-number">22.10.1</span> 1. Define Roles Clearly</a></li>
-  <li><a href="#design-interfaces" id="toc-design-interfaces" class="nav-link" data-scroll-target="#design-interfaces"><span class="header-section-number">22.10.2</span> 2. Design Interfaces</a></li>
-  <li><a href="#control-interaction" id="toc-control-interaction" class="nav-link" data-scroll-target="#control-interaction"><span class="header-section-number">22.10.3</span> 3. Control Interaction</a></li>
-  <li><a href="#add-evaluation-layers" id="toc-add-evaluation-layers" class="nav-link" data-scroll-target="#add-evaluation-layers"><span class="header-section-number">22.10.4</span> 4. Add Evaluation Layers</a></li>
-  </ul></li>
-  <li><a href="#when-to-use-multi-agent-systems" id="toc-when-to-use-multi-agent-systems" class="nav-link" data-scroll-target="#when-to-use-multi-agent-systems"><span class="header-section-number">22.11</span> When to Use Multi-Agent Systems</a>
-  <ul class="collapse">
-  <li><a href="#suitable-cases" id="toc-suitable-cases" class="nav-link" data-scroll-target="#suitable-cases"><span class="header-section-number">22.11.1</span> Suitable Cases</a></li>
-  <li><a href="#not-suitable" id="toc-not-suitable" class="nav-link" data-scroll-target="#not-suitable"><span class="header-section-number">22.11.2</span> Not Suitable</a></li>
-  </ul></li>
-  <li><a href="#multi-agent-systems-in-the-minimal-loop" id="toc-multi-agent-systems-in-the-minimal-loop" class="nav-link" data-scroll-target="#multi-agent-systems-in-the-minimal-loop"><span class="header-section-number">22.12</span> Multi-Agent Systems in the Minimal Loop</a></li>
-  <li><a href="#final-insight" id="toc-final-insight" class="nav-link" data-scroll-target="#final-insight"><span class="header-section-number">22.13</span> Final Insight</a></li>
-  <li><a href="#closing-statement" id="toc-closing-statement" class="nav-link" data-scroll-target="#closing-statement"><span class="header-section-number">22.14</span> Closing Statement</a></li>
-  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight"><span class="header-section-number">22.15</span> Key Insight</a></li>
-  <li><a href="#action-hint" id="toc-action-hint" class="nav-link" data-scroll-target="#action-hint"><span class="header-section-number">22.16</span> Action Hint</a></li>
+  <li><a href="#从单智能体到智能体系统" id="toc-从单智能体到智能体系统" class="nav-link active" data-scroll-target="#从单智能体到智能体系统"><span class="header-section-number">22.1</span> 从单智能体到智能体系统</a></li>
+  <li><a href="#什么是多智能体系统what-is-a-multi-agent-system" id="toc-什么是多智能体系统what-is-a-multi-agent-system" class="nav-link" data-scroll-target="#什么是多智能体系统what-is-a-multi-agent-system"><span class="header-section-number">22.2</span> 什么是多智能体系统？（What is a Multi-Agent System?）</a></li>
+  <li><a href="#核心概念core-concepts" id="toc-核心概念core-concepts" class="nav-link" data-scroll-target="#核心概念core-concepts"><span class="header-section-number">22.3</span> 核心概念（Core Concepts）</a></li>
+  <li><a href="#架构模式architecture-patterns" id="toc-架构模式architecture-patterns" class="nav-link" data-scroll-target="#架构模式architecture-patterns"><span class="header-section-number">22.4</span> 架构模式（Architecture Patterns）</a></li>
+  <li><a href="#设计多智能体系统designing-multi-agent-systems" id="toc-设计多智能体系统designing-multi-agent-systems" class="nav-link" data-scroll-target="#设计多智能体系统designing-multi-agent-systems"><span class="header-section-number">22.5</span> 设计多智能体系统（Designing Multi-Agent Systems）</a></li>
   </ul>
 </nav>
     </div>
@@ -574,7 +514,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multi-Agent Systems</span></h1>
+<h1 class="title"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">多智能体系统（Multi-Agent Systems）</span></h1>
 </div>
 
 
@@ -591,503 +531,51 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="from-single-agent-to-systems-of-agents" class="level2" data-number="22.1">
-<h2 data-number="22.1" class="anchored" data-anchor-id="from-single-agent-to-systems-of-agents"><span class="header-section-number">22.1</span> From Single Agent to Systems of Agents</h2>
-<p>So far, we have considered systems where:</p>
-<ul>
-<li>A single agent receives input—accepts user queries or tasks</li>
-<li>Processes it—applies reasoning and knowledge</li>
-<li>Produces output—generates a response or result</li>
-</ul>
-<p>This architecture works well for:</p>
-<ul>
-<li><strong>Simple tasks</strong>—straightforward questions or operations</li>
-<li><strong>Moderately complex problems</strong>—multi-step reasoning within one agent’s capabilities</li>
-<li><strong>Isolated systems</strong>—independent tasks that don’t require coordination</li>
-</ul>
-<p>However, as systems grow in complexity and scope, a single agent becomes insufficient. Tasks become:</p>
-<ul>
-<li><strong>Multi-step</strong>—requiring many sequential or parallel operations</li>
-<li><strong>Knowledge-intensive</strong>—requiring expertise across different domains</li>
-<li><strong>Decision-heavy</strong>—involving complex trade-offs and choices</li>
-</ul>
-<p>A single agent lacks the:</p>
-<ul>
-<li><strong>Specialization</strong>—deep expertise in specific areas</li>
-<li><strong>Scalability</strong>—ability to handle increasing complexity</li>
-<li><strong>Coordination</strong>—mechanisms for managing multiple tasks simultaneously</li>
-</ul>
-<p>This leads to a new paradigm:</p>
+<section id="从单智能体到智能体系统" class="level2" data-number="22.1">
+<h2 data-number="22.1" class="anchored" data-anchor-id="从单智能体到智能体系统"><span class="header-section-number">22.1</span> 从单智能体到智能体系统</h2>
+<p>到目前为止，我们考虑的是单个智能体接收输入、处理和产生输出的系统。</p>
+<p>这种架构对简单任务、中等复杂度的问题和孤立系统工作良好。</p>
+<p>但随着系统在复杂度和范围上增长，单个智能体变得不足。任务变成多步骤的、知识密集的、涉及权衡和选择的。</p>
+<p>单个智能体缺乏专门化、可扩展性和协调机制。</p>
+<p>这引出了一种新范式：</p>
 <blockquote class="blockquote">
-<p><strong>Multi-Agent Systems</strong></p>
+<p><strong>多智能体系统（Multi-Agent Systems）</strong></p>
 </blockquote>
 <hr>
 </section>
-<section id="what-is-a-multi-agent-system" class="level2" data-number="22.2">
-<h2 data-number="22.2" class="anchored" data-anchor-id="what-is-a-multi-agent-system"><span class="header-section-number">22.2</span> What is a Multi-Agent System?</h2>
-<p>A Multi-Agent System is a system where:</p>
+<section id="什么是多智能体系统what-is-a-multi-agent-system" class="level2" data-number="22.2">
+<h2 data-number="22.2" class="anchored" data-anchor-id="什么是多智能体系统what-is-a-multi-agent-system"><span class="header-section-number">22.2</span> 什么是多智能体系统？（What is a Multi-Agent System?）</h2>
+<p>多智能体系统是多个智能体协作以实现共享目标的系统。</p>
+<p>系统中的每个智能体都有一个定义的角色、执行特定任务、与其他智能体交互以协调和沟通，实现共享目标。</p>
 <blockquote class="blockquote">
-<p><strong>Multiple agents collaborate to achieve a shared goal</strong></p>
-</blockquote>
-<p>Each agent in the system:</p>
-<ul>
-<li><strong>Has a defined role</strong>—a specific responsibility or function</li>
-<li><strong>Performs specific tasks</strong>—operates within its domain of expertise</li>
-<li><strong>Interacts with other agents</strong>—coordinates and communicates to achieve shared objectives</li>
-</ul>
-<hr>
-<section id="key-idea" class="level3" data-number="22.2.1">
-<h3 data-number="22.2.1" class="anchored" data-anchor-id="key-idea"><span class="header-section-number">22.2.1</span> Key Idea</h3>
-<p>Instead of one agent doing everything:</p>
-<ul>
-<li>Work is <strong>distributed</strong> across multiple specialized components</li>
-<li>Responsibilities are <strong>separated</strong> according to expertise and function</li>
-<li>Collaboration enables <strong>emergence</strong>—the whole is greater than the sum of parts</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="why-multiple-agents" class="level2" data-number="22.3">
-<h2 data-number="22.3" class="anchored" data-anchor-id="why-multiple-agents"><span class="header-section-number">22.3</span> Why Multiple Agents?</h2>
-<p>There are several compelling reasons to move beyond a single agent architecture:</p>
-<hr>
-<section id="specialization" class="level3" data-number="22.3.1">
-<h3 data-number="22.3.1" class="anchored" data-anchor-id="specialization"><span class="header-section-number">22.3.1</span> 1. Specialization</h3>
-<p>Different tasks require different capabilities and expertise:</p>
-<ul>
-<li><strong>Retrieval</strong>—searching and accessing information</li>
-<li><strong>Reasoning</strong>—logical inference and analysis</li>
-<li><strong>Planning</strong>—creating strategies and sequences</li>
-<li><strong>Execution</strong>—carrying out actions and operations</li>
-</ul>
-<p>A single agent cannot be expert in all areas simultaneously.</p>
-<hr>
-</section>
-<section id="complexity-management" class="level3" data-number="22.3.2">
-<h3 data-number="22.3.2" class="anchored" data-anchor-id="complexity-management"><span class="header-section-number">22.3.2</span> 2. Complexity Management</h3>
-<p>Breaking a problem into parts reduces cognitive and computational load:</p>
-<ul>
-<li><strong>Reduces complexity</strong>—each agent handles a smaller, focused problem</li>
-<li><strong>Improves clarity</strong>—boundaries and responsibilities are clear</li>
-<li><strong>Enables focus</strong>—each agent specializes in its domain</li>
-</ul>
-<hr>
-</section>
-<section id="modularity" class="level3" data-number="22.3.3">
-<h3 data-number="22.3.3" class="anchored" data-anchor-id="modularity"><span class="header-section-number">22.3.3</span> 3. Modularity</h3>
-<p>Agents can be reused and recombined:</p>
-<ul>
-<li><strong>Reused</strong>—same agent can serve different systems</li>
-<li><strong>Replaced</strong>—agents can be upgraded or changed independently</li>
-<li><strong>Extended</strong>—new capabilities can be added without disrupting existing agents</li>
-</ul>
-<hr>
-</section>
-<section id="scalability" class="level3" data-number="22.3.4">
-<h3 data-number="22.3.4" class="anchored" data-anchor-id="scalability"><span class="header-section-number">22.3.4</span> 4. Scalability</h3>
-<p>Systems can grow by adding more agents:</p>
-<ul>
-<li><strong>Adding capabilities</strong>—new agents provide new functions</li>
-<li><strong>Increasing capacity</strong>—multiple agents can work in parallel</li>
-<li><strong>Expanding scope</strong>—systems can handle more complex problems</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Multi-agent systems scale by composition, not by making individual agents more complex.</p>
+<p>多智能体设计是关于有效分配工作。</p>
 </blockquote>
 <hr>
 </section>
-</section>
-<section id="roles-and-responsibilities" class="level2" data-number="22.4">
-<h2 data-number="22.4" class="anchored" data-anchor-id="roles-and-responsibilities"><span class="header-section-number">22.4</span> Roles and Responsibilities</h2>
-<p>In a multi-agent system, each agent must have:</p>
-<ul>
-<li>A clear role—a well-defined function and responsibility</li>
-<li>Defined responsibilities—what the agent is accountable for</li>
-</ul>
-<hr>
-<section id="example-roles" class="level3" data-number="22.4.1">
-<h3 data-number="22.4.1" class="anchored" data-anchor-id="example-roles"><span class="header-section-number">22.4.1</span> Example Roles</h3>
-<hr>
-<section id="planner" class="level4" data-number="22.4.1.1">
-<h4 data-number="22.4.1.1" class="anchored" data-anchor-id="planner"><span class="header-section-number">22.4.1.1</span> Planner</h4>
-<ul>
-<li>Breaks down complex tasks into smaller, manageable steps</li>
-<li>Creates execution strategies and sequences</li>
-<li>Anticipates dependencies and ordering requirements</li>
-</ul>
+<section id="核心概念core-concepts" class="level2" data-number="22.3">
+<h2 data-number="22.3" class="anchored" data-anchor-id="核心概念core-concepts"><span class="header-section-number">22.3</span> 核心概念（Core Concepts）</h2>
+<p><strong>角色（Role）：</strong> 每个智能体有一个明确的职责——如研究、撰写、审核或协调。角色定义了智能体做什么以及如何与其他智能体交互。</p>
+<p><strong>通信（Communication）：</strong> 智能体需要相互发送信息和指令。通信可以是直接的或通过中央协调器。</p>
+<p><strong>协调（Coordination）：</strong> 智能体的工作需要同步。任务可能需要按特定顺序执行，并行运行，或基于条件分派。</p>
 <hr>
 </section>
-<section id="executor" class="level4" data-number="22.4.1.2">
-<h4 data-number="22.4.1.2" class="anchored" data-anchor-id="executor"><span class="header-section-number">22.4.1.2</span> Executor</h4>
-<ul>
-<li>Performs actions and operations</li>
-<li>Executes tasks according to plans</li>
-<li>Handles implementation details</li>
-</ul>
+<section id="架构模式architecture-patterns" class="level2" data-number="22.4">
+<h2 data-number="22.4" class="anchored" data-anchor-id="架构模式architecture-patterns"><span class="header-section-number">22.4</span> 架构模式（Architecture Patterns）</h2>
+<p><strong>中央协调（Central Coordinator）：</strong> 一个协调智能体管理工作流并将任务分派给专门智能体。</p>
+<p><strong>去中心化协作（Decentralized Collaboration）：</strong> 智能体直接相互通信，无中央控制点。适用于对等交互。</p>
+<p><strong>管道（Pipeline）：</strong> 智能体按顺序排列，每个智能体执行一个阶段。适用于定义良好的处理流。</p>
 <hr>
 </section>
-<section id="evaluator" class="level4" data-number="22.4.1.3">
-<h4 data-number="22.4.1.3" class="anchored" data-anchor-id="evaluator"><span class="header-section-number">22.4.1.3</span> Evaluator</h4>
-<ul>
-<li>Checks results and outcomes</li>
-<li>Provides feedback on quality</li>
-<li>Identifies errors or issues</li>
-</ul>
-<hr>
-</section>
-<section id="retriever" class="level4" data-number="22.4.1.4">
-<h4 data-number="22.4.1.4" class="anchored" data-anchor-id="retriever"><span class="header-section-number">22.4.1.4</span> Retriever</h4>
-<ul>
-<li>Fetches external information</li>
-<li>Searches databases and knowledge bases</li>
-<li>Accesses real-time data</li>
-</ul>
-<hr>
+<section id="设计多智能体系统designing-multi-agent-systems" class="level2" data-number="22.5">
+<h2 data-number="22.5" class="anchored" data-anchor-id="设计多智能体系统designing-multi-agent-systems"><span class="header-section-number">22.5</span> 设计多智能体系统（Designing Multi-Agent Systems）</h2>
+<ol type="1">
+<li><strong>将任务分解为角色：</strong> 确定达成目标需要哪些不同的能力</li>
+<li><strong>定义通信协议：</strong> 指定智能体如何共享信息和协调</li>
+<li><strong>建立协调机制：</strong> 确定谁决定什么以及如何处理冲突</li>
+<li><strong>边界与范围：</strong> 为每个智能体划定明确的职责边界</li>
+</ol>
 <blockquote class="blockquote">
-<p>Each agent should do one thing well. Specialization enables excellence.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-</section>
-<section id="division-of-labor" class="level2" data-number="22.5">
-<h2 data-number="22.5" class="anchored" data-anchor-id="division-of-labor"><span class="header-section-number">22.5</span> Division of Labor</h2>
-<p>Division of labor is central to effective multi-agent systems. It ensures that:</p>
-<ul>
-<li>Work is distributed efficiently</li>
-<li>Responsibilities are clear</li>
-<li>Collaboration is coordinated</li>
-</ul>
-<hr>
-<section id="principles" class="level3" data-number="22.5.1">
-<h3 data-number="22.5.1" class="anchored" data-anchor-id="principles"><span class="header-section-number">22.5.1</span> Principles</h3>
-<hr>
-</section>
-<section id="separation-of-concerns" class="level3" data-number="22.5.2">
-<h3 data-number="22.5.2" class="anchored" data-anchor-id="separation-of-concerns"><span class="header-section-number">22.5.2</span> 1. Separation of Concerns</h3>
-<ul>
-<li>Each agent handles a distinct function</li>
-<li>No overlap in responsibilities</li>
-<li>Clear boundaries between agents</li>
-</ul>
-<hr>
-</section>
-<section id="clear-boundaries" class="level3" data-number="22.5.3">
-<h3 data-number="22.5.3" class="anchored" data-anchor-id="clear-boundaries"><span class="header-section-number">22.5.3</span> 2. Clear Boundaries</h3>
-<ul>
-<li>Inputs and outputs are well-defined</li>
-<li>Interfaces are explicit and structured</li>
-<li>Communication protocols are established</li>
-</ul>
-<hr>
-</section>
-<section id="minimal-overlap" class="level3" data-number="22.5.4">
-<h3 data-number="22.5.4" class="anchored" data-anchor-id="minimal-overlap"><span class="header-section-number">22.5.4</span> 3. Minimal Overlap</h3>
-<ul>
-<li>Avoid duplication of responsibilities</li>
-<li>Each agent has unique capabilities</li>
-<li>No redundancy in function</li>
-</ul>
-<hr>
-</section>
-<section id="example-flow" class="level3" data-number="22.5.5">
-<h3 data-number="22.5.5" class="anchored" data-anchor-id="example-flow"><span class="header-section-number">22.5.5</span> Example Flow</h3>
-<pre><code>User Query
-→ Planner Agent (breaks down task)
-→ Executor Agents (perform steps)
-→ Evaluator Agent (checks results)
-→ Final Output</code></pre>
-<p>Each agent contributes its specialized capability to achieve the shared goal.</p>
-<hr>
-<blockquote class="blockquote">
-<p>Clear division improves reliability. When responsibilities are separated, errors are easier to identify and fix.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="communication-between-agents" class="level2" data-number="22.6">
-<h2 data-number="22.6" class="anchored" data-anchor-id="communication-between-agents"><span class="header-section-number">22.6</span> Communication Between Agents</h2>
-<p>Agents must communicate to coordinate actions and share information. This requires:</p>
-<blockquote class="blockquote">
-<p><strong>Defined communication protocols</strong></p>
-</blockquote>
-<hr>
-<section id="what-is-communicated" class="level3" data-number="22.6.1">
-<h3 data-number="22.6.1" class="anchored" data-anchor-id="what-is-communicated"><span class="header-section-number">22.6.1</span> What is Communicated?</h3>
-<ul>
-<li><strong>Tasks</strong>—what needs to be done</li>
-<li><strong>Intermediate results</strong>—outputs from one agent to another</li>
-<li><strong>Feedback</strong>—evaluations and corrections</li>
-</ul>
-<hr>
-</section>
-<section id="forms-of-communication" class="level3" data-number="22.6.2">
-<h3 data-number="22.6.2" class="anchored" data-anchor-id="forms-of-communication"><span class="header-section-number">22.6.2</span> Forms of Communication</h3>
-<hr>
-<section id="structured-messages" class="level4" data-number="22.6.2.1">
-<h4 data-number="22.6.2.1" class="anchored" data-anchor-id="structured-messages"><span class="header-section-number">22.6.2.1</span> Structured Messages</h4>
-<ul>
-<li><strong>JSON</strong>—standardized format for data exchange</li>
-<li><strong>Key-value pairs</strong>—clear mapping of information</li>
-<li><strong>Type safety</strong>—defined data structures</li>
-</ul>
-<p><strong>Advantages:</strong> - Clear and explicit - Machine-readable - Easy to validate</p>
-<hr>
-</section>
-<section id="natural-language" class="level4" data-number="22.6.2.2">
-<h4 data-number="22.6.2.2" class="anchored" data-anchor-id="natural-language"><span class="header-section-number">22.6.2.2</span> Natural Language</h4>
-<ul>
-<li><strong>Flexible</strong>—can express complex ideas</li>
-<li><strong>Natural</strong>—easier for humans to understand</li>
-<li><strong>Context-rich</strong>—can convey nuance</li>
-</ul>
-<p><strong>Disadvantages:</strong> - Ambiguous—multiple interpretations possible - Less reliable—parsing is difficult - Verbose—can be inefficient</p>
-<hr>
-</section>
-<section id="hybrid" class="level4" data-number="22.6.2.3">
-<h4 data-number="22.6.2.3" class="anchored" data-anchor-id="hybrid"><span class="header-section-number">22.6.2.3</span> Hybrid</h4>
-<ul>
-<li><strong>Structured + descriptive</strong>—combines structure with flexibility</li>
-<li><strong>Type-safe with context</strong>—data format plus explanatory text</li>
-<li><strong>Best of both worlds</strong>—clarity and expressiveness</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Structured communication improves consistency and reliability. It reduces ambiguity and makes integration easier.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-</section>
-<section id="communication-patterns" class="level2" data-number="22.7">
-<h2 data-number="22.7" class="anchored" data-anchor-id="communication-patterns"><span class="header-section-number">22.7</span> Communication Patterns</h2>
-<p>Different patterns of communication suit different system architectures and requirements:</p>
-<hr>
-<section id="sequential-communication" class="level3" data-number="22.7.1">
-<h3 data-number="22.7.1" class="anchored" data-anchor-id="sequential-communication"><span class="header-section-number">22.7.1</span> 1. Sequential Communication</h3>
-<p>Agents pass results in order, one after another.</p>
-<pre><code>Agent A → Agent B → Agent C</code></pre>
-<p><strong>When to use:</strong> - Tasks have clear dependencies - Each step depends on previous output - Sequential processing is natural</p>
-<hr>
-</section>
-<section id="central-coordinator" class="level3" data-number="22.7.2">
-<h3 data-number="22.7.2" class="anchored" data-anchor-id="central-coordinator"><span class="header-section-number">22.7.2</span> 2. Central Coordinator</h3>
-<p>One agent manages and coordinates all others.</p>
-<pre><code>Coordinator → Agents → Coordinator</code></pre>
-<p><strong>When to use:</strong> - Centralized control is preferred - Coordination logic is complex - Single point of direction is beneficial</p>
-<hr>
-</section>
-<section id="peer-to-peer" class="level3" data-number="22.7.3">
-<h3 data-number="22.7.3" class="anchored" data-anchor-id="peer-to-peer"><span class="header-section-number">22.7.3</span> 3. Peer-to-Peer</h3>
-<p>Agents interact directly with each other.</p>
-<pre><code>Agent A ↔ Agent B ↔ Agent C</code></pre>
-<p><strong>When to use:</strong> - Distributed decision-making is needed - Agents have equal status - - Local interactions are sufficient</p>
-<hr>
-<blockquote class="blockquote">
-<p>The pattern depends on system complexity and requirements. Choose based on coordination needs and task structure.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="coordination-strategies" class="level2" data-number="22.8">
-<h2 data-number="22.8" class="anchored" data-anchor-id="coordination-strategies"><span class="header-section-number">22.8</span> Coordination Strategies</h2>
-<p>How agents are coordinated affects system behavior, reliability, and efficiency:</p>
-<hr>
-<section id="centralized-control" class="level3" data-number="22.8.1">
-<h3 data-number="22.8.1" class="anchored" data-anchor-id="centralized-control"><span class="header-section-number">22.8.1</span> 1. Centralized Control</h3>
-<ul>
-<li>One agent orchestrates all activities</li>
-<li>Clear hierarchy and authority</li>
-<li>Easier to manage and debug</li>
-</ul>
-<p><strong>Advantages:</strong> - Simpler coordination logic - Clear responsibility - Easier to understand</p>
-<p><strong>Disadvantages:</strong> - Single point of failure - - Bottleneck in decision-making - Less flexible</p>
-<hr>
-</section>
-<section id="decentralized-control" class="level3" data-number="22.8.2">
-<h3 data-number="22.8.2" class="anchored" data-anchor-id="decentralized-control"><span class="header-section-number">22.8.2</span> 2. Decentralized Control</h3>
-<ul>
-<li>Agents decide independently</li>
-<li>No central authority</li>
-<li>Distributed decision-making</li>
-</ul>
-<p><strong>Advantages:</strong> - More flexible and adaptable - - No single point of failure - - Scalable to many agents</p>
-<p><strong>Disadvantages:</strong> - Harder to coordinate - - More complex to debug - - Potential for conflicts</p>
-<hr>
-</section>
-<section id="trade-off" class="level3" data-number="22.8.3">
-<h3 data-number="22.8.3" class="anchored" data-anchor-id="trade-off"><span class="header-section-number">22.8.3</span> Trade-off</h3>
-<ul>
-<li><strong>Centralized</strong> → control, simplicity, but less flexibility</li>
-<li><strong>Decentralized</strong> → adaptability, resilience, but more complexity</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="challenges-in-multi-agent-systems" class="level2" data-number="22.9">
-<h2 data-number="22.9" class="anchored" data-anchor-id="challenges-in-multi-agent-systems"><span class="header-section-number">22.9</span> Challenges in Multi-Agent Systems</h2>
-<p>Multi-agent systems introduce new challenges that must be addressed:</p>
-<hr>
-<section id="coordination-complexity" class="level3" data-number="22.9.1">
-<h3 data-number="22.9.1" class="anchored" data-anchor-id="coordination-complexity"><span class="header-section-number">22.9.1</span> 1. Coordination Complexity</h3>
-<ul>
-<li><strong>Managing interactions</strong>—ensuring agents work together effectively</li>
-<li><strong>Avoiding conflicts</strong>—preventing agents from working at cross-purposes</li>
-<li><strong>Synchronization</strong>—timing and sequencing of agent activities</li>
-</ul>
-<hr>
-</section>
-<section id="communication-overhead" class="level3" data-number="22.9.2">
-<h3 data-number="22.9.2" class="anchored" data-anchor-id="communication-overhead"><span class="header-section-number">22.9.2</span> 2. Communication Overhead</h3>
-<ul>
-<li><strong>More messages</strong>—inter-agent communication increases</li>
-<li><strong>Increased latency</strong>—time spent coordinating</li>
-<li><strong>Bandwidth usage</strong>—more data transferred between agents</li>
-</ul>
-<hr>
-</section>
-<section id="error-propagation" class="level3" data-number="22.9.3">
-<h3 data-number="22.9.3" class="anchored" data-anchor-id="error-propagation"><span class="header-section-number">22.9.3</span> 3. Error Propagation</h3>
-<ul>
-<li><strong>One agent’s mistake affects others</strong>—errors cascade through the system</li>
-<li><strong>Harder to isolate problems</strong>—difficult to identify which agent failed</li>
-<li><strong>System-wide impact</strong>—local failures can have global consequences</li>
-</ul>
-<hr>
-</section>
-<section id="debugging-difficulty" class="level3" data-number="22.9.4">
-<h3 data-number="22.9.4" class="anchored" data-anchor-id="debugging-difficulty"><span class="header-section-number">22.9.4</span> 4. Debugging Difficulty</h3>
-<ul>
-<li><strong>Harder to trace issues</strong>—multiple agents, multiple paths</li>
-<li><strong>Complex interactions</strong>—non-linear dependencies</li>
-<li><strong>Emergent behavior</strong>—system behavior arises from agent interactions</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>More agents increase power, but also complexity. The benefits must outweigh the costs.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="designing-multi-agent-systems" class="level2" data-number="22.10">
-<h2 data-number="22.10" class="anchored" data-anchor-id="designing-multi-agent-systems"><span class="header-section-number">22.10</span> Designing Multi-Agent Systems</h2>
-<p>To design effective multi-agent systems:</p>
-<hr>
-<section id="define-roles-clearly" class="level3" data-number="22.10.1">
-<h3 data-number="22.10.1" class="anchored" data-anchor-id="define-roles-clearly"><span class="header-section-number">22.10.1</span> 1. Define Roles Clearly</h3>
-<ul>
-<li><strong>Avoid ambiguity</strong>—each agent’s purpose should be crystal clear</li>
-<li><strong>Specify responsibilities</strong>—what each agent does and doesn’t do</li>
-<li><strong>Establish boundaries</strong>—clear limits on agent scope</li>
-</ul>
-<hr>
-</section>
-<section id="design-interfaces" class="level3" data-number="22.10.2">
-<h3 data-number="22.10.2" class="anchored" data-anchor-id="design-interfaces"><span class="header-section-number">22.10.2</span> 2. Design Interfaces</h3>
-<ul>
-<li><strong>Standardize communication</strong>—define protocols for agent interaction</li>
-<li><strong>Specify input/output formats</strong>—clear contracts between agents</li>
-<li><strong>Document behavior</strong>—comprehensive descriptions of agent capabilities</li>
-</ul>
-<hr>
-</section>
-<section id="control-interaction" class="level3" data-number="22.10.3">
-<h3 data-number="22.10.3" class="anchored" data-anchor-id="control-interaction"><span class="header-section-number">22.10.3</span> 3. Control Interaction</h3>
-<ul>
-<li><strong>Limit unnecessary communication</strong>—only share what’s needed</li>
-<li><strong>Manage message flow</strong>—avoid information overload</li>
-<li><strong>Optimize coordination</strong>—minimize overhead while ensuring effectiveness</li>
-</ul>
-<hr>
-</section>
-<section id="add-evaluation-layers" class="level3" data-number="22.10.4">
-<h3 data-number="22.10.4" class="anchored" data-anchor-id="add-evaluation-layers"><span class="header-section-number">22.10.4</span> 4. Add Evaluation Layers</h3>
-<ul>
-<li><strong>Validate intermediate results</strong>—check agent outputs at each step</li>
-<li><strong>Provide feedback</strong>—enable agents to improve based on results</li>
-<li><strong>Ensure quality</strong>—maintain standards throughout the system</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Structure is critical for coordination. Well-designed systems have clear roles, defined interfaces, and controlled interactions.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="when-to-use-multi-agent-systems" class="level2" data-number="22.11">
-<h2 data-number="22.11" class="anchored" data-anchor-id="when-to-use-multi-agent-systems"><span class="header-section-number">22.11</span> When to Use Multi-Agent Systems</h2>
-<p>Multi-agent systems are not always the right solution. Use them when:</p>
-<hr>
-<section id="suitable-cases" class="level3" data-number="22.11.1">
-<h3 data-number="22.11.1" class="anchored" data-anchor-id="suitable-cases"><span class="header-section-number">22.11.1</span> Suitable Cases</h3>
-<ul>
-<li><strong>Complex workflows</strong>—tasks with many interdependent steps</li>
-<li><strong>Multi-step reasoning</strong>—problems requiring sequential or parallel processing</li>
-<li><strong>Systems requiring specialization</strong>—tasks needing expertise in multiple domains</li>
-<li><strong>Scalable solutions</strong>—systems that need to grow in capability</li>
-</ul>
-<hr>
-</section>
-<section id="not-suitable" class="level3" data-number="22.11.2">
-<h3 data-number="22.11.2" class="anchored" data-anchor-id="not-suitable"><span class="header-section-number">22.11.2</span> Not Suitable</h3>
-<ul>
-<li><strong>Simple tasks</strong>—straightforward problems that one agent can handle</li>
-<li><strong>Low complexity</strong>—tasks with few steps and minimal dependencies</li>
-<li><strong>Single-step problems</strong>—direct input-output transformations</li>
-<li><strong>Tight latency requirements</strong>—when coordination overhead is unacceptable</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Do not use multiple agents unless the complexity and specialization requirements justify the overhead.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="multi-agent-systems-in-the-minimal-loop" class="level2" data-number="22.12">
-<h2 data-number="22.12" class="anchored" data-anchor-id="multi-agent-systems-in-the-minimal-loop"><span class="header-section-number">22.12</span> Multi-Agent Systems in the Minimal Loop</h2>
-<p>Multi-agent systems extend the execution phase of the Minimal Loop:</p>
-<pre><code>Intent → Spec → Instruction → Execution (Multi-Agent) → Evaluation</code></pre>
-<hr>
-<p>Execution becomes:</p>
-<ul>
-<li>A <strong>coordinated process</strong>—multiple agents working together</li>
-<li>A <strong>network of interactions</strong>—communication and collaboration between agents</li>
-<li>An <strong>emergent behavior</strong>—system-level properties arising from agent interactions</li>
-</ul>
-<hr>
-</section>
-<section id="final-insight" class="level2" data-number="22.13">
-<h2 data-number="22.13" class="anchored" data-anchor-id="final-insight"><span class="header-section-number">22.13</span> Final Insight</h2>
-<p>Multi-agent systems represent a shift from:</p>
-<ul>
-<li><strong>Single-process execution</strong>—one agent doing everything To:</li>
-<li><strong>Distributed intelligence</strong>—multiple agents collaborating</li>
-</ul>
-<hr>
-<blockquote class="blockquote">
-<p>Systems are no longer single actors. They are coordinated collectives, working together to achieve shared goals.</p>
-</blockquote>
-<hr>
-</section>
-<section id="closing-statement" class="level2" data-number="22.14">
-<h2 data-number="22.14" class="anchored" data-anchor-id="closing-statement"><span class="header-section-number">22.14</span> Closing Statement</h2>
-<p>In the LLM era, complex systems are built not by increasing the power of one agent, but by organizing many.</p>
-<blockquote class="blockquote">
-<p>The strength of a system lies in how well its agents collaborate.</p>
-</blockquote>
-<hr>
-</section>
-<section id="key-insight" class="level2" data-number="22.15">
-<h2 data-number="22.15" class="anchored" data-anchor-id="key-insight"><span class="header-section-number">22.15</span> Key Insight</h2>
-<blockquote class="blockquote">
-<p>Multi-agent systems distribute work across specialized agents with defined roles. Key components include role definition, division of labor, communication protocols, and coordination strategies. Challenges include coordination complexity, communication overhead, error propagation, and debugging difficulty.</p>
-</blockquote>
-</section>
-<section id="action-hint" class="level2" data-number="22.16">
-<h2 data-number="22.16" class="anchored" data-anchor-id="action-hint"><span class="header-section-number">22.16</span> Action Hint</h2>
-<blockquote class="blockquote">
-<p>When designing multi-agent systems, start by defining clear roles and responsibilities. Design interfaces for agent communication. Choose appropriate communication patterns (sequential, centralized, or peer-to-peer). Add evaluation layers to validate intermediate results. Use multi-agent systems only when complexity and specialization justify the overhead.</p>
+<p>多智能体系统使 AI 系统能够处理单个智能体无法单独处理的任务。通过将能力分散到专门的智能体中，系统获得了灵活性、可扩展性和韧性。</p>
 </blockquote>
 
 
@@ -1509,13 +997,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-20.html" class="pagination-link" aria-label="Tool Use &amp; APIs">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tool Use &amp; APIs</span></span>
+      <a href="./chapter-20.html" class="pagination-link" aria-label="工具使用与 API（Tool Use &amp; APIs）">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">工具使用与 API（Tool Use &amp; APIs）</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-22.html" class="pagination-link" aria-label="Memory &amp; Context">
-        <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Memory &amp; Context</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-22.html" class="pagination-link" aria-label="记忆与上下文（Memory &amp; Context）">
+        <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">记忆与上下文（Memory &amp; Context）</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
